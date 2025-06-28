@@ -40,7 +40,14 @@ def fetch_feed_entries(feed_url):
 def generate_markdown(all_entries, feed_info, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
     markdown = f"# 毎日のテックニュース ({date_str})\n\n"
-    markdown += "日本の主要な技術系メディアの最新人気エントリーをお届けします。\n\n---\n"
+    markdown += "📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](rss.xml)\n\n"
+    markdown += "日本の主要な技術系メディアの最新人気エントリーをお届けします。\n\n"
+    markdown += "## 📡 RSSフィード配信中\n\n"
+    markdown += "このニュースはRSSフィードでも配信しています。お使いのRSSリーダーで以下のURLを購読してください：\n\n"
+    markdown += "**RSS URL:** `https://unsolublesugar.github.io/daily-tech-news/rss.xml`\n\n"
+    markdown += "- 毎日JST 7:00に自動更新\n"
+    markdown += "- 各フィードから5件ずつ厳選記事を配信\n"
+    markdown += "- ファビコン付きで見やすく表示\n\n---\n"
 
     for feed_name, entries in all_entries.items():
         favicon = feed_info[feed_name]["favicon"]
@@ -152,20 +159,10 @@ def update_archive_index():
         f.write(index_content)
 
 def update_readme_with_archive_link(content):
-    """README.mdにアーカイブへのリンクを追加"""
-    lines = content.split('\n')
-    
-    # アーカイブリンクを挿入する位置を探す
-    insert_index = 2  # タイトルと説明の後
-    
-    # 既存のアーカイブリンクがあるかチェック
-    archive_link_exists = any("📚 [過去のニュースを見る]" in line for line in lines)
-    
-    if not archive_link_exists:
-        archive_link = "\n📚 [過去のニュースを見る](archives/index.md)\n"
-        lines.insert(insert_index, archive_link)
-    
-    return '\n'.join(lines)
+    """README.mdにアーカイブとRSSへのリンクを追加（既に含まれている場合はそのまま）"""
+    # generate_markdown関数で既にアーカイブとRSSリンクが含まれているため、
+    # 追加処理は不要。そのまま返す
+    return content
 
 def generate_rss_feed(all_entries, feed_info, date_obj):
     """RSS XMLフィードを生成"""
