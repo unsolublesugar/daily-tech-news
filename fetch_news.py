@@ -71,8 +71,13 @@ def save_to_archive(content, date_obj):
     archive_dir = Path(f"archives/{year}/{month}")
     archive_dir.mkdir(parents=True, exist_ok=True)
     
-    # ファイル保存
+    # ファイル保存（既存ファイルは上書き）
     archive_file = archive_dir / f"{date_str}.md"
+    if archive_file.exists():
+        print(f"Overwriting existing archive: {archive_file}")
+    else:
+        print(f"Creating new archive: {archive_file}")
+    
     with open(archive_file, "w", encoding="utf-8") as f:
         f.write(content)
     
