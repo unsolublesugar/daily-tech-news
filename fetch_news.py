@@ -2,6 +2,8 @@ import feedparser
 import datetime
 import os
 from pathlib import Path
+from xml.dom import minidom
+import xml.etree.ElementTree as ET
 
 # 取得するRSSフィードのリスト（ファビコン付き）
 FEEDS = {
@@ -165,6 +167,63 @@ def update_readme_with_archive_link(content):
     
     return '\n'.join(lines)
 
+def generate_rss_feed(all_entries, feed_info, date_obj):
+    """RSS XMLフィードを生成"""
+    # RSS要素の作成
+    rss = ET.Element('rss', version='2.0', attrib={'xmlns:atom': 'http://www.w3.org/2005/Atom'})
+    channel = ET.SubElement(rss, 'channel')
+    
+    # チャンネル情報
+    ET.SubElement(channel, 'title').text = '毎日のテックニュース'
+    ET.SubElement(channel, 'link').text = 'https://unsolublesugar.github.io/daily-tech-news/'
+    ET.SubElement(channel, 'description').text = '日本の主要な技術系メディアの最新人気エントリーを毎日お届けします'
+    ET.SubElement(channel, 'language').text = 'ja'
+    ET.SubElement(channel, 'pubDate').text = date_obj.strftime('%a, %d %b %Y %H:%M:%S +0000')
+    ET.SubElement(channel, 'lastBuildDate').text = date_obj.strftime('%a, %d %b %Y %H:%M:%S +0000')
+    
+    # Atom自己参照リンク
+    atom_link = ET.SubElement(channel, 'atom:link')
+    atom_link.set('href', 'https://unsolublesugar.github.io/daily-tech-news/rss.xml')
+    atom_link.set('rel', 'self')
+    atom_link.set('type', 'application/rss+xml')
+    
+    # 各フィードからアイテムを追加
+    for feed_name, entries in all_entries.items():
+        favicon = feed_info[feed_name]["favicon"]
+        if favicon.startswith("http"):
+            favicon_display = f'<img src="{favicon}" width="16" height="16" alt="{feed_name}"> '
+        else:
+            favicon_display = f'{favicon} '
+            
+        for entry in entries[:5]:  # RSSでは各フィード5件に制限
+            item = ET.SubElement(channel, 'item')
+            ET.SubElement(item, 'title').text = f'{favicon_display}{entry.title}'
+            ET.SubElement(item, 'link').text = entry.link
+            ET.SubElement(item, 'description').text = f'{feed_name}からの記事: {entry.title}'
+            ET.SubElement(item, 'guid').text = entry.link
+            
+            # 公開日（エントリーに日付があれば使用、なければ今日）
+            pub_date = getattr(entry, 'published_parsed', None)
+            if pub_date:
+                pub_datetime = datetime.datetime(*pub_date[:6])
+                ET.SubElement(item, 'pubDate').text = pub_datetime.strftime('%a, %d %b %Y %H:%M:%S +0000')
+            else:
+                ET.SubElement(item, 'pubDate').text = date_obj.strftime('%a, %d %b %Y %H:%M:%S +0000')
+    
+    return rss
+
+def save_rss_feed(rss_element):
+    """RSS XMLファイルを保存"""
+    # XMLを整形して保存
+    rough_string = ET.tostring(rss_element, encoding='unicode')
+    reparsed = minidom.parseString(rough_string)
+    pretty_xml = reparsed.toprettyxml(indent="  ", encoding='utf-8')
+    
+    with open("rss.xml", "wb") as f:
+        f.write(pretty_xml)
+    
+    print("RSS feed generated: rss.xml")
+
 if __name__ == "__main__":
     today = datetime.date.today()
     
@@ -190,5 +249,9 @@ if __name__ == "__main__":
     readme_content = update_readme_with_archive_link(markdown_content)
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(readme_content)
+    
+    # RSSフィード生成
+    rss_feed = generate_rss_feed(all_entries, FEEDS, today)
+    save_rss_feed(rss_feed)
         
-    print(f"Successfully updated README.md and archive structure.")
+    print(f"Successfully updated README.md, archive structure, and RSS feed.")
