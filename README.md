@@ -1,9 +1,18 @@
 # 毎日のテックニュース (2025-06-28)
 
-
-📚 [過去のニュースを見る](archives/index.md)
+📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](rss.xml)
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
+
+## 📡 RSSフィード配信中
+
+このニュースはRSSフィードでも配信しています。お使いのRSSリーダーで以下のURLを購読してください：
+
+**RSS URL:** `https://unsolublesugar.github.io/daily-tech-news/rss.xml`
+
+- 毎日JST 7:00に自動更新
+- 各フィードから5件ずつ厳選記事を配信
+- ファビコン付きで見やすく表示
 
 ---
 ## 💻 Tech Blog Weekly
@@ -54,11 +63,11 @@
 - [AIの世界も「フリーランチは終わった」になってきてるのでは - きしだのHatena](https://nowokay.hatenablog.com/entry/2025/06/26/224437)
 - [【無料】グーグル神AIツール5選　「Google AI Studio」はこれがやばい (1/7)](https://ascii.jp/elem/000/004/286/4286792/)
 - [VueエンジニアがReactを触ってみた感想｜Yutori Otsu](https://note.com/yutori_otsu827/n/nf502e45cf14d)
-- [Anthropic、ワンクリックでローカルMCPサーバーをインストールできる「Desktop Extensions」をリリース | gihyo.jp](https://gihyo.jp/article/2025/06/claude-desktop-extensions)
 - [面接をして「この人優秀だな」と感じる人はどんな人か? - pospomeのプログラミング日記](https://www.pospome.work/entry/2025/06/28/151253)
 - [Claude Codeにコマンド一発でMCPサーバを簡単設定](https://zenn.dev/karaage0703/articles/3bd2957807f311)
+- [Anthropic、ワンクリックでローカルMCPサーバーをインストールできる「Desktop Extensions」をリリース | gihyo.jp](https://gihyo.jp/article/2025/06/claude-desktop-extensions)
 - [【2025年】zip圧縮･展開(解凍) おすすめソフト12選まとめ＋解説【Win･Mac対応、文字化けよさらば！】 - Qiita](https://qiita.com/ko1nksm/items/b1e320f418614372c43e)
-- [o3 MCPでClaude Codeが最強の検索力を手に入れた](https://zenn.dev/yoshiko/articles/claude-code-with-o3)
 - [AIネイティブ世代が実践してる。スマホでバイブコーディングする方法【Gemini-CLI】｜Holy_fox](https://note.com/holy_fox/n/nfe53492ac5dd)
+- [o3 MCPでClaude Codeが最強の検索力を手に入れた](https://zenn.dev/yoshiko/articles/claude-code-with-o3)
 
 ---
