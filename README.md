@@ -31,16 +31,16 @@
 ---
 ## <img src="https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico" width="16" height="16" alt="Qiita"> Qiita
 
-- [【CSS】まだ width: 100% つかってるやついる⁉︎ いねぇよな⁉︎](https://qiita.com/degudegu2510/items/7079d76beeaa40c206d3?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [Gemini CLIの"強み"を知る！ Gemini CLIとClaude Codeを比較してみた](https://qiita.com/kyuko/items/b7f7336057859f5c9b4f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [Gemini CLI をさっそく試してみた！](https://qiita.com/youtoy/items/fa5b696b055ed4a992ec?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
 - [10歳娘「凡ミスの多い人ってプログラマーに向いてるよね」](https://qiita.com/Yametaro/items/0b241519dc6b416474c5?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
 - [【完全版】Gemini CLI チートシート - この記事で今日攻略！🚀](https://qiita.com/akira_papa_AI/items/15314a5bf1dd109053c2?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [Gemini CLI を Google Workspace アカウントで使う](https://qiita.com/revsystem/items/34e65c59f05f97357d71?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [【CSS】まだ width: 100% つかってるやついる⁉︎ いねぇよな⁉︎](https://qiita.com/degudegu2510/items/7079d76beeaa40c206d3?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
 - [「公共Wi-Fiは危険」ってよく聞くけど… どこがどう危ないの？物理から紐解くセキュリティ入門](https://qiita.com/omochi_0604/items/676bc3f123bc24d3602b?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [AI時代にエンジニアは不要になるのか？](https://qiita.com/ryoheiiwamoto/items/24969131200a8c0429a1?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [ワイ「AI時代に、綺麗な設計とか要らんやろ！」](https://qiita.com/Yametaro/items/f642704a2c11bf36a463?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [[2025]AWS Summit Japan参加レポート](https://qiita.com/Kanahiro/items/09d37a994425baf03913?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
 - [【入門】Vimを覚えたくない人のための最低限だけ学ぶVim](https://qiita.com/flowernotfound/items/cb8d51602bad909dae2a?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [[入門] PythonでuvとPEP 723を使うと開発体験が10倍向上する理由](https://qiita.com/ShigemoriMasato/items/b254709391d2cbb1bbe6?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [ワイ「AI時代に、綺麗な設計とか要らんやろ！」](https://qiita.com/Yametaro/items/f642704a2c11bf36a463?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [【ご報告】遠距離恋愛にアジャイルを応用して結婚しました](https://qiita.com/mkt_hanada/items/04c9e040c8b4131a3948?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [[入門] C/C++ malloc(0)の謎 メモリ確保の実装と挙動](https://qiita.com/ShigemoriMasato/items/cdb91a441f4f8ceb1466?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
 
 ---
 ## <img src="https://zenn.dev/favicon.ico" width="16" height="16" alt="Zenn"> Zenn
@@ -59,15 +59,15 @@
 ---
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT"> はてなブックマーク - IT
 
-- [【Obsidianの使い方が変わる】Gemini CLIは、あなたの思考に寄り添う「無料の執事」｜少し明るい高橋くん](https://note.com/chankostin/n/nb33ca6e289fa)
-- [AIの世界も「フリーランチは終わった」になってきてるのでは - きしだのHatena](https://nowokay.hatenablog.com/entry/2025/06/26/224437)
-- [【無料】グーグル神AIツール5選　「Google AI Studio」はこれがやばい (1/7)](https://ascii.jp/elem/000/004/286/4286792/)
-- [VueエンジニアがReactを触ってみた感想｜Yutori Otsu](https://note.com/yutori_otsu827/n/nf502e45cf14d)
 - [面接をして「この人優秀だな」と感じる人はどんな人か? - pospomeのプログラミング日記](https://www.pospome.work/entry/2025/06/28/151253)
-- [Claude Codeにコマンド一発でMCPサーバを簡単設定](https://zenn.dev/karaage0703/articles/3bd2957807f311)
-- [Anthropic、ワンクリックでローカルMCPサーバーをインストールできる「Desktop Extensions」をリリース | gihyo.jp](https://gihyo.jp/article/2025/06/claude-desktop-extensions)
 - [【2025年】zip圧縮･展開(解凍) おすすめソフト12選まとめ＋解説【Win･Mac対応、文字化けよさらば！】 - Qiita](https://qiita.com/ko1nksm/items/b1e320f418614372c43e)
 - [AIネイティブ世代が実践してる。スマホでバイブコーディングする方法【Gemini-CLI】｜Holy_fox](https://note.com/holy_fox/n/nfe53492ac5dd)
-- [o3 MCPでClaude Codeが最強の検索力を手に入れた](https://zenn.dev/yoshiko/articles/claude-code-with-o3)
+- [Claude Codeにコマンド一発でMCPサーバを簡単設定](https://zenn.dev/karaage0703/articles/3bd2957807f311)
+- [【Obsidianの使い方が変わる】Gemini CLIは、あなたの思考に寄り添う「無料の執事」｜少し明るい高橋くん](https://note.com/chankostin/n/nb33ca6e289fa)
+- [VueエンジニアがReactを触ってみた感想｜Yutori Otsu](https://note.com/yutori_otsu827/n/nf502e45cf14d)
+- [AIの世界も「フリーランチは終わった」になってきてるのでは - きしだのHatena](https://nowokay.hatenablog.com/entry/2025/06/26/224437)
+- [【無料】グーグル神AIツール5選　「Google AI Studio」はこれがやばい (1/7)](https://ascii.jp/elem/000/004/286/4286792/)
+- [Anthropic、ワンクリックでローカルMCPサーバーをインストールできる「Desktop Extensions」をリリース | gihyo.jp](https://gihyo.jp/article/2025/06/claude-desktop-extensions)
+- [退屈な分析はAIにやらせよう - エムスリーテックブログ](https://www.m3tech.blog/entry/2025/06/27/110000)
 
 ---
