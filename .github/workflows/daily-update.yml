@@ -1,0 +1,46 @@
+name: Daily Tech News Update
+
+on:
+  schedule:
+    # 毎日JST 7:00 (UTC 22:00) に実行
+    - cron: '0 22 * * *'
+  workflow_dispatch: # 手動実行も可能
+
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        
+    - name: Fetch latest tech news
+      run: |
+        python fetch_news.py
+        
+    - name: Configure Git
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        
+    - name: Commit and push changes
+      run: |
+        git add README.md
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "🗞️ 毎日のテックニュース更新 $(date '+%Y-%m-%d')"
+          git push
+        fi
