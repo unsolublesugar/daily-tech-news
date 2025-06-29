@@ -72,11 +72,11 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://dev.classmethod.jp/favicon.ico" width="16" height="16" alt="DevelopersIO"> DevelopersIO
 
+- [Dagsterとdbt CoreをECS on Fargateで構築する](https://dev.classmethod.jp/articles/dagster-dbt-core-ecs-sample/)
 - [[作ってみた] レシートプリンター付きデバイスを使ってメモを出してみた](https://dev.classmethod.jp/articles/dev-receipt-printer-device-memo-output-maruto/)
 - [[アップデート] Amazon Route 53 Resolver Endpointがプライベートホストゾーンの DNS 委任をサポートするようになりました](https://dev.classmethod.jp/articles/amazon-route-53-resolver-endpoints-dns-delegation-private-hosted-zones/)
 - [[セッションレポート] AWS で実現する患者中心の医療サービス変革 ～デジタルトランスフォーメーションによる新たな医療の未来～（AWS-31）#AWSSummit](https://dev.classmethod.jp/articles/202506-aws-summit-2025-aws-31/)
 - [【ブースレポート】カメラで読み込んだ譜面をロボットアームで即興演奏するピアノボットが面白い #AWSSummit](https://dev.classmethod.jp/articles/awssummit-2025-pianobot-booth/)
-- [[セッションレポート] オープンテーブルフォーマットで実現する、大規模データ分析基盤の構築と運用 #AWSSummit](https://dev.classmethod.jp/articles/aws-summit-japan-2025-otf-data-analysis-basis-aws-47/)
 
 
 ---
