@@ -34,41 +34,41 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico" width="16" height="16" alt="Qiita"> Qiita
 
-- [10歳娘「凡ミスの多い人ってプログラマーに向いてるよね」](https://qiita.com/Yametaro/items/0b241519dc6b416474c5?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [「公共Wi-Fiは危険」ってよく聞くけど… どこがどう危ないの？物理から紐解くセキュリティ入門](https://qiita.com/omochi_0604/items/676bc3f123bc24d3602b?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [【完全版】Gemini CLI チートシート - この記事で今日攻略！🚀](https://qiita.com/akira_papa_AI/items/15314a5bf1dd109053c2?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
 - [【ご報告】遠距離恋愛にアジャイルを応用して結婚しました](https://qiita.com/mkt_hanada/items/04c9e040c8b4131a3948?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [「公共Wi-Fiは危険」ってよく聞くけど… どこがどう危ないの？物理から紐解くセキュリティ入門](https://qiita.com/omochi_0604/items/676bc3f123bc24d3602b?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
 - [[入門] PythonでuvとPEP 723を使うと開発体験が10倍向上する理由](https://qiita.com/ShigemoriMasato/items/b254709391d2cbb1bbe6?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [10歳娘「凡ミスの多い人ってプログラマーに向いてるよね」](https://qiita.com/Yametaro/items/0b241519dc6b416474c5?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [AWS Summit 2025 Community Stage全セッション＆資料まとめ](https://qiita.com/issy929/items/e02154bea72c4cff3106?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
 
 
 ---
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（人気）"> はてなブックマーク - IT（人気）
 
-- [プログラミング1ミリも分からない人がGemini CLI始めるまでの全手順（Win篇）｜ミヤマ｜営業部にいるデザイナー](https://note.com/mmmiyama/n/n9fa6839beb06)
-- [ターミナルを使う人は、とりあえず「mise」を入れておく時代。　　・・・を夢見て。](https://zenn.dev/dress_code/articles/a99ff13634bbe6)
-- [Claude Codeを実際のプロジェクトにうまく適用させていくTips10選 - Qiita](https://qiita.com/nokonoko_1203/items/67f8692a0a3ca7e621f3)
+- [Claude Codeの「すぐルール忘れる問題」を解決する超効果的な方法を見つけた気がする](https://zenn.dev/sesere/articles/0420ecec9526dc)
 - [「アホのファイル転送(PC2台をLANケーブルで直結)」→実はデータ移行ではワイヤレート近くが出るので便利「仕事でoutlookのファイルサイズが異常に大きい客が居た時に有用」](https://togetter.com/li/2569663)
-- [Markdownで書いた社内ドキュメント、どう共有してる？ AWSで構築するセキュアな自動公開パイプライン](https://zenn.dev/nttdata_tech/articles/1c945dd56b374e)
+- [プレゼン動画自動生成ツール Mulmocast を使う](https://zenn.dev/open_developers/articles/87928c78f98210)
+- [授業参観に行ったらネットリテラシー講座がセキュリティソフトの営業会場になっていた話](https://togetter.com/li/2569535)
+- [フルスタックエンジニアの終焉？生成AI後の未来を産業史から考える - arclamp](https://arclamp.hatenablog.com/entry/2025/06/26/213143)
 
 
 ---
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（新着）"> はてなブックマーク - IT（新着）
 
-- [フルスタックエンジニアの終焉？生成AI後の未来を産業史から考える - arclamp](https://arclamp.hatenablog.com/entry/2025/06/26/213143)
-- [Drag-and-Drop LLMs: Zero-Shot Prompt-to-Weights](https://arxiv.org/abs/2506.16406)
-- [GitHub - kign/c4wa: A simplified subset of C transpiled into Web Assembly](https://github.com/kign/c4wa)
-- [Route 53 プライベートホストゾーンへオンプレミスの DNS サーバーからサブドメインを委任できるようになったので試してみた - Qiita](https://qiita.com/takeda_h/items/b56718ee53fcbbf5740b)
-- [最大の差別化要因はWebAssemblyの採用 ―― Fastly共同創業者Tyler McMullen氏に聞く次世代CDNの最前線 | gihyo.jp](https://gihyo.jp/article/2025/06/fastly-tyler-mcmullen)
+- [論文内に秘密の命令文、AIに「高評価せよ」　日韓米など有力14大学で - 日本経済新聞](https://www.nikkei.com/article/DGXZQOUC13BCW0T10C25A6000000/)
+- [「Windows 11 バージョン 25H2」のテストが開始、正式リリースは2025年後半／次期機能更新プログラム、「バージョン 24H2」とはコード共通で「eKB」による切り替え](https://forest.watch.impress.co.jp/docs/news/2026720.html)
+- [なぜ今、研究者はGeminiを選ぶべきか？他のAIとの比較で見る10のメリット｜genkAIjokyo|ChatGPT/Claudeで論文作成と科研費申請](https://note.com/genkaijokyo/n/nfb96a13e084f)
+- [Visual Studio CodeのAIエディタ化が前進、GitHub Copilot Chatがオープンソースで公開。現在プレリリース版](https://www.publickey1.jp/blog/25/visual_studio_codeaigithub_copilot_chat.html)
+- [GitHub - microsoft/vscode-copilot-chat: Copilot Chat extension for VS Code](https://github.com/microsoft/vscode-copilot-chat)
 
 
 ---
 ## <img src="https://dev.classmethod.jp/favicon.ico" width="16" height="16" alt="DevelopersIO"> DevelopersIO
 
-- [[セッションレポート] 制作現場が変わる！アニメ・ゲーム・ CG/VFX なお客様に贈るクラウドコンテンツ制作入門（AWS-64）#AWSSummit](https://dev.classmethod.jp/articles/202506-aws-summit-2025-aws-64/)
-- [[セッションレポート] 公共機関におけるクラウドレジリエンス ～障害からより早く回復するシステムの作り方～（AWS-37）#AWSSummit](https://dev.classmethod.jp/articles/202506-aws-summit-2025-aws-37/)
-- [【ブースレポート】AWS Supply Chainのデモを見てきた #AWSSummit](https://dev.classmethod.jp/articles/shoma-booth-report-demo-aws-supply-chain-awssummit/)
-- [Dagsterとdbt CoreをECS on Fargateで構築する](https://dev.classmethod.jp/articles/dagster-dbt-core-ecs-sample/)
-- [[作ってみた] レシートプリンター付きデバイスを使ってメモを出してみた](https://dev.classmethod.jp/articles/dev-receipt-printer-device-memo-output-maruto/)
+- [AWS WAF 新コンソールの「保護パック」を新規作成する時に、何をどう選択したら良いのか調べてみた](https://dev.classmethod.jp/articles/waf-protection-pack/)
+- [Amazon Connect Customer Profilesに登録された全顧客の一覧を取得する方法](https://dev.classmethod.jp/articles/amazon-connect-customer-profiles-profile-list/)
+- [[アップデート] Amazon CloudWatch の運用調査機能が一般提供を開始したため、概要をまとめてみた](https://dev.classmethod.jp/articles/ga-accelerate-troubleshooting-amazon-cloudwatch-investigations/)
+- [Amazon Q CLIで鉄鉱石採掘体験ゲームを作ってみた #AmazonQCLI](https://dev.classmethod.jp/articles/amazon-q-cli-mini-factrio/)
+- [Amazon Connect アウトバウンドキャンペーンが東京リージョンで利用可能になりました](https://dev.classmethod.jp/articles/amazon-connect-outbound-campaigns-three-regions/)
 
 
 ---
@@ -111,21 +111,22 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://connpass.com/favicon.ico" width="16" height="16" alt="connpass - イベント"> connpass - イベント
 
+- [ハードウェア技術誌を読もう：トランジスタ技術最新号よみあわせ解説会(2025年9月号)](https://engineercafe.connpass.com/event/360029/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [ハードウェア技術誌を読もう：トランジスタ技術最新号よみあわせ解説会(2025年8月号)](https://engineercafe.connpass.com/event/360005/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [第103回 Machine Learning 15minutes! Hybrid](https://machine-learning15minutes.connpass.com/event/360928/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [Arduino Uno R4ボードを設計しようプロジェクト #1](https://engineercafe.connpass.com/event/358631/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [第131回 なごや個人開発者の集い](https://758indies.connpass.com/event/360927/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [『初級ウクライナ語文法』勉強会(17)](https://elem-ukrainian.connpass.com/event/360925/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [Shikumi.rb #7](https://shikumirb.connpass.com/event/360924/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [Tidy First?会読会 第4回](https://xpreadinggroup.connpass.com/event/360917/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [【限定5名増枠】英語LT会【テーマ：開発生産性】Japanglish Tech Talk#6](https://japanglish.connpass.com/event/360913/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [Djangoもくもく会: 7回目](https://pythonista-books.connpass.com/event/360904/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [第52回CITPコミュニティ定例会](https://connpass.com/event/360908/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [誰でも参加OK！_朝活_もくもく会](https://routine-link.connpass.com/event/360902/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [PHPer酒巡り2025 vol1  神戸・灘の日本酒](https://connpass.com/event/360306/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [甲斐国もくもく会 #17 (甲府/オンライン)](https://kainokuni.connpass.com/event/353980/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [【聞き専歓迎】書籍「組織を芯からアジャイルにする」ABD読書会 第7回](https://shin-agile.connpass.com/event/360863/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [第110回CoderDojo 浜松（2025年7月）](https://coderdojo-hamamatsu.connpass.com/event/359293/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [北千住もくもく作業・勉強部屋](https://kitasenju-verystrong.connpass.com/event/360890/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 
 
 ---
 ## <img src="https://techplay.jp/favicon.ico" width="16" height="16" alt="TECH PLAY - イベント"> TECH PLAY - イベント
 
+- [SnowVillage Unconference #6　– 初心者大歓迎！聞き専/飛入登壇, ご自由なスタイルで！](https://techplay.jp/event/983108)
 - [7/11(金)開催　初心者でもわかる基本用語解説セミナー](https://techplay.jp/event/983102)
 - [Instagram×LINEで売上130%UP ～フォロワーの価値を最大化させる3つのポイント～](https://techplay.jp/event/983101)
 - [07/05 Power BI 実演ライブ #9｜米の消費/需給データ](https://techplay.jp/event/983084)
@@ -135,7 +136,6 @@ https://unsolublesugar.github.io/daily-tech-news/
 - [AWS Discovery Day 2025 in Winスクール](https://techplay.jp/event/982852)
 - [独学もオンラインも無理だから「永田町Pythonミニキャンプ」【5日間5万円】](https://techplay.jp/event/983086)
 - [【オンライン参加OK！】インフラエンジニア向けキャリア勉強会](https://techplay.jp/event/982897)
-- [【無料SEOウェビナー】［7/９開催］AI時代のマーケティング変革 -今はじめる準備が未来を決める- [参加者特典あり]](https://techplay.jp/event/983065)
 
 
 ---
