@@ -271,13 +271,13 @@
     </div>
   </div>
 </a>
-<a href="https://zenn.dev/dress_code/articles/a99ff13634bbe6" style="text-decoration: none; color: inherit;">
+<a href="https://note.com/mmmiyama/n/n9fa6839beb06" style="text-decoration: none; color: inherit;">
   <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
     <div style="display: flex; align-items: flex-start; gap: 15px;">
-      <img src="https://res.cloudinary.com/zenn/image/upload/s--lInfj4Gj--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2582%25BF%25E3%2583%25BC%25E3%2583%259F%25E3%2583%258A%25E3%2583%25AB%25E3%2582%2592%25E4%25BD%25BF%25E3%2581%2586%25E4%25BA%25BA%25E3%2581%25AF%25E3%2580%2581%25E3%2581%25A8%25E3%2582%258A%25E3%2581%2582%25E3%2581%2588%25E3%2581%259A%25E3%2580%258Cmise%25E3%2580%258D%25E3%2582%2592%25E5%2585%25A5%25E3%2582%258C%25E3%2581%25A6%25E3%2581%258A%25E3%2581%258F%25E6%2599%2582%25E4%25BB%25A3%25E3%2580%2582%25E3%2580%2580%25E3%2580%2580%25E3%2583%25BB%25E3%2583%25BB%25E3%2583%25BB%25E3%2582%2592%25E5%25A4%25A2%25E8%25A6%258B%25E3%2581%25A6%25E3%2580%2582%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:%25E3%2581%25BD%25E3%2582%2593%25E3%2581%2593%25E3%2581%25A4%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B8%25E3%2583%258B%25E3%2582%25A2%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzRiOGMxZmU1MDUuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:DRESS%2520CODE%2520TECH%2520BLOG%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzliYjdlODc0YzIuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="ターミナルを使う人は、とりあえず「mise」を入れておく時代。　　・・・を夢見て。" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <img src="https://assets.st-note.com/production/uploads/images/198712487/rectangle_large_type_2_5f1a4e558d486194e3c571ea41e519e1.jpeg?fit=bounds&quality=85&width=1280" width="120" height="90" alt="プログラミング1ミリも分からない人がGemini CLI始めるまでの全手順（Win篇）｜ミヤマ｜営業部にいるデザイナー" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
       <div style="flex: 1;">
         <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
-          ターミナルを使う人は、とりあえず「mise」を入れておく時代。　　・・・を夢見て。
+          プログラミング1ミリも分からない人がGemini CLI始めるまでの全手順（Win篇）｜ミヤマ｜営業部にいるデザイナー
         </h4>
         <p style="margin: 0; font-size: 12px; color: #656d76;">
           はてなブックマーク - IT
@@ -286,13 +286,13 @@
     </div>
   </div>
 </a>
-<a href="https://note.com/mmmiyama/n/n9fa6839beb06" style="text-decoration: none; color: inherit;">
+<a href="https://zenn.dev/dress_code/articles/a99ff13634bbe6" style="text-decoration: none; color: inherit;">
   <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
     <div style="display: flex; align-items: flex-start; gap: 15px;">
-      <img src="https://assets.st-note.com/production/uploads/images/198712487/rectangle_large_type_2_5f1a4e558d486194e3c571ea41e519e1.jpeg?fit=bounds&quality=85&width=1280" width="120" height="90" alt="プログラミング1ミリも分からない人がGemini CLI始めるまでの全手順（Win篇）｜ミヤマ｜営業部にいるデザイナー" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <img src="https://res.cloudinary.com/zenn/image/upload/s--lInfj4Gj--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2582%25BF%25E3%2583%25BC%25E3%2583%259F%25E3%2583%258A%25E3%2583%25AB%25E3%2582%2592%25E4%25BD%25BF%25E3%2581%2586%25E4%25BA%25BA%25E3%2581%25AF%25E3%2580%2581%25E3%2581%25A8%25E3%2582%258A%25E3%2581%2582%25E3%2581%2588%25E3%2581%259A%25E3%2580%258Cmise%25E3%2580%258D%25E3%2582%2592%25E5%2585%25A5%25E3%2582%258C%25E3%2581%25A6%25E3%2581%258A%25E3%2581%258F%25E6%2599%2582%25E4%25BB%25A3%25E3%2580%2582%25E3%2580%2580%25E3%2580%2580%25E3%2583%25BB%25E3%2583%25BB%25E3%2583%25BB%25E3%2582%2592%25E5%25A4%25A2%25E8%25A6%258B%25E3%2581%25A6%25E3%2580%2582%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:%25E3%2581%25BD%25E3%2582%2593%25E3%2581%2593%25E3%2581%25A4%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B8%25E3%2583%258B%25E3%2582%25A2%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzRiOGMxZmU1MDUuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:DRESS%2520CODE%2520TECH%2520BLOG%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzliYjdlODc0YzIuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="ターミナルを使う人は、とりあえず「mise」を入れておく時代。　　・・・を夢見て。" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
       <div style="flex: 1;">
         <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
-          プログラミング1ミリも分からない人がGemini CLI始めるまでの全手順（Win篇）｜ミヤマ｜営業部にいるデザイナー
+          ターミナルを使う人は、とりあえず「mise」を入れておく時代。　　・・・を夢見て。
         </h4>
         <p style="margin: 0; font-size: 12px; color: #656d76;">
           はてなブックマーク - IT
