@@ -1,18 +1,23 @@
 # 毎日のテックニュース (2025-06-29)
 
-📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
+📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/)
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
 
+## 🎨 カード表示版もあります
+
+GitHub Pages版では各記事がカード形式で見やすく表示されます：  
+https://unsolublesugar.github.io/daily-tech-news/
+
 ## 📡 RSSフィード配信中
 
-このニュースはRSSフィードでも配信しています。お使いのRSSリーダーで以下のURLを購読してください：
+このニュースはRSSフィードでも配信しています。  
+お使いのRSSリーダーで以下のURLを購読してください：
 
 **RSS URL:** `https://unsolublesugar.github.io/daily-tech-news/rss.xml`
 
 - 毎日JST 7:00に自動更新
 - 各フィードから5件ずつ厳選記事を配信
-- カード型レイアウトで読みやすく表示
 
 ---
 ## 💻 Tech Blog Weekly
