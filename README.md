@@ -1,23 +1,15 @@
 # 今日のテックニュース (2025-06-29)
 
-📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/)
+📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/)
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
+
+※毎日JST 7:00に自動更新
 
 ## 🎨 カード表示版もあります
 
 GitHub Pages版では各記事がカード形式で見やすく表示されます：  
 https://unsolublesugar.github.io/daily-tech-news/
-
-## 📡 RSSフィード配信中
-
-このニュースはRSSフィードでも配信しています。  
-お使いのRSSリーダーで以下のURLを購読してください：
-
-**RSS URL:** `https://unsolublesugar.github.io/daily-tech-news/rss.xml`
-
-- 毎日JST 7:00に自動更新
-- 技術記事は各フィードから5件、イベント情報は10件ずつ厳選配信
 
 ---
 ## 💻 Tech Blog Weekly
@@ -65,8 +57,8 @@ https://unsolublesugar.github.io/daily-tech-news/
 - [GitHub - kign/c4wa: A simplified subset of C transpiled into Web Assembly](https://github.com/kign/c4wa)
 - [Route 53 プライベートホストゾーンへオンプレミスの DNS サーバーからサブドメインを委任できるようになったので試してみた - Qiita](https://qiita.com/takeda_h/items/b56718ee53fcbbf5740b)
 - [最大の差別化要因はWebAssemblyの採用 ―― Fastly共同創業者Tyler McMullen氏に聞く次世代CDNの最前線 | gihyo.jp](https://gihyo.jp/article/2025/06/fastly-tyler-mcmullen)
+- [プレゼン動画自動生成ツール Mulmocast を使う](https://zenn.dev/open_developers/articles/87928c78f98210)
 - [Markdownで書いた社内ドキュメント、どう共有してる？ AWSで構築するセキュアな自動公開パイプライン](https://zenn.dev/nttdata_tech/articles/1c945dd56b374e)
-- [o3 MCPでClaude Codeが最強の検索力を手に入れた](https://share.google/5GQ578Rnl5nQgxxj0)
 
 
 ---
