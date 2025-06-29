@@ -17,7 +17,7 @@ https://unsolublesugar.github.io/daily-tech-news/
 **RSS URL:** `https://unsolublesugar.github.io/daily-tech-news/rss.xml`
 
 - 毎日JST 7:00に自動更新
-- 各フィードから5件ずつ厳選記事を配信
+- 技術記事は各フィードから5件、イベント情報は10件ずつ厳選配信
 
 ---
 ## 💻 Tech Blog Weekly
