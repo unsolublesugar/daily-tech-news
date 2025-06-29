@@ -1,6 +1,6 @@
 # 今日のテックニュース (2025-06-30)
 
-📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/)
+📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
 
@@ -44,6 +44,7 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（人気）"> はてなブックマーク - IT（人気）
 
+- [Claude Codeの「すぐルール忘れる問題」を解決する超効果的な方法を見つけた気がする](https://zenn.dev/sesere/articles/0420ecec9526dc)
 - [「先週何したっけ？」をゼロに：Obsidian + Claude Codeを業務アシスタントに - エムスリーテックブログ](https://www.m3tech.blog/entry/2025/06/29/110000)
 - [論文内に秘密の命令文、AIに「高評価せよ」　日韓米など有力14大学で - 日本経済新聞](https://www.nikkei.com/article/DGXZQOUC13BCW0T10C25A6000000/)
 - [「アホのファイル転送(PC2台をLANケーブルで直結)」→実はデータ移行ではワイヤレート近くが出るので便利「仕事でoutlookのファイルサイズが異常に大きい客が居た時に有用」](https://togetter.com/li/2569663)
