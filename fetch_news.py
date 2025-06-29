@@ -239,14 +239,15 @@ def generate_html(all_entries, feed_info, date_str):
 def generate_markdown(all_entries, feed_info, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
     markdown = f"# 毎日のテックニュース ({date_str})\n\n"
-    markdown += "📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)\n\n"
+    markdown += "📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/)\n\n"
     markdown += "日本の主要な技術系メディアの最新人気エントリーをお届けします。\n\n"
+    markdown += "## 🎨 カード表示版もあります\n\n"
+    markdown += "GitHub Pages版では各記事がカード形式で見やすく表示されます：  \nhttps://unsolublesugar.github.io/daily-tech-news/\n\n"
     markdown += "## 📡 RSSフィード配信中\n\n"
-    markdown += "このニュースはRSSフィードでも配信しています。お使いのRSSリーダーで以下のURLを購読してください：\n\n"
+    markdown += "このニュースはRSSフィードでも配信しています。  \nお使いのRSSリーダーで以下のURLを購読してください：\n\n"
     markdown += "**RSS URL:** `https://unsolublesugar.github.io/daily-tech-news/rss.xml`\n\n"
     markdown += "- 毎日JST 7:00に自動更新\n"
-    markdown += "- 各フィードから5件ずつ厳選記事を配信\n"
-    markdown += "- カード型レイアウトで読みやすく表示\n\n---\n"
+    markdown += "- 各フィードから5件ずつ厳選記事を配信\n\n---\n"
 
     for feed_name, entries in all_entries.items():
         favicon = feed_info[feed_name]["favicon"]
@@ -264,53 +265,8 @@ def generate_markdown(all_entries, feed_info, date_str):
                 title = entry.title
                 link = entry.link
                 
-                # 全記事をカード型レイアウトで表示
-                print(f"Fetching thumbnail for: {title[:50]}...")
-                thumbnail_url = get_article_thumbnail(link)
-                
-                # タイトルをHTMLエスケープ
-                escaped_title = title.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
-                
-                if thumbnail_url:
-                    # 画像URLをHTMLエスケープ
-                    escaped_url = thumbnail_url.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
-                    
-                    # 画像付きカード型レイアウト（全体がクリック可能）
-                    card_html = f"""
-<a href="{link}" style="text-decoration: none; color: inherit;">
-  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
-    <div style="display: flex; align-items: flex-start; gap: 15px;">
-      <img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
-      <div style="flex: 1;">
-        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
-          {title}
-        </h4>
-        <p style="margin: 0; font-size: 12px; color: #656d76;">
-          {feed_name}
-        </p>
-      </div>
-    </div>
-  </div>
-</a>"""
-                else:
-                    # 画像なしカード型レイアウト（全体がクリック可能）
-                    card_html = f"""
-<a href="{link}" style="text-decoration: none; color: inherit;">
-  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
-    <div style="display: flex; align-items: flex-start; gap: 15px;">
-      <div style="flex: 1;">
-        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
-          {title}
-        </h4>
-        <p style="margin: 0; font-size: 12px; color: #656d76;">
-          {feed_name}
-        </p>
-      </div>
-    </div>
-  </div>
-</a>"""
-                
-                markdown += card_html
+                # シンプルなリンク形式で表示
+                markdown += f"- [{title}]({link})\n"
         
         markdown += "\n\n---\n"
     
