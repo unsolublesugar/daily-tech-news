@@ -47,18 +47,18 @@ https://unsolublesugar.github.io/daily-tech-news/
 - [プログラミング1ミリも分からない人がGemini CLI始めるまでの全手順（Win篇）｜ミヤマ｜営業部にいるデザイナー](https://note.com/mmmiyama/n/n9fa6839beb06)
 - [ターミナルを使う人は、とりあえず「mise」を入れておく時代。　　・・・を夢見て。](https://zenn.dev/dress_code/articles/a99ff13634bbe6)
 - [Claude Codeを実際のプロジェクトにうまく適用させていくTips10選 - Qiita](https://qiita.com/nokonoko_1203/items/67f8692a0a3ca7e621f3)
+- [「アホのファイル転送(PC2台をLANケーブルで直結)」→実はデータ移行ではワイヤレート近くが出るので便利「仕事でoutlookのファイルサイズが異常に大きい客が居た時に有用」](https://togetter.com/li/2569663)
 - [Markdownで書いた社内ドキュメント、どう共有してる？ AWSで構築するセキュアな自動公開パイプライン](https://zenn.dev/nttdata_tech/articles/1c945dd56b374e)
-- [孫正義「4.8兆円で超知能（ASI）の胴元になる」株主総会書き起こし - エンジニアtype | 転職type](https://type.jp/et/feature/28743/)
 
 
 ---
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（新着）"> はてなブックマーク - IT（新着）
 
-- [「アホのファイル転送(PC2台をLANケーブルで直結)」→実はデータ移行ではワイヤレート近くが出るので便利「仕事でoutlookのファイルサイズが異常に大きい客が居た時に有用」](https://togetter.com/li/2569663)
 - [GitHub - kign/c4wa: A simplified subset of C transpiled into Web Assembly](https://github.com/kign/c4wa)
 - [Route 53 プライベートホストゾーンへオンプレミスの DNS サーバーからサブドメインを委任できるようになったので試してみた - Qiita](https://qiita.com/takeda_h/items/b56718ee53fcbbf5740b)
 - [最大の差別化要因はWebAssemblyの採用 ―― Fastly共同創業者Tyler McMullen氏に聞く次世代CDNの最前線 | gihyo.jp](https://gihyo.jp/article/2025/06/fastly-tyler-mcmullen)
 - [プレゼン動画自動生成ツール Mulmocast を使う](https://zenn.dev/open_developers/articles/87928c78f98210)
+- [o3 MCPでClaude Codeが最強の検索力を手に入れた](https://share.google/5GQ578Rnl5nQgxxj0)
 
 
 ---
