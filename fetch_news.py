@@ -14,17 +14,53 @@ FEEDS = {
         "url": "https://yamadashy.github.io/tech-blog-rss-feed/feeds/rss.xml",
         "favicon": "💻"
     },
-    "Qiita": {
-        "url": "https://qiita.com/popular-items/feed", 
-        "favicon": "https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico"
-    },
     "Zenn": {
         "url": "https://zenn.dev/feed",
         "favicon": "https://zenn.dev/favicon.ico"
     },
-    "はてなブックマーク - IT": {
+    "Qiita": {
+        "url": "https://qiita.com/popular-items/feed", 
+        "favicon": "https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico"
+    },
+    "はてなブックマーク - IT（人気）": {
         "url": "http://b.hatena.ne.jp/hotentry/it.rss",
         "favicon": "https://b.hatena.ne.jp/favicon.ico"
+    },
+    "はてなブックマーク - IT（新着）": {
+        "url": "https://b.hatena.ne.jp/entrylist/it.rss",
+        "favicon": "https://b.hatena.ne.jp/favicon.ico"
+    },
+    "DevelopersIO": {
+        "url": "https://dev.classmethod.jp/feed/",
+        "favicon": "https://dev.classmethod.jp/favicon.ico"
+    },
+    "gihyo.jp": {
+        "url": "https://gihyo.jp/dev/feed/rss2",
+        "favicon": "https://gihyo.jp/favicon.ico"
+    },
+    "Publickey": {
+        "url": "https://www.publickey1.jp/atom.xml",
+        "favicon": "https://www.publickey1.jp/favicon.ico"
+    },
+    "CodeZine": {
+        "url": "https://codezine.jp/rss/new/20/index.xml",
+        "favicon": "https://codezine.jp/favicon.ico"
+    },
+    "InfoQ Japan": {
+        "url": "https://feed.infoq.com/jp",
+        "favicon": "https://www.infoq.com/favicon.ico"
+    },
+    "connpass - イベント": {
+        "url": "https://connpass.com/explore/ja.atom",
+        "favicon": "https://connpass.com/favicon.ico"
+    },
+    "TECH PLAY - イベント": {
+        "url": "https://rss.techplay.jp/event/w3c-rss-format/rss.xml",
+        "favicon": "https://techplay.jp/favicon.ico"
+    },
+    "O'Reilly Japan - 近刊": {
+        "url": "https://www.oreilly.co.jp/catalog/soon.xml",
+        "favicon": "https://www.oreilly.co.jp/favicon.ico"
     }
 }
 
@@ -212,7 +248,9 @@ def generate_html(all_entries, feed_info, date_str):
         if not entries:
             html += "    <p>記事を取得できませんでした。</p>\n"
         else:
-            for entry in entries[:MAX_ENTRIES]:
+            # イベント情報は10件、その他は5件に制限
+            limit = 10 if "イベント" in feed_name else MAX_ENTRIES
+            for entry in entries[:limit]:
                 title = entry.title
                 link = entry.link
                 
@@ -261,7 +299,9 @@ def generate_markdown(all_entries, feed_info, date_str):
         if not entries:
             markdown += "記事を取得できませんでした。\n"
         else:
-            for entry in entries[:MAX_ENTRIES]:
+            # イベント情報は10件、その他は5件に制限
+            limit = 10 if "イベント" in feed_name else MAX_ENTRIES
+            for entry in entries[:limit]:
                 title = entry.title
                 link = entry.link
                 
@@ -394,7 +434,9 @@ def generate_rss_feed(all_entries, feed_info, date_obj):
         else:
             favicon_display = f'{favicon} '
             
-        for entry in entries[:5]:  # RSSでは各フィード5件に制限
+        # イベント情報は10件、その他は5件に制限
+        limit = 10 if "イベント" in feed_name else 5
+        for entry in entries[:limit]:
             item = ET.SubElement(channel, 'item')
             ET.SubElement(item, 'title').text = f'{favicon_display}{entry.title}'
             ET.SubElement(item, 'link').text = entry.link
