@@ -8,6 +8,8 @@ import requests
 from bs4 import BeautifulSoup
 import time
 import re
+from concurrent.futures import ThreadPoolExecutor
+import concurrent.futures
 
 # 取得するRSSフィードのリスト（ファビコン付き）
 FEEDS = {
@@ -246,7 +248,42 @@ def deduplicate_urls_across_feeds(all_entries):
     
     return deduplicated_feeds
 
-def generate_html(all_entries, feed_info, date_str):
+def fetch_all_thumbnails(all_entries, max_workers=10):
+    """全フィードの全記事のサムネイルを並列取得"""
+    # 全記事のURLリストを作成
+    all_urls = []
+    for entries in all_entries.values():
+        all_urls.extend([entry.link for entry in entries])
+    
+    print(f"Fetching thumbnails for {len(all_urls)} articles in parallel...")
+    
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        # 全URLに対して並列でサムネイル取得を実行
+        future_to_url = {
+            executor.submit(get_article_thumbnail, url): url 
+            for url in all_urls
+        }
+        
+        thumbnails = {}
+        completed = 0
+        total = len(all_urls)
+        
+        # 完了した処理から順次結果を取得
+        for future in concurrent.futures.as_completed(future_to_url):
+            url = future_to_url[future]
+            completed += 1
+            
+            try:
+                thumbnail_url = future.result(timeout=15)
+                thumbnails[url] = thumbnail_url
+                print(f"Progress: {completed}/{total} thumbnails fetched")
+            except Exception as e:
+                print(f"Error fetching thumbnail for {url}: {e}")
+                thumbnails[url] = None
+                
+    return thumbnails
+
+def generate_html(all_entries, feed_info, date_str, thumbnails=None):
     """取得したエントリーからHTMLコンテンツを生成する"""
     html = f"""<!DOCTYPE html>
 <html lang="ja">
@@ -367,8 +404,8 @@ def generate_html(all_entries, feed_info, date_str):
                 title = entry.title
                 link = entry.link
                 
-                print(f"Fetching thumbnail for: {title[:50]}...")
-                thumbnail_url = get_article_thumbnail(link)
+                # 事前取得済みのサムネイルを使用
+                thumbnail_url = thumbnails.get(link) if thumbnails else None
                 
                 escaped_title = title.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
                 
@@ -581,6 +618,7 @@ def save_rss_feed(rss_element):
     print("RSS feed generated: rss.xml")
 
 if __name__ == "__main__":
+    script_start_time = time.time()
     today = datetime.date.today()
     
     all_entries = {}
@@ -593,11 +631,17 @@ if __name__ == "__main__":
     print("Removing duplicate URLs across feeds...")
     all_entries = deduplicate_urls_across_feeds(all_entries)
     
+    # 🚀 全サムネイルを並列取得（大幅高速化）
+    start_time = time.time()
+    thumbnails = fetch_all_thumbnails(all_entries)
+    thumbnail_time = time.time() - start_time
+    print(f"Thumbnail fetching completed in {thumbnail_time:.2f} seconds")
+    
     # Markdownコンテンツ生成
     markdown_content = generate_markdown(all_entries, FEEDS, today.isoformat())
     
-    # HTMLコンテンツ生成
-    html_content = generate_html(all_entries, FEEDS, today.isoformat())
+    # HTMLコンテンツ生成（事前取得済みサムネイルを使用）
+    html_content = generate_html(all_entries, FEEDS, today.isoformat(), thumbnails)
     
     # アーカイブに保存
     archive_file = save_to_archive(markdown_content, today)
@@ -622,4 +666,6 @@ if __name__ == "__main__":
     rss_feed = generate_rss_feed(all_entries, FEEDS, today)
     save_rss_feed(rss_feed)
         
+    total_time = time.time() - script_start_time
     print(f"Successfully updated README.md, index.html, archive structure, and RSS feed.")
+    print(f"Total execution time: {total_time:.2f} seconds (thumbnail fetching: {thumbnail_time:.2f}s)")

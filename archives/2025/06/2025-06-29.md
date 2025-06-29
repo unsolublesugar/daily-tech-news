@@ -22,11 +22,11 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## 💻 Tech Blog Weekly
 
+- [AWS Summit Japan 2025に参加してGitLab Duo with Amazon Qのセッションを聞いてきた | APC 技術ブログ](https://techblog.ap-com.co.jp/entry/2025/06/29/150245)
 - [「先週何したっけ？」をゼロに：Obsidian + Claude Codeを業務アシスタントに | エムスリーテックブログ](https://www.m3tech.blog/entry/2025/06/29/110000)
 - [新卒1年目が挑む！！十数万リクエストに耐える Contextual Bandit を用いたレコメンドシステムの構築 ~ バックエンド編 ~ | CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ](https://developers.cyberagent.co.jp/blog/archives/57070/)
 - [20日で鍛える読解力：Day14｜「なんか引っかかる」を見逃さない | SHIFT Group 技術ブログ](https://note.shiftinc.jp/n/ndb8b94f1fc7e)
 - [生成AIは「共感」を教えられるか？マルチエージェントが拓く医療コミュニケーションの新たな地平 | APC 技術ブログ](https://techblog.ap-com.co.jp/entry/2025/06/29/074701)
-- [Mercedes-Benzが実践するクロスクラウドData Mesh：Delta SharingとUniFormで実現するコスト効率とデータ連携 | APC 技術ブログ](https://techblog.ap-com.co.jp/entry/2025/06/29/074607)
 
 
 ---
@@ -119,12 +119,12 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://connpass.com/favicon.ico" width="16" height="16" alt="connpass - イベント"> connpass - イベント
 
+- [【聞き専歓迎】書籍「組織を芯からアジャイルにする」ABD読書会 第7回](https://shin-agile.connpass.com/event/360863/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [第110回CoderDojo 浜松（2025年7月）](https://coderdojo-hamamatsu.connpass.com/event/359293/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [北千住もくもく作業・勉強部屋](https://kitasenju-verystrong.connpass.com/event/360890/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [YUMEMI × やさしい Swift 勉強会 #547 #yumemi_grow](https://yasashii-swift.connpass.com/event/360729/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [朝活もくもく会 #23](https://zitox.connpass.com/event/360889/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [「競技プログラミングの鉄則」読書会 #11](https://study-group.connpass.com/event/360880/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [DevOpsDays ビデオ鑑賞会 #15](https://agiledevs.connpass.com/event/360881/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 
 
 ---
