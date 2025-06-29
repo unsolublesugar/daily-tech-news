@@ -771,16 +771,12 @@ def generate_rss_feed(all_entries, feed_info, date_obj):
     
     # 各フィードからアイテムを追加
     for feed_name, entries in all_entries.items():
-        favicon = feed_info[feed_name]["favicon"]
-        if favicon.startswith("http"):
-            favicon_display = f'<img src="{favicon}" width="16" height="16" alt="{feed_name}"> '
-        else:
-            favicon_display = f'{favicon} '
-            
         # エントリーはすでにURL重複除去済み
         for entry in entries:
             item = ET.SubElement(channel, 'item')
-            ET.SubElement(item, 'title').text = f'{favicon_display}{entry.title}'
+            # RSSタイトルはプレーンテキストのみ（HTMLタグや絵文字を除去）
+            clean_title = re.sub(r'<[^>]+>', '', entry.title)  # HTMLタグを除去
+            ET.SubElement(item, 'title').text = clean_title
             ET.SubElement(item, 'link').text = entry.link
             ET.SubElement(item, 'description').text = f'{feed_name}からの記事: {entry.title}'
             ET.SubElement(item, 'guid').text = entry.link
