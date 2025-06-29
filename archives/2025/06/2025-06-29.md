@@ -119,6 +119,7 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://connpass.com/favicon.ico" width="16" height="16" alt="connpass - イベント"> connpass - イベント
 
+- [誰でも参加OK！_朝活_もくもく会](https://routine-link.connpass.com/event/360902/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [PHPer酒巡り2025 vol1  神戸・灘の日本酒](https://connpass.com/event/360306/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [甲斐国もくもく会 #17 (甲府/オンライン)](https://kainokuni.connpass.com/event/353980/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [【聞き専歓迎】書籍「組織を芯からアジャイルにする」ABD読書会 第7回](https://shin-agile.connpass.com/event/360863/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
