@@ -56,9 +56,9 @@ https://unsolublesugar.github.io/daily-tech-news/
 
 - [「アホのファイル転送(PC2台をLANケーブルで直結)」→実はデータ移行ではワイヤレート近くが出るので便利「仕事でoutlookのファイルサイズが異常に大きい客が居た時に有用」](https://togetter.com/li/2569663)
 - [GitHub - kign/c4wa: A simplified subset of C transpiled into Web Assembly](https://github.com/kign/c4wa)
+- [『現状のAIが全然使い物にならないのは、非常に正しくて、そして間違っている。』へのコメント](https://b.hatena.ne.jp/entry/s/anond.hatelabo.jp/20250628122821)
 - [Route 53 プライベートホストゾーンへオンプレミスの DNS サーバーからサブドメインを委任できるようになったので試してみた - Qiita](https://qiita.com/takeda_h/items/b56718ee53fcbbf5740b)
 - [最大の差別化要因はWebAssemblyの採用 ―― Fastly共同創業者Tyler McMullen氏に聞く次世代CDNの最前線 | gihyo.jp](https://gihyo.jp/article/2025/06/fastly-tyler-mcmullen)
-- [プレゼン動画自動生成ツール Mulmocast を使う](https://zenn.dev/open_developers/articles/87928c78f98210)
 
 
 ---
@@ -111,6 +111,8 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://connpass.com/favicon.ico" width="16" height="16" alt="connpass - イベント"> connpass - イベント
 
+- [Djangoもくもく会: 7回目](https://pythonista-books.connpass.com/event/360904/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [第52回CITPコミュニティ定例会](https://connpass.com/event/360908/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [誰でも参加OK！_朝活_もくもく会](https://routine-link.connpass.com/event/360902/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [PHPer酒巡り2025 vol1  神戸・灘の日本酒](https://connpass.com/event/360306/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [甲斐国もくもく会 #17 (甲府/オンライン)](https://kainokuni.connpass.com/event/353980/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)

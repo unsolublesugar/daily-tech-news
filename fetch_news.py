@@ -10,6 +10,8 @@ import time
 import re
 from concurrent.futures import ThreadPoolExecutor
 import concurrent.futures
+import json
+import hashlib
 
 # 取得するRSSフィードのリスト（ファビコン付き）
 FEEDS = {
@@ -69,6 +71,113 @@ FEEDS = {
 
 # 各フィードから取得する記事の件数
 MAX_ENTRIES = 5
+
+class ThumbnailCache:
+    """サムネイルキャッシュを管理するクラス"""
+    
+    def __init__(self, cache_file_path="thumbnail_cache.json"):
+        """
+        キャッシュクラスの初期化
+        
+        Args:
+            cache_file_path (str): キャッシュファイルのパス
+        """
+        self.cache_file_path = cache_file_path
+        self.cache = self._load_cache()
+    
+    def _load_cache(self):
+        """キャッシュファイルから既存のデータを読み込む"""
+        try:
+            if os.path.exists(self.cache_file_path):
+                with open(self.cache_file_path, 'r', encoding='utf-8') as f:
+                    return json.load(f)
+        except Exception as e:
+            print(f"Warning: Failed to load thumbnail cache: {e}")
+        
+        return {}
+    
+    def _save_cache(self):
+        """キャッシュデータをファイルに保存する"""
+        try:
+            with open(self.cache_file_path, 'w', encoding='utf-8') as f:
+                json.dump(self.cache, f, ensure_ascii=False, indent=2)
+        except Exception as e:
+            print(f"Warning: Failed to save thumbnail cache: {e}")
+    
+    def _get_url_hash(self, url):
+        """URLのハッシュ値を生成してキャッシュキーとする"""
+        return hashlib.md5(url.encode('utf-8')).hexdigest()
+    
+    def get(self, url):
+        """
+        キャッシュからサムネイルURLを取得
+        
+        Args:
+            url (str): 記事URL
+            
+        Returns:
+            str or None: キャッシュされたサムネイルURL、またはNone
+        """
+        url_hash = self._get_url_hash(url)
+        cache_entry = self.cache.get(url_hash)
+        
+        if cache_entry:
+            # キャッシュエントリが7日以内なら有効とする
+            import datetime
+            cache_time = datetime.datetime.fromisoformat(cache_entry['timestamp'])
+            now = datetime.datetime.now()
+            
+            if (now - cache_time).days < 7:
+                return cache_entry.get('thumbnail_url')
+        
+        return None
+    
+    def set(self, url, thumbnail_url):
+        """
+        サムネイルURLをキャッシュに保存
+        
+        Args:
+            url (str): 記事URL
+            thumbnail_url (str or None): サムネイルURL
+        """
+        url_hash = self._get_url_hash(url)
+        import datetime
+        
+        self.cache[url_hash] = {
+            'url': url,
+            'thumbnail_url': thumbnail_url,
+            'timestamp': datetime.datetime.now().isoformat()
+        }
+    
+    def save(self):
+        """キャッシュをファイルに保存"""
+        self._save_cache()
+    
+    def cleanup_old_entries(self, days_threshold=30):
+        """
+        古いキャッシュエントリを削除
+        
+        Args:
+            days_threshold (int): 削除対象となる日数の閾値
+        """
+        import datetime
+        now = datetime.datetime.now()
+        
+        keys_to_remove = []
+        for key, entry in self.cache.items():
+            try:
+                cache_time = datetime.datetime.fromisoformat(entry['timestamp'])
+                if (now - cache_time).days > days_threshold:
+                    keys_to_remove.append(key)
+            except Exception:
+                # 不正なエントリは削除対象に
+                keys_to_remove.append(key)
+        
+        for key in keys_to_remove:
+            del self.cache[key]
+        
+        if keys_to_remove:
+            print(f"Cleaned up {len(keys_to_remove)} old cache entries")
 
 def fetch_feed_entries(feed_url):
     """指定されたURLからRSSフィードのエントリーを取得する"""
@@ -248,38 +357,77 @@ def deduplicate_urls_across_feeds(all_entries):
     
     return deduplicated_feeds
 
-def fetch_all_thumbnails(all_entries, max_workers=10):
-    """全フィードの全記事のサムネイルを並列取得"""
+def fetch_all_thumbnails(all_entries, max_workers=10, use_cache=True):
+    """全フィードの全記事のサムネイルを並列取得（キャッシュ対応）"""
     # 全記事のURLリストを作成
     all_urls = []
     for entries in all_entries.values():
         all_urls.extend([entry.link for entry in entries])
     
-    print(f"Fetching thumbnails for {len(all_urls)} articles in parallel...")
+    print(f"Fetching thumbnails for {len(all_urls)} articles...")
     
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        # 全URLに対して並列でサムネイル取得を実行
-        future_to_url = {
-            executor.submit(get_article_thumbnail, url): url 
-            for url in all_urls
-        }
+    # キャッシュの初期化
+    cache = ThumbnailCache() if use_cache else None
+    thumbnails = {}
+    urls_to_fetch = []
+    
+    # キャッシュから取得できるものは先に処理
+    if cache:
+        cache_hits = 0
+        for url in all_urls:
+            cached_thumbnail = cache.get(url)
+            if cached_thumbnail is not None:
+                thumbnails[url] = cached_thumbnail
+                cache_hits += 1
+            else:
+                urls_to_fetch.append(url)
         
-        thumbnails = {}
-        completed = 0
-        total = len(all_urls)
+        if cache_hits > 0:
+            print(f"Cache hits: {cache_hits}/{len(all_urls)} thumbnails")
+    else:
+        urls_to_fetch = all_urls
+    
+    # キャッシュにないURLのみ並列取得
+    if urls_to_fetch:
+        print(f"Fetching {len(urls_to_fetch)} new thumbnails in parallel...")
         
-        # 完了した処理から順次結果を取得
-        for future in concurrent.futures.as_completed(future_to_url):
-            url = future_to_url[future]
-            completed += 1
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            # 未キャッシュのURLに対して並列でサムネイル取得を実行
+            future_to_url = {
+                executor.submit(get_article_thumbnail, url): url 
+                for url in urls_to_fetch
+            }
             
-            try:
-                thumbnail_url = future.result(timeout=15)
-                thumbnails[url] = thumbnail_url
-                print(f"Progress: {completed}/{total} thumbnails fetched")
-            except Exception as e:
-                print(f"Error fetching thumbnail for {url}: {e}")
-                thumbnails[url] = None
+            completed = 0
+            total = len(urls_to_fetch)
+            
+            # 完了した処理から順次結果を取得
+            for future in concurrent.futures.as_completed(future_to_url):
+                url = future_to_url[future]
+                completed += 1
+                
+                try:
+                    thumbnail_url = future.result(timeout=15)
+                    thumbnails[url] = thumbnail_url
+                    
+                    # キャッシュに保存
+                    if cache:
+                        cache.set(url, thumbnail_url)
+                    
+                    print(f"Progress: {completed}/{total} new thumbnails fetched")
+                except Exception as e:
+                    print(f"Error fetching thumbnail for {url}: {e}")
+                    thumbnails[url] = None
+                    
+                    # エラーの場合もキャッシュに保存（Noneとして）
+                    if cache:
+                        cache.set(url, None)
+    
+    # キャッシュを保存
+    if cache:
+        cache.cleanup_old_entries()  # 古いエントリを削除
+        cache.save()
+        print("Thumbnail cache updated")
                 
     return thumbnails
 
