@@ -111,6 +111,131 @@ def get_article_thumbnail(url, max_retries=2):
     
     return None  # 画像が見つからない場合
 
+def generate_html(all_entries, feed_info, date_str):
+    """取得したエントリーからHTMLコンテンツを生成する"""
+    html = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>毎日のテックニュース ({date_str})</title>
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }}
+        .card {{
+            border: 1px solid #e1e5e9;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: box-shadow 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }}
+        .card:hover {{
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }}
+        .card-content {{
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }}
+        .card-image {{
+            border-radius: 6px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }}
+        .card-text {{
+            flex: 1;
+        }}
+        .card-title {{
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #0969da;
+            font-weight: 600;
+        }}
+        .card-source {{
+            margin: 0;
+            font-size: 12px;
+            color: #656d76;
+        }}
+        h1, h2 {{
+            color: #1f2328;
+        }}
+        .rss-info {{
+            background: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }}
+    </style>
+</head>
+<body>
+    <h1>毎日のテックニュース ({date_str})</h1>
+    
+    <p>📚 <a href="archives/index.html">過去のニュースを見る</a> | 📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
+    
+    <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
+    
+    <div class="rss-info">
+        <h2>📡 RSSフィード配信中</h2>
+        <p>このニュースはRSSフィードでも配信しています。お使いのRSSリーダーで以下のURLを購読してください：</p>
+        <p><strong>RSS URL:</strong> <code>https://unsolublesugar.github.io/daily-tech-news/rss.xml</code></p>
+        <ul>
+            <li>毎日JST 7:00に自動更新</li>
+            <li>各フィードから5件ずつ厳選記事を配信</li>
+            <li>カード型レイアウトで読みやすく表示</li>
+        </ul>
+    </div>
+    
+    <hr>
+"""
+    
+    for feed_name, entries in all_entries.items():
+        favicon = feed_info[feed_name]["favicon"]
+        if favicon.startswith("http"):
+            favicon_display = f'<img src="{favicon}" width="16" height="16" alt="{feed_name}">'
+        else:
+            favicon_display = favicon
+        
+        html += f"    <h2>{favicon_display} {feed_name}</h2>\n"
+        
+        if not entries:
+            html += "    <p>記事を取得できませんでした。</p>\n"
+        else:
+            for entry in entries[:MAX_ENTRIES]:
+                title = entry.title
+                link = entry.link
+                
+                print(f"Fetching thumbnail for: {title[:50]}...")
+                thumbnail_url = get_article_thumbnail(link)
+                
+                escaped_title = title.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
+                
+                if thumbnail_url:
+                    escaped_url = thumbnail_url.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
+                    card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" class="card-image">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
+                else:
+                    card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
+                html += card_html
+        
+        html += "    <hr>\n"
+    
+    html += """
+</body>
+</html>"""
+    
+    return html
+
 def generate_markdown(all_entries, feed_info, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
     markdown = f"# 毎日のテックニュース ({date_str})\n\n"
@@ -354,6 +479,9 @@ if __name__ == "__main__":
     # Markdownコンテンツ生成
     markdown_content = generate_markdown(all_entries, FEEDS, today.isoformat())
     
+    # HTMLコンテンツ生成
+    html_content = generate_html(all_entries, FEEDS, today.isoformat())
+    
     # アーカイブに保存
     archive_file = save_to_archive(markdown_content, today)
     print(f"Archived to: {archive_file}")
@@ -368,8 +496,13 @@ if __name__ == "__main__":
     with open("README.md", "w", encoding="utf-8") as f:
         f.write(readme_content)
     
+    # index.html生成（カード表示用）
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(html_content)
+    print("Generated index.html with card layout")
+    
     # RSSフィード生成
     rss_feed = generate_rss_feed(all_entries, FEEDS, today)
     save_rss_feed(rss_feed)
         
-    print(f"Successfully updated README.md, archive structure, and RSS feed.")
+    print(f"Successfully updated README.md, index.html, archive structure, and RSS feed.")
