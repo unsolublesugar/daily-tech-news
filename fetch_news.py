@@ -655,8 +655,208 @@ https://unsolublesugar.github.io/daily-tech-news/
     
     return markdown
 
-def save_to_archive(content, date_obj):
-    """日付別アーカイブファイルとして保存"""
+def generate_archive_markdown(all_entries, feed_info, date_str):
+    """アーカイブ用のMarkdownコンテンツを生成する（相対パス修正版）"""
+    markdown = f"# 今日のテックニュース ({date_str})\n\n"
+    markdown += """📚 [過去のニュースを見る](../../index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
+
+日本の主要な技術系メディアの最新人気エントリーをお届けします。
+
+※毎日JST 7:00に自動更新
+
+## 🎨 カード表示版もあります
+
+GitHub Pages版では各記事がカード形式で見やすく表示されます：  
+https://unsolublesugar.github.io/daily-tech-news/
+
+---
+"""
+
+    for feed_name, entries in all_entries.items():
+        favicon = feed_info[feed_name]["favicon"]
+        if favicon.startswith("http"):
+            # ファビコンURLの場合
+            favicon_display = f'<img src="{favicon}" width="16" height="16" alt="{feed_name}">'
+        else:
+            # 絵文字の場合
+            favicon_display = favicon
+        markdown += f"## {favicon_display} {feed_name}\n\n"
+        if not entries:
+            markdown += "記事を取得できませんでした。\n"
+        else:
+            # エントリーはすでにURL重複除去済み
+            for entry in entries:
+                title = entry.title
+                link = entry.link
+                
+                # シンプルなリンク形式で表示
+                markdown += f"- [{title}]({link})\n"
+        
+        markdown += "\n\n---\n"
+    
+    markdown += "## License\n\nThis project is licensed under the [MIT License](LICENSE).\n"
+    
+    return markdown
+
+def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
+    """アーカイブ用のHTMLコンテンツを生成する"""
+    site_title = f"今日のテックニュース ({date_str})"
+    site_description = "日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。"
+    site_url = "https://unsolublesugar.github.io/daily-tech-news/"
+    og_image_url = f"{site_url}assets/images/OGP.png"
+    twitter_user = "@unsoluble_sugar"
+
+    html = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{site_title}</title>
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="{site_title}">
+    <meta property="og:description" content="{site_description}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{site_url}">
+    <meta property="og:image" content="{og_image_url}">
+    <meta property="og:site_name" content="今日のテックニュース">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{twitter_user}">
+    
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }}
+        .card {{
+            border: 1px solid #e1e5e9;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: box-shadow 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }}
+        .card:hover {{
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }}
+        .card-content {{
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }}
+        .card-image {{
+            border-radius: 6px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }}
+        .card-text {{
+            flex: 1;
+        }}
+        .card-title {{
+            margin: 0 0 8px 0;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #0969da;
+            font-weight: 600;
+        }}
+        .card-source {{
+            margin: 0;
+            font-size: 12px;
+            color: #656d76;
+        }}
+        h1, h2 {{
+            color: #1f2328;
+        }}
+        .rss-info {{
+            background: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }}
+        .footer {{
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #e1e5e9;
+            text-align: center;
+            font-size: 14px;
+            color: #656d76;
+        }}
+        .footer a {{
+            color: #0969da;
+            text-decoration: none;
+        }}
+        .footer a:hover {{
+            text-decoration: underline;
+        }}
+    </style>
+</head>
+<body>
+    <h1>{site_title}</h1>
+    
+    <p>📚 <a href="../../index.html">過去のニュースを見る</a> | 📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
+    
+    <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
+    
+    <div class="rss-info">
+        <p>毎日JST 7:00に自動更新</p>
+    </div>
+    
+    <hr>
+"""
+    
+    for feed_name, entries in all_entries.items():
+        favicon = feed_info[feed_name]["favicon"]
+        if favicon.startswith("http"):
+            favicon_display = f'<img src="{favicon}" width="16" height="16" alt="{feed_name}">'
+        else:
+            favicon_display = favicon
+        
+        html += f"    <h2>{favicon_display} {feed_name}</h2>\n"
+        
+        if not entries:
+            html += "    <p>記事を取得できませんでした。</p>\n"
+        else:
+            # エントリーはすでにURL重複除去済み
+            for entry in entries:
+                title = entry.title
+                link = entry.link
+                
+                # 事前取得済みのサムネイルを使用
+                thumbnail_url = thumbnails.get(link) if thumbnails else None
+                
+                escaped_title = title.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
+                
+                if thumbnail_url:
+                    escaped_url = thumbnail_url.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
+                    card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" class="card-image">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
+                else:
+                    card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
+                html += card_html
+        
+        html += "    <hr>\n"
+    
+    html += """
+    <div class="footer">
+        <p>🚀 運営者: <a href="https://x.com/unsoluble_sugar" target="_blank" rel="noopener">@unsoluble_sugar</a> | 
+        📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
+    </div>
+</body>
+</html>"""
+    
+    return html
+
+def save_to_archive(all_entries, feed_info, date_obj, thumbnails=None):
+    """日付別アーカイブファイルとして保存（MarkdownとHTML両方）"""
     year = date_obj.year
     month = f"{date_obj.month:02d}"
     date_str = date_obj.isoformat()
@@ -665,7 +865,8 @@ def save_to_archive(content, date_obj):
     archive_dir = Path(f"archives/{year}/{month}")
     archive_dir.mkdir(parents=True, exist_ok=True)
     
-    # ファイル保存（既存ファイルは上書き）
+    # Markdown版
+    md_content = generate_archive_markdown(all_entries, feed_info, date_str)
     archive_file = archive_dir / f"{date_str}.md"
     if archive_file.exists():
         print(f"Overwriting existing archive: {archive_file}")
@@ -673,12 +874,21 @@ def save_to_archive(content, date_obj):
         print(f"Creating new archive: {archive_file}")
     
     with open(archive_file, "w", encoding="utf-8") as f:
-        f.write(content)
+        f.write(md_content)
+    
+    # HTML版
+    html_content = generate_archive_html(all_entries, feed_info, date_str, thumbnails)
+    html_file = archive_dir / f"{date_str}.html"
+    
+    with open(html_file, "w", encoding="utf-8") as f:
+        f.write(html_content)
+    
+    print(f"Generated archive files: {archive_file} and {html_file}")
     
     return archive_file
 
 def update_monthly_index(year, month):
-    """月別インデックスページを更新"""
+    """月別インデックスページを更新（MarkdownとHTML両方）"""
     archive_dir = Path(f"archives/{year}/{month:02d}")
     if not archive_dir.exists():
         return
@@ -686,21 +896,84 @@ def update_monthly_index(year, month):
     # その月のファイル一覧を取得
     md_files = sorted([f for f in archive_dir.iterdir() if f.suffix == '.md' and f.name != 'index.md'])
     
-    # 月別インデックス作成
-    index_content = f"# {year}年{month}月のテックニュース\n\n"
-    index_content += f"{year}年{month}月に取得したテックニュースの一覧です。\n\n"
+    # Markdown版
+    md_content = f"# {year}年{month}月のテックニュース\n\n"
+    md_content += f"{year}年{month}月に取得したテックニュースの一覧です。\n\n"
     
     for md_file in reversed(md_files):  # 新しい順
         date_str = md_file.stem
-        index_content += f"- [{date_str}]({md_file.name})\n"
+        md_content += f"- [{date_str}]({md_file.name})\n"
     
-    index_content += f"\n[← {year}年一覧に戻る](../index.md)\n"
+    md_content += f"\n[← {year}年一覧に戻る](../index.md)\n"
     
     with open(archive_dir / "index.md", "w", encoding="utf-8") as f:
-        f.write(index_content)
+        f.write(md_content)
+    
+    # HTML版
+    html_content = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{year}年{month}月のテックニュース</title>
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }}
+        h1 {{
+            color: #1f2328;
+        }}
+        ul {{
+            list-style-type: disc;
+            padding-left: 2em;
+        }}
+        li {{
+            margin: 8px 0;
+        }}
+        a {{
+            color: #0969da;
+            text-decoration: none;
+        }}
+        a:hover {{
+            text-decoration: underline;
+        }}
+        .back-link {{
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e5e9;
+        }}
+    </style>
+</head>
+<body>
+    <h1>{year}年{month}月のテックニュース</h1>
+    
+    <p>{year}年{month}月に取得したテックニュースの一覧です。</p>
+    
+    <ul>"""
+    
+    for md_file in reversed(md_files):  # 新しい順
+        date_str = md_file.stem
+        html_content += f'\n        <li><a href="{date_str}.html">{date_str}</a></li>'
+    
+    html_content += f"""
+    </ul>
+    
+    <div class="back-link">
+        <p><a href="../index.html">← {year}年一覧に戻る</a></p>
+    </div>
+</body>
+</html>"""
+    
+    with open(archive_dir / "index.html", "w", encoding="utf-8") as f:
+        f.write(html_content)
 
 def update_yearly_index(year):
-    """年別インデックスページを更新"""
+    """年別インデックスページを更新（MarkdownとHTML両方）"""
     year_dir = Path(f"archives/{year}")
     if not year_dir.exists():
         return
@@ -708,40 +981,322 @@ def update_yearly_index(year):
     # その年の月ディレクトリ一覧を取得
     month_dirs = sorted([d for d in year_dir.iterdir() if d.is_dir() and d.name.isdigit()])
     
-    # 年別インデックス作成
-    index_content = f"# {year}年のテックニュース\n\n"
-    index_content += f"{year}年に取得したテックニュースの月別一覧です。\n\n"
+    # Markdown版
+    md_content = f"# {year}年のテックニュース\n\n"
+    md_content += f"{year}年に取得したテックニュースの月別一覧です。\n\n"
     
     for month_dir in reversed(month_dirs):  # 新しい順
         month = int(month_dir.name)
-        index_content += f"- [{year}年{month}月]({month_dir.name}/index.md)\n"
+        md_content += f"- [{year}年{month}月]({month_dir.name}/index.md)\n"
     
-    index_content += f"\n[← アーカイブ一覧に戻る](../index.md)\n"
+    md_content += f"\n[← アーカイブ一覧に戻る](../index.md)\n"
     
     with open(year_dir / "index.md", "w", encoding="utf-8") as f:
-        f.write(index_content)
+        f.write(md_content)
+    
+    # HTML版
+    html_content = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{year}年のテックニュース</title>
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }}
+        h1 {{
+            color: #1f2328;
+        }}
+        ul {{
+            list-style-type: disc;
+            padding-left: 2em;
+        }}
+        li {{
+            margin: 8px 0;
+        }}
+        a {{
+            color: #0969da;
+            text-decoration: none;
+        }}
+        a:hover {{
+            text-decoration: underline;
+        }}
+        .back-link {{
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e5e9;
+        }}
+    </style>
+</head>
+<body>
+    <h1>{year}年のテックニュース</h1>
+    
+    <p>{year}年に取得したテックニュースの月別一覧です。</p>
+    
+    <ul>"""
+    
+    for month_dir in reversed(month_dirs):  # 新しい順
+        month = int(month_dir.name)
+        html_content += f'\n        <li><a href="{month_dir.name}/index.html">{year}年{month}月</a></li>'
+    
+    html_content += f"""
+    </ul>
+    
+    <div class="back-link">
+        <p><a href="../index.html">← アーカイブ一覧に戻る</a></p>
+    </div>
+</body>
+</html>"""
+    
+    with open(year_dir / "index.html", "w", encoding="utf-8") as f:
+        f.write(html_content)
 
-def update_archive_index():
-    """アーカイブ全体のインデックスページを更新"""
+def generate_missing_html_archives():
+    """既存のMarkdownアーカイブファイルに対応するHTMLファイルが存在しない場合に生成する"""
     archives_dir = Path("archives")
     if not archives_dir.exists():
         return
     
+    # 全てのMarkdownアーカイブファイルを検索
+    md_files = list(archives_dir.glob("**/????-??-??.md"))
+    
+    for md_file in md_files:
+        html_file = md_file.with_suffix('.html')
+        
+        # HTMLファイルが存在しない場合のみ生成
+        if not html_file.exists():
+            print(f"Generating missing HTML archive: {html_file}")
+            
+            # Markdownファイルからコンテンツを読み取り、簡易的にHTMLに変換
+            try:
+                with open(md_file, 'r', encoding='utf-8') as f:
+                    md_content = f.read()
+                
+                # 日付を抽出
+                date_match = re.search(r'# 今日のテックニュース \((\d{4}-\d{2}-\d{2})\)', md_content)
+                if date_match:
+                    date_str = date_match.group(1)
+                    
+                    # 簡易的なHTML生成（完全な記事リスト無しでも基本構造を生成）
+                    html_content = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日のテックニュース ({date_str})</title>
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="今日のテックニュース ({date_str})">
+    <meta property="og:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/">
+    <meta property="og:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta property="og:site_name" content="今日のテックニュース">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@unsoluble_sugar">
+    
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }}
+        h1, h2 {{
+            color: #1f2328;
+        }}
+        a {{
+            color: #0969da;
+            text-decoration: none;
+        }}
+        a:hover {{
+            text-decoration: underline;
+        }}
+        .rss-info {{
+            background: #f6f8fa;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }}
+        .footer {{
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #e1e5e9;
+            text-align: center;
+            font-size: 14px;
+            color: #656d76;
+        }}
+        .footer a {{
+            color: #0969da;
+            text-decoration: none;
+        }}
+        .footer a:hover {{
+            text-decoration: underline;
+        }}
+        ul {{
+            line-height: 1.8;
+        }}
+    </style>
+</head>
+<body>
+    <h1>今日のテックニュース ({date_str})</h1>
+    
+    <p>📚 <a href="../../index.html">過去のニュースを見る</a> | 📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
+    
+    <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
+    
+    <div class="rss-info">
+        <p>毎日JST 7:00に自動更新</p>
+    </div>
+    
+    <hr>
+"""
+                    
+                    # Markdownの内容を簡易的にHTMLに変換
+                    lines = md_content.split('\n')
+                    in_list = False
+                    current_section = None
+                    
+                    for line in lines:
+                        line = line.strip()
+                        if not line:
+                            continue
+                            
+                        # セクションヘッダー
+                        if line.startswith('## ') and not line.startswith('## License'):
+                            if in_list:
+                                html_content += "    </ul>\n    <hr>\n"
+                                in_list = False
+                            
+                            section_title = line[3:].strip()
+                            html_content += f"    <h2>{section_title}</h2>\n"
+                            current_section = section_title
+                            
+                        # リスト項目
+                        elif line.startswith('- [') and current_section and 'License' not in current_section:
+                            if not in_list:
+                                html_content += "    <ul>\n"
+                                in_list = True
+                            
+                            # リンクを抽出
+                            link_match = re.match(r'- \[([^\]]+)\]\(([^)]+)\)', line)
+                            if link_match:
+                                title, url = link_match.groups()
+                                html_content += f'        <li><a href="{url}">{title}</a></li>\n'
+                    
+                    if in_list:
+                        html_content += "    </ul>\n    <hr>\n"
+                    
+                    html_content += """
+    <div class="footer">
+        <p>🚀 運営者: <a href="https://x.com/unsoluble_sugar" target="_blank" rel="noopener">@unsoluble_sugar</a> | 
+        📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
+    </div>
+</body>
+</html>"""
+                    
+                    with open(html_file, 'w', encoding='utf-8') as f:
+                        f.write(html_content)
+                        
+            except Exception as e:
+                print(f"Error generating HTML for {md_file}: {e}")
+
+def update_archive_index():
+    """アーカイブ全体のインデックスページを更新（MarkdownとHTML両方）"""
+    archives_dir = Path("archives")
+    if not archives_dir.exists():
+        return
+    
+    # 既存のMarkdownファイルに対応するHTMLファイルを生成
+    generate_missing_html_archives()
+    
     # 年ディレクトリ一覧を取得
     year_dirs = sorted([d for d in archives_dir.iterdir() if d.is_dir() and d.name.isdigit()])
     
-    # アーカイブインデックス作成
-    index_content = "# テックニュース アーカイブ\n\n"
-    index_content += "過去のテックニュースの年別アーカイブです。\n\n"
+    # Markdown版（README.mdからの遷移用）
+    md_content = "# テックニュース アーカイブ\n\n"
+    md_content += "過去のテックニュースの年別アーカイブです。\n\n"
     
     for year_dir in reversed(year_dirs):  # 新しい順
         year = year_dir.name
-        index_content += f"- [{year}年]({year}/index.md)\n"
+        md_content += f"- [{year}年]({year}/index.md)\n"
     
-    index_content += f"\n[← メインページに戻る](../README.md)\n"
-    
+    md_content += f"\n[← メインページに戻る](../README.md)\n"
     with open(archives_dir / "index.md", "w", encoding="utf-8") as f:
-        f.write(index_content)
+        f.write(md_content)
+    
+    # HTML版（index.htmlからの遷移用）
+    html_content = """<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>テックニュース アーカイブ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            color: #1f2328;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 2em;
+        }
+        li {
+            margin: 8px 0;
+        }
+        a {
+            color: #0969da;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e5e9;
+        }
+    </style>
+</head>
+<body>
+    <h1>テックニュース アーカイブ</h1>
+    
+    <p>過去のテックニュースの年別アーカイブです。</p>
+    
+    <ul>"""
+    
+    for year_dir in reversed(year_dirs):  # 新しい順
+        year = year_dir.name
+        html_content += f'\n        <li><a href="{year}/index.html">{year}年</a></li>'
+    
+    html_content += """
+    </ul>
+    
+    <div class="back-link">
+        <p><a href="../index.html">← メインページに戻る</a></p>
+    </div>
+</body>
+</html>"""
+    
+    with open(archives_dir / "index.html", "w", encoding="utf-8") as f:
+        f.write(html_content)
 
 def update_readme_with_archive_link(content):
     """README.mdにアーカイブとRSSへのリンクを追加（既に含まれている場合はそのまま）"""
@@ -910,7 +1465,7 @@ if __name__ == "__main__":
     html_content = generate_html(all_entries, FEEDS, today.isoformat(), thumbnails)
     
     # アーカイブに保存
-    archive_file = save_to_archive(markdown_content, today)
+    archive_file = save_to_archive(all_entries, FEEDS, today, thumbnails)
     print(f"Archived to: {archive_file}")
     
     # インデックスページ更新
