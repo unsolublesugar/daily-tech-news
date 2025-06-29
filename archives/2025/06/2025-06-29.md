@@ -33,6 +33,21 @@
     </div>
   </div>
 </a>
+<a href="https://note.shiftinc.jp/n/ndb8b94f1fc7e" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://assets.st-note.com/production/uploads/images/192216004/rectangle_large_type_2_7b95b8e46e0a728d1f1534b35c0004a8.png?fit=bounds&quality=85&width=1280" width="120" height="90" alt="20日で鍛える読解力：Day14｜「なんか引っかかる」を見逃さない | SHIFT Group 技術ブログ" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          20日で鍛える読解力：Day14｜「なんか引っかかる」を見逃さない | SHIFT Group 技術ブログ
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Tech Blog Weekly
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
 <a href="https://techblog.ap-com.co.jp/entry/2025/06/29/074701" style="text-decoration: none; color: inherit;">
   <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
     <div style="display: flex; align-items: flex-start; gap: 15px;">
@@ -70,21 +85,6 @@
       <div style="flex: 1;">
         <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
           7-Elevenが実践したDatabricks Unity Catalog移行の現実解：UCXツールで複雑な大規模移行を成功に導く | APC 技術ブログ
-        </h4>
-        <p style="margin: 0; font-size: 12px; color: #656d76;">
-          Tech Blog Weekly
-        </p>
-      </div>
-    </div>
-  </div>
-</a>
-<a href="https://techblog.ap-com.co.jp/entry/2025/06/29/074437" style="text-decoration: none; color: inherit;">
-  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
-    <div style="display: flex; align-items: flex-start; gap: 15px;">
-      <img src="https://cdn.image.st-hatena.com/image/scale/dfff39f741c4c587569f93fe6f94c5d15583dad5/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2FK%2FKazumain%2F20250627%2F20250627223704.jpg" width="120" height="90" alt="データレイクハウスにおけるトランザクション競合とその解決策 | APC 技術ブログ" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
-      <div style="flex: 1;">
-        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
-          データレイクハウスにおけるトランザクション競合とその解決策 | APC 技術ブログ
         </h4>
         <p style="margin: 0; font-size: 12px; color: #656d76;">
           Tech Blog Weekly
