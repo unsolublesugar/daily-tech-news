@@ -285,12 +285,38 @@ def fetch_all_thumbnails(all_entries, max_workers=10):
 
 def generate_html(all_entries, feed_info, date_str, thumbnails=None):
     """取得したエントリーからHTMLコンテンツを生成する"""
+    site_title = f"今日のテックニュース ({date_str})"
+    site_description = "日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。"
+    site_url = "https://unsolublesugar.github.io/daily-tech-news/"
+    og_image_url = f"{site_url}assets/images/OGP.svg"
+    twitter_user = "@unsoluble_sugar"
+
     html = f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>今日のテックニュース ({date_str})</title>
+    <title>{site_title}</title>
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="{site_title}">
+    <meta property="og:description" content="{site_description}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{site_url}">
+    <meta property="og:image" content="{og_image_url}">
+    <meta property="og:site_name" content="今日のテックニュース">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{twitter_user}">
+    
+    <!-- Favicon Tags -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
+
     <style>
         body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -367,7 +393,7 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
     </style>
 </head>
 <body>
-    <h1>今日のテックニュース ({date_str})</h1>
+    <h1>{site_title}</h1>
     
     <p>📚 <a href="archives/index.html">過去のニュースを見る</a> | 📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
     
