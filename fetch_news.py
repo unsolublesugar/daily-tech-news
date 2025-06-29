@@ -148,8 +148,8 @@ def get_article_thumbnail(url, max_retries=2):
     
     return None  # 画像が見つからない場合
 
-def deduplicate_events(entries):
-    """イベント系エントリーの重複を除去（シリーズ番号違いを統合）"""
+def deduplicate_events(entries, target_count=10):
+    """イベント系エントリーの重複を除去（シリーズ番号違いを統合）し、目標件数を確保"""
     if not entries:
         return entries
     
@@ -207,6 +207,10 @@ def deduplicate_events(entries):
         if base_name not in seen_bases:
             deduplicated.append(event_groups[base_name])
             seen_bases.add(base_name)
+            
+            # 目標件数に達したら終了
+            if len(deduplicated) >= target_count:
+                break
     
     return deduplicated
 
@@ -291,7 +295,7 @@ def generate_html(all_entries, feed_info, date_str):
         <p><strong>RSS URL:</strong> <code>https://unsolublesugar.github.io/daily-tech-news/rss.xml</code></p>
         <ul>
             <li>毎日JST 7:00に自動更新</li>
-            <li>各フィードから5件ずつ厳選記事を配信</li>
+            <li>技術記事は各フィードから5件、イベント情報は10件ずつ厳選配信</li>
             <li>カード型レイアウトで読みやすく表示</li>
         </ul>
     </div>
@@ -352,7 +356,7 @@ def generate_markdown(all_entries, feed_info, date_str):
     markdown += "このニュースはRSSフィードでも配信しています。  \nお使いのRSSリーダーで以下のURLを購読してください：\n\n"
     markdown += "**RSS URL:** `https://unsolublesugar.github.io/daily-tech-news/rss.xml`\n\n"
     markdown += "- 毎日JST 7:00に自動更新\n"
-    markdown += "- 各フィードから5件ずつ厳選記事を配信\n\n---\n"
+    markdown += "- 技術記事は各フィードから5件、イベント情報は10件ずつ厳選配信\n\n---\n"
 
     for feed_name, entries in all_entries.items():
         favicon = feed_info[feed_name]["favicon"]
