@@ -179,6 +179,23 @@ class ThumbnailCache:
         if keys_to_remove:
             print(f"Cleaned up {len(keys_to_remove)} old cache entries")
 
+def filter_hatena_anonymous_entries(entries):
+    """はてな匿名ダイアリーの記事を除外する"""
+    filtered_entries = []
+    excluded_count = 0
+    
+    for entry in entries:
+        # リンクURLがはてな匿名ダイアリーかチェック
+        if hasattr(entry, 'link') and 'anond.hatelabo.jp' in entry.link:
+            excluded_count += 1
+            continue
+        filtered_entries.append(entry)
+    
+    if excluded_count > 0:
+        print(f"Excluded {excluded_count} hatena anonymous diary entries")
+    
+    return filtered_entries
+
 def fetch_feed_entries(feed_url):
     """指定されたURLからRSSフィードのエントリーを取得する"""
     try:
@@ -798,6 +815,11 @@ if __name__ == "__main__":
     for name, feed_info in FEEDS.items():
         print(f"Fetching entries from {name}...")
         entries = fetch_feed_entries(feed_info["url"])
+        
+        # はてなブックマークのフィードに対してはてな匿名ダイアリーを除外
+        if name in ["はてなブックマーク - IT（人気）", "はてなブックマーク - IT（新着）"]:
+            entries = filter_hatena_anonymous_entries(entries)
+        
         all_entries[name] = entries
     
     # フィード間URL重複除去と補填
