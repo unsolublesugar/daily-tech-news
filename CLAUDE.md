@@ -138,6 +138,7 @@ gh pr create --title "📚 ドキュメント: 更新内容 (#15)" --assignee un
   - `documentation`: ドキュメント更新
   - `refactor`: リファクタリング
   - `ci`: CI/CD関連の変更
+  - `performance`: パフォーマンス改善
 
 #### タイトル命名規則
 - 絵文字プレフィックスを使用
@@ -147,6 +148,30 @@ gh pr create --title "📚 ドキュメント: 更新内容 (#15)" --assignee un
 - ♻️ リファクタリング
 - 🔧 設定・環境
 - 🚀 パフォーマンス改善
+
+### Label管理ルール
+
+#### 適切なLabelが存在しない場合の対応
+適切なラベルが存在しない場合は、以下の手順で新しいラベルを作成して使用すること：
+
+```bash
+# 新しいラベルを作成
+gh label create "ラベル名" --description "ラベルの説明" --color "カラーコード"
+
+# 例：performanceラベルの作成
+gh label create "performance" --description "Performance improvements and optimizations" --color "0e8a16"
+
+# PRにラベルを追加
+gh pr edit PR番号 --add-label "新しいラベル名"
+```
+
+#### 推奨カラーコード
+- `enhancement`: `#a2eeef` (水色)
+- `bug`: `#d73a49` (赤)
+- `documentation`: `#0075ca` (青)
+- `performance`: `#0e8a16` (緑)
+- `refactor`: `#fbca04` (黄)
+- `ci`: `#6f42c1` (紫)
 
 #### PR本文テンプレート
 ```markdown
