@@ -400,14 +400,7 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
     <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
     
     <div class="rss-info">
-        <h2>📡 RSSフィード配信中</h2>
-        <p>このニュースはRSSフィードでも配信しています。お使いのRSSリーダーで以下のURLを購読してください：</p>
-        <p><strong>RSS URL:</strong> <code>https://unsolublesugar.github.io/daily-tech-news/rss.xml</code></p>
-        <ul>
-            <li>毎日JST 7:00に自動更新</li>
-            <li>技術記事は各フィードから5件、イベント情報は10件ずつ厳選配信</li>
-            <li>カード型レイアウトで読みやすく表示</li>
-        </ul>
+        <p>毎日JST 7:00に自動更新</p>
     </div>
     
     <hr>
@@ -457,15 +450,11 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
 def generate_markdown(all_entries, feed_info, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
     markdown = f"# 今日のテックニュース ({date_str})\n\n"
-    markdown += "📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/)\n\n"
+    markdown += "📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/)\n\n"
     markdown += "日本の主要な技術系メディアの最新人気エントリーをお届けします。\n\n"
+    markdown += "※毎日JST 7:00に自動更新\n\n"
     markdown += "## 🎨 カード表示版もあります\n\n"
-    markdown += "GitHub Pages版では各記事がカード形式で見やすく表示されます：  \nhttps://unsolublesugar.github.io/daily-tech-news/\n\n"
-    markdown += "## 📡 RSSフィード配信中\n\n"
-    markdown += "このニュースはRSSフィードでも配信しています。  \nお使いのRSSリーダーで以下のURLを購読してください：\n\n"
-    markdown += "**RSS URL:** `https://unsolublesugar.github.io/daily-tech-news/rss.xml`\n\n"
-    markdown += "- 毎日JST 7:00に自動更新\n"
-    markdown += "- 技術記事は各フィードから5件、イベント情報は10件ずつ厳選配信\n\n---\n"
+    markdown += "GitHub Pages版では各記事がカード形式で見やすく表示されます：  \nhttps://unsolublesugar.github.io/daily-tech-news/\n\n---\n"
 
     for feed_name, entries in all_entries.items():
         favicon = feed_info[feed_name]["favicon"]
