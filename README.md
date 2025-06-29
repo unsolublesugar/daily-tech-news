@@ -1,6 +1,6 @@
-# 毎日のテックニュース (2025-06-28)
+# 毎日のテックニュース (2025-06-29)
 
-📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](rss.xml)
+📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
 
@@ -12,62 +12,324 @@
 
 - 毎日JST 7:00に自動更新
 - 各フィードから5件ずつ厳選記事を配信
-- ファビコン付きで見やすく表示
+- カード型レイアウトで読みやすく表示
 
 ---
 ## 💻 Tech Blog Weekly
 
-- [AWS Summit Japan 2025で登壇しました＆反省点 | ENECHANGE Developer Blog](https://tech.enechange.co.jp/entry/2025/06/28/223216)
-- [Fastlaneで外部連携された証明書をもとにプロビジョニングプロファイルを更新する方法（fastlane match import) | ENECHANGEのフィード](https://zenn.dev/enechange_blog/articles/fastlane-match-import-for-other-company-maintainer)
-- [【イベントレポート】AWS Summit Japan 2025に初参加しました。 | APC 技術ブログ](https://techblog.ap-com.co.jp/entry/2025/06/28/174657)
-- [【AWS】AWS Summit Japan 2025 に参加してきました (セッション感想) | APC 技術ブログ](https://techblog.ap-com.co.jp/entry/2025/06/28/170210)
-- [PHPカンファレンス2025 最速参加レポート | every Tech Blog](https://tech.every.tv/entry/2025/06/28/165655)
-- [BigQueryのCronJob向けQAテストを自動化した話 | エムスリーテックブログ](https://www.m3tech.blog/entry/2025/06/28/110000)
-- [OSSライブラリのライセンスが変わるのでライブラリを乗り換えた | BABY JOB  テックブログのフィード](https://zenn.dev/babyjob/articles/uaparserjs-to-bowser)
-- [Junie でいい感じにユニットテストを書いてもらうために試した事 | Money Forward Developersのフィード](https://zenn.dev/moneyforward/articles/179a49853cbd97)
-- [BigQuery,EKSを利用したアメーバブログのアクセス解析基盤の移行について | CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ](https://developers.cyberagent.co.jp/blog/archives/56641/)
-- [20日で鍛える読解力：Day13｜「何が大事？」を見抜く“仕分け力”と“断捨離思考” | SHIFT Group 技術ブログ](https://note.shiftinc.jp/n/n0366bc21fed3)
+
+<a href="https://developers.cyberagent.co.jp/blog/archives/57070/" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://developers.cyberagent.co.jp/blog/wp-content/themes/onepress-child/assets/images/og/og.png" width="120" height="90" alt="新卒1年目が挑む！！十数万リクエストに耐える Contextual Bandit を用いたレコメンドシステムの構築 ~ バックエンド編 ~ | CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          新卒1年目が挑む！！十数万リクエストに耐える Contextual Bandit を用いたレコメンドシステムの構築 ~ バックエンド編 ~ | CyberAgent Developers Blog | サイバーエージェント デベロッパーズブログ
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Tech Blog Weekly
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://techblog.ap-com.co.jp/entry/2025/06/29/074701" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://cdn.image.st-hatena.com/image/scale/148d8a12c690f5c7f23b36ada5e6e9c43046b56e/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2FK%2FKazumain%2F20250627%2F20250627232239.jpg" width="120" height="90" alt="生成AIは「共感」を教えられるか？マルチエージェントが拓く医療コミュニケーションの新たな地平 | APC 技術ブログ" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          生成AIは「共感」を教えられるか？マルチエージェントが拓く医療コミュニケーションの新たな地平 | APC 技術ブログ
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Tech Blog Weekly
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://techblog.ap-com.co.jp/entry/2025/06/29/074607" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://cdn.image.st-hatena.com/image/scale/f2c0c37de2e3295614e540a8313726906337e1a4/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2FK%2FKazumain%2F20250629%2F20250629073432.jpg" width="120" height="90" alt="Mercedes-Benzが実践するクロスクラウドData Mesh：Delta SharingとUniFormで実現するコスト効率とデータ連携 | APC 技術ブログ" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          Mercedes-Benzが実践するクロスクラウドData Mesh：Delta SharingとUniFormで実現するコスト効率とデータ連携 | APC 技術ブログ
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Tech Blog Weekly
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://techblog.ap-com.co.jp/entry/2025/06/29/074535" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://cdn.image.st-hatena.com/image/scale/0dbc0427b57cdaac359088960bac514314664739/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2FK%2FKazumain%2F20250627%2F20250627231154.jpg" width="120" height="90" alt="7-Elevenが実践したDatabricks Unity Catalog移行の現実解：UCXツールで複雑な大規模移行を成功に導く | APC 技術ブログ" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          7-Elevenが実践したDatabricks Unity Catalog移行の現実解：UCXツールで複雑な大規模移行を成功に導く | APC 技術ブログ
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Tech Blog Weekly
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://techblog.ap-com.co.jp/entry/2025/06/29/074437" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://cdn.image.st-hatena.com/image/scale/dfff39f741c4c587569f93fe6f94c5d15583dad5/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2FK%2FKazumain%2F20250627%2F20250627223704.jpg" width="120" height="90" alt="データレイクハウスにおけるトランザクション競合とその解決策 | APC 技術ブログ" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          データレイクハウスにおけるトランザクション競合とその解決策 | APC 技術ブログ
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Tech Blog Weekly
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
 
 ---
 ## <img src="https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico" width="16" height="16" alt="Qiita"> Qiita
 
-- [【CSS】まだ width: 100% つかってるやついる⁉︎ いねぇよな⁉︎](https://qiita.com/degudegu2510/items/7079d76beeaa40c206d3?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [Gemini CLIの"強み"を知る！ Gemini CLIとClaude Codeを比較してみた](https://qiita.com/kyuko/items/b7f7336057859f5c9b4f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [Gemini CLI をさっそく試してみた！](https://qiita.com/youtoy/items/fa5b696b055ed4a992ec?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [10歳娘「凡ミスの多い人ってプログラマーに向いてるよね」](https://qiita.com/Yametaro/items/0b241519dc6b416474c5?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [【完全版】Gemini CLI チートシート - この記事で今日攻略！🚀](https://qiita.com/akira_papa_AI/items/15314a5bf1dd109053c2?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [「公共Wi-Fiは危険」ってよく聞くけど… どこがどう危ないの？物理から紐解くセキュリティ入門](https://qiita.com/omochi_0604/items/676bc3f123bc24d3602b?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [AI時代にエンジニアは不要になるのか？](https://qiita.com/ryoheiiwamoto/items/24969131200a8c0429a1?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [ワイ「AI時代に、綺麗な設計とか要らんやろ！」](https://qiita.com/Yametaro/items/f642704a2c11bf36a463?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [[2025]AWS Summit Japan参加レポート](https://qiita.com/Kanahiro/items/09d37a994425baf03913?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [【入門】Vimを覚えたくない人のための最低限だけ学ぶVim](https://qiita.com/flowernotfound/items/cb8d51602bad909dae2a?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+
+<a href="https://qiita.com/Yametaro/items/0b241519dc6b416474c5?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          10歳娘「凡ミスの多い人ってプログラマーに向いてるよね」
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Qiita
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://qiita.com/akira_papa_AI/items/15314a5bf1dd109053c2?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Ftech-festa-ogp-background-4b5015b2c518c7e6b9062a7c9f5f5e90.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0MzUyMzMlMkYzYWVhMjJjODY0NGRjN2RhNzNhYmNiZWViNzNiMzQ5NTY1ZjFhYzg3JTJGeF9sYXJnZS5wbmclM0YxNzQzODkzNzQwP2l4bGliPXJiLTQuMC4wJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZmbT1wbmczMiZzPTIyNWZkYzNlYTI4NmM5NWQxMjJiOTZiMTA2YTdjZWZh%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D91f1769c847b27b75c0687f46f262245?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9JUUzJTgwJTkwJUU1JUFFJThDJUU1JTg1JUE4JUU3JTg5JTg4JUUzJTgwJTkxR2VtaW5pJTIwQ0xJJTIwJUUzJTgzJTgxJUUzJTgzJUJDJUUzJTgzJTg4JUUzJTgyJUI3JUUzJTgzJUJDJUUzJTgzJTg4JTIwLSUyMCVFMyU4MSU5MyVFMyU4MSVBRSVFOCVBOCU5OCVFNCVCQSU4QiVFMyU4MSVBNyVFNCVCQiU4QSVFNiU5NyVBNSVFNiU5NCVCQiVFNyU5NSVBNSVFRiVCQyU4MSVGMCU5RiU5QSU4MCZ0eHQtYWxpZ249bGVmdCUyQ3RvcCZ0eHQtY29sb3I9JTIzRkZGRkZGJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTU2JnR4dC1wYWQ9MCZzPTM3ZWQ1N2Q2MGU0NGVjNTRiMzk4YzYwYWI2MDUyMjdl&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBha2lyYV9wYXBhX0FJJnR4dC1jb2xvcj0lMjNGRkZGRkYmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZDE2MDEyMzllMThmMzA3ZDYyNDc5ZDAyNmUwZTI2NmM&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=40406ecf3a830247845362111312f342" width="120" height="90" alt="【完全版】Gemini CLI チートシート - この記事で今日攻略！🚀" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          【完全版】Gemini CLI チートシート - この記事で今日攻略！🚀
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Qiita
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://qiita.com/revsystem/items/34e65c59f05f97357d71?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Ftech-festa-ogp-background-4b5015b2c518c7e6b9062a7c9f5f5e90.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY2MTgwOSUyRmRiYWUyNWE4ZjNhMjhiNzhhMzJmYjUzNzg0YTRhZmZjYjc0YmM0YWQlMkZsYXJnZS5wbmclM0YxNzE3NjI3OTQ5P2l4bGliPXJiLTQuMC4wJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZmbT1wbmczMiZzPTQxYzNhMzY2NjcyYmMyNGI5ZTQxNmVlZjMyZjMxODA1%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D6e34ec92cddfd2f248f298cb9a4bbc77?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9R2VtaW5pJTIwQ0xJJTIwJUUzJTgyJTkyJTIwR29vZ2xlJTIwV29ya3NwYWNlJTIwJUUzJTgyJUEyJUUzJTgyJUFCJUUzJTgyJUE2JUUzJTgzJUIzJUUzJTgzJTg4JUUzJTgxJUE3JUU0JUJEJUJGJUUzJTgxJTg2JnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjNGRkZGRkYmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9N2UzMDY4NGEzMTlkYmE5NDkyYzNhYmE5Yzg5MjM4YmY&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDByZXZzeXN0ZW0mdHh0LWNvbG9yPSUyM0ZGRkZGRiZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz01ZGZlYWFiZDU1ZjNkZWRiZGMzZGU1ZTk5MWI2NzFhZg&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=6f2c38a7032171498b16d64c4889dad3" width="120" height="90" alt="Gemini CLI を Google Workspace アカウントで使う" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          Gemini CLI を Google Workspace アカウントで使う
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Qiita
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://qiita.com/degudegu2510/items/7079d76beeaa40c206d3?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          【CSS】まだ width: 100% つかってるやついる⁉︎ いねぇよな⁉︎
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Qiita
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://qiita.com/omochi_0604/items/676bc3f123bc24d3602b?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Ftech-festa-ogp-background-4b5015b2c518c7e6b9062a7c9f5f5e90.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGMjI3MzYzOCUyRnByb2ZpbGUtaW1hZ2VzJTJGMTc1MDMwOTc3OT9peGxpYj1yYi00LjAuMCZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmZm09cG5nMzImcz01ZTc1MTQxZGNmM2VjY2JmZWFiZTFkMTgyYzA0NjI0NA%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D881b920404f593a2a340efd54d98b3cc?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9JUUzJTgwJThDJUU1JTg1JUFDJUU1JTg1JUIxV2ktRmklRTMlODElQUYlRTUlOEQlQjElRTklOTklQkElRTMlODAlOEQlRTMlODElQTMlRTMlODElQTYlRTMlODIlODglRTMlODElOEYlRTglODElOUUlRTMlODElOEYlRTMlODElOTElRTMlODElQTklRTIlODAlQTYlMjAlRTMlODElQTklRTMlODElOTMlRTMlODElOEMlRTMlODElQTklRTMlODElODYlRTUlOEQlQjElRTMlODElQUElRTMlODElODQlRTMlODElQUUlRUYlQkMlOUYlRTclODklQTklRTclOTAlODYlRTMlODElOEIlRTMlODIlODklRTclQjQlOTAlRTglQTclQTMlRTMlODElOEYlRTMlODIlQkIlRTMlODIlQUQlRTMlODMlQTUlRTMlODMlQUElRTMlODMlODYlRTMlODIlQTMlRTUlODUlQTUlRTklOTYlODAmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyM0ZGRkZGRiZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz05ZTljZGM1OGQ4YzRjMDYwODJhM2Q0NjYwNWI0NmNjMA&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBvbW9jaGlfMDYwNCZ0eHQtY29sb3I9JTIzRkZGRkZGJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPWFmMzEzZDA5ZDkzZTNiMjYzODIxOWVlYTk1NzI2N2Fl&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=a345ec59d773d7f882648dfa308acff8" width="120" height="90" alt="「公共Wi-Fiは危険」ってよく聞くけど… どこがどう危ないの？物理から紐解くセキュリティ入門" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          「公共Wi-Fiは危険」ってよく聞くけど… どこがどう危ないの？物理から紐解くセキュリティ入門
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Qiita
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
 
 ---
 ## <img src="https://zenn.dev/favicon.ico" width="16" height="16" alt="Zenn"> Zenn
 
-- [o3 MCPでClaude Codeが最強の検索力を手に入れた](https://zenn.dev/yoshiko/articles/claude-code-with-o3)
-- [lsmcp - 汎用的な LSP の MCP サーバーを作った](https://zenn.dev/mizchi/articles/introduce-lsmcp)
-- [【コーディング無し】既存 API サーバーを MCP サーバーに一瞬で変える方法](https://zenn.dev/microsoft/articles/expose-mcp-server-in-apim)
-- [pg_duckdbとDuckLakeがもたらすOLAP統合の未来](https://zenn.dev/nttdata_tech/articles/tzkoba-pgduckdb-ducklake-202506)
-- [iOS開発の教科書(β版)](https://zenn.dev/st43/books/bb5ea67aa3de15)
-- [Gemini CLIを会社で使う場合のプラン選択方針](https://zenn.dev/hololab/articles/geminicli-001-75046b80817049)
-- [【神アプデ🎉】Clineが無料枠/サブスク対応！Gemini CLIとClaude Maxを利用すればコストを気にせず使い倒せるぞ！！](https://zenn.dev/minedia/articles/a7c99536b04e84)
-- [AnthropicのDesktop Extensions (DXT)完全ガイド： ローカルAIアプリケーションの新時代](https://zenn.dev/cadp/articles/6d9dd374fd3d32)
-- [ターミナルを使う人は、とりあえず「mise」を入れておく時代。　　・・・を夢見て。](https://zenn.dev/dress_code/articles/a99ff13634bbe6)
-- [Gemini CLIやClaude Codeみたいなロゴを出力するoh-my-logoというツールを作りました](https://zenn.dev/shinshin86/articles/e02fac5d3ae75a)
+
+<a href="https://zenn.dev/grandchildrice/articles/499e22b0e9e4c8" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://res.cloudinary.com/zenn/image/upload/s--Ynwwu7jL--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:AI%25E3%2582%25A8%25E3%2583%25BC%25E3%2582%25B8%25E3%2582%25A7%25E3%2583%25B3%25E3%2583%2588%25E3%2581%25A7%25E3%2583%2590%25E3%2582%25B0%25E3%2583%2590%25E3%2582%25A6%25E3%2583%25B3%25E3%2583%2586%25E3%2582%25A3%25EF%25BC%2581%2520Cline%2520%25C3%2597%2520Claude%2520Code%2520%25C3%2597%2520GPT-o3%2520%25E3%2581%25A7%2520%25242%252C000%2520%25E3%2582%2592...%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:gohan%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSjNHNUJxRkUyT2FTVER3ZHAyVldkdGJnY1RNV1cwYmlhbnBEZl9ZTUdqUE9TZ3h0TUQ9czk2LWM=%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="AIエージェントでバグバウンティ！ Cline × Claude Code × GPT-o3 で $2,000 を獲得した話" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          AIエージェントでバグバウンティ！ Cline × Claude Code × GPT-o3 で $2,000 を獲得した話
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Zenn
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://zenn.dev/karaage0703/articles/3bd2957807f311" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://res.cloudinary.com/zenn/image/upload/s--qFEpkSVb--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Claude%2520Code%25E3%2581%25AB%25E3%2582%25B3%25E3%2583%259E%25E3%2583%25B3%25E3%2583%2589%25E4%25B8%2580%25E7%2599%25BA%25E3%2581%25A7MCP%25E3%2582%25B5%25E3%2583%25BC%25E3%2583%2590%25E3%2582%2592%25E7%25B0%25A1%25E5%258D%2598%25E8%25A8%25AD%25E5%25AE%259A%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2581%258B%25E3%2582%2589%25E3%2581%2582%25E3%2581%2592%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2hDZEtvakJfZXdDTjNCV1Z0WXIteFNIZ0hmRjlXZmt3QzI5c0Y0aXYwPXMyNTAtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="Claude Codeにコマンド一発でMCPサーバを簡単設定" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          Claude Codeにコマンド一発でMCPサーバを簡単設定
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Zenn
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://zenn.dev/yoshiko/articles/claude-code-with-o3" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://res.cloudinary.com/zenn/image/upload/s--xAYvgHwM--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:o3%2520MCP%25E3%2581%25A7Claude%2520Code%25E3%2581%258C%25E6%259C%2580%25E5%25BC%25B7%25E3%2581%25AE%25E6%25A4%259C%25E7%25B4%25A2%25E5%258A%259B%25E3%2582%2592%25E6%2589%258B%25E3%2581%25AB%25E5%2585%25A5%25E3%2582%258C%25E3%2581%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2582%2588%25E3%2581%2597%25E3%2581%2593%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2kwU3JDUjBpVERyUHpqWnF4YjJLZ0tueHgtamE0N253SEE0NGE4RDhrPXMyNTAtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="o3 MCPでClaude Codeが最強の検索力を手に入れた" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          o3 MCPでClaude Codeが最強の検索力を手に入れた
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Zenn
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://zenn.dev/carenet/articles/7f4d0bf85cc0e2" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://res.cloudinary.com/zenn/image/upload/s--6JcghNCM--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%255B2025%25E5%25B9%25B46%25E6%259C%258827%25E6%2597%25A5%255D%2520Gemini%2520CLI%25E3%2581%25AF%25E7%258F%25BE%25E7%258A%25B6%25E3%2581%25A1%25E3%2582%2587%25E3%2581%25A3%25E3%2581%25A8%25E3%2583%2580%25E3%2583%25A1%25E3%2581%258B%25E3%2582%2582%25E3%2581%2597%25E3%2582%258C%25E3%2581%25AA%25E3%2581%2584%2520%2528%25E9%2580%25B1%25E5%2588%258AAI%2529%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:Kai%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzE0MTRiZmIwZWQuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:CareNet%2520Engineers%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUVkRlRwN0luX0J2ajYyMjVsbTRVWXczSjhQODgwRTdhSFF6YXZqcmJHN1E9czk2LWM=%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="[2025年6月27日] Gemini CLIは現状ちょっとダメかもしれない (週刊AI)" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          [2025年6月27日] Gemini CLIは現状ちょっとダメかもしれない (週刊AI)
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Zenn
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://zenn.dev/mizchi/articles/introduce-lsmcp" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://res.cloudinary.com/zenn/image/upload/s--tGrXUIqd--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:lsmcp%2520-%2520%25E6%25B1%258E%25E7%2594%25A8%25E7%259A%2584%25E3%2581%25AA%2520LSP%2520%25E3%2581%25AE%2520MCP%2520%25E3%2582%25B5%25E3%2583%25BC%25E3%2583%2590%25E3%2583%25BC%25E3%2582%2592%25E4%25BD%259C%25E3%2581%25A3%25E3%2581%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:mizchi%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2liclRHT052Z3d3ay1fNGxlcVk4TGNGSlNuX0FoWnpEWVlKaXJNcWc9czI1MC1j%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="lsmcp - 汎用的な LSP の MCP サーバーを作った" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          lsmcp - 汎用的な LSP の MCP サーバーを作った
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          Zenn
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
 
 ---
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT"> はてなブックマーク - IT
 
-- [【Obsidianの使い方が変わる】Gemini CLIは、あなたの思考に寄り添う「無料の執事」｜少し明るい高橋くん](https://note.com/chankostin/n/nb33ca6e289fa)
-- [AIの世界も「フリーランチは終わった」になってきてるのでは - きしだのHatena](https://nowokay.hatenablog.com/entry/2025/06/26/224437)
-- [【無料】グーグル神AIツール5選　「Google AI Studio」はこれがやばい (1/7)](https://ascii.jp/elem/000/004/286/4286792/)
-- [VueエンジニアがReactを触ってみた感想｜Yutori Otsu](https://note.com/yutori_otsu827/n/nf502e45cf14d)
-- [面接をして「この人優秀だな」と感じる人はどんな人か? - pospomeのプログラミング日記](https://www.pospome.work/entry/2025/06/28/151253)
-- [Claude Codeにコマンド一発でMCPサーバを簡単設定](https://zenn.dev/karaage0703/articles/3bd2957807f311)
-- [Anthropic、ワンクリックでローカルMCPサーバーをインストールできる「Desktop Extensions」をリリース | gihyo.jp](https://gihyo.jp/article/2025/06/claude-desktop-extensions)
-- [【2025年】zip圧縮･展開(解凍) おすすめソフト12選まとめ＋解説【Win･Mac対応、文字化けよさらば！】 - Qiita](https://qiita.com/ko1nksm/items/b1e320f418614372c43e)
-- [AIネイティブ世代が実践してる。スマホでバイブコーディングする方法【Gemini-CLI】｜Holy_fox](https://note.com/holy_fox/n/nfe53492ac5dd)
-- [o3 MCPでClaude Codeが最強の検索力を手に入れた](https://zenn.dev/yoshiko/articles/claude-code-with-o3)
+
+<a href="https://anond.hatelabo.jp/20250628122821" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://anond.hatelabo.jp/images/og-image-1500.gif" width="120" height="90" alt="現状のAIが全然使い物にならないのは、非常に正しくて、そして間違っている。" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          現状のAIが全然使い物にならないのは、非常に正しくて、そして間違っている。
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          はてなブックマーク - IT
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://zenn.dev/dress_code/articles/a99ff13634bbe6" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://res.cloudinary.com/zenn/image/upload/s--lInfj4Gj--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2582%25BF%25E3%2583%25BC%25E3%2583%259F%25E3%2583%258A%25E3%2583%25AB%25E3%2582%2592%25E4%25BD%25BF%25E3%2581%2586%25E4%25BA%25BA%25E3%2581%25AF%25E3%2580%2581%25E3%2581%25A8%25E3%2582%258A%25E3%2581%2582%25E3%2581%2588%25E3%2581%259A%25E3%2580%258Cmise%25E3%2580%258D%25E3%2582%2592%25E5%2585%25A5%25E3%2582%258C%25E3%2581%25A6%25E3%2581%258A%25E3%2581%258F%25E6%2599%2582%25E4%25BB%25A3%25E3%2580%2582%25E3%2580%2580%25E3%2580%2580%25E3%2583%25BB%25E3%2583%25BB%25E3%2583%25BB%25E3%2582%2592%25E5%25A4%25A2%25E8%25A6%258B%25E3%2581%25A6%25E3%2580%2582%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:%25E3%2581%25BD%25E3%2582%2593%25E3%2581%2593%25E3%2581%25A4%25E3%2582%25A8%25E3%2583%25B3%25E3%2582%25B8%25E3%2583%258B%25E3%2582%25A2%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzRiOGMxZmU1MDUuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:DRESS%2520CODE%2520TECH%2520BLOG%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzliYjdlODc0YzIuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="ターミナルを使う人は、とりあえず「mise」を入れておく時代。　　・・・を夢見て。" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          ターミナルを使う人は、とりあえず「mise」を入れておく時代。　　・・・を夢見て。
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          はてなブックマーク - IT
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://note.com/mmmiyama/n/n9fa6839beb06" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://assets.st-note.com/production/uploads/images/198712487/rectangle_large_type_2_5f1a4e558d486194e3c571ea41e519e1.jpeg?fit=bounds&quality=85&width=1280" width="120" height="90" alt="プログラミング1ミリも分からない人がGemini CLI始めるまでの全手順（Win篇）｜ミヤマ｜営業部にいるデザイナー" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          プログラミング1ミリも分からない人がGemini CLI始めるまでの全手順（Win篇）｜ミヤマ｜営業部にいるデザイナー
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          はてなブックマーク - IT
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://www.pospome.work/entry/2025/06/28/151253" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://cdn.image.st-hatena.com/image/square/664b9cdb83f1a563164712ec805f1b5c56f76fa9/backend=imagemagick;height=128;version=1;width=128/https%3A%2F%2Fcdn.user.blog.st-hatena.com%2Fcustom_blog_icon%2F72897128%2F1514228874850668" width="120" height="90" alt="面接をして「この人優秀だな」と感じる人はどんな人か? - pospomeのプログラミング日記" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          面接をして「この人優秀だな」と感じる人はどんな人か? - pospomeのプログラミング日記
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          はてなブックマーク - IT
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+<a href="https://qiita.com/ko1nksm/items/b1e320f418614372c43e" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFtYXpvbmF3cy5jb20lMkYwJTJGNTQ5MTglMkZwcm9maWxlLWltYWdlcyUyRjE0NzM2OTM1Mjg_aXhsaWI9cmItNC4wLjAmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmZtPXBuZzMyJnM9YjQzZjY0ZGMzZWVjY2UyZTY1MGQ4NTRlNzk3ZDI2NGQ%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D8fcfde890a56b8fea74f53d87eeef4e6?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9JUUzJTgwJTkwMjAyNSVFNSVCOSVCNCVFMyU4MCU5MXppcCVFNSU5QyVBNyVFNyVCOCVBRSVFRiVCRCVBNSVFNSVCMSU5NSVFOSU5NiU4QiUyOCVFOCVBNyVBMyVFNSU4NyU4RCUyOSUyMCVFMyU4MSU4QSVFMyU4MSU5OSVFMyU4MSU5OSVFMyU4MiU4MSVFMyU4MiVCRCVFMyU4MyU5NSVFMyU4MyU4ODEyJUU5JTgxJUI4JUUzJTgxJUJFJUUzJTgxJUE4JUUzJTgyJTgxJUVGJUJDJThCJUU4JUE3JUEzJUU4JUFBJUFDJUUzJTgwJTkwV2luJUVGJUJEJUE1TWFjJUU1JUFGJUJFJUU1JUJGJTlDJUUzJTgwJTgxJUU2JTk2JTg3JUU1JUFEJTk3JUU1JThDJTk2JUUzJTgxJTkxJUUzJTgyJTg4JUUzJTgxJTk1JUUzJTgyJTg5JUUzJTgxJUIwJUVGJUJDJTgxJUUzJTgwJTkxJnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9OTg3ZDdlNDgzNWM1ZGQ5OTdkMGMxMDRhNGMzNDE0NWI&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBrbzFua3NtJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ODVlMzIyOWJiNjA2ZTE4YzM2ZmM0MzNjMTk0ZjJkMmI&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=b2496b7a83b44821e8fb1e13d9bbe465" width="120" height="90" alt="【2025年】zip圧縮･展開(解凍) おすすめソフト12選まとめ＋解説【Win･Mac対応、文字化けよさらば！】 - Qiita" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          【2025年】zip圧縮･展開(解凍) おすすめソフト12選まとめ＋解説【Win･Mac対応、文字化けよさらば！】 - Qiita
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          はてなブックマーク - IT
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
 
 ---
