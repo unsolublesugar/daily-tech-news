@@ -58,15 +58,36 @@ The FEEDS dictionary in fetch_news.py contains the RSS URLs. Each feed is proces
 - **fixブランチ**: バグ修正用 (`fix/修正内容`)
 
 ### Development Workflow
-1. mainブランチに切り替え
-2. mainブランチの最新状況をpull
-3. mainブランチから新しいブランチを作成
-4. 変更を実装・テスト
-5. ブランチをリモートにプッシュ
-6. Pull Requestを作成
-7. レビュー・承認後にmainにマージ
+1. **Issue作成**: 作業開始前に必ずIssueを作成
+2. mainブランチに切り替え
+3. mainブランチの最新状況をpull
+4. Issueに対応するブランチを作成（ブランチ名にIssue番号を含める）
+5. 変更を実装・テスト
+6. ブランチをリモートにプッシュ
+7. Pull Requestを作成（IssueとPRを紐づける）
+8. レビュー・承認後にmainにマージ
 
-#### ブランチ作成手順
+### Issue作成ルール
+
+#### 作業開始前の必須手順
+```bash
+# Issue作成（機能追加の場合）
+gh issue create --title "✨ 機能名: 簡潔な説明" --body "詳細な説明" --label enhancement --assignee unsolublesugar
+
+# Issue作成（バグ修正の場合）
+gh issue create --title "🐛 バグ: 問題の説明" --body "再現手順と期待する動作" --label bug --assignee unsolublesugar
+
+# Issue作成（ドキュメント更新の場合）
+gh issue create --title "📚 ドキュメント: 更新内容" --body "更新理由と詳細" --label documentation --assignee unsolublesugar
+```
+
+#### Issue作成時の必須項目
+- **タイトル**: 絵文字プレフィックス + 簡潔な説明
+- **ラベル**: 作業内容に応じた適切なラベル設定
+- **アサイニー**: `unsolublesugar` (必須)
+- **本文**: 詳細な説明、受け入れ条件、実装方針など
+
+#### ブランチ作成手順（Issue作成後）
 ```bash
 # mainブランチに切り替え
 git checkout main
@@ -74,28 +95,33 @@ git checkout main
 # 最新状況をpull
 git pull origin main
 
-# 新しいブランチを作成・切り替え
-git checkout -b feature/機能名
+# Issue番号を含むブランチを作成・切り替え
+git checkout -b feature/issue-番号-機能名
 # または
-git checkout -b fix/修正内容
+git checkout -b fix/issue-番号-修正内容
+
+# 例：Issue #13に対応する場合
+git checkout -b feature/issue-13-event-deduplication
 ```
 
 ### Pull Request Creation Rules
 
-#### 基本コマンド
+#### 基本コマンド（Issue番号を含める）
 ```bash
-# 機能追加の場合
-gh pr create --title "✨ 機能名: 簡潔な説明" --assignee unsolublesugar --label enhancement --body "詳細な説明"
+# 機能追加の場合（Issue #13に対応）
+gh pr create --title "✨ 機能名: 簡潔な説明 (#13)" --assignee unsolublesugar --label enhancement --body "Closes #13\n\n詳細な説明"
 
-# バグ修正の場合  
-gh pr create --title "🐛 修正: 問題の説明" --assignee unsolublesugar --label bug --body "修正内容の詳細"
+# バグ修正の場合（Issue #14に対応）
+gh pr create --title "🐛 修正: 問題の説明 (#14)" --assignee unsolublesugar --label bug --body "Fixes #14\n\n修正内容の詳細"
 
-# ドキュメント更新の場合
-gh pr create --title "📚 ドキュメント: 更新内容" --assignee unsolublesugar --label documentation --body "更新理由と内容"
-
-# リファクタリングの場合
-gh pr create --title "♻️ リファクタリング: 対象範囲" --assignee unsolublesugar --label refactor --body "リファクタリング理由"
+# ドキュメント更新の場合（Issue #15に対応）
+gh pr create --title "📚 ドキュメント: 更新内容 (#15)" --assignee unsolublesugar --label documentation --body "Closes #15\n\n更新理由と内容"
 ```
+
+#### IssueとPRの紐づけ
+- **PRタイトル**: 末尾に `(#Issue番号)` を追加
+- **PR本文**: 先頭に `Closes #Issue番号` または `Fixes #Issue番号` を記載
+- これによりPRマージ時に自動でIssueがクローズされる
 
 #### 必須設定項目
 - **Assignee**: `unsolublesugar` (必須)

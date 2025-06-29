@@ -55,8 +55,8 @@ https://unsolublesugar.github.io/daily-tech-news/
 - [現状のAIが全然使い物にならないのは、非常に正しくて、そして間違っている。](https://anond.hatelabo.jp/20250628122821)
 - [プログラミング1ミリも分からない人がGemini CLI始めるまでの全手順（Win篇）｜ミヤマ｜営業部にいるデザイナー](https://note.com/mmmiyama/n/n9fa6839beb06)
 - [ターミナルを使う人は、とりあえず「mise」を入れておく時代。　　・・・を夢見て。](https://zenn.dev/dress_code/articles/a99ff13634bbe6)
-- [孫正義「4.8兆円で超知能（ASI）の胴元になる」株主総会書き起こし - エンジニアtype | 転職type](https://type.jp/et/feature/28743/)
-- [面接をして「この人優秀だな」と感じる人はどんな人か? - pospomeのプログラミング日記](https://www.pospome.work/entry/2025/06/28/151253)
+- [「先週何したっけ？」をゼロに：Obsidian + Claude Codeを業務アシスタントに - エムスリーテックブログ](https://www.m3tech.blog/entry/2025/06/29/110000)
+- [Claude Codeを実際のプロジェクトにうまく適用させていくTips10選 - Qiita](https://qiita.com/nokonoko_1203/items/67f8692a0a3ca7e621f3)
 
 
 ---
@@ -72,11 +72,11 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://dev.classmethod.jp/favicon.ico" width="16" height="16" alt="DevelopersIO"> DevelopersIO
 
+- [[作ってみた] レシートプリンター付きデバイスを使ってメモを出してみた](https://dev.classmethod.jp/articles/dev-receipt-printer-device-memo-output-maruto/)
 - [[アップデート] Amazon Route 53 Resolver Endpointがプライベートホストゾーンの DNS 委任をサポートするようになりました](https://dev.classmethod.jp/articles/amazon-route-53-resolver-endpoints-dns-delegation-private-hosted-zones/)
 - [[セッションレポート] AWS で実現する患者中心の医療サービス変革 ～デジタルトランスフォーメーションによる新たな医療の未来～（AWS-31）#AWSSummit](https://dev.classmethod.jp/articles/202506-aws-summit-2025-aws-31/)
 - [【ブースレポート】カメラで読み込んだ譜面をロボットアームで即興演奏するピアノボットが面白い #AWSSummit](https://dev.classmethod.jp/articles/awssummit-2025-pianobot-booth/)
 - [[セッションレポート] オープンテーブルフォーマットで実現する、大規模データ分析基盤の構築と運用 #AWSSummit](https://dev.classmethod.jp/articles/aws-summit-japan-2025-otf-data-analysis-basis-aws-47/)
-- [[アップデート] Amazon Q Developer のルールファイルがサードパーティプラットフォームでも使えるようになったので、Amazon Q Developer for GitHub でためしてみた](https://dev.classmethod.jp/articles/qdev-third-party-context-project-rules/)
 
 
 ---
@@ -123,10 +123,6 @@ https://unsolublesugar.github.io/daily-tech-news/
 - [北千住もくもく作業・勉強部屋](https://kitasenju-verystrong.connpass.com/event/360890/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [YUMEMI × やさしい Swift 勉強会 #547 #yumemi_grow](https://yasashii-swift.connpass.com/event/360729/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [朝活もくもく会 #23](https://zitox.connpass.com/event/360889/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [朝活もくもく会 #22](https://zitox.connpass.com/event/360888/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [朝活もくもく会 #21](https://zitox.connpass.com/event/360887/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [朝活もくもく会 #20](https://zitox.connpass.com/event/360886/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [朝活もくもく会 #19](https://zitox.connpass.com/event/360885/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [「競技プログラミングの鉄則」読書会 #11](https://study-group.connpass.com/event/360880/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [DevOpsDays ビデオ鑑賞会 #15](https://agiledevs.connpass.com/event/360881/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 
