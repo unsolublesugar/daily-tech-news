@@ -118,7 +118,7 @@ def generate_html(all_entries, feed_info, date_str):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>毎日のテックニュース ({date_str})</title>
+    <title>今日のテックニュース ({date_str})</title>
     <style>
         body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -180,7 +180,7 @@ def generate_html(all_entries, feed_info, date_str):
     </style>
 </head>
 <body>
-    <h1>毎日のテックニュース ({date_str})</h1>
+    <h1>今日のテックニュース ({date_str})</h1>
     
     <p>📚 <a href="archives/index.html">過去のニュースを見る</a> | 📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
     
@@ -238,7 +238,7 @@ def generate_html(all_entries, feed_info, date_str):
 
 def generate_markdown(all_entries, feed_info, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
-    markdown = f"# 毎日のテックニュース ({date_str})\n\n"
+    markdown = f"# 今日のテックニュース ({date_str})\n\n"
     markdown += "📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/)\n\n"
     markdown += "日本の主要な技術系メディアの最新人気エントリーをお届けします。\n\n"
     markdown += "## 🎨 カード表示版もあります\n\n"
@@ -373,7 +373,7 @@ def generate_rss_feed(all_entries, feed_info, date_obj):
     channel = ET.SubElement(rss, 'channel')
     
     # チャンネル情報
-    ET.SubElement(channel, 'title').text = '毎日のテックニュース'
+    ET.SubElement(channel, 'title').text = '今日のテックニュース'
     ET.SubElement(channel, 'link').text = 'https://unsolublesugar.github.io/daily-tech-news/'
     ET.SubElement(channel, 'description').text = '日本の主要な技術系メディアの最新人気エントリーを毎日お届けします'
     ET.SubElement(channel, 'language').text = 'ja'

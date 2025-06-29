@@ -1,4 +1,4 @@
-# 毎日のテックニュース (2025-06-29)
+# 今日のテックニュース (2025-06-29)
 
 📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/)
 
