@@ -53,3 +53,47 @@ jobs:
           git commit -m "🗞️ 毎日のテックニュース更新 $(date '+%Y-%m-%d')"
           git push
         fi
+        
+    - name: Notify Slack
+      uses: 8398a7/action-slack@v3
+      if: success()
+      with:
+        status: custom
+        custom_payload: |
+          {
+            "text": "📰 今日のテックニュース更新完了！",
+            "blocks": [
+              {
+                "type": "header",
+                "text": {
+                  "type": "plain_text",
+                  "text": "📰 今日のテックニュース更新完了"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "最新のテックニュースを更新しました！\n\n🔗 <https://unsolublesugar.github.io/daily-tech-news/|カード表示版を見る>\n📰 <https://github.com/unsolublesugar/daily-tech-news|GitHub リポジトリ>"
+                }
+              },
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "*📊 更新サマリー*\n• Tech Blog Weekly から5件\n• Zenn から5件\n• Qiita から5件\n• はてなブックマーク から10件\n• その他の技術メディアから多数"
+                }
+              },
+              {
+                "type": "context",
+                "elements": [
+                  {
+                    "type": "mrkdwn",
+                    "text": "⚡ GitHub Actions で自動更新 | 🚀 キャッシュ機能で高速化"
+                  }
+                ]
+              }
+            ]
+          }
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
