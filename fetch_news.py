@@ -288,7 +288,7 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
     site_title = f"今日のテックニュース ({date_str})"
     site_description = "日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。"
     site_url = "https://unsolublesugar.github.io/daily-tech-news/"
-    og_image_url = f"{site_url}OGP.svg"
+    og_image_url = f"{site_url}assets/images/OGP.svg"
     twitter_user = "@unsoluble_sugar"
 
     html = f"""<!DOCTYPE html>
@@ -311,11 +311,11 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
     <meta name="twitter:site" content="{twitter_user}">
     
     <!-- Favicon Tags -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="favicon_io/site.webmanifest">
-    <link rel="shortcut icon" href="favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
 
     <style>
         body {{
