@@ -55,28 +55,28 @@ https://unsolublesugar.github.io/daily-tech-news/
 - [現状のAIが全然使い物にならないのは、非常に正しくて、そして間違っている。](https://anond.hatelabo.jp/20250628122821)
 - [プログラミング1ミリも分からない人がGemini CLI始めるまでの全手順（Win篇）｜ミヤマ｜営業部にいるデザイナー](https://note.com/mmmiyama/n/n9fa6839beb06)
 - [ターミナルを使う人は、とりあえず「mise」を入れておく時代。　　・・・を夢見て。](https://zenn.dev/dress_code/articles/a99ff13634bbe6)
-- [「先週何したっけ？」をゼロに：Obsidian + Claude Codeを業務アシスタントに - エムスリーテックブログ](https://www.m3tech.blog/entry/2025/06/29/110000)
 - [Claude Codeを実際のプロジェクトにうまく適用させていくTips10選 - Qiita](https://qiita.com/nokonoko_1203/items/67f8692a0a3ca7e621f3)
+- [孫正義「4.8兆円で超知能（ASI）の胴元になる」株主総会書き起こし - エンジニアtype | 転職type](https://type.jp/et/feature/28743/)
 
 
 ---
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（新着）"> はてなブックマーク - IT（新着）
 
-- [「先週何したっけ？」をゼロに：Obsidian + Claude Codeを業務アシスタントに - エムスリーテックブログ](https://www.m3tech.blog/entry/2025/06/29/110000)
 - [結局お前らはITエンジニアでなく、ITカルトではなかろうか？](https://anond.hatelabo.jp/20250628113111)
 - [Route 53 プライベートホストゾーンへオンプレミスの DNS サーバーからサブドメインを委任できるようになったので試してみた - Qiita](https://qiita.com/takeda_h/items/b56718ee53fcbbf5740b)
 - [最大の差別化要因はWebAssemblyの採用 ―― Fastly共同創業者Tyler McMullen氏に聞く次世代CDNの最前線 | gihyo.jp](https://gihyo.jp/article/2025/06/fastly-tyler-mcmullen)
-- [プログラミング1ミリも分からない人がGemini CLI始めるまでの全手順（Win篇）｜ミヤマ｜営業部にいるデザイナー](https://note.com/mmmiyama/n/n9fa6839beb06)
+- [Markdownで書いた社内ドキュメント、どう共有してる？ AWSで構築するセキュアな自動公開パイプライン](https://zenn.dev/nttdata_tech/articles/1c945dd56b374e)
+- [o3 MCPでClaude Codeが最強の検索力を手に入れた](https://share.google/5GQ578Rnl5nQgxxj0)
 
 
 ---
 ## <img src="https://dev.classmethod.jp/favicon.ico" width="16" height="16" alt="DevelopersIO"> DevelopersIO
 
+- [【ブースレポート】AWS Supply Chainのデモを見てきた #AWSSummit](https://dev.classmethod.jp/articles/shoma-booth-report-demo-aws-supply-chain-awssummit/)
 - [Dagsterとdbt CoreをECS on Fargateで構築する](https://dev.classmethod.jp/articles/dagster-dbt-core-ecs-sample/)
 - [[作ってみた] レシートプリンター付きデバイスを使ってメモを出してみた](https://dev.classmethod.jp/articles/dev-receipt-printer-device-memo-output-maruto/)
 - [[アップデート] Amazon Route 53 Resolver Endpointがプライベートホストゾーンの DNS 委任をサポートするようになりました](https://dev.classmethod.jp/articles/amazon-route-53-resolver-endpoints-dns-delegation-private-hosted-zones/)
 - [[セッションレポート] AWS で実現する患者中心の医療サービス変革 ～デジタルトランスフォーメーションによる新たな医療の未来～（AWS-31）#AWSSummit](https://dev.classmethod.jp/articles/202506-aws-summit-2025-aws-31/)
-- [【ブースレポート】カメラで読み込んだ譜面をロボットアームで即興演奏するピアノボットが面白い #AWSSummit](https://dev.classmethod.jp/articles/awssummit-2025-pianobot-booth/)
 
 
 ---

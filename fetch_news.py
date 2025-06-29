@@ -214,6 +214,38 @@ def deduplicate_events(entries, target_count=10):
     
     return deduplicated
 
+def deduplicate_urls_across_feeds(all_entries):
+    """フィード間でのURL重複を除去し、補填を行う"""
+    seen_urls = set()
+    deduplicated_feeds = {}
+    
+    for feed_name, entries in all_entries.items():
+        if not entries:
+            deduplicated_feeds[feed_name] = entries
+            continue
+            
+        # イベントフィードかどうかで目標件数を決定
+        target_count = 10 if "イベント" in feed_name else 5
+        
+        # URL重複除去
+        unique_entries = []
+        for entry in entries:
+            if hasattr(entry, 'link') and entry.link not in seen_urls:
+                seen_urls.add(entry.link)
+                unique_entries.append(entry)
+                
+                # 目標件数に達したら終了
+                if len(unique_entries) >= target_count:
+                    break
+        
+        # イベントフィードの場合はさらにイベント重複除去を適用
+        if "イベント" in feed_name:
+            unique_entries = deduplicate_events(unique_entries, target_count)
+        
+        deduplicated_feeds[feed_name] = unique_entries
+    
+    return deduplicated_feeds
+
 def generate_html(all_entries, feed_info, date_str):
     """取得したエントリーからHTMLコンテンツを生成する"""
     html = f"""<!DOCTYPE html>
@@ -330,13 +362,8 @@ def generate_html(all_entries, feed_info, date_str):
         if not entries:
             html += "    <p>記事を取得できませんでした。</p>\n"
         else:
-            # イベント情報は重複除去してから10件、その他は5件に制限
-            if "イベント" in feed_name:
-                entries = deduplicate_events(entries)
-                limit = 10
-            else:
-                limit = MAX_ENTRIES
-            for entry in entries[:limit]:
+            # エントリーはすでにURL重複除去済み
+            for entry in entries:
                 title = entry.title
                 link = entry.link
                 
@@ -389,13 +416,8 @@ def generate_markdown(all_entries, feed_info, date_str):
         if not entries:
             markdown += "記事を取得できませんでした。\n"
         else:
-            # イベント情報は重複除去してから10件、その他は5件に制限
-            if "イベント" in feed_name:
-                entries = deduplicate_events(entries)
-                limit = 10
-            else:
-                limit = MAX_ENTRIES
-            for entry in entries[:limit]:
+            # エントリーはすでにURL重複除去済み
+            for entry in entries:
                 title = entry.title
                 link = entry.link
                 
@@ -528,13 +550,8 @@ def generate_rss_feed(all_entries, feed_info, date_obj):
         else:
             favicon_display = f'{favicon} '
             
-        # イベント情報は重複除去してから10件、その他は5件に制限
-        if "イベント" in feed_name:
-            entries = deduplicate_events(entries)
-            limit = 10
-        else:
-            limit = 5
-        for entry in entries[:limit]:
+        # エントリーはすでにURL重複除去済み
+        for entry in entries:
             item = ET.SubElement(channel, 'item')
             ET.SubElement(item, 'title').text = f'{favicon_display}{entry.title}'
             ET.SubElement(item, 'link').text = entry.link
@@ -571,6 +588,10 @@ if __name__ == "__main__":
         print(f"Fetching entries from {name}...")
         entries = fetch_feed_entries(feed_info["url"])
         all_entries[name] = entries
+    
+    # フィード間URL重複除去と補填
+    print("Removing duplicate URLs across feeds...")
+    all_entries = deduplicate_urls_across_feeds(all_entries)
     
     # Markdownコンテンツ生成
     markdown_content = generate_markdown(all_entries, FEEDS, today.isoformat())
