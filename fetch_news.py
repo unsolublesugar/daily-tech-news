@@ -878,7 +878,9 @@ def save_slack_message(slack_payload):
 
 if __name__ == "__main__":
     script_start_time = time.time()
-    today = datetime.date.today()
+    # JST（日本時間）基準で日付を取得
+    jst = datetime.timezone(datetime.timedelta(hours=9))
+    today = datetime.datetime.now(jst).date()
     
     all_entries = {}
     for name, feed_info in FEEDS.items():
