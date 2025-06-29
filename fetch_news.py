@@ -807,6 +807,79 @@ def save_rss_feed(rss_element):
     
     print("RSS feed generated: rss.xml")
 
+def generate_slack_message(all_entries, date):
+    """Slack通知用のメッセージを生成"""
+    # 注目記事をピックアップ（各フィードから1-2件）
+    featured_articles = []
+    
+    # 優先度の高いフィードから記事を選択
+    priority_feeds = ["Tech Blog Weekly", "Zenn", "Qiita", "はてなブックマーク - IT（人気）"]
+    
+    for feed_name in priority_feeds:
+        if feed_name in all_entries and all_entries[feed_name]:
+            # 各フィードから最大2件取得
+            for entry in all_entries[feed_name][:2]:
+                if len(featured_articles) < 6:  # 最大6件まで
+                    # タイトルからHTMLタグを除去
+                    clean_title = re.sub(r'<[^>]+>', '', entry.title)
+                    featured_articles.append({
+                        "title": clean_title,
+                        "link": entry.link
+                    })
+    
+    # 総記事数を計算
+    total_articles = sum(len(entries) for entries in all_entries.values())
+    
+    # Slackメッセージのペイロードを生成
+    featured_text = "\n".join([
+        f"• <{article['link']}|{article['title']}>"
+        for article in featured_articles
+    ])
+    
+    slack_payload = {
+        "text": f"📰 今日のテックニュース ({date.isoformat()})",
+        "blocks": [
+            {
+                "type": "header",
+                "text": {
+                    "type": "plain_text",
+                    "text": f"📰 今日のテックニュース ({date.isoformat()})"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"🔥 *注目記事*\n{featured_text}"
+                }
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": f"📊 *更新サマリー*: {total_articles}記事を更新\n\n🔗 <https://unsolublesugar.github.io/daily-tech-news/|カード表示版を見る>\n📰 <https://github.com/unsolublesugar/daily-tech-news|GitHub リポジトリ>"
+                }
+            },
+            {
+                "type": "context",
+                "elements": [
+                    {
+                        "type": "mrkdwn",
+                        "text": "⚡ GitHub Actions で自動更新 | 🚀 キャッシュ機能で高速化"
+                    }
+                ]
+            }
+        ]
+    }
+    
+    return slack_payload
+
+def save_slack_message(slack_payload):
+    """Slackメッセージをファイルに保存"""
+    with open("slack_message.json", "w", encoding="utf-8") as f:
+        json.dump(slack_payload, f, ensure_ascii=False, indent=2)
+    print("Slack message generated: slack_message.json")
+
 if __name__ == "__main__":
     script_start_time = time.time()
     today = datetime.date.today()
@@ -860,6 +933,10 @@ if __name__ == "__main__":
     # RSSフィード生成
     rss_feed = generate_rss_feed(all_entries, FEEDS, today)
     save_rss_feed(rss_feed)
+    
+    # Slackメッセージ生成
+    slack_message = generate_slack_message(all_entries, today)
+    save_slack_message(slack_message)
         
     total_time = time.time() - script_start_time
     print(f"Successfully updated README.md, index.html, archive structure, and RSS feed.")
