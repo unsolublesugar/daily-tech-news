@@ -223,26 +223,9 @@ def generate_html(all_entries, feed_info, date_str):
                 
                 if thumbnail_url:
                     escaped_url = thumbnail_url.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
-                    card_html = f"""    <a href="{link}" class="card">
-        <div class="card-content">
-            <img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">{title}</h4>
-                <p class="card-source">{feed_name}</p>
-            </div>
-        </div>
-    </a>
-"""
+                    card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" class="card-image">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
                 else:
-                    card_html = f"""    <a href="{link}" class="card">
-        <div class="card-content">
-            <div class="card-text">
-                <h4 class="card-title">{title}</h4>
-                <p class="card-source">{feed_name}</p>
-            </div>
-        </div>
-    </a>
-"""
+                    card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
                 html += card_html
         
         html += "    <hr>\n"
