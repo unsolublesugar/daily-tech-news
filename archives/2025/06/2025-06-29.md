@@ -54,11 +54,11 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（新着）"> はてなブックマーク - IT（新着）
 
+- [Drag-and-Drop LLMs: Zero-Shot Prompt-to-Weights](https://arxiv.org/abs/2506.16406)
 - [GitHub - kign/c4wa: A simplified subset of C transpiled into Web Assembly](https://github.com/kign/c4wa)
 - [Route 53 プライベートホストゾーンへオンプレミスの DNS サーバーからサブドメインを委任できるようになったので試してみた - Qiita](https://qiita.com/takeda_h/items/b56718ee53fcbbf5740b)
 - [最大の差別化要因はWebAssemblyの採用 ―― Fastly共同創業者Tyler McMullen氏に聞く次世代CDNの最前線 | gihyo.jp](https://gihyo.jp/article/2025/06/fastly-tyler-mcmullen)
 - [プレゼン動画自動生成ツール Mulmocast を使う](https://zenn.dev/open_developers/articles/87928c78f98210)
-- [o3 MCPでClaude Codeが最強の検索力を手に入れた](https://share.google/5GQ578Rnl5nQgxxj0)
 
 
 ---
@@ -111,6 +111,7 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://connpass.com/favicon.ico" width="16" height="16" alt="connpass - イベント"> connpass - イベント
 
+- [【限定5名増枠】英語LT会【テーマ：開発生産性】Japanglish Tech Talk#6](https://japanglish.connpass.com/event/360913/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [Djangoもくもく会: 7回目](https://pythonista-books.connpass.com/event/360904/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [第52回CITPコミュニティ定例会](https://connpass.com/event/360908/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [誰でも参加OK！_朝活_もくもく会](https://routine-link.connpass.com/event/360902/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
@@ -120,7 +121,6 @@ https://unsolublesugar.github.io/daily-tech-news/
 - [第110回CoderDojo 浜松（2025年7月）](https://coderdojo-hamamatsu.connpass.com/event/359293/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [北千住もくもく作業・勉強部屋](https://kitasenju-verystrong.connpass.com/event/360890/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [YUMEMI × やさしい Swift 勉強会 #547 #yumemi_grow](https://yasashii-swift.connpass.com/event/360729/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [朝活もくもく会 #23](https://zitox.connpass.com/event/360889/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 
 
 ---
