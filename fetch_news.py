@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 import requests
 from bs4 import BeautifulSoup
 import time
+import re
 
 # 取得するRSSフィードのリスト（ファビコン付き）
 FEEDS = {
@@ -147,6 +148,68 @@ def get_article_thumbnail(url, max_retries=2):
     
     return None  # 画像が見つからない場合
 
+def deduplicate_events(entries):
+    """イベント系エントリーの重複を除去（シリーズ番号違いを統合）"""
+    if not entries:
+        return entries
+    
+    # イベント名の基底部分を抽出するパターン
+    patterns = [
+        r'^(.+?)\s*#\d+.*$',  # "朝活もくもく会 #19" -> "朝活もくもく会"
+        r'^(.+?)\s*第\d+回.*$',  # "第5回勉強会" -> "勉強会" 
+        r'^(.+?)\s*Vol\.\d+.*$',  # "勉強会 Vol.3" -> "勉強会"
+        r'^(.+?)\s*\(\d+\).*$',  # "勉強会(3)" -> "勉強会"
+        r'^(.+?)\s*-\s*\d+.*$',  # "勉強会 - 5" -> "勉強会"
+    ]
+    
+    # エントリーを基底名でグループ化
+    event_groups = {}
+    
+    for entry in entries:
+        title = entry.title.strip()
+        base_name = title
+        
+        # パターンマッチングで基底名を抽出
+        for pattern in patterns:
+            match = re.match(pattern, title)
+            if match:
+                base_name = match.group(1).strip()
+                break
+        
+        # 基底名でグループ化（最新のエントリーを優先）
+        if base_name not in event_groups:
+            event_groups[base_name] = entry
+        else:
+            # 既存エントリーより新しい場合は置き換え
+            existing_date = getattr(event_groups[base_name], 'published_parsed', None)
+            current_date = getattr(entry, 'published_parsed', None)
+            
+            if current_date and existing_date:
+                if current_date > existing_date:
+                    event_groups[base_name] = entry
+            elif current_date and not existing_date:
+                event_groups[base_name] = entry
+    
+    # グループ化されたエントリーを返す（元の順序を保持）
+    deduplicated = []
+    seen_bases = set()
+    
+    for entry in entries:
+        title = entry.title.strip()
+        base_name = title
+        
+        for pattern in patterns:
+            match = re.match(pattern, title)
+            if match:
+                base_name = match.group(1).strip()
+                break
+        
+        if base_name not in seen_bases:
+            deduplicated.append(event_groups[base_name])
+            seen_bases.add(base_name)
+    
+    return deduplicated
+
 def generate_html(all_entries, feed_info, date_str):
     """取得したエントリーからHTMLコンテンツを生成する"""
     html = f"""<!DOCTYPE html>
@@ -248,8 +311,12 @@ def generate_html(all_entries, feed_info, date_str):
         if not entries:
             html += "    <p>記事を取得できませんでした。</p>\n"
         else:
-            # イベント情報は10件、その他は5件に制限
-            limit = 10 if "イベント" in feed_name else MAX_ENTRIES
+            # イベント情報は重複除去してから10件、その他は5件に制限
+            if "イベント" in feed_name:
+                entries = deduplicate_events(entries)
+                limit = 10
+            else:
+                limit = MAX_ENTRIES
             for entry in entries[:limit]:
                 title = entry.title
                 link = entry.link
@@ -299,8 +366,12 @@ def generate_markdown(all_entries, feed_info, date_str):
         if not entries:
             markdown += "記事を取得できませんでした。\n"
         else:
-            # イベント情報は10件、その他は5件に制限
-            limit = 10 if "イベント" in feed_name else MAX_ENTRIES
+            # イベント情報は重複除去してから10件、その他は5件に制限
+            if "イベント" in feed_name:
+                entries = deduplicate_events(entries)
+                limit = 10
+            else:
+                limit = MAX_ENTRIES
             for entry in entries[:limit]:
                 title = entry.title
                 link = entry.link
@@ -434,8 +505,12 @@ def generate_rss_feed(all_entries, feed_info, date_obj):
         else:
             favicon_display = f'{favicon} '
             
-        # イベント情報は10件、その他は5件に制限
-        limit = 10 if "イベント" in feed_name else 5
+        # イベント情報は重複除去してから10件、その他は5件に制限
+        if "イベント" in feed_name:
+            entries = deduplicate_events(entries)
+            limit = 10
+        else:
+            limit = 5
         for entry in entries[:limit]:
             item = ET.SubElement(channel, 'item')
             ET.SubElement(item, 'title').text = f'{favicon_display}{entry.title}'
