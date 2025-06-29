@@ -57,14 +57,14 @@ The FEEDS dictionary in fetch_news.py contains the RSS URLs. Each feed is proces
 - **featureブランチ**: 新機能開発用 (`feature/機能名`)
 - **fixブランチ**: バグ修正用 (`fix/修正内容`)
 
-### Development Workflow
+### Development Workflow ⚠️【必須手順】
 1. **Issue作成**: 作業開始前に必ずIssueを作成
 2. mainブランチに切り替え
 3. mainブランチの最新状況をpull
 4. Issueに対応するブランチを作成（ブランチ名にIssue番号を含める）
 5. 変更を実装・テスト
 6. ブランチをリモートにプッシュ
-7. Pull Requestを作成（IssueとPRを紐づける）
+7. **⚠️ Pull Requestを作成（必ずPull Request Creation Rulesを確認）**
 8. レビュー・承認後にmainにマージ
 
 ### Issue作成ルール
@@ -104,7 +104,14 @@ git checkout -b fix/issue-番号-修正内容
 git checkout -b feature/issue-13-event-deduplication
 ```
 
-### Pull Request Creation Rules
+### Pull Request Creation Rules ⚠️【作業実行時必須確認事項】
+
+#### ⚠️ PR作成前の必須チェックリスト
+- [ ] タイトルに絵文字プレフィックスが含まれているか
+- [ ] タイトル末尾にIssue番号 `(#番号)` が含まれているか  
+- [ ] assigneeが `unsolublesugar` に設定されているか
+- [ ] 適切なlabelが設定されているか
+- [ ] 本文先頭に `Closes #番号` または `Fixes #番号` が記載されているか
 
 #### 基本コマンド（Issue番号を含める）
 ```bash
