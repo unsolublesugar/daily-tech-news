@@ -59,13 +59,18 @@ The FEEDS dictionary in fetch_news.py contains the RSS URLs. Each feed is proces
 
 ### Development Workflow ⚠️【必須手順】
 1. **Issue作成**: 作業開始前に必ずIssueを作成
+   - ⚠️ **必須チェック**: 下記「Issue作成ルール準拠確認チェックリスト」を全て確認
 2. mainブランチに切り替え
 3. mainブランチの最新状況をpull
 4. Issueに対応するブランチを作成（ブランチ名にIssue番号を含める）
+   - ⚠️ **必須チェック**: 下記「ブランチ命名ルール準拠確認チェックリスト」を全て確認
 5. 変更を実装・テスト
 6. ブランチをリモートにプッシュ
 7. **⚠️ Pull Requestを作成（必ずPull Request Creation Rulesを確認）**
+   - ⚠️ **必須チェック**: 下記「PR作成ルール準拠確認チェックリスト」を全て確認
 8. レビュー・承認後にmainにマージ
+
+⚠️ **重要**: 各ステップでの必須チェックは、作業実行前に該当するチェックリストを参照して、全項目を確認すること。ルール準拠が不完全な場合は作業を中断し、修正してから次のステップに進むこと。
 
 ### Issue作成ルール
 
@@ -87,6 +92,22 @@ gh issue create --title "📚 ドキュメント: 更新内容" --body "更新�
 - **アサイニー**: `unsolublesugar` (必須)
 - **本文**: 詳細な説明、受け入れ条件、実装方針など
 
+#### ⚠️ Issue作成ルール準拠確認チェックリスト
+Issue作成前に以下を必ず確認すること：
+- [ ] タイトルに適切な絵文字プレフィックスが含まれているか (✨🐛📚♻️🔧🚀)
+- [ ] タイトルが簡潔で内容を適切に表現しているか
+- [ ] 適切なラベルが設定されているか (enhancement/bug/documentation/refactor/ci/performance)
+- [ ] アサイニーが `unsolublesugar` に設定されているか
+- [ ] 本文に詳細な説明が記載されているか
+- [ ] 必要に応じて受け入れ条件や実装方針が明記されているか
+
+#### ⚠️ ブランチ命名ルール準拠確認チェックリスト
+ブランチ作成前に以下を必ず確認すること：
+- [ ] ブランチ名が `feature/issue-番号-機能名` または `fix/issue-番号-修正内容` の形式になっているか
+- [ ] Issue番号が正しく含まれているか
+- [ ] 機能名/修正内容が簡潔で分かりやすいか（スペースはハイフンで区切る）
+- [ ] mainブランチから最新状況をpullしてからブランチを作成しているか
+
 #### ブランチ作成手順（Issue作成後）
 ```bash
 # mainブランチに切り替え
@@ -106,12 +127,16 @@ git checkout -b feature/issue-13-event-deduplication
 
 ### Pull Request Creation Rules ⚠️【作業実行時必須確認事項】
 
-#### ⚠️ PR作成前の必須チェックリスト
-- [ ] タイトルに絵文字プレフィックスが含まれているか
+#### ⚠️ PR作成ルール準拠確認チェックリスト
+PR作成前に以下を必ず確認すること：
+- [ ] タイトルに適切な絵文字プレフィックスが含まれているか (✨🐛📚♻️🔧🚀)
+- [ ] タイトルが簡潔で内容を適切に表現しているか
 - [ ] タイトル末尾にIssue番号 `(#番号)` が含まれているか  
 - [ ] assigneeが `unsolublesugar` に設定されているか
-- [ ] 適切なlabelが設定されているか
+- [ ] 適切なlabelが設定されているか (enhancement/bug/documentation/refactor/ci/performance)
 - [ ] 本文先頭に `Closes #番号` または `Fixes #番号` が記載されているか
+- [ ] 本文に変更内容の詳細説明が含まれているか
+- [ ] テスト方法や動作確認手順が記載されているか（必要に応じて）
 
 #### 基本コマンド（Issue番号を含める）
 ```bash
@@ -138,6 +163,7 @@ gh pr create --title "📚 ドキュメント: 更新内容 (#15)" --assignee un
   - `documentation`: ドキュメント更新
   - `refactor`: リファクタリング
   - `ci`: CI/CD関連の変更
+  - `performance`: パフォーマンス改善
 
 #### タイトル命名規則
 - 絵文字プレフィックスを使用
@@ -147,6 +173,30 @@ gh pr create --title "📚 ドキュメント: 更新内容 (#15)" --assignee un
 - ♻️ リファクタリング
 - 🔧 設定・環境
 - 🚀 パフォーマンス改善
+
+### Label管理ルール
+
+#### 適切なLabelが存在しない場合の対応
+適切なラベルが存在しない場合は、以下の手順で新しいラベルを作成して使用すること：
+
+```bash
+# 新しいラベルを作成
+gh label create "ラベル名" --description "ラベルの説明" --color "カラーコード"
+
+# 例：performanceラベルの作成
+gh label create "performance" --description "Performance improvements and optimizations" --color "0e8a16"
+
+# PRにラベルを追加
+gh pr edit PR番号 --add-label "新しいラベル名"
+```
+
+#### 推奨カラーコード
+- `enhancement`: `#a2eeef` (水色)
+- `bug`: `#d73a49` (赤)
+- `documentation`: `#0075ca` (青)
+- `performance`: `#0e8a16` (緑)
+- `refactor`: `#fbca04` (黄)
+- `ci`: `#6f42c1` (紫)
 
 #### PR本文テンプレート
 ```markdown

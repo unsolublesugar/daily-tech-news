@@ -22,6 +22,15 @@ jobs:
       with:
         python-version: '3.9'
         
+    - name: Cache thumbnail data
+      uses: actions/cache@v3
+      with:
+        path: thumbnail_cache.json
+        key: thumbnail-cache-${{ hashFiles('fetch_news.py') }}-${{ github.run_number }}
+        restore-keys: |
+          thumbnail-cache-${{ hashFiles('fetch_news.py') }}-
+          thumbnail-cache-
+        
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
@@ -37,7 +46,7 @@ jobs:
         
     - name: Commit and push changes
       run: |
-        git add README.md archives/ rss.xml
+        git add README.md archives/ rss.xml index.html
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
