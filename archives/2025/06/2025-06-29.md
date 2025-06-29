@@ -54,11 +54,11 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（新着）"> はてなブックマーク - IT（新着）
 
+- [フルスタックエンジニアの終焉？生成AI後の未来を産業史から考える - arclamp](https://arclamp.hatenablog.com/entry/2025/06/26/213143)
 - [Drag-and-Drop LLMs: Zero-Shot Prompt-to-Weights](https://arxiv.org/abs/2506.16406)
 - [GitHub - kign/c4wa: A simplified subset of C transpiled into Web Assembly](https://github.com/kign/c4wa)
 - [Route 53 プライベートホストゾーンへオンプレミスの DNS サーバーからサブドメインを委任できるようになったので試してみた - Qiita](https://qiita.com/takeda_h/items/b56718ee53fcbbf5740b)
 - [最大の差別化要因はWebAssemblyの採用 ―― Fastly共同創業者Tyler McMullen氏に聞く次世代CDNの最前線 | gihyo.jp](https://gihyo.jp/article/2025/06/fastly-tyler-mcmullen)
-- [プレゼン動画自動生成ツール Mulmocast を使う](https://zenn.dev/open_developers/articles/87928c78f98210)
 
 
 ---
@@ -111,6 +111,7 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://connpass.com/favicon.ico" width="16" height="16" alt="connpass - イベント"> connpass - イベント
 
+- [Tidy First?会読会 第4回](https://xpreadinggroup.connpass.com/event/360917/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [【限定5名増枠】英語LT会【テーマ：開発生産性】Japanglish Tech Talk#6](https://japanglish.connpass.com/event/360913/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [Djangoもくもく会: 7回目](https://pythonista-books.connpass.com/event/360904/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [第52回CITPコミュニティ定例会](https://connpass.com/event/360908/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
@@ -120,7 +121,6 @@ https://unsolublesugar.github.io/daily-tech-news/
 - [【聞き専歓迎】書籍「組織を芯からアジャイルにする」ABD読書会 第7回](https://shin-agile.connpass.com/event/360863/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [第110回CoderDojo 浜松（2025年7月）](https://coderdojo-hamamatsu.connpass.com/event/359293/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [北千住もくもく作業・勉強部屋](https://kitasenju-verystrong.connpass.com/event/360890/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [YUMEMI × やさしい Swift 勉強会 #547 #yumemi_grow](https://yasashii-swift.connpass.com/event/360729/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 
 
 ---
