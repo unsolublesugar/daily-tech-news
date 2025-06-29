@@ -4,6 +4,9 @@ import os
 from pathlib import Path
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
+import requests
+from bs4 import BeautifulSoup
+import time
 
 # 取得するRSSフィードのリスト（ファビコン付き）
 FEEDS = {
@@ -26,7 +29,7 @@ FEEDS = {
 }
 
 # 各フィードから取得する記事の件数
-MAX_ENTRIES = 10
+MAX_ENTRIES = 5
 
 def fetch_feed_entries(feed_url):
     """指定されたURLからRSSフィードのエントリーを取得する"""
@@ -37,17 +40,88 @@ def fetch_feed_entries(feed_url):
         print(f"Error fetching feed from {feed_url}: {e}")
         return []
 
+def get_article_thumbnail(url, max_retries=2):
+    """記事URLからサムネイル画像URLを取得する"""
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+    
+    def validate_image_url(img_url):
+        """画像URLが有効かどうかチェック"""
+        if not img_url or len(img_url) > 2000:  # URLが長すぎる場合は除外
+            return False
+        if not img_url.startswith(('http://', 'https://')):
+            return False
+        # 画像形式のチェック
+        if any(ext in img_url.lower() for ext in ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg']):
+            return True
+        # 動的生成画像のパターン（qiita、zennなど）
+        if any(domain in img_url for domain in ['qiita-user-contents.imgix.net', 'res.cloudinary.com', 'cdn.image.st-hatena.com']):
+            return True
+        return False
+    
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Open Graph画像を優先的に取得
+            og_image = soup.find('meta', property='og:image')
+            if og_image and og_image.get('content'):
+                img_url = og_image['content']
+                if img_url.startswith('//'):
+                    img_url = 'https:' + img_url
+                elif img_url.startswith('/'):
+                    from urllib.parse import urljoin
+                    img_url = urljoin(url, img_url)
+                if validate_image_url(img_url):
+                    return img_url
+            
+            # Twitter Card画像
+            twitter_image = soup.find('meta', attrs={'name': 'twitter:image'})
+            if twitter_image and twitter_image.get('content'):
+                img_url = twitter_image['content']
+                if img_url.startswith('//'):
+                    img_url = 'https:' + img_url
+                elif img_url.startswith('/'):
+                    from urllib.parse import urljoin
+                    img_url = urljoin(url, img_url)
+                if validate_image_url(img_url):
+                    return img_url
+            
+            # 記事内最初の画像
+            article_img = soup.find('img')
+            if article_img and article_img.get('src'):
+                img_url = article_img['src']
+                if img_url.startswith('//'):
+                    img_url = 'https:' + img_url
+                elif img_url.startswith('/'):
+                    from urllib.parse import urljoin
+                    img_url = urljoin(url, img_url)
+                if validate_image_url(img_url):
+                    return img_url
+                
+        except Exception as e:
+            print(f"Attempt {attempt + 1} failed for {url}: {e}")
+            if attempt < max_retries - 1:
+                time.sleep(1)  # リトライ前に少し待機
+            continue
+    
+    return None  # 画像が見つからない場合
+
 def generate_markdown(all_entries, feed_info, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
     markdown = f"# 毎日のテックニュース ({date_str})\n\n"
-    markdown += "📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](rss.xml)\n\n"
+    markdown += "📚 [過去のニュースを見る](archives/index.md) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)\n\n"
     markdown += "日本の主要な技術系メディアの最新人気エントリーをお届けします。\n\n"
     markdown += "## 📡 RSSフィード配信中\n\n"
     markdown += "このニュースはRSSフィードでも配信しています。お使いのRSSリーダーで以下のURLを購読してください：\n\n"
     markdown += "**RSS URL:** `https://unsolublesugar.github.io/daily-tech-news/rss.xml`\n\n"
     markdown += "- 毎日JST 7:00に自動更新\n"
     markdown += "- 各フィードから5件ずつ厳選記事を配信\n"
-    markdown += "- ファビコン付きで見やすく表示\n\n---\n"
+    markdown += "- カード型レイアウトで読みやすく表示\n\n---\n"
 
     for feed_name, entries in all_entries.items():
         favicon = feed_info[feed_name]["favicon"]
@@ -64,9 +138,56 @@ def generate_markdown(all_entries, feed_info, date_str):
             for entry in entries[:MAX_ENTRIES]:
                 title = entry.title
                 link = entry.link
-                markdown += f"- [{title}]({link})\n"
+                
+                # 全記事をカード型レイアウトで表示
+                print(f"Fetching thumbnail for: {title[:50]}...")
+                thumbnail_url = get_article_thumbnail(link)
+                
+                # タイトルをHTMLエスケープ
+                escaped_title = title.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
+                
+                if thumbnail_url:
+                    # 画像URLをHTMLエスケープ
+                    escaped_url = thumbnail_url.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
+                    
+                    # 画像付きカード型レイアウト（全体がクリック可能）
+                    card_html = f"""
+<a href="{link}" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" style="border-radius: 6px; object-fit: cover; flex-shrink: 0;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          {title}
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          {feed_name}
+        </p>
+      </div>
+    </div>
+  </div>
+</a>"""
+                else:
+                    # 画像なしカード型レイアウト（全体がクリック可能）
+                    card_html = f"""
+<a href="{link}" style="text-decoration: none; color: inherit;">
+  <div style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); cursor: pointer; transition: box-shadow 0.2s ease;">
+    <div style="display: flex; align-items: flex-start; gap: 15px;">
+      <div style="flex: 1;">
+        <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da;">
+          {title}
+        </h4>
+        <p style="margin: 0; font-size: 12px; color: #656d76;">
+          {feed_name}
+        </p>
+      </div>
+    </div>
+  </div>
+</a>"""
+                
+                markdown += card_html
         
-        markdown += "\n---\n"
+        markdown += "\n\n---\n"
     
     return markdown
 
