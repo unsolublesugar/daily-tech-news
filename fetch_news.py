@@ -453,7 +453,7 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
     site_title = f"今日のテックニュース ({date_str})"
     site_description = "日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。"
     site_url = "https://unsolublesugar.github.io/daily-tech-news/"
-    og_image_url = f"{site_url}assets/images/OGP.svg"
+    og_image_url = f"{site_url}assets/images/OGP.png"
     twitter_user = "@unsoluble_sugar"
 
     html = f"""<!DOCTYPE html>
