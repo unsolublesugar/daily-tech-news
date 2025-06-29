@@ -450,23 +450,19 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
 def generate_markdown(all_entries, feed_info, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
     markdown = f"# 今日のテックニュース ({date_str})\n\n"
-    markdown += "📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/)
+    markdown += """📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/)
 
-"
-    markdown += "日本の主要な技術系メディアの最新人気エントリーをお届けします。
+日本の主要な技術系メディアの最新人気エントリーをお届けします。
 
-"
-    markdown += "※毎日JST 7:00に自動更新
+※毎日JST 7:00に自動更新
 
-"
-    markdown += "## 🎨 カード表示版もあります
+## 🎨 カード表示版もあります
 
-"
-    markdown += "GitHub Pages版では各記事がカード形式で見やすく表示されます：  
+GitHub Pages版では各記事がカード形式で見やすく表示されます：  
 https://unsolublesugar.github.io/daily-tech-news/
 
 ---
-"
+"""
 
     for feed_name, entries in all_entries.items():
         favicon = feed_info[feed_name]["favicon"]
@@ -489,6 +485,8 @@ https://unsolublesugar.github.io/daily-tech-news/
                 markdown += f"- [{title}]({link})\n"
         
         markdown += "\n\n---\n"
+    
+    markdown += "## License\n\nThis project is licensed under the [MIT License](LICENSE).\n"
     
     return markdown
 
