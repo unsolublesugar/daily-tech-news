@@ -280,6 +280,21 @@ def generate_html(all_entries, feed_info, date_str):
             border-radius: 8px;
             margin: 20px 0;
         }}
+        .footer {{
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #e1e5e9;
+            text-align: center;
+            font-size: 14px;
+            color: #656d76;
+        }}
+        .footer a {{
+            color: #0969da;
+            text-decoration: none;
+        }}
+        .footer a:hover {{
+            text-decoration: underline;
+        }}
     </style>
 </head>
 <body>
@@ -340,6 +355,10 @@ def generate_html(all_entries, feed_info, date_str):
         html += "    <hr>\n"
     
     html += """
+    <div class="footer">
+        <p>🚀 運営者: <a href="https://x.com/unsoluble_sugar" target="_blank" rel="noopener">@unsoluble_sugar</a> | 
+        📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
+    </div>
 </body>
 </html>"""
     
