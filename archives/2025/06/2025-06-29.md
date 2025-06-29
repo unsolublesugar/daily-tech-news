@@ -28,7 +28,7 @@ https://unsolublesugar.github.io/daily-tech-news/
 - [【Web Bluetooth API】Joy-Con 2 をプレゼンリモコンにする](https://zenn.dev/mascii/articles/joy-con-2-web-bluetooth-api)
 - [Gemini CLIをソース解析して発見したコーギーの出現方法](https://zenn.dev/oikon/articles/c8a887f00dd219)
 - [AIエージェントでバグバウンティ！ Cline × Claude Code × GPT-o3 で $2,000 を獲得した話](https://zenn.dev/grandchildrice/articles/499e22b0e9e4c8)
-- [Claude Codeにコマンド一発でMCPサーバを簡単設定](https://zenn.dev/karaage0703/articles/3bd2957807f311)
+- [初めてのTTSモデルをずんだもんのデータで作ってみた with LLaSA](https://zenn.dev/aratako_lm/articles/7e0b0b6e51baa6)
 
 
 ---
