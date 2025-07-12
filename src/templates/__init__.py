@@ -4,7 +4,7 @@
 HTMLテンプレート、CSSスタイル、コンテンツ構造を統一管理
 """
 
-from .template_manager import TemplateManager, ContentStructure
+from templates.template_manager import TemplateManager, ContentStructure
 
 __all__ = [
     'TemplateManager',

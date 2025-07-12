@@ -18,9 +18,9 @@ import json
 import hashlib
 
 # 新しいクラス群をインポート
-from src.config import SiteConfig, PathConfig
-from src.generators import ArchiveGenerator, ArchiveIndexGenerator
-from src.templates import TemplateManager
+from config import SiteConfig, PathConfig
+from generators import ArchiveGenerator, ArchiveIndexGenerator
+from templates import TemplateManager
 
 # 既存の設定を保持（後方互換性のため）
 FEEDS = {
