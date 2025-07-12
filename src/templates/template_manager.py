@@ -2,14 +2,14 @@
 テンプレート管理とコンテンツ生成のユーティリティモジュール
 """
 from typing import Dict, List, Any, Optional
-from archive_config import SiteConfig, PathConfig
+from config import SiteConfig, PathConfig
 
 
 class TemplateManager:
     """テンプレート処理を統合管理するクラス"""
     
     def __init__(self, site_config: SiteConfig = None, path_config: PathConfig = None):
-        from archive_config import DEFAULT_SITE_CONFIG, DEFAULT_PATH_CONFIG
+        from config.archive_config import DEFAULT_SITE_CONFIG, DEFAULT_PATH_CONFIG
         self.site_config = site_config or DEFAULT_SITE_CONFIG
         self.path_config = path_config or DEFAULT_PATH_CONFIG
     
@@ -218,7 +218,7 @@ class TemplateManager:
         
         main_page_link = ""
         if is_archive:
-            main_page_link = '<p>🏠 <a href="../../index.html" class="nav-button">メインページに戻る</a></p>\n        '
+            main_page_link = '<p><a href="../../index.html" class="nav-button">🏠 メインページに戻る</a></p>\n        '
         
         return f'''
     <div class="footer">

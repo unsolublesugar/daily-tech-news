@@ -7,8 +7,8 @@ from datetime import datetime
 from typing import Dict, List, Any, Optional, Tuple
 from dataclasses import dataclass
 
-from archive_config import SiteConfig, PathConfig, DEFAULT_SITE_CONFIG, DEFAULT_PATH_CONFIG
-from template_manager import TemplateManager, ContentStructure
+from config import SiteConfig, PathConfig, DEFAULT_SITE_CONFIG, DEFAULT_PATH_CONFIG
+from templates import TemplateManager, ContentStructure
 
 
 @dataclass
