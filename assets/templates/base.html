@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{site_description}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{canonical_url}}">
+    <meta property="og:image" content="{{og_image_url}}">
+    <meta property="og:site_name" content="今日のテックニュース">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="{{twitter_user}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{site_description}}">
+    <meta name="twitter:image" content="{{og_image_url}}">
+    <link rel="stylesheet" href="{{css_path}}">
+</head>
+<body>
+    <div class="page-header">
+        <h1>{{title}}</h1>
+        
+        {{navigation}}
+        
+        <p>{{site_description}}</p>
+    </div>
+    
+    {{content}}
+    
+    {{footer}}
+</body>
+</html>
