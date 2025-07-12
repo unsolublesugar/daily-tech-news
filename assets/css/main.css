@@ -71,6 +71,7 @@ a:hover {
     display: flex;
     align-items: flex-start;
     gap: 15px;
+    min-width: 0; /* flex子要素の縮小を許可 */
 }
 
 .card-image {
@@ -81,6 +82,7 @@ a:hover {
 
 .card-text {
     flex: 1;
+    min-width: 0; /* テキストオーバーフローを防ぐ */
 }
 
 .card-title {
@@ -89,6 +91,9 @@ a:hover {
     line-height: 1.4;
     color: #0969da;
     font-weight: 600;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .card-source {
