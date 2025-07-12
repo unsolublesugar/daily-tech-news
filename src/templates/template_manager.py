@@ -2,7 +2,7 @@
 テンプレート管理とコンテンツ生成のユーティリティモジュール
 """
 from typing import Dict, List, Any, Optional
-from archive_config import SiteConfig, PathConfig
+from src.config import SiteConfig, PathConfig
 
 
 class TemplateManager:
