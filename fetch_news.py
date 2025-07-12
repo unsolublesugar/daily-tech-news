@@ -450,7 +450,7 @@ def fetch_all_thumbnails(all_entries, max_workers=10, use_cache=True):
 
 def generate_html(all_entries, feed_info, date_str, thumbnails=None):
     """取得したエントリーからHTMLコンテンツを生成する"""
-    site_title = f"今日のテックニュース ({date_str})"
+    site_title = f"👨‍💻 今日のテックニュース ({date_str})"
     site_description = "日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。"
     site_url = "https://unsolublesugar.github.io/daily-tech-news/"
     og_image_url = f"{site_url}assets/images/OGP.png"
@@ -555,12 +555,35 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
         .footer a:hover {{
             text-decoration: underline;
         }}
+        .share-button {{
+            display: inline-block;
+            background-color: #1DA1F2;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 10px 0;
+            transition: background-color 0.2s ease;
+        }}
+        .share-button:hover {{
+            background-color: #1991DA;
+            color: white;
+            text-decoration: none;
+        }}
+        .share-button:before {{
+            content: "🐦";
+            margin-right: 6px;
+        }}
     </style>
 </head>
 <body>
     <h1>{site_title}</h1>
     
     <p>📚 <a href="archives/index.html">過去のニュースを見る</a> | 📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
+    
+    <a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}&hashtags=techhunter" target="_blank" rel="noopener" class="share-button">Xでシェア</a>
     
     <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
     
@@ -614,7 +637,7 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
 
 def generate_markdown(all_entries, feed_info, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
-    markdown = f"# 今日のテックニュース ({date_str})\n\n"
+    markdown = f"# 👨‍💻 今日のテックニュース ({date_str})\n\n"
     markdown += """📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
@@ -657,7 +680,7 @@ https://unsolublesugar.github.io/daily-tech-news/
 
 def generate_archive_markdown(all_entries, feed_info, date_str):
     """アーカイブ用のMarkdownコンテンツを生成する（相対パス修正版）"""
-    markdown = f"# 今日のテックニュース ({date_str})\n\n"
+    markdown = f"# 👨‍💻 今日のテックニュース ({date_str})\n\n"
     markdown += """📚 [過去のニュースを見る](../../index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
@@ -700,7 +723,7 @@ https://unsolublesugar.github.io/daily-tech-news/
 
 def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
     """アーカイブ用のHTMLコンテンツを生成する"""
-    site_title = f"今日のテックニュース ({date_str})"
+    site_title = f"👨‍💻 今日のテックニュース ({date_str})"
     site_description = "日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。"
     site_url = "https://unsolublesugar.github.io/daily-tech-news/"
     og_image_url = f"{site_url}assets/images/OGP.png"
@@ -798,12 +821,35 @@ def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
         .footer a:hover {{
             text-decoration: underline;
         }}
+        .share-button {{
+            display: inline-block;
+            background-color: #1DA1F2;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 10px 0;
+            transition: background-color 0.2s ease;
+        }}
+        .share-button:hover {{
+            background-color: #1991DA;
+            color: white;
+            text-decoration: none;
+        }}
+        .share-button:before {{
+            content: "🐦";
+            margin-right: 6px;
+        }}
     </style>
 </head>
 <body>
     <h1>{site_title}</h1>
     
     <p>📚 <a href="../../index.html">過去のニュースを見る</a> | 📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
+    
+    <a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}archives/{date_str.replace('-', '/')}/{date_str}.html&hashtags=techhunter" target="_blank" rel="noopener" class="share-button">Xでシェア</a>
     
     <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
     
