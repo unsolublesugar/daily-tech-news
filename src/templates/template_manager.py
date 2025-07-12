@@ -31,6 +31,31 @@ class TemplateManager:
             template_content = template_content.replace(placeholder, str(value))
         return template_content
     
+    def is_valid_thumbnail_url(self, thumbnail_url: str) -> bool:
+        """サムネイル画像URLの有効性を確認"""
+        if not thumbnail_url or not thumbnail_url.strip():
+            return False
+        
+        # 基本的なURL形式チェック
+        if not thumbnail_url.startswith(('http://', 'https://')):
+            return False
+        
+        # 画像拡張子のチェック（一般的な画像形式）
+        valid_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg')
+        url_lower = thumbnail_url.lower()
+        
+        # URLパラメータを除去してから拡張子をチェック
+        clean_url = url_lower.split('?')[0].split('#')[0]
+        
+        # 拡張子チェックまたは一般的な画像ホスティングサービスのチェック
+        has_valid_extension = clean_url.endswith(valid_extensions)
+        is_image_service = any(service in url_lower for service in [
+            'imgur.com', 'cdn.', 'images.', 'img.', 'photo.',
+            'thumbnail', 'thumb', 'preview', 'avatar'
+        ])
+        
+        return has_valid_extension or is_image_service
+    
     def render_favicon(self, favicon: str, feed_name: str) -> str:
         """ファビコンを適切な形式でレンダリング"""
         if favicon.startswith("http"):
@@ -128,9 +153,11 @@ class TemplateManager:
         escaped_title = title.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
         
         thumbnail = ""
-        if thumbnail_url:
+        # サムネイル画像の有効性を確認してからHTMLを生成
+        if thumbnail_url and self.is_valid_thumbnail_url(thumbnail_url):
             escaped_url = thumbnail_url.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
-            thumbnail = f'<img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" class="card-image">'
+            # onerror属性を追加してリンク切れ時に要素を非表示にする
+            thumbnail = f'<img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" class="card-image" onerror="this.style.display=\'none\'">'
         
         template = self.load_template('card.html')
         return self.render_template(
