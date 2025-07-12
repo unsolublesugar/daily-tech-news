@@ -218,7 +218,7 @@ class TemplateManager:
         
         main_page_link = ""
         if is_archive:
-            main_page_link = '<p>🏠 <a href="../../index.html" class="nav-button">メインページに戻る</a></p>\n        '
+            main_page_link = '<p><a href="../../index.html" class="nav-button">🏠 メインページに戻る</a></p>\n        '
         
         return f'''
     <div class="footer">
