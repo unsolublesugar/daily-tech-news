@@ -1,6 +1,7 @@
 """
 テンプレート管理とコンテンツ生成のユーティリティモジュール
 """
+import os
 from typing import Dict, List, Any, Optional
 from config import SiteConfig, PathConfig
 
@@ -12,6 +13,23 @@ class TemplateManager:
         from config.archive_config import DEFAULT_SITE_CONFIG, DEFAULT_PATH_CONFIG
         self.site_config = site_config or DEFAULT_SITE_CONFIG
         self.path_config = path_config or DEFAULT_PATH_CONFIG
+        self.template_dir = os.path.join(os.path.dirname(__file__), '../../assets/templates')
+    
+    def load_template(self, template_name: str) -> str:
+        """外部テンプレートファイルを読み込み"""
+        template_path = os.path.join(self.template_dir, template_name)
+        try:
+            with open(template_path, 'r', encoding='utf-8') as f:
+                return f.read()
+        except FileNotFoundError:
+            raise FileNotFoundError(f"テンプレートファイルが見つかりません: {template_path}")
+    
+    def render_template(self, template_content: str, **kwargs) -> str:
+        """テンプレートに変数を展開"""
+        for key, value in kwargs.items():
+            placeholder = f"{{{{{key}}}}}"
+            template_content = template_content.replace(placeholder, str(value))
+        return template_content
     
     def render_favicon(self, favicon: str, feed_name: str) -> str:
         """ファビコンを適切な形式でレンダリング"""
@@ -59,24 +77,29 @@ class TemplateManager:
         return f'    <link rel="stylesheet" href="{css_path}">\n</head>'
     
     def get_navigation_section(self, date_str: str, is_archive: bool = False) -> str:
-        """ナビゲーションセクションを生成"""
+        """ナビゲーションセクションを生成（外部テンプレート使用）"""
         site_url = self.site_config.SITE_URL
         hashtags = self.site_config.X_HASHTAGS
         
-        # XロゴのインラインSVG
-        x_logo_svg = '''<span class="x-logo"><svg viewBox="0 0 1200 1227" xmlns="http://www.w3.org/2000/svg"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="white"/></svg></span>'''
-        
         if is_archive:
-            # アーカイブページ用のナビゲーション
             tweet_url = f"https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}archives/{date_str.replace('-', '/')}/{date_str}.html&hashtags={hashtags}"
-            return f'''<p><a href="{tweet_url}" target="_blank" rel="noopener" class="share-button">{x_logo_svg}シェア</a> | 📚 <a href="../index.html">アーカイブ一覧</a></p>'''
+            archive_link = "../index.html"
+            archive_text = "アーカイブ一覧"
         else:
-            # メインページ用のナビゲーション
             tweet_url = f"https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}&hashtags={hashtags}"
-            return f'''<p><a href="{tweet_url}" target="_blank" rel="noopener" class="share-button">{x_logo_svg}シェア</a> | 📚 <a href="archives/index.html">過去のニュースを見る</a></p>'''
+            archive_link = "archives/index.html"
+            archive_text = "過去のニュースを見る"
+        
+        template = self.load_template('navigation.html')
+        return self.render_template(
+            template,
+            tweet_url=tweet_url,
+            archive_link=archive_link,
+            archive_text=archive_text
+        )
     
     def get_footer_section(self, is_archive: bool = False) -> str:
-        """フッターセクションを生成"""
+        """フッターセクションを生成（外部テンプレート使用）"""
         site_url = self.site_config.SITE_URL
         twitter_user = self.site_config.TWITTER_USER
         
@@ -87,40 +110,36 @@ class TemplateManager:
             main_page_link = '<p><a href="../../index.html" class="nav-button">🏠 メインページに戻る</a></p>\n        '
             rss_link = f'<p>📡 <a href="{site_url}rss.xml">RSSフィードを購読</a></p>\n        '
         
-        return f'''
-    <div class="footer">
-        {main_page_link}{rss_link}<p>🚀 運営者: <a href="https://x.com/{twitter_user.lstrip('@')}" target="_blank" rel="noopener">{twitter_user}</a> | 
-        📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
-    </div>'''
+        template = self.load_template('footer.html')
+        return self.render_template(
+            template,
+            main_page_link=main_page_link,
+            rss_link=rss_link,
+            twitter_handle=twitter_user.lstrip('@'),
+            twitter_user=twitter_user
+        )
     
     def render_card(self, entry: Any, feed_name: str, thumbnail_url: str = None) -> str:
-        """記事カードをレンダリング"""
+        """記事カードをレンダリング（外部テンプレート使用）"""
         title = entry.title
         link = entry.link
         
         # HTMLエスケープ
         escaped_title = title.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
         
+        thumbnail = ""
         if thumbnail_url:
             escaped_url = thumbnail_url.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
-            return f'''    <a href="{link}" class="card">
-        <div class="card-content">
-            <img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">{title}</h4>
-                <p class="card-source">{feed_name}</p>
-            </div>
-        </div>
-    </a>'''
-        else:
-            return f'''    <a href="{link}" class="card">
-        <div class="card-content">
-            <div class="card-text">
-                <h4 class="card-title">{title}</h4>
-                <p class="card-source">{feed_name}</p>
-            </div>
-        </div>
-    </a>'''
+            thumbnail = f'<img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" class="card-image">'
+        
+        template = self.load_template('card.html')
+        return self.render_template(
+            template,
+            link=link,
+            thumbnail=thumbnail,
+            title=title,
+            feed_name=feed_name
+        )
     
     def render_markdown_entry(self, entry: Any) -> str:
         """Markdown形式のエントリをレンダリング"""
