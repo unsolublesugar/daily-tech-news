@@ -556,34 +556,39 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
             text-decoration: underline;
         }}
         .share-button {{
-            display: inline-block;
-            background-color: #1DA1F2;
+            display: inline-flex;
+            align-items: center;
+            background-color: #000000;
             color: white;
             text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 6px 12px;
+            border-radius: 4px;
             font-size: 14px;
             font-weight: 500;
-            margin: 10px 0;
+            margin: 0 4px 0 0;
             transition: background-color 0.2s ease;
+            gap: 4px;
+            vertical-align: middle;
         }}
         .share-button:hover {{
-            background-color: #1991DA;
+            background-color: #333333;
             color: white;
             text-decoration: none;
         }}
-        .share-button:before {{
-            content: "🐦";
-            margin-right: 6px;
+        .share-button .x-logo {{
+            width: 16px;
+            height: 16px;
+            background-image: url('assets/x-logo/logo-white.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }}
     </style>
 </head>
 <body>
     <h1>{site_title}</h1>
     
-    <p>📚 <a href="archives/index.html">過去のニュースを見る</a> | 📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
-    
-    <a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}&hashtags=techhunter" target="_blank" rel="noopener" class="share-button">Xでシェア</a>
+    <p><a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}&hashtags=techhunter" target="_blank" rel="noopener" class="share-button"><span class="x-logo"></span>シェア</a> | 📚 <a href="archives/index.html">過去のニュースを見る</a></p>
     
     <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
     
@@ -627,6 +632,7 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
     
     html += """
     <div class="footer">
+        <p>📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
         <p>🚀 運営者: <a href="https://x.com/unsoluble_sugar" target="_blank" rel="noopener">@unsoluble_sugar</a> | 
         📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
     </div>
@@ -822,34 +828,39 @@ def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
             text-decoration: underline;
         }}
         .share-button {{
-            display: inline-block;
-            background-color: #1DA1F2;
+            display: inline-flex;
+            align-items: center;
+            background-color: #000000;
             color: white;
             text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 6px;
+            padding: 6px 12px;
+            border-radius: 4px;
             font-size: 14px;
             font-weight: 500;
-            margin: 10px 0;
+            margin: 0 4px 0 0;
             transition: background-color 0.2s ease;
+            gap: 4px;
+            vertical-align: middle;
         }}
         .share-button:hover {{
-            background-color: #1991DA;
+            background-color: #333333;
             color: white;
             text-decoration: none;
         }}
-        .share-button:before {{
-            content: "🐦";
-            margin-right: 6px;
+        .share-button .x-logo {{
+            width: 16px;
+            height: 16px;
+            background-image: url('assets/x-logo/logo-white.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }}
     </style>
 </head>
 <body>
     <h1>{site_title}</h1>
     
-    <p>📚 <a href="../../index.html">過去のニュースを見る</a> | 📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
-    
-    <a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}archives/{date_str.replace('-', '/')}/{date_str}.html&hashtags=techhunter" target="_blank" rel="noopener" class="share-button">Xでシェア</a>
+    <p><a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}archives/{date_str.replace('-', '/')}/{date_str}.html&hashtags=techhunter" target="_blank" rel="noopener" class="share-button"><span class="x-logo"></span>シェア</a> | 📚 <a href="../../index.html">過去のニュースを見る</a></p>
     
     <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
     
@@ -893,6 +904,7 @@ def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
     
     html += """
     <div class="footer">
+        <p>📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
         <p>🚀 運営者: <a href="https://x.com/unsoluble_sugar" target="_blank" rel="noopener">@unsoluble_sugar</a> | 
         📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
     </div>
@@ -1245,6 +1257,7 @@ def generate_missing_html_archives():
                     
                     html_content += """
     <div class="footer">
+        <p>📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
         <p>🚀 運営者: <a href="https://x.com/unsoluble_sugar" target="_blank" rel="noopener">@unsoluble_sugar</a> | 
         📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
     </div>
