@@ -851,16 +851,42 @@ def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
             background-repeat: no-repeat;
             background-position: center;
         }}
+        .nav-button {{
+            display: inline-flex;
+            align-items: center;
+            background-color: #f8f9fa;
+            color: #333;
+            text-decoration: none;
+            padding: 8px 12px;
+            border: 1px solid #e1e5e9;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0 4px 0 0;
+            transition: background-color 0.2s ease;
+            gap: 6px;
+            vertical-align: middle;
+            line-height: 1.2;
+        }}
+        .nav-button:hover {{
+            background-color: #e9ecef;
+            color: #333;
+            text-decoration: none;
+        }}
+        .page-header {{
+            margin-bottom: 30px;
+        }}
     </style>
 </head>
 <body>
-    <h1>{site_title}</h1>
+    <div class="page-header">
+        <h1>{site_title}</h1>
+        
+        <p><a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}archives/{date_str.replace('-', '/')}/{date_str}.html&hashtags=techhunter" target="_blank" rel="noopener" class="share-button"><span class="x-logo"></span>シェア</a> | 📚 <a href="../index.html">アーカイブ一覧</a></p>
+        
+        <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
+    </div>
     
-    <p><a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}archives/{date_str.replace('-', '/')}/{date_str}.html&hashtags=techhunter" target="_blank" rel="noopener" class="share-button"><span class="x-logo"></span>シェア</a> | 📚 <a href="../../index.html">過去のニュースを見る</a></p>
-    
-    <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
-    
-    <hr>
 """
     
     for feed_name, entries in all_entries.items():
@@ -894,6 +920,7 @@ def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
     
     html += """
     <div class="footer">
+        <p><a href="../../index.html" class="nav-button">🏠 メインページに戻る</a></p>
         <p>📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
         <p>🚀 運営者: <a href="https://x.com/unsoluble_sugar" target="_blank" rel="noopener">@unsoluble_sugar</a> | 
         📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
