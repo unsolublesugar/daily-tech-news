@@ -53,146 +53,10 @@ class TemplateManager:
     <meta name="twitter:description" content="{site_description}">
     <meta name="twitter:image" content="{og_image_url}">"""
     
-    def get_css_styles(self) -> str:
-        """共通CSSスタイルを取得"""
-        return """
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        .card {
-            border: 1px solid #e1e5e9;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            background-color: #f8f9fa;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: box-shadow 0.2s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .card:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        .card-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-        .card-image {
-            border-radius: 6px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-        .card-text {
-            flex: 1;
-        }
-        .card-title {
-            margin: 0 0 8px 0;
-            font-size: 16px;
-            line-height: 1.4;
-            color: #0969da;
-            font-weight: 600;
-        }
-        .card-source {
-            margin: 0;
-            font-size: 12px;
-            color: #656d76;
-        }
-        h1, h2 {
-            color: #1f2328;
-        }
-        .page-header {
-            margin-bottom: 30px;
-        }
-        .footer {
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid #e1e5e9;
-            text-align: center;
-            font-size: 14px;
-            color: #656d76;
-        }
-        .footer a {
-            color: #0969da;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-        .share-button {
-            display: inline-flex;
-            align-items: center;
-            background-color: #000000;
-            color: white;
-            text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            margin: 0 4px 0 0;
-            transition: background-color 0.2s ease;
-            gap: 4px;
-            vertical-align: middle;
-        }
-        .share-button:hover {
-            background-color: #333333;
-            color: white;
-            text-decoration: none;
-        }
-        .share-button .x-logo {
-            width: 16px;
-            height: 16px;
-            display: inline-block;
-        }
-        .share-button .x-logo svg {
-            width: 16px;
-            height: 16px;
-            fill: white;
-        }
-        .nav-button {
-            display: inline-flex;
-            align-items: center;
-            background-color: #f8f9fa;
-            color: #333;
-            text-decoration: none;
-            padding: 8px 12px;
-            border: 1px solid #e1e5e9;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            margin: 0 4px 0 0;
-            transition: background-color 0.2s ease;
-            gap: 6px;
-            vertical-align: middle;
-            line-height: 1.2;
-        }
-        .nav-button:hover {
-            background-color: #e9ecef;
-            color: #333;
-            text-decoration: none;
-        }
-        .rss-info {
-            background: #f6f8fa;
-            padding: 16px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        a {
-            color: #0969da;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>"""
+    def get_css_link(self, is_archive: bool = False) -> str:
+        """外部CSSファイルへのリンクを取得"""
+        css_path = "../../assets/css/main.css" if is_archive else "assets/css/main.css"
+        return f'    <link rel="stylesheet" href="{css_path}">\n</head>'
     
     def get_navigation_section(self, date_str: str, is_archive: bool = False) -> str:
         """ナビゲーションセクションを生成"""
@@ -277,7 +141,7 @@ class ContentStructure:
             x_logo_path = "../../assets/x-logo/logo-white.png" if is_archive else "assets/x-logo/logo-white.png"
         
         head_section = self.template_manager.get_html_head(title, date_str, is_archive)
-        css_section = self.template_manager.get_css_styles().replace('{{x_logo_path}}', x_logo_path)
+        css_section = self.template_manager.get_css_link(is_archive)
         navigation = self.template_manager.get_navigation_section(date_str, is_archive)
         footer = self.template_manager.get_footer_section(is_archive)
         
