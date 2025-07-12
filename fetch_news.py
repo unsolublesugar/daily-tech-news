@@ -627,8 +627,6 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
                 else:
                     card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
                 html += card_html
-        
-        html += "    <hr>\n"
     
     html += """
     <div class="footer">
@@ -893,8 +891,6 @@ def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
                 else:
                     card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
                 html += card_html
-        
-        html += "    <hr>\n"
     
     html += """
     <div class="footer">
