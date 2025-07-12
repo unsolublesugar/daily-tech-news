@@ -691,8 +691,6 @@ def generate_archive_markdown(all_entries, feed_info, date_str):
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
 
-※毎日JST 7:00に自動更新
-
 ## 🎨 カード表示版もあります
 
 GitHub Pages版では各記事がカード形式で見やすく表示されます：  
@@ -863,10 +861,6 @@ def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
     <p><a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}archives/{date_str.replace('-', '/')}/{date_str}.html&hashtags=techhunter" target="_blank" rel="noopener" class="share-button"><span class="x-logo"></span>シェア</a> | 📚 <a href="../../index.html">過去のニュースを見る</a></p>
     
     <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
-    
-    <div class="rss-info">
-        <p>毎日JST 7:00に自動更新</p>
-    </div>
     
     <hr>
 """
