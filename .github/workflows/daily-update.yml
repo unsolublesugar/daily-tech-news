@@ -50,7 +50,8 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "🗞️ 毎日のテックニュース更新 $(date '+%Y-%m-%d')"
+          # JSTタイムゾーンで日付を取得
+          git commit -m "🗞️ 毎日のテックニュース更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d')"
           git push
         fi
         
