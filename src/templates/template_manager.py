@@ -81,13 +81,15 @@ class TemplateManager:
         twitter_user = self.site_config.TWITTER_USER
         
         main_page_link = ""
+        rss_link = ""
+        
         if is_archive:
             main_page_link = '<p><a href="../../index.html" class="nav-button">🏠 メインページに戻る</a></p>\n        '
+            rss_link = f'<p>📡 <a href="{site_url}rss.xml">RSSフィードを購読</a></p>\n        '
         
         return f'''
     <div class="footer">
-        {main_page_link}<p>📡 <a href="{site_url}rss.xml">RSSフィードを購読</a></p>
-        <p>🚀 運営者: <a href="https://x.com/{twitter_user.lstrip('@')}" target="_blank" rel="noopener">{twitter_user}</a> | 
+        {main_page_link}{rss_link}<p>🚀 運営者: <a href="https://x.com/{twitter_user.lstrip('@')}" target="_blank" rel="noopener">{twitter_user}</a> | 
         📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
     </div>'''
     
