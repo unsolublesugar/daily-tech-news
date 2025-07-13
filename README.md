@@ -45,18 +45,18 @@ https://unsolublesugar.github.io/daily-tech-news/
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（人気）"> はてなブックマーク - IT（人気）
 
 - [SF作家のアイザック・アシモフは「人類のほとんどは2+2は4かもしれないと言われるより2+2は間違いなく5だと言われる方を好む」と言っていたらしい](https://togetter.com/li/2575100)
+- [フルリモートで社内にどうやって自分の居場所を作るのか？](https://speakerdeck.com/satoshi256kbyte/hururimototeshe-nei-nitouyatutezi-fen-noju-chang-suo-wozuo-runoka)
+- [オブジェクト指向のサンプルプログラムがだいたいヒドい理由 - きしだのHatena](https://nowokay.hatenablog.com/entry/2025/07/12/191038)
 - [真説 Windowsでディレクトリ区切りのスラッシュ / がバックスラッシュ ⧵ で円マーク ¥ な理由 - Qiita](https://qiita.com/ko1nksm/items/4ae0a784a612f23aa412)
-- [きっとあなたの知らないGitHubで使えるGitHub Copilotの機能 | ドクセル](https://www.docswell.com/s/Kesin11/5GGJYL-2025-07-11-github-copilot-on-github)
 - [【朗報】ついにMicrosoft 365 Copilotが最強の同僚になる日が来ました 〜Copilot メモリについての調査記録〜 - Qiita](https://qiita.com/Oyu3m/items/608ff69ae4131988a511)
-- [「もはや運転手はただの見張り」最近の自動運転車は空いてる高速道路くらいなら座ってるだけで走れる、車というよりロボットの操縦席みたくなっている](https://togetter.com/li/2575035)
 
 
 ---
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（新着）"> はてなブックマーク - IT（新着）
 
+- [スマートウォッチに内蔵される睡眠トラッカーはどうやって機能するのかを睡眠科学者が解説](https://gigazine.net/news/20250712-sleep-trackers-works/)
 - [SRE NEXT 2025 資料一覧](https://zenn.dev/r4ynode/articles/srenext2025-documents)
-- [オブジェクト指向のサンプルプログラムがだいたいヒドい理由 - きしだのHatena](https://nowokay.hatenablog.com/entry/2025/07/12/191038)
-- [フルリモートで社内にどうやって自分の居場所を作るのか？](https://speakerdeck.com/satoshi256kbyte/hururimototeshe-nei-nitouyatutezi-fen-noju-chang-suo-wozuo-runoka)
+- [Google、AIアプリ開発向けPythonライブラリ「GenAI Processors」をOSSで発表](https://codezine.jp/article/detail/21890)
 - [Claude CodeがついにWindowsサポート！](https://zenn.dev/acntechjp/articles/34bfa025051867)
 - [生成AI「グロック」最新版、マスク氏に忖度 見解を頻繁に参照](https://www.afpbb.com/articles/-/3588392)
 
@@ -64,11 +64,11 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://dev.classmethod.jp/favicon.ico" width="16" height="16" alt="DevelopersIO"> DevelopersIO
 
+- [AWS CDK Conference Japan 2025に「cdk initで生成されるあのファイル達は何なのか」という内容で登壇しました #cdkconf2025](https://dev.classmethod.jp/articles/cdk-init-generated-files/)
+- [IAM Identity Center 認証の Athena ワークグループを作成する際に「Value '' at 'configuration.identityCenterConfiguration.identityCenterInstanceArn' failed to satisfy constraint: Member must satisfy regular expression pattern ...」が発生する際の対応方法](https://dev.classmethod.jp/articles/athena-idc-create-workgroup/)
 - [[アップデート] CloudWatch Application Signals MCP サーバーが公開されました](https://dev.classmethod.jp/articles/cloudwatch-application-signals-mcp-server/)
 - [EC2インスタンスが参照するDNSサーバーは基本的にRoute 53 Resolverを使いたい件](https://dev.classmethod.jp/articles/ec2-dns-route53-resolver-configuration/)
 - [Amazon S3 へデータ転送速度が早いと噂の s5cmd を使って aws s3 cp と比べてみた](https://dev.classmethod.jp/articles/s5cmd-vs-aws-s3-cp-speed-comparison/)
-- [[小ネタ] ECS サービスの初回デプロイメント時に、デプロイサーキットブレーカーが発動した場合の挙動を調べてみた](https://dev.classmethod.jp/articles/ecs-deployment-circuit-breaker-first-deployment/)
-- [GitHub Release を使ってリリースノートを作成してみた](https://dev.classmethod.jp/articles/shoma-github-release-create-release-notes-tried/)
 
 
 ---
@@ -114,31 +114,29 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://connpass.com/favicon.ico" width="16" height="16" alt="connpass - イベント"> connpass - イベント
 
+- [ChatGPT部 #71 〜 おすすめ生成AI紹介会 〜](https://chatgptclub.connpass.com/event/362552/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [AI駆動開発の最前線きいてみる？](https://agileware.connpass.com/event/362398/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [【音声のみ】初心者向け React/Next.js もくもく会＋LT会](https://beginner-react.connpass.com/event/362539/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [第一回_AWS Certified Cloud Practitioner (CLF) 勉強会](https://shift-mentor-study.connpass.com/event/362538/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [【UIUXデザイン】アプリ模写100本ノック一緒にやってみませんかっ！](https://connpass.com/event/362536/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [AI Bridge Tokyo #1](https://connpass.com/event/362510/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [AI Bridge Tokyo #1　＠明日から活かせるAI勉強会](https://connpass.com/event/362510/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [第31回 電子工作もくもく会(Ras-Duino)](https://ras-duino.connpass.com/event/362535/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [【劇場版】アニメから得た学びを発表会2025 二次会](https://engineers-anime.connpass.com/event/362533/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [初心者歓迎 ロジアナハンズオン （+ LT懇親会）](https://iotlt.connpass.com/event/362532/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [【SE交流会】〜オフライン限定〜【募集中!】](https://fukuoka.connpass.com/event/362531/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [【懇親会】JAWS-UG広島 第23回勉強会](https://connpass.com/event/362481/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 
 
 ---
 ## <img src="https://techplay.jp/favicon.ico" width="16" height="16" alt="TECH PLAY - イベント"> TECH PLAY - イベント
 
+- [生成AIを活用して、業務の時短効率を実践で実現！](https://techplay.jp/event/983788)
 - [【夏休み8月10,11,16,17日の４日間で、統計検定2級全範囲を勉強するコース】【過去問の勉強時に役立つ、CBT問題集解説動画(17時間)を視聴できます】](https://techplay.jp/event/983780)
+- [DATA Saber - 中部コネクト 2025 オンライン説明・相談会 #3　夜間開催](https://techplay.jp/event/983776)
 - [7/26 理系出身者のためのPython爆速講座](https://techplay.jp/event/981920)
 - [#Canva村 酒場 はじまる！](https://techplay.jp/event/983774)
 - [【ギフト券進呈】ManegyランスタWEEK -2025 Summer- ~経理・人事・総務・法務・情シスの注目トピックを集結~](https://techplay.jp/event/983762)
 - [【8/9(土)開催】 第6回北陸Tableauユーザー会『JTUGオープンデータバトルコラボ！～アニメーションで魅せるTableau可視化テクニック＆続くコミュニティの運営～』](https://techplay.jp/event/983319)
 - [Tableauコミュニティ相談室【毎週開催】](https://techplay.jp/event/983761)
-- [月イチAI検診！ゆるっとAIミートアップ](https://techplay.jp/event/983759)
-- [〜事業を支えるデータエンジニアリングとは〜各社のデータ活用の現在地](https://techplay.jp/event/983666)
-- [19時スタート！仕事終わりに覗いてみませんか？ はじめての生成AI活用 ソフトバンクコンタクトセンターの現場で使われてるリアル事例つき!](https://techplay.jp/event/983758)
-- [SPIRAL ISSO スタートアップセミナー 〜操作デモで体感！はじめての導入検討に〜](https://techplay.jp/event/983757)
 
 
 ---
