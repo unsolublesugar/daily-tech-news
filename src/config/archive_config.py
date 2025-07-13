@@ -11,7 +11,7 @@ class SiteConfig:
     
     # サイト基本情報
     SITE_TITLE_TEMPLATE: str = "👨‍💻 今日のテックニュース ({date})"
-    SITE_DESCRIPTION: str = "日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。"
+    SITE_DESCRIPTION: str = "忙しいエンジニアのために。毎日サクッとキャッチアップ。"
     SITE_URL: str = "https://unsolublesugar.github.io/daily-tech-news/"
     TWITTER_USER: str = "@unsoluble_sugar"
     
