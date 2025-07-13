@@ -203,8 +203,8 @@ class TemplateManager:
     
     def get_css_link(self, is_archive: bool = False) -> str:
         """外部CSSファイルへのリンクを取得"""
-        css_path = "../../assets/css/main.css" if is_archive else "assets/css/main.css"
-        js_path = "../../assets/js/preview.js" if is_archive else "assets/js/preview.js"
+        css_path = "../../../assets/css/main.css" if is_archive else "assets/css/main.css"
+        js_path = "../../../assets/js/preview.js" if is_archive else "assets/js/preview.js"
         return f'    <link rel="stylesheet" href="{css_path}">\n</head>'
     
     def get_navigation_section(self, date_str: str, is_archive: bool = False) -> str:
@@ -313,7 +313,7 @@ class ContentStructure:
         """完全なHTMLページを構築"""
         # X logo pathのデフォルト設定
         if x_logo_path is None:
-            x_logo_path = "../../assets/images/x-logo/logo-white.png" if is_archive else "assets/images/x-logo/logo-white.png"
+            x_logo_path = "../../../assets/images/x-logo/logo-white.png" if is_archive else "assets/images/x-logo/logo-white.png"
         
         head_section = self.template_manager.get_html_head(title, date_str, is_archive)
         css_section = self.template_manager.get_css_link(is_archive)
@@ -323,7 +323,7 @@ class ContentStructure:
         description = self.template_manager.site_config.SITE_DESCRIPTION
         
         # JavaScript path
-        js_path = "../../assets/js/preview.js" if is_archive else "assets/js/preview.js"
+        js_path = "../../../assets/js/preview.js" if is_archive else "assets/js/preview.js"
         
         return f"""{head_section}
 {css_section}
