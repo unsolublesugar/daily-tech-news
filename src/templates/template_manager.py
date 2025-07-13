@@ -313,7 +313,7 @@ class ContentStructure:
         """完全なHTMLページを構築"""
         # X logo pathのデフォルト設定
         if x_logo_path is None:
-            x_logo_path = "../../assets/x-logo/logo-white.png" if is_archive else "assets/x-logo/logo-white.png"
+            x_logo_path = "../../assets/images/x-logo/logo-white.png" if is_archive else "assets/images/x-logo/logo-white.png"
         
         head_section = self.template_manager.get_html_head(title, date_str, is_archive)
         css_section = self.template_manager.get_css_link(is_archive)

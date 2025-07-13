@@ -27,7 +27,7 @@ class SiteConfig:
     OG_IMAGE_FILENAME: str = "assets/images/OGP.png"
     
     # X(Twitter) 設定
-    X_LOGO_PATH: str = "assets/x-logo/logo-white.png"
+    X_LOGO_PATH: str = "assets/images/x-logo/logo-white.png"
     X_HASHTAGS: str = "techhunter"
     
     def __post_init__(self):
