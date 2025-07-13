@@ -582,3 +582,82 @@ a:hover {
     }
 }
 
+/* RSSカードスタイル */
+.rss-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    margin: 24px 0;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.rss-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.rss-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.rss-card-icon {
+    font-size: 48px;
+    flex-shrink: 0;
+}
+
+.rss-card-text h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.rss-card-text p {
+    margin: 0 0 12px 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.rss-link {
+    display: inline-block;
+    background: #007bff;
+    color: white !important;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.rss-link:hover {
+    background: #0056b3;
+    text-decoration: none;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .rss-card {
+        margin: 16px 0;
+        padding: 16px;
+    }
+    
+    .rss-card-content {
+        gap: 12px;
+    }
+    
+    .rss-card-icon {
+        font-size: 36px;
+    }
+    
+    .rss-card-text h3 {
+        font-size: 18px;
+    }
+}
+
