@@ -1,9 +1,30 @@
-<a href="{{link}}" class="card">
+<div class="card" data-preview-link="{{link}}" data-preview-title="{{title}}" data-preview-source="{{feed_name}}" data-preview-description="{{description}}" data-preview-published="{{published_date}}">
     <div class="card-content">
         {{thumbnail}}
         <div class="card-text">
-            <h4 class="card-title">{{title}}</h4>
-            <p class="card-source">{{feed_name}}</p>
+            <h4 class="card-title">
+                <a href="{{link}}" target="_blank">{{title}}</a>
+            </h4>
+            <p class="card-source">{{feed_name}} • {{relative_date}}</p>
         </div>
     </div>
-</a>
+    <div class="card-preview" id="preview-{{card_id}}" style="display: none;">
+        <div class="preview-content">
+            <div class="preview-header">
+                <h5 class="preview-title">{{title}}</h5>
+                <button class="preview-close" onclick="hidePreview(event, '{{card_id}}')">&times;</button>
+            </div>
+            <div class="preview-meta">
+                <span class="preview-source">{{feed_name}}</span>
+                <span class="preview-date">{{relative_date}}</span>
+                <span class="preview-read-time">{{read_time}}</span>
+            </div>
+            <div class="preview-description">
+                {{description}}
+            </div>
+            <div class="preview-actions">
+                <a href="{{link}}" class="preview-read-btn" target="_blank">記事を読む</a>
+            </div>
+        </div>
+    </div>
+</div>

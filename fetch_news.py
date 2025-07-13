@@ -1,6 +1,7 @@
 import feedparser
 import datetime
 import os
+import sys
 from pathlib import Path
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
@@ -12,6 +13,9 @@ from concurrent.futures import ThreadPoolExecutor
 import concurrent.futures
 import json
 import hashlib
+
+# srcディレクトリをPythonパスに追加
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 # 取得するRSSフィードのリスト（ファビコン付き）
 FEEDS = {
@@ -449,195 +453,40 @@ def fetch_all_thumbnails(all_entries, max_workers=10, use_cache=True):
     return thumbnails
 
 def generate_html(all_entries, feed_info, date_str, thumbnails=None):
-    """取得したエントリーからHTMLコンテンツを生成する"""
-    site_title = f"👨‍💻 今日のテックニュース ({date_str})"
-    site_description = "日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。"
-    site_url = "https://unsolublesugar.github.io/daily-tech-news/"
-    og_image_url = f"{site_url}assets/images/OGP.png"
-    twitter_user = "@unsoluble_sugar"
-
-    html = f"""<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{site_title}</title>
+    """新しいテンプレートシステムを使用してHTMLコンテンツを生成する"""
+    from src.templates.template_manager import TemplateManager, ContentStructure
     
-    <!-- OGP Tags -->
-    <meta property="og:title" content="{site_title}">
-    <meta property="og:description" content="{site_description}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{site_url}">
-    <meta property="og:image" content="{og_image_url}">
-    <meta property="og:site_name" content="今日のテックニュース">
+    # テンプレートマネージャーの初期化
+    template_manager = TemplateManager()
+    content_structure = ContentStructure(template_manager)
     
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="{twitter_user}">
-    
-    <!-- Favicon Tags -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicons/site.webmanifest">
-    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
-
-    <style>
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }}
-        .card {{
-            border: 1px solid #e1e5e9;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            background-color: #f8f9fa;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: box-shadow 0.2s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }}
-        .card:hover {{
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }}
-        .card-content {{
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }}
-        .card-image {{
-            border-radius: 6px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }}
-        .card-text {{
-            flex: 1;
-        }}
-        .card-title {{
-            margin: 0 0 8px 0;
-            font-size: 16px;
-            line-height: 1.4;
-            color: #0969da;
-            font-weight: 600;
-        }}
-        .card-source {{
-            margin: 0;
-            font-size: 12px;
-            color: #656d76;
-        }}
-        h1, h2 {{
-            color: #1f2328;
-        }}
-        .rss-info {{
-            background: #f6f8fa;
-            padding: 16px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }}
-        .footer {{
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid #e1e5e9;
-            text-align: center;
-            font-size: 14px;
-            color: #656d76;
-        }}
-        .footer a {{
-            color: #0969da;
-            text-decoration: none;
-        }}
-        .footer a:hover {{
-            text-decoration: underline;
-        }}
-        .share-button {{
-            display: inline-flex;
-            align-items: center;
-            background-color: #000000;
-            color: white;
-            text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            margin: 0 4px 0 0;
-            transition: background-color 0.2s ease;
-            gap: 4px;
-            vertical-align: middle;
-        }}
-        .share-button:hover {{
-            background-color: #333333;
-            color: white;
-            text-decoration: none;
-        }}
-        .share-button .x-logo {{
-            width: 16px;
-            height: 16px;
-            background-image: url('assets/x-logo/logo-white.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }}
-    </style>
-</head>
-<body>
-    <h1>{site_title}</h1>
-    
-    <p><a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}&hashtags=techhunter" target="_blank" rel="noopener" class="share-button"><span class="x-logo"></span>シェア</a> | 📚 <a href="archives/index.html">過去のニュースを見る</a></p>
-    
-    <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
-    
-    <div class="rss-info">
-        <p>毎日JST 7:00に自動更新</p>
-    </div>
-    
-    <hr>
-"""
+    # 記事カードのHTML生成
+    entries_html = ""
     
     for feed_name, entries in all_entries.items():
         favicon = feed_info[feed_name]["favicon"]
-        if favicon.startswith("http"):
-            favicon_display = f'<img src="{favicon}" width="16" height="16" alt="{feed_name}">'
-        else:
-            favicon_display = favicon
+        favicon_display = template_manager.render_favicon(favicon, feed_name)
         
-        html += f"    <h2>{favicon_display} {feed_name}</h2>\n"
+        entries_html += f"    <h2>{favicon_display} {feed_name}</h2>\n"
         
         if not entries:
-            html += "    <p>記事を取得できませんでした。</p>\n"
+            entries_html += "    <p>記事を取得できませんでした。</p>\n"
         else:
-            # エントリーはすでにURL重複除去済み
             for entry in entries:
-                title = entry.title
-                link = entry.link
-                
-                # 事前取得済みのサムネイルを使用
-                thumbnail_url = thumbnails.get(link) if thumbnails else None
-                
-                escaped_title = title.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
-                
-                if thumbnail_url:
-                    escaped_url = thumbnail_url.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
-                    card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" class="card-image">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
-                else:
-                    card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
-                html += card_html
+                thumbnail_url = thumbnails.get(entry.link) if thumbnails else None
+                card_html = template_manager.render_card(entry, feed_name, thumbnail_url)
+                entries_html += card_html
     
-    html += """
-    <div class="footer">
-        <p>📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
-        <p>🚀 運営者: <a href="https://x.com/unsoluble_sugar" target="_blank" rel="noopener">@unsoluble_sugar</a> | 
-        📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
-    </div>
-</body>
-</html>"""
+    # 完全なHTMLページを構築
+    title = f"今日のテックニュース ({date_str})"
+    html_content = content_structure.build_html_page(
+        title=title,
+        date_str=date_str,
+        entries_html=entries_html,
+        is_archive=False
+    )
     
-    return html
+    return html_content
 
 def generate_markdown(all_entries, feed_info, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
@@ -724,211 +573,40 @@ https://unsolublesugar.github.io/daily-tech-news/
     return markdown
 
 def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
-    """アーカイブ用のHTMLコンテンツを生成する"""
-    site_title = f"👨‍💻 今日のテックニュース ({date_str})"
-    site_description = "日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。"
-    site_url = "https://unsolublesugar.github.io/daily-tech-news/"
-    og_image_url = f"{site_url}assets/images/OGP.png"
-    twitter_user = "@unsoluble_sugar"
-
-    html = f"""<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{site_title}</title>
+    """新しいテンプレートシステムを使用してアーカイブHTMLを生成する"""
+    from src.templates.template_manager import TemplateManager, ContentStructure
     
-    <!-- OGP Tags -->
-    <meta property="og:title" content="{site_title}">
-    <meta property="og:description" content="{site_description}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="{site_url}">
-    <meta property="og:image" content="{og_image_url}">
-    <meta property="og:site_name" content="今日のテックニュース">
+    # テンプレートマネージャーの初期化
+    template_manager = TemplateManager()
+    content_structure = ContentStructure(template_manager)
     
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="{twitter_user}">
-    
-    <style>
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }}
-        .card {{
-            border: 1px solid #e1e5e9;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            background-color: #f8f9fa;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: box-shadow 0.2s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }}
-        .card:hover {{
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }}
-        .card-content {{
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }}
-        .card-image {{
-            border-radius: 6px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }}
-        .card-text {{
-            flex: 1;
-        }}
-        .card-title {{
-            margin: 0 0 8px 0;
-            font-size: 16px;
-            line-height: 1.4;
-            color: #0969da;
-            font-weight: 600;
-        }}
-        .card-source {{
-            margin: 0;
-            font-size: 12px;
-            color: #656d76;
-        }}
-        h1, h2 {{
-            color: #1f2328;
-        }}
-        .rss-info {{
-            background: #f6f8fa;
-            padding: 16px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }}
-        .footer {{
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid #e1e5e9;
-            text-align: center;
-            font-size: 14px;
-            color: #656d76;
-        }}
-        .footer a {{
-            color: #0969da;
-            text-decoration: none;
-        }}
-        .footer a:hover {{
-            text-decoration: underline;
-        }}
-        .share-button {{
-            display: inline-flex;
-            align-items: center;
-            background-color: #000000;
-            color: white;
-            text-decoration: none;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            margin: 0 4px 0 0;
-            transition: background-color 0.2s ease;
-            gap: 4px;
-            vertical-align: middle;
-        }}
-        .share-button:hover {{
-            background-color: #333333;
-            color: white;
-            text-decoration: none;
-        }}
-        .share-button .x-logo {{
-            width: 16px;
-            height: 16px;
-            background-image: url('assets/x-logo/logo-white.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }}
-        .nav-button {{
-            display: inline-flex;
-            align-items: center;
-            background-color: #f8f9fa;
-            color: #333;
-            text-decoration: none;
-            padding: 8px 12px;
-            border: 1px solid #e1e5e9;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            margin: 0 4px 0 0;
-            transition: background-color 0.2s ease;
-            gap: 6px;
-            vertical-align: middle;
-            line-height: 1.2;
-        }}
-        .nav-button:hover {{
-            background-color: #e9ecef;
-            color: #333;
-            text-decoration: none;
-        }}
-        .page-header {{
-            margin-bottom: 30px;
-        }}
-    </style>
-</head>
-<body>
-    <div class="page-header">
-        <h1>{site_title}</h1>
-        
-        <p><a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}archives/{date_str.replace('-', '/')}/{date_str}.html&hashtags=techhunter" target="_blank" rel="noopener" class="share-button"><span class="x-logo"></span>シェア</a> | 📚 <a href="../index.html">アーカイブ一覧</a></p>
-        
-        <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
-    </div>
-    
-"""
+    # 記事カードのHTML生成
+    entries_html = ""
     
     for feed_name, entries in all_entries.items():
         favicon = feed_info[feed_name]["favicon"]
-        if favicon.startswith("http"):
-            favicon_display = f'<img src="{favicon}" width="16" height="16" alt="{feed_name}">'
-        else:
-            favicon_display = favicon
+        favicon_display = template_manager.render_favicon(favicon, feed_name)
         
-        html += f"    <h2>{favicon_display} {feed_name}</h2>\n"
+        entries_html += f"    <h2>{favicon_display} {feed_name}</h2>\n"
         
         if not entries:
-            html += "    <p>記事を取得できませんでした。</p>\n"
+            entries_html += "    <p>記事を取得できませんでした。</p>\n"
         else:
-            # エントリーはすでにURL重複除去済み
             for entry in entries:
-                title = entry.title
-                link = entry.link
-                
-                # 事前取得済みのサムネイルを使用
-                thumbnail_url = thumbnails.get(link) if thumbnails else None
-                
-                escaped_title = title.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
-                
-                if thumbnail_url:
-                    escaped_url = thumbnail_url.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
-                    card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" class="card-image">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
-                else:
-                    card_html = f'    <a href="{link}" class="card">\n        <div class="card-content">\n            <div class="card-text">\n                <h4 class="card-title">{title}</h4>\n                <p class="card-source">{feed_name}</p>\n            </div>\n        </div>\n    </a>\n'
-                html += card_html
+                thumbnail_url = thumbnails.get(entry.link) if thumbnails else None
+                card_html = template_manager.render_card(entry, feed_name, thumbnail_url)
+                entries_html += card_html
     
-    html += """
-    <div class="footer">
-        <p><a href="../../index.html" class="nav-button">🏠 メインページに戻る</a></p>
-        <p>📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
-        <p>🚀 運営者: <a href="https://x.com/unsoluble_sugar" target="_blank" rel="noopener">@unsoluble_sugar</a> | 
-        📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
-    </div>
-</body>
-</html>"""
+    # アーカイブ用HTMLページを構築
+    title = f"今日のテックニュース ({date_str})"
+    html_content = content_structure.build_html_page(
+        title=title,
+        date_str=date_str,
+        entries_html=entries_html,
+        is_archive=True
+    )
     
-    return html
+    return html_content
 
 def save_to_archive(all_entries, feed_info, date_obj, thumbnails=None):
     """日付別アーカイブファイルとして保存（MarkdownとHTML両方）"""
