@@ -200,10 +200,51 @@ def filter_hatena_anonymous_entries(entries):
     
     return filtered_entries
 
+def extract_author_info(entry):
+    """RSSエントリーから著者情報を抽出する"""
+    author = None
+    
+    # 複数のフィールドから著者情報を取得を試行
+    if hasattr(entry, 'author') and entry.author:
+        author = entry.author.strip()
+    elif hasattr(entry, 'author_detail') and entry.author_detail and entry.author_detail.get('name'):
+        author = entry.author_detail['name'].strip()
+    elif hasattr(entry, 'authors') and entry.authors and len(entry.authors) > 0:
+        first_author = entry.authors[0]
+        if isinstance(first_author, dict) and first_author.get('name'):
+            author = first_author['name'].strip()
+        elif hasattr(first_author, 'name'):
+            author = first_author.name.strip()
+    
+    # 著者情報があれば、長すぎる場合は短縮処理
+    if author:
+        # O'Reilly Japan等の長い著者情報の短縮処理
+        if len(author) > 50:  # 50文字を超える場合
+            # "著者名　著 訳者名　訳" パターンの処理
+            if "　著" in author:
+                author = author.split("　著")[0]
+            # カンマ区切りの複数著者の場合、最初の2名まで
+            elif "、" in author:
+                authors = author.split("、")
+                if len(authors) > 2:
+                    author = "、".join(authors[:2]) + "他"
+                else:
+                    author = "、".join(authors[:2])
+            # それでも長い場合は前半50文字+...
+            if len(author) > 50:
+                author = author[:47] + "..."
+    
+    return author
+
 def fetch_feed_entries(feed_url):
     """指定されたURLからRSSフィードのエントリーを取得する"""
     try:
         feed = feedparser.parse(feed_url)
+        
+        # 各エントリに著者情報を追加
+        for entry in feed.entries:
+            entry.author_info = extract_author_info(entry)
+        
         return feed.entries
     except Exception as e:
         print(f"Error fetching feed from {feed_url}: {e}")

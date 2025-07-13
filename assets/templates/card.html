@@ -1,4 +1,4 @@
-<div class="card" data-preview-link="{{link}}" data-preview-title="{{title}}" data-preview-source="{{feed_name}}" data-preview-description="{{description}}" data-preview-published="{{published_date}}">
+<div class="card" data-preview-link="{{link}}" data-preview-title="{{title}}" data-preview-source="{{feed_name}}" data-preview-description="{{description}}" data-preview-published="{{published_date}}" data-preview-author="{{author_info}}">
     <div class="card-content">
         {{thumbnail}}
         <div class="card-text">
@@ -17,6 +17,7 @@
             <div class="preview-meta">
                 <span class="preview-source">{{feed_name}}</span>
                 <span class="preview-date">{{relative_date}}</span>
+                <span class="preview-author" style="display: none;">{{author_info}}</span>
                 <span class="preview-tags">{{tags}}</span>
             </div>
             <div class="preview-description">
