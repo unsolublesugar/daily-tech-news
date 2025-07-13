@@ -2,6 +2,9 @@
 テンプレート管理とコンテンツ生成のユーティリティモジュール
 """
 import os
+import re
+import hashlib
+from datetime import datetime, timedelta
 from typing import Dict, List, Any, Optional
 from config import SiteConfig, PathConfig
 
@@ -62,6 +65,108 @@ class TemplateManager:
             return f'<img src="{favicon}" width="16" height="16" alt="{feed_name}">'
         return favicon
     
+    def calculate_read_time(self, text: str) -> str:
+        """テキストから推定読時間を計算（日本語対応）"""
+        if not text:
+            return "約1分"
+        
+        # HTMLタグを除去
+        clean_text = re.sub(r'<[^>]+>', '', text)
+        
+        # 日本語文字数（ひらがな、カタカナ、漢字）
+        japanese_chars = len(re.findall(r'[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]', clean_text))
+        # 英語単語数
+        english_words = len(re.findall(r'\b[a-zA-Z]+\b', clean_text))
+        
+        # 日本語：400文字/分、英語：200単語/分で計算
+        japanese_minutes = japanese_chars / 400
+        english_minutes = english_words / 200
+        
+        total_minutes = max(1, round(japanese_minutes + english_minutes))
+        
+        return f"約{total_minutes}分"
+    
+    def get_relative_date(self, published_date: str) -> str:
+        """公開日から相対的な日付文字列を生成"""
+        if not published_date:
+            return ""
+        
+        try:
+            # 様々な日付フォーマットに対応
+            published = None
+            date_formats = [
+                '%Y-%m-%d %H:%M:%S',
+                '%Y-%m-%dT%H:%M:%S%z',
+                '%Y-%m-%dT%H:%M:%SZ',
+                '%a, %d %b %Y %H:%M:%S %Z',
+                '%a, %d %b %Y %H:%M:%S %z',
+                '%Y-%m-%d'
+            ]
+            
+            for fmt in date_formats:
+                try:
+                    published = datetime.strptime(published_date.strip(), fmt)
+                    break
+                except ValueError:
+                    continue
+            
+            if not published:
+                return ""
+            
+            # タイムゾーン未設定の場合は現在のタイムゾーンとして扱う
+            if published.tzinfo is None:
+                published = published.replace(tzinfo=datetime.now().astimezone().tzinfo)
+            
+            now = datetime.now(published.tzinfo)
+            diff = now - published
+            
+            if diff.days > 30:
+                return f"{diff.days // 30}ヶ月前"
+            elif diff.days > 7:
+                return f"{diff.days // 7}週間前"
+            elif diff.days > 0:
+                return f"{diff.days}日前"
+            elif diff.seconds > 3600:
+                return f"{diff.seconds // 3600}時間前"
+            elif diff.seconds > 60:
+                return f"{diff.seconds // 60}分前"
+            else:
+                return "たった今"
+                
+        except Exception:
+            return ""
+    
+    def extract_description(self, entry: Any) -> str:
+        """記事から説明文を抽出"""
+        description = ""
+        
+        # RSS feedの summary や description フィールドから取得
+        if hasattr(entry, 'summary'):
+            description = entry.summary
+        elif hasattr(entry, 'description'):
+            description = entry.description
+        elif hasattr(entry, 'content'):
+            if isinstance(entry.content, list) and entry.content:
+                description = entry.content[0].get('value', '')
+            else:
+                description = str(entry.content)
+        
+        if description:
+            # HTMLタグを除去
+            clean_desc = re.sub(r'<[^>]+>', '', description)
+            # 改行や余分な空白を正規化
+            clean_desc = re.sub(r'\s+', ' ', clean_desc).strip()
+            # 300文字程度に制限
+            if len(clean_desc) > 300:
+                clean_desc = clean_desc[:300] + '...'
+            return clean_desc
+        
+        return "記事の詳細を確認してください。"
+    
+    def generate_card_id(self, link: str) -> str:
+        """記事リンクからユニークなカードIDを生成"""
+        return hashlib.md5(link.encode()).hexdigest()[:8]
+    
     def get_html_head(self, title: str, date_str: str, is_archive: bool = False) -> str:
         """HTML headセクションを生成"""
         og_image_url = self.site_config.og_image_url
@@ -99,6 +204,7 @@ class TemplateManager:
     def get_css_link(self, is_archive: bool = False) -> str:
         """外部CSSファイルへのリンクを取得"""
         css_path = "../../assets/css/main.css" if is_archive else "assets/css/main.css"
+        js_path = "../../assets/js/preview.js" if is_archive else "assets/js/preview.js"
         return f'    <link rel="stylesheet" href="{css_path}">\n</head>'
     
     def get_navigation_section(self, date_str: str, is_archive: bool = False) -> str:
@@ -152,6 +258,22 @@ class TemplateManager:
         # HTMLエスケープ
         escaped_title = title.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
         
+        # メタ情報の生成
+        description = self.extract_description(entry)
+        
+        # 公開日の取得（複数のフィールドを試行）
+        published_date = ""
+        if hasattr(entry, 'published'):
+            published_date = entry.published
+        elif hasattr(entry, 'updated'):
+            published_date = entry.updated
+        elif hasattr(entry, 'pubDate'):
+            published_date = entry.pubDate
+        
+        relative_date = self.get_relative_date(published_date)
+        read_time = self.calculate_read_time(description)
+        card_id = self.generate_card_id(link)
+        
         thumbnail = ""
         # サムネイル画像の有効性を確認してからHTMLを生成
         if thumbnail_url and self.is_valid_thumbnail_url(thumbnail_url):
@@ -165,7 +287,12 @@ class TemplateManager:
             link=link,
             thumbnail=thumbnail,
             title=title,
-            feed_name=feed_name
+            feed_name=feed_name,
+            description=description,
+            published_date=published_date,
+            relative_date=relative_date,
+            read_time=read_time,
+            card_id=card_id
         )
     
     def render_markdown_entry(self, entry: Any) -> str:
@@ -195,6 +322,9 @@ class ContentStructure:
         
         description = self.template_manager.site_config.SITE_DESCRIPTION
         
+        # JavaScript path
+        js_path = "../../assets/js/preview.js" if is_archive else "assets/js/preview.js"
+        
         return f"""{head_section}
 {css_section}
 <body>
@@ -208,6 +338,7 @@ class ContentStructure:
     
 {entries_html}
 {footer}
+    <script src="{js_path}"></script>
 </body>
 </html>"""
     
