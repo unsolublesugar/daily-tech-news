@@ -478,7 +478,7 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
                 entries_html += card_html
     
     # 完全なHTMLページを構築
-    title = f"今日のテックニュース ({date_str})"
+    title = f"👨‍💻 今日のテックニュース ({date_str})"
     html_content = content_structure.build_html_page(
         title=title,
         date_str=date_str,
@@ -598,7 +598,7 @@ def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
                 entries_html += card_html
     
     # アーカイブ用HTMLページを構築
-    title = f"今日のテックニュース ({date_str})"
+    title = f"👨‍💻 今日のテックニュース ({date_str})"
     html_content = content_structure.build_html_page(
         title=title,
         date_str=date_str,

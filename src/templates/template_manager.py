@@ -240,6 +240,8 @@ class TemplateManager:
         if is_archive:
             main_page_link = '<p><a href="../../index.html" class="nav-button">🏠 メインページに戻る</a></p>\n        '
             rss_link = f'<p>📡 <a href="{site_url}rss.xml">RSSフィードを購読</a></p>\n        '
+        else:
+            rss_link = f'<p>📡 <a href="{site_url}rss.xml">RSSフィード配信中です</a></p>\n        '
         
         template = self.load_template('footer.html')
         return self.render_template(
