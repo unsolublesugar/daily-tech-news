@@ -87,6 +87,103 @@ a:hover {
     transform: rotate(180deg);
 }
 
+/* フィルター状態表示 */
+.filter-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f8f9fa;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #e1e5e9;
+    font-size: 12px;
+    flex-wrap: nowrap;
+    max-width: 100%;
+}
+
+.filter-status-text {
+    color: #656d76;
+    font-weight: 500;
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.filter-clear-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.filter-clear-btn:hover {
+    background: #c82333;
+}
+
+/* タグフィルターヘッダーのレスポンシブ対応 */
+.tag-filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0;
+}
+
+/* フィルターが展開されている時のみ下余白を追加 */
+.tag-filter-container .tag-filter-bar.expanded ~ h2:first-of-type {
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .tag-filter-header {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .tag-filter-header > :first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .filter-label {
+        margin: 0;
+    }
+    
+    .filter-toggle-btn {
+        margin: 0;
+        float: none;
+        position: static;
+    }
+    
+    .filter-status {
+        width: 100%;
+        margin: 0;
+        padding: 6px 8px;
+        box-sizing: border-box;
+    }
+    
+    .filter-status-text {
+        font-size: 11px;
+    }
+    
+    .filter-clear-btn {
+        padding: 4px 8px;
+        font-size: 10px;
+    }
+}
+
 .filter-toggle-btn.expanded .toggle-text::after {
     content: "非表示";
 }

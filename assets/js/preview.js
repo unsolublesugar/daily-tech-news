@@ -333,6 +333,9 @@ class TagFilter {
         
         // フィルタリング結果のフィードバック
         this.showFilterResults(tag, visibleCount);
+        
+        // フィルター状態を更新
+        this.updateFilterStatus(tag, visibleCount);
     }
     
     updateSectionHeaders() {
@@ -422,6 +425,18 @@ class TagFilter {
             }, 3000);
         }
     }
+    
+    updateFilterStatus(tag, visibleCount) {
+        const filterStatus = document.getElementById('filterStatus');
+        const filterStatusText = document.getElementById('filterStatusText');
+        
+        if (tag === 'all') {
+            filterStatus.style.display = 'none';
+        } else {
+            filterStatus.style.display = 'flex';
+            filterStatusText.textContent = `${tag}でフィルター中 (${visibleCount}件)`;
+        }
+    }
 }
 
 // DOM読み込み完了後にタグフィルターを初期化
@@ -435,6 +450,20 @@ window.addEventListener('pageshow', () => {
         window.tagFilter = new TagFilter();
     }
 });
+
+/**
+ * タグフィルターをクリア（すべて表示に戻す）
+ */
+function clearTagFilter() {
+    if (window.tagFilter) {
+        // 「すべて」ボタンを見つけてクリックをシミュレート
+        const allButton = document.querySelector('.tag-filter-btn[data-tag="all"]');
+        if (allButton) {
+            window.tagFilter.filterByTag('all');
+            window.tagFilter.updateActiveButton(allButton);
+        }
+    }
+}
 
 /**
  * タグフィルターの折りたたみ機能

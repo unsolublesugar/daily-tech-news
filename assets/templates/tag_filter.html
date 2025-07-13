@@ -1,10 +1,18 @@
 <div class="tag-filter-container">
     <div class="tag-filter-header">
-        <span class="filter-label">🏷️ カテゴリ別フィルター</span>
-        <button class="filter-toggle-btn" onclick="toggleTagFilter()">
-            <span class="toggle-text"></span>
-            <span class="toggle-icon">▼</span>
-        </button>
+        <div>
+            <span class="filter-label">🏷️ カテゴリ別フィルター</span>
+            <button class="filter-toggle-btn" onclick="toggleTagFilter()">
+                <span class="toggle-text"></span>
+                <span class="toggle-icon">▼</span>
+            </button>
+        </div>
+        <div class="filter-status" id="filterStatus" style="display: none;">
+            <span class="filter-status-text" id="filterStatusText"></span>
+            <button class="filter-clear-btn" onclick="clearTagFilter()" title="フィルターを解除">
+                ✕ 解除
+            </button>
+        </div>
     </div>
     <div class="tag-filter-bar collapsed" id="tagFilterBar">
         <div class="tag-filter-section">
