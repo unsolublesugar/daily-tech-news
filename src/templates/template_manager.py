@@ -241,7 +241,18 @@ class TemplateManager:
             main_page_link = '<p><a href="../../index.html" class="nav-button">🏠 メインページに戻る</a></p>\n        '
             rss_link = f'<p>📡 <a href="{site_url}rss.xml">RSSフィードを購読</a></p>\n        '
         else:
-            rss_link = f'<p>📡 <a href="{site_url}rss.xml">RSSフィード配信中です</a></p>\n        '
+            # メインページ用のカード表示デザイン
+            rss_link = f'''<div class="rss-card">
+        <div class="rss-card-content">
+            <div class="rss-card-icon">📡</div>
+            <div class="rss-card-text">
+                <h3>RSSフィード配信中</h3>
+                <p>お使いのRSSリーダーで購読してください</p>
+                <a href="{site_url}rss.xml" class="rss-link" target="_blank">RSSフィードを購読する</a>
+            </div>
+        </div>
+    </div>
+    '''
         
         template = self.load_template('footer.html')
         return self.render_template(
