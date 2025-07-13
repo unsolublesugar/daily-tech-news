@@ -681,6 +681,9 @@ a:hover {
 /* プレビューコンテンツ */
 .preview-content {
     padding: 16px;
+    /* プレビューコンテンツ全体の幅制御 */
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 /* プレビューヘッダー */
@@ -699,6 +702,11 @@ a:hover {
     line-height: 1.4;
     flex: 1;
     padding-right: 8px;
+    /* 長いタイトルの折り返し処理 */
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .preview-close {
