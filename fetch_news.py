@@ -669,6 +669,29 @@ def update_monthly_index(year, month):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{year}年{month}月のテックニュース</title>
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="{year}年{month}月のテックニュース">
+    <meta property="og:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/">
+    <meta property="og:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta property="og:site_name" content="今日のテックニュース">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@unsoluble_sugar">
+    <meta name="twitter:title" content="{year}年{month}月のテックニュース">
+    <meta name="twitter:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
+    <meta name="twitter:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../../../assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="../../../assets/favicons/favicon.ico">
+    
     <style>
         body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -754,6 +777,29 @@ def update_yearly_index(year):
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{year}年のテックニュース</title>
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="{year}年のテックニュース">
+    <meta property="og:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/">
+    <meta property="og:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta property="og:site_name" content="今日のテックニュース">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@unsoluble_sugar">
+    <meta name="twitter:title" content="{year}年のテックニュース">
+    <meta name="twitter:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
+    <meta name="twitter:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+    
     <style>
         body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -996,6 +1042,29 @@ def update_archive_index():
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>テックニュース アーカイブ</title>
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="テックニュース アーカイブ">
+    <meta property="og:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/">
+    <meta property="og:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta property="og:site_name" content="今日のテックニュース">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@unsoluble_sugar">
+    <meta name="twitter:title" content="テックニュース アーカイブ">
+    <meta name="twitter:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
+    <meta name="twitter:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="../assets/favicons/favicon.ico">
+    
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

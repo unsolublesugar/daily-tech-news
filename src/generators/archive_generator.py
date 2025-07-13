@@ -159,44 +159,141 @@ class ArchiveGenerator:
         return html_content, markdown_content
     
     def convert_markdown_to_html(self, markdown_path: str, target_html_path: str = None) -> str:
-        """既存のMarkdownファイルをHTMLに変換（簡易版）"""
+        """既存のMarkdownファイルをHTMLに変換（完全版）"""
         if not os.path.exists(markdown_path):
             raise FileNotFoundError(f"Markdown file not found: {markdown_path}")
         
         with open(markdown_path, 'r', encoding='utf-8') as f:
             content = f.read()
         
+        # パスの深さを計算してfaviconとCSSのパスを決定
+        path_parts = markdown_path.replace(self.site_config.ARCHIVE_BASE_DIR, '').strip('/').split('/')
+        depth = len([p for p in path_parts if p])  # archives/, year/, month/ の深さ
+        
+        # 相対パスを計算
+        if depth == 1:  # archives/index.html
+            favicon_path = "../assets/favicons/"
+            css_path = "../assets/css/main.css"
+        elif depth == 2:  # archives/YYYY/index.html
+            favicon_path = "../../assets/favicons/"
+            css_path = "../../assets/css/main.css"
+        elif depth == 3:  # archives/YYYY/MM/index.html
+            favicon_path = "../../../assets/favicons/"
+            css_path = "../../../assets/css/main.css"
+        else:
+            favicon_path = "assets/favicons/"
+            css_path = "assets/css/main.css"
+        
+        # タイトルを抽出
+        title = "テックニュース アーカイブ"
+        lines = content.split('\n')
+        for line in lines:
+            if line.startswith('# '):
+                title = line[2:].strip()
+                break
+        
+        # HTMLヘッドを生成
+        og_image_url = self.site_config.og_image_url
+        site_description = self.site_config.SITE_DESCRIPTION
+        site_url = self.site_config.SITE_URL
+        twitter_user = self.site_config.TWITTER_USER
+        
+        html_head = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    
+    <!-- OGP Tags -->
+    <meta property="og:title" content="{title}">
+    <meta property="og:description" content="{site_description}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{site_url}">
+    <meta property="og:image" content="{og_image_url}">
+    <meta property="og:site_name" content="今日のテックニュース">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="{twitter_user}">
+    <meta name="twitter:title" content="{title}">
+    <meta name="twitter:description" content="{site_description}">
+    <meta name="twitter:image" content="{og_image_url}">
+    
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{favicon_path}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{favicon_path}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{favicon_path}favicon-16x16.png">
+    <link rel="manifest" href="{favicon_path}site.webmanifest">
+    <link rel="shortcut icon" href="{favicon_path}favicon.ico">
+    
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }}
+        h1 {{
+            color: #1f2328;
+        }}
+        ul {{
+            list-style-type: disc;
+            padding-left: 2em;
+        }}
+        li {{
+            margin: 8px 0;
+        }}
+        a {{
+            color: #0969da;
+            text-decoration: none;
+        }}
+        a:hover {{
+            text-decoration: underline;
+        }}
+        .back-link {{
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e5e9;
+        }}
+    </style>
+</head>"""
+        
         # 簡易的なMarkdown→HTML変換
         lines = content.split('\n')
-        html_lines = ['<body>', '<div class="content">']
+        html_body_lines = ['<body>', '<div class="content">']
         
         for line in lines:
             line = line.strip()
             if line.startswith('# '):
                 # h1タグ
-                title = line[2:]
-                html_lines.append(f'<h1>{title}</h1>')
+                title_text = line[2:]
+                html_body_lines.append(f'<h1>{title_text}</h1>')
             elif line.startswith('## '):
                 # h2タグ
                 heading = line[3:]
-                html_lines.append(f'<h2>{heading}</h2>')
+                html_body_lines.append(f'<h2>{heading}</h2>')
             elif line.startswith('- ['):
                 # リンクリスト
                 # - [タイトル](URL) の形式を想定
                 import re
                 match = re.match(r'- \[([^\]]+)\]\(([^)]+)\)', line)
                 if match:
-                    title, url = match.groups()
-                    html_lines.append(f'<p><a href="{url}">{title}</a></p>')
+                    title_text, url = match.groups()
+                    html_body_lines.append(f'<p><a href="{url}">{title_text}</a></p>')
                 else:
-                    html_lines.append(f'<p>{line}</p>')
+                    html_body_lines.append(f'<p>{line}</p>')
             elif line == '---':
-                html_lines.append('<hr>')
+                html_body_lines.append('<hr>')
             elif line:
-                html_lines.append(f'<p>{line}</p>')
+                html_body_lines.append(f'<p>{line}</p>')
         
-        html_lines.extend(['</div>', '</body>'])
-        html_content = '\n'.join(html_lines)
+        html_body_lines.extend(['</div>', '</body>', '</html>'])
+        
+        # ヘッドとボディを組み合わせて完全なHTMLを生成
+        html_content = html_head + '\n' + '\n'.join(html_body_lines)
         
         # ファイル保存
         if target_html_path:
