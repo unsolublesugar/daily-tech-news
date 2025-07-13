@@ -181,6 +181,9 @@ class TemplateManager:
             archive_path = f"{date_obj.year}/{date_obj.month:02d}"
             canonical_url = f"{site_url}archives/{archive_path}/{date_str}.html"
         
+        # CSS path
+        css_path = "../../../assets/css/main.css" if is_archive else "assets/css/main.css"
+        
         return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -201,7 +204,23 @@ class TemplateManager:
     <meta name="twitter:creator" content="{twitter_user}">
     <meta name="twitter:title" content="{title}">
     <meta name="twitter:description" content="{site_description}">
-    <meta name="twitter:image" content="{og_image_url}">"""
+    <meta name="twitter:image" content="{og_image_url}">
+    
+    <!-- Favicon Links -->{self.get_favicon_links(is_archive)}
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{css_path}">
+</head>"""
+    
+    def get_favicon_links(self, is_archive: bool = False) -> str:
+        """faviconリンクタグを生成"""
+        favicon_path = "../../../assets/favicons/" if is_archive else "assets/favicons/"
+        return f"""
+    <link rel="apple-touch-icon" sizes="180x180" href="{favicon_path}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{favicon_path}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{favicon_path}favicon-16x16.png">
+    <link rel="manifest" href="{favicon_path}site.webmanifest">
+    <link rel="shortcut icon" href="{favicon_path}favicon.ico">"""
     
     def get_css_link(self, is_archive: bool = False) -> str:
         """外部CSSファイルへのリンクを取得"""
@@ -320,7 +339,6 @@ class ContentStructure:
             x_logo_path = "../../../assets/images/x-logo/logo-white.png" if is_archive else "assets/images/x-logo/logo-white.png"
         
         head_section = self.template_manager.get_html_head(title, date_str, is_archive)
-        css_section = self.template_manager.get_css_link(is_archive)
         navigation = self.template_manager.get_navigation_section(date_str, is_archive)
         footer = self.template_manager.get_footer_section(is_archive)
         
@@ -330,7 +348,6 @@ class ContentStructure:
         js_path = "../../../assets/js/preview.js" if is_archive else "assets/js/preview.js"
         
         return f"""{head_section}
-{css_section}
 <body>
     <div class="page-header">
         <h1>{title}</h1>
