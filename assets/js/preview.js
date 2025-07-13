@@ -113,6 +113,9 @@ class ArticlePreview {
             document.body.appendChild(preview);
         }
         
+        // 著者情報を表示/非表示の制御
+        this.updateAuthorDisplay(preview);
+        
         preview.style.display = 'block';
         
         // レイアウト計算を強制実行
@@ -123,6 +126,22 @@ class ArticlePreview {
         if (this.isMobile) {
             this.overlay.classList.add('show');
             document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    updateAuthorDisplay(preview) {
+        const authorElement = preview.querySelector('.preview-author');
+        if (authorElement) {
+            const authorInfo = authorElement.textContent.trim();
+            
+            if (authorInfo && authorInfo !== '') {
+                // 著者情報がある場合は表示
+                authorElement.style.display = 'inline';
+                authorElement.textContent = `by ${authorInfo}`;
+            } else {
+                // 著者情報がない場合は非表示
+                authorElement.style.display = 'none';
+            }
         }
     }
     

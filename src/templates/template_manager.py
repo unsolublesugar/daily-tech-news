@@ -380,6 +380,11 @@ class TemplateManager:
         elif hasattr(entry, 'pubDate'):
             published_date = entry.pubDate
         
+        # 著者情報の取得
+        author_info = ""
+        if hasattr(entry, 'author_info') and entry.author_info:
+            author_info = entry.author_info
+        
         relative_date = self.get_relative_date(published_date)
         tags = self.categorize_article(title, description)
         card_id = self.generate_card_id(link)
@@ -401,6 +406,7 @@ class TemplateManager:
             description=description,
             published_date=published_date,
             relative_date=relative_date,
+            author_info=author_info,
             tags=', '.join(tags),
             card_id=card_id
         )
