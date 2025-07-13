@@ -184,6 +184,49 @@ class TemplateManager:
         """記事リンクからユニークなカードIDを生成"""
         return hashlib.md5(link.encode()).hexdigest()[:8]
     
+    def categorize_article(self, title: str, description: str = '') -> List[str]:
+        """記事タイトルと概要からカテゴリタグを自動判定"""
+        categories = {
+            'AI・機械学習': ['AI', 'Claude', 'GPT', '機械学習', 'LLM', 'Gemini', '生成AI', 'ChatGPT', 'OpenAI', 'Anthropic', 'neoAI', 'Reasoning Model', '事前学習', 'ファインチューニング', 'Copilot'],
+            'Web開発': ['React', 'Vue', 'JavaScript', 'CSS', 'HTML', 'フロントエンド', 'Next.js', 'TypeScript', 'Angular', 'Svelte', 'Node.js', 'npm', 'webpack', 'Vite', 'Nuxt'],
+            'クラウド': ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'クラウド', 'サーバーレス', 'Lambda', 'EC2', 'S3', 'Athena', 'BigQuery', 'CloudFormation', 'Oracle Cloud', 'DynamoDB', 'Cloudflare'],
+            'モバイル': ['Swift', 'iOS', 'Android', 'React Native', 'Flutter', 'アプリ開発', 'Kotlin', 'Xcode', 'Android Studio', 'モバイル', 'Suica'],
+            'ゲーム開発': ['Unity', 'Unreal', 'ゲーム開発', 'ゲーム', 'MRTK', 'VR', 'AR', 'MR', 'Mixed Reality', 'XR', 'OpenXR', 'HoloLens'],
+            'DevOps': ['CI/CD', 'Jenkins', 'GitHub Actions', 'インフラ', 'デプロイ', 'Docker', 'Terraform', 'Ansible', 'Kubernetes', 'GitOps', 'SRE', 'SLO', 'Datadog'],
+            'セキュリティ': ['セキュリティ', '脆弱性', 'HTTPS', '認証', '暗号化', 'サイバー', 'セキュア', '攻撃', 'ペネトレーション', 'OAuth'],
+            'データベース': ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'データベース', 'SQL', 'NoSQL', 'DynamoDB', 'Firebase', 'Supabase', 'Oracle Database'],
+            'データ分析': ['データ分析', 'ビッグデータ', '分析', 'Analytics', 'データサイエンス', 'Tableau', 'Power BI', 'データ可視化', 'ETL', 'データ処理', 'QuickSight', 'SPICE'],
+            'プログラミング': ['Python', 'Java', 'Go', 'Rust', 'C++', 'C#', 'PHP', 'Ruby', 'Scala', 'Kotlin', 'Elixir', 'Haskell', 'F#', 'Windows', 'WSL', 'Ubuntu', 'Linux'],
+            'ツール・IDE': ['VS Code', 'Visual Studio', 'IntelliJ', 'Eclipse', 'Vim', 'Git', 'GitHub', 'GitLab', 'Notion', 'Slack', 'Claude Code', 'Cursor', 'hawk', 'awk'],
+            'アルゴリズム・数学': ['正規表現', '抽象構文木', 'アルゴリズム', '数学', '微分', 'イテレーター', '最適化', 'データ構造', '計算量', 'Brzozowski'],
+            'ツール紹介': ['Startpage', '検索エンジン', 'プライベート検索', 'ツール紹介', 'サービス紹介', 'レビュー', 'ツール', 'サービス', 'オープンソース', 'WinActor', 'RPA'],
+            '技術発表・LT': ['LT', 'スライド', '発表', 'プレゼン', 'HTML', 'スライド作成', '技術発表', 'カンファレンス', '勉強会', 'SpeakerDeck'],
+            'トラブルシューティング': ['トラブルシューティング', 'デバッグ', 'エラー', '問題解決', '障害対応', 'バグ修正', 'ログ解析', 'やってはいけない'],
+            'コーディング支援': ['AIコーディング', 'コード生成', 'GitHub Copilot', 'AI支援', 'コーディング', '開発効率', 'IDE拡張', 'GenAI Processors'],
+            'ネットワーク': ['ネットワーク', 'TCP/IP', 'HTTP', 'DNS', 'CDN', 'ロードバランサー', 'プロキシ', 'VPN'],
+            'UI/UX': ['UI', 'UX', 'デザイン', 'ユーザビリティ', 'プロトタイプ', 'Figma', 'デザインシステム', 'アクセシビリティ'],
+            'キャリア・組織': ['フルリモート', '居場所', 'キャリア', '組織', 'マネジメント', 'チーム', 'エンジニア', '働き方'],
+            'ハードウェア・IoT': ['睡眠トラッカー', 'スマートウォッチ', 'IoT', 'ハードウェア', 'Raspberry Pi', 'ブート'],
+            'オープンソース': ['オープンソース', 'OSS', 'ライセンス', 'GPL', 'MIT', 'Apache', 'ライセンス違反'],
+            'テクノロジートレンド': ['トレンド', '戦略', 'アップル', 'グーグル', 'OpenAI', '業界動向', 'ガートナー', '量子技術'],
+            'システム開発': ['オブジェクト指向', 'サンプルプログラム', '設計', 'アーキテクチャ', 'パターン', '開発手法'],
+            'OS・システム': ['Windows', 'Linux', 'Ubuntu', 'openSUSE', 'システム', 'OS', 'ディレクトリ', 'スラッシュ', 'バックスラッシュ']
+        }
+        
+        detected_tags = []
+        text = f"{title} {description}".lower()
+        
+        for category, keywords in categories.items():
+            if any(keyword.lower() in text for keyword in keywords):
+                detected_tags.append(category)
+        
+        return detected_tags if detected_tags else ['その他']
+    
+    def get_tag_filter_html(self, total_count: int) -> str:
+        """タグフィルターのHTMLを生成"""
+        template = self.load_template('tag_filter.html')
+        return self.render_template(template, total_count=total_count)
+    
     def get_html_head(self, title: str, date_str: str, is_archive: bool = False) -> str:
         """HTML headセクションを生成"""
         og_image_url = self.site_config.og_image_url
@@ -324,6 +367,7 @@ class TemplateManager:
             published_date = entry.pubDate
         
         relative_date = self.get_relative_date(published_date)
+        tags = self.categorize_article(title, description)
         card_id = self.generate_card_id(link)
         
         thumbnail = ""
@@ -343,6 +387,7 @@ class TemplateManager:
             description=description,
             published_date=published_date,
             relative_date=relative_date,
+            tags=', '.join(tags),
             card_id=card_id
         )
     
@@ -360,7 +405,7 @@ class ContentStructure:
         self.template_manager = template_manager
     
     def build_html_page(self, title: str, date_str: str, entries_html: str, 
-                       is_archive: bool = False, x_logo_path: str = None) -> str:
+                       is_archive: bool = False, x_logo_path: str = None, total_entries: int = 0) -> str:
         """完全なHTMLページを構築"""
         # X logo pathのデフォルト設定
         if x_logo_path is None:
@@ -369,6 +414,9 @@ class ContentStructure:
         head_section = self.template_manager.get_html_head(title, date_str, is_archive)
         navigation = self.template_manager.get_navigation_section(date_str, is_archive)
         footer = self.template_manager.get_footer_section(is_archive)
+        
+        # タグフィルターはメインページのみ表示
+        tag_filter = "" if is_archive else self.template_manager.get_tag_filter_html(total_entries)
         
         description = self.template_manager.site_config.SITE_DESCRIPTION
         
@@ -384,6 +432,8 @@ class ContentStructure:
         
         <p>{description}</p>
     </div>
+    
+{tag_filter}
     
 {entries_html}
 {footer}

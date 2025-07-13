@@ -15,6 +15,7 @@ body {
 
 h1, h2 {
     color: #1f2328;
+    transition: all 0.2s ease;
 }
 
 a {
@@ -29,6 +30,195 @@ a:hover {
 /* ページ構造 */
 .page-header {
     margin-bottom: 30px;
+}
+
+/* タグフィルター */
+.tag-filter-container {
+    margin: 20px 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e1e5e9;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.tag-filter-header {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e1e5e9;
+}
+
+.filter-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2328;
+}
+
+.filter-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #ffffff;
+    border: 1px solid #d1d9e0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    color: #656d76;
+    transition: all 0.2s ease;
+}
+
+.filter-toggle-btn:hover {
+    background: #f3f4f6;
+    border-color: #0969da;
+    color: #0969da;
+}
+
+.toggle-icon {
+    transition: transform 0.2s ease;
+    font-size: 10px;
+}
+
+.filter-toggle-btn.expanded .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.filter-toggle-btn.expanded .toggle-text::after {
+    content: "非表示";
+}
+
+.filter-toggle-btn:not(.expanded) .toggle-text::after {
+    content: "表示";
+}
+
+.tag-filter-bar {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.tag-filter-bar.expanded {
+    max-height: 80vh;
+    padding: 16px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #d1d9e0 transparent;
+}
+
+.tag-filter-bar.expanded::-webkit-scrollbar {
+    width: 6px;
+}
+
+.tag-filter-bar.expanded::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.tag-filter-bar.expanded::-webkit-scrollbar-thumb {
+    background-color: #d1d9e0;
+    border-radius: 3px;
+}
+
+.tag-filter-bar.expanded::-webkit-scrollbar-thumb:hover {
+    background-color: #0969da;
+}
+
+.tag-filter-bar.collapsed {
+    max-height: 0;
+    padding: 0 16px;
+    overflow: hidden;
+}
+
+.tag-filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.section-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #656d76;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tag-filter-btn {
+    padding: 4px 12px;
+    border: 1px solid #d1d9e0;
+    background: #ffffff;
+    color: #656d76;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    user-select: none;
+    line-height: 1.2;
+    text-align: left;
+}
+
+.tag-filter-btn:hover {
+    background: #f3f4f6;
+    border-color: #0969da;
+    color: #0969da;
+    transform: translateY(-1px);
+}
+
+.tag-filter-btn.active {
+    background: #0969da;
+    color: white;
+    border-color: #0969da;
+    font-weight: 600;
+}
+
+.tag-filter-btn.active:hover {
+    background: #0550ae;
+    border-color: #0550ae;
+    transform: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .tag-filter-header {
+        padding: 10px 12px;
+    }
+    
+    .filter-label {
+        font-size: 13px;
+    }
+    
+    .filter-toggle-btn {
+        padding: 4px 8px;
+        font-size: 11px;
+    }
+    
+    .tag-filter-bar {
+        padding: 12px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .tag-filter-bar.expanded {
+        max-height: 60vh;
+        padding: 12px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .tag-filter-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
 }
 
 .footer {
@@ -57,7 +247,7 @@ a:hover {
     border-radius: 8px;
     background-color: #f8f9fa;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: box-shadow 0.2s ease;
+    transition: all 0.2s ease;
     text-decoration: none;
     color: inherit;
     display: block;
@@ -370,21 +560,18 @@ a:hover {
 
 /* プレビューポップアップの基本スタイル */
 .card-preview {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    position: fixed;
     background: white;
     border: 1px solid #e1e5e9;
     border-radius: 8px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    z-index: 1000;
-    margin-top: 8px;
+    z-index: 999999 !important;
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease;
     pointer-events: none;
     max-width: 400px;
+    min-width: 350px;
 }
 
 /* プレビュー表示時の状態 */
@@ -550,7 +737,7 @@ a:hover {
         width: 100%;
         height: 100%;
         background-color: rgba(0,0,0,0.5);
-        z-index: 1999;
+        z-index: 999998 !important;
         opacity: 0;
         transition: opacity 0.3s ease;
         pointer-events: none;
@@ -564,6 +751,7 @@ a:hover {
 
 @media (max-width: 480px) {
     .card-preview {
+        z-index: 999999 !important;
         max-width: 95vw;
         max-height: 85vh;
     }
@@ -659,5 +847,16 @@ a:hover {
     .rss-card-text h3 {
         font-size: 18px;
     }
+}
+
+/* タグ表示スタイル */
+.preview-tags {
+    color: #007bff;
+    font-size: 12px;
+    font-weight: 500;
+    background: #e7f3ff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
 }
 

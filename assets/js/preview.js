@@ -88,7 +88,7 @@ class ArticlePreview {
             
             // プレビュー位置を調整
             this.adjustPreviewPosition(card, preview);
-        }, 300);
+        }, 800);
     }
     
     handleDesktopLeave(card, preview) {
@@ -108,6 +108,11 @@ class ArticlePreview {
     }
     
     showPreview(preview) {
+        // プレビューをbodyの直下に移動（z-index競合を回避）
+        if (preview.parentNode !== document.body) {
+            document.body.appendChild(preview);
+        }
+        
         preview.style.display = 'block';
         
         // レイアウト計算を強制実行
@@ -145,31 +150,38 @@ class ArticlePreview {
         if (this.isMobile) return;
         
         const cardRect = card.getBoundingClientRect();
-        const previewRect = preview.getBoundingClientRect();
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
         
-        // 横方向の調整
-        if (cardRect.right + previewRect.width > viewportWidth - 20) {
-            preview.style.left = 'auto';
-            preview.style.right = '0';
-        } else {
-            preview.style.left = '0';
-            preview.style.right = 'auto';
+        // プレビューの仮サイズを取得
+        const previewWidth = 400; // max-widthから
+        const previewHeight = preview.scrollHeight || 300;
+        
+        // 横方向の位置調整
+        let left = cardRect.left;
+        if (left + previewWidth > viewportWidth - 20) {
+            left = viewportWidth - previewWidth - 20;
+        }
+        if (left < 20) {
+            left = 20;
         }
         
-        // 縦方向の調整（画面下端を超える場合）
-        if (cardRect.bottom + previewRect.height > viewportHeight - 20) {
-            preview.style.top = 'auto';
-            preview.style.bottom = '100%';
-            preview.style.marginTop = '0';
-            preview.style.marginBottom = '8px';
-        } else {
-            preview.style.top = '100%';
-            preview.style.bottom = 'auto';
-            preview.style.marginTop = '8px';
-            preview.style.marginBottom = '0';
+        // 縦方向の位置調整
+        let top = cardRect.bottom + 8;
+        if (top + previewHeight > viewportHeight - 20) {
+            top = cardRect.top - previewHeight - 8;
+            if (top < 20) {
+                top = 20;
+            }
         }
+        
+        // position: fixedで絶対位置に配置
+        preview.style.left = left + 'px';
+        preview.style.top = top + 'px';
+        preview.style.right = 'auto';
+        preview.style.bottom = 'auto';
+        preview.style.marginTop = '0';
+        preview.style.marginBottom = '0';
     }
     
     isHoveringPreview(preview, event = null) {
@@ -231,3 +243,215 @@ window.addEventListener('pageshow', () => {
         window.articlePreview = new ArticlePreview();
     }
 });
+
+/**
+ * タグフィルタリング機能
+ * 記事カードをタグに基づいてフィルタリング
+ */
+class TagFilter {
+    constructor() {
+        this.activeTag = 'all';
+        this.cards = [];
+        this.buttons = [];
+        this.tagCounts = {};
+        
+        this.init();
+    }
+    
+    init() {
+        this.cards = Array.from(document.querySelectorAll('.card'));
+        this.buttons = Array.from(document.querySelectorAll('.tag-filter-btn'));
+        this.countTagsInCards();
+        this.updateTagCounts();
+        this.attachEventListeners();
+    }
+    
+    countTagsInCards() {
+        this.tagCounts = { 'all': this.cards.length };
+        
+        this.cards.forEach(card => {
+            const tagsElement = card.querySelector('.preview-tags');
+            if (tagsElement) {
+                const tags = tagsElement.textContent.split(',').map(tag => tag.trim());
+                tags.forEach(tag => {
+                    if (tag && tag !== '') {
+                        this.tagCounts[tag] = (this.tagCounts[tag] || 0) + 1;
+                    }
+                });
+            }
+        });
+    }
+    
+    updateTagCounts() {
+        this.buttons.forEach(button => {
+            const tag = button.dataset.tag;
+            const count = this.tagCounts[tag] || 0;
+            
+            if (tag === 'all') {
+                button.textContent = `すべて (${this.tagCounts['all']})`;
+            } else if (count > 0) {
+                button.textContent = `${tag} (${count})`;
+                button.style.display = 'inline-block';
+            } else {
+                button.style.display = 'none';
+            }
+        });
+    }
+    
+    attachEventListeners() {
+        this.buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tag = button.dataset.tag;
+                this.filterByTag(tag);
+                this.updateActiveButton(button);
+            });
+        });
+    }
+    
+    filterByTag(tag) {
+        this.activeTag = tag;
+        let visibleCount = 0;
+        
+        this.cards.forEach((card) => {
+            const shouldShow = this.shouldShowCard(card, tag);
+            
+            if (shouldShow) {
+                card.style.display = 'block';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(-10px)';
+            }
+        });
+        
+        // セクション見出しを即座に更新
+        this.updateSectionHeaders();
+        
+        // フィルタリング結果のフィードバック
+        this.showFilterResults(tag, visibleCount);
+    }
+    
+    updateSectionHeaders() {
+        // 全てのセクション見出し（h2要素）を取得
+        const headers = document.querySelectorAll('h2');
+        
+        headers.forEach(header => {
+            // 見出しの次にある記事カードをカウント
+            let visibleCardsInSection = 0;
+            let nextElement = header.nextElementSibling;
+            
+            // 見出しの後にあるカードをチェック（次のh2まで）
+            while (nextElement && nextElement.tagName !== 'H2') {
+                if (nextElement.classList.contains('card')) {
+                    const cardStyle = window.getComputedStyle(nextElement);
+                    if (cardStyle.display !== 'none' && nextElement.style.opacity !== '0') {
+                        visibleCardsInSection++;
+                    }
+                }
+                nextElement = nextElement.nextElementSibling;
+            }
+            
+            // 表示する記事がない場合は見出しを非表示
+            if (visibleCardsInSection === 0) {
+                header.style.display = 'none';
+            } else {
+                header.style.display = 'block';
+            }
+        });
+    }
+    
+    
+    shouldShowCard(card, tag) {
+        if (tag === 'all') return true;
+        
+        const tagsElement = card.querySelector('.preview-tags');
+        if (!tagsElement) return false;
+        
+        const cardTags = tagsElement.textContent.split(',').map(t => t.trim());
+        return cardTags.includes(tag);
+    }
+    
+    updateActiveButton(activeButton) {
+        this.buttons.forEach(button => {
+            button.classList.remove('active');
+        });
+        activeButton.classList.add('active');
+    }
+    
+    showFilterResults(tag, count) {
+        // 既存の結果表示を削除
+        const existingResult = document.querySelector('.filter-result');
+        if (existingResult) {
+            existingResult.remove();
+        }
+        
+        // フィルタリング結果を表示
+        const resultElement = document.createElement('div');
+        resultElement.className = 'filter-result';
+        resultElement.style.cssText = `
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: #e7f3ff;
+            border: 1px solid #b6e3ff;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #0969da;
+            text-align: center;
+        `;
+        
+        if (tag === 'all') {
+            resultElement.textContent = `全ての記事 (${count}件) を表示中`;
+        } else {
+            resultElement.textContent = `「${tag}」でフィルタリング中 (${count}件)`;
+        }
+        
+        // タグフィルターの後に挿入
+        const filterContainer = document.querySelector('.tag-filter-container');
+        if (filterContainer) {
+            filterContainer.insertAdjacentElement('afterend', resultElement);
+            
+            // 3秒後に自動で削除
+            setTimeout(() => {
+                if (resultElement.parentNode) {
+                    resultElement.remove();
+                }
+            }, 3000);
+        }
+    }
+}
+
+// DOM読み込み完了後にタグフィルターを初期化
+document.addEventListener('DOMContentLoaded', () => {
+    window.tagFilter = new TagFilter();
+});
+
+// ページ表示時にも初期化（ブラウザバック対応）
+window.addEventListener('pageshow', () => {
+    if (!window.tagFilter) {
+        window.tagFilter = new TagFilter();
+    }
+});
+
+/**
+ * タグフィルターの折りたたみ機能
+ */
+function toggleTagFilter() {
+    const filterBar = document.getElementById('tagFilterBar');
+    const toggleBtn = document.querySelector('.filter-toggle-btn');
+    
+    if (filterBar.classList.contains('collapsed')) {
+        // 展開
+        filterBar.classList.remove('collapsed');
+        filterBar.classList.add('expanded');
+        toggleBtn.classList.add('expanded');
+    } else {
+        // 折りたたみ
+        filterBar.classList.remove('expanded');
+        filterBar.classList.add('collapsed');
+        toggleBtn.classList.remove('expanded');
+    }
+}
