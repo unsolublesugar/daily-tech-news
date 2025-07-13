@@ -177,7 +177,9 @@ class TemplateManager:
         # アーカイブページの場合はURLを調整
         canonical_url = site_url
         if is_archive:
-            canonical_url = f"{site_url}archives/{date_str.replace('-', '/')}/{date_str}.html"
+            date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+            archive_path = f"{date_obj.year}/{date_obj.month:02d}"
+            canonical_url = f"{site_url}archives/{archive_path}/{date_str}.html"
         
         return f"""<!DOCTYPE html>
 <html lang="ja">
@@ -213,7 +215,9 @@ class TemplateManager:
         hashtags = self.site_config.X_HASHTAGS
         
         if is_archive:
-            tweet_url = f"https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}archives/{date_str.replace('-', '/')}/{date_str}.html&hashtags={hashtags}"
+            date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+            archive_path = f"{date_obj.year}/{date_obj.month:02d}"
+            tweet_url = f"https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}archives/{archive_path}/{date_str}.html&hashtags={hashtags}"
             archive_link = "../index.html"
             archive_text = "アーカイブ一覧"
         else:
