@@ -68,7 +68,7 @@ class TemplateManager:
     def calculate_read_time(self, text: str) -> str:
         """テキストから推定読時間を計算（日本語対応）"""
         if not text:
-            return "約1分"
+            return "約3分"
         
         # HTMLタグを除去
         clean_text = re.sub(r'<[^>]+>', '', text)
@@ -77,12 +77,29 @@ class TemplateManager:
         japanese_chars = len(re.findall(r'[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]', clean_text))
         # 英語単語数
         english_words = len(re.findall(r'\b[a-zA-Z]+\b', clean_text))
+        # 全体の文字数
+        total_chars = len(clean_text)
         
-        # 日本語：400文字/分、英語：200単語/分で計算
-        japanese_minutes = japanese_chars / 400
-        english_minutes = english_words / 200
+        # descriptionベースの基本読時間計算
+        japanese_minutes = japanese_chars / 250  # 読速度をさらに下げる
+        english_minutes = english_words / 120
         
-        total_minutes = max(1, round(japanese_minutes + english_minutes))
+        # 記事の種類と長さによる係数調整
+        if total_chars < 50:
+            # 短い説明 = 短い記事
+            multiplier = 3
+        elif total_chars < 150:
+            # 中程度の説明 = 中程度の記事
+            multiplier = 5
+        else:
+            # 長い説明 = 長い記事
+            multiplier = 8
+        
+        # 基本時間に係数を適用
+        estimated_full_time = (japanese_minutes + english_minutes) * multiplier
+        
+        # より広い範囲で調整（最小3分、最大12分）
+        total_minutes = max(3, min(12, round(estimated_full_time)))
         
         return f"約{total_minutes}分"
     
@@ -307,7 +324,6 @@ class TemplateManager:
             published_date = entry.pubDate
         
         relative_date = self.get_relative_date(published_date)
-        read_time = self.calculate_read_time(description)
         card_id = self.generate_card_id(link)
         
         thumbnail = ""
@@ -327,7 +343,6 @@ class TemplateManager:
             description=description,
             published_date=published_date,
             relative_date=relative_date,
-            read_time=read_time,
             card_id=card_id
         )
     
