@@ -310,11 +310,11 @@ class TemplateManager:
         if is_archive:
             date_obj = datetime.strptime(date_str, '%Y-%m-%d')
             archive_path = f"{date_obj.year}/{date_obj.month:02d}"
-            tweet_url = f"https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}archives/{archive_path}/{date_str}.html&hashtags={hashtags}"
+            tweet_url = f"https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をサクッとチェック！&url={site_url}archives/{archive_path}/{date_str}.html&hashtags={hashtags}"
             archive_link = "../index.html"
             archive_text = "アーカイブ一覧"
         else:
-            tweet_url = f"https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をチェック！&url={site_url}&hashtags={hashtags}"
+            tweet_url = f"https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をサクッとチェック！&url={site_url}&hashtags={hashtags}"
             archive_link = "archives/index.html"
             archive_text = "過去のニュースを見る"
         
