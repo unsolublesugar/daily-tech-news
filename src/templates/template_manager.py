@@ -191,7 +191,7 @@ class TemplateManager:
             'Web開発': ['React', 'Vue', 'JavaScript', 'CSS', 'HTML', 'フロントエンド', 'Next.js', 'TypeScript', 'Angular', 'Svelte', 'Node.js', 'npm', 'webpack', 'Vite', 'Nuxt'],
             'クラウド': ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'クラウド', 'サーバーレス', 'Lambda', 'EC2', 'S3', 'Athena', 'BigQuery', 'CloudFormation', 'Oracle Cloud', 'DynamoDB', 'Cloudflare'],
             'モバイル': ['Swift', 'iOS', 'Android', 'React Native', 'Flutter', 'アプリ開発', 'Kotlin', 'Xcode', 'Android Studio', 'モバイル', 'Suica'],
-            'ゲーム開発': ['Unity', 'Unreal', 'ゲーム開発', 'ゲーム', 'MRTK', 'VR', 'AR', 'MR', 'Mixed Reality', 'XR', 'OpenXR', 'HoloLens'],
+            'ゲーム開発': ['Unity', 'Unreal Engine', 'Unreal', 'ゲーム開発', 'ゲーム制作', 'ゲーム', 'MRTK', 'Mixed Reality Toolkit', 'HoloLens', 'ゲームエンジン'],
             'DevOps': ['CI/CD', 'Jenkins', 'GitHub Actions', 'インフラ', 'デプロイ', 'Docker', 'Terraform', 'Ansible', 'Kubernetes', 'GitOps', 'SRE', 'SLO', 'Datadog'],
             'セキュリティ': ['セキュリティ', '脆弱性', 'HTTPS', '認証', '暗号化', 'サイバー', 'セキュア', '攻撃', 'ペネトレーション', 'OAuth'],
             'データベース': ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'データベース', 'SQL', 'NoSQL', 'DynamoDB', 'Firebase', 'Supabase', 'Oracle Database'],
@@ -205,6 +205,7 @@ class TemplateManager:
             'コーディング支援': ['AIコーディング', 'コード生成', 'GitHub Copilot', 'AI支援', 'コーディング', '開発効率', 'IDE拡張', 'GenAI Processors'],
             'ネットワーク': ['ネットワーク', 'TCP/IP', 'HTTP', 'DNS', 'CDN', 'ロードバランサー', 'プロキシ', 'VPN'],
             'UI/UX': ['UI', 'UX', 'デザイン', 'ユーザビリティ', 'プロトタイプ', 'Figma', 'デザインシステム', 'アクセシビリティ'],
+            'VR・AR・MR': ['VR', 'AR', 'MR', 'Mixed Reality', 'XR', 'OpenXR', '拡張現実', '仮想現実', '複合現実'],
             'キャリア・組織': ['フルリモート', '居場所', 'キャリア', '組織', 'マネジメント', 'チーム', 'エンジニア', '働き方'],
             'ハードウェア・IoT': ['睡眠トラッカー', 'スマートウォッチ', 'IoT', 'ハードウェア', 'Raspberry Pi', 'ブート'],
             'オープンソース': ['オープンソース', 'OSS', 'ライセンス', 'GPL', 'MIT', 'Apache', 'ライセンス違反'],
@@ -216,9 +217,22 @@ class TemplateManager:
         detected_tags = []
         text = f"{title} {description}".lower()
         
+        import re
+        
         for category, keywords in categories.items():
-            if any(keyword.lower() in text for keyword in keywords):
-                detected_tags.append(category)
+            # 短いキーワード（3文字以下）は単語境界マッチング、長いキーワードは部分マッチング
+            for keyword in keywords:
+                keyword_lower = keyword.lower()
+                if len(keyword_lower) <= 3:
+                    # 短いキーワードは単語境界で厳密マッチ
+                    if re.search(r'\b' + re.escape(keyword_lower) + r'\b', text):
+                        detected_tags.append(category)
+                        break
+                else:
+                    # 長いキーワードは部分マッチで柔軟性を保つ
+                    if keyword_lower in text:
+                        detected_tags.append(category)
+                        break
         
         return detected_tags if detected_tags else ['その他']
     
