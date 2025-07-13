@@ -172,7 +172,12 @@ class ArticlePreview {
         }
     }
     
-    isHoveringPreview(preview) {
+    isHoveringPreview(preview, event = null) {
+        // イベントオブジェクトが提供されていない場合は、要素のホバー状態をチェック
+        if (!event) {
+            return preview.matches(':hover');
+        }
+        
         const previewRect = preview.getBoundingClientRect();
         const mouseX = event.clientX;
         const mouseY = event.clientY;
