@@ -477,12 +477,16 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
                 card_html = template_manager.render_card(entry, feed_name, thumbnail_url)
                 entries_html += card_html
     
+    # 記事総数を計算
+    total_entries = sum(len(entries) for entries in all_entries.values())
+    
     # 完全なHTMLページを構築
     title = f"今日のテックニュース ({date_str})"
     html_content = content_structure.build_html_page(
         title=title,
         date_str=date_str,
         entries_html=entries_html,
+        total_entries=total_entries,
         is_archive=False
     )
     
