@@ -5,92 +5,78 @@
     <link>https://unsolublesugar.github.io/daily-tech-news/</link>
     <description>日本の主要な技術系メディアの最新人気エントリーを毎日お届けします</description>
     <language>ja</language>
-    <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
-    <lastBuildDate>Thu, 17 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
+    <lastBuildDate>Fri, 18 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://unsolublesugar.github.io/daily-tech-news/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>KiroとClaude Codeの組み合わせで開発の質と速度を両取りできた | Ubie テックブログのフィード</title>
+      <title>自力で時差計算をしろと言われたら。あるいはDSTによる変換の曖昧性について。 | サイボウズ フロントエンドのフィード</title>
+      <link>https://zenn.dev/cybozu_frontend/articles/calc-time-diff-on-your-own</link>
+      <description>Tech Blog Weeklyからの記事: 自力で時差計算をしろと言われたら。あるいはDSTによる変換の曖昧性について。 | サイボウズ フロントエンドのフィード</description>
+      <guid>https://zenn.dev/cybozu_frontend/articles/calc-time-diff-on-your-own</guid>
+      <pubDate>Thu, 17 Jul 2025 13:19:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>EventBridge Scheduler のスケジュールグループ機能の活用を考える | サーバーワークスエンジニアブログ</title>
+      <link>https://blog.serverworks.co.jp/eventbridge_schedule-group</link>
+      <description>Tech Blog Weeklyからの記事: EventBridge Scheduler のスケジュールグループ機能の活用を考える | サーバーワークスエンジニアブログ</description>
+      <guid>https://blog.serverworks.co.jp/eventbridge_schedule-group</guid>
+      <pubDate>Thu, 17 Jul 2025 11:23:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>アプリケーションモダナイゼーション成功の鍵！〜最初の一歩：現状分析（アセスメント）の進め方 | 赤帽エンジニアブログ</title>
+      <link>https://rheb.hatenablog.com/entry/2025/07/17/195043</link>
+      <description>Tech Blog Weeklyからの記事: アプリケーションモダナイゼーション成功の鍵！〜最初の一歩：現状分析（アセスメント）の進め方 | 赤帽エンジニアブログ</description>
+      <guid>https://rheb.hatenablog.com/entry/2025/07/17/195043</guid>
+      <pubDate>Thu, 17 Jul 2025 10:50:43 +0000</pubDate>
+    </item>
+    <item>
+      <title>Pythonエンジニア必見！アプリ開発とWeb開発の基礎を学べるおすすめ本7選 | ヘッドウォータースのフィード</title>
+      <link>https://zenn.dev/headwaters/articles/ae06186cf2cf0d</link>
+      <description>Tech Blog Weeklyからの記事: Pythonエンジニア必見！アプリ開発とWeb開発の基礎を学べるおすすめ本7選 | ヘッドウォータースのフィード</description>
+      <guid>https://zenn.dev/headwaters/articles/ae06186cf2cf0d</guid>
+      <pubDate>Thu, 17 Jul 2025 10:30:38 +0000</pubDate>
+    </item>
+    <item>
+      <title>変数の保護に関する基本的な知識 | iimon TECH BLOG</title>
+      <link>https://tech.iimon.co.jp/entry/2025/07/17/193000</link>
+      <description>Tech Blog Weeklyからの記事: 変数の保護に関する基本的な知識 | iimon TECH BLOG</description>
+      <guid>https://tech.iimon.co.jp/entry/2025/07/17/193000</guid>
+      <pubDate>Thu, 17 Jul 2025 10:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>App Service から始める Azure入門</title>
+      <link>https://zenn.dev/relims7165/books/b95196348d4f1e</link>
+      <description>Zennからの記事: App Service から始める Azure入門</description>
+      <guid>https://zenn.dev/relims7165/books/b95196348d4f1e</guid>
+      <pubDate>Thu, 17 Jul 2025 15:40:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI技術(cursor pro, claude3.5/3.7)によってコーディング開発が19%遅くなっている？！</title>
+      <link>https://zenn.dev/boku_yaji/articles/2eba9ff05fc3e2</link>
+      <description>Zennからの記事: AI技術(cursor pro, claude3.5/3.7)によってコーディング開発が19%遅くなっている？！</description>
+      <guid>https://zenn.dev/boku_yaji/articles/2eba9ff05fc3e2</guid>
+      <pubDate>Wed, 16 Jul 2025 20:48:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>ずっと欲しかったRustのWebAPIテストフレームワークを個人開発している話</title>
+      <link>https://zenn.dev/yukinarit/articles/597dfc7ee56bb0</link>
+      <description>Zennからの記事: ずっと欲しかったRustのWebAPIテストフレームワークを個人開発している話</description>
+      <guid>https://zenn.dev/yukinarit/articles/597dfc7ee56bb0</guid>
+      <pubDate>Wed, 16 Jul 2025 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Amazon S3 Vectorsで激安RAGシステムを構築する</title>
+      <link>https://zenn.dev/tosuri13/articles/c7ac9477d28c19</link>
+      <description>Zennからの記事: Amazon S3 Vectorsで激安RAGシステムを構築する</description>
+      <guid>https://zenn.dev/tosuri13/articles/c7ac9477d28c19</guid>
+      <pubDate>Wed, 16 Jul 2025 13:30:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>KiroとClaude Codeの組み合わせで開発の質と速度を両取りできた</title>
       <link>https://zenn.dev/ubie_dev/articles/kiro-claude-code</link>
-      <description>Tech Blog Weeklyからの記事: KiroとClaude Codeの組み合わせで開発の質と速度を両取りできた | Ubie テックブログのフィード</description>
+      <description>Zennからの記事: KiroとClaude Codeの組み合わせで開発の質と速度を両取りできた</description>
       <guid>https://zenn.dev/ubie_dev/articles/kiro-claude-code</guid>
       <pubDate>Wed, 16 Jul 2025 13:09:17 +0000</pubDate>
-    </item>
-    <item>
-      <title>Kiro（プレビュー版）によるはじめてのスペックコーディング | サーバーワークスエンジニアブログ</title>
-      <link>https://blog.serverworks.co.jp/kiro-preview-first-spec-coding</link>
-      <description>Tech Blog Weeklyからの記事: Kiro（プレビュー版）によるはじめてのスペックコーディング | サーバーワークスエンジニアブログ</description>
-      <guid>https://blog.serverworks.co.jp/kiro-preview-first-spec-coding</guid>
-      <pubDate>Wed, 16 Jul 2025 11:59:29 +0000</pubDate>
-    </item>
-    <item>
-      <title>CodeCommit から エラーコード 429 を受け取った原因と対策 | サーバーワークスエンジニアブログ</title>
-      <link>https://blog.serverworks.co.jp/CodeCommit-429</link>
-      <description>Tech Blog Weeklyからの記事: CodeCommit から エラーコード 429 を受け取った原因と対策 | サーバーワークスエンジニアブログ</description>
-      <guid>https://blog.serverworks.co.jp/CodeCommit-429</guid>
-      <pubDate>Wed, 16 Jul 2025 11:43:17 +0000</pubDate>
-    </item>
-    <item>
-      <title>完全ガスレスの1inch Fusion+ クロスチェーンスワップはどのように実現されているのか？ | HashPort技術ブログ</title>
-      <link>https://tech.hashport.io/5156/</link>
-      <description>Tech Blog Weeklyからの記事: 完全ガスレスの1inch Fusion+ クロスチェーンスワップはどのように実現されているのか？ | HashPort技術ブログ</description>
-      <guid>https://tech.hashport.io/5156/</guid>
-      <pubDate>Wed, 16 Jul 2025 11:00:04 +0000</pubDate>
-    </item>
-    <item>
-      <title>LINE と Agent Development Kit (ADK) でボットを作ってみた vol.1 | クラウドエース株式会社さんのフィード</title>
-      <link>https://zenn.dev/cloud_ace/articles/line-adk-vol1</link>
-      <description>Tech Blog Weeklyからの記事: LINE と Agent Development Kit (ADK) でボットを作ってみた vol.1 | クラウドエース株式会社さんのフィード</description>
-      <guid>https://zenn.dev/cloud_ace/articles/line-adk-vol1</guid>
-      <pubDate>Wed, 16 Jul 2025 10:09:36 +0000</pubDate>
-    </item>
-    <item>
-      <title>Next.jsユーザーに送るoRPC実践入門</title>
-      <link>https://zenn.dev/y_ta/books/4d8c6b9eb3a99d</link>
-      <description>Zennからの記事: Next.jsユーザーに送るoRPC実践入門</description>
-      <guid>https://zenn.dev/y_ta/books/4d8c6b9eb3a99d</guid>
-      <pubDate>Wed, 16 Jul 2025 10:32:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>最新のテーブルデータ向けNNモデルをまとめてみた</title>
-      <link>https://zenn.dev/mkj/articles/f7939cb221da14</link>
-      <description>Zennからの記事: 最新のテーブルデータ向けNNモデルをまとめてみた</description>
-      <guid>https://zenn.dev/mkj/articles/f7939cb221da14</guid>
-      <pubDate>Wed, 16 Jul 2025 02:50:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>新規プロダクト開発チームが Claude Code を活用するために取り組んでいること</title>
-      <link>https://zenn.dev/canary_techblog/articles/8c8c1a20b9c4f9</link>
-      <description>Zennからの記事: 新規プロダクト開発チームが Claude Code を活用するために取り組んでいること</description>
-      <guid>https://zenn.dev/canary_techblog/articles/8c8c1a20b9c4f9</guid>
-      <pubDate>Wed, 16 Jul 2025 01:00:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>amazonの出したIDE「kiro」がめちゃくちゃ未来だったのでClaude Codeユーザーの人はみんな一度試してみてほしい</title>
-      <link>https://zenn.dev/sesere/articles/31d4b460c949e5</link>
-      <description>Zennからの記事: amazonの出したIDE「kiro」がめちゃくちゃ未来だったのでClaude Codeユーザーの人はみんな一度試してみてほしい</description>
-      <guid>https://zenn.dev/sesere/articles/31d4b460c949e5</guid>
-      <pubDate>Tue, 15 Jul 2025 23:05:24 +0000</pubDate>
-    </item>
-    <item>
-      <title>useEffectでデータフェッチは欠点だらけ？じゃあどうしたらいいの？</title>
-      <link>https://zenn.dev/sugachan/articles/19c0b1ff267f21</link>
-      <description>Zennからの記事: useEffectでデータフェッチは欠点だらけ？じゃあどうしたらいいの？</description>
-      <guid>https://zenn.dev/sugachan/articles/19c0b1ff267f21</guid>
-      <pubDate>Tue, 15 Jul 2025 13:29:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>Docker MCP Gatewayがすんばらしい👌</title>
-      <link>https://qiita.com/moritalous/items/8789a37b7db451cc1dba?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</link>
-      <description>Qiitaからの記事: Docker MCP Gatewayがすんばらしい👌</description>
-      <guid>https://qiita.com/moritalous/items/8789a37b7db451cc1dba?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</guid>
-      <pubDate>Mon, 14 Jul 2025 11:39:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>AWS製AI統合開発環境&quot;KIRO&quot;の仕様駆動開発でWebアプリを爆速実装！</title>
-      <link>https://qiita.com/kyuko/items/60abec146f5058b74d61?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</link>
-      <description>Qiitaからの記事: AWS製AI統合開発環境&quot;KIRO&quot;の仕様駆動開発でWebアプリを爆速実装！</description>
-      <guid>https://qiita.com/kyuko/items/60abec146f5058b74d61?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</guid>
-      <pubDate>Mon, 14 Jul 2025 18:09:28 +0000</pubDate>
     </item>
     <item>
       <title>【AWS発のAIエディタ🔥】Kiro 完全チートシート - 公式Doc全網羅！🚀</title>
@@ -100,13 +86,6 @@
       <pubDate>Tue, 15 Jul 2025 20:01:46 +0000</pubDate>
     </item>
     <item>
-      <title>AWSの新しいAIエージェント搭載IDE「Kiro」のSpecモードを使用して開発する</title>
-      <link>https://qiita.com/nasuvitz/items/e3226758fbb1c402aa9f?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</link>
-      <description>Qiitaからの記事: AWSの新しいAIエージェント搭載IDE「Kiro」のSpecモードを使用して開発する</description>
-      <guid>https://qiita.com/nasuvitz/items/e3226758fbb1c402aa9f?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</guid>
-      <pubDate>Mon, 14 Jul 2025 18:20:23 +0000</pubDate>
-    </item>
-    <item>
       <title>そのGitHubのリンク、消えるよ</title>
       <link>https://qiita.com/185shingeki/items/6e7748b6d67fabe649f0?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</link>
       <description>Qiitaからの記事: そのGitHubのリンク、消えるよ</description>
@@ -114,109 +93,151 @@
       <pubDate>Tue, 15 Jul 2025 12:27:53 +0000</pubDate>
     </item>
     <item>
-      <title>古いiPhoneでタイミーのアプリが開けなくなり「仕事ができずホームレスになるしかない」という人がいる→OSの足切りは仕方ないが難しい問題が多い</title>
-      <link>https://togetter.com/li/2576859</link>
-      <description>はてなブックマーク - IT（人気）からの記事: 古いiPhoneでタイミーのアプリが開けなくなり「仕事ができずホームレスになるしかない」という人がいる→OSの足切りは仕方ないが難しい問題が多い</description>
-      <guid>https://togetter.com/li/2576859</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <title>AIエージェントの大型アプデ多数！ AWSサミットNYC速報まとめ</title>
+      <link>https://qiita.com/minorun365/items/5215240d8a0c50ff91f6?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</link>
+      <description>Qiitaからの記事: AIエージェントの大型アプデ多数！ AWSサミットNYC速報まとめ</description>
+      <guid>https://qiita.com/minorun365/items/5215240d8a0c50ff91f6?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</guid>
+      <pubDate>Wed, 16 Jul 2025 16:41:26 +0000</pubDate>
     </item>
     <item>
-      <title>AI時代の新たな疲労：なぜ私(たち)は『説明のつかないしんどさ』を抱えているのか - じゃあ、おうちで学べる</title>
-      <link>https://syu-m-5151.hatenablog.com/entry/2025/07/16/115510</link>
-      <description>はてなブックマーク - IT（人気）からの記事: AI時代の新たな疲労：なぜ私(たち)は『説明のつかないしんどさ』を抱えているのか - じゃあ、おうちで学べる</description>
-      <guid>https://syu-m-5151.hatenablog.com/entry/2025/07/16/115510</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <title>Strands Agents SDK×Bedrock AgentCore Runtimeで最先端のAIエージェント開発を楽しもう！</title>
+      <link>https://qiita.com/har1101/items/73fa749e05c4cb38bb6e?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</link>
+      <description>Qiitaからの記事: Strands Agents SDK×Bedrock AgentCore Runtimeで最先端のAIエージェント開発を楽しもう！</description>
+      <guid>https://qiita.com/har1101/items/73fa749e05c4cb38bb6e?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</guid>
+      <pubDate>Wed, 16 Jul 2025 21:19:31 +0000</pubDate>
     </item>
     <item>
-      <title>関連のモデリング - kawasima</title>
-      <link>https://scrapbox.io/kawasima/%E9%96%A2%E9%80%A3%E3%81%AE%E3%83%A2%E3%83%87%E3%83%AA%E3%83%B3%E3%82%B0</link>
-      <description>はてなブックマーク - IT（人気）からの記事: 関連のモデリング - kawasima</description>
-      <guid>https://scrapbox.io/kawasima/%E9%96%A2%E9%80%A3%E3%81%AE%E3%83%A2%E3%83%87%E3%83%AA%E3%83%B3%E3%82%B0</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <title>Gemini CLI + Blender MCPでビオレママ作ってみたら衝撃の結末だった</title>
+      <link>https://qiita.com/nobu34/items/fda4b0af81e88e401687?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</link>
+      <description>Qiitaからの記事: Gemini CLI + Blender MCPでビオレママ作ってみたら衝撃の結末だった</description>
+      <guid>https://qiita.com/nobu34/items/fda4b0af81e88e401687?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items</guid>
+      <pubDate>Wed, 16 Jul 2025 00:17:47 +0000</pubDate>
     </item>
     <item>
-      <title>【AWS発のAIエディタ🔥】Kiro 完全チートシート - 公式Doc全網羅！🚀 - Qiita</title>
-      <link>https://qiita.com/akira_papa_AI/items/1f862d95a945af46a32f</link>
-      <description>はてなブックマーク - IT（人気）からの記事: 【AWS発のAIエディタ🔥】Kiro 完全チートシート - 公式Doc全網羅！🚀 - Qiita</description>
-      <guid>https://qiita.com/akira_papa_AI/items/1f862d95a945af46a32f</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <title>社内のAIコーディング導入を加速するため前提知識をまとめたガイドラインを書いた - Cluster Tech Blog</title>
+      <link>https://tech-blog.cluster.mu/entry/2025/07/17</link>
+      <description>はてなブックマーク - IT（人気）からの記事: 社内のAIコーディング導入を加速するため前提知識をまとめたガイドラインを書いた - Cluster Tech Blog</description>
+      <guid>https://tech-blog.cluster.mu/entry/2025/07/17</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Amazon S3 Vectorsで激安RAGシステムを構築する</title>
-      <link>https://zenn.dev/tosuri13/articles/c7ac9477d28c19</link>
-      <description>はてなブックマーク - IT（人気）からの記事: Amazon S3 Vectorsで激安RAGシステムを構築する</description>
-      <guid>https://zenn.dev/tosuri13/articles/c7ac9477d28c19</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <title>実務で使っているClaude Codeの活用事例集 - Claude Code Meetup</title>
+      <link>https://tonkotsuboy.github.io/20250717-findy-claudecode/</link>
+      <description>はてなブックマーク - IT（人気）からの記事: 実務で使っているClaude Codeの活用事例集 - Claude Code Meetup</description>
+      <guid>https://tonkotsuboy.github.io/20250717-findy-claudecode/</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>【海外記事紹介】OpenAIエンジニアが退職後に社内の様子を詳細に公開 — ほぼPythonのモノレポ環境、Azureベースのインフラ、Codexはたった7週間で立ち上げ</title>
-      <link>https://techfeed.io/entries/68781ba43f9e8207f0a85da7</link>
-      <description>はてなブックマーク - IT（新着）からの記事: 【海外記事紹介】OpenAIエンジニアが退職後に社内の様子を詳細に公開 — ほぼPythonのモノレポ環境、Azureベースのインフラ、Codexはたった7週間で立ち上げ</description>
-      <guid>https://techfeed.io/entries/68781ba43f9e8207f0a85da7</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <title>松屋が稲作　水を張らない田での水稲栽培実証</title>
+      <link>https://www.watch.impress.co.jp/docs/news/2032007.html</link>
+      <description>はてなブックマーク - IT（人気）からの記事: 松屋が稲作　水を張らない田での水稲栽培実証</description>
+      <guid>https://www.watch.impress.co.jp/docs/news/2032007.html</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Claude Code と Gemini CLI で登壇資料を作ってみた</title>
-      <link>https://speakerdeck.com/schroneko/vibe-sliding</link>
-      <description>はてなブックマーク - IT（新着）からの記事: Claude Code と Gemini CLI で登壇資料を作ってみた</description>
-      <guid>https://speakerdeck.com/schroneko/vibe-sliding</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <title>Goroutine はなぜ軽量スレッドと称されるのか</title>
+      <link>https://www.ren510.dev/blog/goroutine-concurrency</link>
+      <description>はてなブックマーク - IT（人気）からの記事: Goroutine はなぜ軽量スレッドと称されるのか</description>
+      <guid>https://www.ren510.dev/blog/goroutine-concurrency</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[新機能] Amazon S3 Tables MCP (Model Context Protocol) Server をClaude Codeで試してみた！ | DevelopersIO</title>
-      <link>https://dev.classmethod.jp/articles/amazon-s3-tables-mcp-server/</link>
-      <description>はてなブックマーク - IT（新着）からの記事: [新機能] Amazon S3 Tables MCP (Model Context Protocol) Server をClaude Codeで試してみた！ | DevelopersIO</description>
-      <guid>https://dev.classmethod.jp/articles/amazon-s3-tables-mcp-server/</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <title>AWS 無料利用枠の概念が大きく変わりました - サーバーワークスエンジニアブログ</title>
+      <link>https://blog.serverworks.co.jp/aws-free-tier</link>
+      <description>はてなブックマーク - IT（人気）からの記事: AWS 無料利用枠の概念が大きく変わりました - サーバーワークスエンジニアブログ</description>
+      <guid>https://blog.serverworks.co.jp/aws-free-tier</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>「Windows 11」コピー直後、はじめのキー入力が確定されてしまう問題</title>
-      <link>https://ascii.jp/elem/000/004/300/4300121/</link>
-      <description>はてなブックマーク - IT（新着）からの記事: 「Windows 11」コピー直後、はじめのキー入力が確定されてしまう問題</description>
-      <guid>https://ascii.jp/elem/000/004/300/4300121/</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <title>令和に再誕した「AviUtl ExEdit2」はついに64bit化！ 使い勝手はどう変わる？／UIの変化と多機能化、64bit化の恩恵など。癖の強さは健在【レビュー】</title>
+      <link>https://forest.watch.impress.co.jp/docs/review/2031809.html</link>
+      <description>はてなブックマーク - IT（新着）からの記事: 令和に再誕した「AviUtl ExEdit2」はついに64bit化！ 使い勝手はどう変わる？／UIの変化と多機能化、64bit化の恩恵など。癖の強さは健在【レビュー】</description>
+      <guid>https://forest.watch.impress.co.jp/docs/review/2031809.html</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>孫正義氏「人間がプログラミングする時代は目の前で終わろうとしている」</title>
-      <link>https://japan.cnet.com/article/35235568/</link>
-      <description>はてなブックマーク - IT（新着）からの記事: 孫正義氏「人間がプログラミングする時代は目の前で終わろうとしている」</description>
-      <guid>https://japan.cnet.com/article/35235568/</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <title>ランサムウェアPhobos/8Baseにより暗号化されたファイルの復号ツールの開発について｜警察庁Webサイト</title>
+      <link>https://www.npa.go.jp/news/release/2025/20250717001.html</link>
+      <description>はてなブックマーク - IT（新着）からの記事: ランサムウェアPhobos/8Baseにより暗号化されたファイルの復号ツールの開発について｜警察庁Webサイト</description>
+      <guid>https://www.npa.go.jp/news/release/2025/20250717001.html</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Amazon Bedrock AgentCore に OpenAI GPT-4.1 mini を使ったエージェントをデプロイしてみた</title>
-      <link>https://dev.classmethod.jp/articles/bedrock-agentcore-openai-gpt41/</link>
-      <description>DevelopersIOからの記事: Amazon Bedrock AgentCore に OpenAI GPT-4.1 mini を使ったエージェントをデプロイしてみた</description>
-      <guid>https://dev.classmethod.jp/articles/bedrock-agentcore-openai-gpt41/</guid>
-      <pubDate>Wed, 16 Jul 2025 20:28:04 +0000</pubDate>
+      <title>Amazon発の新たなAI IDE『Kiro』を徹底レビュー｜次世代のAI駆動開発を体験｜まさお@未経験からプロまでAI活用</title>
+      <link>https://note.com/masa_wunder/n/nf1183852a1df</link>
+      <description>はてなブックマーク - IT（新着）からの記事: Amazon発の新たなAI IDE『Kiro』を徹底レビュー｜次世代のAI駆動開発を体験｜まさお@未経験からプロまでAI活用</description>
+      <guid>https://note.com/masa_wunder/n/nf1183852a1df</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[速報:プレビュー]Amazon Bedrock AgentCoreが発表されました！</title>
-      <link>https://dev.classmethod.jp/articles/bedrock-agent-core/</link>
-      <description>DevelopersIOからの記事: [速報:プレビュー]Amazon Bedrock AgentCoreが発表されました！</description>
-      <guid>https://dev.classmethod.jp/articles/bedrock-agent-core/</guid>
-      <pubDate>Wed, 16 Jul 2025 16:57:25 +0000</pubDate>
+      <title>Claude Codeを使って不確実性と戦う / claude-code-fights-uncertainty</title>
+      <link>https://speakerdeck.com/erukiti/claude-code-fights-uncertainty</link>
+      <description>はてなブックマーク - IT（新着）からの記事: Claude Codeを使って不確実性と戦う / claude-code-fights-uncertainty</description>
+      <guid>https://speakerdeck.com/erukiti/claude-code-fights-uncertainty</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>[アップデート] AWS Pricing MCP Server が利用可能になりました</title>
-      <link>https://dev.classmethod.jp/articles/model-context-protocol-server-price-list/</link>
-      <description>DevelopersIOからの記事: [アップデート] AWS Pricing MCP Server が利用可能になりました</description>
-      <guid>https://dev.classmethod.jp/articles/model-context-protocol-server-price-list/</guid>
-      <pubDate>Wed, 16 Jul 2025 15:20:04 +0000</pubDate>
+      <title>ランサムウェア無効化ソフト、警察庁が独自開発し公開…ボタン一つでデータ復旧できる仕組み</title>
+      <link>https://www.yomiuri.co.jp/national/20250717-OYT1T50160/</link>
+      <description>はてなブックマーク - IT（新着）からの記事: ランサムウェア無効化ソフト、警察庁が独自開発し公開…ボタン一つでデータ復旧できる仕組み</description>
+      <guid>https://www.yomiuri.co.jp/national/20250717-OYT1T50160/</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>2025年7月に更新されたAWS の新しい無料プランを試してみた</title>
-      <link>https://dev.classmethod.jp/articles/try-new-aws-free-tier-2025/</link>
-      <description>DevelopersIOからの記事: 2025年7月に更新されたAWS の新しい無料プランを試してみた</description>
-      <guid>https://dev.classmethod.jp/articles/try-new-aws-free-tier-2025/</guid>
-      <pubDate>Wed, 16 Jul 2025 14:59:23 +0000</pubDate>
+      <title>CCoE実践者コミュニティ関西 #7にて「Amazon Bedrock クロスリージョン 推論とリージョン制限について」というタイトルで登壇しました！</title>
+      <link>https://dev.classmethod.jp/articles/ccoe-7-arap-bedrock-crossregion/</link>
+      <description>DevelopersIOからの記事: CCoE実践者コミュニティ関西 #7にて「Amazon Bedrock クロスリージョン 推論とリージョン制限について」というタイトルで登壇しました！</description>
+      <guid>https://dev.classmethod.jp/articles/ccoe-7-arap-bedrock-crossregion/</guid>
+      <pubDate>Thu, 17 Jul 2025 11:26:41 +0000</pubDate>
     </item>
     <item>
-      <title>Windows 11 端末に Kiro をインストールし、Spec を途中まで試してみた</title>
-      <link>https://dev.classmethod.jp/articles/windows-11-kiro-spec/</link>
-      <description>DevelopersIOからの記事: Windows 11 端末に Kiro をインストールし、Spec を途中まで試してみた</description>
-      <guid>https://dev.classmethod.jp/articles/windows-11-kiro-spec/</guid>
-      <pubDate>Wed, 16 Jul 2025 14:12:32 +0000</pubDate>
+      <title>シフトレフトを意識してAWS環境を設計・構築しよう!</title>
+      <link>https://dev.classmethod.jp/articles/shift-left-aws-design-construction/</link>
+      <description>DevelopersIOからの記事: シフトレフトを意識してAWS環境を設計・構築しよう!</description>
+      <guid>https://dev.classmethod.jp/articles/shift-left-aws-design-construction/</guid>
+      <pubDate>Thu, 17 Jul 2025 10:36:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>Godot Unit Test (GUT) と LLM でフレーキーテストを自動分析する仕組みを構築してみた</title>
+      <link>https://dev.classmethod.jp/articles/godot-gut-llm-flaky-test-analysis/</link>
+      <description>DevelopersIOからの記事: Godot Unit Test (GUT) と LLM でフレーキーテストを自動分析する仕組みを構築してみた</description>
+      <guid>https://dev.classmethod.jp/articles/godot-gut-llm-flaky-test-analysis/</guid>
+      <pubDate>Thu, 17 Jul 2025 08:50:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>Apple Developer DocumentationをAIエージェントで検索できるapple-doc-mcpを試した</title>
+      <link>https://dev.classmethod.jp/articles/apple-doc-mcp-ai-search/</link>
+      <description>DevelopersIOからの記事: Apple Developer DocumentationをAIエージェントで検索できるapple-doc-mcpを試した</description>
+      <guid>https://dev.classmethod.jp/articles/apple-doc-mcp-ai-search/</guid>
+      <pubDate>Thu, 17 Jul 2025 04:22:29 +0000</pubDate>
+    </item>
+    <item>
+      <title>Gemini の Gem で1手順ずつ受け答えを促す</title>
+      <link>https://dev.classmethod.jp/articles/step-by-step-prompt-for-gemini/</link>
+      <description>DevelopersIOからの記事: Gemini の Gem で1手順ずつ受け答えを促す</description>
+      <guid>https://dev.classmethod.jp/articles/step-by-step-prompt-for-gemini/</guid>
+      <pubDate>Thu, 17 Jul 2025 04:16:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>手首にAIで久々の革命か？ GeminiがWear OS搭載をサポート</title>
+      <link>https://gihyo.jp/article/2025/07/android-weekly-topics-250717?utm_source=feed</link>
+      <description>gihyo.jpからの記事: 手首にAIで久々の革命か？ GeminiがWear OS搭載をサポート</description>
+      <guid>https://gihyo.jp/article/2025/07/android-weekly-topics-250717?utm_source=feed</guid>
+      <pubDate>Thu, 17 Jul 2025 00:07:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>JavaでLLMにアクセスしてみよう</title>
+      <link>https://gihyo.jp/article/2025/07/start-java-ai-programming-01?utm_source=feed</link>
+      <description>gihyo.jpからの記事: JavaでLLMにアクセスしてみよう</description>
+      <guid>https://gihyo.jp/article/2025/07/start-java-ai-programming-01?utm_source=feed</guid>
+      <pubDate>Thu, 17 Jul 2025 00:06:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub、Googleアカウントでログイン可能に</title>
+      <link>https://gihyo.jp/article/2025/07/github-signup-with-google?utm_source=feed</link>
+      <description>gihyo.jpからの記事: GitHub、Googleアカウントでログイン可能に</description>
+      <guid>https://gihyo.jp/article/2025/07/github-signup-with-google?utm_source=feed</guid>
+      <pubDate>Wed, 16 Jul 2025 23:55:00 +0000</pubDate>
     </item>
     <item>
       <title>第871回　Ubuntu 25.04リリース記念オフラインミーティング開催レポート</title>
@@ -231,27 +252,6 @@
       <description>gihyo.jpからの記事: Anthropic、ワンクリックでClaudeに接続できるツールディレクトリを公開</description>
       <guid>https://gihyo.jp/article/2025/07/cloude-directory?utm_source=feed</guid>
       <pubDate>Tue, 15 Jul 2025 06:35:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>NotebookLM、共有機能を活用した公式厳選の「おすすめのノートブック」を提供開始</title>
-      <link>https://gihyo.jp/article/2025/07/start-featured-notebooks?utm_source=feed</link>
-      <description>gihyo.jpからの記事: NotebookLM、共有機能を活用した公式厳選の「おすすめのノートブック」を提供開始</description>
-      <guid>https://gihyo.jp/article/2025/07/start-featured-notebooks?utm_source=feed</guid>
-      <pubDate>Tue, 15 Jul 2025 06:20:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Red Hat、ビジネス開発者向けのRHEL無償プログラム「RHEL for Business Developers」の一般提供を開始 ―最大25インスタンスをセルフサービスで利用可能</title>
-      <link>https://gihyo.jp/article/2025/07/daily-linux-250715?utm_source=feed</link>
-      <description>gihyo.jpからの記事: Red Hat、ビジネス開発者向けのRHEL無償プログラム「RHEL for Business Developers」の一般提供を開始 ―最大25インスタンスをセルフサービスで利用可能</description>
-      <guid>https://gihyo.jp/article/2025/07/daily-linux-250715?utm_source=feed</guid>
-      <pubDate>Tue, 15 Jul 2025 05:53:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Threads、メッセージ（DM）機能を日本でも展開 ——興味深いトピックを目立たせる「ハイライター」機能も導入</title>
-      <link>https://gihyo.jp/article/2025/07/threads-dm-highlights?utm_source=feed</link>
-      <description>gihyo.jpからの記事: Threads、メッセージ（DM）機能を日本でも展開 ——興味深いトピックを目立たせる「ハイライター」機能も導入</description>
-      <guid>https://gihyo.jp/article/2025/07/threads-dm-highlights?utm_source=feed</guid>
-      <pubDate>Tue, 15 Jul 2025 02:43:00 +0000</pubDate>
     </item>
     <item>
       <title>IT運用担当者への調査結果、「昇給・昇進が遅い」「新しい技術に触れる機会がない」「重責なのに待遇が悪い」などに不満。ガートナージャパン</title>
@@ -289,39 +289,46 @@
       <pubDate>Mon, 14 Jul 2025 15:29:38 +0000</pubDate>
     </item>
     <item>
-      <title>大企業の約8割がIT人材不足を実感、5年後は「IT人材不足がさらに拡大」との予測も約6割に。ヒューマンリソシアが調査</title>
-      <link>http://codezine.jp/article/detail/21916</link>
-      <description>CodeZineからの記事: 大企業の約8割がIT人材不足を実感、5年後は「IT人材不足がさらに拡大」との予測も約6割に。ヒューマンリソシアが調査</description>
-      <guid>http://codezine.jp/article/detail/21916</guid>
-      <pubDate>Wed, 16 Jul 2025 07:00:00 +0000</pubDate>
+      <title>Red Hat、ビジネス開発者向け無償RHEL「RHEL for Business Developers」を発表</title>
+      <link>http://codezine.jp/article/detail/21923</link>
+      <description>CodeZineからの記事: Red Hat、ビジネス開発者向け無償RHEL「RHEL for Business Developers」を発表</description>
+      <guid>http://codezine.jp/article/detail/21923</guid>
+      <pubDate>Thu, 17 Jul 2025 07:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>「Oracle Database@AWS」が一般提供開始</title>
-      <link>http://codezine.jp/article/detail/21918</link>
-      <description>CodeZineからの記事: 「Oracle Database@AWS」が一般提供開始</description>
-      <guid>http://codezine.jp/article/detail/21918</guid>
-      <pubDate>Wed, 16 Jul 2025 03:00:00 +0000</pubDate>
+      <title>AWS製品チームにフィードバックや提案ができる「AWS Builder Center」発表</title>
+      <link>http://codezine.jp/article/detail/21924</link>
+      <description>CodeZineからの記事: AWS製品チームにフィードバックや提案ができる「AWS Builder Center」発表</description>
+      <guid>http://codezine.jp/article/detail/21924</guid>
+      <pubDate>Thu, 17 Jul 2025 07:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Webブラウザ「Vivaldi Web」、最新版「Vivaldi 7.5」リリース</title>
-      <link>http://codezine.jp/article/detail/21920</link>
-      <description>CodeZineからの記事: Webブラウザ「Vivaldi Web」、最新版「Vivaldi 7.5」リリース</description>
-      <guid>http://codezine.jp/article/detail/21920</guid>
-      <pubDate>Wed, 16 Jul 2025 03:00:00 +0000</pubDate>
+      <title>「Cosmos DB in Microsoft Fabric」のプレビュー版が提供開始</title>
+      <link>http://codezine.jp/article/detail/21926</link>
+      <description>CodeZineからの記事: 「Cosmos DB in Microsoft Fabric」のプレビュー版が提供開始</description>
+      <guid>http://codezine.jp/article/detail/21926</guid>
+      <pubDate>Thu, 17 Jul 2025 07:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Google Cloud、今年のDORA調査アンケートを公開、7月18日まで</title>
-      <link>http://codezine.jp/article/detail/21922</link>
-      <description>CodeZineからの記事: Google Cloud、今年のDORA調査アンケートを公開、7月18日まで</description>
-      <guid>http://codezine.jp/article/detail/21922</guid>
-      <pubDate>Wed, 16 Jul 2025 03:00:00 +0000</pubDate>
+      <title>Azure DevOpsのCI/CDツール「Azure Pipelines」を使いこなそう</title>
+      <link>http://codezine.jp/article/detail/21897</link>
+      <description>CodeZineからの記事: Azure DevOpsのCI/CDツール「Azure Pipelines」を使いこなそう</description>
+      <guid>http://codezine.jp/article/detail/21897</guid>
+      <pubDate>Thu, 17 Jul 2025 02:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>【成長するための1on1完全攻略術】エンジニアが1on1をリードするファーストステップ</title>
-      <link>http://codezine.jp/article/detail/21788</link>
-      <description>CodeZineからの記事: 【成長するための1on1完全攻略術】エンジニアが1on1をリードするファーストステップ</description>
-      <guid>http://codezine.jp/article/detail/21788</guid>
-      <pubDate>Wed, 16 Jul 2025 02:00:00 +0000</pubDate>
+      <title>メシウス、.NETコンポーネントスイート「ComponentOne 2025J v1」をリリース データグリッドの機能を強化</title>
+      <link>http://codezine.jp/article/detail/21927</link>
+      <description>CodeZineからの記事: メシウス、.NETコンポーネントスイート「ComponentOne 2025J v1」をリリース データグリッドの機能を強化</description>
+      <guid>http://codezine.jp/article/detail/21927</guid>
+      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>OpenAI、Stargateプロジェクトで世界のパートナー国にAIインフラを構築へ</title>
+      <link>https://www.infoq.com/jp/news/2025/07/stargate-openai-for-countries/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</link>
+      <description>InfoQ Japanからの記事: OpenAI、Stargateプロジェクトで世界のパートナー国にAIインフラを構築へ</description>
+      <guid>https://www.infoq.com/jp/news/2025/07/stargate-openai-for-countries/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global</guid>
+      <pubDate>Thu, 17 Jul 2025 04:30:00 +0000</pubDate>
     </item>
     <item>
       <title>DockerがHardened Imagesを導入、コンテナセキュリティを強化</title>
@@ -352,165 +359,179 @@
       <pubDate>Tue, 08 Jul 2025 04:30:00 +0000</pubDate>
     </item>
     <item>
-      <title>IT系&amp;誰でも参加OK！もくもく会_朝活_7/20(日)</title>
-      <link>https://morimori.connpass.com/event/363044/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
-      <description>connpass - イベントからの記事: IT系&amp;誰でも参加OK！もくもく会_朝活_7/20(日)</description>
-      <guid>https://morimori.connpass.com/event/363044/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
-      <pubDate>Wed, 16 Jul 2025 21:57:44 +0000</pubDate>
+      <title>λ Kansai in Summer 2025</title>
+      <link>https://lambda-kansai.connpass.com/event/359345/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
+      <description>connpass - イベントからの記事: λ Kansai in Summer 2025</description>
+      <guid>https://lambda-kansai.connpass.com/event/359345/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
+      <pubDate>Thu, 17 Jul 2025 17:33:24 +0000</pubDate>
     </item>
     <item>
-      <title>IT系&amp;誰でも参加OK！もくもく会_朝活_7/19(土)</title>
-      <link>https://morimori.connpass.com/event/363043/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
-      <description>connpass - イベントからの記事: IT系&amp;誰でも参加OK！もくもく会_朝活_7/19(土)</description>
-      <guid>https://morimori.connpass.com/event/363043/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
-      <pubDate>Wed, 16 Jul 2025 21:56:19 +0000</pubDate>
+      <title>PHPer vs 六甲山 （最小催行人数5人）</title>
+      <link>https://mt-it.connpass.com/event/363150/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
+      <description>connpass - イベントからの記事: PHPer vs 六甲山 （最小催行人数5人）</description>
+      <guid>https://mt-it.connpass.com/event/363150/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
+      <pubDate>Thu, 17 Jul 2025 16:30:30 +0000</pubDate>
     </item>
     <item>
-      <title>IT系&amp;誰でも参加OK！もくもく会_朝活_7/18(金)</title>
-      <link>https://morimori.connpass.com/event/363042/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
-      <description>connpass - イベントからの記事: IT系&amp;誰でも参加OK！もくもく会_朝活_7/18(金)</description>
-      <guid>https://morimori.connpass.com/event/363042/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
-      <pubDate>Wed, 16 Jul 2025 21:54:30 +0000</pubDate>
+      <title>とりあえず読書会 — The Rust Programming Language #8</title>
+      <link>https://study-reading.connpass.com/event/363144/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
+      <description>connpass - イベントからの記事: とりあえず読書会 — The Rust Programming Language #8</description>
+      <guid>https://study-reading.connpass.com/event/363144/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
+      <pubDate>Thu, 17 Jul 2025 14:52:15 +0000</pubDate>
     </item>
     <item>
-      <title>とりあえず読書会 — The Rust Programming Language #7</title>
-      <link>https://study-reading.connpass.com/event/363033/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
-      <description>connpass - イベントからの記事: とりあえず読書会 — The Rust Programming Language #7</description>
-      <guid>https://study-reading.connpass.com/event/363033/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
-      <pubDate>Wed, 16 Jul 2025 14:31:15 +0000</pubDate>
+      <title>フラッと立ち寄れる「もくもく作業 × 雑談会」</title>
+      <link>https://frenguild.connpass.com/event/363142/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
+      <description>connpass - イベントからの記事: フラッと立ち寄れる「もくもく作業 × 雑談会」</description>
+      <guid>https://frenguild.connpass.com/event/363142/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
+      <pubDate>Thu, 17 Jul 2025 14:06:14 +0000</pubDate>
     </item>
     <item>
-      <title>【著者ご参加予定！】「ヘタレ人類学者、砂漠をゆく」読書会 第6回(全6回)</title>
-      <link>https://anthropology-starting-with-everyone.connpass.com/event/363031/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
-      <description>connpass - イベントからの記事: 【著者ご参加予定！】「ヘタレ人類学者、砂漠をゆく」読書会 第6回(全6回)</description>
-      <guid>https://anthropology-starting-with-everyone.connpass.com/event/363031/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
-      <pubDate>Wed, 16 Jul 2025 14:27:27 +0000</pubDate>
+      <title>TiDBユーザグループ ミートアップ #5</title>
+      <link>https://tiug.connpass.com/event/362199/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
+      <description>connpass - イベントからの記事: TiDBユーザグループ ミートアップ #5</description>
+      <guid>https://tiug.connpass.com/event/362199/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
+      <pubDate>Thu, 17 Jul 2025 13:48:57 +0000</pubDate>
     </item>
     <item>
-      <title>Applied Engineer Open House at Sakana AI</title>
-      <link>https://connpass.com/event/362760/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
-      <description>connpass - イベントからの記事: Applied Engineer Open House at Sakana AI</description>
-      <guid>https://connpass.com/event/362760/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
-      <pubDate>Wed, 16 Jul 2025 14:12:24 +0000</pubDate>
+      <title>JAWS-UG 新潟 プチキャッチアップ 2025 #29</title>
+      <link>https://jawsug-niigata.connpass.com/event/363141/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
+      <description>connpass - イベントからの記事: JAWS-UG 新潟 プチキャッチアップ 2025 #29</description>
+      <guid>https://jawsug-niigata.connpass.com/event/363141/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
+      <pubDate>Thu, 17 Jul 2025 13:46:13 +0000</pubDate>
     </item>
     <item>
-      <title>AI活用を語り合う会 in高田馬場</title>
-      <link>https://connpass.com/event/363028/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
-      <description>connpass - イベントからの記事: AI活用を語り合う会 in高田馬場</description>
-      <guid>https://connpass.com/event/363028/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
-      <pubDate>Wed, 16 Jul 2025 13:45:26 +0000</pubDate>
+      <title>【トウカイリサーチ】リサーチからUIまで30分!? デザイナー目線のAI駆動ワークショップ</title>
+      <link>https://tokai-research.connpass.com/event/362462/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
+      <description>connpass - イベントからの記事: 【トウカイリサーチ】リサーチからUIまで30分!? デザイナー目線のAI駆動ワークショップ</description>
+      <guid>https://tokai-research.connpass.com/event/362462/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
+      <pubDate>Thu, 17 Jul 2025 13:45:38 +0000</pubDate>
     </item>
     <item>
-      <title>Amplify Boost Up #09ーAWS CDK Conference ハンズオン 復習会</title>
-      <link>https://aws-amplify-jp.connpass.com/event/362557/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
-      <description>connpass - イベントからの記事: Amplify Boost Up #09ーAWS CDK Conference ハンズオン 復習会</description>
-      <guid>https://aws-amplify-jp.connpass.com/event/362557/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
-      <pubDate>Wed, 16 Jul 2025 13:40:08 +0000</pubDate>
+      <title>東葛.dev もくもく会 【第1回】（技術書執筆メイン）</title>
+      <link>https://toukatsu.connpass.com/event/363137/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
+      <description>connpass - イベントからの記事: 東葛.dev もくもく会 【第1回】（技術書執筆メイン）</description>
+      <guid>https://toukatsu.connpass.com/event/363137/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
+      <pubDate>Thu, 17 Jul 2025 13:29:46 +0000</pubDate>
     </item>
     <item>
-      <title>「ガロア理論の頂を踏む」読書会 第21回</title>
-      <link>https://akbrobot.connpass.com/event/363027/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
-      <description>connpass - イベントからの記事: 「ガロア理論の頂を踏む」読書会 第21回</description>
-      <guid>https://akbrobot.connpass.com/event/363027/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
-      <pubDate>Wed, 16 Jul 2025 13:09:28 +0000</pubDate>
+      <title>なんでもCopilot#40「Copilotと仕事している畠山さんの日常」</title>
+      <link>https://nandemo.connpass.com/event/363138/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
+      <description>connpass - イベントからの記事: なんでもCopilot#40「Copilotと仕事している畠山さんの日常」</description>
+      <guid>https://nandemo.connpass.com/event/363138/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
+      <pubDate>Thu, 17 Jul 2025 13:04:26 +0000</pubDate>
     </item>
     <item>
-      <title>【OPENクラス】テスト設計コンテスト'25 予選（全国統一開催）</title>
-      <link>https://aster.connpass.com/event/363026/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
-      <description>connpass - イベントからの記事: 【OPENクラス】テスト設計コンテスト'25 予選（全国統一開催）</description>
-      <guid>https://aster.connpass.com/event/363026/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
-      <pubDate>Wed, 16 Jul 2025 12:55:17 +0000</pubDate>
+      <title>[オンライン開催]Sendai.rb 研鑽Ruby読書会(リターンズ) #10</title>
+      <link>https://sendairb.connpass.com/event/363136/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</link>
+      <description>connpass - イベントからの記事: [オンライン開催]Sendai.rb 研鑽Ruby読書会(リターンズ) #10</description>
+      <guid>https://sendairb.connpass.com/event/363136/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom</guid>
+      <pubDate>Thu, 17 Jul 2025 12:54:17 +0000</pubDate>
     </item>
     <item>
-      <title>【08/23（土）開催】SDGsボードゲームファシリテーター認定研修</title>
-      <link>https://techplay.jp/event/983992</link>
-      <description>TECH PLAY - イベントからの記事: 【08/23（土）開催】SDGsボードゲームファシリテーター認定研修</description>
-      <guid>https://techplay.jp/event/983992</guid>
-      <pubDate>Wed, 16 Jul 2025 22:00:05 +0000</pubDate>
+      <title>生成AIでSEO業務を革新！業務効率化と成果最大化セミナー</title>
+      <link>https://techplay.jp/event/984030</link>
+      <description>TECH PLAY - イベントからの記事: 生成AIでSEO業務を革新！業務効率化と成果最大化セミナー</description>
+      <guid>https://techplay.jp/event/984030</guid>
+      <pubDate>Thu, 17 Jul 2025 14:46:46 +0000</pubDate>
     </item>
     <item>
-      <title>開発経験ゼロから抜け出すキャリア戦略 ～AI時代、開発未経験からエンジニアになるには？ “実務で戦える”武器を身につけよう～</title>
-      <link>https://techplay.jp/event/983984</link>
-      <description>TECH PLAY - イベントからの記事: 開発経験ゼロから抜け出すキャリア戦略 ～AI時代、開発未経験からエンジニアになるには？ “実務で戦える”武器を身につけよう～</description>
-      <guid>https://techplay.jp/event/983984</guid>
-      <pubDate>Wed, 16 Jul 2025 13:35:06 +0000</pubDate>
+      <title>8/7(木)16:00-「欧州に学ぶグリーンリスキリング最前線」― 先進事例から読み解くGX人材育成のヒント ―</title>
+      <link>https://techplay.jp/event/984021</link>
+      <description>TECH PLAY - イベントからの記事: 8/7(木)16:00-「欧州に学ぶグリーンリスキリング最前線」― 先進事例から読み解くGX人材育成のヒント ―</description>
+      <guid>https://techplay.jp/event/984021</guid>
+      <pubDate>Thu, 17 Jul 2025 10:10:14 +0000</pubDate>
     </item>
     <item>
-      <title>8/5（火）16時〜「売り込まない方が売れる」元博報堂マーケターがたどり着いたマーケティング戦略セミナー</title>
-      <link>https://techplay.jp/event/983982</link>
-      <description>TECH PLAY - イベントからの記事: 8/5（火）16時〜「売り込まない方が売れる」元博報堂マーケターがたどり着いたマーケティング戦略セミナー</description>
-      <guid>https://techplay.jp/event/983982</guid>
-      <pubDate>Wed, 16 Jul 2025 09:15:38 +0000</pubDate>
+      <title>モチベーショングラフで自己理解を深めよう～あなたの心が動くときはどんな時？～</title>
+      <link>https://techplay.jp/event/983926</link>
+      <description>TECH PLAY - イベントからの記事: モチベーショングラフで自己理解を深めよう～あなたの心が動くときはどんな時？～</description>
+      <guid>https://techplay.jp/event/983926</guid>
+      <pubDate>Thu, 17 Jul 2025 08:01:46 +0000</pubDate>
     </item>
     <item>
-      <title>LAN環境をトータルサポート！～楽天モバイルが実現するクラウド時代のネットワーク最適化～</title>
-      <link>https://techplay.jp/event/983962</link>
-      <description>TECH PLAY - イベントからの記事: LAN環境をトータルサポート！～楽天モバイルが実現するクラウド時代のネットワーク最適化～</description>
-      <guid>https://techplay.jp/event/983962</guid>
-      <pubDate>Wed, 16 Jul 2025 07:58:22 +0000</pubDate>
+      <title>あなたの開発に合うのはどちら？徹底比較！Claude Code or Gemini CLI【WAKE Career主催】</title>
+      <link>https://techplay.jp/event/984016</link>
+      <description>TECH PLAY - イベントからの記事: あなたの開発に合うのはどちら？徹底比較！Claude Code or Gemini CLI【WAKE Career主催】</description>
+      <guid>https://techplay.jp/event/984016</guid>
+      <pubDate>Thu, 17 Jul 2025 08:00:05 +0000</pubDate>
     </item>
     <item>
-      <title>【小売業必見】人手不足解消の新戦略</title>
-      <link>https://techplay.jp/event/983965</link>
-      <description>TECH PLAY - イベントからの記事: 【小売業必見】人手不足解消の新戦略</description>
-      <guid>https://techplay.jp/event/983965</guid>
-      <pubDate>Wed, 16 Jul 2025 07:22:45 +0000</pubDate>
+      <title>夏の『りあクト！』勉強会〜教養としてのReact／React Nativeのすすめ〜【WAKE Career主催】</title>
+      <link>https://techplay.jp/event/984014</link>
+      <description>TECH PLAY - イベントからの記事: 夏の『りあクト！』勉強会〜教養としてのReact／React Nativeのすすめ〜【WAKE Career主催】</description>
+      <guid>https://techplay.jp/event/984014</guid>
+      <pubDate>Thu, 17 Jul 2025 06:58:22 +0000</pubDate>
     </item>
     <item>
-      <title>採用成果に直結！上場企業が実践する「人的資本」を生かした新卒採用戦略とは？</title>
-      <link>https://techplay.jp/event/983974</link>
-      <description>TECH PLAY - イベントからの記事: 採用成果に直結！上場企業が実践する「人的資本」を生かした新卒採用戦略とは？</description>
-      <guid>https://techplay.jp/event/983974</guid>
-      <pubDate>Wed, 16 Jul 2025 07:09:57 +0000</pubDate>
+      <title>【8/21新宿】成長スタートアップが語る、協業の進め方と事業拡大のヒント</title>
+      <link>https://techplay.jp/event/983960</link>
+      <description>TECH PLAY - イベントからの記事: 【8/21新宿】成長スタートアップが語る、協業の進め方と事業拡大のヒント</description>
+      <guid>https://techplay.jp/event/983960</guid>
+      <pubDate>Thu, 17 Jul 2025 06:48:16 +0000</pubDate>
     </item>
     <item>
-      <title>アクセンチュアシェアーズ Vol.33『生成AIで激変するマーケティング～テクノロジービジョン2025を紐解く～』</title>
-      <link>https://techplay.jp/event/983966</link>
-      <description>TECH PLAY - イベントからの記事: アクセンチュアシェアーズ Vol.33『生成AIで激変するマーケティング～テクノロジービジョン2025を紐解く～』</description>
-      <guid>https://techplay.jp/event/983966</guid>
-      <pubDate>Wed, 16 Jul 2025 07:06:43 +0000</pubDate>
+      <title>【参加無料】RPAと生成AI活用の事例紹介　業務効率化の新たなる領域</title>
+      <link>https://techplay.jp/event/982883</link>
+      <description>TECH PLAY - イベントからの記事: 【参加無料】RPAと生成AI活用の事例紹介　業務効率化の新たなる領域</description>
+      <guid>https://techplay.jp/event/982883</guid>
+      <pubDate>Thu, 17 Jul 2025 03:00:05 +0000</pubDate>
     </item>
     <item>
-      <title>そのAI、社内システムと連携できていますか？知らなきゃ損する、AI活用の新常識</title>
-      <link>https://techplay.jp/event/983852</link>
-      <description>TECH PLAY - イベントからの記事: そのAI、社内システムと連携できていますか？知らなきゃ損する、AI活用の新常識</description>
-      <guid>https://techplay.jp/event/983852</guid>
-      <pubDate>Wed, 16 Jul 2025 05:48:06 +0000</pubDate>
+      <title>【無料ウェビナー】データ分析VSヒューリスティック分析-成果につなげるUI/UX改善の新アプローチ-</title>
+      <link>https://techplay.jp/event/983998</link>
+      <description>TECH PLAY - イベントからの記事: 【無料ウェビナー】データ分析VSヒューリスティック分析-成果につなげるUI/UX改善の新アプローチ-</description>
+      <guid>https://techplay.jp/event/983998</guid>
+      <pubDate>Thu, 17 Jul 2025 02:34:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>初心者向けDX入門セミナー｜これから始めるAI・ITツール導入</title>
+      <link>https://techplay.jp/event/984002</link>
+      <description>TECH PLAY - イベントからの記事: 初心者向けDX入門セミナー｜これから始めるAI・ITツール導入</description>
+      <guid>https://techplay.jp/event/984002</guid>
+      <pubDate>Thu, 17 Jul 2025 02:31:33 +0000</pubDate>
+    </item>
+    <item>
+      <title>〜品質を犠牲にしない開発体制とは？ 第三者検証とAIテスト自動化のベストバランス</title>
+      <link>https://techplay.jp/event/983816</link>
+      <description>TECH PLAY - イベントからの記事: 〜品質を犠牲にしない開発体制とは？ 第三者検証とAIテスト自動化のベストバランス</description>
+      <guid>https://techplay.jp/event/983816</guid>
+      <pubDate>Thu, 17 Jul 2025 02:27:53 +0000</pubDate>
     </item>
     <item>
       <title>LLMのプロンプトエンジニアリング</title>
       <link>http://www.oreilly.co.jp/books/9784814401130/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book</link>
       <description>O'Reilly Japan - 近刊からの記事: LLMのプロンプトエンジニアリング</description>
       <guid>http://www.oreilly.co.jp/books/9784814401130/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>micro:bitではじめるAI工作</title>
       <link>http://www.oreilly.co.jp/books/9784814400997/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book</link>
       <description>O'Reilly Japan - 近刊からの記事: micro:bitではじめるAI工作</description>
       <guid>http://www.oreilly.co.jp/books/9784814400997/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>PythonによるWebスクレイピング 第3版</title>
       <link>http://www.oreilly.co.jp/books/9784814401222/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book</link>
       <description>O'Reilly Japan - 近刊からの記事: PythonによるWebスクレイピング 第3版</description>
       <guid>http://www.oreilly.co.jp/books/9784814401222/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>SQLアンチパターン 第2版</title>
       <link>http://www.oreilly.co.jp/books/9784814400744/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book</link>
       <description>O'Reilly Japan - 近刊からの記事: SQLアンチパターン 第2版</description>
       <guid>http://www.oreilly.co.jp/books/9784814400744/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Async Rust</title>
       <link>http://www.oreilly.co.jp/books/9784814401185/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book</link>
       <description>O'Reilly Japan - 近刊からの記事: Async Rust</description>
       <guid>http://www.oreilly.co.jp/books/9784814401185/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book</guid>
-      <pubDate>Thu, 17 Jul 2025 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
