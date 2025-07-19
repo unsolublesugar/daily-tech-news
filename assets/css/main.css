@@ -649,10 +649,18 @@ a:hover {
    プレビュー機能
    ================================================= */
 
-/* カードにホバー可能であることを示す */
+/* カードにホバー・クリック可能であることを示す */
 .card {
     position: relative;
     cursor: pointer;
+}
+
+/* デスクトップでのカードホバー時の視覚フィードバック */
+@media (min-width: 769px) {
+    .card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
 }
 
 /* プレビューポップアップの基本スタイル */
