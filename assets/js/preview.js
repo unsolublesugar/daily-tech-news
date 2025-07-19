@@ -36,16 +36,17 @@ class ArticlePreview {
             if (!preview) return;
             
             if (this.isMobile) {
-                // モバイル：タップイベント
+                // モバイル：タップイベント（プレビュー表示）
                 card.addEventListener('click', (e) => this.handleMobileClick(e, card, preview));
             } else {
-                // デスクトップ：ホバーイベント
+                // デスクトップ：ホバーでプレビュー、クリックで記事に遷移
                 card.addEventListener('mouseenter', (e) => {
                     // タイトルリンクのクリック時はプレビューを表示しない
                     if (e.target.tagName === 'A') return;
                     this.handleDesktopHover(card, preview);
                 });
                 card.addEventListener('mouseleave', (e) => this.handleDesktopLeave(card, preview));
+                card.addEventListener('click', (e) => this.handleDesktopClick(e, card));
             }
         });
         
@@ -105,6 +106,20 @@ class ArticlePreview {
                 this.activePreview = null;
             }
         }, 200);
+    }
+    
+    handleDesktopClick(event, card) {
+        // リンククリック時はデフォルトの動作を許可
+        if (event.target.tagName === 'A' || event.target.closest('a')) {
+            return;
+        }
+        
+        // カード全体のクリックで記事に遷移
+        const articleLink = card.querySelector('.card-title a');
+        if (articleLink) {
+            // 新しいタブで記事を開く
+            window.open(articleLink.href, '_blank');
+        }
     }
     
     showPreview(preview) {
