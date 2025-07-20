@@ -518,3 +518,298 @@ function toggleTagFilter() {
         toggleBtn.classList.remove('expanded');
     }
 }
+
+/**
+ * ダークモード機能
+ * システム設定の検出、ユーザー設定の永続化、テーマ切り替えを提供
+ */
+class ThemeManager {
+    constructor() {
+        this.themeKey = 'tech-news-theme';
+        this.prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+        this.hideTimeout = null;
+        this.isHovered = false;
+        this.lastScrollY = window.scrollY;
+        
+        this.init();
+    }
+    
+    init() {
+        // フローティングボタンを作成
+        this.createFloatingButton();
+        
+        // 保存されたテーマまたはシステム設定を適用
+        this.applyInitialTheme();
+        
+        // テーマ切り替えボタンにイベントリスナーを追加
+        this.attachEventListeners();
+        
+        // システム設定変更の監視
+        this.watchSystemTheme();
+        
+        // 自動表示/非表示の設定
+        this.setupAutoHide();
+    }
+    
+    applyInitialTheme() {
+        const savedTheme = localStorage.getItem(this.themeKey);
+        
+        if (savedTheme) {
+            // 保存されたテーマを使用
+            this.setTheme(savedTheme);
+        } else {
+            // システム設定に従う
+            const systemTheme = this.prefersDark.matches ? 'dark' : 'light';
+            this.setTheme(systemTheme, false); // localStorageには保存しない
+        }
+    }
+    
+    attachEventListeners() {
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => this.toggleTheme());
+        }
+    }
+    
+    createFloatingButton() {
+        // 既存のボタンがあれば削除
+        const existingButton = document.getElementById('theme-toggle');
+        if (existingButton) {
+            existingButton.remove();
+        }
+        
+        // フローティングボタンを作成
+        const button = document.createElement('button');
+        button.id = 'theme-toggle';
+        button.title = 'ダークモード切り替え';
+        button.setAttribute('aria-label', 'テーマを切り替える');
+        
+        const icon = document.createElement('span');
+        icon.id = 'theme-icon';
+        icon.textContent = '🌙';
+        
+        const text = document.createElement('span');
+        text.id = 'theme-text';
+        text.textContent = 'ダークモード';
+        
+        button.appendChild(icon);
+        button.appendChild(text);
+        
+        // ホバーイベントを追加
+        button.addEventListener('mouseenter', () => {
+            this.isHovered = true;
+            this.showButton();
+        });
+        
+        button.addEventListener('mouseleave', () => {
+            this.isHovered = false;
+            this.scheduleHide();
+        });
+        
+        // bodyに追加
+        document.body.appendChild(button);
+    }
+    
+    watchSystemTheme() {
+        // システムテーマ変更時の処理（ユーザーが明示的に設定していない場合のみ）
+        this.prefersDark.addEventListener('change', (e) => {
+            const savedTheme = localStorage.getItem(this.themeKey);
+            if (!savedTheme) {
+                // ユーザー設定がない場合のみシステム設定に従う
+                const systemTheme = e.matches ? 'dark' : 'light';
+                this.setTheme(systemTheme, false);
+            }
+        });
+    }
+    
+    getCurrentTheme() {
+        return document.documentElement.getAttribute('data-theme') || 
+               (this.prefersDark.matches ? 'dark' : 'light');
+    }
+    
+    setTheme(theme, saveToStorage = true) {
+        // HTMLのdata-theme属性を設定
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+        
+        // ボタンのテキストとアイコンを更新
+        this.updateThemeButton(theme);
+        
+        // localStorage に保存（システム設定追従時は保存しない）
+        if (saveToStorage) {
+            localStorage.setItem(this.themeKey, theme);
+        }
+        
+        // スムーズな切り替えアニメーション
+        this.addTransitionClass();
+    }
+    
+    toggleTheme() {
+        const currentTheme = this.getCurrentTheme();
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        this.setTheme(newTheme);
+        
+        // 切り替えフィードバック
+        this.showThemeChangeNotification(newTheme);
+    }
+    
+    updateThemeButton(theme) {
+        const themeIcon = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
+        
+        if (themeIcon && themeText) {
+            if (theme === 'dark') {
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'ライトモード';
+            } else {
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'ダークモード';
+            }
+        }
+    }
+    
+    addTransitionClass() {
+        // 切り替えアニメーション用のクラスを一時的に追加
+        document.documentElement.classList.add('theme-transition');
+        
+        setTimeout(() => {
+            document.documentElement.classList.remove('theme-transition');
+        }, 300);
+    }
+    
+    showThemeChangeNotification(theme) {
+        // 切り替え通知を表示（フィードバック）
+        const notification = document.createElement('div');
+        notification.className = 'theme-notification';
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 10000;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px var(--shadow-medium);
+        `;
+        
+        const themeName = theme === 'dark' ? 'ダークモード' : 'ライトモード';
+        notification.textContent = `${themeName}に切り替えました`;
+        
+        document.body.appendChild(notification);
+        
+        // アニメーション表示
+        requestAnimationFrame(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateY(0)';
+        });
+        
+        // 2秒後に削除
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateY(-20px)';
+            
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 300);
+        }, 2000);
+    }
+    
+    setupAutoHide() {
+        // 初期表示（3秒後に自動で隠す）
+        this.showButton();
+        this.scheduleHide(3000);
+        
+        // スクロールイベントの監視
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            // スクロール中は表示
+            this.showButton();
+            
+            // スクロール停止をデバウンス検出
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                if (!this.isHovered) {
+                    this.scheduleHide(1500); // スクロール停止1.5秒後に隠す
+                }
+            }, 150);
+        });
+        
+        // マウス移動時の表示（画面端付近のみ）
+        document.addEventListener('mousemove', (e) => {
+            const rightEdgeThreshold = window.innerWidth - 150; // 右端150px
+            const topEdgeThreshold = 150; // 上端150px
+            
+            if (e.clientX > rightEdgeThreshold && e.clientY < topEdgeThreshold) {
+                this.showButton();
+                this.scheduleHide(2000); // 2秒後に隠す
+            }
+        });
+    }
+    
+    showButton() {
+        const button = document.getElementById('theme-toggle');
+        if (button) {
+            button.style.opacity = '0.8';
+            button.style.visibility = 'visible';
+            button.style.pointerEvents = 'auto';
+        }
+        
+        // 既存のタイマーをクリア
+        if (this.hideTimeout) {
+            clearTimeout(this.hideTimeout);
+            this.hideTimeout = null;
+        }
+    }
+    
+    hideButton() {
+        const button = document.getElementById('theme-toggle');
+        if (button && !this.isHovered) {
+            button.style.opacity = '0';
+            button.style.pointerEvents = 'none';
+            
+            // 完全に非表示にする（アニメーション後）
+            setTimeout(() => {
+                if (button.style.opacity === '0') {
+                    button.style.visibility = 'hidden';
+                }
+            }, 300);
+        }
+    }
+    
+    scheduleHide(delay = 2000) {
+        if (this.hideTimeout) {
+            clearTimeout(this.hideTimeout);
+        }
+        
+        this.hideTimeout = setTimeout(() => {
+            if (!this.isHovered) {
+                this.hideButton();
+            }
+        }, delay);
+    }
+}
+
+// DOM読み込み完了後にテーママネージャーを初期化
+document.addEventListener('DOMContentLoaded', () => {
+    window.themeManager = new ThemeManager();
+});
+
+// ページ表示時にも初期化（ブラウザバック対応）
+window.addEventListener('pageshow', () => {
+    if (!window.themeManager) {
+        window.themeManager = new ThemeManager();
+    }
+});
