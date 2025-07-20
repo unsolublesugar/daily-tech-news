@@ -35,6 +35,15 @@ jobs:
       run: |
         pip install -r requirements.txt
         
+    - name: Check environment variables
+      run: |
+        echo "🔍 Environment Variables Check:"
+        echo "GITHUB_REPOSITORY_OWNER: $GITHUB_REPOSITORY_OWNER"
+        echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+        echo "GITHUB_USERNAME: ${GITHUB_USERNAME:-'(not set)'}"
+        echo "USER_NAME: ${USER_NAME:-'(not set)'}"
+        echo "X_USERNAME: ${X_USERNAME:-'(not set)'}"
+        
     - name: Fetch latest tech news
       run: |
         python fetch_news.py
@@ -44,9 +53,24 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         
+    - name: Check generated URLs
+      run: |
+        echo "🔗 Generated URLs Check:"
+        python -c "
+import sys
+import os
+sys.path.append('src')
+from config.archive_config import DEFAULT_SITE_CONFIG
+print('Site URL:', DEFAULT_SITE_CONFIG.site_url)
+print('GitHub Repo URL:', DEFAULT_SITE_CONFIG.github_repo_url)
+print('RSS URL:', DEFAULT_SITE_CONFIG.rss_url)
+print('Profile URL:', DEFAULT_SITE_CONFIG.profile_url)
+print('Profile Display:', DEFAULT_SITE_CONFIG.profile_display_name)
+"
+        
     - name: Commit and push changes
       run: |
-        git add README.md archives/ rss.xml index.html
+        git add daily_news.md archives/ rss.xml index.html
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
