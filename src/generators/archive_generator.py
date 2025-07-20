@@ -195,8 +195,8 @@ class ArchiveGenerator:
         # HTMLヘッドを生成
         og_image_url = self.site_config.og_image_url
         site_description = self.site_config.SITE_DESCRIPTION
-        site_url = self.site_config.SITE_URL
-        twitter_user = self.site_config.TWITTER_USER
+        site_url = self.site_config.site_url
+        twitter_user = self.site_config.twitter_user
         
         html_head = f"""<!DOCTYPE html>
 <html lang="ja">
