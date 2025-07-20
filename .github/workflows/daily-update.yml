@@ -36,6 +36,9 @@ jobs:
         pip install -r requirements.txt
         
     - name: Check environment variables
+      env:
+        USER_NAME: ${{ secrets.USER_NAME }}
+        X_USERNAME: ${{ secrets.X_USERNAME }}
       run: |
         echo "🔍 Environment Variables Check:"
         echo "GITHUB_REPOSITORY_OWNER: $GITHUB_REPOSITORY_OWNER"
@@ -45,6 +48,9 @@ jobs:
         echo "X_USERNAME: ${X_USERNAME:-'(not set)'}"
         
     - name: Fetch latest tech news
+      env:
+        USER_NAME: ${{ secrets.USER_NAME }}
+        X_USERNAME: ${{ secrets.X_USERNAME }}
       run: |
         python fetch_news.py
         
@@ -54,6 +60,9 @@ jobs:
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         
     - name: Check generated URLs
+      env:
+        USER_NAME: ${{ secrets.USER_NAME }}
+        X_USERNAME: ${{ secrets.X_USERNAME }}
       run: |
         echo "🔗 Generated URLs Check:"
         python -c "import sys, os; sys.path.append('src'); from config.archive_config import DEFAULT_SITE_CONFIG; print('Site URL:', DEFAULT_SITE_CONFIG.site_url); print('GitHub Repo URL:', DEFAULT_SITE_CONFIG.github_repo_url); print('RSS URL:', DEFAULT_SITE_CONFIG.rss_url); print('Profile URL:', DEFAULT_SITE_CONFIG.profile_url); print('Profile Display:', DEFAULT_SITE_CONFIG.profile_display_name)"

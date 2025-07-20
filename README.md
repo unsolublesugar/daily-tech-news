@@ -140,28 +140,50 @@ setx X_USERNAME "your-x-username"
 
 GitHub Actionsで自動実行する場合は、リポジトリのSecrets設定で環境変数を設定：
 
-1. GitHubリポジトリの「Settings」→「Secrets and variables」→「Actions」
-2. 以下のSecretを追加：
-   - `USER_NAME`: あなたのGitHubユーザー名
-   - `REPOSITORY_NAME`: リポジトリ名
-   - `X_USERNAME`: Xユーザー名（@なし）
+1. GitHubリポジトリの「Settings」→「Secrets and variables」→「Actions」→「Secrets」
+2. 以下のRepository Secretを追加：
 
-**注意**: GitHub ActionsではSecret名は`GITHUB_`で始められないため、`USER_NAME`を使用します。
+**最小限の設定（推奨）:**
+- `USER_NAME`: あなたのGitHubユーザー名
+
+**フル機能設定:**
+- `USER_NAME`: あなたのGitHubユーザー名
+- `X_USERNAME`: Xユーザー名（@なし、オプション）
+
+**通常不要:**
+- `REPOSITORY_NAME`: リポジトリ名（カスタム名の場合のみ必要）
+
+**自動検出機能**: 
+- GitHub Actionsでは`GITHUB_REPOSITORY_OWNER`環境変数からユーザー名を自動取得
+- 設定がない場合はデフォルト値を使用
+
+**プロフィールリンクの動作**:
+- `X_USERNAME`設定時: `https://x.com/username`（`@username`表示）
+- `X_USERNAME`未設定時: `https://github.com/username`（`username`表示）
+
+**注意**: Secret名は`GITHUB_`で始められないため、GitHubユーザー名は`USER_NAME`で設定します。
 
 #### 設定例
 
 ```bash
-# example: ユーザー名が "john" でリポジトリが "my-tech-news" の場合
-export GITHUB_USERNAME="john"  # ローカル環境用
-export USER_NAME="john"         # GitHub Actions用
-export REPOSITORY_NAME="my-tech-news"
-export X_USERNAME="john_dev"
+# ローカル開発環境での設定例
+export GITHUB_USERNAME="john"    # ローカル環境用
+export REPOSITORY_NAME="my-tech-news"  # カスタムリポジトリ名（オプション）
+export X_USERNAME="john_dev"     # Xアカウント（オプション）
+
+# GitHub Actions Repository Secretsでの設定例
+# Secret名: USER_NAME, 値: john
+# Secret名: X_USERNAME, 値: john_dev
 ```
 
-これにより以下のURLが自動生成されます：
+**生成されるURL例:**
 - GitHub Pages: `https://john.github.io/my-tech-news/`
 - RSS: `https://john.github.io/my-tech-news/rss.xml`
-- GitHub: `https://github.com/john/my-tech-news`
+- GitHub Repository: `https://github.com/john/my-tech-news`
+- プロフィール: `https://x.com/john_dev` (X設定時) / `https://github.com/john` (X未設定時)
+
+**フォーク時の自動対応:**
+他の開発者がリポジトリをフォークした場合、Secretsを設定しなくても`GITHUB_REPOSITORY_OWNER`により自動的に適切なユーザー名・URLが設定されます。
 
 ## 🔧 カスタマイズ
 
