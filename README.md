@@ -99,6 +99,92 @@ FEEDS = {
 
 `MAX_ENTRIES`定数で各フィードから取得する記事数を調整できます（デフォルト: 5件）。
 
+### ユーザー名設定（フォーク時）
+
+他の開発者がフォークして使用する場合は、以下の手順で設定を変更できます：
+
+#### 1. 環境変数での設定（推奨）
+
+```bash
+# 一時的な設定（現在のセッションのみ）
+export GITHUB_USERNAME="your-username"
+export REPOSITORY_NAME="your-repo-name"
+export X_USERNAME="your-x-username"
+
+# スクリプト実行
+python3 fetch_news.py
+```
+
+#### 2. 永続的な設定
+
+**Linux/macOS の場合:**
+```bash
+# ~/.bashrc または ~/.zshrc に追加
+echo 'export GITHUB_USERNAME="your-username"' >> ~/.bashrc
+echo 'export REPOSITORY_NAME="your-repo-name"' >> ~/.bashrc
+echo 'export X_USERNAME="your-x-username"' >> ~/.bashrc
+
+# 設定を反映
+source ~/.bashrc
+```
+
+**Windows の場合:**
+```cmd
+# 環境変数を永続的に設定
+setx GITHUB_USERNAME "your-username"
+setx REPOSITORY_NAME "your-repo-name"
+setx X_USERNAME "your-x-username"
+```
+
+#### 3. GitHub Actions での設定
+
+GitHub Actionsで自動実行する場合は、リポジトリのSecrets設定で環境変数を設定：
+
+1. GitHubリポジトリの「Settings」→「Secrets and variables」→「Actions」→「Secrets」
+2. 以下のRepository Secretを追加：
+
+**最小限の設定（推奨）:**
+- `USER_NAME`: あなたのGitHubユーザー名
+
+**フル機能設定:**
+- `USER_NAME`: あなたのGitHubユーザー名
+- `X_USERNAME`: Xユーザー名（@なし、オプション）
+
+**通常不要:**
+- `REPOSITORY_NAME`: リポジトリ名（カスタム名の場合のみ必要）
+
+**自動検出機能**: 
+- GitHub Actionsでは`GITHUB_REPOSITORY_OWNER`環境変数からユーザー名を自動取得
+- 設定がない場合はデフォルト値を使用
+
+**プロフィールリンクの動作**:
+- `X_USERNAME`設定時: `https://x.com/username`（`@username`表示）
+- `X_USERNAME`未設定時: `https://github.com/username`（`username`表示）
+
+**注意**: Secret名は`GITHUB_`で始められないため、GitHubユーザー名は`USER_NAME`で設定します。
+
+#### 設定例
+
+```bash
+# ローカル開発環境での設定例
+export GITHUB_USERNAME="john"    # ローカル環境用
+export REPOSITORY_NAME="my-tech-news"  # カスタムリポジトリ名（オプション）
+export X_USERNAME="john_dev"     # Xアカウント（オプション）
+
+# GitHub Actions Repository Secretsでの設定例
+# Secret名: USER_NAME, 値: john
+# Secret名: X_USERNAME, 値: john_dev
+```
+
+**生成されるURL例:**
+- GitHub Pages: `https://john.github.io/my-tech-news/`
+- RSS: `https://john.github.io/my-tech-news/rss.xml`
+- GitHub Repository: `https://github.com/john/my-tech-news`
+- プロフィール: `https://x.com/john_dev` (X設定時) / `https://github.com/john` (X未設定時)
+
+**フォーク時の自動対応:**
+他の開発者がリポジトリをフォークした場合、Secretsを設定しなくても`GITHUB_REPOSITORY_OWNER`により自動的に適切なユーザー名・URLが設定されます。
+
 ## 🔧 カスタマイズ
 
 ### 新しいメディアの追加

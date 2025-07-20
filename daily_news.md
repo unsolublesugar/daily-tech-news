@@ -15,10 +15,10 @@ https://unsolublesugar.github.io/daily-tech-news/
 ## 💻 Tech Blog Weekly
 
 - [Orca Security から VS Code 用の AppSec エクステンションがリリースされました！ | ForgeVision Engineer Blog](https://techblog.forgevision.com/entry/orca-security/vscode/appsec)
+- [「AI開発、次は「Kiro×Claude Code」？あなたの最適解は？」～【ai】今週の人気記事TOP5（2025/07/20） | CareNet Engineersのフィード](https://zenn.dev/carenet/articles/zenn-weekly-ai-articles-2025-07)
 - [Customers Mail Cloud Java SDK（非公式）にて追加パラメーターに対応しました | Customers Mail Cloud ブログ](https://blog.smtps.jp/entry/2025/07/20/035729)
 - [[Dify] 3. スタジオでLLMの処理フローを作成する | ヘッドウォータースのフィード](https://zenn.dev/headwaters/articles/34cfd1355c5ffa)
 - [Customers Mail Cloud用Python SDKをバージョンアップしました | Customers Mail Cloud ブログ](https://blog.smtps.jp/entry/2025/07/19/235851)
-- [Customers Mail Cloud用Ruby SDKをバージョンアップしました | Customers Mail Cloud ブログ](https://blog.smtps.jp/entry/2025/07/19/235442)
 
 
 ---
@@ -54,11 +54,11 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（新着）"> はてなブックマーク - IT（新着）
 
+- [SRE NEXT 2025にて実施した「SREエンジニア実態調査」と「ヒヤリハット集」の結果を大公開！ - kubell Creator's Note](https://creators-note.chatwork.com/entry/2025/07/18/100000)
 - [fstrings.wtf - Python F-String Quiz](https://fstrings.wtf/)
 - [現場で使える！思考のプロトタイピングツールとしての Dify活用術 with Cursor | ドクセル](https://www.docswell.com/s/miyatti/ZYMDVR-2025-07-19-135132)
 - [ECSの組み込み機能でB/Gデプロイが可能になったので、試したみた](https://zenn.dev/falcon_tech/articles/0262e84c35e848)
 - [エムスリーの GitHub 移行、SRE の道中記 - エムスリーテックブログ](https://www.m3tech.blog/entry/2025/07/19/100000)
-- [中国系スパイグループ「UNC3886」、シンガポールにサイバー攻撃](https://www.afpbb.com/articles/-/3589526)
 
 
 ---
@@ -114,13 +114,15 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## <img src="https://connpass.com/favicon.ico" width="16" height="16" alt="connpass - イベント"> connpass - イベント
 
+- [UseAIクラブ オフライン交流会 #4 in 松本市](https://useaiclub.connpass.com/event/363334/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [沖縄ノーコード・ローコード勉強会 ８月定例会 #５](https://itc-okinawa.connpass.com/event/362943/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [(コピー)ジュニアエンジニアの失敗談供養 ～お焚き上げナイト～](https://nullmayu.connpass.com/event/363332/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [YUMEMI × やさしい Swift 勉強会 #555 #yumemi_grow](https://yasashii-swift.connpass.com/event/362594/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [第四十四回 CoderDojo西那須野](https://coder-dojo-nishinasuno.connpass.com/event/359761/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [基本情報技術者試験 科目B アルゴリズムとプログラミング 解き方ポイント解説](https://terabytes.connpass.com/event/363327/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [【無料】【見学OK】CoderDojo瀬戸(第148回) 子供プログラミングコミュニティ](https://coderdojo-seto.connpass.com/event/363330/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [第4回豊洲コンピューター囲碁会](https://toyosu-computer-go.connpass.com/event/363329/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [React Tokyo ミートアップ #8](https://react-tokyo.connpass.com/event/362213/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [応用情報技術者ゆる勉強会（7/27）](https://connpass.com/event/363324/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [新横浜インディゲームもくもく会 第28回（協賛：学校法人岩崎学園 横浜デジタルアーツ専門学校](https://indiegame.connpass.com/event/363323/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [【2025年版・第8回】プロジェクトマネージャ試験勉強会](https://setk.connpass.com/event/363321/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [CoderDojo神楽坂 第5回](https://coderdojokagurazaka.connpass.com/event/363320/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [【第385回】フリーダムITもくもく会【夜活】](https://setk.connpass.com/event/363319/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 
 
 ---

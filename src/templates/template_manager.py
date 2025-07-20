@@ -245,8 +245,8 @@ class TemplateManager:
         """HTML headセクションを生成"""
         og_image_url = self.site_config.og_image_url
         site_description = self.site_config.SITE_DESCRIPTION
-        site_url = self.site_config.SITE_URL
-        twitter_user = self.site_config.TWITTER_USER
+        site_url = self.site_config.site_url
+        twitter_user = self.site_config.twitter_user
         
         # アーカイブページの場合はURLを調整
         canonical_url = site_url
@@ -304,7 +304,7 @@ class TemplateManager:
     
     def get_navigation_section(self, date_str: str, is_archive: bool = False) -> str:
         """ナビゲーションセクションを生成（外部テンプレート使用）"""
-        site_url = self.site_config.SITE_URL
+        site_url = self.site_config.site_url
         hashtags = self.site_config.X_HASHTAGS
         
         if is_archive:
@@ -328,8 +328,8 @@ class TemplateManager:
     
     def get_footer_section(self, is_archive: bool = False) -> str:
         """フッターセクションを生成（外部テンプレート使用）"""
-        site_url = self.site_config.SITE_URL
-        twitter_user = self.site_config.TWITTER_USER
+        site_url = self.site_config.site_url
+        twitter_user = self.site_config.twitter_user
         
         main_page_link = ""
         rss_link = ""
@@ -464,7 +464,7 @@ class ContentStructure:
     def build_markdown_page(self, title: str, date_str: str, entries_markdown: str, 
                            is_archive: bool = False) -> str:
         """完全なMarkdownページを構築"""
-        site_url = self.template_manager.site_config.SITE_URL
+        site_url = self.template_manager.site_config.site_url
         
         if is_archive:
             nav_links = f'📚 [過去のニュースを見る](../../index.md) | 🎨 [カード表示版を見る]({site_url}) | 📡 [RSSフィードを購読]({site_url}rss.xml)'

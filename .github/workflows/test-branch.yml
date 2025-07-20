@@ -1,0 +1,82 @@
+name: Test Branch OSS Configuration
+
+on:
+  workflow_dispatch: # 手動実行のみ
+    inputs:
+      test_username:
+        description: 'Test GitHub username'
+        required: false
+        default: 'test-user'
+      test_repo:
+        description: 'Test repository name'
+        required: false
+        default: 'my-tech-news'
+      test_x_username:
+        description: 'Test X username (optional)'
+        required: false
+        default: ''
+
+jobs:
+  test-oss-config:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        
+    - name: Test environment variables
+      env:
+        GITHUB_USERNAME: ${{ github.event.inputs.test_username }}
+        REPOSITORY_NAME: ${{ github.event.inputs.test_repo }}
+        X_USERNAME: ${{ github.event.inputs.test_x_username }}
+      run: |
+        echo "🔍 Test Environment Variables:"
+        echo "GITHUB_REPOSITORY_OWNER: $GITHUB_REPOSITORY_OWNER"
+        echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+        echo "GITHUB_USERNAME: ${GITHUB_USERNAME:-'(not set)'}"
+        echo "REPOSITORY_NAME: ${REPOSITORY_NAME:-'(not set)'}"
+        echo "X_USERNAME: ${X_USERNAME:-'(not set)'}"
+        
+    - name: Test URL generation
+      env:
+        GITHUB_USERNAME: ${{ github.event.inputs.test_username }}
+        REPOSITORY_NAME: ${{ github.event.inputs.test_repo }}
+        X_USERNAME: ${{ github.event.inputs.test_x_username }}
+      run: |
+        echo "🔗 Test Generated URLs:"
+        python -c "import sys, os; sys.path.append('src'); from config.archive_config import DEFAULT_SITE_CONFIG; print('Site URL:', DEFAULT_SITE_CONFIG.site_url); print('GitHub Repo URL:', DEFAULT_SITE_CONFIG.github_repo_url); print('RSS URL:', DEFAULT_SITE_CONFIG.rss_url); print('Profile URL:', DEFAULT_SITE_CONFIG.profile_url); print('Profile Display:', DEFAULT_SITE_CONFIG.profile_display_name)"
+        
+    - name: Test auto-detection (no custom env vars)
+      run: |
+        echo "🤖 Test Auto-Detection (GITHUB_REPOSITORY_OWNER only):"
+        python -c "import sys, os; sys.path.append('src'); from config.archive_config import DEFAULT_SITE_CONFIG; print('Site URL:', DEFAULT_SITE_CONFIG.site_url); print('GitHub Repo URL:', DEFAULT_SITE_CONFIG.github_repo_url); print('RSS URL:', DEFAULT_SITE_CONFIG.rss_url); print('Profile URL:', DEFAULT_SITE_CONFIG.profile_url); print('Profile Display:', DEFAULT_SITE_CONFIG.profile_display_name)"
+        
+    - name: Generate test files (no commit/push)
+      env:
+        GITHUB_USERNAME: ${{ github.event.inputs.test_username }}
+        REPOSITORY_NAME: ${{ github.event.inputs.test_repo }}
+        X_USERNAME: ${{ github.event.inputs.test_x_username }}
+      run: |
+        echo "📝 Generating test files..."
+        python fetch_news.py
+        echo "✅ Files generated successfully"
+        
+    - name: Show generated URLs in files
+      run: |
+        echo "📄 URLs in generated daily_news.md:"
+        head -10 daily_news.md
+        echo ""
+        echo "📡 RSS feed URLs:"
+        head -15 rss.xml | grep -E "(link|href)" || echo "RSS structure check"
+        echo ""
+        echo "💬 Slack message URLs:"
+        cat slack_message.json | grep -o 'https://[^|]*' | head -3 || echo "Slack message check"
