@@ -1,6 +1,7 @@
 """
 アーカイブ生成のための設定管理モジュール
 """
+import os
 from dataclasses import dataclass
 from typing import Dict, List
 
@@ -12,8 +13,29 @@ class SiteConfig:
     # サイト基本情報
     SITE_TITLE_TEMPLATE: str = "👨‍💻 今日のテックニュース ({date})"
     SITE_DESCRIPTION: str = "忙しいエンジニアのために。毎日サクッとキャッチアップ。"
-    SITE_URL: str = "https://unsolublesugar.github.io/daily-tech-news/"
-    TWITTER_USER: str = "@unsoluble_sugar"
+    GITHUB_USERNAME: str = os.getenv("GITHUB_USERNAME") or os.getenv("USER_NAME", "unsolublesugar")
+    REPOSITORY_NAME: str = os.getenv("REPOSITORY_NAME", "daily-tech-news")
+    X_USERNAME: str = os.getenv("X_USERNAME") or os.getenv("TWITTER_USERNAME", "unsoluble_sugar")
+    
+    @property
+    def site_url(self) -> str:
+        """GitHub Pages URLを動的生成"""
+        return f"https://{self.GITHUB_USERNAME}.github.io/{self.REPOSITORY_NAME}/"
+    
+    @property
+    def github_repo_url(self) -> str:
+        """GitHubリポジトリURLを動的生成"""
+        return f"https://github.com/{self.GITHUB_USERNAME}/{self.REPOSITORY_NAME}"
+    
+    @property
+    def rss_url(self) -> str:
+        """RSS URLを動的生成"""
+        return f"{self.site_url}rss.xml"
+    
+    @property
+    def twitter_user(self) -> str:
+        """X ユーザー名を@付きで取得"""
+        return f"@{self.X_USERNAME}"
     
     # フィード設定
     MAX_ENTRIES_DEFAULT: int = 5
@@ -42,7 +64,7 @@ class SiteConfig:
     @property
     def og_image_url(self) -> str:
         """OGP画像の完全URLを取得"""
-        return f"{self.SITE_URL}{self.OG_IMAGE_FILENAME}"
+        return f"{self.site_url}{self.OG_IMAGE_FILENAME}"
     
     def get_site_title(self, date_str: str) -> str:
         """日付を含むサイトタイトルを生成"""

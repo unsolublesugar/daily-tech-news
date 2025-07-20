@@ -17,6 +17,9 @@ import hashlib
 # srcディレクトリをPythonパスに追加
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
+# 設定のインポート
+from config.archive_config import DEFAULT_SITE_CONFIG
+
 # 取得するRSSフィードのリスト（ファビコン付き）
 FEEDS = {
     "Tech Blog Weekly": {
@@ -536,7 +539,7 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
 def generate_markdown(all_entries, feed_info, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
     markdown = f"# 今日のテックニュース ({date_str})\n\n"
-    markdown += """📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
+    markdown += f"""📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る]({DEFAULT_SITE_CONFIG.site_url}) | 📡 [RSSフィードを購読]({DEFAULT_SITE_CONFIG.rss_url})
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
 
@@ -545,7 +548,7 @@ def generate_markdown(all_entries, feed_info, date_str):
 ## 🎨 カード表示版もあります
 
 GitHub Pages版では各記事がカード形式で見やすく表示されます：  
-https://unsolublesugar.github.io/daily-tech-news/
+{DEFAULT_SITE_CONFIG.site_url}
 
 ---
 """
@@ -579,14 +582,14 @@ https://unsolublesugar.github.io/daily-tech-news/
 def generate_archive_markdown(all_entries, feed_info, date_str):
     """アーカイブ用のMarkdownコンテンツを生成する（相対パス修正版）"""
     markdown = f"# 今日のテックニュース ({date_str})\n\n"
-    markdown += """📚 [過去のニュースを見る](../../daily_news.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
+    markdown += f"""📚 [過去のニュースを見る](../../daily_news.md) | 🎨 [カード表示版を見る]({DEFAULT_SITE_CONFIG.site_url}) | 📡 [RSSフィードを購読]({DEFAULT_SITE_CONFIG.rss_url})
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
 
 ## 🎨 カード表示版もあります
 
 GitHub Pages版では各記事がカード形式で見やすく表示されます：  
-https://unsolublesugar.github.io/daily-tech-news/
+{DEFAULT_SITE_CONFIG.site_url}
 
 ---
 """
@@ -719,8 +722,8 @@ def update_monthly_index(year, month):
     <meta property="og:title" content="{year}年{month}月のテックニュース">
     <meta property="og:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/">
-    <meta property="og:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta property="og:url" content="{DEFAULT_SITE_CONFIG.site_url}">
+    <meta property="og:image" content="{DEFAULT_SITE_CONFIG.og_image_url}">
     <meta property="og:site_name" content="今日のテックニュース">
     
     <!-- Twitter Card Tags -->
@@ -728,7 +731,7 @@ def update_monthly_index(year, month):
     <meta name="twitter:creator" content="@unsoluble_sugar">
     <meta name="twitter:title" content="{year}年{month}月のテックニュース">
     <meta name="twitter:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
-    <meta name="twitter:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta name="twitter:image" content="{DEFAULT_SITE_CONFIG.og_image_url}">
     
     <!-- Favicon Links -->
     <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/favicons/apple-touch-icon.png">
@@ -827,8 +830,8 @@ def update_yearly_index(year):
     <meta property="og:title" content="{year}年のテックニュース">
     <meta property="og:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/">
-    <meta property="og:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta property="og:url" content="{DEFAULT_SITE_CONFIG.site_url}">
+    <meta property="og:image" content="{DEFAULT_SITE_CONFIG.og_image_url}">
     <meta property="og:site_name" content="今日のテックニュース">
     
     <!-- Twitter Card Tags -->
@@ -836,7 +839,7 @@ def update_yearly_index(year):
     <meta name="twitter:creator" content="@unsoluble_sugar">
     <meta name="twitter:title" content="{year}年のテックニュース">
     <meta name="twitter:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
-    <meta name="twitter:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta name="twitter:image" content="{DEFAULT_SITE_CONFIG.og_image_url}">
     
     <!-- Favicon Links -->
     <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
@@ -939,8 +942,8 @@ def generate_missing_html_archives():
     <meta property="og:title" content="今日のテックニュース ({date_str})">
     <meta property="og:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/">
-    <meta property="og:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta property="og:url" content="{DEFAULT_SITE_CONFIG.site_url}">
+    <meta property="og:image" content="{DEFAULT_SITE_CONFIG.og_image_url}">
     <meta property="og:site_name" content="今日のテックニュース">
     
     <!-- Twitter Card Tags -->
@@ -995,7 +998,7 @@ def generate_missing_html_archives():
 <body>
     <h1>今日のテックニュース ({date_str})</h1>
     
-    <p>📚 <a href="../../index.html">過去のニュースを見る</a> | 📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
+    <p>📚 <a href="../../index.html">過去のニュースを見る</a> | 📡 <a href="{DEFAULT_SITE_CONFIG.rss_url}">RSSフィードを購読</a></p>
     
     <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
     
@@ -1043,9 +1046,9 @@ def generate_missing_html_archives():
                     
                     html_content += """
     <div class="footer">
-        <p>📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
-        <p>🚀 運営者: <a href="https://x.com/unsoluble_sugar" target="_blank" rel="noopener">@unsoluble_sugar</a> | 
-        📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
+        <p>📡 <a href="{DEFAULT_SITE_CONFIG.rss_url}">RSSフィードを購読</a></p>
+        <p>🚀 運営者: <a href="https://x.com/{DEFAULT_SITE_CONFIG.X_USERNAME}" target="_blank" rel="noopener">{DEFAULT_SITE_CONFIG.twitter_user}</a> | 
+        📁 <a href="{DEFAULT_SITE_CONFIG.github_repo_url}" target="_blank" rel="noopener">GitHub Repository</a></p>
     </div>
 </body>
 </html>"""
@@ -1092,8 +1095,8 @@ def update_archive_index():
     <meta property="og:title" content="テックニュース アーカイブ">
     <meta property="og:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/">
-    <meta property="og:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta property="og:url" content="{DEFAULT_SITE_CONFIG.site_url}">
+    <meta property="og:image" content="{DEFAULT_SITE_CONFIG.og_image_url}">
     <meta property="og:site_name" content="今日のテックニュース">
     
     <!-- Twitter Card Tags -->
@@ -1101,7 +1104,7 @@ def update_archive_index():
     <meta name="twitter:creator" content="@unsoluble_sugar">
     <meta name="twitter:title" content="テックニュース アーカイブ">
     <meta name="twitter:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
-    <meta name="twitter:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta name="twitter:image" content="{DEFAULT_SITE_CONFIG.og_image_url}">
     
     <!-- Favicon Links -->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
@@ -1180,7 +1183,7 @@ def generate_rss_feed(all_entries, feed_info, date_obj):
     
     # チャンネル情報
     ET.SubElement(channel, 'title').text = '今日のテックニュース'
-    ET.SubElement(channel, 'link').text = 'https://unsolublesugar.github.io/daily-tech-news/'
+    ET.SubElement(channel, 'link').text = DEFAULT_SITE_CONFIG.site_url
     ET.SubElement(channel, 'description').text = '日本の主要な技術系メディアの最新人気エントリーを毎日お届けします'
     ET.SubElement(channel, 'language').text = 'ja'
     ET.SubElement(channel, 'pubDate').text = date_obj.strftime('%a, %d %b %Y %H:%M:%S +0000')
@@ -1188,7 +1191,7 @@ def generate_rss_feed(all_entries, feed_info, date_obj):
     
     # Atom自己参照リンク
     atom_link = ET.SubElement(channel, 'atom:link')
-    atom_link.set('href', 'https://unsolublesugar.github.io/daily-tech-news/rss.xml')
+    atom_link.set('href', DEFAULT_SITE_CONFIG.rss_url)
     atom_link.set('rel', 'self')
     atom_link.set('type', 'application/rss+xml')
     
@@ -1276,7 +1279,7 @@ def generate_slack_message(all_entries, date):
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": f"📊 *更新サマリー*: {total_articles}記事を更新\n\n🔗 <https://unsolublesugar.github.io/daily-tech-news/|カード表示版を見る>\n📰 <https://github.com/unsolublesugar/daily-tech-news|GitHub リポジトリ>"
+                    "text": f"📊 *更新サマリー*: {total_articles}記事を更新\n\n🔗 <{DEFAULT_SITE_CONFIG.site_url}|カード表示版を見る>\n📰 <{DEFAULT_SITE_CONFIG.github_repo_url}|GitHub リポジトリ>"
                 }
             },
             {
