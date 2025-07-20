@@ -1,155 +1,149 @@
-# 今日のテックニュース (2025-07-20)
+# Daily Tech News
 
-📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![RSS](https://img.shields.io/badge/RSS-Available-orange.svg)](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
 
-日本の主要な技術系メディアの最新人気エントリーをお届けします。
+日本の主要な技術系メディアから最新の人気エントリーを自動収集し、毎日更新するテックニュースアグリゲーターです。
 
-※毎日JST 7:00に自動更新
+## 📰 今日のニュースを見る
 
-## 🎨 カード表示版もあります
+**➡️ [今日のテックニュース](daily_news.md)** | **🎨 [カード表示版](https://unsolublesugar.github.io/daily-tech-news/)** | **📡 [RSS](https://unsolublesugar.github.io/daily-tech-news/rss.xml)**
 
-GitHub Pages版では各記事がカード形式で見やすく表示されます：  
-https://unsolublesugar.github.io/daily-tech-news/
+## ✨ 特徴
 
----
-## 💻 Tech Blog Weekly
+- **自動収集**: 国内の主要技術メディアから最新記事を自動取得
+- **重複除去**: フィード間の重複記事を自動で除去
+- **複数形式**: Markdown、HTML、RSS形式で提供
+- **アーカイブ**: 過去のニュースを日付別に保存
+- **高速化**: サムネイル並列取得によるパフォーマンス最適化
+- **毎日更新**: GitHub Actionsによる自動更新（JST 7:00）
 
-- [Customers Mail Cloud用Python SDKをバージョンアップしました | Customers Mail Cloud ブログ](https://blog.smtps.jp/entry/2025/07/19/235851)
-- [Customers Mail Cloud用Ruby SDKをバージョンアップしました | Customers Mail Cloud ブログ](https://blog.smtps.jp/entry/2025/07/19/235442)
-- [リリース後のコミットハッシュが見つからない理由 | NCDCエンジニアブログのフィード](https://zenn.dev/ncdc/articles/commit-hash-not-found-after-release)
-- [Amazon Bedrock AgentCoreを一通りさわり倒してみる ~ 全体の感想とRuntime編 ~ | Generative Agents Tech Blog](https://blog.generative-agents.co.jp/entry/2025/07/19/192419)
-- [PHPカンファレンス関西2025登壇しました！『MySQL9でベクトルカラム登場！PHP×AWSでのAI/類似検索はこう変わる』 | TechTrainテックブログのフィード](https://zenn.dev/techtrain_blog/articles/0bea024a5f0700)
+## 📊 対応メディア
 
+| メディア | カテゴリ | 件数 |
+|----------|----------|------|
+| Tech Blog Weekly | 企業テックブログ | 5件 |
+| Zenn | 技術記事・書籍 | 5件 |
+| Qiita | 技術記事 | 5件 |
+| はてなブックマーク（IT人気・新着） | ソーシャルブックマーク | 各5件 |
+| DevelopersIO | クラウド・AWS | 5件 |
+| gihyo.jp | 技術情報 | 5件 |
+| Publickey | IT業界ニュース | 5件 |
+| CodeZine | 開発者向け | 5件 |
+| InfoQ Japan | エンタープライズ | 5件 |
+| connpass・TECH PLAY | 技術イベント | 各10件 |
+| O'Reilly Japan | 技術書籍 | 5件 |
 
----
-## <img src="https://zenn.dev/favicon.ico" width="16" height="16" alt="Zenn"> Zenn
+## 🚀 クイックスタート
 
-- [JWT認証を仕組みから実装まで理解する](https://zenn.dev/ippe/articles/jwt-auth-ippei)
-- [ECSの組み込み機能でB/Gデプロイが可能になったので、試したみた](https://zenn.dev/falcon_tech/articles/0262e84c35e848)
-- [Claude CodeだけでKiro風をやる](https://zenn.dev/sosukesuzuki/articles/593903287631e9)
-- [AIロボット協会テックブログをはじめます](https://zenn.dev/airoa/articles/99184bcc68eadc)
-- [ChatGPT agent の発表まとめ](https://zenn.dev/schroneko/articles/introducing-chatgpt-agent)
+### 必要環境
 
+- Python 3.8+
+- pip
 
----
-## <img src="https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico" width="16" height="16" alt="Qiita"> Qiita
+### インストール・実行
 
-- [Kiroみたいな「仕様書駆動開発」をClaude Code・Opus 4でやるまでの手順を整理した！！！](https://qiita.com/nokonoko_1203/items/8bafb6033409aadccd9f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [【Kiroだけじゃなかった！AWSがAIインフラ続々リリースして凄すぎたので緊急整理🔥】AWSがAIエージェント開発の「実験→本番」への難題を解決！AgentCoreで誰でも本格的なAIエージェントを動かせる時代に突入](https://qiita.com/akira_papa_AI/items/92fa19cbac0d2918ec8f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [【初心者向け】既存のwebアプリをdocker化して雰囲気掴もうぜ](https://qiita.com/arunbababa/items/8957058eb4b6f5ab14fa?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [ドキュメント・スライド・スプレッドシートを一括生成するAIツールが凄い](https://qiita.com/KNR109/items/3594803a40b7350053d4?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [Amazon Bedrock AgentCoreって何？StrandsAgentでLine Bot作ってデプロイしてみよう！](https://qiita.com/Syoitu/items/e85c9d9bd389c987d7bc?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+```bash
+# リポジトリをクローン
+git clone https://github.com/unsolublesugar/daily-tech-news.git
+cd daily-tech-news
 
+# 依存関係をインストール
+pip3 install -r requirements.txt
 
----
-## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（人気）"> はてなブックマーク - IT（人気）
+# ニュース収集を実行
+python3 fetch_news.py
+```
 
-- [チームみらい関係者が反対意見に対して「コントリビューションできますよ！」と反応を送っていることに失礼だとの声 OSSの思想は政治で通用するのか？](https://togetter.com/li/2577958)
-- [これ読めばOK。私が使ってるものだけの、Claude Code チュートリアル](https://zenn.dev/pepabo/articles/898cdc4839acb8)
-- [素人が参院議員の議案賛否検索サイトを作ってみた](https://zenn.dev/midorisawa07/articles/7b6b24a46925fd)
-- [OAuthとOIDCの前にJWTから勉強しよう](https://zenn.dev/nttdata_tech/articles/cdf46cbf625147)
-- [あなたのネット履歴が誰に追跡されてるか…このサイトでわかります](https://www.gizmodo.jp/2025/07/search-engine-webxray-2.html)
+実行後、以下のファイルが生成されます：
 
+- `daily_news.md` - 今日のニュース（Markdown形式）
+- `index.html` - カード表示版（HTML形式）
+- `rss.xml` - RSSフィード
+- `archives/` - 過去のニュースアーカイブ
 
----
-## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（新着）"> はてなブックマーク - IT（新着）
+## 📁 プロジェクト構成
 
-- [kiroを参考にして作成したCLAUDE.md - izanami](https://izanami.dev/post/11c5067c-d2f9-4945-8944-0d1c20c1263d)
-- [Kiroとコンテキストエンジニアリングの時流](https://blog.lai.so/kiro-in-context-engineering/)
-- [fstrings.wtf - Python F-String Quiz](https://fstrings.wtf/)
-- [エムスリーの GitHub 移行、SRE の道中記 - エムスリーテックブログ](https://www.m3tech.blog/entry/2025/07/19/100000)
-- [中国系スパイグループ「UNC3886」、シンガポールにサイバー攻撃](https://www.afpbb.com/articles/-/3589526)
+```
+daily-tech-news/
+├── fetch_news.py              # メインスクリプト
+├── daily_news.md              # 今日のニュース（自動生成）
+├── index.html                 # カード表示版（自動生成）
+├── rss.xml                    # RSSフィード（自動生成）
+├── requirements.txt           # Python依存関係
+├── archives/                  # 過去ニュースアーカイブ
+│   └── [年]/[月]/[日付].md
+├── src/
+│   └── templates/            # HTMLテンプレート
+└── .github/
+    └── workflows/            # GitHub Actions設定
+```
 
+## ⚙️ 設定
 
----
-## <img src="https://dev.classmethod.jp/favicon.ico" width="16" height="16" alt="DevelopersIO"> DevelopersIO
+### フィード設定
 
-- [Google Cloud IAM で 「最小権限の原則」 を試してみた](https://dev.classmethod.jp/articles/cloud-identity-iam-group-best-practice/)
-- [[アップデート] スナップショットから EBS のボリューム作成時の初期化プロセスの進捗状況が可能になりました](https://dev.classmethod.jp/articles/ebs-volume-initialization-progress-monitoring/)
-- [Gemini の Gem で質疑応答の結果を所定のフォーマットで Canvas に更新し、 Google Docs に出力する](https://dev.classmethod.jp/articles/export-docs-from-gemini-canvas/)
-- [Amazon InspectorでSBOM出力してみた (CycloneDX形式/SPDX形式)](https://dev.classmethod.jp/articles/amazon-inspector-sbom-kdpn-2507/)
-- [[アップデート] AWS Lambda コンソールに「Visual Studio Code で開く」機能が追加されワンクリックで Visual Studio Code 上でコード開発・デプロイができるようになりました](https://dev.classmethod.jp/articles/lambda-bridges-console-vs-code-unified-serverless-development-experience/)
+`fetch_news.py`の`FEEDS`辞書でRSSフィードを設定できます：
 
+```python
+FEEDS = {
+    "フィード名": {
+        "url": "RSS URL",
+        "favicon": "アイコンURL または 絵文字"
+    }
+}
+```
 
----
-## <img src="https://gihyo.jp/favicon.ico" width="16" height="16" alt="gihyo.jp"> gihyo.jp
+### 記事数制限
 
-- [GitHub、機能プレビューとして提供していた「コマンドパレット」を8月に廃止予定と告知](https://gihyo.jp/article/2025/07/github-plans-to-deprecate-command-palette?utm_source=feed)
-- [JetBrains、Eclipse、XcodeでGitHub Copilotエージェントモードの一般提供開始](https://gihyo.jp/article/2025/07/github-copilot-agent-mode-for-jetbrains-eclipse-xcode?utm_source=feed)
-- [OpenAI、ChatGPTエージェントを発表 ―ブラウザ、ターミナル、APIからアクセス可能な自律型AIエージェント](https://gihyo.jp/article/2025/07/chatgpt-agent?utm_source=feed)
-- [Web APIのテストデータを自動生成してくれるツール「Schemathesis」の紹介](https://gihyo.jp/article/2025/07/monthly-python-2507?utm_source=feed)
-- [Ubuntu 25.10（questing）の開発; ドキュメントの充実, ESWIN EBC77 SBCの登場](https://gihyo.jp/admin/clip/01/ubuntu-topics/202507/18?utm_source=feed)
+`MAX_ENTRIES`定数で各フィードから取得する記事数を調整できます（デフォルト: 5件）。
 
+## 🔧 カスタマイズ
 
----
-## <img src="https://www.publickey1.jp/favicon.ico" width="16" height="16" alt="Publickey"> Publickey
+### 新しいメディアの追加
 
-- [IT運用担当者への調査結果、「昇給・昇進が遅い」「新しい技術に触れる機会がない」「重責なのに待遇が悪い」などに不満。ガートナージャパン](https://www.publickey1.jp/blog/25/it_2026.html)
-- [DevinのCognitionがAIコードエディタ「Windsurf」の買収発表。今後Windsurfの機能や知財をCognition製品に統合へ](https://www.publickey1.jp/blog/25/devincognitionaiwindsurfwindsurfcognition.html)
-- [AWSがAIコードエディタ「Kiro」をプレビュー公開、VS Code互換。AIとチャットしながらプロダクトを開発](https://www.publickey1.jp/blog/25/awsaikirovs_codeai.html)
-- [AWSに新機能や改善点を要望できる「ウィッシュリスト」が登場。AWS開発者のためのポータル「AWS Builder Center」公開](https://www.publickey1.jp/blog/25/awsawsaws_builder_center.html)
-- [日本オラクル、日本国内在住者だけで構成されるクラウド運用支援組織を発足、日本でのソブリンクラウド導入加速へ](https://www.publickey1.jp/blog/25/post_306.html)
+1. `FEEDS`辞書に新しいエントリを追加
+2. 必要に応じて重複除去ロジックを調整
+3. スクリプトを実行してテスト
 
+### テンプレートの変更
 
----
-## <img src="https://codezine.jp/favicon.ico" width="16" height="16" alt="CodeZine"> CodeZine
+HTMLテンプレートは`src/templates/`ディレクトリで管理されています。
 
-- [【TypeScriptの基礎を学ぶ】JavaScriptと比較して起こりがちなミスを防ごう！](http://codezine.jp/article/detail/21595)
-- [OpenAI、「ChatGPTエージェント」を正式発表、タスク実行・ウェブ操作が一体化](http://codezine.jp/article/detail/21932)
-- [楽天・リコー・NRIなど採択、NEDOがAIモデル開発事業の実施先を発表](http://codezine.jp/article/detail/21931)
-- [Red Hat、ビジネス開発者向け無償RHEL「RHEL for Business Developers」を発表](http://codezine.jp/article/detail/21923)
-- [AWS製品チームにフィードバックや提案ができる「AWS Builder Center」発表](http://codezine.jp/article/detail/21924)
+## 📈 パフォーマンス
 
+- **並列処理**: サムネイル取得を並列実行
+- **キャッシュ**: サムネイルキャッシュによる高速化
+- **重複除去**: 効率的なURL重複チェック
 
----
-## <img src="https://www.infoq.com/favicon.ico" width="16" height="16" alt="InfoQ Japan"> InfoQ Japan
+## 🤝 コントリビューション
 
-- [OpenAI、Stargateプロジェクトで世界のパートナー国にAIインフラを構築へ](https://www.infoq.com/jp/news/2025/07/stargate-openai-for-countries/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
-- [DockerがHardened Imagesを導入、コンテナセキュリティを強化](https://www.infoq.com/jp/news/2025/07/docker-hardened-images/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
-- [マイクロソフトがネイティブTypeScriptコンパイラ移植を発表、10倍パフォーマンス向上](https://www.infoq.com/jp/news/2025/07/new-typescript-compiler-10x-fast/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
-- [アクセシビリティの高いウェブサイトを重視すべき理由とその方法](https://www.infoq.com/jp/news/2025/07/accessible-websites-how-to/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
-- [Visual Studio 2022 v17.14がエージェントモードと高度Copilot支援を導入](https://www.infoq.com/jp/news/2025/07/visual-studio-copilot-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
+1. このリポジトリをフォーク
+2. フィーチャーブランチを作成 (`git checkout -b feature/amazing-feature`)
+3. 変更をコミット (`git commit -m 'Add amazing feature'`)
+4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
+5. プルリクエストを作成
 
+詳細は[CLAUDE.md](CLAUDE.md)の開発ワークフローを参照してください。
 
----
-## <img src="https://connpass.com/favicon.ico" width="16" height="16" alt="connpass - イベント"> connpass - イベント
+## 📄 ライセンス
 
-- [生成原論a](https://connpass.com/event/363261/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [AWSとLinuc Lv1が同時に学べる Linuxサーバハンズオン](https://zeki-chan-lab.connpass.com/event/363296/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [CoderDojo 青山#2](https://coderdojoaoyama.connpass.com/event/360256/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [第2回 KitaQハードウェアテック部ゆるもく勉強会@COMPASS小倉](https://kitaq-hw-tech.connpass.com/event/363292/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [【初学者向け】宇都宮セキュリティ勉強会 #7](https://miyasec.connpass.com/event/363289/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [なんもわからん人の論文読み会（Continuous Thought Machines）#5](https://wakaran-reading.connpass.com/event/363284/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [最高の「ちょうどよさ」NotionでつくるCSのためのCRM – CS HACK #106](https://cshack.connpass.com/event/363277/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [札幌 3Dプリンター Meetup #1](https://hokudai3d.connpass.com/event/361619/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [データモデリング通り #2オンライン勉強会 ～方法論の話をしよう～](https://datayokocho.connpass.com/event/363190/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [8/18 夏休みドローンプログラミング体験教室　浦添市てだこホールマルチメディア室](https://okinawa-ict-kids.connpass.com/event/362221/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+このプロジェクトは[MIT License](LICENSE)の下で公開されています。
 
+## 🙏 謝辞
 
----
-## <img src="https://techplay.jp/favicon.ico" width="16" height="16" alt="TECH PLAY - イベント"> TECH PLAY - イベント
+- 記事を提供していただいている各技術メディアの皆様
+- 企業テックブログのRSSフィードを維持・提供していただいている[yamadashy](https://github.com/yamadashy)さん（[企業テックブログRSS](https://yamadashy.github.io/tech-blog-rss-feed/)）
 
-- [9/20(土) 巣鴨でTableauもくもく& LT会 Vol.5](https://techplay.jp/event/984087)
-- [【無料相談有】この夏、「統計検定２級」にチャレンジしませんか？【統計検定2級 CBT問題集解説 録画動画視聴コース(無料お試し可)など】](https://techplay.jp/event/983939)
-- [DATA Saber - Bridge 4thが始まります！オンライン説明会](https://techplay.jp/event/984084)
-- [第37回ゼロからのデータ分析入門講座](https://techplay.jp/event/983863)
-- [Tableauコミュニティ相談室〜コミュニティ・スターターキットを作ってみる](https://techplay.jp/event/984077)
-- [オープンデータバトル相談会　〜秋田県クマの出没データを使ったワークショップ〜](https://techplay.jp/event/984074)
-- [５年後もエンジニアでいられるか？～生成AI時代を生き抜く“自分の武器”の磨き方～](https://techplay.jp/event/984073)
-- [フジロック鑑賞座談会×IT交流会（オンライン）](https://techplay.jp/event/984071)
+## ✉️ 連絡先
 
+- **作者**: [@unsoluble_sugar](https://x.com/unsoluble_sugar)
+- **リポジトリ**: [GitHub](https://github.com/unsolublesugar/daily-tech-news)
+- **Issues**: [GitHub Issues](https://github.com/unsolublesugar/daily-tech-news/issues)
 
----
-## <img src="https://www.oreilly.co.jp/favicon.ico" width="16" height="16" alt="O'Reilly Japan - 近刊"> O'Reilly Japan - 近刊
-
-- [LLMのプロンプトエンジニアリング](http://www.oreilly.co.jp/books/9784814401130/?utm_source=feed&utm_mediun=referral&utm_content=new_book)
-- [micro:bitではじめるAI工作](http://www.oreilly.co.jp/books/9784814400997/?utm_source=feed&utm_mediun=referral&utm_content=new_book)
-- [PythonによるWebスクレイピング 第3版](http://www.oreilly.co.jp/books/9784814401222/?utm_source=feed&utm_mediun=referral&utm_content=new_book)
-- [SQLアンチパターン 第2版](http://www.oreilly.co.jp/books/9784814400744/?utm_source=feed&utm_mediun=referral&utm_content=new_book)
-- [Async Rust](http://www.oreilly.co.jp/books/9784814401185/?utm_source=feed&utm_mediun=referral&utm_content=new_book)
-
+本リポジトリの実装は[@unsoluble_sugar](https://x.com/unsoluble_sugar)の指示のもと、すべてClaude Codeによって生成されています。
 
 ---
-## License
 
-This project is licensed under the [MIT License](LICENSE).
+**📱 最新ニュース**: [daily_news.md](daily_news.md) | **🌐 カード表示**: [GitHub Pages](https://unsolublesugar.github.io/daily-tech-news/)
