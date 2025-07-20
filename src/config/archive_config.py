@@ -13,9 +13,9 @@ class SiteConfig:
     # サイト基本情報
     SITE_TITLE_TEMPLATE: str = "👨‍💻 今日のテックニュース ({date})"
     SITE_DESCRIPTION: str = "忙しいエンジニアのために。毎日サクッとキャッチアップ。"
-    GITHUB_USERNAME: str = os.getenv("GITHUB_USERNAME") or os.getenv("USER_NAME", "unsolublesugar")
+    GITHUB_USERNAME: str = os.getenv("GITHUB_USERNAME") or os.getenv("USER_NAME") or os.getenv("GITHUB_REPOSITORY_OWNER", "unsolublesugar")
     REPOSITORY_NAME: str = os.getenv("REPOSITORY_NAME", "daily-tech-news")
-    X_USERNAME: str = os.getenv("X_USERNAME") or os.getenv("TWITTER_USERNAME", "unsoluble_sugar")
+    X_USERNAME: str = os.getenv("X_USERNAME") or os.getenv("TWITTER_USERNAME") or os.getenv("GITHUB_REPOSITORY_OWNER") or "unsoluble_sugar"
     
     @property
     def site_url(self) -> str:
@@ -36,6 +36,26 @@ class SiteConfig:
     def twitter_user(self) -> str:
         """X ユーザー名を@付きで取得"""
         return f"@{self.X_USERNAME}"
+    
+    @property
+    def profile_url(self) -> str:
+        """プロフィールURLを取得（X設定時はX、未設定時はGitHub）"""
+        # X_USERNAMEが明示的に設定されている場合はXリンク
+        if os.getenv("X_USERNAME") or os.getenv("TWITTER_USERNAME"):
+            return f"https://x.com/{self.X_USERNAME}"
+        # 未設定の場合はGitHubプロフィール
+        else:
+            return f"https://github.com/{self.GITHUB_USERNAME}"
+    
+    @property
+    def profile_display_name(self) -> str:
+        """プロフィール表示名を取得"""
+        # X_USERNAMEが明示的に設定されている場合は@付き
+        if os.getenv("X_USERNAME") or os.getenv("TWITTER_USERNAME"):
+            return f"@{self.X_USERNAME}"
+        # 未設定の場合はGitHubユーザー名
+        else:
+            return self.GITHUB_USERNAME
     
     # フィード設定
     MAX_ENTRIES_DEFAULT: int = 5
