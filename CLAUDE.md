@@ -14,7 +14,7 @@ This is a Python-based daily tech news aggregator that fetches content from Japa
 ## Architecture
 
 - **fetch_news.py**: Main script that fetches RSS feeds, processes entries, and generates markdown
-- **README.md**: Output file containing the generated daily tech news report
+- **daily_news.md**: Output file containing the generated daily tech news report
 - **requirements.txt**: Python dependencies (feedparser)
 
 ## Common Commands
@@ -42,7 +42,7 @@ python3 -c "import feedparser; print(feedparser.parse('https://qiita.com/popular
 - Uses `feedparser` library for RSS parsing
 - Generates ISO date format for daily reports
 - Limits to 10 entries per feed source (MAX_ENTRIES constant)
-- Overwrites README.md with each run
+- Overwrites daily_news.md with each run
 - Error handling for failed feed fetches
 - UTF-8 encoding for Japanese content support
 
@@ -77,19 +77,19 @@ The FEEDS dictionary in fetch_news.py contains the RSS URLs. Each feed is proces
 #### 作業開始前の必須手順
 ```bash
 # Issue作成（機能追加の場合）
-gh issue create --title "✨ 機能名: 簡潔な説明" --body "詳細な説明" --label enhancement --assignee unsolublesugar
+gh issue create --title "✨ 機能名: 簡潔な説明" --body "詳細な説明" --label enhancement --assignee @me
 
 # Issue作成（バグ修正の場合）
-gh issue create --title "🐛 バグ: 問題の説明" --body "再現手順と期待する動作" --label bug --assignee unsolublesugar
+gh issue create --title "🐛 バグ: 問題の説明" --body "再現手順と期待する動作" --label bug --assignee @me
 
 # Issue作成（ドキュメント更新の場合）
-gh issue create --title "📚 ドキュメント: 更新内容" --body "更新理由と詳細" --label documentation --assignee unsolublesugar
+gh issue create --title "📚 ドキュメント: 更新内容" --body "更新理由と詳細" --label documentation --assignee @me
 ```
 
 #### Issue作成時の必須項目
 - **タイトル**: 絵文字プレフィックス + 簡潔な説明
 - **ラベル**: 作業内容に応じた適切なラベル設定
-- **アサイニー**: `unsolublesugar` (必須)
+- **アサイニー**: 作業者自身（`@me`を使用）
 - **本文**: 詳細な説明、受け入れ条件、実装方針など
 
 #### ⚠️ Issue作成ルール準拠確認チェックリスト
@@ -97,7 +97,7 @@ Issue作成前に以下を必ず確認すること：
 - [ ] タイトルに適切な絵文字プレフィックスが含まれているか (✨🐛📚♻️🔧🚀)
 - [ ] タイトルが簡潔で内容を適切に表現しているか
 - [ ] 適切なラベルが設定されているか (enhancement/bug/documentation/refactor/ci/performance)
-- [ ] アサイニーが `unsolublesugar` に設定されているか
+- [ ] アサイニーが適切に設定されているか（`@me`で作業者自身）
 - [ ] 本文に詳細な説明が記載されているか
 - [ ] 必要に応じて受け入れ条件や実装方針が明記されているか
 
@@ -132,7 +132,7 @@ PR作成前に以下を必ず確認すること：
 - [ ] タイトルに適切な絵文字プレフィックスが含まれているか (✨🐛📚♻️🔧🚀)
 - [ ] タイトルが簡潔で内容を適切に表現しているか
 - [ ] タイトル末尾にIssue番号 `(#番号)` が含まれているか  
-- [ ] assigneeが `unsolublesugar` に設定されているか
+- [ ] assigneeが適切に設定されているか（`@me`で作業者自身）
 - [ ] 適切なlabelが設定されているか (enhancement/bug/documentation/refactor/ci/performance)
 - [ ] 本文先頭に `Closes #番号` または `Fixes #番号` が記載されているか
 - [ ] 本文に変更内容の詳細説明が含まれているか
@@ -141,13 +141,13 @@ PR作成前に以下を必ず確認すること：
 #### 基本コマンド（Issue番号を含める）
 ```bash
 # 機能追加の場合（Issue #13に対応）
-gh pr create --title "✨ 機能名: 簡潔な説明 (#13)" --assignee unsolublesugar --label enhancement --body "Closes #13\n\n詳細な説明"
+gh pr create --title "✨ 機能名: 簡潔な説明 (#13)" --assignee @me --label enhancement --body "Closes #13\n\n詳細な説明"
 
 # バグ修正の場合（Issue #14に対応）
-gh pr create --title "🐛 修正: 問題の説明 (#14)" --assignee unsolublesugar --label bug --body "Fixes #14\n\n修正内容の詳細"
+gh pr create --title "🐛 修正: 問題の説明 (#14)" --assignee @me --label bug --body "Fixes #14\n\n修正内容の詳細"
 
 # ドキュメント更新の場合（Issue #15に対応）
-gh pr create --title "📚 ドキュメント: 更新内容 (#15)" --assignee unsolublesugar --label documentation --body "Closes #15\n\n更新理由と内容"
+gh pr create --title "📚 ドキュメント: 更新内容 (#15)" --assignee @me --label documentation --body "Closes #15\n\n更新理由と内容"
 ```
 
 #### IssueとPRの紐づけ
@@ -156,7 +156,7 @@ gh pr create --title "📚 ドキュメント: 更新内容 (#15)" --assignee un
 - これによりPRマージ時に自動でIssueがクローズされる
 
 #### 必須設定項目
-- **Assignee**: `unsolublesugar` (必須)
+- **Assignee**: 作業者自身（`@me`を使用）
 - **Label**: 変更内容に応じて適切なラベルを設定
   - `enhancement`: 新機能追加
   - `bug`: バグ修正  
