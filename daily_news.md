@@ -1,0 +1,153 @@
+# 今日のテックニュース (2025-07-20)
+
+📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
+
+日本の主要な技術系メディアの最新人気エントリーをお届けします。
+
+※毎日JST 7:00に自動更新
+
+## 🎨 カード表示版もあります
+
+GitHub Pages版では各記事がカード形式で見やすく表示されます：  
+https://unsolublesugar.github.io/daily-tech-news/
+
+---
+## 💻 Tech Blog Weekly
+
+- [Orca Security から VS Code 用の AppSec エクステンションがリリースされました！ | ForgeVision Engineer Blog](https://techblog.forgevision.com/entry/orca-security/vscode/appsec)
+- [Customers Mail Cloud Java SDK（非公式）にて追加パラメーターに対応しました | Customers Mail Cloud ブログ](https://blog.smtps.jp/entry/2025/07/20/035729)
+- [[Dify] 3. スタジオでLLMの処理フローを作成する | ヘッドウォータースのフィード](https://zenn.dev/headwaters/articles/34cfd1355c5ffa)
+- [Customers Mail Cloud用Python SDKをバージョンアップしました | Customers Mail Cloud ブログ](https://blog.smtps.jp/entry/2025/07/19/235851)
+- [Customers Mail Cloud用Ruby SDKをバージョンアップしました | Customers Mail Cloud ブログ](https://blog.smtps.jp/entry/2025/07/19/235442)
+
+
+---
+## <img src="https://zenn.dev/favicon.ico" width="16" height="16" alt="Zenn"> Zenn
+
+- [ECSのネイティブBlue/Greenが登場したので検証！フック・Dark Canary・コントローラ更新も強力](https://zenn.dev/cadp/articles/ecs-builtin-blue-green)
+- [KiroのAgent Steeringの仕組みが良いと思った話](https://zenn.dev/oikon/articles/kiro-steering)
+- [素人が参院議員の議案賛否検索サイトを作ってみた](https://zenn.dev/midorisawa07/articles/7b6b24a46925fd)
+- [Go で CLI を配布する際にライブラリのライセンス文書も含める](https://zenn.dev/shunsuke_suzuki/articles/go-oss-licenses)
+- [Kiroの仕様書駆動開発プロセスをClaude Codeで徹底的に再現した](https://zenn.dev/gotalab/articles/3db0621ce3d6d2)
+
+
+---
+## <img src="https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico" width="16" height="16" alt="Qiita"> Qiita
+
+- [Kiroみたいな「仕様書駆動開発」をClaude Code・Opus 4でやるまでの手順を整理した！！！](https://qiita.com/nokonoko_1203/items/8bafb6033409aadccd9f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [【Kiroだけじゃなかった！AWSがAIインフラ続々リリースして凄すぎたので緊急整理🔥】AWSがAIエージェント開発の「実験→本番」への難題を解決！AgentCoreで誰でも本格的なAIエージェントを動かせる時代に突入](https://qiita.com/akira_papa_AI/items/92fa19cbac0d2918ec8f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [【初心者向け】既存のwebアプリをdocker化して雰囲気掴もうぜ](https://qiita.com/arunbababa/items/8957058eb4b6f5ab14fa?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [ドキュメント・スライド・スプレッドシートを一括生成するAIツールが凄い](https://qiita.com/KNR109/items/3594803a40b7350053d4?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [Amazon Bedrock AgentCoreって何？StrandsAgentでLine Bot作ってデプロイしてみよう！](https://qiita.com/Syoitu/items/e85c9d9bd389c987d7bc?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+
+
+---
+## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（人気）"> はてなブックマーク - IT（人気）
+
+- [kiroを参考にして作成したCLAUDE.md - izanami](https://izanami.dev/post/11c5067c-d2f9-4945-8944-0d1c20c1263d)
+- [Kiroとコンテキストエンジニアリングの時流](https://blog.lai.so/kiro-in-context-engineering/)
+- [1秒でわかる｢ChatGPTエージェント｣：ChatGPTがこれになり、パワポを作ってくれる](https://www.gizmodo.jp/2025/07/chatgpt_agent.html)
+- [あなたのネット履歴が誰に追跡されてるか…このサイトでわかります](https://www.gizmodo.jp/2025/07/search-engine-webxray-2.html)
+- [OAuthとOIDCの前にJWTから勉強しよう](https://zenn.dev/nttdata_tech/articles/cdf46cbf625147)
+
+
+---
+## <img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（新着）"> はてなブックマーク - IT（新着）
+
+- [fstrings.wtf - Python F-String Quiz](https://fstrings.wtf/)
+- [現場で使える！思考のプロトタイピングツールとしての Dify活用術 with Cursor | ドクセル](https://www.docswell.com/s/miyatti/ZYMDVR-2025-07-19-135132)
+- [ECSの組み込み機能でB/Gデプロイが可能になったので、試したみた](https://zenn.dev/falcon_tech/articles/0262e84c35e848)
+- [エムスリーの GitHub 移行、SRE の道中記 - エムスリーテックブログ](https://www.m3tech.blog/entry/2025/07/19/100000)
+- [中国系スパイグループ「UNC3886」、シンガポールにサイバー攻撃](https://www.afpbb.com/articles/-/3589526)
+
+
+---
+## <img src="https://dev.classmethod.jp/favicon.ico" width="16" height="16" alt="DevelopersIO"> DevelopersIO
+
+- [Shared VPC の設定で権限エラーが発生した場合の対処方法](https://dev.classmethod.jp/articles/gtsnote-googlecloud-shared-vpc-iam-error/)
+- [Okta Access Requests でセルフサービスな権限申請してみた](https://dev.classmethod.jp/articles/okta-access-requests/)
+- [Bedrock AgentCore Runtime に求められる要件を確認してみた](https://dev.classmethod.jp/articles/bedrock-agentcore-runtime-requirements/)
+- [Google Cloud IAM で 「最小権限の原則」 を試してみた](https://dev.classmethod.jp/articles/cloud-identity-iam-group-best-practice/)
+- [[アップデート] スナップショットから EBS のボリューム作成時の初期化プロセスの進捗状況が可能になりました](https://dev.classmethod.jp/articles/ebs-volume-initialization-progress-monitoring/)
+
+
+---
+## <img src="https://gihyo.jp/favicon.ico" width="16" height="16" alt="gihyo.jp"> gihyo.jp
+
+- [GitHub、機能プレビューとして提供していた「コマンドパレット」を8月に廃止予定と告知](https://gihyo.jp/article/2025/07/github-plans-to-deprecate-command-palette?utm_source=feed)
+- [JetBrains、Eclipse、XcodeでGitHub Copilotエージェントモードの一般提供開始](https://gihyo.jp/article/2025/07/github-copilot-agent-mode-for-jetbrains-eclipse-xcode?utm_source=feed)
+- [OpenAI、ChatGPTエージェントを発表 ―ブラウザ、ターミナル、APIからアクセス可能な自律型AIエージェント](https://gihyo.jp/article/2025/07/chatgpt-agent?utm_source=feed)
+- [Web APIのテストデータを自動生成してくれるツール「Schemathesis」の紹介](https://gihyo.jp/article/2025/07/monthly-python-2507?utm_source=feed)
+- [Ubuntu 25.10（questing）の開発; ドキュメントの充実, ESWIN EBC77 SBCの登場](https://gihyo.jp/admin/clip/01/ubuntu-topics/202507/18?utm_source=feed)
+
+
+---
+## <img src="https://www.publickey1.jp/favicon.ico" width="16" height="16" alt="Publickey"> Publickey
+
+- [IT運用担当者への調査結果、「昇給・昇進が遅い」「新しい技術に触れる機会がない」「重責なのに待遇が悪い」などに不満。ガートナージャパン](https://www.publickey1.jp/blog/25/it_2026.html)
+- [DevinのCognitionがAIコードエディタ「Windsurf」の買収発表。今後Windsurfの機能や知財をCognition製品に統合へ](https://www.publickey1.jp/blog/25/devincognitionaiwindsurfwindsurfcognition.html)
+- [AWSがAIコードエディタ「Kiro」をプレビュー公開、VS Code互換。AIとチャットしながらプロダクトを開発](https://www.publickey1.jp/blog/25/awsaikirovs_codeai.html)
+- [AWSに新機能や改善点を要望できる「ウィッシュリスト」が登場。AWS開発者のためのポータル「AWS Builder Center」公開](https://www.publickey1.jp/blog/25/awsawsaws_builder_center.html)
+- [日本オラクル、日本国内在住者だけで構成されるクラウド運用支援組織を発足、日本でのソブリンクラウド導入加速へ](https://www.publickey1.jp/blog/25/post_306.html)
+
+
+---
+## <img src="https://codezine.jp/favicon.ico" width="16" height="16" alt="CodeZine"> CodeZine
+
+- [【TypeScriptの基礎を学ぶ】JavaScriptと比較して起こりがちなミスを防ごう！](http://codezine.jp/article/detail/21595)
+- [OpenAI、「ChatGPTエージェント」を正式発表、タスク実行・ウェブ操作が一体化](http://codezine.jp/article/detail/21932)
+- [楽天・リコー・NRIなど採択、NEDOがAIモデル開発事業の実施先を発表](http://codezine.jp/article/detail/21931)
+- [Red Hat、ビジネス開発者向け無償RHEL「RHEL for Business Developers」を発表](http://codezine.jp/article/detail/21923)
+- [AWS製品チームにフィードバックや提案ができる「AWS Builder Center」発表](http://codezine.jp/article/detail/21924)
+
+
+---
+## <img src="https://www.infoq.com/favicon.ico" width="16" height="16" alt="InfoQ Japan"> InfoQ Japan
+
+- [OpenAI、Stargateプロジェクトで世界のパートナー国にAIインフラを構築へ](https://www.infoq.com/jp/news/2025/07/stargate-openai-for-countries/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
+- [DockerがHardened Imagesを導入、コンテナセキュリティを強化](https://www.infoq.com/jp/news/2025/07/docker-hardened-images/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
+- [マイクロソフトがネイティブTypeScriptコンパイラ移植を発表、10倍パフォーマンス向上](https://www.infoq.com/jp/news/2025/07/new-typescript-compiler-10x-fast/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
+- [アクセシビリティの高いウェブサイトを重視すべき理由とその方法](https://www.infoq.com/jp/news/2025/07/accessible-websites-how-to/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
+- [Visual Studio 2022 v17.14がエージェントモードと高度Copilot支援を導入](https://www.infoq.com/jp/news/2025/07/visual-studio-copilot-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global)
+
+
+---
+## <img src="https://connpass.com/favicon.ico" width="16" height="16" alt="connpass - イベント"> connpass - イベント
+
+- [第4回豊洲コンピューター囲碁会](https://toyosu-computer-go.connpass.com/event/363329/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [React Tokyo ミートアップ #8](https://react-tokyo.connpass.com/event/362213/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [応用情報技術者ゆる勉強会（7/27）](https://connpass.com/event/363324/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [新横浜インディゲームもくもく会 第28回（協賛：学校法人岩崎学園 横浜デジタルアーツ専門学校](https://indiegame.connpass.com/event/363323/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [【2025年版・第8回】プロジェクトマネージャ試験勉強会](https://setk.connpass.com/event/363321/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [CoderDojo神楽坂 第5回](https://coderdojokagurazaka.connpass.com/event/363320/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [【第385回】フリーダムITもくもく会【夜活】](https://setk.connpass.com/event/363319/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+
+
+---
+## <img src="https://techplay.jp/favicon.ico" width="16" height="16" alt="TECH PLAY - イベント"> TECH PLAY - イベント
+
+- [HR LEADERS 〜なぜ今「採用革命」が必要なのか、“選ばれる企業”になるための視点と打ち手〜](https://techplay.jp/event/984090)
+- [9/20(土) 巣鴨でTableauもくもく& LT会 Vol.5](https://techplay.jp/event/984087)
+- [【無料相談有】この夏、「統計検定２級」にチャレンジしませんか？【統計検定2級 CBT問題集解説 録画動画視聴コース(無料お試し可)など】](https://techplay.jp/event/983939)
+- [DATA Saber - Bridge 4thが始まります！オンライン説明会](https://techplay.jp/event/984084)
+- [第37回ゼロからのデータ分析入門講座](https://techplay.jp/event/983863)
+- [Tableauコミュニティ相談室〜コミュニティ・スターターキットを作ってみる](https://techplay.jp/event/984077)
+- [オープンデータバトル相談会　〜秋田県クマの出没データを使ったワークショップ〜](https://techplay.jp/event/984074)
+- [５年後もエンジニアでいられるか？～生成AI時代を生き抜く“自分の武器”の磨き方～](https://techplay.jp/event/984073)
+- [フジロック鑑賞座談会×IT交流会（オンライン）](https://techplay.jp/event/984071)
+
+
+---
+## <img src="https://www.oreilly.co.jp/favicon.ico" width="16" height="16" alt="O'Reilly Japan - 近刊"> O'Reilly Japan - 近刊
+
+- [LLMのプロンプトエンジニアリング](http://www.oreilly.co.jp/books/9784814401130/?utm_source=feed&utm_mediun=referral&utm_content=new_book)
+- [micro:bitではじめるAI工作](http://www.oreilly.co.jp/books/9784814400997/?utm_source=feed&utm_mediun=referral&utm_content=new_book)
+- [PythonによるWebスクレイピング 第3版](http://www.oreilly.co.jp/books/9784814401222/?utm_source=feed&utm_mediun=referral&utm_content=new_book)
+- [SQLアンチパターン 第2版](http://www.oreilly.co.jp/books/9784814400744/?utm_source=feed&utm_mediun=referral&utm_content=new_book)
+- [Async Rust](http://www.oreilly.co.jp/books/9784814401185/?utm_source=feed&utm_mediun=referral&utm_content=new_book)
+
+
+---
+## License
+
+This project is licensed under the [MIT License](LICENSE).

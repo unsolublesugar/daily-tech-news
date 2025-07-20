@@ -579,7 +579,7 @@ https://unsolublesugar.github.io/daily-tech-news/
 def generate_archive_markdown(all_entries, feed_info, date_str):
     """アーカイブ用のMarkdownコンテンツを生成する（相対パス修正版）"""
     markdown = f"# 今日のテックニュース ({date_str})\n\n"
-    markdown += """📚 [過去のニュースを見る](../../index.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
+    markdown += """📚 [過去のニュースを見る](../../daily_news.md) | 🎨 [カード表示版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
 
@@ -1076,7 +1076,7 @@ def update_archive_index():
         year = year_dir.name
         md_content += f"- [{year}年]({year}/index.md)\n"
     
-    md_content += f"\n[← メインページに戻る](../README.md)\n"
+    md_content += f"\n[← メインページに戻る](../daily_news.md)\n"
     with open(archives_dir / "index.md", "w", encoding="utf-8") as f:
         f.write(md_content)
     
@@ -1341,10 +1341,10 @@ if __name__ == "__main__":
     update_yearly_index(today.year)
     update_archive_index()
     
-    # README.md更新（アーカイブリンク付き）
-    readme_content = update_readme_with_archive_link(markdown_content)
-    with open("README.md", "w", encoding="utf-8") as f:
-        f.write(readme_content)
+    # daily_news.md更新（アーカイブリンク付き）
+    daily_news_content = update_readme_with_archive_link(markdown_content)
+    with open("daily_news.md", "w", encoding="utf-8") as f:
+        f.write(daily_news_content)
     
     # index.html生成（カード表示用）
     with open("index.html", "w", encoding="utf-8") as f:
@@ -1360,5 +1360,5 @@ if __name__ == "__main__":
     save_slack_message(slack_message)
         
     total_time = time.time() - script_start_time
-    print(f"Successfully updated README.md, index.html, archive structure, and RSS feed.")
+    print(f"Successfully updated daily_news.md, index.html, archive structure, and RSS feed.")
     print(f"Total execution time: {total_time:.2f} seconds (thumbnail fetching: {thumbnail_time:.2f}s)")
