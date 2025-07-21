@@ -37,6 +37,12 @@ FEEDS = {
     "O'Reilly Japan - 近刊": "https://www.oreilly.co.jp/catalog/soon.xml"
 }
 
+# 除外するドメインのリスト
+EXCLUDED_DOMAINS = {
+    'anond.hatelabo.jp': 'hatena anonymous diary',
+    'togetter.com': 'togetter'
+}
+
 # 各フィードから取得する記事の件数
 MAX_ENTRIES = 5
 
@@ -147,20 +153,18 @@ class ThumbnailCache:
         if keys_to_remove:
             print(f"Cleaned up {len(keys_to_remove)} old cache entries")
 
-def filter_hatena_anonymous_entries(entries):
-    """はてな匿名ダイアリーの記事を除外する"""
+def filter_entries_by_domain(entries, domain, label):
     filtered_entries = []
     excluded_count = 0
     
     for entry in entries:
-        # リンクURLがはてな匿名ダイアリーかチェック
-        if hasattr(entry, 'link') and 'anond.hatelabo.jp' in entry.link:
+        if hasattr(entry, 'link') and domain in entry.link:
             excluded_count += 1
             continue
         filtered_entries.append(entry)
     
     if excluded_count > 0:
-        print(f"Excluded {excluded_count} hatena anonymous diary entries")
+        print(f"Excluded {excluded_count} {label} entries")
     
     return filtered_entries
 
@@ -1315,9 +1319,10 @@ if __name__ == "__main__":
         print(f"Fetching entries from {name}...")
         entries = fetch_feed_entries(feed_url)
         
-        # はてなブックマークのフィードに対してはてな匿名ダイアリーを除外
-        if name in ["はてなブックマーク - IT（人気）", "はてなブックマーク - IT（新着）"]:
-            entries = filter_hatena_anonymous_entries(entries)
+        for domain, label in EXCLUDED_DOMAINS.items():
+            if domain == 'anond.hatelabo.jp' and name not in ["はてなブックマーク - IT（人気）", "はてなブックマーク - IT（新着）"]:
+                continue
+            entries = filter_entries_by_domain(entries, domain, label)
         
         all_entries[name] = entries
     
