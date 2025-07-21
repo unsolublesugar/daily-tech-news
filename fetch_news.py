@@ -388,6 +388,9 @@ def deduplicate_urls_across_feeds(all_entries):
                         break
                 else:
                     removed_count += 1
+                    if hasattr(entry, 'title') and hasattr(entry, 'link'):
+                        print(f"重複除去: [{feed_name}] {entry.title}")
+                        print(f"  URL: {entry.link}")
             
             # イベントフィードの場合はさらにイベント重複除去を適用
             if "イベント" in feed_name:
@@ -420,6 +423,9 @@ def deduplicate_urls_across_feeds(all_entries):
                         break
                 else:
                     removed_count += 1
+                    if hasattr(entry, 'title') and hasattr(entry, 'link'):
+                        print(f"重複除去: [{feed_name}] {entry.title}")
+                        print(f"  URL: {entry.link}")
             
             # イベントフィードの場合はさらにイベント重複除去を適用
             if "イベント" in feed_name:
