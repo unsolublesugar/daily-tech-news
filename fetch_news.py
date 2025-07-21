@@ -352,34 +352,89 @@ def deduplicate_events(entries, target_count=10):
     return deduplicated
 
 def deduplicate_urls_across_feeds(all_entries):
-    """フィード間でのURL重複を除去し、補填を行う"""
+    """フィード間でのURL重複を除去し、補填を行う（PRIORITY_FEEDS順で処理）"""
     seen_urls = set()
     deduplicated_feeds = {}
+    dedup_stats = {"total_removed": 0, "by_feed": {}}
     
-    for feed_name, entries in all_entries.items():
-        if not entries:
-            deduplicated_feeds[feed_name] = entries
-            continue
+    # PRIORITY_FEEDSの順序でフィードを処理
+    from src.config.archive_config import DEFAULT_SITE_CONFIG
+    priority_feeds = DEFAULT_SITE_CONFIG.PRIORITY_FEEDS
+    
+    # PRIORITY_FEEDSに含まれるフィードから処理
+    processed_feeds = set()
+    for feed_name in priority_feeds:
+        if feed_name in all_entries:
+            processed_feeds.add(feed_name)
+            entries = all_entries[feed_name]
             
-        # イベントフィードかどうかで目標件数を決定
-        target_count = 10 if "イベント" in feed_name else 5
-        
-        # URL重複除去
-        unique_entries = []
-        for entry in entries:
-            if hasattr(entry, 'link') and entry.link not in seen_urls:
-                seen_urls.add(entry.link)
-                unique_entries.append(entry)
+            if not entries:
+                deduplicated_feeds[feed_name] = entries
+                continue
                 
-                # 目標件数に達したら終了
-                if len(unique_entries) >= target_count:
-                    break
-        
-        # イベントフィードの場合はさらにイベント重複除去を適用
-        if "イベント" in feed_name:
-            unique_entries = deduplicate_events(unique_entries, target_count)
-        
-        deduplicated_feeds[feed_name] = unique_entries
+            # イベントフィードかどうかで目標件数を決定
+            target_count = 10 if "イベント" in feed_name else 5
+            
+            # URL重複除去
+            unique_entries = []
+            removed_count = 0
+            for entry in entries:
+                if hasattr(entry, 'link') and entry.link not in seen_urls:
+                    seen_urls.add(entry.link)
+                    unique_entries.append(entry)
+                    
+                    # 目標件数に達したら終了
+                    if len(unique_entries) >= target_count:
+                        break
+                else:
+                    removed_count += 1
+            
+            # イベントフィードの場合はさらにイベント重複除去を適用
+            if "イベント" in feed_name:
+                unique_entries = deduplicate_events(unique_entries, target_count)
+            
+            deduplicated_feeds[feed_name] = unique_entries
+            dedup_stats["by_feed"][feed_name] = removed_count
+            dedup_stats["total_removed"] += removed_count
+    
+    # PRIORITY_FEEDSに含まれていないフィードを処理
+    for feed_name, entries in all_entries.items():
+        if feed_name not in processed_feeds:
+            if not entries:
+                deduplicated_feeds[feed_name] = entries
+                continue
+                
+            # イベントフィードかどうかで目標件数を決定
+            target_count = 10 if "イベント" in feed_name else 5
+            
+            # URL重複除去
+            unique_entries = []
+            removed_count = 0
+            for entry in entries:
+                if hasattr(entry, 'link') and entry.link not in seen_urls:
+                    seen_urls.add(entry.link)
+                    unique_entries.append(entry)
+                    
+                    # 目標件数に達したら終了
+                    if len(unique_entries) >= target_count:
+                        break
+                else:
+                    removed_count += 1
+            
+            # イベントフィードの場合はさらにイベント重複除去を適用
+            if "イベント" in feed_name:
+                unique_entries = deduplicate_events(unique_entries, target_count)
+            
+            deduplicated_feeds[feed_name] = unique_entries
+            dedup_stats["by_feed"][feed_name] = removed_count
+            dedup_stats["total_removed"] += removed_count
+    
+    # 重複除去統計を出力
+    if dedup_stats["total_removed"] > 0:
+        print(f"URL重複除去統計: 合計{dedup_stats['total_removed']}件を除去")
+        for feed_name, removed_count in dedup_stats["by_feed"].items():
+            if removed_count > 0:
+                print(f"  {feed_name}: {removed_count}件")
     
     return deduplicated_feeds
 
