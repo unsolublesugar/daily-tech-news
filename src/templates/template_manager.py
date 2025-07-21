@@ -59,11 +59,6 @@ class TemplateManager:
         
         return has_valid_extension or is_image_service
     
-    def render_favicon(self, favicon: str, feed_name: str) -> str:
-        """ファビコンを適切な形式でレンダリング"""
-        if favicon.startswith("http"):
-            return f'<img src="{favicon}" width="16" height="16" alt="{feed_name}">'
-        return favicon
     
     def calculate_read_time(self, text: str) -> str:
         """テキストから推定読時間を計算（日本語対応）"""

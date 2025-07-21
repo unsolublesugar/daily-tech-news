@@ -88,10 +88,7 @@ daily-tech-news/
 
 ```python
 FEEDS = {
-    "フィード名": {
-        "url": "RSS URL",
-        "favicon": "アイコンURL または 絵文字"
-    }
+    "フィード名": "RSS URL"
 }
 ```
 
@@ -189,7 +186,7 @@ export X_USERNAME="john_dev"     # Xアカウント（オプション）
 
 ### 新しいメディアの追加
 
-1. `FEEDS`辞書に新しいエントリを追加
+1. `FEEDS`辞書に新しいエントリを追加（フィード名とRSS URLのペア）
 2. 必要に応じて重複除去ロジックを調整
 3. スクリプトを実行してテスト
 
