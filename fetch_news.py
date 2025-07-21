@@ -20,60 +20,21 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 # 設定のインポート
 from config.archive_config import DEFAULT_SITE_CONFIG
 
-# 取得するRSSフィードのリスト（ファビコン付き）
+# 取得するRSSフィードのリスト
 FEEDS = {
-    "Tech Blog Weekly": {
-        "url": "https://yamadashy.github.io/tech-blog-rss-feed/feeds/rss.xml",
-        "favicon": "💻"
-    },
-    "Zenn": {
-        "url": "https://zenn.dev/feed",
-        "favicon": "https://zenn.dev/favicon.ico"
-    },
-    "Qiita": {
-        "url": "https://qiita.com/popular-items/feed", 
-        "favicon": "https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico"
-    },
-    "はてなブックマーク - IT（人気）": {
-        "url": "http://b.hatena.ne.jp/hotentry/it.rss",
-        "favicon": "https://b.hatena.ne.jp/favicon.ico"
-    },
-    "はてなブックマーク - IT（新着）": {
-        "url": "https://b.hatena.ne.jp/entrylist/it.rss",
-        "favicon": "https://b.hatena.ne.jp/favicon.ico"
-    },
-    "DevelopersIO": {
-        "url": "https://dev.classmethod.jp/feed/",
-        "favicon": "https://dev.classmethod.jp/favicon.ico"
-    },
-    "gihyo.jp": {
-        "url": "https://gihyo.jp/dev/feed/rss2",
-        "favicon": "https://gihyo.jp/favicon.ico"
-    },
-    "Publickey": {
-        "url": "https://www.publickey1.jp/atom.xml",
-        "favicon": "https://www.publickey1.jp/favicon.ico"
-    },
-    "CodeZine": {
-        "url": "https://codezine.jp/rss/new/20/index.xml",
-        "favicon": "https://codezine.jp/favicon.ico"
-    },
-    "InfoQ Japan": {
-        "url": "https://feed.infoq.com/jp",
-        "favicon": "https://www.infoq.com/favicon.ico"
-    },
-    "connpass - イベント": {
-        "url": "https://connpass.com/explore/ja.atom",
-        "favicon": "https://connpass.com/favicon.ico"
-    },
-    "TECH PLAY - イベント": {
-        "url": "https://rss.techplay.jp/event/w3c-rss-format/rss.xml",
-        "favicon": "https://techplay.jp/favicon.ico"
-    },
-    "O'Reilly Japan - 近刊": {
-        "url": "https://www.oreilly.co.jp/catalog/soon.xml",
-        "favicon": "https://www.oreilly.co.jp/favicon.ico"
-    }
+    "Tech Blog Weekly": "https://yamadashy.github.io/tech-blog-rss-feed/feeds/rss.xml",
+    "Zenn": "https://zenn.dev/feed",
+    "Qiita": "https://qiita.com/popular-items/feed",
+    "はてなブックマーク - IT（人気）": "http://b.hatena.ne.jp/hotentry/it.rss",
+    "はてなブックマーク - IT（新着）": "https://b.hatena.ne.jp/entrylist/it.rss",
+    "DevelopersIO": "https://dev.classmethod.jp/feed/",
+    "gihyo.jp": "https://gihyo.jp/dev/feed/rss2",
+    "Publickey": "https://www.publickey1.jp/atom.xml",
+    "CodeZine": "https://codezine.jp/rss/new/20/index.xml",
+    "InfoQ Japan": "https://feed.infoq.com/jp",
+    "connpass - イベント": "https://connpass.com/explore/ja.atom",
+    "TECH PLAY - イベント": "https://rss.techplay.jp/event/w3c-rss-format/rss.xml",
+    "O'Reilly Japan - 近刊": "https://www.oreilly.co.jp/catalog/soon.xml"
 }
 
 # 各フィードから取得する記事の件数
@@ -496,7 +457,7 @@ def fetch_all_thumbnails(all_entries, max_workers=10, use_cache=True):
                 
     return thumbnails
 
-def generate_html(all_entries, feed_info, date_str, thumbnails=None):
+def generate_html(all_entries, date_str, thumbnails=None):
     """新しいテンプレートシステムを使用してHTMLコンテンツを生成する"""
     from src.templates.template_manager import TemplateManager, ContentStructure
     
@@ -508,10 +469,7 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
     entries_html = ""
     
     for feed_name, entries in all_entries.items():
-        favicon = feed_info[feed_name]["favicon"]
-        favicon_display = template_manager.render_favicon(favicon, feed_name)
-        
-        entries_html += f"    <h2>{favicon_display} {feed_name}</h2>\n"
+        entries_html += f"    <h2>{feed_name}</h2>\n"
         
         if not entries:
             entries_html += "    <p>記事を取得できませんでした。</p>\n"
@@ -536,7 +494,7 @@ def generate_html(all_entries, feed_info, date_str, thumbnails=None):
     
     return html_content
 
-def generate_markdown(all_entries, feed_info, date_str):
+def generate_markdown(all_entries, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
     markdown = f"# 今日のテックニュース ({date_str})\n\n"
     markdown += f"""📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る]({DEFAULT_SITE_CONFIG.site_url}) | 📡 [RSSフィードを購読]({DEFAULT_SITE_CONFIG.rss_url})
@@ -554,14 +512,7 @@ GitHub Pages版では各記事がカード形式で見やすく表示されま�
 """
 
     for feed_name, entries in all_entries.items():
-        favicon = feed_info[feed_name]["favicon"]
-        if favicon.startswith("http"):
-            # ファビコンURLの場合
-            favicon_display = f'<img src="{favicon}" width="16" height="16" alt="{feed_name}">'
-        else:
-            # 絵文字の場合
-            favicon_display = favicon
-        markdown += f"## {favicon_display} {feed_name}\n\n"
+        markdown += f"## {feed_name}\n\n"
         if not entries:
             markdown += "記事を取得できませんでした。\n"
         else:
@@ -579,7 +530,7 @@ GitHub Pages版では各記事がカード形式で見やすく表示されま�
     
     return markdown
 
-def generate_archive_markdown(all_entries, feed_info, date_str):
+def generate_archive_markdown(all_entries, date_str):
     """アーカイブ用のMarkdownコンテンツを生成する（相対パス修正版）"""
     markdown = f"# 今日のテックニュース ({date_str})\n\n"
     markdown += f"""📚 [過去のニュースを見る](../../daily_news.md) | 🎨 [カード表示版を見る]({DEFAULT_SITE_CONFIG.site_url}) | 📡 [RSSフィードを購読]({DEFAULT_SITE_CONFIG.rss_url})
@@ -595,14 +546,7 @@ GitHub Pages版では各記事がカード形式で見やすく表示されま�
 """
 
     for feed_name, entries in all_entries.items():
-        favicon = feed_info[feed_name]["favicon"]
-        if favicon.startswith("http"):
-            # ファビコンURLの場合
-            favicon_display = f'<img src="{favicon}" width="16" height="16" alt="{feed_name}">'
-        else:
-            # 絵文字の場合
-            favicon_display = favicon
-        markdown += f"## {favicon_display} {feed_name}\n\n"
+        markdown += f"## {feed_name}\n\n"
         if not entries:
             markdown += "記事を取得できませんでした。\n"
         else:
@@ -620,7 +564,7 @@ GitHub Pages版では各記事がカード形式で見やすく表示されま�
     
     return markdown
 
-def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
+def generate_archive_html(all_entries, date_str, thumbnails=None):
     """新しいテンプレートシステムを使用してアーカイブHTMLを生成する"""
     from src.templates.template_manager import TemplateManager, ContentStructure
     
@@ -632,10 +576,7 @@ def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
     entries_html = ""
     
     for feed_name, entries in all_entries.items():
-        favicon = feed_info[feed_name]["favicon"]
-        favicon_display = template_manager.render_favicon(favicon, feed_name)
-        
-        entries_html += f"    <h2>{favicon_display} {feed_name}</h2>\n"
+        entries_html += f"    <h2>{feed_name}</h2>\n"
         
         if not entries:
             entries_html += "    <p>記事を取得できませんでした。</p>\n"
@@ -656,7 +597,7 @@ def generate_archive_html(all_entries, feed_info, date_str, thumbnails=None):
     
     return html_content
 
-def save_to_archive(all_entries, feed_info, date_obj, thumbnails=None):
+def save_to_archive(all_entries, date_obj, thumbnails=None):
     """日付別アーカイブファイルとして保存（MarkdownとHTML両方）"""
     year = date_obj.year
     month = f"{date_obj.month:02d}"
@@ -667,7 +608,7 @@ def save_to_archive(all_entries, feed_info, date_obj, thumbnails=None):
     archive_dir.mkdir(parents=True, exist_ok=True)
     
     # Markdown版
-    md_content = generate_archive_markdown(all_entries, feed_info, date_str)
+    md_content = generate_archive_markdown(all_entries, date_str)
     archive_file = archive_dir / f"{date_str}.md"
     if archive_file.exists():
         print(f"Overwriting existing archive: {archive_file}")
@@ -678,7 +619,7 @@ def save_to_archive(all_entries, feed_info, date_obj, thumbnails=None):
         f.write(md_content)
     
     # HTML版
-    html_content = generate_archive_html(all_entries, feed_info, date_str, thumbnails)
+    html_content = generate_archive_html(all_entries, date_str, thumbnails)
     html_file = archive_dir / f"{date_str}.html"
     
     with open(html_file, "w", encoding="utf-8") as f:
@@ -1175,7 +1116,7 @@ def update_readme_with_archive_link(content):
     # 追加処理は不要。そのまま返す
     return content
 
-def generate_rss_feed(all_entries, feed_info, date_obj):
+def generate_rss_feed(all_entries, date_obj):
     """RSS XMLフィードを生成"""
     # RSS要素の作成
     rss = ET.Element('rss', version='2.0', attrib={'xmlns:atom': 'http://www.w3.org/2005/Atom'})
@@ -1309,9 +1250,9 @@ if __name__ == "__main__":
     today = datetime.datetime.now(jst).date()
     
     all_entries = {}
-    for name, feed_info in FEEDS.items():
+    for name, feed_url in FEEDS.items():
         print(f"Fetching entries from {name}...")
-        entries = fetch_feed_entries(feed_info["url"])
+        entries = fetch_feed_entries(feed_url)
         
         # はてなブックマークのフィードに対してはてな匿名ダイアリーを除外
         if name in ["はてなブックマーク - IT（人気）", "はてなブックマーク - IT（新着）"]:
@@ -1330,13 +1271,13 @@ if __name__ == "__main__":
     print(f"Thumbnail fetching completed in {thumbnail_time:.2f} seconds")
     
     # Markdownコンテンツ生成
-    markdown_content = generate_markdown(all_entries, FEEDS, today.isoformat())
+    markdown_content = generate_markdown(all_entries, today.isoformat())
     
     # HTMLコンテンツ生成（事前取得済みサムネイルを使用）
-    html_content = generate_html(all_entries, FEEDS, today.isoformat(), thumbnails)
+    html_content = generate_html(all_entries, today.isoformat(), thumbnails)
     
     # アーカイブに保存
-    archive_file = save_to_archive(all_entries, FEEDS, today, thumbnails)
+    archive_file = save_to_archive(all_entries, today, thumbnails)
     print(f"Archived to: {archive_file}")
     
     # インデックスページ更新
@@ -1355,7 +1296,7 @@ if __name__ == "__main__":
     print("Generated index.html with card layout")
     
     # RSSフィード生成
-    rss_feed = generate_rss_feed(all_entries, FEEDS, today)
+    rss_feed = generate_rss_feed(all_entries, today)
     save_rss_feed(rss_feed)
     
     # Slackメッセージ生成

@@ -40,15 +40,12 @@ class ArchiveGenerator:
             f.write(content)
     
     def _process_entries(self, all_entries: Dict[str, List[Any]], 
-                        feed_info: Dict[str, Dict], thumbnails: Dict[str, str] = None) -> str:
+                        thumbnails: Dict[str, str] = None) -> str:
         """エントリを処理してHTML文字列を生成"""
         html_content = ""
         
         for feed_name, entries in all_entries.items():
-            favicon = feed_info[feed_name]["favicon"]
-            favicon_display = self.template_manager.render_favicon(favicon, feed_name)
-            
-            html_content += f"    <h2>{favicon_display} {feed_name}</h2>\n"
+            html_content += f"    <h2>{feed_name}</h2>\n"
             
             if not entries:
                 html_content += "    <p>記事を取得できませんでした。</p>\n"
@@ -60,16 +57,12 @@ class ArchiveGenerator:
         
         return html_content
     
-    def _process_entries_markdown(self, all_entries: Dict[str, List[Any]], 
-                                 feed_info: Dict[str, Dict]) -> str:
+    def _process_entries_markdown(self, all_entries: Dict[str, List[Any]]) -> str:
         """エントリを処理してMarkdown文字列を生成"""
         markdown_content = ""
         
         for feed_name, entries in all_entries.items():
-            favicon = feed_info[feed_name]["favicon"]
-            favicon_display = self.template_manager.render_favicon(favicon, feed_name)
-            
-            markdown_content += f"## {favicon_display} {feed_name}\n\n"
+            markdown_content += f"## {feed_name}\n\n"
             
             if not entries:
                 markdown_content += "記事を取得できませんでした。\n"
@@ -83,20 +76,20 @@ class ArchiveGenerator:
         return markdown_content
     
     def generate_daily_archive(self, all_entries: Dict[str, List[Any]], 
-                              feed_info: Dict[str, Dict], date_obj: datetime,
+                              date_obj: datetime,
                               thumbnails: Dict[str, str] = None) -> Tuple[str, str]:
         """日次アーカイブ（HTML・Markdown）を生成"""
         date_str = date_obj.strftime('%Y-%m-%d')  # T00:00:00を除去
         title = self.site_config.get_site_title(date_str)
         
         # HTML生成
-        entries_html = self._process_entries(all_entries, feed_info, thumbnails)
+        entries_html = self._process_entries(all_entries, thumbnails)
         html_content = self.content_structure.build_html_page(
             title, date_str, entries_html, is_archive=True
         )
         
         # Markdown生成
-        entries_markdown = self._process_entries_markdown(all_entries, feed_info)
+        entries_markdown = self._process_entries_markdown(all_entries)
         markdown_content = self.content_structure.build_markdown_page(
             title, date_str, entries_markdown, is_archive=True
         )
