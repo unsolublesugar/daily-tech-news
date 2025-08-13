@@ -39,8 +39,9 @@
 
 ### 必要環境
 
-- Python 3.8+
+- Python 3.9+
 - pip
+- Node.js 18+ (Claude Code使用時)
 
 ### インストール・実行
 
@@ -68,14 +69,25 @@ python3 fetch_news.py
 ```
 daily-tech-news/
 ├── fetch_news.py              # メインスクリプト
+├── daily_tech_news.py         # 新エントリーポイント
 ├── daily_news.md              # 今日のニュース（自動生成）
 ├── index.html                 # カード表示版（自動生成）
 ├── rss.xml                    # RSSフィード（自動生成）
 ├── requirements.txt           # Python依存関係
+├── CLAUDE.md                  # AI開発用プロジェクト指示書
+├── src/                       # Pythonモジュール
+│   ├── config/                # 設定管理
+│   ├── generators/            # 生成エンジン
+│   ├── templates/             # テンプレート管理
+│   └── utils/                 # ユーティリティ
+├── assets/                    # 静的アセット
+│   ├── css/                   # スタイルシート
+│   ├── js/                    # JavaScript
+│   ├── images/                # 画像ファイル
+│   └── templates/             # HTMLテンプレート
 ├── archives/                  # 過去ニュースアーカイブ
 │   └── [年]/[月]/[日付].md
-├── src/
-│   └── templates/            # HTMLテンプレート
+├── docs/                      # プロジェクトドキュメント
 └── .github/
     └── workflows/            # GitHub Actions設定
 ```
