@@ -44,31 +44,31 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## はてなブックマーク - IT（人気）
 
+- [【特集】 「電気代、払うのやめてみました」ポタ電と太陽光だけで1カ月仕事してみた狂気の結果](https://pc.watch.impress.co.jp/docs/topic/feature/2082893.html)
 - [なぜcronからsystemd timerへ移行しているのか？歴史と設計思想から理解する](https://zenn.dev/hcompany/articles/20260119_systemd_timer)
 - [「従業員ゼロで1.5億円規模のビジネスを築く」ためのChatGPTプロンプト5選 | Forbes JAPAN 公式サイト（フォーブス ジャパン）](https://forbesjapan.com/articles/detail/90900)
-- [【特集】 「電気代、払うのやめてみました」ポタ電と太陽光だけで1カ月仕事してみた狂気の結果](https://pc.watch.impress.co.jp/docs/topic/feature/2082893.html)
 - [なぜ、「ウォーターフォールでソフトウェアを作れる」という嘘を信じる人が世の中にいるのか？](https://zenn.dev/pdfractal/articles/61f676a222d37c)
-- [ソフトバンクG、ヒト型ロボ「ペッパー」新機種　AIエージェント搭載 - 日本経済新聞](https://www.nikkei.com/article/DGXZQOUC0244S0S6A200C2000000/)
+- [40年前の「コピー防止ドングル」を突破した記録が興味深い、コンパイルそのものにドングルが必須だが4バイトのパッチのみで解除可能](https://gigazine.net/news/20260202-copy-protection-dongle/)
 
 
 ---
 ## はてなブックマーク - IT（新着）
 
+- [新卒エンジニアからSaaS事業責任者へ - AIが拡張する事業貢献とキャリアの可能性 - yigarashiのブログ](https://yigarashi.hatenablog.com/entry/2026/02/03/093000)
+- [なぜIPアドレスで「どこにいるか」が判別できる？　IPv4、IPv6を網羅するデータベースの正体](https://atmarkit.itmedia.co.jp/ait/articles/2602/03/news013.html)
+- [「Notepad++」の自動更新で不正ファイルがDLされる問題、開発チームが調査結果を公表／共有ホスティングサーバーの侵害が原因](https://forest.watch.impress.co.jp/docs/news/2082848.html)
 - [ファナック、背水のロボット制御ソフト開放　AI企業参入に焦り - 日本経済新聞](https://www.nikkei.com/article/DGXZQOUC238UK0T21C25A2000000/)
 - [AIエージェント専用SNS「Moltbook」のデータベースが流出、誰でもサイトのAIエージェントを制御して何でも投稿できる状態になっていた可能性あり](https://gigazine.net/news/20260202-moltbook-database-leaked/)
-- [人間よりも高速にコード生成、実行、テストを繰り返すAIエージェントに適した、高速に起動終了する安全な分離環境「Vercel Sandbox」正式リリース](https://www.publickey1.jp/blog/26/aivercel_sandbox.html)
-- [40年前の「コピー防止ドングル」を突破した記録が興味深い、コンパイルそのものにドングルが必須だが4バイトのパッチのみで解除可能](https://gigazine.net/news/20260202-copy-protection-dongle/)
-- [5兆円GEO市場の正体──AI検索が壊すSEOの常識と「検索1位でも売れない」現実 | AMP[アンプ] - 人生の豊かさを生む瞬間を情報でつくりだす新世代向けビジネスメディア](https://ampmedia.jp/2026/02/02/geo/)
 
 
 ---
 ## DevelopersIO
 
+- [Claude CodeのTasks System機能を試してみた](https://dev.classmethod.jp/articles/claude-code-tasks-system/)
+- [サポート対応の現場から - 伝わる日本語コミュニケーション 7 つの心掛け](https://dev.classmethod.jp/articles/operations_ust_202602/)
 - [評価面談の資料作成が15分で完了！Slackリスト機能で『成果の見える化』を実現してみた](https://dev.classmethod.jp/articles/slack_list_15min/)
 - [Amazon Connect セルフサービスAIエージェントで、自動回答までの無音時間を減らすために一時応答メッセージを調整してみた](https://dev.classmethod.jp/articles/amazon-connect-ai-agent-adjust-initial-response/)
 - [2026 年 1 月の AWS テクニカルサポートノートまとめ](https://dev.classmethod.jp/articles/summary-of-aws-technical-support-notes-for-january-2026/)
-- [[アップデート] Amazon RDSがRDS Service APIのVPC エンドポイントでIPv6に対応しました](https://dev.classmethod.jp/articles/amazon-rds-service-api-vpc-endpoint-ipv6/)
-- [約6万件の日本語テキストをベクトル化をGPUとCPU処理で比較してみた](https://dev.classmethod.jp/articles/ja-text-embedding-gpu-cpu-comparison/)
 
 
 ---
@@ -85,20 +85,20 @@ https://unsolublesugar.github.io/daily-tech-news/
 ## Publickey
 
 - [BigQueryに会話型分析機能（Conversational Analytics）が登場。詳細な分析レポート生成、将来予測や非構造化データの分析も可能に](https://www.publickey1.jp/blog/26/bigqueryconversational_analytics.html)
+- [人間よりも高速にコード生成、実行、テストを繰り返すAIエージェントに適した、高速に起動終了する安全な分離環境「Vercel Sandbox」正式リリース](https://www.publickey1.jp/blog/26/aivercel_sandbox.html)
 - [BunがZig製の高速なMarkdownパーサー搭載。HTMLへのレンダリング、GitHub Flavored Markdown対応、Reactエレメントの生成など](https://www.publickey1.jp/blog/26/bunzigmarkdownhtmlgithub_flavored_markdownreact.html)
 - [jQuery 4.0で正式にテストされた「jQuery UI 1.14.2」が公開](https://www.publickey1.jp/blog/26/jquery_40jquery_ui_1142.html)
 - [AWS、最新のMac Studioを利用した「Amazon EC2 M4 Max Macインスタンス」提供開始](https://www.publickey1.jp/blog/26/awsmac_studioamazon_ec2_m4_max_mac.html)
-- [OpenAI、ホワイトボードの数式や図をLaTeXの図版に変換。問題の仮説検証、推論、関連文献の検索など、論文執筆を支援してくれる「Prism」公開](https://www.publickey1.jp/blog/26/openailatexprism.html)
 
 
 ---
 ## CodeZine
 
+- [Swiftが1月に発表した新機能を公式ブログで紹介](https://codezine.jp/article/detail/23193)
 - [デジタル庁、「さくらのクラウド」のガバメントクラウド対応　進捗状況を発表](https://codezine.jp/article/detail/23195)
 - [.NET MAUI Blazorで生成した画像を保存する。ネイティブ機能との連携](https://codezine.jp/article/detail/23143)
 - [GoogleがGeminiアプリの1月アップデートまとめを紹介](https://codezine.jp/article/detail/23194)
 - [「技術立都」東京を次のフェーズへ！GovTech東京が三方向で進めるAI活用](https://codezine.jp/article/detail/22850)
-- [GitHub ActionsのWindows/UbuntuランナーでDocker最新バージョンへ更新](https://codezine.jp/article/detail/23191)
 
 
 ---
@@ -113,21 +113,23 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## connpass - イベント
 
+- [松尾研LLMコミュニティ【Paper&Hacks #72】RLVRがモデルの推論能力を高めているのか](https://matsuolab-community.connpass.com/event/383517/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [【2/16(月)開催】未経験から始めるAI・機械学習エンジニアへの道｜実体験から語る≪転職～](https://rakus-partners.connpass.com/event/383516/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [【2/9(月)開催】未経験から始めるAI・機械学習エンジニアへの道｜実体験から語る≪転職～学習方法≫](https://rakus-partners.connpass.com/event/382681/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [うめだもぐもぐLT会 vol.6](https://umeume-oit.connpass.com/event/382889/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [Geeks Who Drink in Nagasaki ~テーマフリーちゃんぽんEdition~](https://nulab.connpass.com/event/383089/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [第6回（シリーズ最終回） メタデータ通り_#3 Meetup](https://datayokocho.connpass.com/event/383447/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [生成AIエンジニアがVibesでBigQueryを使ってみる会](https://marke-ai.connpass.com/event/378700/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [FileMakerからGoogleカレンダーを操作](https://connpass.com/event/383436/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [もくもく＆LT会＠中野 #5](https://nakano-tech-lounge.connpass.com/event/383509/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 - [[AI/ML特集] Python Meetup Fukuoka #6](https://lycorptech-fukuoka.connpass.com/event/380867/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [SE飲み会　名古屋](https://connpass.com/event/383508/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [AIコーディングを安全に使う方法](https://connpass.com/event/383020/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [Baseball Play Study〜野球解説者AI Agent(BPStudy#222)](https://bpstudy.connpass.com/event/383458/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [PdMのインサイト探索記 -「N=1」に向きあう試行錯誤](https://findy.connpass.com/event/382958/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [Monthly Microsoft Intune Briefing Call Japan #13](https://configmgr.connpass.com/event/383507/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [IT系&誰でも参加OK！もくもく会_朝活_2/8(日)](https://morimori.connpass.com/event/383506/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [IT系&誰でも参加OK！もくもく会_朝活_2/7(土)](https://morimori.connpass.com/event/383505/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [【信州オンライン】XRミーティング 2026/2/18 #XRMTG](https://xr-shinshu.connpass.com/event/383502/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 
 
 ---
 ## TECH PLAY - イベント
 
+- [【まもなく締め切り｜2/5開催ウェビナー】なぜAI活用は形骸化するのか？～ リテラシーの壁を突破し、組織全体で成果を出し続けるための全社戦略～](https://techplay.jp/event/991894)
+- [内製化できる！ノーコードで作る価値を生み出すWebサイト](https://techplay.jp/event/991817)
 - [【AI Shift】ユースケースから学ぶ！ 「結局どこで使える？」が分かるボイスエージェント事例徹底解説](https://techplay.jp/event/991934)
 - [PdMのインサイト探索記 - 「N=1」に向きあう試行錯誤](https://techplay.jp/event/991938)
 - [【2月24日｜オンライン開催】AWS料金の棚卸し｜Cost Comparision活用講座](https://techplay.jp/event/991932)
@@ -136,8 +138,6 @@ https://unsolublesugar.github.io/daily-tech-news/
 - [Google Workspace Studioの使い方入門](https://techplay.jp/event/991944)
 - [ChatGPTフル活用で40%のコスト削減を実現！質・量・スピードを担保して業界No.1を目指すオウンドメディア戦略](https://techplay.jp/event/991942)
 - [生成AI こんな風に使ってはいけないリスト 2026年版](https://techplay.jp/event/991941)
-- [【2025年度ラスト！】Tableau tuneup Vol.20 ~初心者相談室×Tabもく会~](https://techplay.jp/event/991882)
-- [AI最適化を活用したMeta広告改善のポイント](https://techplay.jp/event/991766)
 
 
 ---
