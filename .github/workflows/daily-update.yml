@@ -6,35 +6,40 @@ on:
     - cron: '0 22 * * *'
   workflow_dispatch: # 手動実行も可能
 
+# キュー詰まり・重複実行対策（最新runを優先）
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   update-news:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-      
+
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.9'
-        
+
     - name: Cache thumbnail data
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: thumbnail_cache.json
-        key: thumbnail-cache-${{ hashFiles('fetch_news.py') }}-${{ github.run_number }}
+        key: thumbnail-cache-${{ runner.os }}-${{ hashFiles('fetch_news.py', 'requirements.txt') }}
         restore-keys: |
-          thumbnail-cache-${{ hashFiles('fetch_news.py') }}-
+          thumbnail-cache-${{ runner.os }}-
           thumbnail-cache-
-        
+
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        
+
     - name: Check environment variables
       env:
         USER_NAME: ${{ secrets.USER_NAME }}
@@ -46,19 +51,19 @@ jobs:
         echo "GITHUB_USERNAME: ${GITHUB_USERNAME:-'(not set)'}"
         echo "USER_NAME: ${USER_NAME:-'(not set)'}"
         echo "X_USERNAME: ${X_USERNAME:-'(not set)'}"
-        
+
     - name: Fetch latest tech news
       env:
         USER_NAME: ${{ secrets.USER_NAME }}
         X_USERNAME: ${{ secrets.X_USERNAME }}
       run: |
         python fetch_news.py
-        
+
     - name: Configure Git
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        
+
     - name: Check generated URLs
       env:
         USER_NAME: ${{ secrets.USER_NAME }}
@@ -66,7 +71,7 @@ jobs:
       run: |
         echo "🔗 Generated URLs Check:"
         python -c "import sys, os; sys.path.append('src'); from config.archive_config import DEFAULT_SITE_CONFIG; print('Site URL:', DEFAULT_SITE_CONFIG.site_url); print('GitHub Repo URL:', DEFAULT_SITE_CONFIG.github_repo_url); print('RSS URL:', DEFAULT_SITE_CONFIG.rss_url); print('Profile URL:', DEFAULT_SITE_CONFIG.profile_url); print('Profile Display:', DEFAULT_SITE_CONFIG.profile_display_name)"
-        
+
     - name: Commit and push changes
       run: |
         git add daily_news.md archives/ rss.xml index.html
@@ -77,7 +82,7 @@ jobs:
           git commit -m "🗞️ 毎日のテックニュース更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d')"
           git push
         fi
-        
+
     - name: Read Slack message
       id: slack-message
       run: |
@@ -92,7 +97,7 @@ jobs:
           echo '{"text":"📰 今日のテックニュース更新完了！","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"最新のテックニュースを更新しました！\n\n🔗 <https://unsolublesugar.github.io/daily-tech-news/|カード表示版を見る>\n📰 <https://github.com/unsolublesugar/daily-tech-news|GitHub リポジトリ>"}}]}' >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
         fi
-        
+
     - name: Notify Slack
       uses: 8398a7/action-slack@v3
       if: success()
