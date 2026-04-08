@@ -13,6 +13,7 @@ from concurrent.futures import ThreadPoolExecutor
 import concurrent.futures
 import json
 import hashlib
+from urllib.parse import urlparse, urlunparse, urlencode, parse_qsl
 
 # srcディレクトリをPythonパスに追加
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
@@ -152,6 +153,33 @@ class ThumbnailCache:
         
         if keys_to_remove:
             print(f"Cleaned up {len(keys_to_remove)} old cache entries")
+
+_TRACKING_PARAMS = frozenset({
+    "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+    "ref", "fbclid", "gclid",
+})
+
+def normalize_url(url):
+    """URLを正規化して重複検出の精度を向上させる。
+
+    - トラッキングパラメータ（utm_*、ref、fbclid、gclid）を除去
+    - スキームを https に統一（http -> https）
+    - パス末尾のスラッシュを除去
+    - 元のURLは変更しない（比較用のみ）
+    """
+    if not url:
+        return url
+    try:
+        parsed = urlparse(url)
+        scheme = "https" if parsed.scheme == "http" else parsed.scheme
+        path = parsed.path.rstrip("/") or "/"
+        filtered_query = urlencode(
+            [(k, v) for k, v in parse_qsl(parsed.query)
+             if k.lower() not in _TRACKING_PARAMS]
+        )
+        return urlunparse((scheme, parsed.netloc, path, parsed.params, filtered_query, ""))
+    except Exception:
+        return url
 
 def filter_entries_by_domain(entries, domain, label):
     filtered_entries = []
@@ -359,7 +387,7 @@ def deduplicate_urls_across_feeds(all_entries):
     """フィード間でのURL重複を除去し、補填を行う（PRIORITY_FEEDS順で処理）"""
     seen_urls = set()
     deduplicated_feeds = {}
-    dedup_stats = {"total_removed": 0, "by_feed": {}}
+    dedup_stats = {"total_removed": 0, "norm_caught": 0, "by_feed": {}}
     
     # PRIORITY_FEEDSの順序でフィードを処理
     from src.config.archive_config import DEFAULT_SITE_CONFIG
@@ -379,69 +407,86 @@ def deduplicate_urls_across_feeds(all_entries):
             # イベントフィードかどうかで目標件数を決定
             target_count = 10 if "イベント" in feed_name else 5
             
-            # URL重複除去
+            # URL重複除去（正規化URLで比較）
             unique_entries = []
             removed_count = 0
+            norm_caught_feed = 0
             for entry in entries:
-                if hasattr(entry, 'link') and entry.link not in seen_urls:
-                    seen_urls.add(entry.link)
+                if not hasattr(entry, 'link'):
                     unique_entries.append(entry)
-                    
-                    # 目標件数に達したら終了
+                    continue
+                norm = normalize_url(entry.link)
+                if norm not in seen_urls:
+                    seen_urls.add(norm)
+                    unique_entries.append(entry)
                     if len(unique_entries) >= target_count:
                         break
                 else:
                     removed_count += 1
-                    if hasattr(entry, 'title') and hasattr(entry, 'link'):
+                    if hasattr(entry, 'title'):
                         print(f"重複除去: [{feed_name}] {entry.title}")
                         print(f"  URL: {entry.link}")
-            
+                        if norm != entry.link:
+                            print(f"  正規化URL: {norm}  ← 正規化による検出")
+                            norm_caught_feed += 1
+
             # イベントフィードの場合はさらにイベント重複除去を適用
             if "イベント" in feed_name:
                 unique_entries = deduplicate_events(unique_entries, target_count)
-            
+
             deduplicated_feeds[feed_name] = unique_entries
             dedup_stats["by_feed"][feed_name] = removed_count
             dedup_stats["total_removed"] += removed_count
-    
+            dedup_stats["norm_caught"] += norm_caught_feed
+
     # PRIORITY_FEEDSに含まれていないフィードを処理
     for feed_name, entries in all_entries.items():
         if feed_name not in processed_feeds:
             if not entries:
                 deduplicated_feeds[feed_name] = entries
                 continue
-                
+
             # イベントフィードかどうかで目標件数を決定
             target_count = 10 if "イベント" in feed_name else 5
-            
-            # URL重複除去
+
+            # URL重複除去（正規化URLで比較）
             unique_entries = []
             removed_count = 0
+            norm_caught_feed = 0
             for entry in entries:
-                if hasattr(entry, 'link') and entry.link not in seen_urls:
-                    seen_urls.add(entry.link)
+                if not hasattr(entry, 'link'):
                     unique_entries.append(entry)
-                    
-                    # 目標件数に達したら終了
+                    continue
+                norm = normalize_url(entry.link)
+                if norm not in seen_urls:
+                    seen_urls.add(norm)
+                    unique_entries.append(entry)
                     if len(unique_entries) >= target_count:
                         break
                 else:
                     removed_count += 1
-                    if hasattr(entry, 'title') and hasattr(entry, 'link'):
+                    if hasattr(entry, 'title'):
                         print(f"重複除去: [{feed_name}] {entry.title}")
                         print(f"  URL: {entry.link}")
-            
+                        if norm != entry.link:
+                            print(f"  正規化URL: {norm}  ← 正規化による検出")
+                            norm_caught_feed += 1
+
             # イベントフィードの場合はさらにイベント重複除去を適用
             if "イベント" in feed_name:
                 unique_entries = deduplicate_events(unique_entries, target_count)
-            
+
             deduplicated_feeds[feed_name] = unique_entries
             dedup_stats["by_feed"][feed_name] = removed_count
             dedup_stats["total_removed"] += removed_count
-    
+            dedup_stats["norm_caught"] += norm_caught_feed
+
     # 重複除去統計を出力
     if dedup_stats["total_removed"] > 0:
+        norm_caught = dedup_stats["norm_caught"]
+        exact_caught = dedup_stats["total_removed"] - norm_caught
         print(f"URL重複除去統計: 合計{dedup_stats['total_removed']}件を除去")
+        print(f"  うち正規化による検出: {norm_caught}件 / 完全一致による検出: {exact_caught}件")
         for feed_name, removed_count in dedup_stats["by_feed"].items():
             if removed_count > 0:
                 print(f"  {feed_name}: {removed_count}件")
