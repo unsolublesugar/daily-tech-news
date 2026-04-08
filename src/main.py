@@ -16,6 +16,7 @@ from concurrent.futures import ThreadPoolExecutor
 import concurrent.futures
 import json
 import hashlib
+from urllib.parse import urlparse, urlunparse, urlencode, parse_qsl
 
 # 新しいクラス群をインポート
 from config import SiteConfig, PathConfig
@@ -264,34 +265,72 @@ def generate_missing_html_archives():
 # 残りの既存関数群（RSS生成、URL重複除去など）は後方互換性のためそのまま保持
 # これらは元のfetch_news.pyから移植
 
+_TRACKING_PARAMS = frozenset({
+    "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+    "ref", "fbclid", "gclid",
+})
+
+def normalize_url(url):
+    """URLを正規化して重複検出の精度を向上させる（fetch_news.pyのnormalize_urlと同一）。"""
+    if not url:
+        return url
+    try:
+        parsed = urlparse(url)
+        scheme = "https" if parsed.scheme == "http" else parsed.scheme
+        path = parsed.path.rstrip("/") or "/"
+        filtered_query = urlencode(
+            [(k, v) for k, v in parse_qsl(parsed.query)
+             if k.lower() not in _TRACKING_PARAMS]
+        )
+        return urlunparse((scheme, parsed.netloc, path, parsed.params, filtered_query, ""))
+    except Exception:
+        return url
+
 def remove_url_duplicates(all_entries):
-    """URL重複を除去する関数"""
+    """URL重複を除去する関数（正規化URLで比較）"""
     seen_urls = set()
     deduplicated_entries = {}
-    
+    total_removed = 0
+    norm_caught = 0
+
     # 優先フィードの順序を定義
     priority_feeds = ["Tech Blog Weekly", "Zenn", "Qiita", "はてなブックマーク - IT（人気）"]
-    
+
     # 優先フィードから先に処理
     for feed_name in priority_feeds:
         if feed_name in all_entries:
             unique_entries = []
             for entry in all_entries[feed_name]:
-                if entry.link not in seen_urls:
+                norm = normalize_url(entry.link)
+                if norm not in seen_urls:
                     unique_entries.append(entry)
-                    seen_urls.add(entry.link)
+                    seen_urls.add(norm)
+                else:
+                    total_removed += 1
+                    if norm != entry.link:
+                        norm_caught += 1
             deduplicated_entries[feed_name] = unique_entries
-    
+
     # 残りのフィードを処理
     for feed_name, entries in all_entries.items():
         if feed_name not in priority_feeds:
             unique_entries = []
             for entry in entries:
-                if entry.link not in seen_urls:
+                norm = normalize_url(entry.link)
+                if norm not in seen_urls:
                     unique_entries.append(entry)
-                    seen_urls.add(entry.link)
+                    seen_urls.add(norm)
+                else:
+                    total_removed += 1
+                    if norm != entry.link:
+                        norm_caught += 1
             deduplicated_entries[feed_name] = unique_entries
-    
+
+    if total_removed > 0:
+        exact_caught = total_removed - norm_caught
+        print(f"URL重複除去 (remove_url_duplicates): 合計{total_removed}件を除去")
+        print(f"  うち正規化による検出: {norm_caught}件 / 完全一致による検出: {exact_caught}件")
+
     return deduplicated_entries
 
 
