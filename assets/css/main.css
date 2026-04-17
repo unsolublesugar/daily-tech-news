@@ -838,8 +838,9 @@ a:hover {
     color: var(--text-color);
     margin-bottom: 16px;
     max-height: 120px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-right: 8px;
 }
 
 /* プレビューアクション */
