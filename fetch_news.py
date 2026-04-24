@@ -1098,7 +1098,7 @@ def generate_missing_html_archives():
                     html_content += """
     <div class="footer">
         <p>📡 <a href="{DEFAULT_SITE_CONFIG.rss_url}">RSSフィードを購読</a></p>
-        <p>🚀 運営者: <a href="{DEFAULT_SITE_CONFIG.profile_url}" target="_blank" rel="noopener">{DEFAULT_SITE_CONFIG.profile_display_name}</a> | 
+        <p>🚀 <a href="https://unsolublesugar.github.io/portfolio/" target="_blank" rel="noopener">{DEFAULT_SITE_CONFIG.profile_display_name}</a> |
         📁 <a href="{DEFAULT_SITE_CONFIG.github_repo_url}" target="_blank" rel="noopener">GitHub Repository</a></p>
     </div>
 </body>
