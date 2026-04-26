@@ -80,10 +80,3 @@ jobs:
         echo ""
         echo "💬 Slack message URLs:"
         cat slack_message.json | grep -o 'https://[^|]*' | head -3 || echo "Slack message check"
-
-    - name: Notify Slack (test)
-      uses: slackapi/slack-github-action@v3
-      with:
-        webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
-        webhook-type: incoming-webhook
-        payload-file-path: slack_message.json
