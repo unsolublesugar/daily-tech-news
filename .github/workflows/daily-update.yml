@@ -83,26 +83,10 @@ jobs:
           git push
         fi
 
-    - name: Read Slack message
-      id: slack-message
-      run: |
-        if [ -f slack_message.json ]; then
-          # JSONファイルを環境変数経由で安全に読み取り
-          SLACK_CONTENT=$(cat slack_message.json | tr -d '\n')
-          echo "content<<EOF" >> $GITHUB_OUTPUT
-          echo "$SLACK_CONTENT" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-        else
-          echo "content<<EOF" >> $GITHUB_OUTPUT
-          echo '{"text":"📰 今日のテックニュース更新完了！","blocks":[{"type":"section","text":{"type":"mrkdwn","text":"最新のテックニュースを更新しました！\n\n🔗 <https://unsolublesugar.github.io/daily-tech-news/|カード表示版を見る>\n📰 <https://github.com/unsolublesugar/daily-tech-news|GitHub リポジトリ>"}}]}' >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-        fi
-
     - name: Notify Slack
-      uses: 8398a7/action-slack@v3
+      uses: slackapi/slack-github-action@v3
       if: success()
       with:
-        status: custom
-        custom_payload: ${{ steps.slack-message.outputs.content }}
-      env:
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+        webhook-type: incoming-webhook
+        payload-file-path: slack_message.json
