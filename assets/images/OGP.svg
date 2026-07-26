@@ -1,29 +1,48 @@
 <svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景の青グラデーション -->
-  <defs>
-    <linearGradient id="blueGradient" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#007ACC"/>
-      <stop offset="100%" stop-color="#0D47A1"/>
-    </linearGradient>
-  </defs>
-  <rect width="1200" height="630" fill="url(#blueGradient)"/>
+  <!-- 背景：ライトテーマの bg-color -->
+  <rect width="1200" height="630" fill="#ffffff"/>
 
-  <!-- アイコン：中央寄せ -->
-  <g transform="translate(500, 120) scale(10)" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- ▼ここに自分のSVGのパス/円をそのままコピペする▼ -->
-    <circle cx="5" cy="19" r="2" fill="#FFFFFF"/>
+  <!-- 外周カード（border-color / bg-color、フラットなボーダーのみ） -->
+  <rect x="40" y="40" width="1120" height="550" rx="28" fill="#ffffff" stroke="#e1e5e9" stroke-width="2"/>
+
+  <!-- アイコンタイル（card-bg の角丸タイルに link-color のマーク） -->
+  <rect x="120" y="120" width="120" height="120" rx="24" fill="#f6f8fa"/>
+  <g transform="translate(148, 148) scale(2.6)" fill="none" stroke="#0969da" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="5" cy="19" r="2" fill="#0969da" stroke="none"/>
     <path d="M5 11a8 8 0 0 1 8 8"/>
     <path d="M5 5a14 14 0 0 1 14 14"/>
-    <!-- ▲ここを置き換える -->
   </g>
 
-  <!-- タイトル -->
-  <text x="600" y="500" font-size="72" font-family="sans-serif" fill="#FFFFFF" text-anchor="middle">
-    DAILY TECH NEWS
+  <!-- サイト名（heading-color、太字・0.01em相当） -->
+  <text x="120" y="330" font-size="76" font-weight="700" font-family="Helvetica Neue, Hiragino Sans, sans-serif" fill="#1f2328" letter-spacing="-1">
+    Daily Tech News
   </text>
 
-  <!-- サブキャッチ -->
-  <text x="600" y="560" font-size="36" font-family="sans-serif" fill="#FFFFFF" text-anchor="middle">
-    All Your Tech Feeds In One Place
+  <!-- サブキャッチ（text-secondary） -->
+  <text x="122" y="382" font-size="28" font-weight="500" font-family="Hiragino Sans, Helvetica Neue, sans-serif" fill="#656d76">
+    忙しいエンジニアのために。毎日サクッとキャッチアップ。
+  </text>
+
+  <!-- メディアチップ（card-bg タイル、text-secondary文字。tag-chip / toc-chipの意匠を踏襲） -->
+  <g font-family="Hiragino Sans, Helvetica Neue, sans-serif" font-size="22" font-weight="600" fill="#656d76">
+    <rect x="122" y="440" width="104" height="44" rx="22" fill="#f6f8fa"/>
+    <text x="174" y="469" text-anchor="middle">Zenn</text>
+
+    <rect x="238" y="440" width="104" height="44" rx="22" fill="#f6f8fa"/>
+    <text x="290" y="469" text-anchor="middle">Qiita</text>
+
+    <rect x="354" y="440" width="180" height="44" rx="22" fill="#f6f8fa"/>
+    <text x="444" y="469" text-anchor="middle">はてブ</text>
+
+    <rect x="546" y="440" width="220" height="44" rx="22" fill="#f6f8fa"/>
+    <text x="656" y="469" text-anchor="middle">DevelopersIO</text>
+  </g>
+
+  <!-- フッターの区切り線（rule-strong） -->
+  <line x1="120" y1="516" x2="1080" y2="516" stroke="#1f2328" stroke-width="3"/>
+
+  <!-- ドメイン表記（text-tertiary） -->
+  <text x="120" y="550" font-size="22" font-weight="600" font-family="Helvetica Neue, sans-serif" fill="#8b949e">
+    unsolublesugar.github.io/daily-tech-news
   </text>
 </svg>
