@@ -1,0 +1,15 @@
+            <article class="article-row" id="row-{{card_id}}" data-tags="{{tags_attr}}" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">{{title}}</h3>
+                    <span class="article-time">{{time_label}}</span>
+                </div>
+                <div class="article-tags">{{tag_chips}}</div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">{{summary_html}}
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="{{link}}" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="{{link}}" data-share-title="{{title_attr}}">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>

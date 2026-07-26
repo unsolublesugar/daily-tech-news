@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body { margin: 0; background: #ffffff; }
+a { color: #0969da; text-decoration: none; }
+a:hover { color: #0860ca; text-decoration: underline; }
+</style>
+</helmet>
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333333; background: #ffffff;">
+  <div style="margin-bottom: 30px;">
+    <h1 style="color: #1f2328; font-size: 2em; margin: 0.67em 0; font-weight: bold;">👨‍💻 今日のテックニュース (2026-07-26)</h1>
+    <p style="margin: 1em 0;">
+      <a href="#" style="display: inline-flex; align-items: center; background-color: #000000; color: #ffffff; text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 14px; font-weight: 500; margin: 0 4px 0 0; gap: 4px; vertical-align: middle;">
+        <span style="width: 16px; height: 16px; display: inline-block;">
+          <svg viewBox="0 0 1200 1227" xmlns="http://www.w3.org/2000/svg" style="width: 16px; height: 16px; fill: white;">
+            <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="white"></path>
+          </svg>
+        </span>
+        シェア
+      </a>
+       | 📚 <a href="#">過去のニュースを見る</a>
+    </p>
+    <p style="margin: 1em 0;">忙しいエンジニアのために。毎日サクッとキャッチアップ。</p>
+  </div>
+
+  <div style="margin: 20px 0; background: #f8f9fa; border-radius: 8px; border: 1px solid #e1e5e9; position: relative; z-index: 10; overflow: hidden;">
+    <div style="padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; background: #f8f9fa; border-bottom: 1px solid #e1e5e9; flex-wrap: wrap; gap: 8px;">
+      <div>
+        <span style="font-size: 14px; font-weight: 600; color: #1f2328;">🏷️ カテゴリ別フィルター</span>
+        <button onClick="{{ toggleFilter }}" style="display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: #ffffff; border: 1px solid #e1e5e9; border-radius: 6px; cursor: pointer; font-size: 12px; color: #656d76; margin-left: 8px;">
+          <span>{{ filterToggleText }}</span>
+          <span style="font-size: 10px;">▼</span>
+        </button>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; overflow: hidden; transition: all 0.3s ease; max-height: {{ filterMaxHeight }}; padding: {{ filterPadding }};">
+      <sc-for list="{{ filterSections }}" as="sec" hint-placeholder-count="5">
+        <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="font-size: 11px; font-weight: 600; color: #656d76; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">{{ sec.label }}</div>
+          <sc-for list="{{ sec.tags }}" as="tag" hint-placeholder-count="5">
+            <button style="padding: 4px 12px; border: 1px solid #d1d9e0; background: #ffffff; color: #656d76; border-radius: 16px; cursor: pointer; font-size: 12px; font-weight: 500; white-space: nowrap; line-height: 1.2; text-align: left;">{{ tag }}</button>
+          </sc-for>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <sc-for list="{{ sections }}" as="sec" hint-placeholder-count="4">
+    <div>
+      <h2 style="color: #1f2328; font-size: 1.5em; margin: 0.83em 0; font-weight: bold;">{{ sec.heading }}</h2>
+      <sc-for list="{{ sec.items }}" as="item" hint-placeholder-count="5">
+        <div onMouseEnter="{{ onCardEnter }}" onMouseLeave="{{ onCardLeave }}" data-card="{{ item.id }}" style="border: 1px solid #e1e5e9; padding: 15px; margin: 15px 0; border-radius: 8px; background-color: #f8f9fa; box-shadow: 0 2px 4px rgba(0,0,0,0.1); color: inherit; display: block; position: relative; cursor: pointer;">
+          <div style="display: flex; align-items: flex-start; gap: 15px; min-width: 0;">
+            <div style="flex: 1; min-width: 0;">
+              <h4 style="margin: 0 0 8px 0; font-size: 16px; line-height: 1.4; color: #0969da; font-weight: 600; word-break: break-word; overflow-wrap: break-word;">{{ item.title }}</h4>
+              <p style="margin: 0; font-size: 12px; color: #656d76;">{{ item.meta }}</p>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </sc-for>
+
+  <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; margin: 20px 0;">
+    <strong>📡 RSS配信について</strong><br />
+    このサイトでは RSS フィードを配信しています。お好みのRSSリーダーに登録してご利用ください。<br />
+    <a href="#">RSS フィード</a>
+  </div>
+
+  <div style="background: #f8f9fa; border: 1px solid #e1e5e9; border-radius: 12px; margin: 24px 0; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px;">
+      <div style="font-size: 48px; flex-shrink: 0;">📡</div>
+      <div>
+        <h3 style="margin: 0 0 8px 0; font-size: 20px; color: #1f2328; font-weight: 600;">RSSフィード配信中</h3>
+        <p style="margin: 0 0 12px 0; color: #656d76; font-size: 14px; line-height: 1.4;">お使いのRSSリーダーで購読してください</p>
+        <a href="#" style="display: inline-block; background: #007bff; color: #ffffff; text-decoration: none; padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 500;">RSSフィードを購読する</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 40px; padding: 20px 0; border-top: 1px solid #e1e5e9; text-align: center; font-size: 14px; color: #656d76;">
+    <p style="margin: 1em 0;">🚀 <a href="#">@unsoluble_sugar</a> |
+    📁 <a href="#">GitHub Repository</a></p>
+  </div>
+
+  {{ previewPopup }}
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:900,&quot;height&quot;:1400}}">
+const S = (heading, items) => ({ heading, items });
+const icon = (url, alt) => React.createElement('span', null,
+  React.createElement('img', { src: url, width: 16, height: 16, alt, style: { verticalAlign: 'baseline' } }), ' ' + alt);
+
+const DATA = [
+  ['💻 Tech Blog Weekly', null, [
+    ['Gemini Enterprise Agent PlatformのPipelinesで学習からModel Registry登録まで試してみた | Fusic 技術ブログのフィード', '5時間前'],
+    ['A Write Barrier Validating GC for Ruby まとめ | SMARTCAMP Engineer Blogのフィード', '7時間前'],
+    ['Cycloud 新基盤の全貌 第五回: ComputeController 編 | CyberAgent Developers Blog', '9時間前'],
+    ['AI Dev Day 2026で「MCPをつなげて作る組織横断のAIエージェント基盤」について登壇しました #AIDevDay', '1日前'],
+    ['AWS Organizations に潜り込んでも、請求から逃れることはできなかった話 | ForgeVision Engineer Blog', '1日前']]],
+  ['Zenn', 'https://zenn.dev/favicon.ico', [
+    ['クオンツはテクニカル分析を寄与度分解の中で見ている', '3時間前'],
+    ['AI時代のエンジニアリングマネージャーのあり方｜外部品質編 〜品質の可視化を、現場と経営をつなぐ形にするまで〜', '6時間前'],
+    ['Terraform / Kubernetes の構築で、初心者がよく指摘されるポイントのまとめ', '8時間前'],
+    ['ターミナルを自作したら、1日のコミット数が500を超えて、生産性がバグった話', '10時間前'],
+    ['Astroで日英ブログを作って分かった5つの実装パターン', '12時間前']]],
+  ['Qiita', 'https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico', [
+    ['JenkinsでGitHub Copilot CLIにPRを自動レビューさせる ― E2BIG・プロンプトインジェクション・トークン地獄との戦い', '4時間前'],
+    ['ひとことで、言え。～スライドをAIで作り直したらわかりにくくなった話～', '7時間前'],
+    ['個人開発でApp Storeリリースフローを学ぶ（続編）― 3回のリジェクトと審査通過までにやったこと', '9時間前'],
+    ['「何から始めるか問題」で、結局何も始められなかった話', '14時間前'],
+    ['AIエージェントがあれば技術書なんてすぐ書けるでしょ、と思ったが無理だった', '1日前']]],
+  ['はてなブックマーク - IT（人気）', 'https://b.hatena.ne.jp/favicon.ico', [
+    ['『読者の横顔』　株式会社はてな　コーポレート本部　経理部長　堀内潤一 氏 | ZEIKEN PRESS', '2時間前'],
+    ['【Obsidian】既存のAIサブスクだけでメモを整理する環境を作った', '5時間前'],
+    ['dns.gby', '8時間前'],
+    ['AIで「日本が追いつくのは無理」　中国を軽く見た製造業のツケ | 毎日新聞', '11時間前'],
+    ['HTML-in-Canvas コンポーネントライブラリ Canvas UI', '13時間前']]],
+  ['はてなブックマーク - IT（新着）', 'https://b.hatena.ne.jp/favicon.ico', [
+    ['UIをツリーに分解する｜Next.jsの考え方', '1時間前'],
+    ['Hermes Agent と Slack で設計し、Linear のチケットから Draft PR まで作成するワークフローの素振りをした', '3時間前'],
+    ['AI工学特論: MLOps・継続的評価', '4時間前'],
+    ['Claude CodeのInput Tokenが増える原因を、利用ログから調べてみた', '6時間前'],
+    ['Open Weights and American AI Leadership', '9時間前']]],
+  ['DevelopersIO', 'https://dev.classmethod.jp/favicon.ico', [
+    ['Amazon SES コンソールの新機能「Mail Manager SMTP のガイド付きセットアップ」を試してみた', '3時間前'],
+    ['Claude CodeとKiro CLI、同じタスクで速さ・コスト・品質を比較してみた', '5時間前'],
+    ['【非エンジニアのためのClaude/Claude Codeシリーズ】AIの設定でひとつだけいじる価値があったもの ── effortは「賢さ」ではなく「仕事量」のつまみだった', '8時間前'],
+    ['Claude Codeの設定を可視化するローカルダッシュボードを自作してみた', '12時間前'],
+    ['『医療情報システムの安全管理に関するガイドライン第7.0版を確認してみた』というタイトルでさっぽろ医療IT勉強会 #2 で登壇しました #mit_sapporo', '1日前']]],
+  ['gihyo.jp', 'https://gihyo.jp/favicon.ico', [
+    ['Anthropic、「Claude Opus 5」の提供を開始', '2時間前'],
+    ['ChatGPTデスクトップアプリ、ローカルプロジェクトに複数フォルダーを追加可能に ——「ChatGPT Voice」も追加', '6時間前'],
+    ['「中高生Rubyプログラミングコンテスト2026」開催決定、作品募集開始～2026年9月30日まで', '10時間前'],
+    ['Ubuntu 26.10（Stonking）の開発; 閉域網向けのSnap Store、Ubuntu Server向けドキュメントでのAI利用方針', '1日前'],
+    ['LangChain、AIエージェントの評価を対話形式で構築する「Eval Engineering Skill」を公開', '1日前']]],
+  ['Publickey', 'https://www.publickey1.jp/favicon.ico', [
+    ['.NET MAUI、iOS/AndoridのランタイムがMonoからCoreCLRに更新、開発者は動作確認を。.NET 11 Preview 6が公開', '4時間前'],
+    ['アトラシアン、JiraがAIによる要件定義の自動作成、コンテキストを保持しつつタスクをClaudeやCopilotなどのAIエージェントへアサインなど新機能', '1日前'],
+    ['企業向けでAIツールで成長率トップはAnthropic、アカウント数が最も多いのはMicrosoft 365。Oktaが調査結果を発表', '2日前'],
+    ['AWS、デプロイ速度が最大4倍になる「AWS CloudFormation Expressモード」を提供開始', '2日前'],
+    ['Claude Codeを組織一括でシングルサインオン、チームや個人の費用上限設定、デフォルト設定など可能に、「Claude apps gateway for AWS/Google Cloud」登場', '3日前']]],
+  ['CodeZine', 'https://codezine.jp/favicon.ico', [
+    ['GitHub Mobile、CopilotがActionsチェックの失敗を自動修正可能に', '5時間前'],
+    ['Next.js、重要な脆弱性を修正するセキュリティリリースを公開', '8時間前'],
+    ['Node.js、7月27日にセキュリティアップデートを発表', '10時間前'],
+    ['Visual Studio Code 1.130がリリース、エージェント機能などを強化', '1日前'],
+    ['Android版Chrome、通知プロンプトのUX改善をChrome 155で導入', '2日前']]],
+  ['InfoQ Japan', 'https://www.infoq.com/favicon.ico', [
+    ['Kubescape 4.0、Kubernetesに実行時セキュリティとAIエージェントスキャン機能を追加', '7時間前'],
+    ['Amazon CloudWatch、OpenTelemetryメトリクス対応をプレビュー公開', '1日前'],
+    ['AIがソフトウェアライフサイクルの上流へ：コードレビューからPRDガバナンスへ', '2日前'],
+    ['Anthropicリード：エージェント型ループへの人間の関与維持にはMarkdownよりHTMLが有効に', '2日前'],
+    ['GoogleのAletheiaが完全自律型AIエージェンティック数学研究の最先端を突き進む', '3日前']]],
+  ['connpass - イベント', 'https://connpass.com/favicon.ico', [
+    ['【北区・赤羽】ゆるもく会 #9｜初心者歓迎・作業/勉強/読書OK', '1時間前'],
+    ['Tech.Uni感謝祭', '2時間前'],
+    ['スクラム道関西 オープン・ジャム', '3時間前'],
+    ['繋がる福島もくもく会#5', '3時間前'],
+    ['Hono Conference 2026 in Tokyo', '4時間前'],
+    ['代数学2  環と体とガロア理論 #6', '5時間前'],
+    ['Intel開発者ガイド読み会（オンライン）', '5時間前'],
+    ['2026年第7回openEHR研究会', '6時間前'],
+    ['第5回 秋葉原インディゲームもくもく会 | 協賛：株式会社f4samurai', '7時間前'],
+    ['Rustオンラインもくもく会 #363', '8時間前']]],
+  ['TECH PLAY - イベント', 'https://techplay.jp/favicon.ico', [
+    ['CANVA AI【入門編】', '2時間前'],
+    ['[秋葉原] Amazon Bedrock AgentCore 実践入門 輪読会 認証とツール制御', '3時間前'],
+    ['[秋葉原] AI駆動開発 / LLM もくもく会 (初参加・初心者大歓迎！)', '3時間前'],
+    ['[秋葉原] テーマ自由もくもく会 (質問・雑談OK！)', '4時間前'],
+    ['(教室見学・体験) 小学生・中学生対象 Unityでゲームプログラミング！', '4時間前'],
+    ['9/22(火) 国民の休日に巣鴨でTableauもくもく& LT会 Vol.11', '5時間前'],
+    ['バイブコーディングクラブ', '6時間前'],
+    ['NIKKEI THE PITCH CONNECT: 全国イノベーション都市会議 2026 「動脈」', '6時間前'],
+    ['関西Tableauうまうま会 #4 韓国料理 [2026/9/5(土) @大阪・天満]', '7時間前'],
+    ['【SnowVillageデータマネジメント入門講座】第4回：メタデータって結局なに？', '9時間前']]],
+  ["O'Reilly Japan - 近刊", 'https://www.oreilly.co.jp/favicon.ico', [
+    ['LLMOps', '1日前'],
+    ['Node.jsプロジェクト', '1日前'],
+    ['AIがわかる数学入門', '2日前'],
+    ['AIインターフェースデザイン', '2日前'],
+    ['Google CloudではじめるAI/ML入門', '3日前']]]
+];
+
+class Component extends DCLogic {
+  state = { expanded: false, hover: null, pos: { x: 0, y: 0 } };
+
+  renderVals() {
+    let n = 0;
+    const sections = DATA.map(([name, favicon, items]) => ({
+      heading: favicon
+        ? React.createElement(React.Fragment, null,
+            React.createElement('img', { src: favicon, width: 16, height: 16, alt: name }), ' ' + name)
+        : name,
+      items: items.map(([title, date]) => ({
+        id: 'c' + (n++), title, meta: name + ' • ' + date,
+        desc: 'この記事の詳細を確認してください。RSSフィードから取得した概要テキストが記事の冒頭からそのまま表示されます。' + title
+      }))
+    }));
+    const flat = sections.flatMap(s => s.items);
+    const hovered = flat.find(i => i.id === this.state.hover);
+
+    return {
+      sections,
+      filterSections: [
+        { label: 'メイン', tags: ['すべて (75)', 'AI・機械学習', 'Web開発', 'クラウド', 'プログラミング'] },
+        { label: '開発・運用', tags: ['ツール・IDE', 'DevOps', 'データベース', 'データ分析', 'セキュリティ', 'ネットワーク'] },
+        { label: '専門分野', tags: ['ゲーム開発', 'モバイル', 'UI/UX', 'ハードウェア・IoT', 'アルゴリズム・数学', 'VR・AR・MR'] },
+        { label: '学習・支援', tags: ['技術発表・LT', 'コーディング支援', 'ツール紹介', 'トラブルシューティング', 'オープンソース'] },
+        { label: 'ビジネス・その他', tags: ['キャリア・組織', 'テクノロジートレンド', 'システム開発', 'OS・システム', 'その他'] }
+      ],
+      filterToggleText: this.state.expanded ? '非表示' : '表示',
+      filterMaxHeight: this.state.expanded ? '80vh' : '0px',
+      filterPadding: this.state.expanded ? '16px' : '0 16px',
+      toggleFilter: () => this.setState(s => ({ expanded: !s.expanded })),
+      onCardEnter: (e) => {
+        const el = e.currentTarget;
+        const r = el.getBoundingClientRect();
+        this.setState({ hover: el.getAttribute('data-card'), pos: { x: r.left, y: r.bottom + 8 } });
+      },
+      onCardLeave: () => this.setState({ hover: null }),
+      previewPopup: hovered ? React.createElement('div', {
+        style: {
+          position: 'fixed', left: this.state.pos.x + 'px', top: this.state.pos.y + 'px',
+          background: '#ffffff', border: '1px solid #e1e5e9', borderRadius: '8px',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.15)', zIndex: 999999, maxWidth: '400px', minWidth: '350px',
+          padding: '16px', boxSizing: 'border-box', pointerEvents: 'none'
+        }
+      },
+        React.createElement('div', { style: { display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px' } },
+          React.createElement('h5', { style: { margin: 0, fontSize: '16px', fontWeight: 600, color: '#1f2328', lineHeight: 1.4, flex: 1, paddingRight: '8px', wordBreak: 'break-word' } }, hovered.title),
+          React.createElement('button', { style: { background: 'none', border: 'none', fontSize: '20px', color: '#656d76', cursor: 'pointer', padding: 0, width: '24px', height: '24px' } }, '×')),
+        React.createElement('div', { style: { display: 'flex', gap: '12px', marginBottom: '12px', fontSize: '12px', color: '#656d76', flexWrap: 'wrap' } },
+          React.createElement('span', { style: { fontWeight: 500, color: '#0969da' } }, hovered.meta.split(' • ')[0]),
+          React.createElement('span', null, hovered.meta.split(' • ')[1]),
+          React.createElement('span', { style: { color: '#0969da', fontSize: '12px', fontWeight: 500, background: '#f8f9fa', padding: '2px 6px', borderRadius: '4px', marginLeft: '8px' } }, 'AI・機械学習, ツール・IDE')),
+        React.createElement('div', { style: { fontSize: '14px', lineHeight: 1.5, color: '#333333', marginBottom: '16px', maxHeight: '120px', overflowY: 'auto', paddingRight: '8px' } }, hovered.desc),
+        React.createElement('div', { style: { display: 'flex', gap: '8px' } },
+          React.createElement('a', { href: '#', style: { backgroundColor: '#0969da', color: 'white', textDecoration: 'none', padding: '6px 12px', borderRadius: '4px', fontSize: '13px', fontWeight: 500 } }, '記事を読む'))
+      ) : null
+    };
+  }
+
+  componentDidUpdate() {
+    const bar = this.el && this.el.querySelector ? this.el.querySelector('[data-filter-bar]') : null;
+  }
+}
+</script>
+</body>
+</html>
