@@ -357,19 +357,15 @@ class TemplateManager:
                         depth: int = 3) -> str:
         """固定ヘッダー（サイト名・日付・絞り込み・テーマ切替・タブ）を生成"""
 
+        date_label = self.format_archive_header_date(date_obj)
         if is_archive:
             back_link = f"{'../' * (depth - 1)}index.html"
-            date_label = self.format_archive_header_date(date_obj)
-            brand = (
+            leading = (
                 f'<a class="icon-btn" href="{back_link}" aria-label="アーカイブ一覧へ戻る" title="アーカイブ一覧へ戻る">←</a>'
-                f'<span class="site-name">{date_label}</span>'
             )
         else:
-            date_label = self.format_header_date(date_obj)
-            brand = (
-                f'<span class="site-name">今日のテックニュース</span>'
-                f'<span class="site-date">{date_label}</span>'
-            )
+            leading = ''
+        brand = f'<span class="site-name">{date_label}</span>'
 
         filter_button = (
             '\n            <button type="button" id="filter-open" class="pill-btn">'
@@ -379,14 +375,11 @@ class TemplateManager:
         template = self.load_template('header.html')
         return self.render_template(
             template,
+            leading=leading,
             brand=brand,
             filter_button=filter_button,
             current_date=date_obj.strftime('%Y-%m-%d')
         )
-
-    def format_header_date(self, date_obj: datetime) -> str:
-        """ヘッダー用の日付表記（7/26 (日)）"""
-        return f"{date_obj.month}/{date_obj.day} ({WEEKDAY_JA[date_obj.weekday()]})"
 
     def format_archive_header_date(self, date_obj: datetime) -> str:
         """アーカイブ日別ページのヘッダー用の日付表記（2026/7/26 (日)）"""
