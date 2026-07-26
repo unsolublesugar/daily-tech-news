@@ -5,10 +5,10 @@
   <!-- 外周カード（border-color / bg-color、フラットなボーダーのみ） -->
   <rect x="40" y="40" width="1120" height="550" rx="28" fill="#ffffff" stroke="#e1e5e9" stroke-width="2"/>
 
-  <!-- アイコンタイル（card-bg の角丸タイルに link-color のマーク） -->
-  <rect x="120" y="120" width="120" height="120" rx="24" fill="#f6f8fa"/>
-  <g transform="translate(148, 148) scale(2.6)" fill="none" stroke="#0969da" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="5" cy="19" r="2" fill="#0969da" stroke="none"/>
+  <!-- アイコンタイル（アクティブタブと同じ rule-strong 塗り＋白マーク） -->
+  <rect x="120" y="120" width="120" height="120" rx="24" fill="#1f2328"/>
+  <g transform="translate(148, 148) scale(2.6)" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="5" cy="19" r="2" fill="#ffffff" stroke="none"/>
     <path d="M5 11a8 8 0 0 1 8 8"/>
     <path d="M5 5a14 14 0 0 1 14 14"/>
   </g>
