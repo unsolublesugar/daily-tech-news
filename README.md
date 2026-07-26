@@ -88,7 +88,6 @@ daily-tech-news/
 ├── rss.xml                    # RSSフィード（自動生成）
 ├── requirements.txt           # Python依存関係
 ├── CLAUDE.md                  # AI開発用プロジェクト指示書
-├── CHANGELOG.md               # 変更履歴
 ├── src/                       # Pythonモジュール
 │   ├── config/                # サイト・パス設定管理（フィードURLはfetch_news.py内で管理）
 │   ├── generators/            # 生成エンジン

@@ -82,6 +82,29 @@ gh pr create --title "🐛 修正: 問題の説明 (#14)" --assignee @me --label
 - 動作確認手順
 ```
 
+## リリースノート運用
+
+mainに大きめの変更（新機能・UIリニューアル・構造刷新など）がマージされたタイミングでGitHub Releaseを作成する。細かいバグ修正のたびに作る必要はない。
+
+バージョニングはセマンティックバージョニング（`vMAJOR.MINOR.PATCH`）に準拠する：
+- **MAJOR**: 既存の運用・設定を壊す破壊的変更
+- **MINOR**: 新機能・大きめのUIリニューアルなど
+- **PATCH**: 小さな修正・調整
+
+```bash
+# 直前のリリースタグからの変更点を確認
+git log --oneline <前回タグ>..HEAD
+
+# タグ作成・push
+git tag -a vX.Y.Z -m "vX.Y.Z - 概要"
+git push origin vX.Y.Z
+
+# リリース作成（本文はファイルで用意する）
+gh release create vX.Y.Z --title "vX.Y.Z — 概要" --notes-file <notesファイル> --latest
+```
+
+リリースノートは絵文字付きの見出し（✨新機能 / 🐛修正 / ♻️リファクタリング / 🔧設定 など）で変更点を整理し、影響範囲や注意点があれば`⚠️ Notes`として明記する。
+
 ## タイトル絵文字プレフィックス
 
 | 絵文字 | 用途 |
