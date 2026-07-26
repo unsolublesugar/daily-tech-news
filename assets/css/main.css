@@ -214,6 +214,11 @@ a:hover {
     background: var(--button-hover);
 }
 
+.is-invisible {
+    visibility: hidden;
+    pointer-events: none;
+}
+
 .filter-count {
     font-size: 11px;
     font-weight: 500;
