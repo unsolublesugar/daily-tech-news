@@ -377,7 +377,12 @@ class TemplateManager:
         )
 
         template = self.load_template('header.html')
-        return self.render_template(template, brand=brand, filter_button=filter_button)
+        return self.render_template(
+            template,
+            brand=brand,
+            filter_button=filter_button,
+            current_date=date_obj.strftime('%Y-%m-%d')
+        )
 
     def format_header_date(self, date_obj: datetime) -> str:
         """ヘッダー用の日付表記（7/26 (日)）"""

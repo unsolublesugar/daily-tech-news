@@ -238,8 +238,47 @@ a:hover {
 
 .tab-bar {
     display: flex;
+    align-items: center;
     gap: 4px;
     padding: 0 12px 10px;
+}
+
+.tab-bar-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.date-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    font-size: 18px;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.date-nav-btn:hover {
+    background: var(--button-hover);
+    color: var(--heading-color);
+    text-decoration: none;
+}
+
+.date-nav-btn.is-disabled {
+    opacity: 0.35;
+    pointer-events: none;
 }
 
 .tab-btn {

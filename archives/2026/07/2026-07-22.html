@@ -51,10 +51,14 @@
             <button type="button" id="theme-toggle" class="icon-btn" aria-label="テーマを切り替える" title="テーマを切り替える"><span id="theme-icon">🌙</span></button>
         </div>
     </div>
-    <nav class="tab-bar" role="tablist" aria-label="表示切り替え">
-        <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-articles" data-tab="articles">記事</button>
-        <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-events" data-tab="events">イベント</button>
-        <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-books" data-tab="books">書籍</button>
+    <nav class="tab-bar" role="tablist" aria-label="表示切り替え" data-current-date="2026-07-22">
+        <a id="date-nav-newer" class="date-nav-btn is-disabled" aria-label="新しい日付のニュースへ" title="新しい日付のニュースへ" aria-disabled="true"><span aria-hidden="true">‹</span></a>
+        <div class="tab-bar-tabs">
+            <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-articles" data-tab="articles">記事</button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-events" data-tab="events">イベント</button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-books" data-tab="books">書籍</button>
+        </div>
+        <a id="date-nav-older" class="date-nav-btn is-disabled" aria-label="過去の日付のニュースへ" title="過去の日付のニュースへ" aria-disabled="true"><span aria-hidden="true">›</span></a>
     </nav>
 </header>
 
