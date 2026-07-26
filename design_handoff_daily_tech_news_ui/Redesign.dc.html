@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas" />
+<style>
+body { margin: 0; background: #eef1f4; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', 'Noto Sans JP', Roboto, sans-serif; }
+a { color: #0969da; text-decoration: none; }
+a:hover { color: #0860ca; text-decoration: underline; }
+.scr::-webkit-scrollbar { width: 6px; height: 6px; }
+.scr::-webkit-scrollbar-thumb { background: #d1d9e0; border-radius: 3px; }
+.scr::-webkit-scrollbar-track { background: transparent; }
+.noscrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.noscrollbar::-webkit-scrollbar { width: 0; height: 0; display: none; }
+</style>
+</helmet>
+
+<section style="padding: 48px 48px 0 48px; display: flex; flex-direction: column; gap: 24px;">
+  <div style="display: flex; align-items: baseline; gap: 14px;">
+    <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: #656d76; text-transform: uppercase;">Turn 3</div>
+    <div style="font-size: 14px; color: #656d76;">ダークモード。既存 main.css のダークトークン（#0d1117 / #161b22 / #30363d / #e6edf3 / #8b949e / #58a6ff）をそのまま使い、1a・2a に適用したもの。</div>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+
+    <div id="3a" style="display: flex; flex-direction: column; gap: 12px; width: 430px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 24px; padding: 0 8px; border-radius: 6px; background: #1f2328; color: #ffffff; font-size: 13px; font-weight: 700;">3a</span>
+        <span style="font-size: 17px; font-weight: 700; color: #1f2328;">トップ（ダーク）</span>
+      </div>
+      <div style="font-size: 13px; line-height: 1.6; color: #656d76;">面はフラットな #0d1117、カードとシートだけ #161b22 で1段浮かせる。区切り線は #30363d、本文 #e6edf3・メタ #8b949e。アクセントは #58a6ff。</div>
+
+      <div style="position: relative; width: 430px; height: 880px; border: 1px solid #30363d; border-radius: 22px; background: #0d1117; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 12px 32px rgba(0,0,0,0.35);">
+        <div style="flex-shrink: 0; background: #0d1117; border-bottom: 1px solid #30363d;">
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 8px 16px;">
+            <div style="display: flex; align-items: baseline; gap: 8px;">
+              <span style="font-size: 15px; font-weight: 700; color: #f0f6fc; letter-spacing: -0.01em;">今日のテックニュース</span>
+              <span style="font-size: 12px; color: #8b949e; font-variant-numeric: tabular-nums;">7/26 (日)</span>
+            </div>
+            <div style="display: flex; gap: 6px;">
+              <button style="display: inline-flex; align-items: center; gap: 5px; height: 30px; padding: 0 10px; border: 1px solid #30363d; background: #21262d; border-radius: 8px; font-size: 12px; font-weight: 600; color: #e6edf3; cursor: pointer;" style-hover="background: #30363d;">絞り込み</button>
+              <button style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid #30363d; background: #21262d; border-radius: 8px; font-size: 13px; cursor: pointer;">☀️</button>
+            </div>
+          </div>
+          <div style="display: flex; gap: 4px; padding: 0 12px 10px 12px;">
+            <button style="display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; background: #e6edf3; color: #0d1117;">記事</button>
+            <button style="display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; background: #161b22; color: #8b949e;">イベント</button>
+            <button style="display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; background: #161b22; color: #8b949e;">書籍</button>
+          </div>
+        </div>
+
+        <div class="scr" style="flex: 1; overflow-y: auto; overscroll-behavior: contain;">
+          <div style="position: sticky; top: 0; z-index: 5; background: rgba(13,17,23,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid #30363d;">
+            <div class="noscrollbar" style="display: flex; gap: 6px; padding: 8px 16px; overflow-x: auto;">
+              <sc-for list="{{ tocA }}" as="c" hint-placeholder-count="6">
+                <a href="#" style="flex-shrink: 0; display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border: 1px solid #30363d; border-radius: 13px; font-size: 12px; color: #8b949e; background: #161b22; text-decoration: none;" style-hover="border-color: #58a6ff; color: #58a6ff; text-decoration: none;">{{ c }}</a>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="padding: 18px 16px 4px 16px;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+              <span style="font-size: 13px; font-weight: 700; color: #f0f6fc;">今日のハイライト</span>
+              <span style="font-size: 11px; color: #8b949e;">複数メディアで話題</span>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <sc-for list="{{ highlightsA }}" as="h" hint-placeholder-count="3">
+                <a href="#" style="display: flex; gap: 12px; padding: 14px; border: 1px solid #30363d; border-radius: 12px; background: #161b22; text-decoration: none; color: inherit;" style-hover="border-color: #58a6ff; text-decoration: none;">
+                  <span style="flex-shrink: 0; width: 22px; font-size: 18px; font-weight: 800; color: #58a6ff; line-height: 1.2; font-variant-numeric: tabular-nums;">{{ h.rank }}</span>
+                  <span style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+                    <span style="font-size: 16px; font-weight: 700; line-height: 1.45; color: #f0f6fc; text-wrap: pretty;">{{ h.title }}</span>
+                    <span style="font-size: 12px; color: #8b949e;">{{ h.meta }}</span>
+                  </span>
+                </a>
+              </sc-for>
+            </div>
+          </div>
+
+          <sc-for list="{{ mediaA }}" as="m" hint-placeholder-count="4">
+            <div style="padding: 22px 16px 0 16px;">
+              <div style="display: flex; align-items: center; padding-bottom: 8px; border-bottom: 2px solid #e6edf3;">
+                <span style="font-size: 14px; font-weight: 700; color: #f0f6fc;">{{ m.name }}</span>
+              </div>
+              <div style="display: flex; flex-direction: column;">
+                <sc-for list="{{ m.items }}" as="it" hint-placeholder-count="3">
+                  <div style="display: flex; flex-direction: column; gap: 6px; padding: 12px 0; border-bottom: 1px solid #21262d; cursor: pointer;">
+                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                      <div style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600; line-height: 1.5; color: #e6edf3; text-wrap: pretty;">{{ it.title }}</div>
+                      <div style="flex-shrink: 0; font-size: 11px; color: #8b949e; padding-top: 3px; font-variant-numeric: tabular-nums;">{{ it.time }}</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                      <sc-for list="{{ it.tags }}" as="tg" hint-placeholder-count="2">
+                        <span style="display: inline-flex; align-items: center; height: 18px; padding: 0 6px; border-radius: 4px; background: #21262d; color: #8b949e; font-size: 11px; font-weight: 500;">{{ tg }}</span>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+
+          <div style="padding: 28px 16px 24px 16px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border: 1px solid #30363d; border-radius: 12px; background: #161b22;">
+              <div style="display: flex; flex-direction: column; gap: 2px;">
+                <span style="font-size: 13px; font-weight: 700; color: #f0f6fc;">RSSで購読</span>
+                <span style="font-size: 11px; color: #8b949e;">毎朝 JST 7:00 更新</span>
+              </div>
+              <a href="#" style="display: inline-flex; align-items: center; height: 30px; padding: 0 12px; background: #21262d; border: 1px solid #30363d; border-radius: 8px; font-size: 12px; font-weight: 600; color: #e6edf3; text-decoration: none;" style-hover="border-color: #58a6ff; text-decoration: none;">📡 登録</a>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-top: 12px;">
+              <a href="#" style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; border: 1px solid #30363d; border-radius: 12px; background: #161b22; text-decoration: none; color: inherit;" style-hover="border-color: #58a6ff; text-decoration: none;">
+                <span style="font-size: 13px; font-weight: 700; color: #f0f6fc;">📚 アーカイブ</span>
+                <span style="font-size: 11px; color: #8b949e;">過去のニュース</span>
+              </a>
+              <a href="#" style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; border: 1px solid #30363d; border-radius: 12px; background: #161b22; text-decoration: none; color: inherit;" style-hover="border-color: #58a6ff; text-decoration: none;">
+                <span style="font-size: 13px; font-weight: 700; color: #f0f6fc;">📁 GitHub</span>
+                <span style="font-size: 11px; color: #8b949e;">ソースとフィード設定</span>
+              </a>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 6px; padding-top: 14px; font-size: 11px; color: #8b949e;">
+              <span>Built by</span>
+              <a href="#" style="color: #8b949e; font-weight: 600;">@unsoluble_sugar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="3b" style="display: flex; flex-direction: column; gap: 12px; width: 430px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 24px; padding: 0 8px; border-radius: 6px; background: #1f2328; color: #ffffff; font-size: 13px; font-weight: 700;">3b</span>
+        <span style="font-size: 17px; font-weight: 700; color: #1f2328;">アーカイブ（ダーク）</span>
+      </div>
+      <div style="font-size: 13px; line-height: 1.6; color: #656d76;">カレンダーの「記事あり」はライトの #ddf4ff の代わりに #58a6ff の低彩度面（rgba(56,139,253,0.15)）、最新日だけベタ塗り。</div>
+
+      <div style="position: relative; width: 430px; height: 880px; border: 1px solid #30363d; border-radius: 22px; background: #0d1117; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 12px 32px rgba(0,0,0,0.35);">
+        <div style="flex-shrink: 0; background: #0d1117; border-bottom: 1px solid #30363d;">
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 10px 16px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid #30363d; border-radius: 8px; color: #e6edf3; font-size: 13px; text-decoration: none; background: #21262d;" style-hover="text-decoration: none;">←</a>
+              <span style="font-size: 15px; font-weight: 700; color: #f0f6fc;">アーカイブ</span>
+            </div>
+            <span style="font-size: 11px; color: #8b949e; font-variant-numeric: tabular-nums;">全 412 日分</span>
+          </div>
+          <div class="noscrollbar" style="display: flex; gap: 4px; padding: 0 12px 10px 12px; overflow-x: auto;">
+            <sc-for list="{{ monthTabsDark }}" as="m" hint-placeholder-count="6">
+              <button onClick="{{ m.onClick }}" style="flex-shrink: 0; height: 30px; padding: 0 12px; border: none; border-radius: 15px; font-size: 13px; font-weight: 600; cursor: pointer; background: {{ m.bg }}; color: {{ m.fg }};">{{ m.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+
+        <div class="scr" style="flex: 1; overflow-y: auto; overscroll-behavior: contain;">
+          <div style="padding: 16px;">
+            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 6px;">
+              <sc-for list="{{ weekLabels }}" as="w" hint-placeholder-count="7">
+                <div style="text-align: center; font-size: 10px; font-weight: 700; color: #8b949e;">{{ w }}</div>
+              </sc-for>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;">
+              <sc-for list="{{ calendarDark }}" as="d" hint-placeholder-count="35">
+                <div style="aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; background: {{ d.bg }}; color: {{ d.fg }}; border: 1px solid {{ d.border }};">{{ d.label }}</div>
+              </sc-for>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding-top: 10px; font-size: 11px; color: #8b949e;">
+              <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 10px; height: 10px; border-radius: 3px; background: rgba(56,139,253,0.15); border: 1px solid #30363d;"></span>記事あり</span>
+              <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 10px; height: 10px; border-radius: 3px; background: #58a6ff;"></span>最新</span>
+            </div>
+          </div>
+
+          <div style="padding: 4px 16px 24px 16px;">
+            <div style="font-size: 12px; font-weight: 700; color: #f0f6fc; padding-bottom: 8px; border-bottom: 2px solid #e6edf3;">2026年7月の一覧</div>
+            <sc-for list="{{ archiveDays }}" as="d" hint-placeholder-count="8">
+              <a href="#" style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #21262d; text-decoration: none; color: inherit;" style-hover="text-decoration: none;">
+                <span style="flex-shrink: 0; width: 52px; display: flex; flex-direction: column; gap: 1px;">
+                  <span style="font-size: 15px; font-weight: 700; color: #f0f6fc; font-variant-numeric: tabular-nums;">{{ d.day }}</span>
+                  <span style="font-size: 10px; color: #8b949e;">{{ d.dow }}</span>
+                </span>
+                <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+                  <span style="font-size: 13px; font-weight: 600; line-height: 1.5; color: #e6edf3; text-wrap: pretty;">{{ d.headline }}</span>
+                  <span style="font-size: 11px; color: #8b949e;">{{ d.meta }}</span>
+                </span>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="padding: 48px 48px 0 48px; display: flex; flex-direction: column; gap: 24px;">
+  <div style="display: flex; align-items: baseline; gap: 14px;">
+    <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: #656d76; text-transform: uppercase;">Turn 2</div>
+    <div style="font-size: 14px; color: #656d76;">アーカイブページ。現状は Markdown をそのまま HTML 化したリンクの羅列で、年 → 月 → 日 と3回たどる必要があります。</div>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+
+    <div id="2a" style="display: flex; flex-direction: column; gap: 12px; width: 430px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 24px; padding: 0 8px; border-radius: 6px; background: #1f2328; color: #ffffff; font-size: 13px; font-weight: 700;">2a</span>
+        <span style="font-size: 17px; font-weight: 700; color: #1f2328;">アーカイブ（新案・1a準拠）</span>
+      </div>
+      <div style="font-size: 13px; line-height: 1.6; color: #656d76;">年月の切替とカレンダーを1ページに集約し、3階層のたどり直しをなくす。日付リストにはその日の見出し1本を添えて中身が想像できるように。</div>
+
+      <div style="position: relative; width: 430px; height: 880px; border: 1px solid #d1d9e0; border-radius: 22px; background: #ffffff; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 12px 32px rgba(15,23,42,0.10);">
+        <div style="flex-shrink: 0; background: #ffffff; border-bottom: 1px solid #e1e5e9;">
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 10px 16px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <a href="#" style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid #e1e5e9; border-radius: 8px; color: #1f2328; font-size: 13px; text-decoration: none;" style-hover="background: #f6f8fa; text-decoration: none;">←</a>
+              <span style="font-size: 15px; font-weight: 700; color: #1f2328;">アーカイブ</span>
+            </div>
+            <span style="font-size: 11px; color: #8b949e; font-variant-numeric: tabular-nums;">全 412 日分</span>
+          </div>
+          <div class="noscrollbar" style="display: flex; gap: 4px; padding: 0 12px 10px 12px; overflow-x: auto;">
+            <sc-for list="{{ monthTabs }}" as="m" hint-placeholder-count="6">
+              <button onClick="{{ m.onClick }}" style="flex-shrink: 0; height: 30px; padding: 0 12px; border: none; border-radius: 15px; font-size: 13px; font-weight: 600; cursor: pointer; background: {{ m.bg }}; color: {{ m.fg }};">{{ m.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+
+        <div class="scr" style="flex: 1; overflow-y: auto; overscroll-behavior: contain;">
+          <div style="padding: 16px;">
+            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 6px;">
+              <sc-for list="{{ weekLabels }}" as="w" hint-placeholder-count="7">
+                <div style="text-align: center; font-size: 10px; font-weight: 700; color: #8b949e;">{{ w }}</div>
+              </sc-for>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;">
+              <sc-for list="{{ calendar }}" as="d" hint-placeholder-count="35">
+                <div style="aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; border-radius: 8px; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; background: {{ d.bg }}; color: {{ d.fg }}; border: 1px solid {{ d.border }};">{{ d.label }}</div>
+              </sc-for>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding-top: 10px; font-size: 11px; color: #8b949e;">
+              <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 10px; height: 10px; border-radius: 3px; background: #ddf4ff; border: 1px solid #b6e3ff;"></span>記事あり</span>
+              <span style="display: inline-flex; align-items: center; gap: 5px;"><span style="width: 10px; height: 10px; border-radius: 3px; background: #0969da;"></span>最新</span>
+            </div>
+          </div>
+
+          <div style="padding: 4px 16px 24px 16px;">
+            <div style="font-size: 12px; font-weight: 700; color: #1f2328; padding-bottom: 8px; border-bottom: 2px solid #1f2328;">2026年7月の一覧</div>
+            <sc-for list="{{ archiveDays }}" as="d" hint-placeholder-count="8">
+              <a href="#" style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid #eef1f4; text-decoration: none; color: inherit;" style-hover="text-decoration: none;">
+                <span style="flex-shrink: 0; width: 52px; display: flex; flex-direction: column; gap: 1px;">
+                  <span style="font-size: 15px; font-weight: 700; color: #1f2328; font-variant-numeric: tabular-nums;">{{ d.day }}</span>
+                  <span style="font-size: 10px; color: #8b949e;">{{ d.dow }}</span>
+                </span>
+                <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+                  <span style="font-size: 13px; font-weight: 600; line-height: 1.5; color: #1f2328; text-wrap: pretty;">{{ d.headline }}</span>
+                  <span style="font-size: 11px; color: #8b949e;">{{ d.meta }}</span>
+                </span>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="2b" style="display: flex; flex-direction: column; gap: 12px; width: 430px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 24px; padding: 0 8px; border-radius: 6px; background: #656d76; color: #ffffff; font-size: 13px; font-weight: 700;">2b</span>
+        <span style="font-size: 17px; font-weight: 700; color: #1f2328;">現状のアーカイブ（参考）</span>
+      </div>
+      <div style="font-size: 13px; line-height: 1.6; color: #656d76;">archive_generator の Markdown→HTML 変換そのまま。main.css も読み込まず独自のインラインスタイルで、年の一覧だけが並びます。</div>
+
+      <div style="position: relative; width: 430px; height: 880px; border: 1px solid #d1d9e0; border-radius: 22px; background: #ffffff; overflow: hidden; box-shadow: 0 12px 32px rgba(15,23,42,0.10);">
+        <div class="scr" style="height: 100%; overflow-y: auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; color: #333333; box-sizing: border-box;">
+          <h1 style="color: #1f2328; font-size: 2em; margin: 0.67em 0; font-weight: bold;">📚 過去のニュース一覧</h1>
+          <p style="margin: 1em 0;">忙しいエンジニアのために。毎日サクッとキャッチアップ。</p>
+          <h2 style="font-size: 1.5em; margin: 0.83em 0; font-weight: bold;">年別アーカイブ</h2>
+          <p style="margin: 1em 0;"><a href="#">2026年</a></p>
+          <p style="margin: 1em 0;"><a href="#">2025年</a></p>
+          <p style="margin: 1em 0;">[← メインページに戻る](../README.md)</p>
+          <div style="margin-top: 28px; padding: 12px 14px; background: #f6f8fa; border: 1px dashed #d1d9e0; border-radius: 8px; font-size: 12px; line-height: 1.7; color: #656d76;">この先は「2026年 → 07月 → 07月26日」と2ページたどって、ようやく日別ページに着きます。月別ページの「カード表示版」リンクは変換時に落ちて表示されません。</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="padding: 48px; display: flex; flex-direction: column; gap: 24px;">
+  <div style="display: flex; align-items: baseline; gap: 14px;">
+    <div style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: #656d76; text-transform: uppercase;">Turn 1</div>
+    <div style="font-size: 14px; color: #656d76;">情報整理の考え方が違う2案。どちらもスマホ幅で確認、PCでは max-width 800px を維持する想定です。</div>
+  </div>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
+
+    <div id="1a" style="display: flex; flex-direction: column; gap: 12px; width: 430px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 24px; padding: 0 8px; border-radius: 6px; background: #1f2328; color: #ffffff; font-size: 13px; font-weight: 700;">1a</span>
+        <span style="font-size: 17px; font-weight: 700; color: #1f2328;">メディア別ダイジェスト</span>
+      </div>
+      <div style="font-size: 13px; line-height: 1.6; color: #656d76;">今の構造（メディア別）を残したまま、各メディア3件＋「もっと見る」に圧縮。上部に今日のハイライト、イベントと書籍はタブに分離。</div>
+
+      <div style="position: relative; width: 430px; height: 880px; border: 1px solid #d1d9e0; border-radius: 22px; background: #ffffff; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 12px 32px rgba(15,23,42,0.10);">
+        <div style="flex-shrink: 0; background: #ffffff; border-bottom: 1px solid #e1e5e9;">
+          <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px 16px 8px 16px;">
+            <div style="display: flex; align-items: baseline; gap: 8px;">
+              <span style="font-size: 15px; font-weight: 700; color: #1f2328; letter-spacing: -0.01em;">今日のテックニュース</span>
+              <span style="font-size: 12px; color: #656d76; font-variant-numeric: tabular-nums;">7/26 (日)</span>
+            </div>
+            <div style="display: flex; gap: 6px;">
+              <button onClick="{{ openFilterA }}" style="display: inline-flex; align-items: center; gap: 5px; height: 30px; padding: 0 10px; border: 1px solid #e1e5e9; background: #ffffff; border-radius: 8px; font-size: 12px; font-weight: 600; color: #1f2328; cursor: pointer;" style-hover="background: #f6f8fa;">絞り込み<span style="font-size: 11px; color: #656d76;">{{ filterCountA }}</span></button>
+              <button style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid #e1e5e9; background: #ffffff; border-radius: 8px; font-size: 13px; cursor: pointer;" style-hover="background: #f6f8fa;">🌙</button>
+            </div>
+          </div>
+          <div style="display: flex; gap: 4px; padding: 0 12px 10px 12px;">
+            <sc-for list="{{ tabsA }}" as="t" hint-placeholder-count="3">
+              <button onClick="{{ t.onClick }}" style="display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border: none; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; background: {{ t.bg }}; color: {{ t.fg }};">{{ t.label }}</button>
+            </sc-for>
+          </div>
+        </div>
+
+        <div class="scr" style="flex: 1; overflow-y: auto; overscroll-behavior: contain;">
+          <sc-if value="{{ showArticlesA }}" hint-placeholder-val="{{ true }}">
+            <div>
+              <div style="position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid #eef1f4;">
+                <div class="noscrollbar" style="display: flex; gap: 6px; padding: 8px 16px; overflow-x: auto;">
+                  <sc-for list="{{ tocA }}" as="c" hint-placeholder-count="6">
+                    <a href="#" style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 5px; height: 26px; padding: 0 10px; border: 1px solid #e1e5e9; border-radius: 13px; font-size: 12px; color: #656d76; background: #ffffff; text-decoration: none;" style-hover="border-color: #0969da; color: #0969da; text-decoration: none;">{{ c }}</a>
+                  </sc-for>
+                </div>
+              </div>
+
+              <div style="padding: 18px 16px 4px 16px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                  <span style="font-size: 13px; font-weight: 700; color: #1f2328; letter-spacing: 0.02em;">今日のハイライト</span>
+                  <span style="font-size: 11px; color: #656d76;">複数メディアで話題</span>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                  <sc-for list="{{ highlightsA }}" as="h" hint-placeholder-count="3">
+                    <a href="#" style="display: flex; gap: 12px; padding: 14px; border: 1px solid #e1e5e9; border-radius: 12px; background: #ffffff; text-decoration: none; color: inherit;" style-hover="border-color: #0969da; text-decoration: none;">
+                      <span style="flex-shrink: 0; width: 22px; font-size: 18px; font-weight: 800; color: #0969da; line-height: 1.2; font-variant-numeric: tabular-nums;">{{ h.rank }}</span>
+                      <span style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+                        <span style="font-size: 16px; font-weight: 700; line-height: 1.45; color: #1f2328; text-wrap: pretty;">{{ h.title }}</span>
+                        <span style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: #656d76;">{{ h.meta }}</span>
+                      </span>
+                    </a>
+                  </sc-for>
+                </div>
+              </div>
+
+              <sc-for list="{{ mediaA }}" as="m" hint-placeholder-count="5">
+                <div style="padding: 22px 16px 0 16px;">
+                  <div style="display: flex; align-items: center; padding-bottom: 8px; border-bottom: 2px solid #1f2328;">
+                    <span style="font-size: 14px; font-weight: 700; color: #1f2328;">{{ m.name }}</span>
+                  </div>
+                  <div style="display: flex; flex-direction: column;">
+                    <sc-for list="{{ m.items }}" as="it" hint-placeholder-count="3">
+                      <div onClick="{{ it.onToggle }}" style="display: flex; flex-direction: column; gap: 6px; padding: 12px 0; border-bottom: 1px solid #eef1f4; cursor: pointer;">
+                        <div style="display: flex; gap: 10px; align-items: flex-start;">
+                          <div style="flex: 1; min-width: 0; font-size: 14px; font-weight: 600; line-height: 1.5; color: #1f2328; text-wrap: pretty;">{{ it.title }}</div>
+                          <div style="flex-shrink: 0; font-size: 11px; color: #8b949e; padding-top: 3px; font-variant-numeric: tabular-nums;">{{ it.time }}</div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+                          <sc-for list="{{ it.tags }}" as="tg" hint-placeholder-count="2">
+                            <span style="display: inline-flex; align-items: center; height: 18px; padding: 0 6px; border-radius: 4px; background: #f6f8fa; color: #656d76; font-size: 11px; font-weight: 500;">{{ tg }}</span>
+                          </sc-for>
+                        </div>
+                        <sc-if value="{{ it.open }}" hint-placeholder-val="{{ false }}">
+                          <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px 12px; background: #f6f8fa; border-radius: 8px;">
+                            <div style="font-size: 12px; line-height: 1.6; color: #656d76;">{{ it.summary }}</div>
+                            <div style="display: flex; gap: 8px;">
+                              <a href="#" style="display: inline-flex; align-items: center; height: 30px; padding: 0 12px; background: #0969da; color: #ffffff; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none;" style-hover="background: #0860ca; text-decoration: none;">記事を読む ↗</a>
+                              <button style="display: inline-flex; align-items: center; height: 30px; padding: 0 12px; background: #ffffff; border: 1px solid #e1e5e9; color: #1f2328; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">共有</button>
+                            </div>
+                          </div>
+                        </sc-if>
+                      </div>
+                    </sc-for>
+                  </div>
+                </div>
+              </sc-for>
+
+              <div style="padding: 28px 16px 24px 16px;">
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border: 1px solid #e1e5e9; border-radius: 12px; background: #f6f8fa;">
+                  <div style="display: flex; flex-direction: column; gap: 2px;">
+                    <span style="font-size: 13px; font-weight: 700; color: #1f2328;">RSSで購読</span>
+                    <span style="font-size: 11px; color: #656d76;">毎朝 JST 7:00 更新</span>
+                  </div>
+                  <a href="#" style="display: inline-flex; align-items: center; height: 30px; padding: 0 12px; background: #ffffff; border: 1px solid #e1e5e9; border-radius: 8px; font-size: 12px; font-weight: 600; color: #1f2328; text-decoration: none;" style-hover="text-decoration: none; border-color: #0969da;">📡 登録</a>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding-top: 12px;">
+                  <a href="#" style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; border: 1px solid #e1e5e9; border-radius: 12px; background: #ffffff; text-decoration: none; color: inherit;" style-hover="border-color: #0969da; text-decoration: none;">
+                    <span style="font-size: 13px; font-weight: 700; color: #1f2328;">📚 アーカイブ</span>
+                    <span style="font-size: 11px; color: #8b949e;">過去のニュース</span>
+                  </a>
+                  <a href="#" style="display: flex; flex-direction: column; gap: 3px; padding: 12px 14px; border: 1px solid #e1e5e9; border-radius: 12px; background: #ffffff; text-decoration: none; color: inherit;" style-hover="border-color: #0969da; text-decoration: none;">
+                    <span style="font-size: 13px; font-weight: 700; color: #1f2328;">📁 GitHub</span>
+                    <span style="font-size: 11px; color: #8b949e;">ソースとフィード設定</span>
+                  </a>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 6px; padding-top: 14px; font-size: 11px; color: #8b949e;">
+                  <span>Built by</span>
+                  <a href="#" style="color: #656d76; font-weight: 600;">@unsoluble_sugar</a>
+                </div>
+              </div>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ showEventsA }}" hint-placeholder-val="{{ false }}">
+            <div style="padding: 16px;">
+              <div style="font-size: 13px; color: #656d76; margin-bottom: 12px;">connpass・TECH PLAY の直近イベント。日付順にまとめて、開催が近いものから表示します。</div>
+              <sc-for list="{{ eventGroupsA }}" as="g" hint-placeholder-count="3">
+                <div style="margin-bottom: 18px;">
+                  <div style="position: sticky; top: 0; background: #ffffff; padding: 6px 0; font-size: 12px; font-weight: 700; color: #0969da; border-bottom: 1px solid #eef1f4;">{{ g.day }}</div>
+                  <sc-for list="{{ g.items }}" as="e" hint-placeholder-count="3">
+                    <a href="#" style="display: flex; gap: 10px; padding: 11px 0; border-bottom: 1px solid #eef1f4; text-decoration: none; color: inherit;" style-hover="text-decoration: none;">
+                      <span style="flex-shrink: 0; width: 44px; font-size: 11px; color: #8b949e; padding-top: 2px; font-variant-numeric: tabular-nums;">{{ e.time }}</span>
+                      <span style="display: flex; flex-direction: column; gap: 4px; min-width: 0;">
+                        <span style="font-size: 14px; font-weight: 600; line-height: 1.45; color: #1f2328; text-wrap: pretty;">{{ e.title }}</span>
+                        <span style="font-size: 11px; color: #656d76;">{{ e.meta }}</span>
+                      </span>
+                    </a>
+                  </sc-for>
+                </div>
+              </sc-for>
+            </div>
+          </sc-if>
+
+          <sc-if value="{{ showBooksA }}" hint-placeholder-val="{{ false }}">
+            <div style="padding: 16px;">
+              <div style="font-size: 13px; color: #656d76; margin-bottom: 12px;">O'Reilly Japan の近刊。</div>
+              <sc-for list="{{ booksA }}" as="b" hint-placeholder-count="5">
+                <a href="#" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 13px 0; border-bottom: 1px solid #eef1f4; text-decoration: none; color: inherit;" style-hover="text-decoration: none;">
+                  <span style="font-size: 14px; font-weight: 600; color: #1f2328;">{{ b.title }}</span>
+                  <span style="font-size: 11px; color: #8b949e; flex-shrink: 0;">{{ b.meta }}</span>
+                </a>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ filterOpenA }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; inset: 0; z-index: 20; display: flex; flex-direction: column; justify-content: flex-end; background: rgba(15,23,42,0.35);">
+            <div onClick="{{ closeFilterA }}" style="flex: 1;"></div>
+            <div style="background: #ffffff; border-radius: 18px 18px 0 0; max-height: 78%; display: flex; flex-direction: column; box-shadow: 0 -8px 32px rgba(15,23,42,0.18);">
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid #e1e5e9;">
+                <span style="font-size: 15px; font-weight: 700; color: #1f2328;">絞り込み</span>
+                <button onClick="{{ closeFilterA }}" style="border: none; background: none; font-size: 20px; color: #656d76; cursor: pointer; line-height: 1;">×</button>
+              </div>
+              <div class="scr" style="flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 18px;">
+                <sc-for list="{{ filterGroupsA }}" as="g" hint-placeholder-count="3">
+                  <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="font-size: 11px; font-weight: 700; color: #8b949e; letter-spacing: 0.06em; text-transform: uppercase;">{{ g.label }}</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                      <sc-for list="{{ g.tags }}" as="t" hint-placeholder-count="6">
+                        <button onClick="{{ t.onClick }}" style="height: 30px; padding: 0 12px; border-radius: 15px; font-size: 12px; font-weight: 600; cursor: pointer; border: 1px solid {{ t.border }}; background: {{ t.bg }}; color: {{ t.fg }};">{{ t.label }}</button>
+                      </sc-for>
+                    </div>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="display: flex; gap: 8px; padding: 12px 16px 16px 16px; border-top: 1px solid #e1e5e9;">
+                <button onClick="{{ clearFilterA }}" style="flex: 1; height: 40px; border: 1px solid #e1e5e9; background: #ffffff; border-radius: 10px; font-size: 13px; font-weight: 600; color: #656d76; cursor: pointer;">クリア</button>
+                <button onClick="{{ closeFilterA }}" style="flex: 2; height: 40px; border: none; background: #0969da; color: #ffffff; border-radius: 10px; font-size: 13px; font-weight: 700; cursor: pointer;">{{ applyLabelA }}</button>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+    <div id="1b" style="display: flex; flex-direction: column; gap: 12px; width: 430px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 24px; padding: 0 8px; border-radius: 6px; background: #1f2328; color: #ffffff; font-size: 13px; font-weight: 700;">1b</span>
+        <span style="font-size: 17px; font-weight: 700; color: #1f2328;">トピック横断タイムライン</span>
+      </div>
+      <div style="font-size: 13px; line-height: 1.6; color: #656d76;">メディアの区切りをやめ、全記事を1本の新着タイムラインに統合。カテゴリのセグメントで切り替え、メディアはチップで表示。イベントは別ページ。</div>
+
+      <div style="position: relative; width: 430px; height: 880px; border: 1px solid #d1d9e0; border-radius: 22px; background: #ffffff; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 12px 32px rgba(15,23,42,0.10);">
+        <div style="flex-shrink: 0; background: #1f2328; color: #ffffff; padding: 12px 16px 10px 16px;">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; flex-direction: column; gap: 2px;">
+              <span style="font-size: 15px; font-weight: 700; letter-spacing: -0.01em;">今日のテックニュース</span>
+              <span style="font-size: 11px; color: #8b949e; font-variant-numeric: tabular-nums;">2026-07-26 ・ 50本 / 10メディア</span>
+            </div>
+            <div style="display: flex; gap: 6px;">
+              <button onClick="{{ openFilterB }}" style="display: inline-flex; align-items: center; gap: 5px; height: 30px; padding: 0 10px; border: 1px solid #30363d; background: #21262d; border-radius: 8px; font-size: 12px; font-weight: 600; color: #e6edf3; cursor: pointer;">メディア<span style="font-size: 11px; color: #8b949e;">{{ mediaCountB }}</span></button>
+              <button style="display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border: 1px solid #30363d; background: #21262d; border-radius: 8px; font-size: 13px; cursor: pointer;">📡</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex-shrink: 0; border-bottom: 1px solid #e1e5e9; background: #ffffff;">
+          <div class="scr" style="display: flex; gap: 2px; padding: 8px 12px; overflow-x: auto;">
+            <sc-for list="{{ segmentsB }}" as="s" hint-placeholder-count="6">
+              <button onClick="{{ s.onClick }}" style="flex-shrink: 0; display: inline-flex; align-items: center; gap: 5px; height: 30px; padding: 0 12px; border: none; border-radius: 15px; font-size: 13px; font-weight: 600; cursor: pointer; background: {{ s.bg }}; color: {{ s.fg }};">{{ s.label }}<span style="font-size: 11px; opacity: 0.65; font-variant-numeric: tabular-nums;">{{ s.count }}</span></button>
+            </sc-for>
+          </div>
+        </div>
+
+        <div class="scr" style="flex: 1; overflow-y: auto; overscroll-behavior: contain;">
+          <div style="padding: 14px 16px 6px 16px; display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 12px; font-weight: 700; color: #1f2328;">{{ listTitleB }}</span>
+            <span style="font-size: 11px; color: #8b949e;">新着順</span>
+          </div>
+
+          <div style="padding: 0 16px;">
+            <sc-for list="{{ listB }}" as="it" hint-placeholder-count="10">
+              <div onClick="{{ it.onToggle }}" style="display: flex; gap: 12px; padding: 13px 0; border-bottom: 1px solid #eef1f4; cursor: pointer;">
+                <div style="flex-shrink: 0; width: 40px; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; padding-top: 2px;">
+                  <span style="font-size: 11px; font-weight: 600; color: #8b949e; font-variant-numeric: tabular-nums;">{{ it.time }}</span>
+                  <span style="width: 6px; height: 6px; border-radius: 50%; background: {{ it.dot }};"></span>
+                </div>
+                <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px;">
+                  <div style="font-size: 14px; font-weight: 600; line-height: 1.5; color: #1f2328; text-wrap: pretty;">{{ it.title }}</div>
+                  <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span style="display: inline-flex; align-items: center; height: 19px; padding: 0 7px; border: 1px solid #e1e5e9; border-radius: 4px; font-size: 11px; font-weight: 600; color: #656d76;">{{ it.source }}</span>
+                    <span style="font-size: 11px; color: #8b949e;">{{ it.cat }}</span>
+                  </div>
+                  <sc-if value="{{ it.open }}" hint-placeholder-val="{{ false }}">
+                    <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px 12px; background: #f6f8fa; border-radius: 8px;">
+                      <div style="font-size: 12px; line-height: 1.6; color: #656d76;">{{ it.summary }}</div>
+                      <div style="display: flex; gap: 8px;">
+                        <a href="#" style="display: inline-flex; align-items: center; height: 30px; padding: 0 12px; background: #0969da; color: #ffffff; border-radius: 6px; font-size: 12px; font-weight: 600; text-decoration: none;" style-hover="background: #0860ca; text-decoration: none;">記事を読む ↗</a>
+                        <button style="display: inline-flex; align-items: center; height: 30px; padding: 0 12px; background: #ffffff; border: 1px solid #e1e5e9; color: #1f2328; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">共有</button>
+                      </div>
+                    </div>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="padding: 16px;">
+            <button style="width: 100%; height: 40px; border: 1px solid #e1e5e9; background: #ffffff; border-radius: 10px; font-size: 13px; font-weight: 600; color: #0969da; cursor: pointer;" style-hover="background: #f6f8fa;">さらに 20 件</button>
+          </div>
+
+          <div style="padding: 4px 16px 24px 16px; display: flex; flex-direction: column; gap: 10px;">
+            <a href="#" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border: 1px solid #e1e5e9; border-radius: 12px; background: #ffffff; text-decoration: none; color: inherit;" style-hover="border-color: #0969da; text-decoration: none;">
+              <span style="display: flex; flex-direction: column; gap: 3px;">
+                <span style="font-size: 13px; font-weight: 700; color: #1f2328;">技術イベント 20件</span>
+                <span style="font-size: 11px; color: #656d76;">connpass・TECH PLAY / 日付順の別ページ</span>
+              </span>
+              <span style="font-size: 15px; color: #0969da;">→</span>
+            </a>
+            <a href="#" style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border: 1px solid #e1e5e9; border-radius: 12px; background: #ffffff; text-decoration: none; color: inherit;" style-hover="border-color: #0969da; text-decoration: none;">
+              <span style="display: flex; flex-direction: column; gap: 3px;">
+                <span style="font-size: 13px; font-weight: 700; color: #1f2328;">技術書の近刊 5件</span>
+                <span style="font-size: 11px; color: #656d76;">O'Reilly Japan</span>
+              </span>
+              <span style="font-size: 15px; color: #0969da;">→</span>
+            </a>
+            <div style="display: flex; justify-content: center; gap: 14px; padding-top: 8px; font-size: 12px;">
+              <a href="#" style="color: #656d76;">アーカイブ</a>
+              <a href="#" style="color: #656d76;">GitHub</a>
+              <a href="#" style="color: #656d76;">@unsoluble_sugar</a>
+            </div>
+          </div>
+        </div>
+
+        <sc-if value="{{ filterOpenB }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; inset: 0; z-index: 20; display: flex; flex-direction: column; justify-content: flex-end; background: rgba(15,23,42,0.35);">
+            <div onClick="{{ closeFilterB }}" style="flex: 1;"></div>
+            <div style="background: #ffffff; border-radius: 18px 18px 0 0; max-height: 78%; display: flex; flex-direction: column; box-shadow: 0 -8px 32px rgba(15,23,42,0.18);">
+              <div style="display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-bottom: 1px solid #e1e5e9;">
+                <span style="font-size: 15px; font-weight: 700; color: #1f2328;">表示するメディア</span>
+                <button onClick="{{ closeFilterB }}" style="border: none; background: none; font-size: 20px; color: #656d76; cursor: pointer; line-height: 1;">×</button>
+              </div>
+              <div class="scr" style="flex: 1; overflow-y: auto; padding: 8px 16px;">
+                <sc-for list="{{ mediaTogglesB }}" as="m" hint-placeholder-count="8">
+                  <div onClick="{{ m.onClick }}" style="display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eef1f4; cursor: pointer;">
+                    <span style="display: flex; flex-direction: column; gap: 2px;">
+                      <span style="font-size: 14px; font-weight: 600; color: #1f2328;">{{ m.name }}</span>
+                      <span style="font-size: 11px; color: #8b949e;">{{ m.count }}</span>
+                    </span>
+                    <span style="width: 40px; height: 24px; border-radius: 12px; padding: 2px; box-sizing: border-box; display: flex; justify-content: {{ m.justify }}; background: {{ m.track }};">
+                      <span style="width: 20px; height: 20px; border-radius: 50%; background: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.25);"></span>
+                    </span>
+                  </div>
+                </sc-for>
+              </div>
+              <div style="padding: 12px 16px 16px 16px; border-top: 1px solid #e1e5e9;">
+                <button onClick="{{ closeFilterB }}" style="width: 100%; height: 40px; border: none; background: #0969da; color: #ffffff; border-radius: 10px; font-size: 13px; font-weight: 700; cursor: pointer;">適用</button>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const MEDIA = [
+  ['Tech Blog Weekly', 5, [
+    ['Gemini Enterprise Agent PlatformのPipelinesで学習からModel Registry登録まで試してみた', '5:20', ['AI・機械学習', 'クラウド']],
+    ['A Write Barrier Validating GC for Ruby まとめ', '4:10', ['プログラミング']],
+    ['Cycloud 新基盤の全貌 第五回: ComputeController 編', '2:35', ['クラウド', 'DevOps']],
+    ['AI Dev Day 2026で「MCPをつなげて作る組織横断のAIエージェント基盤」について登壇しました', '昨日', ['AI・機械学習']],
+    ['AWS Organizations に潜り込んでも、請求から逃れることはできなかった話', '昨日', ['クラウド']]]],
+  ['Zenn', 5, [
+    ['ターミナルを自作したら、1日のコミット数が500を超えて、生産性がバグった話', '6:45', ['ツール・IDE']],
+    ['AI時代のエンジニアリングマネージャーのあり方｜外部品質編', '6:02', ['キャリア・組織']],
+    ['Terraform / Kubernetes の構築で、初心者がよく指摘されるポイントのまとめ', '5:15', ['DevOps']],
+    ['クオンツはテクニカル分析を寄与度分解の中で見ている', '4:30', ['データ分析']],
+    ['Astroで日英ブログを作って分かった5つの実装パターン', '3:12', ['Web開発']]]],
+  ['Qiita', 5, [
+    ['JenkinsでGitHub Copilot CLIにPRを自動レビューさせる ― E2BIG・プロンプトインジェクション・トークン地獄との戦い', '6:30', ['コーディング支援', 'DevOps']],
+    ['AIエージェントがあれば技術書なんてすぐ書けるでしょ、と思ったが無理だった', '5:48', ['AI・機械学習']],
+    ['個人開発でApp Storeリリースフローを学ぶ（続編）― 3回のリジェクトと審査通過までにやったこと', '4:55', ['モバイル']],
+    ['ひとことで、言え。～スライドをAIで作り直したらわかりにくくなった話～', '3:40', ['技術発表・LT']],
+    ['「何から始めるか問題」で、結局何も始められなかった話', '2:20', ['キャリア・組織']]]],
+  ['はてなブックマーク - IT（人気）', 5, [
+    ['HTML-in-Canvas コンポーネントライブラリ Canvas UI', '7:05', ['Web開発']],
+    ['AIで「日本が追いつくのは無理」　中国を軽く見た製造業のツケ', '6:20', ['テクノロジートレンド']],
+    ['【Obsidian】既存のAIサブスクだけでメモを整理する環境を作った', '5:30', ['ツール紹介']],
+    ['dns.gby', '4:44', ['ネットワーク']],
+    ['『読者の横顔』　株式会社はてな　コーポレート本部　経理部長　堀内潤一 氏', '3:18', ['その他']]]],
+  ['DevelopersIO', 5, [
+    ['Claude CodeとKiro CLI、同じタスクで速さ・コスト・品質を比較してみた', '7:30', ['コーディング支援']],
+    ['Claude Codeの設定を可視化するローカルダッシュボードを自作してみた', '6:10', ['ツール・IDE']],
+    ['Amazon SES コンソールの新機能「Mail Manager SMTP のガイド付きセットアップ」を試してみた', '5:05', ['クラウド']],
+    ['【非エンジニアのためのClaude/Claude Codeシリーズ】effortは「賢さ」ではなく「仕事量」のつまみだった', '4:20', ['AI・機械学習']],
+    ['『医療情報システムの安全管理に関するガイドライン第7.0版を確認してみた』で登壇しました', '昨日', ['セキュリティ']]]],
+  ['gihyo.jp', 5, [
+    ['Anthropic、「Claude Opus 5」の提供を開始', '8:00', ['AI・機械学習']],
+    ['ChatGPTデスクトップアプリ、ローカルプロジェクトに複数フォルダーを追加可能に', '7:12', ['AI・機械学習']],
+    ['LangChain、AIエージェントの評価を対話形式で構築する「Eval Engineering Skill」を公開', '6:40', ['AI・機械学習']],
+    ['Ubuntu 26.10（Stonking）の開発; 閉域網向けのSnap Store', '昨日', ['OS・システム']],
+    ['「中高生Rubyプログラミングコンテスト2026」開催決定', '昨日', ['プログラミング']]]],
+  ['Publickey', 5, [
+    ['.NET MAUI、iOS/AndoridのランタイムがMonoからCoreCLRに更新。.NET 11 Preview 6が公開', '7:50', ['モバイル', 'プログラミング']],
+    ['アトラシアン、JiraがAIによる要件定義の自動作成など新機能', '昨日', ['システム開発']],
+    ['AWS、デプロイ速度が最大4倍になる「AWS CloudFormation Expressモード」を提供開始', '昨日', ['クラウド']],
+    ['企業向けAIツールで成長率トップはAnthropic。Oktaが調査結果を発表', '2日前', ['テクノロジートレンド']],
+    ['Claude Codeを組織一括でシングルサインオン、「Claude apps gateway」登場', '2日前', ['AI・機械学習']]]],
+  ['CodeZine', 5, [
+    ['Next.js、重要な脆弱性を修正するセキュリティリリースを公開', '7:25', ['セキュリティ', 'Web開発']],
+    ['GitHub Mobile、CopilotがActionsチェックの失敗を自動修正可能に', '6:55', ['DevOps']],
+    ['Node.js、7月27日にセキュリティアップデートを発表', '6:05', ['セキュリティ']],
+    ['Visual Studio Code 1.130がリリース、エージェント機能などを強化', '昨日', ['ツール・IDE']],
+    ['Android版Chrome、通知プロンプトのUX改善をChrome 155で導入', '2日前', ['UI/UX']]]],
+  ['InfoQ Japan', 5, [
+    ['Kubescape 4.0、Kubernetesに実行時セキュリティとAIエージェントスキャン機能を追加', '5:40', ['セキュリティ', 'DevOps']],
+    ['Anthropicリード：エージェント型ループへの人間の関与維持にはMarkdownよりHTMLが有効に', '昨日', ['AI・機械学習']],
+    ['Amazon CloudWatch、OpenTelemetryメトリクス対応をプレビュー公開', '昨日', ['クラウド']],
+    ['AIがソフトウェアライフサイクルの上流へ：コードレビューからPRDガバナンスへ', '2日前', ['システム開発']],
+    ['GoogleのAletheiaが完全自律型AIエージェンティック数学研究の最先端を突き進む', '2日前', ['アルゴリズム・数学']]]],
+  ['はてなブックマーク - IT（新着）', 5, [
+    ['UIをツリーに分解する｜Next.jsの考え方', '8:10', ['Web開発']],
+    ['Claude CodeのInput Tokenが増える原因を、利用ログから調べてみた', '7:40', ['コーディング支援']],
+    ['Hermes Agent と Slack で設計し、Linear のチケットから Draft PR まで作成するワークフロー', '7:00', ['AI・機械学習']],
+    ['AI工学特論: MLOps・継続的評価', '6:15', ['AI・機械学習']],
+    ['Open Weights and American AI Leadership', '5:00', ['テクノロジートレンド']]]]
+];
+
+const HIGHLIGHTS = [
+  ['Anthropic、「Claude Opus 5」の提供を開始', 'gihyo.jp ・ 他3メディアで言及 ・ 8:00'],
+  ['Next.js、重要な脆弱性を修正するセキュリティリリースを公開', 'CodeZine ・ 他2メディアで言及 ・ 7:25'],
+  ['ターミナルを自作したら、1日のコミット数が500を超えて、生産性がバグった話', 'Zenn ・ はてブ人気入り ・ 6:45']
+];
+
+const EVENTS = [
+  ['7月27日 (月)', [
+    ['19:00', '【北区・赤羽】ゆるもく会 #9｜初心者歓迎・作業/勉強/読書OK', 'connpass ・ 東京都北区'],
+    ['19:30', '[秋葉原] AI駆動開発 / LLM もくもく会 (初参加・初心者大歓迎！)', 'TECH PLAY ・ 東京都千代田区'],
+    ['20:00', 'Rustオンラインもくもく会 #363', 'connpass ・ オンライン']]],
+  ['7月28日 (火)', [
+    ['18:30', '[秋葉原] Amazon Bedrock AgentCore 実践入門 輪読会 認証とツール制御', 'TECH PLAY ・ 東京都千代田区'],
+    ['19:00', 'Intel開発者ガイド読み会（オンライン）', 'connpass ・ オンライン'],
+    ['19:30', 'バイブコーディングクラブ', 'TECH PLAY ・ オンライン']]],
+  ['7月30日 (木)', [
+    ['13:00', 'CANVA AI【入門編】', 'TECH PLAY ・ オンライン'],
+    ['19:00', 'スクラム道関西 オープン・ジャム', 'connpass ・ 大阪府'],
+    ['19:30', '代数学2  環と体とガロア理論 #6', 'connpass ・ オンライン']]],
+  ['8月1日 (土)', [
+    ['10:00', 'Hono Conference 2026 in Tokyo', 'connpass ・ 東京都渋谷区'],
+    ['13:00', '第5回 秋葉原インディゲームもくもく会', 'connpass ・ 東京都千代田区'],
+    ['14:00', '繋がる福島もくもく会#5', 'connpass ・ 福島県']]]
+];
+
+const BOOKS = [
+  ['LLMOps', '9/12 発売'],
+  ['Node.jsプロジェクト', '9/19 発売'],
+  ['AIがわかる数学入門', '10/3 発売'],
+  ['AIインターフェースデザイン', '10/17 発売'],
+  ['Google CloudではじめるAI/ML入門', '10/24 発売']
+];
+
+const CATS = ['AI・機械学習', 'Web開発', 'クラウド', 'DevOps', 'セキュリティ', 'ツール・IDE', 'コーディング支援', 'キャリア・組織'];
+const SUMMARY = '記事の要点を3行で。RSSの本文冒頭ではなく、タイトル・メディア・カテゴリと合わせて「読むかどうか」を判断するための情報だけを出します。';
+
+const CAT_COLOR = {
+  'AI・機械学習': '#8250df', 'Web開発': '#0969da', 'クラウド': '#1a7f37', 'DevOps': '#bc4c00',
+  'セキュリティ': '#cf222e', 'ツール・IDE': '#656d76', 'コーディング支援': '#8250df', 'キャリア・組織': '#656d76'
+};
+
+class Component extends DCLogic {
+  state = {
+    tabA: 'articles', openA: {}, moreA: {}, filterOpenA: false, tagsA: [],
+    segB: 'all', openB: {}, filterOpenB: false, offB: {},
+    month: '2026-07'
+  };
+
+  renderVals() {
+    const st = this.state;
+    const toggleA = (k) => () => this.setState(s => ({ openA: Object.assign({}, s.openA, { [k]: !s.openA[k] }) }));
+
+    const tabDefs = [['articles', '記事', '30'], ['events', 'イベント', '20'], ['books', '書籍', '5']];
+    const tabsA = tabDefs.map(([k, label, count]) => ({
+      label, count,
+      bg: st.tabA === k ? '#1f2328' : '#f6f8fa',
+      fg: st.tabA === k ? '#ffffff' : '#656d76',
+      onClick: () => this.setState({ tabA: k })
+    }));
+
+    const mediaA = MEDIA.map((m, mi) => {
+      const [name] = m;
+      const shown = m[2].slice(0, 3);
+      return {
+        name, count: '3件',
+        items: shown.map((it, ii) => {
+          const key = 'a' + mi + '-' + ii;
+          return { title: it[0], time: it[1], tags: it[2], summary: SUMMARY, open: !!st.openA[key], onToggle: toggleA(key) };
+        })
+      };
+    });
+
+    const filterGroupsA = [
+      { label: 'よく使う', tags: ['AI・機械学習', 'Web開発', 'クラウド', 'セキュリティ'] },
+      { label: '開発・運用', tags: ['DevOps', 'データベース', 'データ分析', 'ツール・IDE', 'ネットワーク'] },
+      { label: '専門・その他', tags: ['モバイル', 'ゲーム開発', 'UI/UX', 'キャリア・組織', 'テクノロジートレンド', 'その他'] }
+    ].map(g => ({
+      label: g.label,
+      tags: g.tags.map(t => {
+        const on = st.tagsA.indexOf(t) >= 0;
+        return {
+          label: t, bg: on ? '#0969da' : '#ffffff', fg: on ? '#ffffff' : '#656d76', border: on ? '#0969da' : '#d1d9e0',
+          onClick: () => this.setState(s => ({ tagsA: on ? s.tagsA.filter(x => x !== t) : s.tagsA.concat([t]) }))
+        };
+      })
+    }));
+
+    const sortKey = (t) => {
+      const hm = /^(\d{1,2}):(\d{2})$/.exec(t);
+      if (hm) return parseInt(hm[1], 10) * 60 + parseInt(hm[2], 10);
+      if (t === '昨日') return -1440;
+      const d = /^(\d+)日前$/.exec(t);
+      if (d) return -1440 * parseInt(d[1], 10);
+      return -100000;
+    };
+    const flat = [];
+    MEDIA.forEach((m, mi) => m[2].forEach((it, ii) => flat.push({ source: m[0].replace('はてなブックマーク - ', 'はてブ'), title: it[0], time: it[1], cats: it[2], key: 'b' + mi + '-' + ii, sk: sortKey(it[1]) })));
+    flat.sort((a, b) => b.sk - a.sk);
+
+    const segDefs = [['all', 'すべて', flat.length]].concat(CATS.slice(0, 6).map(c => [c, c, flat.filter(f => f.cats.indexOf(c) >= 0).length]));
+    const segmentsB = segDefs.map(([k, label, count]) => ({
+      label, count: String(count),
+      bg: st.segB === k ? '#0969da' : '#ffffff',
+      fg: st.segB === k ? '#ffffff' : '#656d76',
+      onClick: () => this.setState({ segB: k })
+    }));
+
+    const filtered = st.segB === 'all' ? flat : flat.filter(f => f.cats.indexOf(st.segB) >= 0);
+    const listB = filtered.filter(f => !st.offB[f.source]).slice(0, 14).map(f => ({
+      title: f.title, time: f.time, source: f.source, cat: f.cats.join(' / '),
+      dot: CAT_COLOR[f.cats[0]] || '#d1d9e0', summary: SUMMARY,
+      open: !!st.openB[f.key],
+      onToggle: () => this.setState(s => ({ openB: Object.assign({}, s.openB, { [f.key]: !s.openB[f.key] }) }))
+    }));
+
+    const mediaTogglesB = MEDIA.map(m => {
+      const name = m[0].replace('はてなブックマーク - ', 'はてブ');
+      const on = !st.offB[name];
+      return {
+        name, count: m[1] + '件',
+        track: on ? '#0969da' : '#d1d9e0', justify: on ? 'flex-end' : 'flex-start',
+        onClick: () => this.setState(s => ({ offB: Object.assign({}, s.offB, { [name]: on }) }))
+      };
+    });
+
+    return {
+      tabsA,
+      showArticlesA: st.tabA === 'articles',
+      showEventsA: st.tabA === 'events',
+      showBooksA: st.tabA === 'books',
+      tocA: MEDIA.map(m => m[0].replace('はてなブックマーク - ', 'はてブ')),
+      highlightsA: HIGHLIGHTS.map(([title, meta], i) => ({ rank: String(i + 1), title, meta })),
+      mediaA,
+      eventGroupsA: EVENTS.map(([day, items]) => ({ day, items: items.map(([time, title, meta]) => ({ time, title, meta })) })),
+      booksA: BOOKS.map(([title, meta]) => ({ title, meta })),
+      filterOpenA: st.filterOpenA,
+      openFilterA: () => this.setState({ filterOpenA: true }),
+      closeFilterA: () => this.setState({ filterOpenA: false }),
+      clearFilterA: () => this.setState({ tagsA: [] }),
+      filterCountA: st.tagsA.length ? String(st.tagsA.length) : '',
+      applyLabelA: st.tagsA.length ? st.tagsA.length + '件のカテゴリで絞り込む' : 'この条件で表示',
+      filterGroupsA,
+      segmentsB, listB,
+      listTitleB: st.segB === 'all' ? '新着すべて' : st.segB,
+      filterOpenB: st.filterOpenB,
+      openFilterB: () => this.setState({ filterOpenB: true }),
+      closeFilterB: () => this.setState({ filterOpenB: false }),
+      monthTabs: [['2026-07', '2026年7月'], ['2026-06', '6月'], ['2026-05', '5月'], ['2026-04', '4月'], ['2026-03', '3月'], ['2026-02', '2月'], ['2026-01', '1月'], ['2025', '2025年']].map(([k, label]) => ({
+        label, bg: st.month === k ? '#1f2328' : '#f6f8fa', fg: st.month === k ? '#ffffff' : '#656d76',
+        onClick: () => this.setState({ month: k })
+      })),
+      monthTabsDark: [['2026-07', '2026年7月'], ['2026-06', '6月'], ['2026-05', '5月'], ['2026-04', '4月'], ['2026-03', '3月'], ['2026-02', '2月'], ['2026-01', '1月'], ['2025', '2025年']].map(([k, label]) => ({
+        label, bg: st.month === k ? '#e6edf3' : '#161b22', fg: st.month === k ? '#0d1117' : '#8b949e',
+        onClick: () => this.setState({ month: k })
+      })),
+      calendarDark: [].concat(
+        [0, 1, 2].map(() => ({ label: '', bg: 'transparent', fg: '#6e7681', border: 'transparent' })),
+        Array.from({ length: 31 }, (_, i) => {
+          const d = i + 1;
+          const latest = d === 26, has = d <= 26;
+          return {
+            label: String(d),
+            bg: latest ? '#58a6ff' : has ? 'rgba(56,139,253,0.15)' : '#0d1117',
+            fg: latest ? '#0d1117' : has ? '#58a6ff' : '#30363d',
+            border: latest ? '#58a6ff' : has ? '#30363d' : '#21262d'
+          };
+        })
+      ),
+      weekLabels: ['日', '月', '火', '水', '木', '金', '土'],
+      calendar: [].concat(
+        [0, 1, 2].map(() => ({ label: '', bg: 'transparent', fg: '#8b949e', border: 'transparent' })),
+        Array.from({ length: 31 }, (_, i) => {
+          const d = i + 1;
+          const latest = d === 26, has = d <= 26;
+          return {
+            label: String(d),
+            bg: latest ? '#0969da' : has ? '#ddf4ff' : '#ffffff',
+            fg: latest ? '#ffffff' : has ? '#0969da' : '#d1d9e0',
+            border: latest ? '#0969da' : has ? '#b6e3ff' : '#eef1f4'
+          };
+        })
+      ),
+      archiveDays: [
+        ['26', '日', 'Anthropic、「Claude Opus 5」の提供を開始', '50本 ・ AI・機械学習 / セキュリティ が多め'],
+        ['25', '土', 'AWS、デプロイ速度が最大4倍になる「CloudFormation Expressモード」を提供開始', '48本 ・ クラウド / DevOps が多め'],
+        ['24', '金', 'アトラシアン、JiraがAIによる要件定義の自動作成に対応', '52本 ・ システム開発 / AI・機械学習 が多め'],
+        ['23', '木', 'Visual Studio Code 1.130がリリース、エージェント機能などを強化', '47本 ・ ツール・IDE が多め'],
+        ['22', '水', '企業向けAIツールで成長率トップはAnthropic。Oktaが調査結果を発表', '49本 ・ テクノロジートレンド が多め'],
+        ['21', '火', 'Android版Chrome、通知プロンプトのUX改善をChrome 155で導入', '45本 ・ UI/UX / モバイル が多め'],
+        ['20', '月', 'GoogleのAletheiaが完全自律型AIエージェンティック数学研究の最先端へ', '51本 ・ AI・機械学習 が多め']
+      ].map(([day, dow, headline, meta]) => ({ day, dow, headline, meta })),
+      mediaTogglesB,
+      mediaCountB: String(mediaTogglesB.filter(m => m.track === '#0969da').length)
+    };
+  }
+}
+</script>
+</body>
+</html>

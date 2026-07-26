@@ -58,8 +58,11 @@ class SiteConfig:
             return self.GITHUB_USERNAME
     
     # フィード設定
+    # MAX_ENTRIES_* は「取得件数」。表示件数は DISPLAY_PER_MEDIA で別に持つ
+    # （取得した5件はハイライト選定・重複検出に使うため据え置き）
     MAX_ENTRIES_DEFAULT: int = 5
     MAX_ENTRIES_EVENTS: int = 10
+    DISPLAY_PER_MEDIA: int = 3
     PRIORITY_FEEDS: List[str] = None
     
     # アーカイブ設定
@@ -130,6 +133,41 @@ class PathConfig:
             return "../../index.html"
         else:
             return "../" * depth + "index.html"
+
+
+# フィード種別の判定に使うマーカー
+EVENT_FEED_MARKER = "イベント"
+BOOK_FEED_MARKER = "O'Reilly"
+
+# メディア目次チップ用の短縮表示名（未登録のフィードはフィード名をそのまま使う）
+MEDIA_SHORT_NAMES: Dict[str, str] = {
+    "はてなブックマーク - IT（人気）": "はてブIT（人気）",
+    "はてなブックマーク - IT（新着）": "はてブIT（新着）",
+    "InfoQ Japan": "InfoQ",
+    "connpass - イベント": "connpass",
+    "TECH PLAY - イベント": "TECH PLAY",
+    "O'Reilly Japan - 近刊": "O'Reilly Japan",
+}
+
+
+def is_event_feed(feed_name: str) -> bool:
+    """イベント系フィードかどうかを判定"""
+    return EVENT_FEED_MARKER in feed_name
+
+
+def is_book_feed(feed_name: str) -> bool:
+    """書籍系フィードかどうかを判定"""
+    return BOOK_FEED_MARKER in feed_name
+
+
+def is_article_feed(feed_name: str) -> bool:
+    """記事タブに出すフィードかどうかを判定"""
+    return not is_event_feed(feed_name) and not is_book_feed(feed_name)
+
+
+def get_media_short_name(feed_name: str) -> str:
+    """メディア目次チップ用の短縮表示名を取得"""
+    return MEDIA_SHORT_NAMES.get(feed_name, feed_name)
 
 
 # デフォルト設定インスタンス

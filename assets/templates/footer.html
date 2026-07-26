@@ -1,4 +1,20 @@
-<div class="footer">
-    {{main_page_link}}{{rss_link}}<p>🚀 <a href="https://unsolublesugar.github.io/portfolio/" target="_blank" rel="noopener">{{twitter_user}}</a> |
-    📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
-</div>
+    <footer class="app-footer">
+        <div class="rss-row">
+            <div class="rss-row-text">
+                <span class="rss-row-title">RSSで購読</span>
+                <span class="rss-row-note">毎朝 JST 7:00 更新</span>
+            </div>
+            <a class="rss-row-btn" href="{{rss_url}}" target="_blank" rel="noopener">📡 登録</a>
+        </div>
+        <div class="footer-tiles">
+            <a class="footer-tile" href="{{archive_link}}">
+                <span class="footer-tile-title">📚 アーカイブ</span>
+                <span class="footer-tile-note">過去のニュース</span>
+            </a>
+            <a class="footer-tile" href="{{github_url}}" target="_blank" rel="noopener">
+                <span class="footer-tile-title">📁 GitHub</span>
+                <span class="footer-tile-note">ソースとフィード設定</span>
+            </a>
+        </div>
+        <p class="footer-credit">Built by <a href="{{profile_url}}" target="_blank" rel="noopener">{{profile_name}}</a></p>
+    </footer>

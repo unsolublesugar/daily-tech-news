@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>今日のテックニュース (2026-06-06)</title>
-    
+
     <!-- OGP Tags -->
     <meta property="og:title" content="今日のテックニュース (2026-06-06)">
     <meta property="og:description" content="忙しいエンジニアのために。毎日サクッとキャッチアップ。">
@@ -12,1837 +12,683 @@
     <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/archives/2026/06/2026-06-06.html">
     <meta property="og:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
     <meta property="og:site_name" content="今日のテックニュース">
-    
+
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@unsoluble_sugar">
     <meta name="twitter:title" content="今日のテックニュース (2026-06-06)">
     <meta name="twitter:description" content="忙しいエンジニアのために。毎日サクッとキャッチアップ。">
     <meta name="twitter:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
-    
+
     <!-- Favicon Links -->
     <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicons/favicon-16x16.png">
     <link rel="manifest" href="../../../assets/favicons/site.webmanifest">
     <link rel="shortcut icon" href="../../../assets/favicons/favicon.ico">
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="../../../assets/css/main.css">
+
+    <!-- 初期描画前にテーマを適用してちらつきを防ぐ -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('tech-news-theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { /* localStorage 不可の環境では何もしない */ }
+        })();
+    </script>
 </head>
 <body>
-    <div class="page-header">
-        <h1>今日のテックニュース (2026-06-06)</h1>
-        
-        <p>
-    <a href="https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース (2026-06-06) をサクッとチェック！&url=https://unsolublesugar.github.io/daily-tech-news/archives/2026/06/2026-06-06.html&hashtags=techhunter" target="_blank" rel="noopener" class="share-button">
-        <span class="x-logo">
-            <svg viewBox="0 0 1200 1227" xmlns="http://www.w3.org/2000/svg">
-                <path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="white"/>
-            </svg>
-        </span>
-        シェア
-    </a>
-     | 📚 <a href="../index.html">アーカイブ一覧</a>
-</p>
-        
-        <p>忙しいエンジニアのために。毎日サクッとキャッチアップ。</p>
+<div class="app">
+<header class="app-header">
+    <div class="app-header-top">
+        <div class="app-brand"><a class="icon-btn" href="../../index.html" aria-label="アーカイブ一覧へ戻る" title="アーカイブ一覧へ戻る">←</a><span class="site-name">2026/6/6 (土)</span></div>
+        <div class="app-header-actions">
+            <button type="button" id="filter-open" class="pill-btn">絞り込み<span class="filter-count" id="filter-count" hidden></span></button>
+            <button type="button" id="theme-toggle" class="icon-btn" aria-label="テーマを切り替える" title="テーマを切り替える"><span id="theme-icon">🌙</span></button>
+        </div>
     </div>
-    
+    <nav class="tab-bar" role="tablist" aria-label="表示切り替え">
+        <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-articles" data-tab="articles">記事</button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-events" data-tab="events">イベント</button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-books" data-tab="books">書籍</button>
+    </nav>
+</header>
 
-    
-    <h2>Tech Blog Weekly</h2>
-<div class="card" data-preview-link="https://tech.youtrust.co.jp/entry/2026/06/05/211546" data-preview-title="YOUTRUSTのフロントエンドをREGO化した話 | YOUTRUST Tech Blog" data-preview-source="Tech Blog Weekly" data-preview-description="REGOとは？ こんにちは！YOUTRUST で REGO Engineerをしている 中谷です！ 前回のテックブログ の登場から半年が経ちました！ 2025年年末にリリースの振り返りブログを書き、2026年ももう半年経とうとしていることに、とても驚いています。 「REGO化」と言われて「？」となった方も多いと思うので、説明します。REGOはYOUTRUSTの独自デザインシステムになります。 20" data-preview-published="Fri, 05 Jun 2026 12:15:46 GMT" data-preview-author="">
-    <div class="card-content">
-        <img src="https://cdn.image.st-hatena.com/image/scale/1bc970af2bc6aeea6b8fa353d0a6ae3f2572ba9f/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fm%2Fm0rio0818%2F20260605%2F20260605125731.png" width="120" height="90" alt="YOUTRUSTのフロントエンドをREGO化した話 | YOUTRUST Tech Blog" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://tech.youtrust.co.jp/entry/2026/06/05/211546" target="_blank">YOUTRUSTのフロントエンドをREGO化した話 | YOUTRUST Tech Blog</a>
-            </h4>
-            <p class="card-source">Tech Blog Weekly • 10時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-761d291d" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">YOUTRUSTのフロントエンドをREGO化した話 | YOUTRUST Tech Blog</h5>
-                <button class="preview-close" onclick="hidePreview(event, '761d291d')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Tech Blog Weekly</span>
-                <span class="preview-date">10時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">Web開発, プログラミング, UI/UX, OS・システム</span>
-            </div>
-            <div class="preview-description">
-                REGOとは？ こんにちは！YOUTRUST で REGO Engineerをしている 中谷です！ 前回のテックブログ の登場から半年が経ちました！ 2025年年末にリリースの振り返りブログを書き、2026年ももう半年経とうとしていることに、とても驚いています。 「REGO化」と言われて「？」となった方も多いと思うので、説明します。REGOはYOUTRUSTの独自デザインシステムになります。 20
-            </div>
-            <div class="preview-actions">
-                <a href="https://tech.youtrust.co.jp/entry/2026/06/05/211546" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://creators-note.chatwork.com/entry/2026/06/05/200657" data-preview-title="『AI Engineering Summit Tokyo 2026』 にSilverスポンサーとして出展します！ | kubell Creator's Note" data-preview-source="Tech Blog Weekly" data-preview-description="こんにちは、株式会社kubell（旧Chatwork株式会社）の福井です。 kubellは、2026年6月8日(月)・9日(火)に開催されます AI Engineering Summit Tokyo 2026 にSilverスポンサーとして参加します ！ （ブースと登壇は6月8日(月)のみ） 開催日時: 2026年 6月8日（月）9:15〜18:20 (18:40 ~ 20:40 懇親会) 開催場" data-preview-published="Fri, 05 Jun 2026 11:06:57 GMT" data-preview-author="">
-    <div class="card-content">
-        <img src="https://cdn-ak.f.st-hatena.com/images/fotolife/t/tinpay/20260602/20260602192744.png" width="120" height="90" alt="『AI Engineering Summit Tokyo 2026』 にSilverスポンサーとして出展します！ | kubell Creator's Note" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://creators-note.chatwork.com/entry/2026/06/05/200657" target="_blank">『AI Engineering Summit Tokyo 2026』 にSilverスポンサーとして出展します！ | kubell Creator's Note</a>
-            </h4>
-            <p class="card-source">Tech Blog Weekly • 11時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-27a16dea" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">『AI Engineering Summit Tokyo 2026』 にSilverスポンサーとして出展します！ | kubell Creator's Note</h5>
-                <button class="preview-close" onclick="hidePreview(event, '27a16dea')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Tech Blog Weekly</span>
-                <span class="preview-date">11時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">AI・機械学習</span>
-            </div>
-            <div class="preview-description">
-                こんにちは、株式会社kubell（旧Chatwork株式会社）の福井です。 kubellは、2026年6月8日(月)・9日(火)に開催されます AI Engineering Summit Tokyo 2026 にSilverスポンサーとして参加します ！ （ブースと登壇は6月8日(月)のみ） 開催日時: 2026年 6月8日（月）9:15〜18:20 (18:40 ~ 20:40 懇親会) 開催場
-            </div>
-            <div class="preview-actions">
-                <a href="https://creators-note.chatwork.com/entry/2026/06/05/200657" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://recruit.group.gmo/engineer/jisedai/blog/claude-code-token-optimization/" data-preview-title="Claude Code トークン枯渇問題と最適化戦略 | エンジニアブログ - GMOインターネットグループ グループ研究開発本部" data-preview-source="Tech Blog Weekly" data-preview-description="D.M. です。 2026年6月現在の AI エージェント開発の進化は目覚ましいものがありますが、あまりに Claude のトークン消費が激しいため、100ドルの Claude Max サブスクリプションでは「5時間ごと […]The post Claude Code トークン枯渇問題と最適化戦略 first appeared on GMOインターネットグループ グループ研究開発本部." data-preview-published="Fri, 05 Jun 2026 11:02:56 GMT" data-preview-author="matsui">
-    <div class="card-content">
-        <img src="https://www.gmo-jisedai.com/wp-content/uploads/claude_code-150x150.png" width="120" height="90" alt="Claude Code トークン枯渇問題と最適化戦略 | エンジニアブログ - GMOインターネットグループ グループ研究開発本部" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://recruit.group.gmo/engineer/jisedai/blog/claude-code-token-optimization/" target="_blank">Claude Code トークン枯渇問題と最適化戦略 | エンジニアブログ - GMOインターネットグループ グループ研究開発本部</a>
-            </h4>
-            <p class="card-source">Tech Blog Weekly • 11時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-fc9048e7" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">Claude Code トークン枯渇問題と最適化戦略 | エンジニアブログ - GMOインターネットグループ グループ研究開発本部</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'fc9048e7')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Tech Blog Weekly</span>
-                <span class="preview-date">11時間前</span>
-                <span class="preview-author" style="display: none;">matsui</span>
-                <span class="preview-tags">AI・機械学習, ツール・IDE, キャリア・組織</span>
-            </div>
-            <div class="preview-description">
-                D.M. です。 2026年6月現在の AI エージェント開発の進化は目覚ましいものがありますが、あまりに Claude のトークン消費が激しいため、100ドルの Claude Max サブスクリプションでは「5時間ごと […]The post Claude Code トークン枯渇問題と最適化戦略 first appeared on GMOインターネットグループ グループ研究開発本部.
-            </div>
-            <div class="preview-actions">
-                <a href="https://recruit.group.gmo/engineer/jisedai/blog/claude-code-token-optimization/" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://techblog.booklista.co.jp/entry/2026/06/05/190124" data-preview-title="Reader Store開発チームでのAI活用についてご紹介 | booklista tech blog" data-preview-source="Tech Blog Weekly" data-preview-description="はじめに こんにちは。株式会社ブックリスタのプロダクト開発部でエンジニアをしている長塚です。 私の所属する「Reader Store（運営：株式会社ソニー・ミュージックエンタテインメント）」開発チームでは半年前からClaude Codeの導入を始めましたが、今では既に多くの開発者が直接コードを書かなくなりました。 日々の開発はAIとの協働が前提で、コーディング以外のほぼ全ての業務でもAIを活用して" data-preview-published="Fri, 05 Jun 2026 10:01:24 GMT" data-preview-author="">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://techblog.booklista.co.jp/entry/2026/06/05/190124" target="_blank">Reader Store開発チームでのAI活用についてご紹介 | booklista tech blog</a>
-            </h4>
-            <p class="card-source">Tech Blog Weekly • 12時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-794aac83" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">Reader Store開発チームでのAI活用についてご紹介 | booklista tech blog</h5>
-                <button class="preview-close" onclick="hidePreview(event, '794aac83')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Tech Blog Weekly</span>
-                <span class="preview-date">12時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">AI・機械学習, ツール・IDE, コーディング支援, キャリア・組織</span>
-            </div>
-            <div class="preview-description">
-                はじめに こんにちは。株式会社ブックリスタのプロダクト開発部でエンジニアをしている長塚です。 私の所属する「Reader Store（運営：株式会社ソニー・ミュージックエンタテインメント）」開発チームでは半年前からClaude Codeの導入を始めましたが、今では既に多くの開発者が直接コードを書かなくなりました。 日々の開発はAIとの協働が前提で、コーディング以外のほぼ全ての業務でもAIを活用して
-            </div>
-            <div class="preview-actions">
-                <a href="https://techblog.booklista.co.jp/entry/2026/06/05/190124" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://zenn.dev/collabostyle/articles/44683d0dd579a8" data-preview-title="AI-DLCワークショップ | コラボスタイル Developersのフィード" data-preview-source="Tech Blog Weekly" data-preview-description="社内でAI-DLC（AI-Driven Development Lifecycle）のワークショップをサイバーエージェントの小西さんを招いて実施しました。弊社では、AI-DLCを推しており、日頃から社内で試行錯誤をしながら進めています。今回は、AI-DLCを進める中での悩みなどをアンケートで事前に集め、そのアンケートをベースに「Q&amp;amp;A形式」でディスカッションするスタイルで行いました。 今日の前提：" data-preview-published="Fri, 05 Jun 2026 09:23:58 GMT" data-preview-author="8810smz">
-    <div class="card-content">
-        <img src="https://res.cloudinary.com/zenn/image/upload/s--S9f3U2CM--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:AI-DLC%25E3%2583%25AF%25E3%2583%25BC%25E3%2582%25AF%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%2583%25E3%2583%2597%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:8810smz%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzViM2I3NTQxYzUuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:%25E3%2582%25B3%25E3%2583%25A9%25E3%2583%259C%25E3%2582%25B9%25E3%2582%25BF%25E3%2582%25A4%25E3%2583%25AB%2520Developers%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzk2ZDY2NGMyMGMuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE" width="120" height="90" alt="AI-DLCワークショップ | コラボスタイル Developersのフィード" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://zenn.dev/collabostyle/articles/44683d0dd579a8" target="_blank">AI-DLCワークショップ | コラボスタイル Developersのフィード</a>
-            </h4>
-            <p class="card-source">Tech Blog Weekly • 13時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-0fd909a3" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">AI-DLCワークショップ | コラボスタイル Developersのフィード</h5>
-                <button class="preview-close" onclick="hidePreview(event, '0fd909a3')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Tech Blog Weekly</span>
-                <span class="preview-date">13時間前</span>
-                <span class="preview-author" style="display: none;">8810smz</span>
-                <span class="preview-tags">AI・機械学習, セキュリティ</span>
-            </div>
-            <div class="preview-description">
-                社内でAI-DLC（AI-Driven Development Lifecycle）のワークショップをサイバーエージェントの小西さんを招いて実施しました。弊社では、AI-DLCを推しており、日頃から社内で試行錯誤をしながら進めています。今回は、AI-DLCを進める中での悩みなどをアンケートで事前に集め、そのアンケートをベースに「Q&amp;amp;A形式」でディスカッションするスタイルで行いました。 今日の前提：
-            </div>
-            <div class="preview-actions">
-                <a href="https://zenn.dev/collabostyle/articles/44683d0dd579a8" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div>    <h2>Zenn</h2>
-<div class="card" data-preview-link="https://zenn.dev/ficilcom/articles/ff423b306afe18" data-preview-title="TanStack Query を完全にゼロから実装して理解する" data-preview-source="Zenn" data-preview-description="この記事について TanStack Query（旧 React Query）は「サーバーの状態」を扱うためのライブラリとして広く使われています。useQuery を呼ぶだけでローディング・エラー・キャッシュ・再取得がよしなに処理され、とても便利です。 ただ、便利さの裏で「中で何が起きているのか」がブラックボックスになりがちです。isPending がなぜ自動で切り替わるのか、別々のコンポーネントで同じ queryKey を使うとなぜリクエストが 1 回にまとまるのか、invalidateQueries を呼ぶとなぜ画面が更新されるのか——この辺りを「なんとなく動いている」で済ませてい..." data-preview-published="Fri, 05 Jun 2026 05:41:21 GMT" data-preview-author="sofuejin0121">
-    <div class="card-content">
-        <img src="https://res.cloudinary.com/zenn/image/upload/s--3oj8x4b3--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:TanStack%2520Query%2520%25E3%2582%2592%25E5%25AE%258C%25E5%2585%25A8%25E3%2581%25AB%25E3%2582%25BC%25E3%2583%25AD%25E3%2581%258B%25E3%2582%2589%25E5%25AE%259F%25E8%25A3%2585%25E3%2581%2597%25E3%2581%25A6%25E7%2590%2586%25E8%25A7%25A3%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:sofuejin0121%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzE3MmFmNGJkODAuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:%25E3%2583%2595%25E3%2582%25A3%25E3%2582%25B7%25E3%2583%25AB%25E3%2582%25B3%25E3%2583%25A0%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzNlYjJmMTczNWQuanBlZw==%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE" width="120" height="90" alt="TanStack Query を完全にゼロから実装して理解する" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://zenn.dev/ficilcom/articles/ff423b306afe18" target="_blank">TanStack Query を完全にゼロから実装して理解する</a>
-            </h4>
-            <p class="card-source">Zenn • 16時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-f64ea30a" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">TanStack Query を完全にゼロから実装して理解する</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'f64ea30a')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Zenn</span>
-                <span class="preview-date">16時間前</span>
-                <span class="preview-author" style="display: none;">sofuejin0121</span>
-                <span class="preview-tags">Web開発, トラブルシューティング</span>
-            </div>
-            <div class="preview-description">
-                この記事について TanStack Query（旧 React Query）は「サーバーの状態」を扱うためのライブラリとして広く使われています。useQuery を呼ぶだけでローディング・エラー・キャッシュ・再取得がよしなに処理され、とても便利です。 ただ、便利さの裏で「中で何が起きているのか」がブラックボックスになりがちです。isPending がなぜ自動で切り替わるのか、別々のコンポーネントで同じ queryKey を使うとなぜリクエストが 1 回にまとまるのか、invalidateQueries を呼ぶとなぜ画面が更新されるのか——この辺りを「なんとなく動いている」で済ませてい...
-            </div>
-            <div class="preview-actions">
-                <a href="https://zenn.dev/ficilcom/articles/ff423b306afe18" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://zenn.dev/riita10069/articles/auto-e2e-multi-view-fusion-explained" data-preview-title="PyTorchで理解する自動運転マルチカメラ統合の全体像" data-preview-source="Zenn" data-preview-description="はじめに 普段は AWS の SA として自動運転モデルの開発に携わっています。特に AWS を用いた DataOps / MLOps などのプラットフォーム側を本業では強みとしていますが、一方で Autoware Foundation の Robotaxi Working Group にも参加しています。そちらでも E2E の自動運転モデル開発に取り組んでいますが、その活動の中で今回紹介するマルチカメラ統合モジュールを書いたのをきっかけに、私自身もあまり PyTorch を使ってちゃんとネットワークを組んでこなかった中で向き合うことになったので、このブログを書くことにしました。 B..." data-preview-published="Thu, 04 Jun 2026 18:47:57 GMT" data-preview-author="りいた">
-    <div class="card-content">
-        <img src="https://res.cloudinary.com/zenn/image/upload/s--G_LWpPPJ--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:PyTorch%25E3%2581%25A7%25E7%2590%2586%25E8%25A7%25A3%25E3%2581%2599%25E3%2582%258B%25E8%2587%25AA%25E5%258B%2595%25E9%2581%258B%25E8%25BB%25A2%25E3%2583%259E%25E3%2583%25AB%25E3%2583%2581%25E3%2582%25AB%25E3%2583%25A1%25E3%2583%25A9%25E7%25B5%25B1%25E5%2590%2588%25E3%2581%25AE%25E5%2585%25A8%25E4%25BD%2593%25E5%2583%258F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2582%258A%25E3%2581%2584%25E3%2581%259F%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzFlYThhYWM1ZDMuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE" width="120" height="90" alt="PyTorchで理解する自動運転マルチカメラ統合の全体像" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://zenn.dev/riita10069/articles/auto-e2e-multi-view-fusion-explained" target="_blank">PyTorchで理解する自動運転マルチカメラ統合の全体像</a>
-            </h4>
-            <p class="card-source">Zenn • 1日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-f97867aa" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">PyTorchで理解する自動運転マルチカメラ統合の全体像</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'f97867aa')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Zenn</span>
-                <span class="preview-date">1日前</span>
-                <span class="preview-author" style="display: none;">りいた</span>
-                <span class="preview-tags">クラウド, ネットワーク</span>
-            </div>
-            <div class="preview-description">
-                はじめに 普段は AWS の SA として自動運転モデルの開発に携わっています。特に AWS を用いた DataOps / MLOps などのプラットフォーム側を本業では強みとしていますが、一方で Autoware Foundation の Robotaxi Working Group にも参加しています。そちらでも E2E の自動運転モデル開発に取り組んでいますが、その活動の中で今回紹介するマルチカメラ統合モジュールを書いたのをきっかけに、私自身もあまり PyTorch を使ってちゃんとネットワークを組んでこなかった中で向き合うことになったので、このブログを書くことにしました。 B...
-            </div>
-            <div class="preview-actions">
-                <a href="https://zenn.dev/riita10069/articles/auto-e2e-multi-view-fusion-explained" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://zenn.dev/aiwatch_jp/articles/agent-vuln-hunting-harness-glasswing" data-preview-title="エージェントに「脆弱性を探して」はなぜ失敗するのか──Cloudflareが50+リポで示したharnessの正体" data-preview-source="Zenn" data-preview-description="! 最先端AIを技術の中身まで日本語で読み解く「AIウォッチ」の深掘り記事です。題材は Cloudflare の "Project Glasswing: what Mythos showed us"（2026-05-18）。一次情報（Cloudflare 公式ブログ）の全文を当たって書いています。 「コーディングエージェントを自社リポジトリに向けて、『脆弱性を探して』と頼む」──直感的でしょう。でもこれ、ちゃんと失敗します。Cloudflare が Anthropic のセキュリティ特化モデル Mythos Preview を使い、自社の 50 以上のリポジトリ（ランタイム、エッジのデ..." data-preview-published="Thu, 04 Jun 2026 13:29:28 GMT" data-preview-author="AIウォッチ">
-    <div class="card-content">
-        <img src="https://res.cloudinary.com/zenn/image/upload/s--pG6BQoys--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2582%25A8%25E3%2583%25BC%25E3%2582%25B8%25E3%2582%25A7%25E3%2583%25B3%25E3%2583%2588%25E3%2581%25AB%25E3%2580%258C%25E8%2584%2586%25E5%25BC%25B1%25E6%2580%25A7%25E3%2582%2592%25E6%258E%25A2%25E3%2581%2597%25E3%2581%25A6%25E3%2580%258D%25E3%2581%25AF%25E3%2581%25AA%25E3%2581%259C%25E5%25A4%25B1%25E6%2595%2597%25E3%2581%2599%25E3%2582%258B%25E3%2581%25AE%25E3%2581%258B%25E2%2594%2580%25E2%2594%2580Cloudflare%25E3%2581%258C50%252B%25E3%2583%25AA%25E3%2583%259D%25E3%2581%25A7%25E7%25A4%25BA%25E3%2581%2597%25E3%2581%259Fharness%25E3%2581%25AE%25E6%25AD%25A3%25E4%25BD%2593%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:AI%25E3%2582%25A6%25E3%2582%25A9%25E3%2583%2583%25E3%2583%2581%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jS3RXRmNhLTF3ai1FSnZ5c0EtZEtlbVhlMGRZSlhLMVdMVU12XzRQLW9ORG5qMjFBPXMyNTAtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE" width="120" height="90" alt="エージェントに「脆弱性を探して」はなぜ失敗するのか──Cloudflareが50+リポで示したharnessの正体" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://zenn.dev/aiwatch_jp/articles/agent-vuln-hunting-harness-glasswing" target="_blank">エージェントに「脆弱性を探して」はなぜ失敗するのか──Cloudflareが50+リポで示したharnessの正体</a>
-            </h4>
-            <p class="card-source">Zenn • 1日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-6677107a" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">エージェントに「脆弱性を探して」はなぜ失敗するのか──Cloudflareが50+リポで示したharnessの正体</h5>
-                <button class="preview-close" onclick="hidePreview(event, '6677107a')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Zenn</span>
-                <span class="preview-date">1日前</span>
-                <span class="preview-author" style="display: none;">AIウォッチ</span>
-                <span class="preview-tags">AI・機械学習, クラウド, セキュリティ, コーディング支援</span>
-            </div>
-            <div class="preview-description">
-                ! 最先端AIを技術の中身まで日本語で読み解く「AIウォッチ」の深掘り記事です。題材は Cloudflare の "Project Glasswing: what Mythos showed us"（2026-05-18）。一次情報（Cloudflare 公式ブログ）の全文を当たって書いています。 「コーディングエージェントを自社リポジトリに向けて、『脆弱性を探して』と頼む」──直感的でしょう。でもこれ、ちゃんと失敗します。Cloudflare が Anthropic のセキュリティ特化モデル Mythos Preview を使い、自社の 50 以上のリポジトリ（ランタイム、エッジのデ...
-            </div>
-            <div class="preview-actions">
-                <a href="https://zenn.dev/aiwatch_jp/articles/agent-vuln-hunting-harness-glasswing" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://zenn.dev/kairim/articles/35dd71c526b64f" data-preview-title="AWS Innovation Sandbox (ISB) を構築してみた！" data-preview-source="Zenn" data-preview-description="1. はじめに 新規技術の検証やPoCを行う際、皆さんの組織ではどのようにAWSアカウントを運用していますか？ よくあるのが、ひとつの「PoC用アカウント」をチームや複数人で使い回す運用です。しかし、この運用を続けていると、以下のような課題に直面することが多々あります。 リソースの迷子化: 「このEC2やRDS、誰が何のために作ったの？」が分からなくなり、怖くて消せない。 無駄なコストの発生: 検証が終わったはずのリソースが放置され、気づけば想定外の課金が発生している。 環境の汚染: 過去の検証の残骸（古いIAMロールやネットワーク設定など）が影響して、新しい検証がスムーズに..." data-preview-published="Thu, 04 Jun 2026 11:52:12 GMT" data-preview-author="KairiM">
-    <div class="card-content">
-        <img src="https://res.cloudinary.com/zenn/image/upload/s--r7yzDzLg--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:AWS%2520Innovation%2520Sandbox%2520%2528ISB%2529%2520%25E3%2582%2592%25E6%25A7%258B%25E7%25AF%2589%25E3%2581%2597%25E3%2581%25A6%25E3%2581%25BF%25E3%2581%259F%25EF%25BC%2581%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:KairiM%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyL2E2ODk1YzY1ZDMuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE" width="120" height="90" alt="AWS Innovation Sandbox (ISB) を構築してみた！" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://zenn.dev/kairim/articles/35dd71c526b64f" target="_blank">AWS Innovation Sandbox (ISB) を構築してみた！</a>
-            </h4>
-            <p class="card-source">Zenn • 1日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-9b3799df" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">AWS Innovation Sandbox (ISB) を構築してみた！</h5>
-                <button class="preview-close" onclick="hidePreview(event, '9b3799df')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Zenn</span>
-                <span class="preview-date">1日前</span>
-                <span class="preview-author" style="display: none;">KairiM</span>
-                <span class="preview-tags">クラウド, ネットワーク</span>
-            </div>
-            <div class="preview-description">
-                1. はじめに 新規技術の検証やPoCを行う際、皆さんの組織ではどのようにAWSアカウントを運用していますか？ よくあるのが、ひとつの「PoC用アカウント」をチームや複数人で使い回す運用です。しかし、この運用を続けていると、以下のような課題に直面することが多々あります。 リソースの迷子化: 「このEC2やRDS、誰が何のために作ったの？」が分からなくなり、怖くて消せない。 無駄なコストの発生: 検証が終わったはずのリソースが放置され、気づけば想定外の課金が発生している。 環境の汚染: 過去の検証の残骸（古いIAMロールやネットワーク設定など）が影響して、新しい検証がスムーズに...
-            </div>
-            <div class="preview-actions">
-                <a href="https://zenn.dev/kairim/articles/35dd71c526b64f" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://zenn.dev/kaz20/articles/1e622ef249d133" data-preview-title="CUDA Programming Guide Part 1" data-preview-source="Zenn" data-preview-description="はじめに 東京科学大学 博士課程の藤井です。 本記事では、GPU Programmingを行うにあたり欠かすことのできないCUDA C++ について網羅的に解説を行うシリーズ記事の第1号記事です。最終的にFlashAttention 3の最小限の機能であれば自作できるようになることを目標にシリーズを執筆していきます。 Part 1の本記事では、Programming ModelとしてのCUDAについてと簡単なCUDA C++ Programmingの例について解説を行います。 Programming Model CUDAという言葉が指す意味は多義的です。プログラミング言語(C+..." data-preview-published="Thu, 04 Jun 2026 11:10:31 GMT" data-preview-author="Kazuki Fujii">
-    <div class="card-content">
-        <img src="https://res.cloudinary.com/zenn/image/upload/s--EIiKbDZ9--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_72:CUDA%2520Programming%2520Guide%2520Part%25201%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Kazuki%2520Fujii%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdGF0aWMuemVubi5zdHVkaW8vdXNlci11cGxvYWQvYXZhdGFyLzUwMzUzZTA5YTUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACMTiAE" width="120" height="90" alt="CUDA Programming Guide Part 1" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://zenn.dev/kaz20/articles/1e622ef249d133" target="_blank">CUDA Programming Guide Part 1</a>
-            </h4>
-            <p class="card-source">Zenn • 1日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-e4ca08ce" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">CUDA Programming Guide Part 1</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'e4ca08ce')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Zenn</span>
-                <span class="preview-date">1日前</span>
-                <span class="preview-author" style="display: none;">Kazuki Fujii</span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                はじめに 東京科学大学 博士課程の藤井です。 本記事では、GPU Programmingを行うにあたり欠かすことのできないCUDA C++ について網羅的に解説を行うシリーズ記事の第1号記事です。最終的にFlashAttention 3の最小限の機能であれば自作できるようになることを目標にシリーズを執筆していきます。 Part 1の本記事では、Programming ModelとしてのCUDAについてと簡単なCUDA C++ Programmingの例について解説を行います。 Programming Model CUDAという言葉が指す意味は多義的です。プログラミング言語(C+...
-            </div>
-            <div class="preview-actions">
-                <a href="https://zenn.dev/kaz20/articles/1e622ef249d133" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div>    <h2>Qiita</h2>
-    <p>記事を取得できませんでした。</p>
-    <h2>はてなブックマーク - IT（人気）</h2>
-<div class="card" data-preview-link="https://takoratta.hatenablog.com/entry/2026/06/05/181559" data-preview-title="PayPalマフィアは、実際に何をやったのか - Nothing ventured, nothing gained." data-preview-source="はてなブックマーク - IT（人気）" data-preview-description="この業界（どの業界なのかはともかく）にいて「PayPalマフィア」という言葉を聞いたことがない人は少ないのではないか。 私が初めて聞いたのはいつだろう。思い出せないが、かなり前だったのは間違いない。 でも告白すると、初期のPayPalで彼らが実際に何をやったのかを、長いことまったく説明できなかった。名前だけが..." data-preview-published="2026-06-05T10:52:20Z" data-preview-author="">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://takoratta.hatenablog.com/entry/2026/06/05/181559" target="_blank">PayPalマフィアは、実際に何をやったのか - Nothing ventured, nothing gained.</a>
-            </h4>
-            <p class="card-source">はてなブックマーク - IT（人気） • 11時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-ff537600" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">PayPalマフィアは、実際に何をやったのか - Nothing ventured, nothing gained.</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'ff537600')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">はてなブックマーク - IT（人気）</span>
-                <span class="preview-date">11時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                この業界（どの業界なのかはともかく）にいて「PayPalマフィア」という言葉を聞いたことがない人は少ないのではないか。 私が初めて聞いたのはいつだろう。思い出せないが、かなり前だったのは間違いない。 でも告白すると、初期のPayPalで彼らが実際に何をやったのかを、長いことまったく説明できなかった。名前だけが...
-            </div>
-            <div class="preview-actions">
-                <a href="https://takoratta.hatenablog.com/entry/2026/06/05/181559" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills" data-preview-title="Lessons from building Claude Code: How we use skills | Claude" data-preview-source="はてなブックマーク - IT（人気）" data-preview-description="Types of skillsAfter cataloging all of our internal skills at Anthropic, we noticed they cluster into nine categories. The best skills fit cleanly into one; the ones that try to do too much straddle several and confuse the agent. This isn't a definitive list, but it is a useful framework for iden..." data-preview-published="2026-06-05T12:56:57Z" data-preview-author="">
-    <div class="card-content">
-        <img src="https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6a2058f7af91f02cff0a6187_og-lessons-from-building-claude-code.jpg" width="120" height="90" alt="Lessons from building Claude Code: How we use skills | Claude" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills" target="_blank">Lessons from building Claude Code: How we use skills | Claude</a>
-            </h4>
-            <p class="card-source">はてなブックマーク - IT（人気） • 9時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-c759c232" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">Lessons from building Claude Code: How we use skills | Claude</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'c759c232')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">はてなブックマーク - IT（人気）</span>
-                <span class="preview-date">9時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">AI・機械学習, ツール・IDE</span>
-            </div>
-            <div class="preview-description">
-                Types of skillsAfter cataloging all of our internal skills at Anthropic, we noticed they cluster into nine categories. The best skills fit cleanly into one; the ones that try to do too much straddle several and confuse the agent. This isn't a definitive list, but it is a useful framework for iden...
-            </div>
-            <div class="preview-actions">
-                <a href="https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://qiita.com/shinkai_/items/626dfa7857f2d554784e" data-preview-title="GitHub Copilotの料金改定で大騒ぎになっているので、トークン削減の最新手法をまとめてみた - Qiita" data-preview-source="はてなブックマーク - IT（人気）" data-preview-description="2026年6月1日から GitHub Copilot の課金体系が変わりました。 X（Twitter）では日本でも海外でも辛辣な意見ばかり出ています。Claude Sonnetのクレジット消費量が旧制度の9倍、Claude Opusにいたっては27倍という数字が一部ユーザーから報告されていて、Agent modeを日常的に使っていた人には事実上の大幅値上げです。 ..." data-preview-published="2026-06-04T22:14:07Z" data-preview-author="">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://qiita.com/shinkai_/items/626dfa7857f2d554784e" target="_blank">GitHub Copilotの料金改定で大騒ぎになっているので、トークン削減の最新手法をまとめてみた - Qiita</a>
-            </h4>
-            <p class="card-source">はてなブックマーク - IT（人気） • 1日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-3883d5fe" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">GitHub Copilotの料金改定で大騒ぎになっているので、トークン削減の最新手法をまとめてみた - Qiita</h5>
-                <button class="preview-close" onclick="hidePreview(event, '3883d5fe')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">はてなブックマーク - IT（人気）</span>
-                <span class="preview-date">1日前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">AI・機械学習, ツール・IDE, コーディング支援</span>
-            </div>
-            <div class="preview-description">
-                2026年6月1日から GitHub Copilot の課金体系が変わりました。 X（Twitter）では日本でも海外でも辛辣な意見ばかり出ています。Claude Sonnetのクレジット消費量が旧制度の9倍、Claude Opusにいたっては27倍という数字が一部ユーザーから報告されていて、Agent modeを日常的に使っていた人には事実上の大幅値上げです。 ...
-            </div>
-            <div class="preview-actions">
-                <a href="https://qiita.com/shinkai_/items/626dfa7857f2d554784e" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.sbbit.jp/article/cont1/185480" data-preview-title="【AI待ち、終了】Claude Codeの「AI部下」で勝手に仕事が完了…反則級「神ワザ」10選" data-preview-source="はてなブックマーク - IT（人気）" data-preview-description="AIを使って効率化しているはずなのに、タスクが渋滞して手が止まってしまう……この本末転倒な待ち時間をゼロに近づけるのが、Claude Codeによる「並列作業」です。AIを“1人の部下”とするのではなく、“複数の部下”として役割を与えれば、仕事は順番に片付けるものではなく、一気に片付くものに変わります。この記事では、..." data-preview-published="2026-06-04T23:47:29Z" data-preview-author="">
-    <div class="card-content">
-        <img src="https://img.sbbit.jp/article/image/185480/OGP_bit202605251222195327.jpg" width="120" height="90" alt="【AI待ち、終了】Claude Codeの「AI部下」で勝手に仕事が完了…反則級「神ワザ」10選" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.sbbit.jp/article/cont1/185480" target="_blank">【AI待ち、終了】Claude Codeの「AI部下」で勝手に仕事が完了…反則級「神ワザ」10選</a>
-            </h4>
-            <p class="card-source">はてなブックマーク - IT（人気） • 22時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-c0dabcad" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">【AI待ち、終了】Claude Codeの「AI部下」で勝手に仕事が完了…反則級「神ワザ」10選</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'c0dabcad')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">はてなブックマーク - IT（人気）</span>
-                <span class="preview-date">22時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">AI・機械学習, ツール・IDE</span>
-            </div>
-            <div class="preview-description">
-                AIを使って効率化しているはずなのに、タスクが渋滞して手が止まってしまう……この本末転倒な待ち時間をゼロに近づけるのが、Claude Codeによる「並列作業」です。AIを“1人の部下”とするのではなく、“複数の部下”として役割を与えれば、仕事は順番に片付けるものではなく、一気に片付くものに変わります。この記事では、...
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.sbbit.jp/article/cont1/185480" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://satoru-takeuchi.hatenablog.com/entry/2026/06/04/214202" data-preview-title="コーディングエージェントの登場後に読む本が変わった - 覚書" data-preview-source="はてなブックマーク - IT（人気）" data-preview-description="Claude Code、Codex，Devinのようなコーディングエージェントが出てきてしばらく経ちます。その進化は著しいです。そんななかで私には、よく読むIT技術書の種類が変わるという大きな変化がありました。この変化について、および、その変化について思ったことを書きます。 前述したようにコーディングエージェントの進化..." data-preview-published="2026-06-04T13:04:48Z" data-preview-author="">
-    <div class="card-content">
-        <img src="https://cdn.image.st-hatena.com/image/square/8f06f6d74745f95dada70aede664eb4727d44cdf/backend=imagemagick;height=128;version=1;width=128/https%3A%2F%2Fcdn.user.blog.st-hatena.com%2Fblog_custom_icon%2F132123673%2F161987011356128" width="120" height="90" alt="コーディングエージェントの登場後に読む本が変わった - 覚書" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://satoru-takeuchi.hatenablog.com/entry/2026/06/04/214202" target="_blank">コーディングエージェントの登場後に読む本が変わった - 覚書</a>
-            </h4>
-            <p class="card-source">はてなブックマーク - IT（人気） • 1日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-aeefa830" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">コーディングエージェントの登場後に読む本が変わった - 覚書</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'aeefa830')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">はてなブックマーク - IT（人気）</span>
-                <span class="preview-date">1日前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">AI・機械学習, ツール・IDE, コーディング支援</span>
-            </div>
-            <div class="preview-description">
-                Claude Code、Codex，Devinのようなコーディングエージェントが出てきてしばらく経ちます。その進化は著しいです。そんななかで私には、よく読むIT技術書の種類が変わるという大きな変化がありました。この変化について、および、その変化について思ったことを書きます。 前述したようにコーディングエージェントの進化...
-            </div>
-            <div class="preview-actions">
-                <a href="https://satoru-takeuchi.hatenablog.com/entry/2026/06/04/214202" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div>    <h2>はてなブックマーク - IT（新着）</h2>
-<div class="card" data-preview-link="https://pc.watch.impress.co.jp/docs/news/2114675.html" data-preview-title="NVIDIA、推論5倍速で無償の550Bエージェント向けLLM「Nemotron 3 Ultra」" data-preview-source="はてなブックマーク - IT（新着）" data-preview-description="記事の詳細を確認してください。" data-preview-published="2026-06-05T04:29:15Z" data-preview-author="">
-    <div class="card-content">
-        <img src="https://pc.watch.impress.co.jp/img/pcw/list/2114/675/1.png" width="120" height="90" alt="NVIDIA、推論5倍速で無償の550Bエージェント向けLLM「Nemotron 3 Ultra」" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://pc.watch.impress.co.jp/docs/news/2114675.html" target="_blank">NVIDIA、推論5倍速で無償の550Bエージェント向けLLM「Nemotron 3 Ultra」</a>
-            </h4>
-            <p class="card-source">はてなブックマーク - IT（新着） • 17時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-dcb181cf" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">NVIDIA、推論5倍速で無償の550Bエージェント向けLLM「Nemotron 3 Ultra」</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'dcb181cf')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">はてなブックマーク - IT（新着）</span>
-                <span class="preview-date">17時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                記事の詳細を確認してください。
-            </div>
-            <div class="preview-actions">
-                <a href="https://pc.watch.impress.co.jp/docs/news/2114675.html" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.47news.jp/14416705.html" data-preview-title="【速報】日本、米AI事業に800億円拠出" data-preview-source="はてなブックマーク - IT（新着）" data-preview-description="【ワシントン共同】日米両政府は4日、人工知能（AI）を活用して技術開発を加速させる米国の国家プロジェクトに、今後5年間でそれぞれ5億ドル（約800億円）を拠出することで合意した。" data-preview-published="2026-06-04T18:46:38Z" data-preview-author="">
-    <div class="card-content">
-        <img src="https://img.cf.47news.jp/static/renewal/common/img/thumb_large.png" width="120" height="90" alt="【速報】日本、米AI事業に800億円拠出" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.47news.jp/14416705.html" target="_blank">【速報】日本、米AI事業に800億円拠出</a>
-            </h4>
-            <p class="card-source">はてなブックマーク - IT（新着） • 1日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-d9ea97f7" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">【速報】日本、米AI事業に800億円拠出</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'd9ea97f7')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">はてなブックマーク - IT（新着）</span>
-                <span class="preview-date">1日前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">AI・機械学習</span>
-            </div>
-            <div class="preview-description">
-                【ワシントン共同】日米両政府は4日、人工知能（AI）を活用して技術開発を加速させる米国の国家プロジェクトに、今後5年間でそれぞれ5億ドル（約800億円）を拠出することで合意した。
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.47news.jp/14416705.html" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.afpbb.com/articles/-/3638434" data-preview-title="中国のスパイが採用担当者装い機密情報収集、西側諸国の機関が警告" data-preview-source="はてなブックマーク - IT（新着）" data-preview-description="【6月5日 AFP】中国人の工作員が採用担当者になりすまし、西側諸国の政府職員をだまして機密情報を開示させようとしていると、機密情報共有の枠組み「ファイブアイズ」が警告を発した。 英国、米国、オーストラリア、カナダ、ニュージーランドが構成するこの枠組みは、3日遅くに共同声明を出し、中国の軍事情報機関がビ..." data-preview-published="2026-06-05T10:17:27Z" data-preview-author="">
-    <div class="card-content">
-        <img src="https://afpbb.ismcdn.jp/mwimgs/6/e/1000x/img_6e658a0237cae86f143e22a42b08d7b12483145.jpg" width="120" height="90" alt="中国のスパイが採用担当者装い機密情報収集、西側諸国の機関が警告" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.afpbb.com/articles/-/3638434" target="_blank">中国のスパイが採用担当者装い機密情報収集、西側諸国の機関が警告</a>
-            </h4>
-            <p class="card-source">はてなブックマーク - IT（新着） • 12時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-c2385e81" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">中国のスパイが採用担当者装い機密情報収集、西側諸国の機関が警告</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'c2385e81')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">はてなブックマーク - IT（新着）</span>
-                <span class="preview-date">12時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                【6月5日 AFP】中国人の工作員が採用担当者になりすまし、西側諸国の政府職員をだまして機密情報を開示させようとしていると、機密情報共有の枠組み「ファイブアイズ」が警告を発した。 英国、米国、オーストラリア、カナダ、ニュージーランドが構成するこの枠組みは、3日遅くに共同声明を出し、中国の軍事情報機関がビ...
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.afpbb.com/articles/-/3638434" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.itmedia.co.jp/news/articles/2606/05/news119.html" data-preview-title="家庭用PCでも数秒でサーバを“落とせる”、HTTP/2の脆弱性をCodexが発見　さくらインターネットも対策" data-preview-source="はてなブックマーク - IT（新着）" data-preview-description="家庭用PCでも数秒でサーバを“落とせる”、HTTP/2の脆弱性をCodexが発見 さくらインターネットも対策 米セキュリティ企業のCalifが6月3日（現地時間）、少しの通信量でWebサーバに過剰な負荷をかけ停止させるDoS攻撃手法「HTTP/2 Bomb」に注意喚起したことをきっかけに、その深刻さが話題になっている。国内では、さくら..." data-preview-published="2026-06-05T11:02:57Z" data-preview-author="">
-    <div class="card-content">
-        <img src="https://image.itmedia.co.jp/news/articles/2606/05/cover_news119.png" width="120" height="90" alt="家庭用PCでも数秒でサーバを“落とせる”、HTTP/2の脆弱性をCodexが発見　さくらインターネットも対策" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.itmedia.co.jp/news/articles/2606/05/news119.html" target="_blank">家庭用PCでも数秒でサーバを“落とせる”、HTTP/2の脆弱性をCodexが発見　さくらインターネットも対策</a>
-            </h4>
-            <p class="card-source">はてなブックマーク - IT（新着） • 11時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-296eb9c1" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">家庭用PCでも数秒でサーバを“落とせる”、HTTP/2の脆弱性をCodexが発見　さくらインターネットも対策</h5>
-                <button class="preview-close" onclick="hidePreview(event, '296eb9c1')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">はてなブックマーク - IT（新着）</span>
-                <span class="preview-date">11時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">セキュリティ, ネットワーク</span>
-            </div>
-            <div class="preview-description">
-                家庭用PCでも数秒でサーバを“落とせる”、HTTP/2の脆弱性をCodexが発見 さくらインターネットも対策 米セキュリティ企業のCalifが6月3日（現地時間）、少しの通信量でWebサーバに過剰な負荷をかけ停止させるDoS攻撃手法「HTTP/2 Bomb」に注意喚起したことをきっかけに、その深刻さが話題になっている。国内では、さくら...
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.itmedia.co.jp/news/articles/2606/05/news119.html" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.itmedia.co.jp/news/articles/2606/05/news123.html" data-preview-title="新「マイナアプリ」アイコン公開　松本デジタル相「マイナちゃんが消えてしまうわけではない」" data-preview-source="はてなブックマーク - IT（新着）" data-preview-description="デジタル庁の松本尚デジタル相は6月5日、夏ごろ提供開始予定の「マイナアプリ」のアプリアイコンを公開した。" data-preview-published="2026-06-05T11:35:54Z" data-preview-author="">
-    <div class="card-content">
-        <img src="https://image.itmedia.co.jp/news/articles/2606/05/cover_news123.jpg" width="120" height="90" alt="新「マイナアプリ」アイコン公開　松本デジタル相「マイナちゃんが消えてしまうわけではない」" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.itmedia.co.jp/news/articles/2606/05/news123.html" target="_blank">新「マイナアプリ」アイコン公開　松本デジタル相「マイナちゃんが消えてしまうわけではない」</a>
-            </h4>
-            <p class="card-source">はてなブックマーク - IT（新着） • 10時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-e2950007" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">新「マイナアプリ」アイコン公開　松本デジタル相「マイナちゃんが消えてしまうわけではない」</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'e2950007')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">はてなブックマーク - IT（新着）</span>
-                <span class="preview-date">10時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                デジタル庁の松本尚デジタル相は6月5日、夏ごろ提供開始予定の「マイナアプリ」のアプリアイコンを公開した。
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.itmedia.co.jp/news/articles/2606/05/news123.html" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div>    <h2>DevelopersIO</h2>
-<div class="card" data-preview-link="https://dev.classmethod.jp/articles/kiro-cli-2-6-newcommand/" data-preview-title="[アップデート] Kiro CLI 2.6 でチャット履歴のエクスポートやターミナルタイトルの設定、起動時の Effort 指定ができるようになりました" data-preview-source="DevelopersIO" data-preview-description="[アップデート] Kiro CLI 2.6 でチャット履歴のエクスポートやターミナルタイトルの設定、起動時の Effort 指定ができるようになりました" data-preview-published="Fri, 05 Jun 2026 21:35:54 GMT" data-preview-author="いわさ">
-    <div class="card-content">
-        <img src="https://images.ctfassets.net/ct0aopd36mqt/4uTbTE9O9jUJCOs80dZ0Ao/e2da592b5eaaad0f5993d6ff64a12467/aws-kiro.png" width="120" height="90" alt="[アップデート] Kiro CLI 2.6 でチャット履歴のエクスポートやターミナルタイトルの設定、起動時の Effort 指定ができるようになりました" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://dev.classmethod.jp/articles/kiro-cli-2-6-newcommand/" target="_blank">[アップデート] Kiro CLI 2.6 でチャット履歴のエクスポートやターミナルタイトルの設定、起動時の Effort 指定ができるようになりました</a>
-            </h4>
-            <p class="card-source">DevelopersIO • 48分前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-01b96315" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">[アップデート] Kiro CLI 2.6 でチャット履歴のエクスポートやターミナルタイトルの設定、起動時の Effort 指定ができるようになりました</h5>
-                <button class="preview-close" onclick="hidePreview(event, '01b96315')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">DevelopersIO</span>
-                <span class="preview-date">48分前</span>
-                <span class="preview-author" style="display: none;">いわさ</span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                [アップデート] Kiro CLI 2.6 でチャット履歴のエクスポートやターミナルタイトルの設定、起動時の Effort 指定ができるようになりました
-            </div>
-            <div class="preview-actions">
-                <a href="https://dev.classmethod.jp/articles/kiro-cli-2-6-newcommand/" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://dev.classmethod.jp/articles/20260605-amazon-amda-conversation-history/" data-preview-title="[アップデート] Amazon SageMaker Data Agent 会話履歴に対応したので実際に試してみた" data-preview-source="DevelopersIO" data-preview-description="Amazon SageMaker Data Agent の会話履歴機能が新たに対応されたということで、実際に SageMaker Unified Studio のノートブックで試してみました。過去の分析セッションを後から呼び出せるようになり、どのような使い勝手になっているのかをご紹介します。" data-preview-published="Fri, 05 Jun 2026 17:18:53 GMT" data-preview-author="石川覚">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://dev.classmethod.jp/articles/20260605-amazon-amda-conversation-history/" target="_blank">[アップデート] Amazon SageMaker Data Agent 会話履歴に対応したので実際に試してみた</a>
-            </h4>
-            <p class="card-source">DevelopersIO • 5時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-bd2804a6" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">[アップデート] Amazon SageMaker Data Agent 会話履歴に対応したので実際に試してみた</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'bd2804a6')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">DevelopersIO</span>
-                <span class="preview-date">5時間前</span>
-                <span class="preview-author" style="display: none;">石川覚</span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                Amazon SageMaker Data Agent の会話履歴機能が新たに対応されたということで、実際に SageMaker Unified Studio のノートブックで試してみました。過去の分析セッションを後から呼び出せるようになり、どのような使い勝手になっているのかをご紹介します。
-            </div>
-            <div class="preview-actions">
-                <a href="https://dev.classmethod.jp/articles/20260605-amazon-amda-conversation-history/" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://dev.classmethod.jp/articles/twilio-for-claude-with-claude-code/" data-preview-title="Twilio for Claude (MCP + Skills) を Claude Code で触ってみた" data-preview-source="DevelopersIO" data-preview-description="Twilio for Claude を Claude Code に入れて Video API でブラウザ通話を実装しました。MCP は API 検索として有用な一方、Skills は得意領域以外では MCP の補完が前提になりました。" data-preview-published="Fri, 05 Jun 2026 15:11:26 GMT" data-preview-author="越井 琢巳 (Koshii Takumi)">
-    <div class="card-content">
-        <img src="https://images.ctfassets.net/ct0aopd36mqt/wp-thumbnail-3f316c20ff5f4f46d1a005e2ad976882/c71162912c717bb0ca7c9b4196a40df5/twilio.png" width="120" height="90" alt="Twilio for Claude (MCP + Skills) を Claude Code で触ってみた" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://dev.classmethod.jp/articles/twilio-for-claude-with-claude-code/" target="_blank">Twilio for Claude (MCP + Skills) を Claude Code で触ってみた</a>
-            </h4>
-            <p class="card-source">DevelopersIO • 7時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-9ee22d5a" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">Twilio for Claude (MCP + Skills) を Claude Code で触ってみた</h5>
-                <button class="preview-close" onclick="hidePreview(event, '9ee22d5a')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">DevelopersIO</span>
-                <span class="preview-date">7時間前</span>
-                <span class="preview-author" style="display: none;">越井 琢巳 (Koshii Takumi)</span>
-                <span class="preview-tags">AI・機械学習, ツール・IDE</span>
-            </div>
-            <div class="preview-description">
-                Twilio for Claude を Claude Code に入れて Video API でブラウザ通話を実装しました。MCP は API 検索として有用な一方、Skills は得意領域以外では MCP の補完が前提になりました。
-            </div>
-            <div class="preview-actions">
-                <a href="https://dev.classmethod.jp/articles/twilio-for-claude-with-claude-code/" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://dev.classmethod.jp/articles/cloudfront-s3-signature-oac-comparison/" data-preview-title="S3 Presigned URLをCloudFrontでリバプロする構成を検証してみた" data-preview-source="DevelopersIO" data-preview-description="CloudFront 経由でファイルのアップロード/ダウンロードを実現する2方式（S3 Presigned URLリバプロ / CloudFront署名付きURL+OAC）を検証して比較しました。セキュリティとキャッシュ観点での違いと、選び方の指針をまとめています。" data-preview-published="Fri, 05 Jun 2026 15:00:10 GMT" data-preview-author="石井悠汰">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://dev.classmethod.jp/articles/cloudfront-s3-signature-oac-comparison/" target="_blank">S3 Presigned URLをCloudFrontでリバプロする構成を検証してみた</a>
-            </h4>
-            <p class="card-source">DevelopersIO • 7時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-cbd81951" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">S3 Presigned URLをCloudFrontでリバプロする構成を検証してみた</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'cbd81951')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">DevelopersIO</span>
-                <span class="preview-date">7時間前</span>
-                <span class="preview-author" style="display: none;">石井悠汰</span>
-                <span class="preview-tags">クラウド, セキュリティ</span>
-            </div>
-            <div class="preview-description">
-                CloudFront 経由でファイルのアップロード/ダウンロードを実現する2方式（S3 Presigned URLリバプロ / CloudFront署名付きURL+OAC）を検証して比較しました。セキュリティとキャッシュ観点での違いと、選び方の指針をまとめています。
-            </div>
-            <div class="preview-actions">
-                <a href="https://dev.classmethod.jp/articles/cloudfront-s3-signature-oac-comparison/" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://dev.classmethod.jp/articles/amazon-quick-desktop-kiro-cli-acp/" data-preview-title="Amazon Quick DesktopからACP連携でKiro CLIにタスクを実行させてみた" data-preview-source="DevelopersIO" data-preview-description="Amazon Quick DesktopからKiro CLIにACP経由でタスクを実行させる方法をまとめました。自然言語での指示、マルチターン対話、並列実行に加え、SSH経由でリモートマシン上のKiro CLIに接続する構成も紹介します。" data-preview-published="Fri, 05 Jun 2026 14:08:05 GMT" data-preview-author="suzuki.ryo">
-    <div class="card-content">
-        <img src="https://images.ctfassets.net/ct0aopd36mqt/2x7muHjvW69fxuVNSKWZHp/b37e05a972fc8125e9214abd764928fa/amazon-quick.png" width="120" height="90" alt="Amazon Quick DesktopからACP連携でKiro CLIにタスクを実行させてみた" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://dev.classmethod.jp/articles/amazon-quick-desktop-kiro-cli-acp/" target="_blank">Amazon Quick DesktopからACP連携でKiro CLIにタスクを実行させてみた</a>
-            </h4>
-            <p class="card-source">DevelopersIO • 8時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-a9bb0b23" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">Amazon Quick DesktopからACP連携でKiro CLIにタスクを実行させてみた</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'a9bb0b23')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">DevelopersIO</span>
-                <span class="preview-date">8時間前</span>
-                <span class="preview-author" style="display: none;">suzuki.ryo</span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                Amazon Quick DesktopからKiro CLIにACP経由でタスクを実行させる方法をまとめました。自然言語での指示、マルチターン対話、並列実行に加え、SSH経由でリモートマシン上のKiro CLIに接続する構成も紹介します。
-            </div>
-            <div class="preview-actions">
-                <a href="https://dev.classmethod.jp/articles/amazon-quick-desktop-kiro-cli-acp/" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div>    <h2>gihyo.jp</h2>
-<div class="card" data-preview-link="https://gihyo.jp/article/2026/06/ai-news-note-20260605?utm_source=feed" data-preview-title="AIニュースノート：Gemma 4 12B公開、Nemotron 3 Ultra公開、画像モデルReve 2.0／Ideogram 4.0公開、ChatGPTメモリー改善、Hermes Desktop公開など" data-preview-source="gihyo.jp" data-preview-description="gihyo.jpのニュース記事として取り上げていなかったもののなかから、直近（2026年6月3日〜5日頃）に発表・公開されたAI関連の興味深いニュースの概要を簡単にまとめてみました。" data-preview-published="Fri, 05 Jun 2026 19:12:00 +0900" data-preview-author="">
-    <div class="card-content">
-        <img src="https://gihyo.jp/assets/images/ICON/2026/2882_ai-news-note-20260605.jpg" width="120" height="90" alt="AIニュースノート：Gemma 4 12B公開、Nemotron 3 Ultra公開、画像モデルReve 2.0／Ideogram 4.0公開、ChatGPTメモリー改善、Hermes Desktop公開など" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://gihyo.jp/article/2026/06/ai-news-note-20260605?utm_source=feed" target="_blank">AIニュースノート：Gemma 4 12B公開、Nemotron 3 Ultra公開、画像モデルReve 2.0／Ideogram 4.0公開、ChatGPTメモリー改善、Hermes Desktop公開など</a>
-            </h4>
-            <p class="card-source">gihyo.jp • 12時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-411f6f14" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">AIニュースノート：Gemma 4 12B公開、Nemotron 3 Ultra公開、画像モデルReve 2.0／Ideogram 4.0公開、ChatGPTメモリー改善、Hermes Desktop公開など</h5>
-                <button class="preview-close" onclick="hidePreview(event, '411f6f14')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">gihyo.jp</span>
-                <span class="preview-date">12時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">AI・機械学習</span>
-            </div>
-            <div class="preview-description">
-                gihyo.jpのニュース記事として取り上げていなかったもののなかから、直近（2026年6月3日〜5日頃）に発表・公開されたAI関連の興味深いニュースの概要を簡単にまとめてみました。
-            </div>
-            <div class="preview-actions">
-                <a href="https://gihyo.jp/article/2026/06/ai-news-note-20260605?utm_source=feed" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://gihyo.jp/admin/clip/01/ubuntu-topics/202606/05?utm_source=feed" data-preview-title="Ubuntu 26.10（Stonking）の開発; Snapshot 1、「Ubuntu入り」Windows 365 開発者向けイメージ、NVIDIA OpenShell snap" data-preview-source="gihyo.jp" data-preview-description="stonkingの最初のスナップショットリリース、Snapshot 1がリリースされました。" data-preview-published="Fri, 05 Jun 2026 09:54:00 +0900" data-preview-author="">
-    <div class="card-content">
-        <img src="https://gihyo.jp/assets/images/ICON/2022/1903_ubuntu-topics.png" width="120" height="90" alt="Ubuntu 26.10（Stonking）の開発; Snapshot 1、「Ubuntu入り」Windows 365 開発者向けイメージ、NVIDIA OpenShell snap" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://gihyo.jp/admin/clip/01/ubuntu-topics/202606/05?utm_source=feed" target="_blank">Ubuntu 26.10（Stonking）の開発; Snapshot 1、「Ubuntu入り」Windows 365 開発者向けイメージ、NVIDIA OpenShell snap</a>
-            </h4>
-            <p class="card-source">gihyo.jp • 21時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-fac80828" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">Ubuntu 26.10（Stonking）の開発; Snapshot 1、「Ubuntu入り」Windows 365 開発者向けイメージ、NVIDIA OpenShell snap</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'fac80828')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">gihyo.jp</span>
-                <span class="preview-date">21時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">プログラミング, OS・システム</span>
-            </div>
-            <div class="preview-description">
-                stonkingの最初のスナップショットリリース、Snapshot 1がリリースされました。
-            </div>
-            <div class="preview-actions">
-                <a href="https://gihyo.jp/admin/clip/01/ubuntu-topics/202606/05?utm_source=feed" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://gihyo.jp/article/2026/06/nvidia-gtc?utm_source=feed" data-preview-title="DSXが示すNVIDIAの未来：垂直統合と水平分散のハイブリッド戦略～NVIDIA GTC Taipei 2026、Jensen Huangキーノートから" data-preview-source="gihyo.jp" data-preview-description="NVIDIAのCEOであるJensen Huang氏（以降Jensen）と言えば、もはや COMPUTEX TAIPEIの「顔」とも言える IT業界のスターです。今年も一般公開前の 6月1日にJensenはGTCのキーノートに登壇し、たっぷり2時間、多くのことについて語りました。" data-preview-published="Thu, 04 Jun 2026 09:24:00 +0900" data-preview-author="">
-    <div class="card-content">
-        <img src="https://gihyo.jp/assets/images/ICON/2026/2880_NVIDIA.jpg" width="120" height="90" alt="DSXが示すNVIDIAの未来：垂直統合と水平分散のハイブリッド戦略～NVIDIA GTC Taipei 2026、Jensen Huangキーノートから" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://gihyo.jp/article/2026/06/nvidia-gtc?utm_source=feed" target="_blank">DSXが示すNVIDIAの未来：垂直統合と水平分散のハイブリッド戦略～NVIDIA GTC Taipei 2026、Jensen Huangキーノートから</a>
-            </h4>
-            <p class="card-source">gihyo.jp • 1日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-a5a1720b" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">DSXが示すNVIDIAの未来：垂直統合と水平分散のハイブリッド戦略～NVIDIA GTC Taipei 2026、Jensen Huangキーノートから</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'a5a1720b')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">gihyo.jp</span>
-                <span class="preview-date">1日前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                NVIDIAのCEOであるJensen Huang氏（以降Jensen）と言えば、もはや COMPUTEX TAIPEIの「顔」とも言える IT業界のスターです。今年も一般公開前の 6月1日にJensenはGTCのキーノートに登壇し、たっぷり2時間、多くのことについて語りました。
-            </div>
-            <div class="preview-actions">
-                <a href="https://gihyo.jp/article/2026/06/nvidia-gtc?utm_source=feed" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://gihyo.jp/article/2026/06/android-weekly-topics-260604?utm_source=feed" data-preview-title="データ疲れの時代にGoogleが提示した新しい形「Google Fitbit Air」" data-preview-source="gihyo.jp" data-preview-description="ディスプレイをなくしたGoogleの「Google Fitbit Air」について考察してみます。" data-preview-published="Thu, 04 Jun 2026 09:23:00 +0900" data-preview-author="">
-    <div class="card-content">
-        <img src="https://gihyo.jp/assets/images/ICON/2022/1908_AndroidWeeklyTopics.png" width="120" height="90" alt="データ疲れの時代にGoogleが提示した新しい形「Google Fitbit Air」" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://gihyo.jp/article/2026/06/android-weekly-topics-260604?utm_source=feed" target="_blank">データ疲れの時代にGoogleが提示した新しい形「Google Fitbit Air」</a>
-            </h4>
-            <p class="card-source">gihyo.jp • 1日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-511ede6d" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">データ疲れの時代にGoogleが提示した新しい形「Google Fitbit Air」</h5>
-                <button class="preview-close" onclick="hidePreview(event, '511ede6d')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">gihyo.jp</span>
-                <span class="preview-date">1日前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                ディスプレイをなくしたGoogleの「Google Fitbit Air」について考察してみます。
-            </div>
-            <div class="preview-actions">
-                <a href="https://gihyo.jp/article/2026/06/android-weekly-topics-260604?utm_source=feed" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://gihyo.jp/article/2026/06/codex-business-workflows?utm_source=feed" data-preview-title="OpenAI、Codexのビジネス用途を広げる役割別プラグインを公開、アノテーション対象拡大やSitesのプレビュー提供も" data-preview-source="gihyo.jp" data-preview-description="OpenAIは2026年6月2日、Codex向けに、職種や役割に合わせて使える6種類の新しい「役割別プラグイン」、成果物をWebサイトやアプリとして共有できる「Sites」のプレビュー提供、選択箇所を指定して修正を依頼できる「アノテーション」の対象拡大を発表した。" data-preview-published="Wed, 03 Jun 2026 17:37:00 +0900" data-preview-author="">
-    <div class="card-content">
-        <img src="https://gihyo.jp/assets/images/ICON/2026/2881_codex-business-workflows.png" width="120" height="90" alt="OpenAI、Codexのビジネス用途を広げる役割別プラグインを公開、アノテーション対象拡大やSitesのプレビュー提供も" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://gihyo.jp/article/2026/06/codex-business-workflows?utm_source=feed" target="_blank">OpenAI、Codexのビジネス用途を広げる役割別プラグインを公開、アノテーション対象拡大やSitesのプレビュー提供も</a>
-            </h4>
-            <p class="card-source">gihyo.jp • 2日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-1907b5b2" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">OpenAI、Codexのビジネス用途を広げる役割別プラグインを公開、アノテーション対象拡大やSitesのプレビュー提供も</h5>
-                <button class="preview-close" onclick="hidePreview(event, '1907b5b2')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">gihyo.jp</span>
-                <span class="preview-date">2日前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">AI・機械学習, ツール紹介, テクノロジートレンド</span>
-            </div>
-            <div class="preview-description">
-                OpenAIは2026年6月2日、Codex向けに、職種や役割に合わせて使える6種類の新しい「役割別プラグイン」、成果物をWebサイトやアプリとして共有できる「Sites」のプレビュー提供、選択箇所を指定して修正を依頼できる「アノテーション」の対象拡大を発表した。
-            </div>
-            <div class="preview-actions">
-                <a href="https://gihyo.jp/article/2026/06/codex-business-workflows?utm_source=feed" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div>    <h2>Publickey</h2>
-<div class="card" data-preview-link="https://www.publickey1.jp/blog/26/aiwindowswindows_development_skills.html" data-preview-title="マイクロソフト、AIエージェントにWindowsアプリ開発の知識を与える「Windows Development Skills」を一般提供開始" data-preview-source="Publickey" data-preview-description="マイクロソフトは日本時間6月3日未明に開幕した年次イベント「Microsoft Build 2026」で、AIエージェントにWindowsアプリ開発のライフサイクル全体に関する知識を与える「Windows Development Skill..." data-preview-published="2026-06-03T15:11:06Z" data-preview-author="jniino">
-    <div class="card-content">
-        <img src="https://www.publickey1.jp/2026/windevskills-build2026.png" width="120" height="90" alt="マイクロソフト、AIエージェントにWindowsアプリ開発の知識を与える「Windows Development Skills」を一般提供開始" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.publickey1.jp/blog/26/aiwindowswindows_development_skills.html" target="_blank">マイクロソフト、AIエージェントにWindowsアプリ開発の知識を与える「Windows Development Skills」を一般提供開始</a>
-            </h4>
-            <p class="card-source">Publickey • 2日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-8b46034d" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">マイクロソフト、AIエージェントにWindowsアプリ開発の知識を与える「Windows Development Skills」を一般提供開始</h5>
-                <button class="preview-close" onclick="hidePreview(event, '8b46034d')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Publickey</span>
-                <span class="preview-date">2日前</span>
-                <span class="preview-author" style="display: none;">jniino</span>
-                <span class="preview-tags">モバイル, プログラミング, OS・システム</span>
-            </div>
-            <div class="preview-description">
-                マイクロソフトは日本時間6月3日未明に開幕した年次イベント「Microsoft Build 2026」で、AIエージェントにWindowsアプリ開発のライフサイクル全体に関する知識を与える「Windows Development Skill...
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.publickey1.jp/blog/26/aiwindowswindows_development_skills.html" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.publickey1.jp/blog/26/7aimicrosoft_ai_models.html" data-preview-title="［速報］マイクロソフト、自社開発した7つのAIモデル「Microsoft AI Models」を発表" data-preview-source="Publickey" data-preview-description="マイクロソフトは、日本時間6月3日未明に開幕した年次イベント「Microsoft Build 2026」で、自社開発した7つのAIモデル群「Microsoft AI Models」を発表しました。 MAI-Thinking-1 Micro..." data-preview-published="2026-06-02T18:40:20Z" data-preview-author="jniino">
-    <div class="card-content">
-        <img src="https://www.publickey1.jp/2026/7mai-models-build2026.png" width="120" height="90" alt="［速報］マイクロソフト、自社開発した7つのAIモデル「Microsoft AI Models」を発表" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.publickey1.jp/blog/26/7aimicrosoft_ai_models.html" target="_blank">［速報］マイクロソフト、自社開発した7つのAIモデル「Microsoft AI Models」を発表</a>
-            </h4>
-            <p class="card-source">Publickey • 3日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-da9df21b" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">［速報］マイクロソフト、自社開発した7つのAIモデル「Microsoft AI Models」を発表</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'da9df21b')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Publickey</span>
-                <span class="preview-date">3日前</span>
-                <span class="preview-author" style="display: none;">jniino</span>
-                <span class="preview-tags">AI・機械学習</span>
-            </div>
-            <div class="preview-description">
-                マイクロソフトは、日本時間6月3日未明に開幕した年次イベント「Microsoft Build 2026」で、自社開発した7つのAIモデル群「Microsoft AI Models」を発表しました。 MAI-Thinking-1 Micro...
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.publickey1.jp/blog/26/7aimicrosoft_ai_models.html" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.publickey1.jp/blog/26/aimicrosoft_execution_containers_mxc.html" data-preview-title="［速報］マイクロソフト、AIエージェントのためのカスタマイズ可能な分離環境「Microsoft Execution Containers （MXC）」発表" data-preview-source="Publickey" data-preview-description="マイクロソフトは、日本時間6月3日未明に開幕した年次イベント「Microsoft Build 2026」で、AIエージェントのためのカスタマイズ可能な分離環境「Microsoft Execution Containers （MXC）」を発表..." data-preview-published="2026-06-02T18:20:20Z" data-preview-author="jniino">
-    <div class="card-content">
-        <img src="https://www.publickey1.jp/2026/mxc-build2026-01.png" width="120" height="90" alt="［速報］マイクロソフト、AIエージェントのためのカスタマイズ可能な分離環境「Microsoft Execution Containers （MXC）」発表" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.publickey1.jp/blog/26/aimicrosoft_execution_containers_mxc.html" target="_blank">［速報］マイクロソフト、AIエージェントのためのカスタマイズ可能な分離環境「Microsoft Execution Containers （MXC）」発表</a>
-            </h4>
-            <p class="card-source">Publickey • 3日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-426fd001" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">［速報］マイクロソフト、AIエージェントのためのカスタマイズ可能な分離環境「Microsoft Execution Containers （MXC）」発表</h5>
-                <button class="preview-close" onclick="hidePreview(event, '426fd001')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Publickey</span>
-                <span class="preview-date">3日前</span>
-                <span class="preview-author" style="display: none;">jniino</span>
-                <span class="preview-tags">技術発表・LT</span>
-            </div>
-            <div class="preview-description">
-                マイクロソフトは、日本時間6月3日未明に開幕した年次イベント「Microsoft Build 2026」で、AIエージェントのためのカスタマイズ可能な分離環境「Microsoft Execution Containers （MXC）」を発表...
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.publickey1.jp/blog/26/aimicrosoft_execution_containers_mxc.html" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.publickey1.jp/blog/26/windowslinuxwsl_containers.html" data-preview-title="［速報］Windows上でLinuxコンテナの作成や実行ができる「WSL containers」発表" data-preview-source="Publickey" data-preview-description="マイクロソフトは、日本時間6月3日未明に開幕した年次イベント「Microsoft Build 2026」で、Windows上でLinuxコンテナの作成や実行、操作などを実現するWSL（Windows Subsystem for Linux）..." data-preview-published="2026-06-02T17:27:08Z" data-preview-author="jniino">
-    <div class="card-content">
-        <img src="https://www.publickey1.jp/2026/wslcontainers-build2026.png" width="120" height="90" alt="［速報］Windows上でLinuxコンテナの作成や実行ができる「WSL containers」発表" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.publickey1.jp/blog/26/windowslinuxwsl_containers.html" target="_blank">［速報］Windows上でLinuxコンテナの作成や実行ができる「WSL containers」発表</a>
-            </h4>
-            <p class="card-source">Publickey • 3日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-1900b0fd" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">［速報］Windows上でLinuxコンテナの作成や実行ができる「WSL containers」発表</h5>
-                <button class="preview-close" onclick="hidePreview(event, '1900b0fd')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Publickey</span>
-                <span class="preview-date">3日前</span>
-                <span class="preview-author" style="display: none;">jniino</span>
-                <span class="preview-tags">プログラミング, 技術発表・LT, OS・システム</span>
-            </div>
-            <div class="preview-description">
-                マイクロソフトは、日本時間6月3日未明に開幕した年次イベント「Microsoft Build 2026」で、Windows上でLinuxコンテナの作成や実行、操作などを実現するWSL（Windows Subsystem for Linux）...
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.publickey1.jp/blog/26/windowslinuxwsl_containers.html" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.publickey1.jp/blog/26/unixwindowscoreutils_for_window.html" data-preview-title="［速報］マイクロソフト、UNIX系コマンドをWindowsに移植「Coreutils for Windows」一般公開" data-preview-source="Publickey" data-preview-description="マイクロソフトは、日本時間6月3日未明に開幕した年次イベント「Microsoft Build 2026」で、UNIX系の基本的なコマンド群をWindowsに移植した「Coreutils for Windows」の一般公開を発表しました。 C..." data-preview-published="2026-06-02T16:58:57Z" data-preview-author="jniino">
-    <div class="card-content">
-        <img src="https://www.publickey1.jp/2026/coreutils4windows-build2026.png" width="120" height="90" alt="［速報］マイクロソフト、UNIX系コマンドをWindowsに移植「Coreutils for Windows」一般公開" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.publickey1.jp/blog/26/unixwindowscoreutils_for_window.html" target="_blank">［速報］マイクロソフト、UNIX系コマンドをWindowsに移植「Coreutils for Windows」一般公開</a>
-            </h4>
-            <p class="card-source">Publickey • 3日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-2d21d778" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">［速報］マイクロソフト、UNIX系コマンドをWindowsに移植「Coreutils for Windows」一般公開</h5>
-                <button class="preview-close" onclick="hidePreview(event, '2d21d778')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">Publickey</span>
-                <span class="preview-date">3日前</span>
-                <span class="preview-author" style="display: none;">jniino</span>
-                <span class="preview-tags">プログラミング, OS・システム</span>
-            </div>
-            <div class="preview-description">
-                マイクロソフトは、日本時間6月3日未明に開幕した年次イベント「Microsoft Build 2026」で、UNIX系の基本的なコマンド群をWindowsに移植した「Coreutils for Windows」の一般公開を発表しました。 C...
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.publickey1.jp/blog/26/unixwindowscoreutils_for_window.html" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div>    <h2>CodeZine</h2>
-<div class="card" data-preview-link="https://codezine.jp/article/detail/24407" data-preview-title="澁井雄介氏が解説！LLMをソフトウェアに組み込むプラクティス【デブサミ2026夏 注目セッション】" data-preview-source="CodeZine" data-preview-description="記事の詳細を確認してください。" data-preview-published="Fri, 05 Jun 2026 17:00:00 +0900" data-preview-author="">
-    <div class="card-content">
-        <img src="https://codezine.jp/static/images/article/24407/24407_ogp.png" width="120" height="90" alt="澁井雄介氏が解説！LLMをソフトウェアに組み込むプラクティス【デブサミ2026夏 注目セッション】" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://codezine.jp/article/detail/24407" target="_blank">澁井雄介氏が解説！LLMをソフトウェアに組み込むプラクティス【デブサミ2026夏 注目セッション】</a>
-            </h4>
-            <p class="card-source">CodeZine • 14時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-21ca8018" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">澁井雄介氏が解説！LLMをソフトウェアに組み込むプラクティス【デブサミ2026夏 注目セッション】</h5>
-                <button class="preview-close" onclick="hidePreview(event, '21ca8018')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">CodeZine</span>
-                <span class="preview-date">14時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                記事の詳細を確認してください。
-            </div>
-            <div class="preview-actions">
-                <a href="https://codezine.jp/article/detail/24407" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://codezine.jp/article/detail/24465" data-preview-title="GitHub Copilot、クラウドおよびローカル環境のサンドボックス機能をプレビュー公開" data-preview-source="CodeZine" data-preview-description="記事の詳細を確認してください。" data-preview-published="Fri, 05 Jun 2026 16:00:00 +0900" data-preview-author="">
-    <div class="card-content">
-        <img src="https://codezine.jp/static/images/article/24465/1200git.png" width="120" height="90" alt="GitHub Copilot、クラウドおよびローカル環境のサンドボックス機能をプレビュー公開" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://codezine.jp/article/detail/24465" target="_blank">GitHub Copilot、クラウドおよびローカル環境のサンドボックス機能をプレビュー公開</a>
-            </h4>
-            <p class="card-source">CodeZine • 15時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-212e7414" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">GitHub Copilot、クラウドおよびローカル環境のサンドボックス機能をプレビュー公開</h5>
-                <button class="preview-close" onclick="hidePreview(event, '212e7414')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">CodeZine</span>
-                <span class="preview-date">15時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">AI・機械学習, クラウド, ツール・IDE, ツール紹介, コーディング支援</span>
-            </div>
-            <div class="preview-description">
-                記事の詳細を確認してください。
-            </div>
-            <div class="preview-actions">
-                <a href="https://codezine.jp/article/detail/24465" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://codezine.jp/article/detail/24468" data-preview-title="Google Drive、Androidで複数ページ同時スキャン機能を提供開始" data-preview-source="CodeZine" data-preview-description="記事の詳細を確認してください。" data-preview-published="Fri, 05 Jun 2026 14:30:00 +0900" data-preview-author="">
-    <div class="card-content">
-        <img src="https://codezine.jp/static/images/article/24468/1200goo.png" width="120" height="90" alt="Google Drive、Androidで複数ページ同時スキャン機能を提供開始" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://codezine.jp/article/detail/24468" target="_blank">Google Drive、Androidで複数ページ同時スキャン機能を提供開始</a>
-            </h4>
-            <p class="card-source">CodeZine • 16時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-5f57fc8f" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">Google Drive、Androidで複数ページ同時スキャン機能を提供開始</h5>
-                <button class="preview-close" onclick="hidePreview(event, '5f57fc8f')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">CodeZine</span>
-                <span class="preview-date">16時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">モバイル</span>
-            </div>
-            <div class="preview-description">
-                記事の詳細を確認してください。
-            </div>
-            <div class="preview-actions">
-                <a href="https://codezine.jp/article/detail/24468" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://codezine.jp/article/detail/24464" data-preview-title="GitHub Copilot for JetBrains IDEsがCLIエージェント機能を強化" data-preview-source="CodeZine" data-preview-description="記事の詳細を確認してください。" data-preview-published="Fri, 05 Jun 2026 13:00:00 +0900" data-preview-author="">
-    <div class="card-content">
-        <img src="https://codezine.jp/static/images/article/24464/1200git.png" width="120" height="90" alt="GitHub Copilot for JetBrains IDEsがCLIエージェント機能を強化" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://codezine.jp/article/detail/24464" target="_blank">GitHub Copilot for JetBrains IDEsがCLIエージェント機能を強化</a>
-            </h4>
-            <p class="card-source">CodeZine • 18時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-643db080" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">GitHub Copilot for JetBrains IDEsがCLIエージェント機能を強化</h5>
-                <button class="preview-close" onclick="hidePreview(event, '643db080')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">CodeZine</span>
-                <span class="preview-date">18時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">AI・機械学習, ツール・IDE, コーディング支援</span>
-            </div>
-            <div class="preview-description">
-                記事の詳細を確認してください。
-            </div>
-            <div class="preview-actions">
-                <a href="https://codezine.jp/article/detail/24464" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://codezine.jp/article/detail/24408" data-preview-title="プロダクトの価値を届けるためのボトルネック、どこに移動した？【デブサミ2026夏 注目セッション】" data-preview-source="CodeZine" data-preview-description="記事の詳細を確認してください。" data-preview-published="Fri, 05 Jun 2026 11:30:00 +0900" data-preview-author="">
-    <div class="card-content">
-        <img src="https://codezine.jp/static/images/article/24408/24408_ogp.png" width="120" height="90" alt="プロダクトの価値を届けるためのボトルネック、どこに移動した？【デブサミ2026夏 注目セッション】" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://codezine.jp/article/detail/24408" target="_blank">プロダクトの価値を届けるためのボトルネック、どこに移動した？【デブサミ2026夏 注目セッション】</a>
-            </h4>
-            <p class="card-source">CodeZine • 19時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-f8ff629c" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">プロダクトの価値を届けるためのボトルネック、どこに移動した？【デブサミ2026夏 注目セッション】</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'f8ff629c')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">CodeZine</span>
-                <span class="preview-date">19時間前</span>
-                <span class="preview-author" style="display: none;"></span>
-                <span class="preview-tags">その他</span>
-            </div>
-            <div class="preview-description">
-                記事の詳細を確認してください。
-            </div>
-            <div class="preview-actions">
-                <a href="https://codezine.jp/article/detail/24408" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div>    <h2>InfoQ Japan</h2>
-<div class="card" data-preview-link="https://www.infoq.com/jp/news/2026/06/claude-code-linux-vulnerability/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" data-preview-title="23年間潜伏していたリモート悪用可能なLinuxカーネル脆弱性の発見にClaude Codeが使われた" data-preview-source="InfoQ Japan" data-preview-description="Anthropicのリサーチ・サイエンティストNicholas Carlini氏は、[un]prompted AIセキュリティカンファレンスで、2003年以降存在していたNFSドライバのヒープバッファオーバーフローを含む、Linuxカーネルに存在するリモートから悪用可能な複数のセキュリティ脆弱性を、Claude Codeを使用して発見したと報告した。このバグはその後パッチ適用済であり、Carlini氏はこれまでのところ合計5件のLinuxカーネル脆弱性を特定済で、さらに人手による検証を待つ数百件の潜在的なクラッシュが残っている。 By Steef-Jan Wiggers Translated ..." data-preview-published="Fri, 05 Jun 2026 00:30:00 GMT" data-preview-author="Steef-Jan Wiggers">
-    <div class="card-content">
-        <img src="https://cdn.infoq.com/statics_s1_20260601152854-1/styles/static/images/logo/logo-big.jpg" width="120" height="90" alt="23年間潜伏していたリモート悪用可能なLinuxカーネル脆弱性の発見にClaude Codeが使われた" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.infoq.com/jp/news/2026/06/claude-code-linux-vulnerability/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank">23年間潜伏していたリモート悪用可能なLinuxカーネル脆弱性の発見にClaude Codeが使われた</a>
-            </h4>
-            <p class="card-source">InfoQ Japan • 21時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-f9d91769" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">23年間潜伏していたリモート悪用可能なLinuxカーネル脆弱性の発見にClaude Codeが使われた</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'f9d91769')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">InfoQ Japan</span>
-                <span class="preview-date">21時間前</span>
-                <span class="preview-author" style="display: none;">Steef-Jan Wiggers</span>
-                <span class="preview-tags">AI・機械学習, セキュリティ, プログラミング, ツール・IDE, 技術発表・LT, OS・システム</span>
-            </div>
-            <div class="preview-description">
-                Anthropicのリサーチ・サイエンティストNicholas Carlini氏は、[un]prompted AIセキュリティカンファレンスで、2003年以降存在していたNFSドライバのヒープバッファオーバーフローを含む、Linuxカーネルに存在するリモートから悪用可能な複数のセキュリティ脆弱性を、Claude Codeを使用して発見したと報告した。このバグはその後パッチ適用済であり、Carlini氏はこれまでのところ合計5件のLinuxカーネル脆弱性を特定済で、さらに人手による検証を待つ数百件の潜在的なクラッシュが残っている。 By Steef-Jan Wiggers Translated ...
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.infoq.com/jp/news/2026/06/claude-code-linux-vulnerability/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.infoq.com/jp/news/2026/06/agentic-engineering-patterns/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" data-preview-title="エージェンティックAIパターンがエンジニアリング規律を強化" data-preview-source="InfoQ Japan" data-preview-description="最近のAI DevOps PodcastでPaul Duvall氏は、最新モデルの能力向上に伴いエージェンティックAIパターンが中核的なエンジニアリング規律をどのように強化しているかについて論じた。彼はAI支援ソフトウェア開発の実践を記録し、進化させているエージェンティックAIエンジニアリング・パターンのリポジトリもシェアした。 By Rafiq Gemmail Translated by Hiroaki.Sugimura" data-preview-published="Thu, 04 Jun 2026 05:30:00 GMT" data-preview-author="Rafiq Gemmail">
-    <div class="card-content">
-        <img src="https://cdn.infoq.com/statics_s2_20260601152915-1/styles/static/images/logo/logo-big.jpg" width="120" height="90" alt="エージェンティックAIパターンがエンジニアリング規律を強化" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.infoq.com/jp/news/2026/06/agentic-engineering-patterns/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank">エージェンティックAIパターンがエンジニアリング規律を強化</a>
-            </h4>
-            <p class="card-source">InfoQ Japan • 1日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-d702b1b9" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">エージェンティックAIパターンがエンジニアリング規律を強化</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'd702b1b9')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">InfoQ Japan</span>
-                <span class="preview-date">1日前</span>
-                <span class="preview-author" style="display: none;">Rafiq Gemmail</span>
-                <span class="preview-tags">コーディング支援, キャリア・組織, システム開発</span>
-            </div>
-            <div class="preview-description">
-                最近のAI DevOps PodcastでPaul Duvall氏は、最新モデルの能力向上に伴いエージェンティックAIパターンが中核的なエンジニアリング規律をどのように強化しているかについて論じた。彼はAI支援ソフトウェア開発の実践を記録し、進化させているエージェンティックAIエンジニアリング・パターンのリポジトリもシェアした。 By Rafiq Gemmail Translated by Hiroaki.Sugimura
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.infoq.com/jp/news/2026/06/agentic-engineering-patterns/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.infoq.com/jp/news/2026/06/mysql-foreign-keys/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" data-preview-title="MySQL 9.6で外部キー制約とカスケード処理が変更" data-preview-source="InfoQ Japan" data-preview-description="MySQL社は、外部キー制約とカスケードの管理方法を変更する方針である。MySQL 9.6から、外部キーの検証およびカスケード動作は、InnoDBストレージエンジンではなく、SQLレイヤーによって処理されるようになった。この変更により、変更履歴の追跡精度、レプリケーションの正確性、データの整合性が向上するため、MySQL社によると、CDCパイプラインや混合データベース環境、アナリティクス用途での信頼性が高まると明らかになった。 By Renato Losio Translated by Takashi Kawase" data-preview-published="Wed, 03 Jun 2026 09:30:00 GMT" data-preview-author="Renato Losio">
-    <div class="card-content">
-        <img src="https://cdn.infoq.com/statics_s2_20260601152915-1/styles/static/images/logo/logo-big.jpg" width="120" height="90" alt="MySQL 9.6で外部キー制約とカスケード処理が変更" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.infoq.com/jp/news/2026/06/mysql-foreign-keys/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank">MySQL 9.6で外部キー制約とカスケード処理が変更</a>
-            </h4>
-            <p class="card-source">InfoQ Japan • 2日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-89cc29ea" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">MySQL 9.6で外部キー制約とカスケード処理が変更</h5>
-                <button class="preview-close" onclick="hidePreview(event, '89cc29ea')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">InfoQ Japan</span>
-                <span class="preview-date">2日前</span>
-                <span class="preview-author" style="display: none;">Renato Losio</span>
-                <span class="preview-tags">データベース</span>
-            </div>
-            <div class="preview-description">
-                MySQL社は、外部キー制約とカスケードの管理方法を変更する方針である。MySQL 9.6から、外部キーの検証およびカスケード動作は、InnoDBストレージエンジンではなく、SQLレイヤーによって処理されるようになった。この変更により、変更履歴の追跡精度、レプリケーションの正確性、データの整合性が向上するため、MySQL社によると、CDCパイプラインや混合データベース環境、アナリティクス用途での信頼性が高まると明らかになった。 By Renato Losio Translated by Takashi Kawase
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.infoq.com/jp/news/2026/06/mysql-foreign-keys/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.infoq.com/jp/news/2026/06/android-appfunctions-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" data-preview-title="GoogleがAppFunctionsを発表、AIエージェントとAndroidアプリを接続" data-preview-source="InfoQ Japan" data-preview-description="Androidを「agent-first」OSへと変革する取り組みの一環として、GoogleはAIエージェントやアシスタントを通じて、ユーザーが目標を達成するために活用できる機能ビルディングブロックをアプリが提供するタスク中心モデルを支援する新たなアーリーベータ機能を発表した。 By Sergio De Simone Translated by Hiroaki.Sugimura" data-preview-published="Wed, 03 Jun 2026 08:30:00 GMT" data-preview-author="Sergio De Simone">
-    <div class="card-content">
-        <img src="https://cdn.infoq.com/statics_s1_20260601152854-1/styles/static/images/logo/logo-big.jpg" width="120" height="90" alt="GoogleがAppFunctionsを発表、AIエージェントとAndroidアプリを接続" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.infoq.com/jp/news/2026/06/android-appfunctions-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank">GoogleがAppFunctionsを発表、AIエージェントとAndroidアプリを接続</a>
-            </h4>
-            <p class="card-source">InfoQ Japan • 2日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-d02675ba" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">GoogleがAppFunctionsを発表、AIエージェントとAndroidアプリを接続</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'd02675ba')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">InfoQ Japan</span>
-                <span class="preview-date">2日前</span>
-                <span class="preview-author" style="display: none;">Sergio De Simone</span>
-                <span class="preview-tags">モバイル</span>
-            </div>
-            <div class="preview-description">
-                Androidを「agent-first」OSへと変革する取り組みの一環として、GoogleはAIエージェントやアシスタントを通じて、ユーザーが目標を達成するために活用できる機能ビルディングブロックをアプリが提供するタスク中心モデルを支援する新たなアーリーベータ機能を発表した。 By Sergio De Simone Translated by Hiroaki.Sugimura
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.infoq.com/jp/news/2026/06/android-appfunctions-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://www.infoq.com/jp/news/2026/06/cloudflare-dynamic-workers-beta/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" data-preview-title="Cloudflare社、AIエージェントのコード実行のためのアイソレート型サンドボックスDynamic Workersのオープンベータ版をリリース" data-preview-source="InfoQ Japan" data-preview-description="Cloudflare社は最近、「Dynamic Worker」をオープンベータとして公開し、すべての有料Workersユーザーが利用可能になった。同APIは、Cloudflare Workerから実行時に動的に指定したコードで新たなWorkerを生成できるもので、それぞれ独立したサンドボックス環境で稼働する。こうした機能は、AIによって生成されたコードの安全な実行という高まるニーズに対応するものであり、多くのチームが現状コンテナで対処している課題に焦点を当てている。 By Steef-Jan Wiggers Translated by Takashi Kawase" data-preview-published="Wed, 03 Jun 2026 07:30:00 GMT" data-preview-author="Steef-Jan Wiggers">
-    <div class="card-content">
-        <img src="https://cdn.infoq.com/statics_s1_20260601152854-1/styles/static/images/logo/logo-big.jpg" width="120" height="90" alt="Cloudflare社、AIエージェントのコード実行のためのアイソレート型サンドボックスDynamic Workersのオープンベータ版をリリース" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://www.infoq.com/jp/news/2026/06/cloudflare-dynamic-workers-beta/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" target="_blank">Cloudflare社、AIエージェントのコード実行のためのアイソレート型サンドボックスDynamic Workersのオープンベータ版をリリース</a>
-            </h4>
-            <p class="card-source">InfoQ Japan • 2日前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-e92946bf" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">Cloudflare社、AIエージェントのコード実行のためのアイソレート型サンドボックスDynamic Workersのオープンベータ版をリリース</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'e92946bf')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">InfoQ Japan</span>
-                <span class="preview-date">2日前</span>
-                <span class="preview-author" style="display: none;">Steef-Jan Wiggers</span>
-                <span class="preview-tags">クラウド</span>
-            </div>
-            <div class="preview-description">
-                Cloudflare社は最近、「Dynamic Worker」をオープンベータとして公開し、すべての有料Workersユーザーが利用可能になった。同APIは、Cloudflare Workerから実行時に動的に指定したコードで新たなWorkerを生成できるもので、それぞれ独立したサンドボックス環境で稼働する。こうした機能は、AIによって生成されたコードの安全な実行という高まるニーズに対応するものであり、多くのチームが現状コンテナで対処している課題に焦点を当てている。 By Steef-Jan Wiggers Translated by Takashi Kawase
-            </div>
-            <div class="preview-actions">
-                <a href="https://www.infoq.com/jp/news/2026/06/cloudflare-dynamic-workers-beta/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div>    <h2>connpass - イベント</h2>
-    <p>記事を取得できませんでした。</p>
-    <h2>TECH PLAY - イベント</h2>
-<div class="card" data-preview-link="https://techplay.jp/event/996445" data-preview-title="第21回Tableau 和Vizユーザ会  ～Youは今何している？#5～　DATA Saber制度創設の立役者が語る今" data-preview-source="TECH PLAY - イベント" data-preview-description="日時:2026/06/24 (水) 19:30〜21:00 会場:オンライン 第21回Tableau 和Vizユーザ会 ～Youは今何している？#5～ DATA Saber制度創設の立役者が語る今 概要 2026年6月、和Vizユーザ会は第21回を迎えます。実務とコミュニティの“両軸”で活躍するスペシャルゲストをお招きします。今回のゲストは DATA Saberの生みの親の一人、中嶌さん。 サーバ構築運用、プロダクトローンチ、そしてViz受賞歴まで—— 「Tableauを使う人のリアル」を最前線で体現してきた方です。 こんな話が聞けます ■ BIの“これから”とAI時代の生存戦略 「BIはあと..." data-preview-published="Sat, 06 Jun 2026 06:51:35 +0900" data-preview-author="和Vizの会">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://techplay.jp/event/996445" target="_blank">第21回Tableau 和Vizユーザ会  ～Youは今何している？#5～　DATA Saber制度創設の立役者が語る今</a>
-            </h4>
-            <p class="card-source">TECH PLAY - イベント • 32分前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-cc944393" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">第21回Tableau 和Vizユーザ会  ～Youは今何している？#5～　DATA Saber制度創設の立役者が語る今</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'cc944393')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">TECH PLAY - イベント</span>
-                <span class="preview-date">32分前</span>
-                <span class="preview-author" style="display: none;">和Vizの会</span>
-                <span class="preview-tags">データ分析</span>
-            </div>
-            <div class="preview-description">
-                日時:2026/06/24 (水) 19:30〜21:00 会場:オンライン 第21回Tableau 和Vizユーザ会 ～Youは今何している？#5～ DATA Saber制度創設の立役者が語る今 概要 2026年6月、和Vizユーザ会は第21回を迎えます。実務とコミュニティの“両軸”で活躍するスペシャルゲストをお招きします。今回のゲストは DATA Saberの生みの親の一人、中嶌さん。 サーバ構築運用、プロダクトローンチ、そしてViz受賞歴まで—— 「Tableauを使う人のリアル」を最前線で体現してきた方です。 こんな話が聞けます ■ BIの“これから”とAI時代の生存戦略 「BIはあと...
-            </div>
-            <div class="preview-actions">
-                <a href="https://techplay.jp/event/996445" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://techplay.jp/event/996793" data-preview-title="【無料】仮説検定からMLまで！全体像をつかみ分析初心者の“つまずきポイント”を解消「データサイエンス超入門」" data-preview-source="TECH PLAY - イベント" data-preview-description="日時:2026/06/30 (火) 21:00〜22:00 会場:オンライン 📊データサイエンスって結局なに？ ― 統計・AI・機械学習の“つながり”が一度でわかる超入門セミナー ― 「データ活用が大事」と言われる時代。しかし実際には… 「データサイエンスって広すぎて、全体が見えない」「AIや機械学習と統計の違いがわからない」「まず何から学べばいいのかわからない…」 そんな声が現場で増え続けています。企業にはデータが大量にあるのに、使いこなせる人材が足りない──それが今、ビジネス現場で起きているギャップです。本セミナーでは データサイエンスの“全体像”を1時間で理解できるように整理し解説 しま..." data-preview-published="Fri, 05 Jun 2026 23:44:23 +0900" data-preview-author="和から株式会社">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://techplay.jp/event/996793" target="_blank">【無料】仮説検定からMLまで！全体像をつかみ分析初心者の“つまずきポイント”を解消「データサイエンス超入門」</a>
-            </h4>
-            <p class="card-source">TECH PLAY - イベント • 7時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-09c0e95b" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">【無料】仮説検定からMLまで！全体像をつかみ分析初心者の“つまずきポイント”を解消「データサイエンス超入門」</h5>
-                <button class="preview-close" onclick="hidePreview(event, '09c0e95b')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">TECH PLAY - イベント</span>
-                <span class="preview-date">7時間前</span>
-                <span class="preview-author" style="display: none;">和から株式会社</span>
-                <span class="preview-tags">AI・機械学習, データ分析</span>
-            </div>
-            <div class="preview-description">
-                日時:2026/06/30 (火) 21:00〜22:00 会場:オンライン 📊データサイエンスって結局なに？ ― 統計・AI・機械学習の“つながり”が一度でわかる超入門セミナー ― 「データ活用が大事」と言われる時代。しかし実際には… 「データサイエンスって広すぎて、全体が見えない」「AIや機械学習と統計の違いがわからない」「まず何から学べばいいのかわからない…」 そんな声が現場で増え続けています。企業にはデータが大量にあるのに、使いこなせる人材が足りない──それが今、ビジネス現場で起きているギャップです。本セミナーでは データサイエンスの“全体像”を1時間で理解できるように整理し解説 しま...
-            </div>
-            <div class="preview-actions">
-                <a href="https://techplay.jp/event/996793" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://techplay.jp/event/996791" data-preview-title="【新講座】非エンジニアのためのClaude Code活用超入門【参加無料】" data-preview-source="TECH PLAY - イベント" data-preview-description="日時:2026/06/30 (火) 19:00〜20:00 会場:オンライン Claude Codeはあなたの業務でも使えます 「Claude Codeが話題らしい」「なんか便利そう」——そう聞いて気になってはいるものの、**「どうせエンジニア向けのツールでしょ」「プログラミングができない自分には関係ない」と一歩引いていませんか。Claude Codeとは、ファイルの作成・整理・編集といった作業を自動でこなしてくれるAIツールです。ふだん使っているChatGPTやGeminiが「質問に答えてくれるAI」だとすれば、Claude Codeは「実際に作業までやってくれるAI」**です。たとえば「ダ..." data-preview-published="Fri, 05 Jun 2026 23:37:36 +0900" data-preview-author="和から株式会社">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://techplay.jp/event/996791" target="_blank">【新講座】非エンジニアのためのClaude Code活用超入門【参加無料】</a>
-            </h4>
-            <p class="card-source">TECH PLAY - イベント • 7時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-b3a2b2f0" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">【新講座】非エンジニアのためのClaude Code活用超入門【参加無料】</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'b3a2b2f0')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">TECH PLAY - イベント</span>
-                <span class="preview-date">7時間前</span>
-                <span class="preview-author" style="display: none;">和から株式会社</span>
-                <span class="preview-tags">AI・機械学習, ツール・IDE, キャリア・組織</span>
-            </div>
-            <div class="preview-description">
-                日時:2026/06/30 (火) 19:00〜20:00 会場:オンライン Claude Codeはあなたの業務でも使えます 「Claude Codeが話題らしい」「なんか便利そう」——そう聞いて気になってはいるものの、**「どうせエンジニア向けのツールでしょ」「プログラミングができない自分には関係ない」と一歩引いていませんか。Claude Codeとは、ファイルの作成・整理・編集といった作業を自動でこなしてくれるAIツールです。ふだん使っているChatGPTやGeminiが「質問に答えてくれるAI」だとすれば、Claude Codeは「実際に作業までやってくれるAI」**です。たとえば「ダ...
-            </div>
-            <div class="preview-actions">
-                <a href="https://techplay.jp/event/996791" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://techplay.jp/event/996787" data-preview-title="【無料】分析その前に！「データクレンジング超入門」-データ分析のパフォーマンスを最大化するデータ前処理の極意-" data-preview-source="TECH PLAY - イベント" data-preview-description="日時:2026/06/21 (日) 10:00〜11:00 会場:オンライン データ分析の明暗を分けるデータクレンジング 社内で扱うデータには、多くの場合さまざまな問題点が存在します。これは、データの「汚さ」と呼ばれるものです。 ・データに空白があって分析結果がブレてしまう・明らかに誤って入力されたデータある・同じ名前のデータなのに、違う表記が使われている・そもそもデータが分析に使える形でない これらの「汚さ」を整理し、データを分析しやすい形に作り変える手段をデータクレンジングと呼びます。 社内でデータを活用する際、データクレンジングは最も力を入れられる分野の一つです。ある調査によると、データ..." data-preview-published="Fri, 05 Jun 2026 23:03:08 +0900" data-preview-author="和から株式会社">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://techplay.jp/event/996787" target="_blank">【無料】分析その前に！「データクレンジング超入門」-データ分析のパフォーマンスを最大化するデータ前処理の極意-</a>
-            </h4>
-            <p class="card-source">TECH PLAY - イベント • 8時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-41c85570" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">【無料】分析その前に！「データクレンジング超入門」-データ分析のパフォーマンスを最大化するデータ前処理の極意-</h5>
-                <button class="preview-close" onclick="hidePreview(event, '41c85570')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">TECH PLAY - イベント</span>
-                <span class="preview-date">8時間前</span>
-                <span class="preview-author" style="display: none;">和から株式会社</span>
-                <span class="preview-tags">データ分析</span>
-            </div>
-            <div class="preview-description">
-                日時:2026/06/21 (日) 10:00〜11:00 会場:オンライン データ分析の明暗を分けるデータクレンジング 社内で扱うデータには、多くの場合さまざまな問題点が存在します。これは、データの「汚さ」と呼ばれるものです。 ・データに空白があって分析結果がブレてしまう・明らかに誤って入力されたデータある・同じ名前のデータなのに、違う表記が使われている・そもそもデータが分析に使える形でない これらの「汚さ」を整理し、データを分析しやすい形に作り変える手段をデータクレンジングと呼びます。 社内でデータを活用する際、データクレンジングは最も力を入れられる分野の一つです。ある調査によると、データ...
-            </div>
-            <div class="preview-actions">
-                <a href="https://techplay.jp/event/996787" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://techplay.jp/event/996784" data-preview-title="【新講座】これから5年間「困らない」ための生成AI必要スキル理解講座【参加無料】" data-preview-source="TECH PLAY - イベント" data-preview-description="日時:2026/06/18 (木) 20:00〜21:00 会場:オンライン 生成AIの初学者向けに、基礎から、今後の学習方法までをご案内！ChatGPT、Gemini、Claude、Copilotなど４大生成AIと言われるツールをはじめ、AIツールで行えることを理解する内容です。" data-preview-published="Fri, 05 Jun 2026 22:12:58 +0900" data-preview-author="和から株式会社">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://techplay.jp/event/996784" target="_blank">【新講座】これから5年間「困らない」ための生成AI必要スキル理解講座【参加無料】</a>
-            </h4>
-            <p class="card-source">TECH PLAY - イベント • 9時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-92631e5b" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">【新講座】これから5年間「困らない」ための生成AI必要スキル理解講座【参加無料】</h5>
-                <button class="preview-close" onclick="hidePreview(event, '92631e5b')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">TECH PLAY - イベント</span>
-                <span class="preview-date">9時間前</span>
-                <span class="preview-author" style="display: none;">和から株式会社</span>
-                <span class="preview-tags">AI・機械学習</span>
-            </div>
-            <div class="preview-description">
-                日時:2026/06/18 (木) 20:00〜21:00 会場:オンライン 生成AIの初学者向けに、基礎から、今後の学習方法までをご案内！ChatGPT、Gemini、Claude、Copilotなど４大生成AIと言われるツールをはじめ、AIツールで行えることを理解する内容です。
-            </div>
-            <div class="preview-actions">
-                <a href="https://techplay.jp/event/996784" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://techplay.jp/event/996783" data-preview-title="【新講座】データ分析×AI活用超入門 -ビジネス課題を解決する実践的な使い方-【参加無料】" data-preview-source="TECH PLAY - イベント" data-preview-description="日時:2026/06/17 (水) 20:30〜21:30 会場:オンライン AIは触っているのに、業務データはExcelでの集計止まりになっていませんか？ ChatGPTやGeminiは触ったことがある。でも——「業務のデータ分析にどう活かせばいいか分からない」それ、あなただけではありません。多くの人がAIを“チャット相手”として消費して終わっています。 AIは便利。でも、それだけでは意味がない。 企業にはデータが溜まっています。しかし、Excel集計だけでは見えないことがある。かといって、機械学習や予測分析は専門家のものだと思っていませんか？その常識、もう古いかもしれません。生成AIの登場..." data-preview-published="Fri, 05 Jun 2026 22:10:06 +0900" data-preview-author="和から株式会社">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://techplay.jp/event/996783" target="_blank">【新講座】データ分析×AI活用超入門 -ビジネス課題を解決する実践的な使い方-【参加無料】</a>
-            </h4>
-            <p class="card-source">TECH PLAY - イベント • 9時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-75b07eb2" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">【新講座】データ分析×AI活用超入門 -ビジネス課題を解決する実践的な使い方-【参加無料】</h5>
-                <button class="preview-close" onclick="hidePreview(event, '75b07eb2')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">TECH PLAY - イベント</span>
-                <span class="preview-date">9時間前</span>
-                <span class="preview-author" style="display: none;">和から株式会社</span>
-                <span class="preview-tags">AI・機械学習, データ分析</span>
-            </div>
-            <div class="preview-description">
-                日時:2026/06/17 (水) 20:30〜21:30 会場:オンライン AIは触っているのに、業務データはExcelでの集計止まりになっていませんか？ ChatGPTやGeminiは触ったことがある。でも——「業務のデータ分析にどう活かせばいいか分からない」それ、あなただけではありません。多くの人がAIを“チャット相手”として消費して終わっています。 AIは便利。でも、それだけでは意味がない。 企業にはデータが溜まっています。しかし、Excel集計だけでは見えないことがある。かといって、機械学習や予測分析は専門家のものだと思っていませんか？その常識、もう古いかもしれません。生成AIの登場...
-            </div>
-            <div class="preview-actions">
-                <a href="https://techplay.jp/event/996783" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://techplay.jp/event/996782" data-preview-title="【新講座】AI時代のデータ分析学習ロードマップ-統計検定？G検定？資格と実務、何から始める？-【参加無料】" data-preview-source="TECH PLAY - イベント" data-preview-description="日時:2026/06/17 (水) 19:00〜20:00 会場:オンライン 統計、Python、生成AI、資格……今の自分に本当に必要なものは？ 「統計やPython、あるいはAI、何から手をつければいい？」「資格と実務、どちらを優先すべき？」そんな疑問を抱えながら、独学の難しさを感じていませんか。また、この分野の数多くある資格の多さと学習範囲の広さに、何から手を付けるべきか迷っていませんか。データ分析の世界は多岐にわたりますが、大切なのは「学ぶ順番」を整理することです。本セミナーでは、初学者がまず手に入れるべき「知識の地図」を提示します。データ分析の本質は、ツールの操作そのものではなく、数..." data-preview-published="Fri, 05 Jun 2026 22:02:55 +0900" data-preview-author="和から株式会社">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://techplay.jp/event/996782" target="_blank">【新講座】AI時代のデータ分析学習ロードマップ-統計検定？G検定？資格と実務、何から始める？-【参加無料】</a>
-            </h4>
-            <p class="card-source">TECH PLAY - イベント • 9時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-b449bbf4" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">【新講座】AI時代のデータ分析学習ロードマップ-統計検定？G検定？資格と実務、何から始める？-【参加無料】</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'b449bbf4')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">TECH PLAY - イベント</span>
-                <span class="preview-date">9時間前</span>
-                <span class="preview-author" style="display: none;">和から株式会社</span>
-                <span class="preview-tags">AI・機械学習, データ分析, プログラミング</span>
-            </div>
-            <div class="preview-description">
-                日時:2026/06/17 (水) 19:00〜20:00 会場:オンライン 統計、Python、生成AI、資格……今の自分に本当に必要なものは？ 「統計やPython、あるいはAI、何から手をつければいい？」「資格と実務、どちらを優先すべき？」そんな疑問を抱えながら、独学の難しさを感じていませんか。また、この分野の数多くある資格の多さと学習範囲の広さに、何から手を付けるべきか迷っていませんか。データ分析の世界は多岐にわたりますが、大切なのは「学ぶ順番」を整理することです。本セミナーでは、初学者がまず手に入れるべき「知識の地図」を提示します。データ分析の本質は、ツールの操作そのものではなく、数...
-            </div>
-            <div class="preview-actions">
-                <a href="https://techplay.jp/event/996782" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://techplay.jp/event/996780" data-preview-title="AI×業界データで アポ獲得数を劇的に増やす 「One-to-One戦略」実践セミナー" data-preview-source="TECH PLAY - イベント" data-preview-description="日時:2026/06/16 (火) 11:00〜11:45 会場:オンライン セミナー概要 AIを使っているのに、なぜ営業の成果が変わらないのか——。その答えは「プロンプトの巧みさ」ではなく、**AIに与える「情報の質」**にあります。 AIへの指示は得意だが、出力が薄くファクトチェックに時間がかかっている 商談前のリサーチに毎回2〜3時間かかり「考える時間」が残らない AIを使いこなせる人とそうでない人で、提案品質に格差が広がっている 本セミナーでは、業界特化の一次情報をAIに与えることで出力が劇的に変わる様子をライブデモでお見せします。広島銀行でリサーチ時間を87%以上削減、NECネッツエ..." data-preview-published="Fri, 05 Jun 2026 21:09:56 +0900" data-preview-author="業界Ch">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://techplay.jp/event/996780" target="_blank">AI×業界データで アポ獲得数を劇的に増やす 「One-to-One戦略」実践セミナー</a>
-            </h4>
-            <p class="card-source">TECH PLAY - イベント • 10時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-1ca29e04" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">AI×業界データで アポ獲得数を劇的に増やす 「One-to-One戦略」実践セミナー</h5>
-                <button class="preview-close" onclick="hidePreview(event, '1ca29e04')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">TECH PLAY - イベント</span>
-                <span class="preview-date">10時間前</span>
-                <span class="preview-author" style="display: none;">業界Ch</span>
-                <span class="preview-tags">AI・機械学習</span>
-            </div>
-            <div class="preview-description">
-                日時:2026/06/16 (火) 11:00〜11:45 会場:オンライン セミナー概要 AIを使っているのに、なぜ営業の成果が変わらないのか——。その答えは「プロンプトの巧みさ」ではなく、**AIに与える「情報の質」**にあります。 AIへの指示は得意だが、出力が薄くファクトチェックに時間がかかっている 商談前のリサーチに毎回2〜3時間かかり「考える時間」が残らない AIを使いこなせる人とそうでない人で、提案品質に格差が広がっている 本セミナーでは、業界特化の一次情報をAIに与えることで出力が劇的に変わる様子をライブデモでお見せします。広島銀行でリサーチ時間を87%以上削減、NECネッツエ...
-            </div>
-            <div class="preview-actions">
-                <a href="https://techplay.jp/event/996780" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="https://techplay.jp/event/996779" data-preview-title="KUSANAGIサミット2026 WordPress編" data-preview-source="TECH PLAY - イベント" data-preview-description="日時:2026/06/27 (土) 13:00〜18:00 会場:オンライン GMOインターネットグループ グループ第２本社 GMO Yours・フクラス KUSANAGIサミットは、そんな「変化の真っ只中にいる皆さん」のための場所を提供します。 WordPressの構築・セキュリティ・高速化・運用・マーケティング・今後の未来まで、WordPressのプロフェッショナルがガッツリお伝え。 現場のリアルな知見を含めたWordPressづくしの1日です。 豪華登壇者も続々決定！ Automattic様、デジタルアイデンティティ様、GrowGroup様、WebPros様、GMOインターネット様 など..." data-preview-published="Fri, 05 Jun 2026 20:06:51 +0900" data-preview-author="超高速でセキュアなKUSANAGIと企業向けWordPressのコミュニティ">
-    <div class="card-content">
-        
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="https://techplay.jp/event/996779" target="_blank">KUSANAGIサミット2026 WordPress編</a>
-            </h4>
-            <p class="card-source">TECH PLAY - イベント • 11時間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-06d524ed" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">KUSANAGIサミット2026 WordPress編</h5>
-                <button class="preview-close" onclick="hidePreview(event, '06d524ed')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">TECH PLAY - イベント</span>
-                <span class="preview-date">11時間前</span>
-                <span class="preview-author" style="display: none;">超高速でセキュアなKUSANAGIと企業向けWordPressのコミュニティ</span>
-                <span class="preview-tags">セキュリティ</span>
-            </div>
-            <div class="preview-description">
-                日時:2026/06/27 (土) 13:00〜18:00 会場:オンライン GMOインターネットグループ グループ第２本社 GMO Yours・フクラス KUSANAGIサミットは、そんな「変化の真っ只中にいる皆さん」のための場所を提供します。 WordPressの構築・セキュリティ・高速化・運用・マーケティング・今後の未来まで、WordPressのプロフェッショナルがガッツリお伝え。 現場のリアルな知見を含めたWordPressづくしの1日です。 豪華登壇者も続々決定！ Automattic様、デジタルアイデンティティ様、GrowGroup様、WebPros様、GMOインターネット様 など...
-            </div>
-            <div class="preview-actions">
-                <a href="https://techplay.jp/event/996779" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div>    <h2>O'Reilly Japan - 近刊</h2>
-<div class="card" data-preview-link="http://www.oreilly.co.jp/books/9784814401628/?utm_source=feed&utm_mediun=referral&utm_content=new_book" data-preview-title="APIハンズオンラーニング" data-preview-source="O'Reilly Japan - 近刊" data-preview-description="7つの主要なAPIスタイル——REST、GraphQL、Atom、gRPC、webhook、WebSocket、RabbitMQ——の設計と実装をハンズオンで学ぶ実践ガイド。天気予報サービスの構築を通じて、各スタイルの利点や欠点、アーキテクチャから実装、ネットワークプロトコルまでを体系的に解説します。単なる概念説明ではなく、完全な実装例とともに各APIスタイルの本質を理解できる構成です。GitHub CodespacesやDockerを活用した実行環境が用意されているので、読者は実際に手を動かしながら学べます。" data-preview-published="2026-04-24T00:00:00+09:00" data-preview-author="Lukasz Dynowski、Marcin Dulak　著 苫篠 早紀　訳">
-    <div class="card-content">
-        <img src="https://www.oreilly.co.jp/books/images/picture_large978-4-8144-0162-8.jpeg" width="120" height="90" alt="APIハンズオンラーニング" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="http://www.oreilly.co.jp/books/9784814401628/?utm_source=feed&utm_mediun=referral&utm_content=new_book" target="_blank">APIハンズオンラーニング</a>
-            </h4>
-            <p class="card-source">O'Reilly Japan - 近刊 • 1ヶ月前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-d11fd70f" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">APIハンズオンラーニング</h5>
-                <button class="preview-close" onclick="hidePreview(event, 'd11fd70f')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">O'Reilly Japan - 近刊</span>
-                <span class="preview-date">1ヶ月前</span>
-                <span class="preview-author" style="display: none;">Lukasz Dynowski、Marcin Dulak　著 苫篠 早紀　訳</span>
-                <span class="preview-tags">クラウド, DevOps, ツール・IDE, ツール紹介, ネットワーク, システム開発</span>
-            </div>
-            <div class="preview-description">
-                7つの主要なAPIスタイル——REST、GraphQL、Atom、gRPC、webhook、WebSocket、RabbitMQ——の設計と実装をハンズオンで学ぶ実践ガイド。天気予報サービスの構築を通じて、各スタイルの利点や欠点、アーキテクチャから実装、ネットワークプロトコルまでを体系的に解説します。単なる概念説明ではなく、完全な実装例とともに各APIスタイルの本質を理解できる構成です。GitHub CodespacesやDockerを活用した実行環境が用意されているので、読者は実際に手を動かしながら学べます。
-            </div>
-            <div class="preview-actions">
-                <a href="http://www.oreilly.co.jp/books/9784814401628/?utm_source=feed&utm_mediun=referral&utm_content=new_book" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="http://www.oreilly.co.jp/books/9784814401604/?utm_source=feed&utm_mediun=referral&utm_content=new_book" data-preview-title="LLMOps" data-preview-source="O'Reilly Japan - 近刊" data-preview-description="大規模言語モデルでは、従来のルールやMLOpsが通用せず、ハルシネーションやセキュリティ崩壊、モニタリング不全など未知の課題が発生します。本書はLLMOpsの実践ガイドとして、評価・ガバナンス・監査の設定、RAGやエージェント運用の整理、パフォーマンス監視、コスト効率の高いインフラ拡張まで、本番環境においてLLMを安定的に稼働させる方法を解説します。" data-preview-published="2026-05-22T00:00:00+09:00" data-preview-author="Abi Aryan　著 嶋田 健志、新井 翔太　訳">
-    <div class="card-content">
-        <img src="https://www.oreilly.co.jp/books/images/picture_large978-4-8144-0160-4.jpeg" width="120" height="90" alt="LLMOps" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="http://www.oreilly.co.jp/books/9784814401604/?utm_source=feed&utm_mediun=referral&utm_content=new_book" target="_blank">LLMOps</a>
-            </h4>
-            <p class="card-source">O'Reilly Japan - 近刊 • 2週間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-030a87fa" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">LLMOps</h5>
-                <button class="preview-close" onclick="hidePreview(event, '030a87fa')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">O'Reilly Japan - 近刊</span>
-                <span class="preview-date">2週間前</span>
-                <span class="preview-author" style="display: none;">Abi Aryan　著 嶋田 健志、新井 翔太　訳</span>
-                <span class="preview-tags">DevOps, セキュリティ</span>
-            </div>
-            <div class="preview-description">
-                大規模言語モデルでは、従来のルールやMLOpsが通用せず、ハルシネーションやセキュリティ崩壊、モニタリング不全など未知の課題が発生します。本書はLLMOpsの実践ガイドとして、評価・ガバナンス・監査の設定、RAGやエージェント運用の整理、パフォーマンス監視、コスト効率の高いインフラ拡張まで、本番環境においてLLMを安定的に稼働させる方法を解説します。
-            </div>
-            <div class="preview-actions">
-                <a href="http://www.oreilly.co.jp/books/9784814401604/?utm_source=feed&utm_mediun=referral&utm_content=new_book" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="http://www.oreilly.co.jp/books/9784814401703/?utm_source=feed&utm_mediun=referral&utm_content=new_book" data-preview-title="エンジニアリング戦略の作り方" data-preview-source="O'Reilly Japan - 近刊" data-preview-description="「うちにはエンジニアリング戦略なんてない」と考えているエンジニアはたくさんいます。しかし実態は「存在しない」のではなく、言語化されていない、共有されていない、あるいは単に機能していないだけかもしれません。その結果、組織は何十人、時には数百人ものエンジニアの時間を、本来避けられたはずの混乱に費やしています。 本書は、Stripe、Uber、Calmなどで著者が実際に関わった組織での経験をもとに、複雑な技術的・組織的課題に対して戦略を作り上げるための実践的なプロセスを解説します。制約の把握から診断、方針策定、運用まで、ステップごとのプロセスに加え、Wardleyマッピングやシステムモデリングといっ..." data-preview-published="2026-05-22T00:00:00+09:00" data-preview-author="Will Larson　著 岩瀬 義昌、岩瀬 迪子　訳">
-    <div class="card-content">
-        <img src="https://www.oreilly.co.jp/books/images/picture_large978-4-8144-0170-3.jpeg" width="120" height="90" alt="エンジニアリング戦略の作り方" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="http://www.oreilly.co.jp/books/9784814401703/?utm_source=feed&utm_mediun=referral&utm_content=new_book" target="_blank">エンジニアリング戦略の作り方</a>
-            </h4>
-            <p class="card-source">O'Reilly Japan - 近刊 • 2週間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-3e345e19" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">エンジニアリング戦略の作り方</h5>
-                <button class="preview-close" onclick="hidePreview(event, '3e345e19')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">O'Reilly Japan - 近刊</span>
-                <span class="preview-date">2週間前</span>
-                <span class="preview-author" style="display: none;">Will Larson　著 岩瀬 義昌、岩瀬 迪子　訳</span>
-                <span class="preview-tags">キャリア・組織, OS・システム</span>
-            </div>
-            <div class="preview-description">
-                「うちにはエンジニアリング戦略なんてない」と考えているエンジニアはたくさんいます。しかし実態は「存在しない」のではなく、言語化されていない、共有されていない、あるいは単に機能していないだけかもしれません。その結果、組織は何十人、時には数百人ものエンジニアの時間を、本来避けられたはずの混乱に費やしています。 本書は、Stripe、Uber、Calmなどで著者が実際に関わった組織での経験をもとに、複雑な技術的・組織的課題に対して戦略を作り上げるための実践的なプロセスを解説します。制約の把握から診断、方針策定、運用まで、ステップごとのプロセスに加え、Wardleyマッピングやシステムモデリングといっ...
-            </div>
-            <div class="preview-actions">
-                <a href="http://www.oreilly.co.jp/books/9784814401703/?utm_source=feed&utm_mediun=referral&utm_content=new_book" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="http://www.oreilly.co.jp/books/9784814401567/?utm_source=feed&utm_mediun=referral&utm_content=new_book" data-preview-title="システム思考の世界へ" data-preview-source="O'Reilly Japan - 近刊" data-preview-description="ソフトウェア技術者が向き合っているのは、単体のソフトウェアそのものではなく、人や組織の中で使われ、影響を及ぼすシステムです。変更は、コードの中だけで完結するものではなく、人の行動や判断を含めた全体の振る舞いとして現れます。直面している課題の多くは、ソフトウェアの問題ではなく、そうした相互作用を含むシステムとしての問題です。 本書は、複雑化する現代のシステムに向き合い、よりよい判断へとつなげるためのシステム思考を解説します。個々の要素を切り分けて最適化するだけでなく、全体が健全に機能するように考え、共有し、働きかけるための視点と実践を深めていきます。 システム思考は、複雑な状況の中でもより効果的..." data-preview-published="2026-04-03T00:00:00+09:00" data-preview-author="Diana Montalion　著 宮澤 明日香、中西 健人、和智 右桂　訳">
-    <div class="card-content">
-        <img src="https://www.oreilly.co.jp/books/images/picture_large978-4-8144-0156-7.jpeg" width="120" height="90" alt="システム思考の世界へ" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="http://www.oreilly.co.jp/books/9784814401567/?utm_source=feed&utm_mediun=referral&utm_content=new_book" target="_blank">システム思考の世界へ</a>
-            </h4>
-            <p class="card-source">O'Reilly Japan - 近刊 • 2ヶ月前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-5a56eefa" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">システム思考の世界へ</h5>
-                <button class="preview-close" onclick="hidePreview(event, '5a56eefa')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">O'Reilly Japan - 近刊</span>
-                <span class="preview-date">2ヶ月前</span>
-                <span class="preview-author" style="display: none;">Diana Montalion　著 宮澤 明日香、中西 健人、和智 右桂　訳</span>
-                <span class="preview-tags">OS・システム</span>
-            </div>
-            <div class="preview-description">
-                ソフトウェア技術者が向き合っているのは、単体のソフトウェアそのものではなく、人や組織の中で使われ、影響を及ぼすシステムです。変更は、コードの中だけで完結するものではなく、人の行動や判断を含めた全体の振る舞いとして現れます。直面している課題の多くは、ソフトウェアの問題ではなく、そうした相互作用を含むシステムとしての問題です。 本書は、複雑化する現代のシステムに向き合い、よりよい判断へとつなげるためのシステム思考を解説します。個々の要素を切り分けて最適化するだけでなく、全体が健全に機能するように考え、共有し、働きかけるための視点と実践を深めていきます。 システム思考は、複雑な状況の中でもより効果的...
-            </div>
-            <div class="preview-actions">
-                <a href="http://www.oreilly.co.jp/books/9784814401567/?utm_source=feed&utm_mediun=referral&utm_content=new_book" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
-</div><div class="card" data-preview-link="http://www.oreilly.co.jp/books/9784814401680/?utm_source=feed&utm_mediun=referral&utm_content=new_book" data-preview-title="シニアエンジニアリングリーダーのしごと" data-preview-source="O'Reilly Japan - 近刊" data-preview-description="本書は、シニアマネージャーとして成功するために必要な能力、ツール、技術について体系的に解説します。まず、シニアポジションの定義を明確にし、各ポジションが果たす役割を理解します。次に、時間とエネルギーを効率的に使い、同僚や部下、上司との共生関係を築き、有効なコミュニケーションアーキテクチャを構築するといった、さまざまなツールボックスを充実させるアイデアを紹介します。そして、組織全体の戦略の磨き方、その戦略を実現するエンジニアリング戦略や予算の効果的な使い方、好況時と不況時のリーダーシップのあり方についても考察します。 最高のリーダーとなり、自身の最終的なキャリアの目的地にたどり着くための実践可能..." data-preview-published="2026-05-20T00:00:00+09:00" data-preview-author="James Stanier　著 風間 勇志、高口 太朗　訳">
-    <div class="card-content">
-        <img src="https://www.oreilly.co.jp/books/images/picture_large978-4-8144-0168-0.jpeg" width="120" height="90" alt="シニアエンジニアリングリーダーのしごと" class="card-image" onerror="this.style.display='none'">
-        <div class="card-text">
-            <h4 class="card-title">
-                <a href="http://www.oreilly.co.jp/books/9784814401680/?utm_source=feed&utm_mediun=referral&utm_content=new_book" target="_blank">シニアエンジニアリングリーダーのしごと</a>
-            </h4>
-            <p class="card-source">O'Reilly Japan - 近刊 • 2週間前</p>
-        </div>
-    </div>
-    <div class="card-preview" id="preview-4a823d6b" style="display: none;">
-        <div class="preview-content">
-            <div class="preview-header">
-                <h5 class="preview-title">シニアエンジニアリングリーダーのしごと</h5>
-                <button class="preview-close" onclick="hidePreview(event, '4a823d6b')">&times;</button>
-            </div>
-            <div class="preview-meta">
-                <span class="preview-source">O'Reilly Japan - 近刊</span>
-                <span class="preview-date">2週間前</span>
-                <span class="preview-author" style="display: none;">James Stanier　著 風間 勇志、高口 太朗　訳</span>
-                <span class="preview-tags">ツール紹介, キャリア・組織, システム開発</span>
-            </div>
-            <div class="preview-description">
-                本書は、シニアマネージャーとして成功するために必要な能力、ツール、技術について体系的に解説します。まず、シニアポジションの定義を明確にし、各ポジションが果たす役割を理解します。次に、時間とエネルギーを効率的に使い、同僚や部下、上司との共生関係を築き、有効なコミュニケーションアーキテクチャを構築するといった、さまざまなツールボックスを充実させるアイデアを紹介します。そして、組織全体の戦略の磨き方、その戦略を実現するエンジニアリング戦略や予算の効果的な使い方、好況時と不況時のリーダーシップのあり方についても考察します。 最高のリーダーとなり、自身の最終的なキャリアの目的地にたどり着くための実践可能...
-            </div>
-            <div class="preview-actions">
-                <a href="http://www.oreilly.co.jp/books/9784814401680/?utm_source=feed&utm_mediun=referral&utm_content=new_book" class="preview-read-btn" target="_blank">記事を読む</a>
-            </div>
-        </div>
-    </div>
+    <main class="app-main">
+        <section class="tab-panel is-active" id="panel-articles" role="tabpanel" data-panel="articles">
+        <nav class="media-toc" aria-label="メディア目次">
+            <div class="media-toc-inner"><a class="toc-chip" href="#media-8bf14d5c">Tech Blog Weekly</a><a class="toc-chip" href="#media-179faac7">Zenn</a><a class="toc-chip" href="#media-702f7c88">はてブIT（人気）</a><a class="toc-chip" href="#media-5be408ff">はてブIT（新着）</a><a class="toc-chip" href="#media-807ef3e7">DevelopersIO</a><a class="toc-chip" href="#media-71452a2d">gihyo.jp</a><a class="toc-chip" href="#media-46cf5c29">Publickey</a><a class="toc-chip" href="#media-e3454818">CodeZine</a><a class="toc-chip" href="#media-aa2f2940">InfoQ</a></div>
+        </nav>
+        <section class="highlights">
+            <div class="highlights-head">
+                <span class="highlights-title">6/6のハイライト</span>
+                <span class="highlights-note">複数メディアで話題</span>
+            </div>
+            <div class="highlight-cards">
+                <a class="highlight-card" href="https://tech.youtrust.co.jp/entry/2026/06/05/211546" target="_blank" rel="noopener">
+                    <span class="highlight-rank">1</span>
+                    <span class="highlight-body">
+                        <span class="highlight-title">YOUTRUSTのフロントエンドをREGO化した話 | YOUTRUST Tech Blog</span>
+                        <span class="highlight-meta">Tech Blog Weekly</span>
+                    </span>
+                </a>
+                <a class="highlight-card" href="https://creators-note.chatwork.com/entry/2026/06/05/200657" target="_blank" rel="noopener">
+                    <span class="highlight-rank">2</span>
+                    <span class="highlight-body">
+                        <span class="highlight-title">『AI Engineering Summit Tokyo 2026』 にSilverスポンサーとして出展します！ | kubell Creator&#x27;s Note</span>
+                        <span class="highlight-meta">Tech Blog Weekly</span>
+                    </span>
+                </a>
+                <a class="highlight-card" href="https://recruit.group.gmo/engineer/jisedai/blog/claude-code-token-optimization/" target="_blank" rel="noopener">
+                    <span class="highlight-rank">3</span>
+                    <span class="highlight-body">
+                        <span class="highlight-title">Claude Code トークン枯渇問題と最適化戦略 | エンジニアブログ - GMOインターネットグループ グループ研究開発本部</span>
+                        <span class="highlight-meta">Tech Blog Weekly</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+        <section class="media-section" id="media-8bf14d5c">
+            <h2 class="media-heading">Tech Blog Weekly</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-761d291d" data-tags="Web開発,プログラミング" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">YOUTRUSTのフロントエンドをREGO化した話 | YOUTRUST Tech Blog</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">Web開発</span><span class="tag-chip">プログラミング</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://tech.youtrust.co.jp/entry/2026/06/05/211546" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://tech.youtrust.co.jp/entry/2026/06/05/211546" data-share-title="YOUTRUSTのフロントエンドをREGO化した話 | YOUTRUST Tech Blog">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-27a16dea" data-tags="AI・機械学習" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">『AI Engineering Summit Tokyo 2026』 にSilverスポンサーとして出展します！ | kubell Creator&#x27;s Note</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://creators-note.chatwork.com/entry/2026/06/05/200657" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://creators-note.chatwork.com/entry/2026/06/05/200657" data-share-title="『AI Engineering Summit Tokyo 2026』 にSilverスポンサーとして出展します！ | kubell Creator&#x27;s Note">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-fc9048e7" data-tags="AI・機械学習,ツール・IDE,キャリア・組織" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Claude Code トークン枯渇問題と最適化戦略 | エンジニアブログ - GMOインターネットグループ グループ研究開発本部</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">ツール・IDE</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://recruit.group.gmo/engineer/jisedai/blog/claude-code-token-optimization/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://recruit.group.gmo/engineer/jisedai/blog/claude-code-token-optimization/" data-share-title="Claude Code トークン枯渇問題と最適化戦略 | エンジニアブログ - GMOインターネットグループ グループ研究開発本部">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-179faac7">
+            <h2 class="media-heading">Zenn</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-f64ea30a" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">TanStack Query を完全にゼロから実装して理解する</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://zenn.dev/ficilcom/articles/ff423b306afe18" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://zenn.dev/ficilcom/articles/ff423b306afe18" data-share-title="TanStack Query を完全にゼロから実装して理解する">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-f97867aa" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">PyTorchで理解する自動運転マルチカメラ統合の全体像</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://zenn.dev/riita10069/articles/auto-e2e-multi-view-fusion-explained" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://zenn.dev/riita10069/articles/auto-e2e-multi-view-fusion-explained" data-share-title="PyTorchで理解する自動運転マルチカメラ統合の全体像">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-6677107a" data-tags="クラウド" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">エージェントに「脆弱性を探して」はなぜ失敗するのか──Cloudflareが50+リポで示したharnessの正体</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://zenn.dev/aiwatch_jp/articles/agent-vuln-hunting-harness-glasswing" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://zenn.dev/aiwatch_jp/articles/agent-vuln-hunting-harness-glasswing" data-share-title="エージェントに「脆弱性を探して」はなぜ失敗するのか──Cloudflareが50+リポで示したharnessの正体">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-702f7c88">
+            <h2 class="media-heading">はてなブックマーク - IT（人気）</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-ff537600" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">PayPalマフィアは、実際に何をやったのか - Nothing ventured, nothing gained.</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://takoratta.hatenablog.com/entry/2026/06/05/181559" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://takoratta.hatenablog.com/entry/2026/06/05/181559" data-share-title="PayPalマフィアは、実際に何をやったのか - Nothing ventured, nothing gained.">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-c759c232" data-tags="AI・機械学習,ツール・IDE" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Lessons from building Claude Code: How we use skills | Claude</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">ツール・IDE</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills" data-share-title="Lessons from building Claude Code: How we use skills | Claude">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-3883d5fe" data-tags="AI・機械学習,ツール・IDE,コーディング支援" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">GitHub Copilotの料金改定で大騒ぎになっているので、トークン削減の最新手法をまとめてみた - Qiita</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">ツール・IDE</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://qiita.com/shinkai_/items/626dfa7857f2d554784e" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://qiita.com/shinkai_/items/626dfa7857f2d554784e" data-share-title="GitHub Copilotの料金改定で大騒ぎになっているので、トークン削減の最新手法をまとめてみた - Qiita">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-5be408ff">
+            <h2 class="media-heading">はてなブックマーク - IT（新着）</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-dcb181cf" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">NVIDIA、推論5倍速で無償の550Bエージェント向けLLM「Nemotron 3 Ultra」</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://pc.watch.impress.co.jp/docs/news/2114675.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://pc.watch.impress.co.jp/docs/news/2114675.html" data-share-title="NVIDIA、推論5倍速で無償の550Bエージェント向けLLM「Nemotron 3 Ultra」">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-d9ea97f7" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">【速報】日本、米AI事業に800億円拠出</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.47news.jp/14416705.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.47news.jp/14416705.html" data-share-title="【速報】日本、米AI事業に800億円拠出">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-c2385e81" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">中国のスパイが採用担当者装い機密情報収集、西側諸国の機関が警告</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.afpbb.com/articles/-/3638434" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.afpbb.com/articles/-/3638434" data-share-title="中国のスパイが採用担当者装い機密情報収集、西側諸国の機関が警告">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-807ef3e7">
+            <h2 class="media-heading">DevelopersIO</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-9ee22d5a" data-tags="AI・機械学習,ツール・IDE" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Twilio for Claude (MCP + Skills) を Claude Code で触ってみた</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">ツール・IDE</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://dev.classmethod.jp/articles/twilio-for-claude-with-claude-code/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://dev.classmethod.jp/articles/twilio-for-claude-with-claude-code/" data-share-title="Twilio for Claude (MCP + Skills) を Claude Code で触ってみた">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-cbd81951" data-tags="クラウド" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">S3 Presigned URLをCloudFrontでリバプロする構成を検証してみた</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://dev.classmethod.jp/articles/cloudfront-s3-signature-oac-comparison/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://dev.classmethod.jp/articles/cloudfront-s3-signature-oac-comparison/" data-share-title="S3 Presigned URLをCloudFrontでリバプロする構成を検証してみた">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-a9bb0b23" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Amazon Quick DesktopからACP連携でKiro CLIにタスクを実行させてみた</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://dev.classmethod.jp/articles/amazon-quick-desktop-kiro-cli-acp/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://dev.classmethod.jp/articles/amazon-quick-desktop-kiro-cli-acp/" data-share-title="Amazon Quick DesktopからACP連携でKiro CLIにタスクを実行させてみた">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-71452a2d">
+            <h2 class="media-heading">gihyo.jp</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-411f6f14" data-tags="AI・機械学習" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">AIニュースノート：Gemma 4 12B公開、Nemotron 3 Ultra公開、画像モデルReve 2.0／Ideogram 4.0公開、ChatGPTメモリー改善、Hermes Desktop公開など</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://gihyo.jp/article/2026/06/ai-news-note-20260605?utm_source=feed" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://gihyo.jp/article/2026/06/ai-news-note-20260605?utm_source=feed" data-share-title="AIニュースノート：Gemma 4 12B公開、Nemotron 3 Ultra公開、画像モデルReve 2.0／Ideogram 4.0公開、ChatGPTメモリー改善、Hermes Desktop公開など">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-fac80828" data-tags="プログラミング,OS・システム" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Ubuntu 26.10（Stonking）の開発; Snapshot 1、「Ubuntu入り」Windows 365 開発者向けイメージ、NVIDIA OpenShell snap</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">プログラミング</span><span class="tag-chip">OS・システム</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://gihyo.jp/admin/clip/01/ubuntu-topics/202606/05?utm_source=feed" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://gihyo.jp/admin/clip/01/ubuntu-topics/202606/05?utm_source=feed" data-share-title="Ubuntu 26.10（Stonking）の開発; Snapshot 1、「Ubuntu入り」Windows 365 開発者向けイメージ、NVIDIA OpenShell snap">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-a5a1720b" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">DSXが示すNVIDIAの未来：垂直統合と水平分散のハイブリッド戦略～NVIDIA GTC Taipei 2026、Jensen Huangキーノートから</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://gihyo.jp/article/2026/06/nvidia-gtc?utm_source=feed" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://gihyo.jp/article/2026/06/nvidia-gtc?utm_source=feed" data-share-title="DSXが示すNVIDIAの未来：垂直統合と水平分散のハイブリッド戦略～NVIDIA GTC Taipei 2026、Jensen Huangキーノートから">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-46cf5c29">
+            <h2 class="media-heading">Publickey</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-8b46034d" data-tags="モバイル,プログラミング,OS・システム" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">マイクロソフト、AIエージェントにWindowsアプリ開発の知識を与える「Windows Development Skills」を一般提供開始</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">モバイル</span><span class="tag-chip">プログラミング</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.publickey1.jp/blog/26/aiwindowswindows_development_skills.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.publickey1.jp/blog/26/aiwindowswindows_development_skills.html" data-share-title="マイクロソフト、AIエージェントにWindowsアプリ開発の知識を与える「Windows Development Skills」を一般提供開始">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-da9df21b" data-tags="AI・機械学習" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">［速報］マイクロソフト、自社開発した7つのAIモデル「Microsoft AI Models」を発表</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.publickey1.jp/blog/26/7aimicrosoft_ai_models.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.publickey1.jp/blog/26/7aimicrosoft_ai_models.html" data-share-title="［速報］マイクロソフト、自社開発した7つのAIモデル「Microsoft AI Models」を発表">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-426fd001" data-tags="技術発表・LT" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">［速報］マイクロソフト、AIエージェントのためのカスタマイズ可能な分離環境「Microsoft Execution Containers （MXC）」発表</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">技術発表・LT</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.publickey1.jp/blog/26/aimicrosoft_execution_containers_mxc.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.publickey1.jp/blog/26/aimicrosoft_execution_containers_mxc.html" data-share-title="［速報］マイクロソフト、AIエージェントのためのカスタマイズ可能な分離環境「Microsoft Execution Containers （MXC）」発表">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-e3454818">
+            <h2 class="media-heading">CodeZine</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-21ca8018" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">澁井雄介氏が解説！LLMをソフトウェアに組み込むプラクティス【デブサミ2026夏 注目セッション】</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://codezine.jp/article/detail/24407" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://codezine.jp/article/detail/24407" data-share-title="澁井雄介氏が解説！LLMをソフトウェアに組み込むプラクティス【デブサミ2026夏 注目セッション】">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-212e7414" data-tags="AI・機械学習,クラウド,ツール・IDE,ツール紹介,コーディング支援" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">GitHub Copilot、クラウドおよびローカル環境のサンドボックス機能をプレビュー公開</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">クラウド</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://codezine.jp/article/detail/24465" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://codezine.jp/article/detail/24465" data-share-title="GitHub Copilot、クラウドおよびローカル環境のサンドボックス機能をプレビュー公開">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-5f57fc8f" data-tags="モバイル" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Google Drive、Androidで複数ページ同時スキャン機能を提供開始</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">モバイル</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://codezine.jp/article/detail/24468" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://codezine.jp/article/detail/24468" data-share-title="Google Drive、Androidで複数ページ同時スキャン機能を提供開始">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-aa2f2940">
+            <h2 class="media-heading">InfoQ Japan</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-f9d91769" data-tags="AI・機械学習,プログラミング,ツール・IDE,OS・システム" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">23年間潜伏していたリモート悪用可能なLinuxカーネル脆弱性の発見にClaude Codeが使われた</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">プログラミング</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.infoq.com/jp/news/2026/06/claude-code-linux-vulnerability/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.infoq.com/jp/news/2026/06/claude-code-linux-vulnerability/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" data-share-title="23年間潜伏していたリモート悪用可能なLinuxカーネル脆弱性の発見にClaude Codeが使われた">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-d702b1b9" data-tags="キャリア・組織,システム開発" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">エージェンティックAIパターンがエンジニアリング規律を強化</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">キャリア・組織</span><span class="tag-chip">システム開発</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.infoq.com/jp/news/2026/06/agentic-engineering-patterns/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.infoq.com/jp/news/2026/06/agentic-engineering-patterns/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" data-share-title="エージェンティックAIパターンがエンジニアリング規律を強化">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-89cc29ea" data-tags="データベース" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">MySQL 9.6で外部キー制約とカスケード処理が変更</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">データベース</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.infoq.com/jp/news/2026/06/mysql-foreign-keys/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.infoq.com/jp/news/2026/06/mysql-foreign-keys/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" data-share-title="MySQL 9.6で外部キー制約とカスケード処理が変更">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        </section>
+
+        <section class="tab-panel" id="panel-events" role="tabpanel" data-panel="events" hidden>
+            <p class="panel-note">connpass・TECH PLAY の直近イベント。日付順にまとめて、開催が近いものから表示します。</p>
+            <div class="event-group">
+                <h2 class="event-day">日付不明</h2>
+                <a class="event-row" href="https://techplay.jp/event/996445" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">第21回Tableau 和Vizユーザ会  ～Youは今何している？#5～　DATA Saber制度創設の立役者が語る今</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/996793" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【無料】仮説検定からMLまで！全体像をつかみ分析初心者の“つまずきポイント”を解消「データサイエンス超入門」</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/996791" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【新講座】非エンジニアのためのClaude Code活用超入門【参加無料】</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/996787" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【無料】分析その前に！「データクレンジング超入門」-データ分析のパフォーマンスを最大化するデータ前処理の極意-</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/996784" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【新講座】これから5年間「困らない」ための生成AI必要スキル理解講座【参加無料】</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/996783" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【新講座】データ分析×AI活用超入門 -ビジネス課題を解決する実践的な使い方-【参加無料】</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/996782" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【新講座】AI時代のデータ分析学習ロードマップ-統計検定？G検定？資格と実務、何から始める？-【参加無料】</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/996780" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">AI×業界データで アポ獲得数を劇的に増やす 「One-to-One戦略」実践セミナー</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/996779" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">KUSANAGIサミット2026 WordPress編</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <section class="tab-panel" id="panel-books" role="tabpanel" data-panel="books" hidden>
+            <p class="panel-note">O'Reilly Japan の近刊。</p>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401628/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">APIハンズオンラーニング</span>
+                <span class="book-meta"></span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401604/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">LLMOps</span>
+                <span class="book-meta"></span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401703/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">エンジニアリング戦略の作り方</span>
+                <span class="book-meta"></span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401567/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">システム思考の世界へ</span>
+                <span class="book-meta"></span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401680/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">シニアエンジニアリングリーダーのしごと</span>
+                <span class="book-meta"></span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="rss-row">
+            <div class="rss-row-text">
+                <span class="rss-row-title">RSSで購読</span>
+                <span class="rss-row-note">毎朝 JST 7:00 更新</span>
+            </div>
+            <a class="rss-row-btn" href="https://unsolublesugar.github.io/daily-tech-news/rss.xml" target="_blank" rel="noopener">📡 登録</a>
+        </div>
+        <div class="footer-tiles">
+            <a class="footer-tile" href="../../../archives/index.html">
+                <span class="footer-tile-title">📚 アーカイブ</span>
+                <span class="footer-tile-note">過去のニュース</span>
+            </a>
+            <a class="footer-tile" href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">
+                <span class="footer-tile-title">📁 GitHub</span>
+                <span class="footer-tile-note">ソースとフィード設定</span>
+            </a>
+        </div>
+        <p class="footer-credit">Built by <a href="https://github.com/unsolublesugar" target="_blank" rel="noopener">unsolublesugar</a></p>
+    </footer>
+
 </div>
-<div class="footer">
-    <p><a href="../../index.html" class="nav-button">🏠 メインページに戻る</a></p>
-        <p>📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
-        <p>🚀 <a href="https://unsolublesugar.github.io/portfolio/" target="_blank" rel="noopener">@unsoluble_sugar</a> |
-    📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
-</div>
-    <script src="../../../assets/js/preview.js"></script>
+    <div class="filter-sheet" id="filter-sheet" hidden>
+        <div class="filter-sheet-overlay" data-close-filter></div>
+        <div class="filter-sheet-panel" role="dialog" aria-modal="true" aria-label="絞り込み">
+            <div class="filter-sheet-head">
+                <span class="filter-sheet-title">絞り込み</span>
+                <button type="button" class="filter-sheet-close" data-close-filter aria-label="閉じる">×</button>
+            </div>
+            <div class="filter-sheet-body">
+                <div class="filter-group">
+                    <div class="filter-group-label">よく使う</div>
+                    <div class="filter-chips"><button type="button" class="filter-chip" data-tag="AI・機械学習">AI・機械学習</button><button type="button" class="filter-chip" data-tag="Web開発">Web開発</button><button type="button" class="filter-chip" data-tag="クラウド">クラウド</button><button type="button" class="filter-chip" data-tag="プログラミング">プログラミング</button><button type="button" class="filter-chip" data-tag="ツール・IDE">ツール・IDE</button></div>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-group-label">開発・運用</div>
+                    <div class="filter-chips"><button type="button" class="filter-chip" data-tag="DevOps">DevOps</button><button type="button" class="filter-chip" data-tag="セキュリティ">セキュリティ</button><button type="button" class="filter-chip" data-tag="データベース">データベース</button><button type="button" class="filter-chip" data-tag="データ分析">データ分析</button><button type="button" class="filter-chip" data-tag="ネットワーク">ネットワーク</button><button type="button" class="filter-chip" data-tag="OS・システム">OS・システム</button><button type="button" class="filter-chip" data-tag="システム開発">システム開発</button><button type="button" class="filter-chip" data-tag="トラブルシューティング">トラブルシューティング</button><button type="button" class="filter-chip" data-tag="コーディング支援">コーディング支援</button></div>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-group-label">専門・その他</div>
+                    <div class="filter-chips"><button type="button" class="filter-chip" data-tag="モバイル">モバイル</button><button type="button" class="filter-chip" data-tag="ゲーム開発">ゲーム開発</button><button type="button" class="filter-chip" data-tag="アルゴリズム・数学">アルゴリズム・数学</button><button type="button" class="filter-chip" data-tag="ツール紹介">ツール紹介</button><button type="button" class="filter-chip" data-tag="技術発表・LT">技術発表・LT</button><button type="button" class="filter-chip" data-tag="UI/UX">UI/UX</button><button type="button" class="filter-chip" data-tag="VR・AR・MR">VR・AR・MR</button><button type="button" class="filter-chip" data-tag="キャリア・組織">キャリア・組織</button><button type="button" class="filter-chip" data-tag="ハードウェア・IoT">ハードウェア・IoT</button><button type="button" class="filter-chip" data-tag="オープンソース">オープンソース</button><button type="button" class="filter-chip" data-tag="テクノロジートレンド">テクノロジートレンド</button><button type="button" class="filter-chip" data-tag="その他">その他</button></div>
+                </div>
+            </div>
+            <div class="filter-sheet-foot">
+                <button type="button" class="btn-clear" id="filter-clear">クリア</button>
+                <button type="button" class="btn-apply" id="filter-apply">この条件で表示</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../assets/js/app.js"></script>
 </body>
 </html>
