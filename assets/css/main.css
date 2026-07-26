@@ -155,6 +155,7 @@ a:hover {
     align-items: center;
     gap: 8px;
     padding: 12px 16px 8px;
+    position: relative;
 }
 
 .app-header-leading {
@@ -189,40 +190,33 @@ a:hover {
     display: flex;
     align-items: center;
     justify-self: end;
-    gap: 6px;
     flex-shrink: 0;
 }
 
-.pill-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    height: 30px;
-    padding: 0 10px;
-    border: 1px solid var(--border-color);
-    background: var(--bg-color);
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--heading-color);
-    font-family: inherit;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.pill-btn:hover {
-    background: var(--button-hover);
-}
-
-.is-invisible {
-    visibility: hidden;
-    pointer-events: none;
+#filter-open {
+    /* 記事タブ以外では要素ごと消える。actions列の幅（＝ヘッダー中央寄せの基準）は
+       テーマ切替ボタン（30px）だけで決まるようにし、表示時は.app-header-topを
+       基準にした絶対配置でテーマ切替の左に重ねる（右端16px padding + icon-btn 30px + gap 6px）。 */
+    position: absolute;
+    right: 52px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .filter-count {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--text-secondary);
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    min-width: 15px;
+    height: 15px;
+    padding: 0 3px;
+    border-radius: 999px;
+    background: var(--tab-active-bg);
+    color: var(--tab-active-fg);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 15px;
+    text-align: center;
     font-variant-numeric: tabular-nums;
 }
 

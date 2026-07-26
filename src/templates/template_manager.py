@@ -22,6 +22,21 @@ WEEKDAY_JA = ['月', '火', '水', '木', '金', '土', '日']
 # カレンダーの曜日ヘッダー（月曜始まり）
 CALENDAR_WEEKDAY_JA = ['月', '火', '水', '木', '金', '土', '日']
 
+# ヘッダーのアイコンボタン用インラインSVG（Feather Icons由来、MIT License）
+FILTER_ICON_SVG = (
+    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+    '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>'
+)
+CALENDAR_ICON_SVG = (
+    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+    '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>'
+    '<line x1="16" y1="2" x2="16" y2="6"></line>'
+    '<line x1="8" y1="2" x2="8" y2="6"></line>'
+    '<line x1="3" y1="10" x2="21" y2="10"></line></svg>'
+)
+
 
 class TemplateManager:
     """テンプレート処理を統合管理するクラス"""
@@ -360,16 +375,18 @@ class TemplateManager:
         date_label = self.format_archive_header_date(date_obj)
         if is_archive:
             back_link = f"{'../' * (depth - 1)}index.html"
+            # 「←」は下のタブバーの前後日付ナビ（‹ ›）と混同されやすいため、
+            # 戻り先（アーカイブ一覧＝カレンダー）を示すカレンダーアイコンにする。
             leading = (
-                f'<a class="icon-btn" href="{back_link}" aria-label="アーカイブ一覧へ戻る" title="アーカイブ一覧へ戻る">←</a>'
+                f'<a class="icon-btn" href="{back_link}" aria-label="アーカイブ一覧へ戻る" title="アーカイブ一覧へ戻る">{CALENDAR_ICON_SVG}</a>'
             )
         else:
             leading = ''
         brand = f'<span class="site-name">{date_label}</span>'
 
         filter_button = (
-            '\n            <button type="button" id="filter-open" class="pill-btn">'
-            '絞り込み<span class="filter-count" id="filter-count" hidden></span></button>'
+            '\n            <button type="button" id="filter-open" class="icon-btn" aria-label="絞り込み" title="絞り込み">'
+            f'{FILTER_ICON_SVG}<span class="filter-count" id="filter-count" hidden></span></button>'
         )
 
         template = self.load_template('header.html')

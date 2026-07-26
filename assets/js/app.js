@@ -136,15 +136,12 @@
                 panel.hidden = !isActive;
             });
 
-            // 絞り込みは記事タブ専用。display:noneで消すとactions列の幅が変わり
-            // ヘッダー中央の日付表示がタブ切替のたびにずれるため、
-            // visibility:hiddenで見た目だけ消してレイアウト幅は保持する。
+            // 絞り込みは記事タブ専用。CSS側で絶対配置にしてactions列の幅
+            // （＝ヘッダー中央寄せの基準）に影響しないようにしているため、
+            // ここでは要素ごと消してよい。
             var filterOpen = document.getElementById('filter-open');
             if (filterOpen) {
-                var isArticles = tab === 'articles';
-                filterOpen.classList.toggle('is-invisible', !isArticles);
-                filterOpen.setAttribute('aria-hidden', String(!isArticles));
-                filterOpen.tabIndex = isArticles ? 0 : -1;
+                filterOpen.hidden = tab !== 'articles';
             }
 
             window.scrollTo(0, scrollPositions[tab] || 0);
