@@ -43,6 +43,7 @@ daily-tech-news/
 ├── index.html                    # カード表示版（自動生成）
 ├── rss.xml                       # RSSフィード（自動生成）
 ├── requirements.txt              # 依存関係
+├── CHANGELOG.md                   # 変更履歴
 └── README.md                     # プロジェクト概要
 ```
 
@@ -86,26 +87,4 @@ python3 daily_tech_news.py
 
 ## 変更履歴
 
-### v2.1.0 - UIリニューアル
-
-- 記事／イベント／書籍タブへの再編、タップ展開式の要約表示に変更
-- アーカイブを年月タブ＋カレンダーの1ページ構成に統合（`archives/index.json`を索引データとして追加）
-- ヘッダー・フッターを`assets/templates/`・`assets/partials/`に分離
-
-### v2.0.0 - プロジェクト構造改善
-
-- ディレクトリ構造の整理
-- モジュール分割による保守性向上
-- 将来拡張に向けた基盤整備（`src/main.py`への移行は現時点で未完了）
-
-### v1.1.0 - リファクタリング
-
-- アーカイブ生成機能の統合
-- 重複コード削減
-- 設定管理の統一化
-
-### v1.0.0 - 初期版
-
-- 基本的なニュース収集・配信機能
-- RSS feed parsing
-- HTML/Markdown生成
+過去の大きな変更は[CHANGELOG.md](../CHANGELOG.md)を参照。
