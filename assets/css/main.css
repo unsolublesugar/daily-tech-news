@@ -148,18 +148,33 @@ a:hover {
 }
 
 .app-header-top {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    /* leading/actionsは自身のコンテンツ幅を下回らない（＝ボタンが折り返し・重なりを起こさない）。
+       brandは残り幅いっぱいのminmax(0, 1fr)にして、狭い画面では先にbrandを縮める。 */
+    grid-template-columns: auto minmax(0, 1fr) auto;
     align-items: center;
     gap: 8px;
     padding: 12px 16px 8px;
+    position: relative;
+}
+
+.app-header-leading {
+    display: flex;
+    align-items: center;
+    justify-self: start;
+    /* トップページはleadingが空になるが、actions側（テーマ切替 30px）と同じ幅を
+       確保しておくことで、brandの中央寄せがページ種別に関係なくズレないようにする。 */
+    min-width: 30px;
 }
 
 .app-brand {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    justify-self: center;
     min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .site-name {
@@ -169,47 +184,41 @@ a:hover {
     letter-spacing: -0.01em;
     color: var(--heading-color);
     white-space: nowrap;
-}
-
-.site-date {
-    font-size: 12px;
-    color: var(--text-secondary);
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .app-header-actions {
     display: flex;
     align-items: center;
-    gap: 6px;
+    justify-self: end;
     flex-shrink: 0;
 }
 
-.pill-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    height: 30px;
-    padding: 0 10px;
-    border: 1px solid var(--border-color);
-    background: var(--bg-color);
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--heading-color);
-    font-family: inherit;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.pill-btn:hover {
-    background: var(--button-hover);
+#filter-open {
+    /* 記事タブ以外では要素ごと消える。actions列の幅（＝ヘッダー中央寄せの基準）は
+       テーマ切替ボタン（30px）だけで決まるようにし、表示時は.app-header-topを
+       基準にした絶対配置でテーマ切替の左に重ねる（右端16px padding + icon-btn 30px + gap 6px）。 */
+    position: absolute;
+    right: 52px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .filter-count {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--text-secondary);
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    min-width: 15px;
+    height: 15px;
+    padding: 0 3px;
+    border-radius: 999px;
+    background: var(--tab-active-bg);
+    color: var(--tab-active-fg);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 15px;
+    text-align: center;
     font-variant-numeric: tabular-nums;
 }
 
@@ -238,8 +247,47 @@ a:hover {
 
 .tab-bar {
     display: flex;
+    align-items: center;
     gap: 4px;
     padding: 0 12px 10px;
+}
+
+.tab-bar-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.date-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-secondary);
+    font-size: 18px;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.date-nav-btn:hover {
+    background: var(--button-hover);
+    color: var(--heading-color);
+    text-decoration: none;
+}
+
+.date-nav-btn.is-disabled {
+    opacity: 0.35;
+    pointer-events: none;
 }
 
 .tab-btn {

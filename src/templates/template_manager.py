@@ -22,6 +22,21 @@ WEEKDAY_JA = ['月', '火', '水', '木', '金', '土', '日']
 # カレンダーの曜日ヘッダー（月曜始まり）
 CALENDAR_WEEKDAY_JA = ['月', '火', '水', '木', '金', '土', '日']
 
+# ヘッダーのアイコンボタン用インラインSVG（Feather Icons由来、MIT License）
+FILTER_ICON_SVG = (
+    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+    '<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>'
+)
+CALENDAR_ICON_SVG = (
+    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+    '<rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>'
+    '<line x1="16" y1="2" x2="16" y2="6"></line>'
+    '<line x1="8" y1="2" x2="8" y2="6"></line>'
+    '<line x1="3" y1="10" x2="21" y2="10"></line></svg>'
+)
+
 
 class TemplateManager:
     """テンプレート処理を統合管理するクラス"""
@@ -357,31 +372,31 @@ class TemplateManager:
                         depth: int = 3) -> str:
         """固定ヘッダー（サイト名・日付・絞り込み・テーマ切替・タブ）を生成"""
 
+        date_label = self.format_archive_header_date(date_obj)
         if is_archive:
             back_link = f"{'../' * (depth - 1)}index.html"
-            date_label = self.format_archive_header_date(date_obj)
-            brand = (
-                f'<a class="icon-btn" href="{back_link}" aria-label="アーカイブ一覧へ戻る" title="アーカイブ一覧へ戻る">←</a>'
-                f'<span class="site-name">{date_label}</span>'
+            # 「←」は下のタブバーの前後日付ナビ（‹ ›）と混同されやすいため、
+            # 戻り先（アーカイブ一覧＝カレンダー）を示すカレンダーアイコンにする。
+            leading = (
+                f'<a class="icon-btn" href="{back_link}" aria-label="アーカイブ一覧へ戻る" title="アーカイブ一覧へ戻る">{CALENDAR_ICON_SVG}</a>'
             )
         else:
-            date_label = self.format_header_date(date_obj)
-            brand = (
-                f'<span class="site-name">今日のテックニュース</span>'
-                f'<span class="site-date">{date_label}</span>'
-            )
+            leading = ''
+        brand = f'<span class="site-name">{date_label}</span>'
 
         filter_button = (
-            '\n            <button type="button" id="filter-open" class="pill-btn">'
-            '絞り込み<span class="filter-count" id="filter-count" hidden></span></button>'
+            '\n            <button type="button" id="filter-open" class="icon-btn" aria-label="絞り込み" title="絞り込み">'
+            f'{FILTER_ICON_SVG}<span class="filter-count" id="filter-count" hidden></span></button>'
         )
 
         template = self.load_template('header.html')
-        return self.render_template(template, brand=brand, filter_button=filter_button)
-
-    def format_header_date(self, date_obj: datetime) -> str:
-        """ヘッダー用の日付表記（7/26 (日)）"""
-        return f"{date_obj.month}/{date_obj.day} ({WEEKDAY_JA[date_obj.weekday()]})"
+        return self.render_template(
+            template,
+            leading=leading,
+            brand=brand,
+            filter_button=filter_button,
+            current_date=date_obj.strftime('%Y-%m-%d')
+        )
 
     def format_archive_header_date(self, date_obj: datetime) -> str:
         """アーカイブ日別ページのヘッダー用の日付表記（2026/7/26 (日)）"""

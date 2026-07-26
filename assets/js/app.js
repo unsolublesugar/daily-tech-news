@@ -136,7 +136,9 @@
                 panel.hidden = !isActive;
             });
 
-            // 絞り込みは記事タブ専用
+            // 絞り込みは記事タブ専用。CSS側で絶対配置にしてactions列の幅
+            // （＝ヘッダー中央寄せの基準）に影響しないようにしているため、
+            // ここでは要素ごと消してよい。
             var filterOpen = document.getElementById('filter-open');
             if (filterOpen) {
                 filterOpen.hidden = tab !== 'articles';
@@ -378,6 +380,67 @@
     }
 
     // ---------------------------------------------------------------
+    // ヘッダーの日付ナビゲーション（左＝新しい日付へ、右＝過去の日付へ）
+    //
+    // 各アーカイブページは生成時点のスナップショットで、まだ存在しない
+    // 日付へのリンクは埋め込めない。archives/index.json を起動時に読み込んで
+    // 前後の日付を都度計算する。
+    // ---------------------------------------------------------------
+
+    function setupDateNav() {
+        var nav = document.querySelector('.tab-bar[data-current-date]');
+        var newerLink = document.getElementById('date-nav-newer');
+        var olderLink = document.getElementById('date-nav-older');
+        if (!nav || !newerLink || !olderLink || !SCRIPT_SRC) {
+            return;
+        }
+
+        var currentDate = nav.getAttribute('data-current-date');
+        if (!currentDate) {
+            return;
+        }
+
+        var assetPrefix = SCRIPT_SRC.replace(/assets\/js\/app\.js(?:[?#].*)?$/, '');
+
+        function archiveUrl(date) {
+            return assetPrefix + 'archives/' + date.slice(0, 4) + '/' + date.slice(5, 7) + '/' + date + '.html';
+        }
+
+        function apply(link, date, latestDate) {
+            if (date) {
+                // 最新日付（＝今日）はトップページが本来の居場所。アーカイブ日別ページに
+                // 飛ばすとカレンダーアイコン（アーカイブ一覧へ戻る）が今日のページに出て
+                // しまい違和感があるため、最新日付だけはトップページへリンクする。
+                link.href = date === latestDate ? (assetPrefix + 'index.html') : archiveUrl(date);
+                link.classList.remove('is-disabled');
+                link.removeAttribute('aria-disabled');
+            } else {
+                link.removeAttribute('href');
+                link.classList.add('is-disabled');
+                link.setAttribute('aria-disabled', 'true');
+            }
+        }
+
+        fetch(assetPrefix + 'archives/index.json')
+            .then(function (response) {
+                return response.ok ? response.json() : [];
+            })
+            .then(function (days) {
+                var dates = days.map(function (day) { return day.date; }).sort();
+                var index = dates.indexOf(currentDate);
+                if (index === -1) {
+                    return;
+                }
+                var latestDate = dates[dates.length - 1];
+                apply(newerLink, index < dates.length - 1 ? dates[index + 1] : null, latestDate);
+                apply(olderLink, index > 0 ? dates[index - 1] : null, latestDate);
+            })
+            .catch(function () {
+                // 取得に失敗した場合は前後移動を無効のままにする
+            });
+    }
+
+    // ---------------------------------------------------------------
     // アーカイブの年月タブ
     // ---------------------------------------------------------------
 
@@ -447,6 +510,7 @@
         setupArticleRows();
         setupShareButtons();
         setupTocScroll();
+        setupDateNav();
         setupMonthTabs();
         setupPartials();
     }

@@ -45,16 +45,21 @@
 <div class="app">
 <header class="app-header">
     <div class="app-header-top">
-        <div class="app-brand"><a class="icon-btn" href="../../index.html" aria-label="アーカイブ一覧へ戻る" title="アーカイブ一覧へ戻る">←</a><span class="site-name">2026/4/3 (金)</span></div>
+        <div class="app-header-leading"><a class="icon-btn" href="../../index.html" aria-label="アーカイブ一覧へ戻る" title="アーカイブ一覧へ戻る"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a></div>
+        <div class="app-brand"><span class="site-name">2026/4/3 (金)</span></div>
         <div class="app-header-actions">
-            <button type="button" id="filter-open" class="pill-btn">絞り込み<span class="filter-count" id="filter-count" hidden></span></button>
+            <button type="button" id="filter-open" class="icon-btn" aria-label="絞り込み" title="絞り込み"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg><span class="filter-count" id="filter-count" hidden></span></button>
             <button type="button" id="theme-toggle" class="icon-btn" aria-label="テーマを切り替える" title="テーマを切り替える"><span id="theme-icon">🌙</span></button>
         </div>
     </div>
-    <nav class="tab-bar" role="tablist" aria-label="表示切り替え">
-        <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-articles" data-tab="articles">記事</button>
-        <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-events" data-tab="events">イベント</button>
-        <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-books" data-tab="books">書籍</button>
+    <nav class="tab-bar" role="tablist" aria-label="表示切り替え" data-current-date="2026-04-03">
+        <a id="date-nav-newer" class="date-nav-btn is-disabled" aria-label="新しい日付のニュースへ" title="新しい日付のニュースへ" aria-disabled="true"><span aria-hidden="true">‹</span></a>
+        <div class="tab-bar-tabs">
+            <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-articles" data-tab="articles">記事</button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-events" data-tab="events">イベント</button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-books" data-tab="books">書籍</button>
+        </div>
+        <a id="date-nav-older" class="date-nav-btn is-disabled" aria-label="過去の日付のニュースへ" title="過去の日付のニュースへ" aria-disabled="true"><span aria-hidden="true">›</span></a>
     </nav>
 </header>
 
