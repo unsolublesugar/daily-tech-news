@@ -707,18 +707,28 @@ a:hover {
 .footer-highlight {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 12px;
     padding: 14px 16px;
     border: 1px solid var(--border-color);
     border-radius: 12px;
     background: var(--card-bg);
+    color: inherit;
+    transition: border-color 0.2s ease;
+}
+
+.footer-highlight:hover {
+    border-color: var(--link-color);
+    color: inherit;
+    text-decoration: none;
 }
 
 .footer-highlight-text {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2px;
+    text-align: center;
 }
 
 .footer-highlight-title {
@@ -730,26 +740,6 @@ a:hover {
 .footer-highlight-note {
     font-size: 11px;
     color: var(--text-secondary);
-}
-
-.footer-highlight-btn {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-    height: 30px;
-    padding: 0 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background: var(--bg-color);
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--heading-color);
-}
-
-.footer-highlight-btn:hover {
-    border-color: var(--link-color);
-    color: var(--heading-color);
-    text-decoration: none;
 }
 
 .footer-tiles {
