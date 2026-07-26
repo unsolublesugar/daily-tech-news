@@ -406,9 +406,12 @@
             return assetPrefix + 'archives/' + date.slice(0, 4) + '/' + date.slice(5, 7) + '/' + date + '.html';
         }
 
-        function apply(link, date) {
+        function apply(link, date, latestDate) {
             if (date) {
-                link.href = archiveUrl(date);
+                // 最新日付（＝今日）はトップページが本来の居場所。アーカイブ日別ページに
+                // 飛ばすとカレンダーアイコン（アーカイブ一覧へ戻る）が今日のページに出て
+                // しまい違和感があるため、最新日付だけはトップページへリンクする。
+                link.href = date === latestDate ? (assetPrefix + 'index.html') : archiveUrl(date);
                 link.classList.remove('is-disabled');
                 link.removeAttribute('aria-disabled');
             } else {
@@ -428,8 +431,9 @@
                 if (index === -1) {
                     return;
                 }
-                apply(newerLink, index < dates.length - 1 ? dates[index + 1] : null);
-                apply(olderLink, index > 0 ? dates[index - 1] : null);
+                var latestDate = dates[dates.length - 1];
+                apply(newerLink, index < dates.length - 1 ? dates[index + 1] : null, latestDate);
+                apply(olderLink, index > 0 ? dates[index - 1] : null, latestDate);
             })
             .catch(function () {
                 // 取得に失敗した場合は前後移動を無効のままにする
