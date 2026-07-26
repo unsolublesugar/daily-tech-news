@@ -23,26 +23,11 @@
     忙しいエンジニアのために。毎日サクッとキャッチアップ。
   </text>
 
-  <!-- メディアチップ（card-bg タイル、text-secondary文字。tag-chip / toc-chipの意匠を踏襲） -->
-  <g font-family="Hiragino Sans, Helvetica Neue, sans-serif" font-size="22" font-weight="600" fill="#656d76">
-    <rect x="122" y="440" width="104" height="44" rx="22" fill="#f6f8fa"/>
-    <text x="174" y="469" text-anchor="middle">Zenn</text>
-
-    <rect x="238" y="440" width="104" height="44" rx="22" fill="#f6f8fa"/>
-    <text x="290" y="469" text-anchor="middle">Qiita</text>
-
-    <rect x="354" y="440" width="180" height="44" rx="22" fill="#f6f8fa"/>
-    <text x="444" y="469" text-anchor="middle">はてブ</text>
-
-    <rect x="546" y="440" width="220" height="44" rx="22" fill="#f6f8fa"/>
-    <text x="656" y="469" text-anchor="middle">DevelopersIO</text>
-  </g>
-
   <!-- フッターの区切り線（rule-strong） -->
-  <line x1="120" y1="516" x2="1080" y2="516" stroke="#1f2328" stroke-width="3"/>
+  <line x1="120" y1="470" x2="1080" y2="470" stroke="#1f2328" stroke-width="3"/>
 
   <!-- ドメイン表記（text-tertiary） -->
-  <text x="120" y="550" font-size="22" font-weight="600" font-family="Helvetica Neue, sans-serif" fill="#8b949e">
+  <text x="120" y="504" font-size="22" font-weight="600" font-family="Helvetica Neue, sans-serif" fill="#8b949e">
     unsolublesugar.github.io/daily-tech-news
   </text>
 </svg>
