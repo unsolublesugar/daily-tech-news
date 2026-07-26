@@ -1,220 +1,210 @@
 """
 テンプレート管理とコンテンツ生成のユーティリティモジュール
 """
+import html
 import os
 import re
 import hashlib
-from datetime import datetime, timedelta
-from typing import Dict, List, Any, Optional
+from datetime import datetime, timedelta, timezone
+from typing import Dict, List, Any, Optional, Tuple
 from config import SiteConfig, PathConfig
+
+# 日本標準時（記事の時刻表示・日付グルーピングの基準）
+JST = timezone(timedelta(hours=9))
+
+# テンプレート内のプレースホルダ {{key}}
+_PLACEHOLDER_PATTERN = re.compile(r'\{\{(\w+)\}\}')
+
+# 曜日の日本語表記（月曜=0）
+WEEKDAY_JA = ['月', '火', '水', '木', '金', '土', '日']
 
 
 class TemplateManager:
     """テンプレート処理を統合管理するクラス"""
-    
+
+    # 記事のカテゴリ判定に使うキーワード辞書
+    # 絞り込みシートのカテゴリ一覧もこの辞書のキーから生成する
+    CATEGORY_KEYWORDS: Dict[str, List[str]] = {
+        'AI・機械学習': ['AI', 'Claude', 'GPT', '機械学習', 'LLM', 'Gemini', '生成AI', 'ChatGPT', 'OpenAI', 'Anthropic', 'neoAI', 'Reasoning Model', '事前学習', 'ファインチューニング', 'Copilot'],
+        'Web開発': ['React', 'Vue', 'JavaScript', 'CSS', 'HTML', 'フロントエンド', 'Next.js', 'TypeScript', 'Angular', 'Svelte', 'Node.js', 'npm', 'webpack', 'Vite', 'Nuxt'],
+        'クラウド': ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'クラウド', 'サーバーレス', 'Lambda', 'EC2', 'S3', 'Athena', 'BigQuery', 'CloudFormation', 'Oracle Cloud', 'DynamoDB', 'Cloudflare'],
+        'モバイル': ['Swift', 'iOS', 'Android', 'React Native', 'Flutter', 'アプリ開発', 'Kotlin', 'Xcode', 'Android Studio', 'モバイル', 'Suica'],
+        'ゲーム開発': ['Unity', 'Unreal Engine', 'Unreal', 'ゲーム開発', 'ゲーム制作', 'ゲーム', 'MRTK', 'Mixed Reality Toolkit', 'HoloLens', 'ゲームエンジン'],
+        'DevOps': ['CI/CD', 'Jenkins', 'GitHub Actions', 'インフラ', 'デプロイ', 'Docker', 'Terraform', 'Ansible', 'Kubernetes', 'GitOps', 'SRE', 'SLO', 'Datadog'],
+        'セキュリティ': ['セキュリティ', '脆弱性', 'HTTPS', '認証', '暗号化', 'サイバー', 'セキュア', '攻撃', 'ペネトレーション', 'OAuth'],
+        'データベース': ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'データベース', 'SQL', 'NoSQL', 'DynamoDB', 'Firebase', 'Supabase', 'Oracle Database'],
+        'データ分析': ['データ分析', 'ビッグデータ', '分析', 'Analytics', 'データサイエンス', 'Tableau', 'Power BI', 'データ可視化', 'ETL', 'データ処理', 'QuickSight', 'SPICE'],
+        'プログラミング': ['Python', 'Java', 'Go', 'Rust', 'C++', 'C#', 'PHP', 'Ruby', 'Scala', 'Kotlin', 'Elixir', 'Haskell', 'F#', 'Windows', 'WSL', 'Ubuntu', 'Linux'],
+        'ツール・IDE': ['VS Code', 'Visual Studio', 'IntelliJ', 'Eclipse', 'Vim', 'Git', 'GitHub', 'GitLab', 'Notion', 'Slack', 'Claude Code', 'Cursor', 'hawk', 'awk'],
+        'アルゴリズム・数学': ['正規表現', '抽象構文木', 'アルゴリズム', '数学', '微分', 'イテレーター', '最適化', 'データ構造', '計算量', 'Brzozowski'],
+        'ツール紹介': ['Startpage', '検索エンジン', 'プライベート検索', 'ツール紹介', 'サービス紹介', 'レビュー', 'ツール', 'サービス', 'オープンソース', 'WinActor', 'RPA'],
+        '技術発表・LT': ['LT', 'スライド', '発表', 'プレゼン', 'HTML', 'スライド作成', '技術発表', 'カンファレンス', '勉強会', 'SpeakerDeck'],
+        'トラブルシューティング': ['トラブルシューティング', 'デバッグ', 'エラー', '問題解決', '障害対応', 'バグ修正', 'ログ解析', 'やってはいけない'],
+        'コーディング支援': ['AIコーディング', 'コード生成', 'GitHub Copilot', 'AI支援', 'コーディング', '開発効率', 'IDE拡張', 'GenAI Processors'],
+        'ネットワーク': ['ネットワーク', 'TCP/IP', 'HTTP', 'DNS', 'CDN', 'ロードバランサー', 'プロキシ', 'VPN'],
+        'UI/UX': ['UI', 'UX', 'デザイン', 'ユーザビリティ', 'プロトタイプ', 'Figma', 'デザインシステム', 'アクセシビリティ'],
+        'VR・AR・MR': ['VR', 'AR', 'MR', 'Mixed Reality', 'XR', 'OpenXR', '拡張現実', '仮想現実', '複合現実'],
+        'キャリア・組織': ['フルリモート', '居場所', 'キャリア', '組織', 'マネジメント', 'チーム', 'エンジニア', '働き方'],
+        'ハードウェア・IoT': ['睡眠トラッカー', 'スマートウォッチ', 'IoT', 'ハードウェア', 'Raspberry Pi', 'ブート'],
+        'オープンソース': ['オープンソース', 'OSS', 'ライセンス', 'GPL', 'MIT', 'Apache', 'ライセンス違反'],
+        'テクノロジートレンド': ['トレンド', '戦略', 'アップル', 'グーグル', 'OpenAI', '業界動向', 'ガートナー', '量子技術'],
+        'システム開発': ['オブジェクト指向', 'サンプルプログラム', '設計', 'アーキテクチャ', 'パターン', '開発手法'],
+        'OS・システム': ['Windows', 'Linux', 'Ubuntu', 'openSUSE', 'システム', 'OS', 'ディレクトリ', 'スラッシュ', 'バックスラッシュ']
+    }
+
+    # 判定に該当しなかった記事に付ける既定タグ
+    FALLBACK_CATEGORY = 'その他'
+
+    # 絞り込みシートのグループ分け。ここに挙げていないカテゴリは「専門・その他」に入る
+    FILTER_GROUP_PRIMARY = ['AI・機械学習', 'Web開発', 'クラウド', 'プログラミング', 'ツール・IDE']
+    FILTER_GROUP_OPERATION = [
+        'DevOps', 'セキュリティ', 'データベース', 'データ分析', 'ネットワーク',
+        'OS・システム', 'システム開発', 'トラブルシューティング', 'コーディング支援'
+    ]
+
     def __init__(self, site_config: SiteConfig = None, path_config: PathConfig = None):
         from config.archive_config import DEFAULT_SITE_CONFIG, DEFAULT_PATH_CONFIG
         self.site_config = site_config or DEFAULT_SITE_CONFIG
         self.path_config = path_config or DEFAULT_PATH_CONFIG
         self.template_dir = os.path.join(os.path.dirname(__file__), '../../assets/templates')
-    
+        self._template_cache: Dict[str, str] = {}
+
     def load_template(self, template_name: str) -> str:
         """外部テンプレートファイルを読み込み"""
+        if template_name in self._template_cache:
+            return self._template_cache[template_name]
+
         template_path = os.path.join(self.template_dir, template_name)
         try:
             with open(template_path, 'r', encoding='utf-8') as f:
-                return f.read()
+                content = f.read()
         except FileNotFoundError:
             raise FileNotFoundError(f"テンプレートファイルが見つかりません: {template_path}")
-    
+
+        self._template_cache[template_name] = content
+        return content
+
     def render_template(self, template_content: str, **kwargs) -> str:
-        """テンプレートに変数を展開"""
-        for key, value in kwargs.items():
-            placeholder = f"{{{{{key}}}}}"
-            template_content = template_content.replace(placeholder, str(value))
-        return template_content
-    
-    def is_valid_thumbnail_url(self, thumbnail_url: str) -> bool:
-        """サムネイル画像URLの有効性を確認"""
-        if not thumbnail_url or not thumbnail_url.strip():
-            return False
-        
-        # 基本的なURL形式チェック
-        if not thumbnail_url.startswith(('http://', 'https://')):
-            return False
-        
-        # 画像拡張子のチェック（一般的な画像形式）
-        valid_extensions = ('.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg')
-        url_lower = thumbnail_url.lower()
-        
-        # URLパラメータを除去してから拡張子をチェック
-        clean_url = url_lower.split('?')[0].split('#')[0]
-        
-        # 拡張子チェックまたは一般的な画像ホスティングサービスのチェック
-        has_valid_extension = clean_url.endswith(valid_extensions)
-        is_image_service = any(service in url_lower for service in [
-            'imgur.com', 'cdn.', 'images.', 'img.', 'photo.',
-            'thumbnail', 'thumb', 'preview', 'avatar'
-        ])
-        
-        return has_valid_extension or is_image_service
-    
-    
-    def calculate_read_time(self, text: str) -> str:
-        """テキストから推定読時間を計算（日本語対応）"""
-        if not text:
-            return "約3分"
-        
-        # HTMLタグを除去
-        clean_text = re.sub(r'<[^>]+>', '', text)
-        
-        # 日本語文字数（ひらがな、カタカナ、漢字）
-        japanese_chars = len(re.findall(r'[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]', clean_text))
-        # 英語単語数
-        english_words = len(re.findall(r'\b[a-zA-Z]+\b', clean_text))
-        # 全体の文字数
-        total_chars = len(clean_text)
-        
-        # descriptionベースの基本読時間計算
-        japanese_minutes = japanese_chars / 250  # 読速度をさらに下げる
-        english_minutes = english_words / 120
-        
-        # 記事の種類と長さによる係数調整
-        if total_chars < 50:
-            # 短い説明 = 短い記事
-            multiplier = 3
-        elif total_chars < 150:
-            # 中程度の説明 = 中程度の記事
-            multiplier = 5
-        else:
-            # 長い説明 = 長い記事
-            multiplier = 8
-        
-        # 基本時間に係数を適用
-        estimated_full_time = (japanese_minutes + english_minutes) * multiplier
-        
-        # より広い範囲で調整（最小3分、最大12分）
-        total_minutes = max(3, min(12, round(estimated_full_time)))
-        
-        return f"約{total_minutes}分"
-    
-    def get_relative_date(self, published_date: str) -> str:
-        """公開日から相対的な日付文字列を生成"""
-        if not published_date:
-            return ""
-        
-        try:
-            # 様々な日付フォーマットに対応
-            published = None
-            date_formats = [
-                '%Y-%m-%d %H:%M:%S',
-                '%Y-%m-%dT%H:%M:%S%z',
-                '%Y-%m-%dT%H:%M:%SZ',
-                '%a, %d %b %Y %H:%M:%S %Z',
-                '%a, %d %b %Y %H:%M:%S %z',
-                '%Y-%m-%d'
-            ]
-            
-            for fmt in date_formats:
+        """テンプレートに変数を展開
+
+        1パスで置換するため、展開後の値に含まれる {{...}} が
+        別のキーとして再解釈されることはない。
+        未指定のプレースホルダはそのまま残す。
+        """
+        def _replace(match):
+            key = match.group(1)
+            if key in kwargs:
+                return str(kwargs[key])
+            return match.group(0)
+
+        return _PLACEHOLDER_PATTERN.sub(_replace, template_content)
+
+    @staticmethod
+    def escape(text: Any) -> str:
+        """HTMLテキスト・属性値の両方に使えるようエスケープ"""
+        if text is None:
+            return ''
+        return html.escape(str(text), quote=True)
+
+    # ---------------------------------------------------------------
+    # 記事メタ情報の抽出
+    # ---------------------------------------------------------------
+
+    def get_entry_datetime(self, entry: Any) -> Optional[datetime]:
+        """エントリの公開日時を JST の aware datetime として取得"""
+        for attr in ('published_parsed', 'updated_parsed'):
+            parsed = getattr(entry, attr, None)
+            if parsed:
                 try:
-                    published = datetime.strptime(published_date.strip(), fmt)
-                    break
-                except ValueError:
+                    # feedparser の *_parsed は UTC の time.struct_time
+                    return datetime(*parsed[:6], tzinfo=timezone.utc).astimezone(JST)
+                except (TypeError, ValueError):
                     continue
-            
-            if not published:
-                return ""
-            
-            # タイムゾーン未設定の場合は現在のタイムゾーンとして扱う
-            if published.tzinfo is None:
-                published = published.replace(tzinfo=datetime.now().astimezone().tzinfo)
-            
-            now = datetime.now(published.tzinfo)
-            diff = now - published
-            
-            if diff.days > 30:
-                return f"{diff.days // 30}ヶ月前"
-            elif diff.days > 7:
-                return f"{diff.days // 7}週間前"
-            elif diff.days > 0:
-                return f"{diff.days}日前"
-            elif diff.seconds > 3600:
-                return f"{diff.seconds // 3600}時間前"
-            elif diff.seconds > 60:
-                return f"{diff.seconds // 60}分前"
+        return None
+
+    def format_time_label(self, published: Optional[datetime],
+                          now: Optional[datetime] = None) -> str:
+        """記事行の右端に出す時刻ラベル（5:20 / 昨日 / 2日前）"""
+        if published is None:
+            return ''
+
+        now = now or datetime.now(JST)
+        delta_days = (now.date() - published.date()).days
+
+        if delta_days <= 0:
+            return f"{published.hour}:{published.minute:02d}"
+        if delta_days == 1:
+            return '昨日'
+        return f"{delta_days}日前"
+
+    def extract_summary(self, entry: Any, title: str = '') -> str:
+        """記事から「読むか判断するための」要約を抽出
+
+        RSS本文の冒頭をそのまま垂れ流さず、
+        - HTML／定型の前置きを除去
+        - 文の区切りで切る
+        - 意味のある長さにならなければ空文字を返す（＝展開しても要約は出さない）
+        """
+        raw = ''
+        for attr in ('summary', 'description'):
+            value = getattr(entry, attr, None)
+            if value:
+                raw = value
+                break
+
+        if not raw:
+            content = getattr(entry, 'content', None)
+            if isinstance(content, list) and content:
+                raw = content[0].get('value', '')
+
+        if not raw:
+            return ''
+
+        text = re.sub(r'<[^>]+>', ' ', str(raw))
+        text = html.unescape(text)
+        text = re.sub(r'\s+', ' ', text).strip()
+
+        # connpass / TECH PLAY の定型前置き（開催日時・会場）は本文ではないので落とす
+        text = re.sub(r'^開催日時:.*?開催場所:[^ ]*\s*', '', text)
+        text = re.sub(r'^日時:\S+\s*\([^)]*\)\s*\S+\s*会場:\S*\s*', '', text)
+
+        # 「続きを読む」等の末尾リンク文言
+        text = re.sub(r'(続きを読む|Read more|もっと見る)\s*$', '', text).strip()
+
+        if not text:
+            return ''
+
+        # タイトルの丸写しは情報量がないので捨てる
+        normalized_title = re.sub(r'\s+', '', title)
+        if normalized_title and re.sub(r'\s+', '', text) == normalized_title:
+            return ''
+
+        limit = 140
+        if len(text) > limit:
+            head = text[:limit]
+            # 文末で切れる位置があればそこまで、なければ素直に省略記号
+            boundary = max(head.rfind(c) for c in '。！？.!?')
+            if boundary >= 60:
+                text = head[:boundary + 1]
             else:
-                return "たった今"
-                
-        except Exception:
-            return ""
-    
-    def extract_description(self, entry: Any) -> str:
-        """記事から説明文を抽出"""
-        description = ""
-        
-        # RSS feedの summary や description フィールドから取得
-        if hasattr(entry, 'summary'):
-            description = entry.summary
-        elif hasattr(entry, 'description'):
-            description = entry.description
-        elif hasattr(entry, 'content'):
-            if isinstance(entry.content, list) and entry.content:
-                description = entry.content[0].get('value', '')
-            else:
-                description = str(entry.content)
-        
-        if description:
-            # HTMLタグを除去
-            clean_desc = re.sub(r'<[^>]+>', '', description)
-            # 改行や余分な空白を正規化
-            clean_desc = re.sub(r'\s+', ' ', clean_desc).strip()
-            # 300文字程度に制限
-            if len(clean_desc) > 300:
-                clean_desc = clean_desc[:300] + '...'
-            return clean_desc
-        
-        return "記事の詳細を確認してください。"
-    
+                text = head.rstrip() + '…'
+
+        # 短すぎるものは要約として役に立たない
+        if len(text) < 20:
+            return ''
+
+        return text
+
     def generate_card_id(self, link: str) -> str:
         """記事リンクからユニークなカードIDを生成"""
         return hashlib.md5(link.encode()).hexdigest()[:8]
     
     def categorize_article(self, title: str, description: str = '') -> List[str]:
         """記事タイトルと概要からカテゴリタグを自動判定"""
-        categories = {
-            'AI・機械学習': ['AI', 'Claude', 'GPT', '機械学習', 'LLM', 'Gemini', '生成AI', 'ChatGPT', 'OpenAI', 'Anthropic', 'neoAI', 'Reasoning Model', '事前学習', 'ファインチューニング', 'Copilot'],
-            'Web開発': ['React', 'Vue', 'JavaScript', 'CSS', 'HTML', 'フロントエンド', 'Next.js', 'TypeScript', 'Angular', 'Svelte', 'Node.js', 'npm', 'webpack', 'Vite', 'Nuxt'],
-            'クラウド': ['AWS', 'Azure', 'GCP', 'Docker', 'Kubernetes', 'クラウド', 'サーバーレス', 'Lambda', 'EC2', 'S3', 'Athena', 'BigQuery', 'CloudFormation', 'Oracle Cloud', 'DynamoDB', 'Cloudflare'],
-            'モバイル': ['Swift', 'iOS', 'Android', 'React Native', 'Flutter', 'アプリ開発', 'Kotlin', 'Xcode', 'Android Studio', 'モバイル', 'Suica'],
-            'ゲーム開発': ['Unity', 'Unreal Engine', 'Unreal', 'ゲーム開発', 'ゲーム制作', 'ゲーム', 'MRTK', 'Mixed Reality Toolkit', 'HoloLens', 'ゲームエンジン'],
-            'DevOps': ['CI/CD', 'Jenkins', 'GitHub Actions', 'インフラ', 'デプロイ', 'Docker', 'Terraform', 'Ansible', 'Kubernetes', 'GitOps', 'SRE', 'SLO', 'Datadog'],
-            'セキュリティ': ['セキュリティ', '脆弱性', 'HTTPS', '認証', '暗号化', 'サイバー', 'セキュア', '攻撃', 'ペネトレーション', 'OAuth'],
-            'データベース': ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'データベース', 'SQL', 'NoSQL', 'DynamoDB', 'Firebase', 'Supabase', 'Oracle Database'],
-            'データ分析': ['データ分析', 'ビッグデータ', '分析', 'Analytics', 'データサイエンス', 'Tableau', 'Power BI', 'データ可視化', 'ETL', 'データ処理', 'QuickSight', 'SPICE'],
-            'プログラミング': ['Python', 'Java', 'Go', 'Rust', 'C++', 'C#', 'PHP', 'Ruby', 'Scala', 'Kotlin', 'Elixir', 'Haskell', 'F#', 'Windows', 'WSL', 'Ubuntu', 'Linux'],
-            'ツール・IDE': ['VS Code', 'Visual Studio', 'IntelliJ', 'Eclipse', 'Vim', 'Git', 'GitHub', 'GitLab', 'Notion', 'Slack', 'Claude Code', 'Cursor', 'hawk', 'awk'],
-            'アルゴリズム・数学': ['正規表現', '抽象構文木', 'アルゴリズム', '数学', '微分', 'イテレーター', '最適化', 'データ構造', '計算量', 'Brzozowski'],
-            'ツール紹介': ['Startpage', '検索エンジン', 'プライベート検索', 'ツール紹介', 'サービス紹介', 'レビュー', 'ツール', 'サービス', 'オープンソース', 'WinActor', 'RPA'],
-            '技術発表・LT': ['LT', 'スライド', '発表', 'プレゼン', 'HTML', 'スライド作成', '技術発表', 'カンファレンス', '勉強会', 'SpeakerDeck'],
-            'トラブルシューティング': ['トラブルシューティング', 'デバッグ', 'エラー', '問題解決', '障害対応', 'バグ修正', 'ログ解析', 'やってはいけない'],
-            'コーディング支援': ['AIコーディング', 'コード生成', 'GitHub Copilot', 'AI支援', 'コーディング', '開発効率', 'IDE拡張', 'GenAI Processors'],
-            'ネットワーク': ['ネットワーク', 'TCP/IP', 'HTTP', 'DNS', 'CDN', 'ロードバランサー', 'プロキシ', 'VPN'],
-            'UI/UX': ['UI', 'UX', 'デザイン', 'ユーザビリティ', 'プロトタイプ', 'Figma', 'デザインシステム', 'アクセシビリティ'],
-            'VR・AR・MR': ['VR', 'AR', 'MR', 'Mixed Reality', 'XR', 'OpenXR', '拡張現実', '仮想現実', '複合現実'],
-            'キャリア・組織': ['フルリモート', '居場所', 'キャリア', '組織', 'マネジメント', 'チーム', 'エンジニア', '働き方'],
-            'ハードウェア・IoT': ['睡眠トラッカー', 'スマートウォッチ', 'IoT', 'ハードウェア', 'Raspberry Pi', 'ブート'],
-            'オープンソース': ['オープンソース', 'OSS', 'ライセンス', 'GPL', 'MIT', 'Apache', 'ライセンス違反'],
-            'テクノロジートレンド': ['トレンド', '戦略', 'アップル', 'グーグル', 'OpenAI', '業界動向', 'ガートナー', '量子技術'],
-            'システム開発': ['オブジェクト指向', 'サンプルプログラム', '設計', 'アーキテクチャ', 'パターン', '開発手法'],
-            'OS・システム': ['Windows', 'Linux', 'Ubuntu', 'openSUSE', 'システム', 'OS', 'ディレクトリ', 'スラッシュ', 'バックスラッシュ']
-        }
-        
         detected_tags = []
         text = f"{title} {description}".lower()
-        
-        import re
-        
-        for category, keywords in categories.items():
+
+        for category, keywords in self.CATEGORY_KEYWORDS.items():
             # 短いキーワード（3文字以下）は単語境界マッチング、長いキーワードは部分マッチング
             for keyword in keywords:
                 keyword_lower = keyword.lower()
@@ -228,184 +218,337 @@ class TemplateManager:
                     if keyword_lower in text:
                         detected_tags.append(category)
                         break
-        
-        return detected_tags if detected_tags else ['その他']
-    
-    def get_tag_filter_html(self, total_count: int) -> str:
-        """タグフィルターのHTMLを生成"""
-        template = self.load_template('tag_filter.html')
-        return self.render_template(template, total_count=total_count)
-    
-    def get_html_head(self, title: str, date_str: str, is_archive: bool = False) -> str:
+
+        return detected_tags if detected_tags else [self.FALLBACK_CATEGORY]
+
+    def get_filter_groups(self) -> List[Tuple[str, List[str]]]:
+        """絞り込みシートのカテゴリをグループ分けして返す
+
+        カテゴリ一覧は CATEGORY_KEYWORDS のキーから生成するため、
+        辞書にカテゴリを足せば自動的にシートへ反映される。
+        """
+        all_categories = list(self.CATEGORY_KEYWORDS.keys())
+
+        primary = [c for c in self.FILTER_GROUP_PRIMARY if c in all_categories]
+        operation = [c for c in self.FILTER_GROUP_OPERATION if c in all_categories]
+        assigned = set(primary) | set(operation)
+        others = [c for c in all_categories if c not in assigned]
+        others.append(self.FALLBACK_CATEGORY)
+
+        return [
+            ('よく使う', primary),
+            ('開発・運用', operation),
+            ('専門・その他', others),
+        ]
+
+    def get_filter_sheet_html(self) -> str:
+        """絞り込みボトムシートのHTMLを生成"""
+        groups_html = ''
+        for label, categories in self.get_filter_groups():
+            if not categories:
+                continue
+            chips = ''.join(
+                '<button type="button" class="filter-chip" data-tag="{tag}">{tag}</button>'.format(
+                    tag=self.escape(category)
+                )
+                for category in categories
+            )
+            groups_html += (
+                '                <div class="filter-group">\n'
+                '                    <div class="filter-group-label">{label}</div>\n'
+                '                    <div class="filter-chips">{chips}</div>\n'
+                '                </div>\n'
+            ).format(label=self.escape(label), chips=chips)
+
+        template = self.load_template('filter_sheet.html')
+        return self.render_template(template, groups=groups_html)
+
+    # ---------------------------------------------------------------
+    # ページ骨格
+    # ---------------------------------------------------------------
+
+    def get_asset_prefix(self, is_archive: bool = False, depth: int = 3) -> str:
+        """assets/ への相対パスの接頭辞を取得"""
+        if not is_archive:
+            return ''
+        return '../' * depth
+
+    def get_html_head(self, title: str, date_str: str, is_archive: bool = False,
+                      depth: int = 3, canonical_url: str = None) -> str:
         """HTML headセクションを生成"""
         og_image_url = self.site_config.og_image_url
         site_description = self.site_config.SITE_DESCRIPTION
         site_url = self.site_config.site_url
         twitter_user = self.site_config.twitter_user
-        
-        # アーカイブページの場合はURLを調整
-        canonical_url = site_url
-        if is_archive:
-            date_obj = datetime.strptime(date_str, '%Y-%m-%d')
-            archive_path = f"{date_obj.year}/{date_obj.month:02d}"
-            canonical_url = f"{site_url}archives/{archive_path}/{date_str}.html"
-        
-        # CSS path
-        css_path = "../../../assets/css/main.css" if is_archive else "assets/css/main.css"
-        
+        prefix = self.get_asset_prefix(is_archive, depth)
+
+        if canonical_url is None:
+            canonical_url = site_url
+            if is_archive and re.fullmatch(r'\d{4}-\d{2}-\d{2}', date_str or ''):
+                date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+                archive_path = f"{date_obj.year}/{date_obj.month:02d}"
+                canonical_url = f"{site_url}archives/{archive_path}/{date_str}.html"
+
+        escaped_title = self.escape(title)
+
         return f"""<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
-    
+    <title>{escaped_title}</title>
+
     <!-- OGP Tags -->
-    <meta property="og:title" content="{title}">
+    <meta property="og:title" content="{escaped_title}">
     <meta property="og:description" content="{site_description}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{canonical_url}">
     <meta property="og:image" content="{og_image_url}">
     <meta property="og:site_name" content="今日のテックニュース">
-    
+
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="{twitter_user}">
-    <meta name="twitter:title" content="{title}">
+    <meta name="twitter:title" content="{escaped_title}">
     <meta name="twitter:description" content="{site_description}">
     <meta name="twitter:image" content="{og_image_url}">
-    
-    <!-- Favicon Links -->{self.get_favicon_links(is_archive)}
-    
+
+    <!-- Favicon Links -->{self.get_favicon_links(is_archive, depth)}
+
     <!-- CSS -->
-    <link rel="stylesheet" href="{css_path}">
+    <link rel="stylesheet" href="{prefix}assets/css/main.css">
+
+    <!-- 初期描画前にテーマを適用してちらつきを防ぐ -->
+    <script>
+        (function () {{
+            try {{
+                var saved = localStorage.getItem('tech-news-theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            }} catch (e) {{ /* localStorage 不可の環境では何もしない */ }}
+        }})();
+    </script>
 </head>"""
-    
-    def get_favicon_links(self, is_archive: bool = False) -> str:
+
+    def get_favicon_links(self, is_archive: bool = False, depth: int = 3) -> str:
         """faviconリンクタグを生成"""
-        favicon_path = "../../../assets/favicons/" if is_archive else "assets/favicons/"
+        favicon_path = f"{self.get_asset_prefix(is_archive, depth)}assets/favicons/"
         return f"""
     <link rel="apple-touch-icon" sizes="180x180" href="{favicon_path}apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{favicon_path}favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{favicon_path}favicon-16x16.png">
     <link rel="manifest" href="{favicon_path}site.webmanifest">
     <link rel="shortcut icon" href="{favicon_path}favicon.ico">"""
-    
-    def get_css_link(self, is_archive: bool = False) -> str:
-        """外部CSSファイルへのリンクを取得"""
-        css_path = "../../../assets/css/main.css" if is_archive else "assets/css/main.css"
-        js_path = "../../../assets/js/preview.js" if is_archive else "assets/js/preview.js"
-        return f'    <link rel="stylesheet" href="{css_path}">\n</head>'
-    
-    def get_navigation_section(self, date_str: str, is_archive: bool = False) -> str:
-        """ナビゲーションセクションを生成（外部テンプレート使用）"""
-        site_url = self.site_config.site_url
-        hashtags = self.site_config.X_HASHTAGS
-        
+
+    def get_header_html(self, date_obj: datetime, is_archive: bool = False,
+                        depth: int = 3) -> str:
+        """固定ヘッダー（サイト名・日付・絞り込み・テーマ切替・タブ）を生成"""
+        date_label = self.format_header_date(date_obj)
+
         if is_archive:
-            date_obj = datetime.strptime(date_str, '%Y-%m-%d')
-            archive_path = f"{date_obj.year}/{date_obj.month:02d}"
-            tweet_url = f"https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をサクッとチェック！&url={site_url}archives/{archive_path}/{date_str}.html&hashtags={hashtags}"
-            archive_link = "../index.html"
-            archive_text = "アーカイブ一覧"
+            back_link = f"{self.get_asset_prefix(is_archive, depth)}index.html"
+            brand = (
+                f'<a class="icon-btn" href="{back_link}" aria-label="メインページへ戻る" title="メインページへ戻る">←</a>'
+                f'<span class="site-name">今日のテックニュース</span>'
+                f'<span class="site-date">{date_label}</span>'
+            )
         else:
-            tweet_url = f"https://twitter.com/intent/tweet?text=👨‍💻 今日のテックニュース ({date_str}) をサクッとチェック！&url={site_url}&hashtags={hashtags}"
-            archive_link = "archives/index.html"
-            archive_text = "過去のニュースを見る"
-        
-        template = self.load_template('navigation.html')
-        return self.render_template(
-            template,
-            tweet_url=tweet_url,
-            archive_link=archive_link,
-            archive_text=archive_text
+            brand = (
+                f'<span class="site-name">今日のテックニュース</span>'
+                f'<span class="site-date">{date_label}</span>'
+            )
+
+        filter_button = (
+            '\n            <button type="button" id="filter-open" class="pill-btn">'
+            '絞り込み<span class="filter-count" id="filter-count" hidden></span></button>'
         )
-    
-    def get_footer_section(self, is_archive: bool = False) -> str:
-        """フッターセクションを生成（外部テンプレート使用）"""
-        site_url = self.site_config.site_url
-        twitter_user = self.site_config.twitter_user
-        
-        main_page_link = ""
-        rss_link = ""
-        
-        if is_archive:
-            main_page_link = '<p><a href="../../index.html" class="nav-button">🏠 メインページに戻る</a></p>\n        '
-            rss_link = f'<p>📡 <a href="{site_url}rss.xml">RSSフィードを購読</a></p>\n        '
-        else:
-            # メインページ用のカード表示デザイン
-            rss_link = f'''<div class="rss-card">
-        <div class="rss-card-content">
-            <div class="rss-card-icon">📡</div>
-            <div class="rss-card-text">
-                <h3>RSSフィード配信中</h3>
-                <p>お使いのRSSリーダーで購読してください</p>
-                <a href="{site_url}rss.xml" class="rss-link" target="_blank">RSSフィードを購読する</a>
-            </div>
-        </div>
-    </div>
-    '''
-        
+
+        template = self.load_template('header.html')
+        return self.render_template(template, brand=brand, filter_button=filter_button)
+
+    def format_header_date(self, date_obj: datetime) -> str:
+        """ヘッダー用の日付表記（7/26 (日)）"""
+        return f"{date_obj.month}/{date_obj.day} ({WEEKDAY_JA[date_obj.weekday()]})"
+
+    def get_footer_html(self, is_archive: bool = False, depth: int = 3) -> str:
+        """フッター（RSS行・リンクタイル・クレジット）を生成"""
+        prefix = self.get_asset_prefix(is_archive, depth)
+        archive_link = f"{prefix}archives/index.html" if not is_archive else f"{prefix}archives/index.html"
+
         template = self.load_template('footer.html')
         return self.render_template(
             template,
-            main_page_link=main_page_link,
-            rss_link=rss_link,
-            twitter_handle=twitter_user.lstrip('@'),
-            twitter_user=twitter_user
+            rss_url=self.site_config.rss_url,
+            archive_link=archive_link,
+            github_url=self.site_config.github_repo_url,
+            profile_url=self.site_config.profile_url,
+            profile_name=self.escape(self.site_config.profile_display_name)
         )
-    
-    def render_card(self, entry: Any, feed_name: str, thumbnail_url: str = None) -> str:
-        """記事カードをレンダリング（外部テンプレート使用）"""
+
+    # ---------------------------------------------------------------
+    # 記事タブ
+    # ---------------------------------------------------------------
+
+    def render_article_row(self, entry: Any, feed_name: str,
+                           now: Optional[datetime] = None) -> str:
+        """記事行をレンダリング
+
+        サムネイル・著者情報・ホバープレビュー用のDOMは持たない。
+        絞り込み用のタグと要約は属性／展開部にのみ埋め込む。
+        """
         title = entry.title
         link = entry.link
-        
-        # HTMLエスケープ
-        escaped_title = title.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
-        
-        # メタ情報の生成
-        description = self.extract_description(entry)
-        
-        # 公開日の取得（複数のフィールドを試行）
-        published_date = ""
-        if hasattr(entry, 'published'):
-            published_date = entry.published
-        elif hasattr(entry, 'updated'):
-            published_date = entry.updated
-        elif hasattr(entry, 'pubDate'):
-            published_date = entry.pubDate
-        
-        # 著者情報の取得
-        author_info = ""
-        if hasattr(entry, 'author_info') and entry.author_info:
-            author_info = entry.author_info
-        
-        relative_date = self.get_relative_date(published_date)
-        tags = self.categorize_article(title, description)
-        card_id = self.generate_card_id(link)
-        
-        thumbnail = ""
-        # サムネイル画像の有効性を確認してからHTMLを生成
-        if thumbnail_url and self.is_valid_thumbnail_url(thumbnail_url):
-            escaped_url = thumbnail_url.replace('"', '&quot;').replace('<', '&lt;').replace('>', '&gt;')
-            # onerror属性を追加してリンク切れ時に要素を非表示にする
-            thumbnail = f'<img src="{escaped_url}" width="120" height="90" alt="{escaped_title}" class="card-image" onerror="this.style.display=\'none\'">'
-        
-        template = self.load_template('card.html')
+
+        summary = self.extract_summary(entry, title)
+        tags = self.categorize_article(title, summary)
+        published = self.get_entry_datetime(entry)
+
+        # 表示するタグは最大2つ。絞り込みには検出した全タグを使う
+        tag_chips = ''.join(
+            f'<span class="tag-chip">{self.escape(tag)}</span>' for tag in tags[:2]
+        )
+
+        summary_html = ''
+        if summary:
+            summary_html = f'\n                        <p class="article-summary">{self.escape(summary)}</p>'
+
+        template = self.load_template('article_row.html')
         return self.render_template(
             template,
-            link=link,
-            thumbnail=thumbnail,
-            title=title,
-            feed_name=feed_name,
-            description=description,
-            published_date=published_date,
-            relative_date=relative_date,
-            author_info=author_info,
-            tags=', '.join(tags),
-            card_id=card_id
+            card_id=self.generate_card_id(link),
+            tags_attr=self.escape(','.join(tags)),
+            title=self.escape(title),
+            title_attr=self.escape(title),
+            time_label=self.escape(self.format_time_label(published, now)),
+            tag_chips=tag_chips,
+            summary_html=summary_html,
+            link=self.escape(link)
         )
-    
+
+    def render_media_section(self, feed_name: str, rows_html: str) -> str:
+        """メディアセクション（見出し＋記事行）をレンダリング"""
+        template = self.load_template('media_section.html')
+        return self.render_template(
+            template,
+            section_id=self.generate_section_id(feed_name),
+            feed_name=self.escape(feed_name),
+            rows=rows_html
+        )
+
+    def generate_section_id(self, feed_name: str) -> str:
+        """メディアセクションのアンカーIDを生成"""
+        return 'media-' + hashlib.md5(feed_name.encode('utf-8')).hexdigest()[:8]
+
+    def render_media_toc(self, feed_names: List[str]) -> str:
+        """メディア目次チップ（横スクロール）をレンダリング"""
+        from config.archive_config import get_media_short_name
+
+        if not feed_names:
+            return ''
+
+        chips = ''.join(
+            '<a class="toc-chip" href="#{section_id}">{label}</a>'.format(
+                section_id=self.generate_section_id(name),
+                label=self.escape(get_media_short_name(name))
+            )
+            for name in feed_names
+        )
+        return (
+            '        <nav class="media-toc" aria-label="メディア目次">\n'
+            f'            <div class="media-toc-inner">{chips}</div>\n'
+            '        </nav>\n'
+        )
+
+    def render_highlights(self, highlights: List[Dict[str, Any]]) -> str:
+        """今日のハイライト（3件）をレンダリング"""
+        if not highlights:
+            return ''
+
+        cards = ''
+        for index, item in enumerate(highlights, start=1):
+            cards += (
+                '                <a class="highlight-card" href="{link}" target="_blank" rel="noopener">\n'
+                '                    <span class="highlight-rank">{rank}</span>\n'
+                '                    <span class="highlight-body">\n'
+                '                        <span class="highlight-title">{title}</span>\n'
+                '                        <span class="highlight-meta">{meta}</span>\n'
+                '                    </span>\n'
+                '                </a>\n'
+            ).format(
+                link=self.escape(item['link']),
+                rank=index,
+                title=self.escape(item['title']),
+                meta=self.escape(item['meta'])
+            )
+
+        return (
+            '        <section class="highlights">\n'
+            '            <div class="highlights-head">\n'
+            '                <span class="highlights-title">今日のハイライト</span>\n'
+            '                <span class="highlights-note">複数メディアで話題</span>\n'
+            '            </div>\n'
+            '            <div class="highlight-cards">\n'
+            f'{cards}'
+            '            </div>\n'
+            '        </section>\n'
+        )
+
+    # ---------------------------------------------------------------
+    # イベントタブ・書籍タブ
+    # ---------------------------------------------------------------
+
+    def render_event_groups(self, groups: List[Dict[str, Any]]) -> str:
+        """開催日でグルーピングしたイベント一覧をレンダリング"""
+        if not groups:
+            return '        <p class="empty-note">直近のイベント情報を取得できませんでした。</p>\n'
+
+        html_content = ''
+        for group in groups:
+            rows = ''
+            for event in group['items']:
+                rows += (
+                    '                <a class="event-row" href="{link}" target="_blank" rel="noopener">\n'
+                    '                    <span class="event-time">{time}</span>\n'
+                    '                    <span class="event-body">\n'
+                    '                        <span class="event-title">{title}</span>\n'
+                    '                        <span class="event-meta">{meta}</span>\n'
+                    '                    </span>\n'
+                    '                </a>\n'
+                ).format(
+                    link=self.escape(event['link']),
+                    time=self.escape(event['time_label']),
+                    title=self.escape(event['title']),
+                    meta=self.escape(event['meta'])
+                )
+
+            html_content += (
+                '            <div class="event-group">\n'
+                f'                <h2 class="event-day">{self.escape(group["label"])}</h2>\n'
+                f'{rows}'
+                '            </div>\n'
+            )
+
+        return html_content
+
+    def render_books(self, books: List[Dict[str, Any]]) -> str:
+        """近刊書籍の一覧をレンダリング"""
+        if not books:
+            return '        <p class="empty-note">近刊情報を取得できませんでした。</p>\n'
+
+        rows = ''
+        for book in books:
+            rows += (
+                '            <a class="book-row" href="{link}" target="_blank" rel="noopener">\n'
+                '                <span class="book-title">{title}</span>\n'
+                '                <span class="book-meta">{meta}</span>\n'
+                '            </a>\n'
+            ).format(
+                link=self.escape(book['link']),
+                title=self.escape(book['title']),
+                meta=self.escape(book['meta'])
+            )
+        return rows
+
     def render_markdown_entry(self, entry: Any) -> str:
         """Markdown形式のエントリをレンダリング"""
         title = entry.title
@@ -419,43 +562,44 @@ class ContentStructure:
     def __init__(self, template_manager: TemplateManager):
         self.template_manager = template_manager
     
-    def build_html_page(self, title: str, date_str: str, entries_html: str, 
-                       is_archive: bool = False, x_logo_path: str = None, total_entries: int = 0) -> str:
-        """完全なHTMLページを構築"""
-        # X logo pathのデフォルト設定
-        if x_logo_path is None:
-            x_logo_path = "../../../assets/images/x-logo/logo-white.png" if is_archive else "assets/images/x-logo/logo-white.png"
-        
-        head_section = self.template_manager.get_html_head(title, date_str, is_archive)
-        navigation = self.template_manager.get_navigation_section(date_str, is_archive)
-        footer = self.template_manager.get_footer_section(is_archive)
-        
-        # タグフィルターはメインページのみ表示
-        tag_filter = "" if is_archive else self.template_manager.get_tag_filter_html(total_entries)
-        
-        description = self.template_manager.site_config.SITE_DESCRIPTION
-        
-        # JavaScript path
-        js_path = "../../../assets/js/preview.js" if is_archive else "assets/js/preview.js"
-        
+    def build_html_page(self, title: str, date_obj: datetime,
+                        articles_html: str, events_html: str, books_html: str,
+                        is_archive: bool = False, depth: int = 3,
+                        canonical_url: str = None) -> str:
+        """記事／イベント／書籍の3タブを持つページを構築"""
+        tm = self.template_manager
+        date_str = date_obj.strftime('%Y-%m-%d')
+
+        head_section = tm.get_html_head(title, date_str, is_archive, depth, canonical_url)
+        header = tm.get_header_html(date_obj, is_archive, depth)
+        footer = tm.get_footer_html(is_archive, depth)
+        filter_sheet = tm.get_filter_sheet_html()
+        js_path = f"{tm.get_asset_prefix(is_archive, depth)}assets/js/app.js"
+
         return f"""{head_section}
 <body>
-    <div class="page-header">
-        <h1>{title}</h1>
-        
-        {navigation}
-        
-        <p>{description}</p>
-    </div>
-    
-{tag_filter}
-    
-{entries_html}
+<div class="app">
+{header}
+    <main class="app-main">
+        <section class="tab-panel is-active" id="panel-articles" role="tabpanel" data-panel="articles">
+{articles_html}        </section>
+
+        <section class="tab-panel" id="panel-events" role="tabpanel" data-panel="events" hidden>
+            <p class="panel-note">connpass・TECH PLAY の直近イベント。日付順にまとめて、開催が近いものから表示します。</p>
+{events_html}        </section>
+
+        <section class="tab-panel" id="panel-books" role="tabpanel" data-panel="books" hidden>
+            <p class="panel-note">O'Reilly Japan の近刊。</p>
+{books_html}        </section>
+    </main>
+
 {footer}
+</div>
+{filter_sheet}
     <script src="{js_path}"></script>
 </body>
 </html>"""
-    
+
     def build_markdown_page(self, title: str, date_str: str, entries_markdown: str, 
                            is_archive: bool = False) -> str:
         """完全なMarkdownページを構築"""

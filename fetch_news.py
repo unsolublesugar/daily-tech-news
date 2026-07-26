@@ -5,21 +5,17 @@ import sys
 from pathlib import Path
 from xml.dom import minidom
 import xml.etree.ElementTree as ET
-import requests
-from bs4 import BeautifulSoup
 import time
 import re
-from concurrent.futures import ThreadPoolExecutor
-import concurrent.futures
 import json
-import hashlib
 from urllib.parse import urlparse, urlunparse, urlencode, parse_qsl
 
 # srcディレクトリをPythonパスに追加
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 # 設定のインポート
-from config.archive_config import DEFAULT_SITE_CONFIG
+from config.archive_config import DEFAULT_SITE_CONFIG, is_article_feed
+from generators.archive_generator import ArchiveGenerator
 
 # 取得するRSSフィードのリスト
 FEEDS = {
@@ -46,113 +42,6 @@ EXCLUDED_DOMAINS = {
 
 # 各フィードから取得する記事の件数
 MAX_ENTRIES = 5
-
-class ThumbnailCache:
-    """サムネイルキャッシュを管理するクラス"""
-    
-    def __init__(self, cache_file_path="thumbnail_cache.json"):
-        """
-        キャッシュクラスの初期化
-        
-        Args:
-            cache_file_path (str): キャッシュファイルのパス
-        """
-        self.cache_file_path = cache_file_path
-        self.cache = self._load_cache()
-    
-    def _load_cache(self):
-        """キャッシュファイルから既存のデータを読み込む"""
-        try:
-            if os.path.exists(self.cache_file_path):
-                with open(self.cache_file_path, 'r', encoding='utf-8') as f:
-                    return json.load(f)
-        except Exception as e:
-            print(f"Warning: Failed to load thumbnail cache: {e}")
-        
-        return {}
-    
-    def _save_cache(self):
-        """キャッシュデータをファイルに保存する"""
-        try:
-            with open(self.cache_file_path, 'w', encoding='utf-8') as f:
-                json.dump(self.cache, f, ensure_ascii=False, indent=2)
-        except Exception as e:
-            print(f"Warning: Failed to save thumbnail cache: {e}")
-    
-    def _get_url_hash(self, url):
-        """URLのハッシュ値を生成してキャッシュキーとする"""
-        return hashlib.md5(url.encode('utf-8')).hexdigest()
-    
-    def get(self, url):
-        """
-        キャッシュからサムネイルURLを取得
-        
-        Args:
-            url (str): 記事URL
-            
-        Returns:
-            str or None: キャッシュされたサムネイルURL、またはNone
-        """
-        url_hash = self._get_url_hash(url)
-        cache_entry = self.cache.get(url_hash)
-        
-        if cache_entry:
-            # キャッシュエントリが7日以内なら有効とする
-            import datetime
-            cache_time = datetime.datetime.fromisoformat(cache_entry['timestamp'])
-            now = datetime.datetime.now()
-            
-            if (now - cache_time).days < 7:
-                return cache_entry.get('thumbnail_url')
-        
-        return None
-    
-    def set(self, url, thumbnail_url):
-        """
-        サムネイルURLをキャッシュに保存
-        
-        Args:
-            url (str): 記事URL
-            thumbnail_url (str or None): サムネイルURL
-        """
-        url_hash = self._get_url_hash(url)
-        import datetime
-        
-        self.cache[url_hash] = {
-            'url': url,
-            'thumbnail_url': thumbnail_url,
-            'timestamp': datetime.datetime.now().isoformat()
-        }
-    
-    def save(self):
-        """キャッシュをファイルに保存"""
-        self._save_cache()
-    
-    def cleanup_old_entries(self, days_threshold=30):
-        """
-        古いキャッシュエントリを削除
-        
-        Args:
-            days_threshold (int): 削除対象となる日数の閾値
-        """
-        import datetime
-        now = datetime.datetime.now()
-        
-        keys_to_remove = []
-        for key, entry in self.cache.items():
-            try:
-                cache_time = datetime.datetime.fromisoformat(entry['timestamp'])
-                if (now - cache_time).days > days_threshold:
-                    keys_to_remove.append(key)
-            except Exception:
-                # 不正なエントリは削除対象に
-                keys_to_remove.append(key)
-        
-        for key in keys_to_remove:
-            del self.cache[key]
-        
-        if keys_to_remove:
-            print(f"Cleaned up {len(keys_to_remove)} old cache entries")
 
 _TRACKING_PARAMS = frozenset({
     "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
@@ -245,77 +134,6 @@ def fetch_feed_entries(feed_url):
     except Exception as e:
         print(f"Error fetching feed from {feed_url}: {e}")
         return []
-
-def get_article_thumbnail(url, max_retries=2):
-    """記事URLからサムネイル画像URLを取得する"""
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-    }
-    
-    def validate_image_url(img_url):
-        """画像URLが有効かどうかチェック"""
-        if not img_url or len(img_url) > 2000:  # URLが長すぎる場合は除外
-            return False
-        if not img_url.startswith(('http://', 'https://')):
-            return False
-        # 画像形式のチェック
-        if any(ext in img_url.lower() for ext in ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg']):
-            return True
-        # 動的生成画像のパターン（qiita、zennなど）
-        if any(domain in img_url for domain in ['qiita-user-contents.imgix.net', 'res.cloudinary.com', 'cdn.image.st-hatena.com']):
-            return True
-        return False
-    
-    for attempt in range(max_retries):
-        try:
-            response = requests.get(url, headers=headers, timeout=10)
-            response.raise_for_status()
-            
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Open Graph画像を優先的に取得
-            og_image = soup.find('meta', property='og:image')
-            if og_image and og_image.get('content'):
-                img_url = og_image['content']
-                if img_url.startswith('//'):
-                    img_url = 'https:' + img_url
-                elif img_url.startswith('/'):
-                    from urllib.parse import urljoin
-                    img_url = urljoin(url, img_url)
-                if validate_image_url(img_url):
-                    return img_url
-            
-            # Twitter Card画像
-            twitter_image = soup.find('meta', attrs={'name': 'twitter:image'})
-            if twitter_image and twitter_image.get('content'):
-                img_url = twitter_image['content']
-                if img_url.startswith('//'):
-                    img_url = 'https:' + img_url
-                elif img_url.startswith('/'):
-                    from urllib.parse import urljoin
-                    img_url = urljoin(url, img_url)
-                if validate_image_url(img_url):
-                    return img_url
-            
-            # 記事内最初の画像
-            article_img = soup.find('img')
-            if article_img and article_img.get('src'):
-                img_url = article_img['src']
-                if img_url.startswith('//'):
-                    img_url = 'https:' + img_url
-                elif img_url.startswith('/'):
-                    from urllib.parse import urljoin
-                    img_url = urljoin(url, img_url)
-                if validate_image_url(img_url):
-                    return img_url
-                
-        except Exception as e:
-            print(f"Attempt {attempt + 1} failed for {url}: {e}")
-            if attempt < max_retries - 1:
-                time.sleep(1)  # リトライ前に少し待機
-            continue
-    
-    return None  # 画像が見つからない場合
 
 def deduplicate_events(entries, target_count=10):
     """イベント系エントリーの重複を除去（シリーズ番号違いを統合）し、目標件数を確保"""
@@ -493,116 +311,69 @@ def deduplicate_urls_across_feeds(all_entries):
     
     return deduplicated_feeds
 
-def fetch_all_thumbnails(all_entries, max_workers=10, use_cache=True):
-    """全フィードの全記事のサムネイルを並列取得（キャッシュ対応）"""
-    # 全記事のURLリストを作成
-    all_urls = []
-    for entries in all_entries.values():
-        all_urls.extend([entry.link for entry in entries])
-    
-    print(f"Fetching thumbnails for {len(all_urls)} articles...")
-    
-    # キャッシュの初期化
-    cache = ThumbnailCache() if use_cache else None
-    thumbnails = {}
-    urls_to_fetch = []
-    
-    # キャッシュから取得できるものは先に処理
-    if cache:
-        cache_hits = 0
-        for url in all_urls:
-            cached_thumbnail = cache.get(url)
-            if cached_thumbnail is not None:
-                thumbnails[url] = cached_thumbnail
-                cache_hits += 1
-            else:
-                urls_to_fetch.append(url)
-        
-        if cache_hits > 0:
-            print(f"Cache hits: {cache_hits}/{len(all_urls)} thumbnails")
-    else:
-        urls_to_fetch = all_urls
-    
-    # キャッシュにないURLのみ並列取得
-    if urls_to_fetch:
-        print(f"Fetching {len(urls_to_fetch)} new thumbnails in parallel...")
-        
-        with ThreadPoolExecutor(max_workers=max_workers) as executor:
-            # 未キャッシュのURLに対して並列でサムネイル取得を実行
-            future_to_url = {
-                executor.submit(get_article_thumbnail, url): url 
-                for url in urls_to_fetch
-            }
-            
-            completed = 0
-            total = len(urls_to_fetch)
-            
-            # 完了した処理から順次結果を取得
-            for future in concurrent.futures.as_completed(future_to_url):
-                url = future_to_url[future]
-                completed += 1
-                
-                try:
-                    thumbnail_url = future.result(timeout=15)
-                    thumbnails[url] = thumbnail_url
-                    
-                    # キャッシュに保存
-                    if cache:
-                        cache.set(url, thumbnail_url)
-                    
-                    print(f"Progress: {completed}/{total} new thumbnails fetched")
-                except Exception as e:
-                    print(f"Error fetching thumbnail for {url}: {e}")
-                    thumbnails[url] = None
-                    
-                    # エラーの場合もキャッシュに保存（Noneとして）
-                    if cache:
-                        cache.set(url, None)
-    
-    # キャッシュを保存
-    if cache:
-        cache.cleanup_old_entries()  # 古いエントリを削除
-        cache.save()
-        print("Thumbnail cache updated")
-                
-    return thumbnails
+_archive_generator = ArchiveGenerator()
 
-def generate_html(all_entries, date_str, thumbnails=None):
-    """新しいテンプレートシステムを使用してHTMLコンテンツを生成する"""
-    from src.templates.template_manager import TemplateManager, ContentStructure
-    
-    # テンプレートマネージャーの初期化
-    template_manager = TemplateManager()
-    content_structure = ContentStructure(template_manager)
-    
-    # 記事カードのHTML生成
-    entries_html = ""
-    
+
+def normalize_title_for_dedup(title):
+    """タイトル比較用の正規化（空白・記号を落として先頭40文字）"""
+    if not title:
+        return ""
+    normalized = re.sub(r'<[^>]+>', '', title)
+    normalized = re.sub(r'[\s　!-/:-@\[-`{-~！-／：-＠［-｀｛-～、。「」【】（）]', '', normalized)
+    return normalized.lower()[:40]
+
+
+def count_cross_feed_mentions(all_entries):
+    """フィード間で何メディアに出現したかを数える
+
+    ハイライト選定に使う。フィード間のURL重複除去を「行う前」の
+    全エントリを対象にしないと重複情報そのものが消えてしまうため、
+    deduplicate_urls_across_feeds() より先に呼ぶこと。
+
+    Returns:
+        dict: 記事URL -> 出現メディア数（1以上）
+    """
+    url_feeds = {}
+    title_feeds = {}
+
     for feed_name, entries in all_entries.items():
-        entries_html += f"    <h2>{feed_name}</h2>\n"
-        
-        if not entries:
-            entries_html += "    <p>記事を取得できませんでした。</p>\n"
-        else:
-            for entry in entries:
-                thumbnail_url = thumbnails.get(entry.link) if thumbnails else None
-                card_html = template_manager.render_card(entry, feed_name, thumbnail_url)
-                entries_html += card_html
-    
-    # 記事総数を計算
-    total_entries = sum(len(entries) for entries in all_entries.values())
-    
-    # 完全なHTMLページを構築
-    title = f"今日のテックニュース ({date_str})"
-    html_content = content_structure.build_html_page(
-        title=title,
-        date_str=date_str,
-        entries_html=entries_html,
-        total_entries=total_entries,
-        is_archive=False
+        if not is_article_feed(feed_name):
+            continue
+        for entry in entries:
+            link = getattr(entry, 'link', None)
+            if not link:
+                continue
+            url_feeds.setdefault(normalize_url(link), set()).add(feed_name)
+            title_key = normalize_title_for_dedup(getattr(entry, 'title', ''))
+            if title_key:
+                title_feeds.setdefault(title_key, set()).add(feed_name)
+
+    mention_counts = {}
+    for feed_name, entries in all_entries.items():
+        if not is_article_feed(feed_name):
+            continue
+        for entry in entries:
+            link = getattr(entry, 'link', None)
+            if not link:
+                continue
+            feeds = set(url_feeds.get(normalize_url(link), set()))
+            title_key = normalize_title_for_dedup(getattr(entry, 'title', ''))
+            if title_key:
+                feeds |= title_feeds.get(title_key, set())
+            mention_counts[link] = max(1, len(feeds))
+
+    multi = sum(1 for count in mention_counts.values() if count > 1)
+    if multi:
+        print(f"複数メディアで言及されている記事: {multi}件")
+
+    return mention_counts
+
+
+def generate_html(all_entries, date_obj, mention_counts=None):
+    """トップページ（記事／イベント／書籍の3タブ）のHTMLを生成する"""
+    return _archive_generator.build_page(
+        all_entries, date_obj, mention_counts, is_archive=False
     )
-    
-    return html_content
 
 def generate_markdown(all_entries, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
@@ -674,40 +445,13 @@ GitHub Pages版では各記事がカード形式で見やすく表示されま�
     
     return markdown
 
-def generate_archive_html(all_entries, date_str, thumbnails=None):
-    """新しいテンプレートシステムを使用してアーカイブHTMLを生成する"""
-    from src.templates.template_manager import TemplateManager, ContentStructure
-    
-    # テンプレートマネージャーの初期化
-    template_manager = TemplateManager()
-    content_structure = ContentStructure(template_manager)
-    
-    # 記事カードのHTML生成
-    entries_html = ""
-    
-    for feed_name, entries in all_entries.items():
-        entries_html += f"    <h2>{feed_name}</h2>\n"
-        
-        if not entries:
-            entries_html += "    <p>記事を取得できませんでした。</p>\n"
-        else:
-            for entry in entries:
-                thumbnail_url = thumbnails.get(entry.link) if thumbnails else None
-                card_html = template_manager.render_card(entry, feed_name, thumbnail_url)
-                entries_html += card_html
-    
-    # アーカイブ用HTMLページを構築
-    title = f"今日のテックニュース ({date_str})"
-    html_content = content_structure.build_html_page(
-        title=title,
-        date_str=date_str,
-        entries_html=entries_html,
-        is_archive=True
+def generate_archive_html(all_entries, date_obj, mention_counts=None):
+    """アーカイブ用（archives/YYYY/MM/）のHTMLを生成する"""
+    return _archive_generator.build_page(
+        all_entries, date_obj, mention_counts, is_archive=True, depth=3
     )
-    
-    return html_content
 
-def save_to_archive(all_entries, date_obj, thumbnails=None):
+def save_to_archive(all_entries, date_obj, mention_counts=None):
     """日付別アーカイブファイルとして保存（MarkdownとHTML両方）"""
     year = date_obj.year
     month = f"{date_obj.month:02d}"
@@ -729,7 +473,7 @@ def save_to_archive(all_entries, date_obj, thumbnails=None):
         f.write(md_content)
     
     # HTML版
-    html_content = generate_archive_html(all_entries, date_str, thumbnails)
+    html_content = generate_archive_html(all_entries, date_obj, mention_counts)
     html_file = archive_dir / f"{date_str}.html"
     
     with open(html_file, "w", encoding="utf-8") as f:
@@ -1371,24 +1115,21 @@ if __name__ == "__main__":
         
         all_entries[name] = entries
     
+    # ハイライト選定用にフィード間の言及数を数える（重複除去より先に行う）
+    mention_counts = count_cross_feed_mentions(all_entries)
+
     # フィード間URL重複除去と補填
     print("Removing duplicate URLs across feeds...")
     all_entries = deduplicate_urls_across_feeds(all_entries)
-    
-    # 🚀 全サムネイルを並列取得（大幅高速化）
-    start_time = time.time()
-    thumbnails = fetch_all_thumbnails(all_entries)
-    thumbnail_time = time.time() - start_time
-    print(f"Thumbnail fetching completed in {thumbnail_time:.2f} seconds")
-    
+
     # Markdownコンテンツ生成
     markdown_content = generate_markdown(all_entries, today.isoformat())
-    
-    # HTMLコンテンツ生成（事前取得済みサムネイルを使用）
-    html_content = generate_html(all_entries, today.isoformat(), thumbnails)
-    
+
+    # HTMLコンテンツ生成
+    html_content = generate_html(all_entries, today, mention_counts)
+
     # アーカイブに保存
-    archive_file = save_to_archive(all_entries, today, thumbnails)
+    archive_file = save_to_archive(all_entries, today, mention_counts)
     print(f"Archived to: {archive_file}")
     
     # インデックスページ更新
@@ -1401,10 +1142,10 @@ if __name__ == "__main__":
     with open("daily_news.md", "w", encoding="utf-8") as f:
         f.write(daily_news_content)
     
-    # index.html生成（カード表示用）
+    # index.html生成
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(html_content)
-    print("Generated index.html with card layout")
+    print("Generated index.html")
     
     # RSSフィード生成
     rss_feed = generate_rss_feed(all_entries, today)
@@ -1416,4 +1157,4 @@ if __name__ == "__main__":
         
     total_time = time.time() - script_start_time
     print(f"Successfully updated daily_news.md, index.html, archive structure, and RSS feed.")
-    print(f"Total execution time: {total_time:.2f} seconds (thumbnail fetching: {thumbnail_time:.2f}s)")
+    print(f"Total execution time: {total_time:.2f} seconds")

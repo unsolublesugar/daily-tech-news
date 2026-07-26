@@ -2,13 +2,18 @@
 アーカイブ生成機能を統合管理するモジュール
 """
 import os
+import re
 from pathlib import Path
 from datetime import datetime
 from typing import Dict, List, Any, Optional, Tuple
 from dataclasses import dataclass
 
-from config import SiteConfig, PathConfig, DEFAULT_SITE_CONFIG, DEFAULT_PATH_CONFIG
+from config import (
+    SiteConfig, PathConfig, DEFAULT_SITE_CONFIG, DEFAULT_PATH_CONFIG,
+    is_article_feed, is_book_feed, is_event_feed, get_media_short_name
+)
 from templates import TemplateManager, ContentStructure
+from templates.template_manager import JST, WEEKDAY_JA
 
 
 @dataclass
@@ -39,118 +44,300 @@ class ArchiveGenerator:
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
     
-    def _process_entries(self, all_entries: Dict[str, List[Any]], 
-                        thumbnails: Dict[str, str] = None) -> str:
-        """エントリを処理してHTML文字列を生成"""
-        html_content = ""
-        
-        for feed_name, entries in all_entries.items():
-            html_content += f"    <h2>{feed_name}</h2>\n"
-            
-            if not entries:
-                html_content += "    <p>記事を取得できませんでした。</p>\n"
+    # ---------------------------------------------------------------
+    # 記事タブ
+    # ---------------------------------------------------------------
+
+    def _article_feeds(self, all_entries: Dict[str, List[Any]]) -> List[str]:
+        """記事タブに出すフィード名を、エントリのあるものだけ元の順序で返す"""
+        return [name for name, entries in all_entries.items()
+                if is_article_feed(name) and entries]
+
+    def select_highlights(self, all_entries: Dict[str, List[Any]],
+                          mention_counts: Dict[str, int] = None,
+                          limit: int = 3,
+                          now: datetime = None) -> List[Dict[str, Any]]:
+        """今日のハイライトを選定する
+
+        複数フィードに重複出現した記事を優先し、足りない分は新着上位で埋める。
+        重複回数は fetch 側で（フィード間の重複除去を行う前に）数えたものを受け取る。
+        """
+        mention_counts = mention_counts or {}
+        now = now or datetime.now(JST)
+        tm = self.template_manager
+
+        candidates = []
+        for feed_name in self._article_feeds(all_entries):
+            for entry in all_entries[feed_name]:
+                published = tm.get_entry_datetime(entry)
+                candidates.append({
+                    'title': entry.title,
+                    'link': entry.link,
+                    'feed_name': feed_name,
+                    'published': published,
+                    'mentions': mention_counts.get(entry.link, 1),
+                })
+
+        if not candidates:
+            return []
+
+        def sort_key(item):
+            # 言及メディア数が多い順 → 新しい順
+            timestamp = item['published'].timestamp() if item['published'] else 0
+            return (-item['mentions'], -timestamp)
+
+        candidates.sort(key=sort_key)
+
+        highlights = []
+        for item in candidates[:limit]:
+            if item['mentions'] > 1:
+                mention_label = f"他{item['mentions'] - 1}メディアで言及"
             else:
-                for entry in entries:
-                    thumbnail_url = thumbnails.get(entry.link) if thumbnails else None
-                    card_html = self.template_manager.render_card(entry, feed_name, thumbnail_url)
-                    html_content += card_html + "\n"
-        
+                mention_label = '新着'
+
+            meta_parts = [get_media_short_name(item['feed_name']), mention_label]
+            time_label = tm.format_time_label(item['published'], now)
+            if time_label:
+                meta_parts.append(time_label)
+
+            highlights.append({
+                'title': item['title'],
+                'link': item['link'],
+                'meta': ' ・ '.join(meta_parts),
+            })
+
+        return highlights
+
+    def build_articles_tab(self, all_entries: Dict[str, List[Any]],
+                           mention_counts: Dict[str, int] = None,
+                           now: datetime = None) -> str:
+        """記事タブ（メディア目次＋ハイライト＋メディアごと3件固定）を生成"""
+        tm = self.template_manager
+        now = now or datetime.now(JST)
+        display_count = self.site_config.DISPLAY_PER_MEDIA
+
+        feed_names = self._article_feeds(all_entries)
+        if not feed_names:
+            return '            <p class="empty-note">記事を取得できませんでした。</p>\n'
+
+        html_content = tm.render_media_toc(feed_names)
+        html_content += tm.render_highlights(
+            self.select_highlights(all_entries, mention_counts, now=now)
+        )
+
+        for feed_name in feed_names:
+            rows = ''
+            for entry in all_entries[feed_name][:display_count]:
+                rows += tm.render_article_row(entry, feed_name, now)
+            html_content += tm.render_media_section(feed_name, rows)
+
         return html_content
-    
+
+    # ---------------------------------------------------------------
+    # イベントタブ
+    # ---------------------------------------------------------------
+
+    @staticmethod
+    def _shorten_place(place: str) -> str:
+        """開催場所の表記を短くする（郵便番号を落として市区町村まで）"""
+        if not place:
+            return ''
+
+        place = re.sub(r'〒\s*\d{3}-?\d{4}\s*', '', place).strip()
+        if not place:
+            return ''
+
+        # 「東京都豊島区」まで（都道府県が入っている住所）
+        match = re.search(r'((?:東京都|北海道|(?:京都|大阪)府|\S{2,3}県).*?[市区町村])', place)
+        if match:
+            return match.group(1)
+
+        # 都道府県のない住所は先頭の市区町村まで
+        match = re.match(r'(\S{1,5}?[市区町村])', place)
+        if match:
+            return match.group(1)
+
+        return place if len(place) <= 20 else place[:20] + '…'
+
+    def parse_event_schedule(self, entry: Any, feed_name: str) -> Dict[str, Any]:
+        """イベントエントリから開催日時と場所を取り出す
+
+        TECH PLAY は独自要素（tp_eventstarttime 等）、
+        connpass は summary 冒頭の「開催日時: / 開催場所:」から取得する。
+        どちらも取れない場合は start=None（＝「日付不明」グループ行き）。
+        """
+        start = None
+        place = ''
+
+        # TECH PLAY: <tp:eventStartTime> 等の独自要素
+        start_time = getattr(entry, 'tp_eventstarttime', '') or ''
+        event_date = getattr(entry, 'tp_eventdate', '') or ''
+        for value, fmt in ((start_time, '%Y-%m-%d %H:%M:%S'), (event_date, '%Y-%m-%d')):
+            if value:
+                try:
+                    start = datetime.strptime(value.strip(), fmt).replace(tzinfo=JST)
+                    break
+                except ValueError:
+                    continue
+
+        place = (getattr(entry, 'tp_eventplace', '') or
+                 getattr(entry, 'tp_eventaddress', '') or '')
+
+        # connpass: summary 冒頭の定型文
+        if start is None or not place:
+            summary = getattr(entry, 'summary', '') or getattr(entry, 'description', '') or ''
+            summary = re.sub(r'<[^>]+>', ' ', str(summary))
+
+            if start is None:
+                match = re.search(r'開催日時:\s*(\d{4})/(\d{1,2})/(\d{1,2})(?:\s+(\d{1,2}):(\d{2}))?',
+                                  summary)
+                if match:
+                    year, month, day = (int(match.group(i)) for i in (1, 2, 3))
+                    hour = int(match.group(4)) if match.group(4) else 0
+                    minute = int(match.group(5)) if match.group(5) else 0
+                    has_time = match.group(4) is not None
+                    try:
+                        start = datetime(year, month, day, hour, minute, tzinfo=JST)
+                        if not has_time:
+                            start = start.replace(hour=0, minute=0)
+                    except ValueError:
+                        start = None
+
+            if not place:
+                match = re.search(r'開催場所:\s*([^\n]*?)(?:\s{2,}|$)', summary)
+                if match:
+                    place = match.group(1).strip()
+
+        return {'start': start, 'place': self._shorten_place(place)}
+
+    def build_events_tab(self, all_entries: Dict[str, List[Any]],
+                         now: datetime = None) -> str:
+        """イベントタブ（開催日で日付グルーピング）を生成
+
+        現行のメディア別ベタ置きをやめ、connpass / TECH PLAY を混ぜて
+        開催が近い順に日付ごとへまとめる。
+        """
+        now = now or datetime.now(JST)
+        today = now.date()
+
+        dated: Dict[Any, List[Dict[str, Any]]] = {}
+        undated: List[Dict[str, Any]] = []
+
+        for feed_name, entries in all_entries.items():
+            if not is_event_feed(feed_name):
+                continue
+
+            for entry in entries:
+                schedule = self.parse_event_schedule(entry, feed_name)
+                start = schedule['start']
+
+                meta_parts = [get_media_short_name(feed_name)]
+                if schedule['place']:
+                    meta_parts.append(schedule['place'])
+
+                item = {
+                    'title': entry.title,
+                    'link': entry.link,
+                    'meta': ' ・ '.join(meta_parts),
+                    'time_label': '',
+                    'sort_key': start,
+                }
+
+                if start is None:
+                    undated.append(item)
+                    continue
+
+                # すでに終わった日のイベントは出さない
+                if start.date() < today:
+                    continue
+
+                if start.hour or start.minute:
+                    item['time_label'] = f"{start.hour}:{start.minute:02d}"
+                dated.setdefault(start.date(), []).append(item)
+
+        groups = []
+        for event_date in sorted(dated.keys()):
+            items = sorted(dated[event_date],
+                           key=lambda item: item['sort_key'] or datetime.max.replace(tzinfo=JST))
+            groups.append({
+                'label': f"{event_date.month}/{event_date.day} ({WEEKDAY_JA[event_date.weekday()]})",
+                'items': items,
+            })
+
+        if undated:
+            groups.append({'label': '日付不明', 'items': undated})
+
+        return self.template_manager.render_event_groups(groups)
+
+    # ---------------------------------------------------------------
+    # 書籍タブ
+    # ---------------------------------------------------------------
+
+    def build_books_tab(self, all_entries: Dict[str, List[Any]]) -> str:
+        """書籍タブ（O'Reilly Japan 近刊）を生成"""
+        tm = self.template_manager
+        books = []
+
+        for feed_name, entries in all_entries.items():
+            if not is_book_feed(feed_name):
+                continue
+
+            for entry in entries:
+                published = tm.get_entry_datetime(entry)
+                meta = f"{published.month}/{published.day} 発売" if published else ''
+                books.append({
+                    'title': entry.title,
+                    'link': entry.link,
+                    'meta': meta,
+                    'sort_key': published,
+                })
+
+        # 発売日が近いものから
+        books.sort(key=lambda book: book['sort_key'] or datetime.max.replace(tzinfo=JST))
+
+        return tm.render_books(books)
+
+    # ---------------------------------------------------------------
+    # ページ生成
+    # ---------------------------------------------------------------
+
+    def build_page(self, all_entries: Dict[str, List[Any]], date_obj: datetime,
+                   mention_counts: Dict[str, int] = None,
+                   is_archive: bool = False, depth: int = 3,
+                   now: datetime = None) -> str:
+        """記事／イベント／書籍の3タブを持つページ全体を生成"""
+        now = now or datetime.now(JST)
+        date_str = date_obj.strftime('%Y-%m-%d')
+        title = f"今日のテックニュース ({date_str})"
+
+        return self.content_structure.build_html_page(
+            title=title,
+            date_obj=date_obj,
+            articles_html=self.build_articles_tab(all_entries, mention_counts, now),
+            events_html=self.build_events_tab(all_entries, now),
+            books_html=self.build_books_tab(all_entries),
+            is_archive=is_archive,
+            depth=depth
+        )
+
     def _process_entries_markdown(self, all_entries: Dict[str, List[Any]]) -> str:
         """エントリを処理してMarkdown文字列を生成"""
         markdown_content = ""
-        
+
         for feed_name, entries in all_entries.items():
             markdown_content += f"## {feed_name}\n\n"
-            
+
             if not entries:
                 markdown_content += "記事を取得できませんでした。\n"
             else:
                 for entry in entries:
                     entry_markdown = self.template_manager.render_markdown_entry(entry)
                     markdown_content += entry_markdown + "\n"
-            
+
             markdown_content += "\n\n---\n"
-        
+
         return markdown_content
-    
-    def generate_daily_archive(self, all_entries: Dict[str, List[Any]], 
-                              date_obj: datetime,
-                              thumbnails: Dict[str, str] = None) -> Tuple[str, str]:
-        """日次アーカイブ（HTML・Markdown）を生成"""
-        date_str = date_obj.strftime('%Y-%m-%d')  # T00:00:00を除去
-        title = self.site_config.get_site_title(date_str)
-        
-        # HTML生成
-        entries_html = self._process_entries(all_entries, thumbnails)
-        html_content = self.content_structure.build_html_page(
-            title, date_str, entries_html, is_archive=True
-        )
-        
-        # Markdown生成
-        entries_markdown = self._process_entries_markdown(all_entries)
-        markdown_content = self.content_structure.build_markdown_page(
-            title, date_str, entries_markdown, is_archive=True
-        )
-        
-        return html_content, markdown_content
-    
-    def save_daily_archive(self, all_entries: Dict[str, List[Any]], 
-                          feed_info: Dict[str, Dict], date_obj: datetime,
-                          thumbnails: Dict[str, str] = None) -> Tuple[str, str]:
-        """日次アーカイブを生成してファイルに保存"""
-        year = date_obj.year
-        month = date_obj.month
-        day = date_obj.day
-        
-        # コンテンツ生成
-        html_content, markdown_content = self.generate_daily_archive(
-            all_entries, feed_info, date_obj, thumbnails
-        )
-        
-        # ファイルパス生成
-        html_path = self.path_config.get_archive_file_path(year, month, day, "html")
-        md_path = self.path_config.get_archive_file_path(year, month, day, "md")
-        
-        # ファイル保存
-        self._save_content(html_content, html_path)
-        self._save_content(markdown_content, md_path)
-        
-        print(f"Archive saved: {html_path}, {md_path}")
-        return html_path, md_path
-    
-    def generate_main_page(self, all_entries: Dict[str, List[Any]], 
-                          feed_info: Dict[str, Dict], date_str: str,
-                          thumbnails: Dict[str, str] = None) -> Tuple[str, str]:
-        """メインページ（HTML・Markdown）を生成"""
-        title = self.site_config.get_site_title(date_str)
-        
-        # HTML生成
-        entries_html = self._process_entries(all_entries, feed_info, thumbnails)
-        
-        # メインページ用のRSS情報を追加
-        rss_info = '''
-    <div class="rss-info">
-        <strong>📡 RSS配信について</strong><br>
-        このサイトでは RSS フィードを配信しています。お好みのRSSリーダーに登録してご利用ください。<br>
-        <a href="rss.xml" target="_blank" rel="noopener">RSS フィード</a>
-    </div>
-'''
-        entries_html += rss_info
-        
-        html_content = self.content_structure.build_html_page(
-            title, date_str, entries_html, is_archive=False
-        )
-        
-        # Markdown生成
-        entries_markdown = self._process_entries_markdown(all_entries, feed_info)
-        markdown_content = self.content_structure.build_markdown_page(
-            title, date_str, entries_markdown, is_archive=False
-        )
-        
-        return html_content, markdown_content
-    
+
     def convert_markdown_to_html(self, markdown_path: str, target_html_path: str = None) -> str:
         """既存のMarkdownファイルをHTMLに変換（完全版）"""
         if not os.path.exists(markdown_path):
