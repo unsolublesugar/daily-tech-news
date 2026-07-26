@@ -5,6 +5,7 @@ import html
 import os
 import re
 import hashlib
+from calendar import monthrange
 from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Any, Optional, Tuple
 from config import SiteConfig, PathConfig
@@ -17,6 +18,9 @@ _PLACEHOLDER_PATTERN = re.compile(r'\{\{(\w+)\}\}')
 
 # 曜日の日本語表記（月曜=0）
 WEEKDAY_JA = ['月', '火', '水', '木', '金', '土', '日']
+
+# カレンダーの曜日ヘッダー（日曜始まり）
+CALENDAR_WEEKDAY_JA = ['日', '月', '火', '水', '木', '金', '土']
 
 
 class TemplateManager:
@@ -554,6 +558,125 @@ class TemplateManager:
         title = entry.title
         link = entry.link
         return f"- [{title}]({link})"
+
+    # ---------------------------------------------------------------
+    # アーカイブ索引（年月タブ＋カレンダー）
+    # ---------------------------------------------------------------
+
+    def get_archive_index_header_html(self, total_days: int, month_tabs_html: str) -> str:
+        """アーカイブ索引ページのヘッダー（戻る・総数・年月タブ）を生成"""
+        back_link = f"{self.get_asset_prefix(True, 1)}index.html"
+        template = self.load_template('archive_header.html')
+        return self.render_template(
+            template,
+            back_link=back_link,
+            total_days=total_days,
+            month_tabs=month_tabs_html
+        )
+
+    def render_month_tabs(self, months: List[Tuple[int, int]]) -> str:
+        """年月タブをレンダリング（先頭タブと年が変わったタブのみ年を表示）"""
+        buttons = []
+        prev_year = None
+        for index, (year, month) in enumerate(months):
+            month_key = f"{year}-{month:02d}"
+            label = f"{year}年{month}月" if year != prev_year else f"{month}月"
+            prev_year = year
+            active_class = ' is-active' if index == 0 else ''
+            buttons.append(
+                f'        <button type="button" class="month-tab{active_class}" data-month="{month_key}">{label}</button>'
+            )
+        return '\n'.join(buttons)
+
+    def render_calendar(self, year: int, month: int, day_by_number: Dict[int, Dict[str, Any]],
+                        latest_date: str) -> str:
+        """指定した年月のカレンダーグリッドをレンダリング"""
+        first_weekday, days_in_month = monthrange(year, month)
+        # Python の monthrange は月曜=0。日曜始まりのオフセットに変換する
+        leading_empty = (first_weekday + 1) % 7
+
+        weekday_headers = ''.join(f'<span>{label}</span>' for label in CALENDAR_WEEKDAY_JA)
+
+        cells = ['<span class="calendar-day is-empty"></span>' for _ in range(leading_empty)]
+        for day in range(1, days_in_month + 1):
+            date_str = f"{year}-{month:02d}-{day:02d}"
+            day_info = day_by_number.get(day)
+            if day_info is None:
+                cells.append(f'<span class="calendar-day">{day}</span>')
+                continue
+
+            is_latest = ' is-latest' if date_str == latest_date else ''
+            href = f"{year}/{month:02d}/{date_str}.html"
+            cells.append(f'<a class="calendar-day{is_latest}" href="{href}">{day}</a>')
+
+        return (
+            '            <div class="calendar">\n'
+            f'                <div class="calendar-weekdays">{weekday_headers}</div>\n'
+            f'                <div class="calendar-grid">{"".join(cells)}</div>\n'
+            '                <div class="calendar-legend">\n'
+            '                    <span><span class="legend-swatch has"></span>記事あり</span>\n'
+            '                    <span><span class="legend-swatch latest"></span>最新</span>\n'
+            '                </div>\n'
+            '            </div>\n'
+        )
+
+    def render_archive_day_list(self, year: int, month: int, days: List[Dict[str, Any]]) -> str:
+        """指定した年月の日付一覧（見出し・件数・カテゴリ付き）をレンダリング"""
+        rows = ''
+        for day in days:
+            date_str = day['date']
+            date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+            day_num = date_obj.day
+            weekday_label = WEEKDAY_JA[date_obj.weekday()]
+
+            headline = day.get('headline') or '概要なし'
+            categories = day.get('top_categories') or []
+            meta = f"{day.get('count', 0)}本"
+            if categories:
+                meta += f" ・ {' / '.join(categories)} が多め"
+
+            href = f"{year}/{month:02d}/{date_str}.html"
+            rows += (
+                '                <a class="archive-day" href="{href}">\n'
+                '                    <span class="archive-day-date">\n'
+                '                        <span class="archive-day-num">{day_num}</span>\n'
+                '                        <span class="archive-day-dow">{dow}</span>\n'
+                '                    </span>\n'
+                '                    <span class="archive-day-body">\n'
+                '                        <span class="archive-day-headline">{headline}</span>\n'
+                '                        <span class="archive-day-meta">{meta}</span>\n'
+                '                    </span>\n'
+                '                </a>\n'
+            ).format(
+                href=href,
+                day_num=day_num,
+                dow=weekday_label,
+                headline=self.escape(headline),
+                meta=self.escape(meta)
+            )
+
+        return (
+            '            <div class="archive-list">\n'
+            f'                <div class="archive-list-head">{year}年{month}月の一覧</div>\n'
+            f'{rows}'
+            '            </div>\n'
+        )
+
+    def render_month_panel(self, year: int, month: int, days: List[Dict[str, Any]],
+                           latest_date: str, is_active: bool = False) -> str:
+        """カレンダーと日付一覧をまとめた月パネルをレンダリング"""
+        day_by_number = {int(day['date'].split('-')[2]): day for day in days}
+        calendar_html = self.render_calendar(year, month, day_by_number, latest_date)
+        list_html = self.render_archive_day_list(year, month, days)
+        hidden_attr = '' if is_active else ' hidden'
+        month_key = f"{year}-{month:02d}"
+
+        return (
+            f'        <div class="month-panel" data-month="{month_key}"{hidden_attr}>\n'
+            f'{calendar_html}'
+            f'{list_html}'
+            '        </div>\n'
+        )
 
 
 class ContentStructure:
