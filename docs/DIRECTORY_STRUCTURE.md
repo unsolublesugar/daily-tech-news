@@ -43,7 +43,6 @@ daily-tech-news/
 ├── index.html                    # カード表示版（自動生成）
 ├── rss.xml                       # RSSフィード（自動生成）
 ├── requirements.txt              # 依存関係
-├── CHANGELOG.md                   # 変更履歴
 └── README.md                     # プロジェクト概要
 ```
 
@@ -87,4 +86,4 @@ python3 daily_tech_news.py
 
 ## 変更履歴
 
-過去の大きな変更は[CHANGELOG.md](../CHANGELOG.md)を参照。
+大きめの変更は[GitHub Releases](https://github.com/unsolublesugar/daily-tech-news/releases)としてタグ付け・記録する。個別の変更内容はそちらを参照。
