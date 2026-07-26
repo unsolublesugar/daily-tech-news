@@ -4,807 +4,811 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>今日のテックニュース (2025-07-11)</title>
-    
+
     <!-- OGP Tags -->
     <meta property="og:title" content="今日のテックニュース (2025-07-11)">
-    <meta property="og:description" content="日本の主要な技術系メディアの最新人気エントリーを毎日お届けします。">
+    <meta property="og:description" content="忙しいエンジニアのために。毎日サクッとキャッチアップ。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/">
+    <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/archives/2025/07/2025-07-11.html">
     <meta property="og:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
     <meta property="og:site_name" content="今日のテックニュース">
-    
+
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@unsoluble_sugar">
-    
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-        .card {
-            border: 1px solid #e1e5e9;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 8px;
-            background-color: #f8f9fa;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: box-shadow 0.2s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-        .card:hover {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-        .card-content {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-        .card-image {
-            border-radius: 6px;
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-        .card-text {
-            flex: 1;
-        }
-        .card-title {
-            margin: 0 0 8px 0;
-            font-size: 16px;
-            line-height: 1.4;
-            color: #0969da;
-            font-weight: 600;
-        }
-        .card-source {
-            margin: 0;
-            font-size: 12px;
-            color: #656d76;
-        }
-        h1, h2 {
-            color: #1f2328;
-        }
-        .rss-info {
-            background: #f6f8fa;
-            padding: 16px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-        .footer {
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid #e1e5e9;
-            text-align: center;
-            font-size: 14px;
-            color: #656d76;
-        }
-        .footer a {
-            color: #0969da;
-            text-decoration: none;
-        }
-        .footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <meta name="twitter:creator" content="@unsoluble_sugar">
+    <meta name="twitter:title" content="今日のテックニュース (2025-07-11)">
+    <meta name="twitter:description" content="忙しいエンジニアのために。毎日サクッとキャッチアップ。">
+    <meta name="twitter:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../../../assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="../../../assets/favicons/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+
+    <!-- 初期描画前にテーマを適用してちらつきを防ぐ -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('tech-news-theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { /* localStorage 不可の環境では何もしない */ }
+        })();
+    </script>
 </head>
 <body>
-    <h1>今日のテックニュース (2025-07-11)</h1>
-    
-    <p>📚 <a href="../../index.html">過去のニュースを見る</a> | 📡 <a href="https://unsolublesugar.github.io/daily-tech-news/rss.xml">RSSフィードを購読</a></p>
-    
-    <p>日本の主要な技術系メディアの最新人気エントリーをお届けします。</p>
-    
-    <div class="rss-info">
-        <p>毎日JST 7:00に自動更新</p>
+<div class="app">
+<header class="app-header">
+    <div class="app-header-top">
+        <div class="app-brand"><a class="icon-btn" href="../../../index.html" aria-label="メインページへ戻る" title="メインページへ戻る">←</a><span class="site-name">今日のテックニュース</span><span class="site-date">7/11 (金)</span></div>
+        <div class="app-header-actions">
+            <button type="button" id="filter-open" class="pill-btn">絞り込み<span class="filter-count" id="filter-count" hidden></span></button>
+            <button type="button" id="theme-toggle" class="icon-btn" aria-label="テーマを切り替える" title="テーマを切り替える"><span id="theme-icon">🌙</span></button>
+        </div>
     </div>
-    
-    <hr>
-    <h2>💻 Tech Blog Weekly</h2>
-    <a href="https://zenn.dev/levtech/articles/db-tech-showcase-2025-report" class="card">
-        <div class="card-content">
-            <img src="https://res.cloudinary.com/zenn/image/upload/s--PrZpSGHt--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:DB%2520Tech%2520Showcase%25202025%25EF%25BC%2588%25EF%25BC%2591%25E6%2597%25A5%25E7%259B%25AE%25EF%25BC%2589%25E3%2581%25AB%25E5%258F%2582%25E5%258A%25A0%25E3%2581%2597%25E3%2581%25A6%25E3%2581%258D%25E3%2581%259F%25E3%2582%2588%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:%25E3%2582%2582%25E3%2582%258A%25E3%2581%259F%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzY1YzcxZDY5NDkuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/g_south_west%2Ch_34%2Cl_default:og-publication-pro-mark-xcosax%2Cw_34%2Cx_217%2Cy_158/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:%25E3%2583%25AC%25E3%2583%2590%25E3%2583%2586%25E3%2583%2583%25E3%2582%25AF%25E9%2596%258B%25E7%2599%25BA%25E9%2583%25A8%2Cx_255%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSmduNmRjWi1heEt6c1JkLXQ4UmxGcmRJMi1VV0tnTUpiamZISmQ5T0hqdmI4PXM5Ni1j%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="DB Tech Showcase 2025（１日目）に参加してきたよ | レバテック開発部のフィード" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">DB Tech Showcase 2025（１日目）に参加してきたよ | レバテック開発部のフィード</h4>
-                <p class="card-source">Tech Blog Weekly</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://link-and-motivation.hatenablog.com/entry/2025/07/10/215341" class="card">
-        <div class="card-content">
-            <img src="https://cdn.image.st-hatena.com/image/scale/02968f54305ae969657032700989ec598b32615c/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fy%2Fyoh-tsujii%2F20250710%2F20250710212835.jpg" width="120" height="90" alt="プロダクトの成長を支える、&quot;越境するSRE&quot;の挑戦 | Link and Motivation Developers' Blog" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">プロダクトの成長を支える、"越境するSRE"の挑戦 | Link and Motivation Developers' Blog</h4>
-                <p class="card-source">Tech Blog Weekly</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://techblog.ap-com.co.jp/entry/2025/07/10/194332" class="card">
-        <div class="card-content">
-            <img src="https://cdn.image.st-hatena.com/image/scale/09b27079b13de313a4f668ab5cedaf9c0ff4980b/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fm%2Fmasuchoku%2F20250710%2F20250710194118.png" width="120" height="90" alt="AWS Summit 2025  の見どころを簡単に振り返る！ | APC 技術ブログ" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">AWS Summit 2025  の見どころを簡単に振り返る！ | APC 技術ブログ</h4>
-                <p class="card-source">Tech Blog Weekly</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://note.shiftinc.jp/n/n3ba36544e149" class="card">
-        <div class="card-content">
-            <img src="https://assets.st-note.com/production/uploads/images/199261780/rectangle_large_type_2_c8db304741e371b5919b9f9774beb9c7.png?fit=bounds&quality=85&width=1280" width="120" height="90" alt="脱エクセル！Kintone導入で業務効率化を目指すときにハマりやすい落とし穴！４選 | SHIFT Group 技術ブログ" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">脱エクセル！Kintone導入で業務効率化を目指すときにハマりやすい落とし穴！４選 | SHIFT Group 技術ブログ</h4>
-                <p class="card-source">Tech Blog Weekly</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://tech.layerx.co.jp/entry/2025/07/10/182935" class="card">
-        <div class="card-content">
-            <img src="https://cdn.image.st-hatena.com/image/scale/6a065ebabf1230659868c86073e540bc104f00d9/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fk%2Fkani_b%2F20250710%2F20250710182236.jpg" width="120" height="90" alt="自分の所属する会社が AWS Summit Japan の基調講演に出演するのを見るのはめっちゃ楽しかった | LayerX エンジニアブログ" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">自分の所属する会社が AWS Summit Japan の基調講演に出演するのを見るのはめっちゃ楽しかった | LayerX エンジニアブログ</h4>
-                <p class="card-source">Tech Blog Weekly</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://zenn.dev/favicon.ico" width="16" height="16" alt="Zenn"> Zenn</h2>
-    <a href="https://zenn.dev/schroneko/articles/grok-4-overview-and-review" class="card">
-        <div class="card-content">
-            <img src="https://res.cloudinary.com/zenn/image/upload/s--Ocm5Txmn--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Grok%25204%2520%25E3%2581%25AE%25E7%2599%25BA%25E8%25A1%25A8%25E3%2581%25BE%25E3%2581%25A8%25E3%2582%2581%25EF%25BC%2586%25E8%25A9%25A6%25E3%2581%2597%25E3%2581%25A6%25E3%2581%25BF%25E3%2581%259F%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2581%25AC%25E3%2581%2593%25E3%2581%25AC%25E3%2581%2593%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzE4ZDE4NWExYTYuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="Grok 4 の発表まとめ＆試してみた" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Grok 4 の発表まとめ＆試してみた</h4>
-                <p class="card-source">Zenn</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://zenn.dev/sesere/articles/e3d5695e0a7d14" class="card">
-        <div class="card-content">
-            <img src="https://res.cloudinary.com/zenn/image/upload/s--gtpkHpRR--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:claude%2520code%25E3%2581%25ABNG%2520Word%25E9%259B%2586%25E3%2582%2592%25E8%25A8%25AD%25E5%25AE%259A%25E3%2581%2599%25E3%2582%258C%25E3%2581%25B0%25E3%2582%25AD%25E3%2583%25AC%25E3%2581%25AA%25E3%2581%258F%25E3%2581%25A6%25E3%2581%2599%25E3%2582%2580%25E3%2581%25AE%25E3%2581%25A7%25E3%2581%259D%25E3%2581%25AE%25E3%2582%2584%25E3%2582%258A%25E6%2596%25B9%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:sesere%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzg4NjY3ZDcwMjMuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="claude codeにNG Word集を設定すればキレなくてすむのでそのやり方" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">claude codeにNG Word集を設定すればキレなくてすむのでそのやり方</h4>
-                <p class="card-source">Zenn</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://zenn.dev/tommy109/articles/08e42e1a30b494" class="card">
-        <div class="card-content">
-            <img src="https://res.cloudinary.com/zenn/image/upload/s--EGowpjas--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:LLM%2520%25E3%2583%2597%25E3%2583%25AD%25E3%2582%25B0%25E3%2583%25A9%25E3%2583%259F%25E3%2583%25B3%25E3%2582%25B0%25E3%2581%25AE%25E3%2582%25B3%25E3%2583%2584%2520%25282025%25E5%25B9%25B407%25E6%259C%2588%25E7%2589%2588%2529%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:Tommy109%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2p0YXBfaElMMlhKLU1fblk1Q2VZRnlhcnpQcVpjU2hKMmF4bVl2PXM5Ni1j%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="LLM プログラミングのコツ (2025年07月版)" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">LLM プログラミングのコツ (2025年07月版)</h4>
-                <p class="card-source">Zenn</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://zenn.dev/yamachu/articles/f3912ea418f530" class="card">
-        <div class="card-content">
-            <img src="https://res.cloudinary.com/zenn/image/upload/s--MknCQ3nE--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:C%2523%25E3%2581%25A7%25E3%2582%2582aviutl2%25E3%2581%25AE%25E3%2583%2597%25E3%2583%25A9%25E3%2582%25B0%25E3%2582%25A4%25E3%2583%25B3%25E3%2581%258C%25E4%25BD%259C%25E3%2582%258C%25E3%2582%258B%25EF%25BC%2581Native%2520AOT%25E3%2582%2592%25E6%25B7%25BB%25E3%2581%2588%25E3%2581%25A6%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2581%25A1%25E3%2582%2585%25E3%2581%2586%25E3%2581%2593%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzk4Mzk1ZDNhMzUuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="C#でもaviutl2のプラグインが作れる！Native AOTを添えて" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">C#でもaviutl2のプラグインが作れる！Native AOTを添えて</h4>
-                <p class="card-source">Zenn</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://zenn.dev/yoshiko/articles/difit-from-reviewit" class="card">
-        <div class="card-content">
-            <img src="https://res.cloudinary.com/zenn/image/upload/s--nZDkYGnm--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:Git%2520diff%25E9%2596%25B2%25E8%25A6%25A7%25E3%2583%2584%25E3%2583%25BC%25E3%2583%25AB%25E3%2580%258CReviewIt%25E3%2580%258D%25E3%2581%258C%25E3%2580%258Cdifit%25E3%2580%258D%25E3%2581%25AB%25E5%25A4%2589%25E3%2582%258F%25E3%2582%258A%25E3%2581%25BE%25E3%2581%2599%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:%25E3%2582%2588%25E3%2581%2597%25E3%2581%2593%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2kwU3JDUjBpVERyUHpqWnF4YjJLZ0tueHgtamE0N253SEE0NGE4RDhrPXMyNTAtYw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png" width="120" height="90" alt="Git diff閲覧ツール「ReviewIt」が「difit」に変わります" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Git diff閲覧ツール「ReviewIt」が「difit」に変わります</h4>
-                <p class="card-source">Zenn</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://cdn.qiita.com/assets/favicons/public/production-c620d3e403342b1022967ba5e3db1aaa.ico" width="16" height="16" alt="Qiita"> Qiita</h2>
-    <a href="https://qiita.com/takuya77088/items/44a145c9eb3e45383efb?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items" class="card">
-        <div class="card-content">
-            <img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Ftech-festa-ogp-background-4b5015b2c518c7e6b9062a7c9f5f5e90.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkYzODc3MTI0JTJGNjgwMjI3YTM1YzdmYTI4NmJjNzhmZjlmNWEzZjU1YTAzZmUzNjJlNCUyRmxhcmdlLnBuZyUzRjE3MzQ1OTAzMzA_aXhsaWI9cmItNC4wLjAmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmJnPUZGRkZGRiZmbT1wbmczMiZzPTg0YTcwMWYwZWIyMmY0OWZhM2NlZGY0Yzk0MjM1NmQ2%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D9f959785be1239ded05c8b125cd1843b?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9QUklRTYlOTklODIlRTQlQkIlQTMlRTMlODElQUUlRTMlODIlQjMlRTMlODMlQkMlRTMlODMlODclRTMlODIlQTMlRTMlODMlQjMlRTMlODIlQjAlRTMlODIlOTIlRTUlOEElQTAlRTklODAlOUYlRUYlQkMlODEyMDI1JUU1JUI5JUI0JUUzJTgxJThBJUUzJTgxJTk5JUUzJTgxJTk5JUUzJTgyJTgxJUUzJTgzJTk3JUUzJTgzJUFEJUUzJTgyJUIwJUUzJTgzJUE5JUUzJTgzJTlFJUUzJTgzJUJDJUUzJTgzJTg0JUUzJTgzJUJDJUUzJTgzJUFCVG9wMTAmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyM0ZGRkZGRiZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz0wYjUxOGQzMDVjMGQwZWZmMjIxODRlNzI0OThmMGJhZA&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDB0YWt1eWE3NzA4OCZ0eHQtY29sb3I9JTIzRkZGRkZGJnR4dC1mb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC1zaXplPTM2JnR4dC1wYWQ9MCZzPTU4NGIwMjIzMzEyYmRjZDJjMjBiMTExYTk5YmNkYTc1&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=04485377d06a8af8521f7fedf188aef5" width="120" height="90" alt="AI時代のコーディングを加速！2025年おすすめプログラマーツールTop10" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">AI時代のコーディングを加速！2025年おすすめプログラマーツールTop10</h4>
-                <p class="card-source">Qiita</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://qiita.com/hirokiii27/items/5fa7bb3c6dd5739d987f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items" class="card">
-        <div class="card-content">
-            <div class="card-text">
-                <h4 class="card-title">いま「未経験からエンジニア」を目指す方へ伝えたいこと</h4>
-                <p class="card-source">Qiita</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://qiita.com/ren_matsubara/items/c93d32a5999febd76309?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items" class="card">
-        <div class="card-content">
-            <div class="card-text">
-                <h4 class="card-title">「使えるReact」はこうして身につけた - レアゾン・ホールディングス 2025新卒エンジニアReact研修</h4>
-                <p class="card-source">Qiita</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://qiita.com/ssc-dninomiya/items/d5f5e8eac0ddc915ba46?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items" class="card">
-        <div class="card-content">
-            <div class="card-text">
-                <h4 class="card-title">JavaScriptのforEachでawaitが効かない理由</h4>
-                <p class="card-source">Qiita</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://qiita.com/k_adachi_01/items/ccfbf6952d7ee252bfb0?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items" class="card">
-        <div class="card-content">
-            <div class="card-text">
-                <h4 class="card-title">AWS構成図作成の悩みを一掃！Diagram as Codeで始める“コードで描く”インフラ設計</h4>
-                <p class="card-source">Qiita</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（人気）"> はてなブックマーク - IT（人気）</h2>
-    <a href="https://www.itmedia.co.jp/news/articles/2507/10/news115.html" class="card">
-        <div class="card-content">
-            <img src="https://image.itmedia.co.jp/news/articles/2507/10/cover_news115.png" width="120" height="90" alt="国のデータ、これ一つで丸分かり？　政府が新ダッシュボード　経済・財政・人口など都道府県ごとに可視化" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">国のデータ、これ一つで丸分かり？　政府が新ダッシュボード　経済・財政・人口など都道府県ごとに可視化</h4>
-                <p class="card-source">はてなブックマーク - IT（人気）</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.itmedia.co.jp/news/articles/2507/10/news070.html" class="card">
-        <div class="card-content">
-            <img src="https://image.itmedia.co.jp/news/articles/2507/10/cover_news070.jpg" width="120" height="90" alt="OpenAI、Webブラウザ発表へ　Chromeに対抗" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">OpenAI、Webブラウザ発表へ　Chromeに対抗</h4>
-                <p class="card-source">はてなブックマーク - IT（人気）</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://techracho.bpsinc.jp/hachi8833/2025_07_10/151922" class="card">
-        <div class="card-content">
-            <img src="https://techracho.bpsinc.jp/wp-content/uploads/2025/07/ai_optimization_02_let_him_make_sow_eyecatch.png" width="120" height="90" alt="AIパフォーマンスの最適化を学ぶ（2）「SOWを作って」は超便利な指示｜TechRacho by BPS株式会社" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">AIパフォーマンスの最適化を学ぶ（2）「SOWを作って」は超便利な指示｜TechRacho by BPS株式会社</h4>
-                <p class="card-source">はてなブックマーク - IT（人気）</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.itmedia.co.jp/aiplus/articles/2507/10/news084.html" class="card">
-        <div class="card-content">
-            <img src="https://image.itmedia.co.jp/aiplus/articles/2507/10/cover_news084.png" width="120" height="90" alt="ローカルLLM実行アプリ「LM Studio」業務利用を無料化　商用ライセンス不要に" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">ローカルLLM実行アプリ「LM Studio」業務利用を無料化　商用ライセンス不要に</h4>
-                <p class="card-source">はてなブックマーク - IT（人気）</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.itmedia.co.jp/news/articles/2507/10/news090.html" class="card">
-        <div class="card-content">
-            <img src="https://image.itmedia.co.jp/news/articles/2507/10/cover_news090.png" width="120" height="90" alt="Microsoft「助けて」　Windowsコマンド解説ページで突然のSOS　翻訳ミスか" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Microsoft「助けて」　Windowsコマンド解説ページで突然のSOS　翻訳ミスか</h4>
-                <p class="card-source">はてなブックマーク - IT（人気）</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://b.hatena.ne.jp/favicon.ico" width="16" height="16" alt="はてなブックマーク - IT（新着）"> はてなブックマーク - IT（新着）</h2>
-    <a href="https://www.bbc.com/japanese/articles/c8xv9nzvdl8o" class="card">
-        <div class="card-content">
-            <img src="https://ichef.bbci.co.uk/news/1024/branded_japanese/6a0a/live/e74e7530-5cda-11f0-9c4e-8937711cc91c.jpg" width="120" height="90" alt="XのヤッカリーノCEOが退任表明、AIチャットボットの反ユダヤ投稿が物議醸す中 - BBCニュース" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">XのヤッカリーノCEOが退任表明、AIチャットボットの反ユダヤ投稿が物議醸す中 - BBCニュース</h4>
-                <p class="card-source">はてなブックマーク - IT（新着）</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://note.com/mandalay/n/naf6d67cd225c" class="card">
-        <div class="card-content">
-            <img src="https://assets.st-note.com/production/uploads/images/201469319/rectangle_large_type_2_f86e68b134aea9d21ec83c17d4e59b57.png?fit=bounds&quality=85&width=1280" width="120" height="90" alt="【2025年版】無料VPSホスティングプロバイダー10選｜にゃあ" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">【2025年版】無料VPSホスティングプロバイダー10選｜にゃあ</h4>
-                <p class="card-source">はてなブックマーク - IT（新着）</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://baigie.me/nippo/2025/07/10/ai_ma/" class="card">
-        <div class="card-content">
-            <img src="https://baigie.me/nippo/wp-content/uploads/ogp/29193_69.png?20250710220217" width="120" height="90" alt="AIを使うことは、もはやマネジメントであるということ | ベイジの日報" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">AIを使うことは、もはやマネジメントであるということ | ベイジの日報</h4>
-                <p class="card-source">はてなブックマーク - IT（新着）</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.afpbb.com/articles/-/3588149" class="card">
-        <div class="card-content">
-            <img src="https://afpbb.ismcdn.jp/mwimgs/e/c/1000x/img_ece3d489a262fcef56dbf9bb076756cb80110.jpg" width="120" height="90" alt="ウクライナから機密情報持ち出しか 中国、自国民拘束に「確認中」" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">ウクライナから機密情報持ち出しか 中国、自国民拘束に「確認中」</h4>
-                <p class="card-source">はてなブックマーク - IT（新着）</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://qiita.com/bienhoa/items/e51aa1ce8b2665b3c0fb" class="card">
-        <div class="card-content">
-            <img src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkY0MTM1MzA3JTJGMTQxMmQ5ZDJkMDE5Y2EwZDIxYjQ3NjA5NjIyODBhMjYxYjY1YjIwZSUyRmxhcmdlLnBuZyUzRjE3NTIxMDY4OTA_aXhsaWI9cmItNC4wLjAmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmJnPUZGRkZGRiZmbT1wbmczMiZzPWQzOGZiZjNkN2MyZmQxY2VjMzhiYTY2MjYxZDE2NGY5%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D359923e673a06ab822464cf2ccb9d06f?ixlib=rb-4.0.0&w=1200&fm=jpg&mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9JUU1JTlCJUJEJUU3JTk0JUEzJUUzJTgxJUFFJUU3JTg0JUExJUU2JTk2JTk5VlBTJUUzJTgyJTkyJUU4JUE5JUE2JUUzJTgxJTk5JnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9ODUwZmQxOWY4OTcwOTE4ZGUxZDFjNzY2NzBkNjU1YWI&mark-x=120&mark-y=112&blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBiaWVuaG9hJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9YTY3NDhlNzBlMjVhZWI0OTYwMGE4M2Y5ZWFhOGIwMmQ&blend-x=242&blend-y=480&blend-w=838&blend-h=46&blend-fit=crop&blend-crop=left%2Cbottom&blend-mode=normal&s=617104d534b72052ab53ffd58b89e130" width="120" height="90" alt="国産の無料VPSを試す【Dify】 - Qiita" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">国産の無料VPSを試す【Dify】 - Qiita</h4>
-                <p class="card-source">はてなブックマーク - IT（新着）</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://dev.classmethod.jp/favicon.ico" width="16" height="16" alt="DevelopersIO"> DevelopersIO</h2>
-    <a href="https://dev.classmethod.jp/articles/q-dev-squid-whitelist/" class="card">
-        <div class="card-content">
-            <img src="https://dev.classmethod.jp/img/burger.svg" width="120" height="90" alt="ホワイトリストプロキシを運用している企業で Amazon Q Developer を使うために必要な許可ドメインを Squid で検証してみた" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">ホワイトリストプロキシを運用している企業で Amazon Q Developer を使うために必要な許可ドメインを Squid で検証してみた</h4>
-                <p class="card-source">DevelopersIO</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://dev.classmethod.jp/articles/shoma-detecting-leaked-secrets-in-repository-with-github-secret-scanning/" class="card">
-        <div class="card-content">
-            <img src="https://images.ctfassets.net/ct0aopd36mqt/wp-thumbnail-91eb2f9137effbf2d7ef323771b1fe2c/4e752204e0e94cf3247cfd55418398c9/github-eyecatch.png" width="120" height="90" alt="GitHubのSecret scanningでリポジトリに混入した機密情報を検出してみた" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">GitHubのSecret scanningでリポジトリに混入した機密情報を検出してみた</h4>
-                <p class="card-source">DevelopersIO</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://dev.classmethod.jp/articles/aws-waf-tenant-subdomain-ip-restriction/" class="card">
-        <div class="card-content">
-            <img src="https://dev.classmethod.jp/img/burger.svg" width="120" height="90" alt="AWS WAFで、テナント別サブドメインごとに接続元IPアドレス制限をやってみた" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">AWS WAFで、テナント別サブドメインごとに接続元IPアドレス制限をやってみた</h4>
-                <p class="card-source">DevelopersIO</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://dev.classmethod.jp/articles/claude-code-ios-app-development-ai-only/" class="card">
-        <div class="card-content">
-            <img src="https://devio2024-media.developers.io/image/upload/v1752144815/user-gen-eyecatch/woepayfviv7qcuimgncw.png" width="120" height="90" alt="Claude Code、なんもわからんのでAI縛りでiOSアプリを開発してみた" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Claude Code、なんもわからんのでAI縛りでiOSアプリを開発してみた</h4>
-                <p class="card-source">DevelopersIO</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://dev.classmethod.jp/articles/aws-cdk-cloudfront-s3-swagger-ui/" class="card">
-        <div class="card-content">
-            <img src="https://devio2024-media.developers.io/image/upload/v1752147072/user-gen-eyecatch/iic6flwwh6niq4dieobz.webp" width="120" height="90" alt="OpenAPI ドキュメントを CloudFront + S3 上でベーシック認証付きでホスティングして Swagger UI で視覚化する構成を AWS CDK で実装してみた" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">OpenAPI ドキュメントを CloudFront + S3 上でベーシック認証付きでホスティングして Swagger UI で視覚化する構成を AWS CDK で実装してみた</h4>
-                <p class="card-source">DevelopersIO</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://gihyo.jp/favicon.ico" width="16" height="16" alt="gihyo.jp"> gihyo.jp</h2>
-    <a href="https://gihyo.jp/article/2025/07/daily-linux-250710?utm_source=feed" class="card">
-        <div class="card-content">
-            <img src="https://gihyo.jp/assets/images/ICON/2025/2562_opensuse-20th-anniv.png" width="120" height="90" alt="openSUSEプロジェクト、8/9の20周年祝賀企画に向け準備中" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">openSUSEプロジェクト、8/9の20周年祝賀企画に向け準備中</h4>
-                <p class="card-source">gihyo.jp</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://gihyo.jp/article/2025/07/grok-4?utm_source=feed" class="card">
-        <div class="card-content">
-            <img src="https://gihyo.jp/assets/images/ICON/2025/2561_grok4.png" width="120" height="90" alt="xAI、Grok 4を発表 ―主要なベンチマークで競合AIベンダのフラッグシップモデルを凌駕する性能" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">xAI、Grok 4を発表 ―主要なベンチマークで競合AIベンダのフラッグシップモデルを凌駕する性能</h4>
-                <p class="card-source">gihyo.jp</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://gihyo.jp/article/2025/07/t5gemma?utm_source=feed" class="card">
-        <div class="card-content">
-            <img src="https://gihyo.jp/assets/images/ICON/2025/2558_t5gemma.png" width="120" height="90" alt="Google、Gemmaの新たなオープンモデルをリリース ―エンコーダ・デコーダモデルT5Gemmaと医療分野特化のマルチモーダルモデルMedGemma＋MedSigLip" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Google、Gemmaの新たなオープンモデルをリリース ―エンコーダ・デコーダモデルT5Gemmaと医療分野特化のマルチモーダルモデルMedGemma＋MedSigLip</h4>
-                <p class="card-source">gihyo.jp</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://gihyo.jp/article/2025/07/start-preorder-reachy-mini?utm_source=feed" class="card">
-        <div class="card-content">
-            <img src="https://gihyo.jp/assets/images/ICON/2025/2559_start-preorder-reachy-mini.png" width="120" height="90" alt="Hugging Face、AI実験ができるオープンソースロボット「Reachy Mini」プレオーダー開始" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Hugging Face、AI実験ができるオープンソースロボット「Reachy Mini」プレオーダー開始</h4>
-                <p class="card-source">gihyo.jp</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://gihyo.jp/article/2025/07/soracom-mcp-server?utm_source=feed" class="card">
-        <div class="card-content">
-            <img src="https://gihyo.jp/assets/images/article/2025/07/soracom-mcp/001.png" width="120" height="90" alt="ソラコム、MCPサーバーを提供開始へ ―IoTプラットフォームとAIの融合を目指すサービスも発表" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">ソラコム、MCPサーバーを提供開始へ ―IoTプラットフォームとAIの融合を目指すサービスも発表</h4>
-                <p class="card-source">gihyo.jp</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://www.publickey1.jp/favicon.ico" width="16" height="16" alt="Publickey"> Publickey</h2>
-    <a href="https://www.publickey1.jp/blog/25/oracle_databaseawsawsazuregoogle_cloudoracle_cloud.html" class="card">
-        <div class="card-content">
-            <img src="https://www.publickey1.jp/2025/oracledbawsga.png" width="120" height="90" alt="「Oracle Database@AWS」正式提供開始。これでAWS、Azure、Google CloudすべてでOracle Cloudインフラを用いたデータベースが利用可能に" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">「Oracle Database@AWS」正式提供開始。これでAWS、Azure、Google CloudすべてでOracle Cloudインフラを用いたデータベースが利用可能に</h4>
-                <p class="card-source">Publickey</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.publickey1.jp/blog/25/amazon_dynamodb.html" class="card">
-        <div class="card-content">
-            <img src="https://www.publickey1.jp/2025/dynamodb-multiregion-strongconsistency01.png" width="120" height="90" alt="Amazon DynamoDB、複数リージョンでも強整合性によるデータの一貫性を提供開始" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Amazon DynamoDB、複数リージョンでも強整合性によるデータの一貫性を提供開始</h4>
-                <p class="card-source">Publickey</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.publickey1.jp/blog/25/nuxtjsnuxt_labsnextjsvercel.html" class="card">
-        <div class="card-content">
-            <img src="https://www.publickey1.jp/2025/GvVqYeraYAAaCFr.jpg" width="120" height="90" alt="Nuxtの開発元NuxtLabs、Next.jsの開発元Vercelへの合流を発表" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Nuxtの開発元NuxtLabs、Next.jsの開発元Vercelへの合流を発表</h4>
-                <p class="card-source">Publickey</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.publickey1.jp/blog/25/aiai.html" class="card">
-        <div class="card-content">
-            <img src="https://www.publickey1.jp/2025/gartner-strategictrends-softwareengineering2025.png" width="120" height="90" alt="主要なソフトウェアエンジニアリングのトレンド、AIネイティブなソフトウェアエンジニアリング、生成AIプラットフォームエンジニアリングなど、ガートナーが発表" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">主要なソフトウェアエンジニアリングのトレンド、AIネイティブなソフトウェアエンジニアリング、生成AIプラットフォームエンジニアリングなど、ガートナーが発表</h4>
-                <p class="card-source">Publickey</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.publickey1.jp/blog/25/30045000google_cloud.html" class="card">
-        <div class="card-content">
-            <img src="https://www.publickey1.jp/2025/oracle-sec202506.jpg" width="120" height="90" alt="オラクルが超大型クラウド案件を獲得、年間300億ドル（約4兆5000億円）。シェアでGoogle Cloudを逆転できるか？" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">オラクルが超大型クラウド案件を獲得、年間300億ドル（約4兆5000億円）。シェアでGoogle Cloudを逆転できるか？</h4>
-                <p class="card-source">Publickey</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://codezine.jp/favicon.ico" width="16" height="16" alt="CodeZine"> CodeZine</h2>
-    <a href="http://codezine.jp/article/detail/21882" class="card">
-        <div class="card-content">
-            <img src="https://codezine.jp/static/images/article/21882/1200ogpaa.png" width="120" height="90" alt="paizaラーニング、生成AI時代に対応したプロンプトエンジニアリング入門講座を無料公開" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">paizaラーニング、生成AI時代に対応したプロンプトエンジニアリング入門講座を無料公開</h4>
-                <p class="card-source">CodeZine</p>
-            </div>
-        </div>
-    </a>
-    <a href="http://codezine.jp/article/detail/21874" class="card">
-        <div class="card-content">
-            <img src="https://codezine.jp/static/images/article/21874/1200_ogp01.png" width="120" height="90" alt="Black Forest Labs、画像生成AIの開発者向けモデル「FLUX.1 Kontext [dev]」を発表" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Black Forest Labs、画像生成AIの開発者向けモデル「FLUX.1 Kontext [dev]」を発表</h4>
-                <p class="card-source">CodeZine</p>
-            </div>
-        </div>
-    </a>
-    <a href="http://codezine.jp/article/detail/21877" class="card">
-        <div class="card-content">
-            <img src="https://codezine.jp/static/images/article/21877/16332_ogp.png" width="120" height="90" alt="NTT、漏洩リスクを抑えて応答精度向上を実現 問い合わせ対応の自動化も" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">NTT、漏洩リスクを抑えて応答精度向上を実現 問い合わせ対応の自動化も</h4>
-                <p class="card-source">CodeZine</p>
-            </div>
-        </div>
-    </a>
-    <a href="http://codezine.jp/article/detail/21878" class="card">
-        <div class="card-content">
-            <img src="https://codezine.jp/static/images/article/21878/21878_ogp.png" width="120" height="90" alt="データの国外流出を防ぐ！ノーコードAI構築プラットフォーム「miibo」に国産基盤のパッケージが登場" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">データの国外流出を防ぐ！ノーコードAI構築プラットフォーム「miibo」に国産基盤のパッケージが登場</h4>
-                <p class="card-source">CodeZine</p>
-            </div>
-        </div>
-    </a>
-    <a href="http://codezine.jp/article/detail/21880" class="card">
-        <div class="card-content">
-            <img src="https://codezine.jp/static/images/article/21880/1200_ogp02.png" width="120" height="90" alt="NRIセキュア、耐量子計算機暗号への移行を支援 米国では標準化が進む技術" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">NRIセキュア、耐量子計算機暗号への移行を支援 米国では標準化が進む技術</h4>
-                <p class="card-source">CodeZine</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://www.infoq.com/favicon.ico" width="16" height="16" alt="InfoQ Japan"> InfoQ Japan</h2>
-    <a href="https://www.infoq.com/jp/news/2025/07/visual-studio-copilot-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" class="card">
-        <div class="card-content">
-            <img src="https://cdn.infoq.com/statics_s1_20250605075448/styles/static/images/logo/logo-big.jpg" width="120" height="90" alt="Visual Studio 2022 v17.14がエージェントモードと高度Copilot支援を導入" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Visual Studio 2022 v17.14がエージェントモードと高度Copilot支援を導入</h4>
-                <p class="card-source">InfoQ Japan</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.infoq.com/jp/news/2025/07/docker-model-runner/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" class="card">
-        <div class="card-content">
-            <img src="https://cdn.infoq.com/statics_s2_20250605075544/styles/static/images/logo/logo-big.jpg" width="120" height="90" alt="Docker Model RunnerでLLMモデルのローカル実行を手軽に" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Docker Model RunnerでLLMモデルのローカル実行を手軽に</h4>
-                <p class="card-source">InfoQ Japan</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.infoq.com/jp/news/2025/07/uber-journey-ray-kubernetes/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" class="card">
-        <div class="card-content">
-            <img src="https://cdn.infoq.com/statics_s1_20250605075448/styles/static/images/logo/logo-big.jpg" width="120" height="90" alt="UberのKubernetes上でのRayへの道のり" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">UberのKubernetes上でのRayへの道のり</h4>
-                <p class="card-source">InfoQ Japan</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.infoq.com/jp/news/2025/07/cloudflare-d1-global-replication/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" class="card">
-        <div class="card-content">
-            <img src="https://cdn.infoq.com/statics_s1_20250605075448/styles/static/images/logo/logo-big.jpg" width="120" height="90" alt="Cloudflare グローバルリードレプリケーションを搭載したDIデータベースをアップグレード" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Cloudflare グローバルリードレプリケーションを搭載したDIデータベースをアップグレード</h4>
-                <p class="card-source">InfoQ Japan</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://www.infoq.com/jp/news/2025/07/openai-codex/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=global" class="card">
-        <div class="card-content">
-            <img src="https://cdn.infoq.com/statics_s1_20250605075448/styles/static/images/logo/logo-big.jpg" width="120" height="90" alt="OpenAIがCodexソフトウェアエンジニアリングエージェントのプレビューを発表" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">OpenAIがCodexソフトウェアエンジニアリングエージェントのプレビューを発表</h4>
-                <p class="card-source">InfoQ Japan</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://connpass.com/favicon.ico" width="16" height="16" alt="connpass - イベント"> connpass - イベント</h2>
-    <a href="https://coderdojo-akashi.connpass.com/event/362346/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom" class="card">
-        <div class="card-content">
-            <img src="https://media.connpass.com/thumbs/99/76/9976f0f37d575cd8fef18f5bdcc5c001.png" width="120" height="90" alt="[忍者募集]第29回CoderDojo明石" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">[忍者募集]第29回CoderDojo明石</h4>
-                <p class="card-source">connpass - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://ml-for-experts.connpass.com/event/362341/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom" class="card">
-        <div class="card-content">
-            <img src="https://media.connpass.com/thumbs/d0/e9/d0e9b1215970a87024c97e5f79e5d52d.png" width="120" height="90" alt="シュリーヴ『ファイナンスのための確率解析 II』を読む 第20回" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">シュリーヴ『ファイナンスのための確率解析 II』を読む 第20回</h4>
-                <p class="card-source">connpass - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://connpass.com/event/361632/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom" class="card">
-        <div class="card-content">
-            <img src="https://media.connpass.com/thumbs/16/a3/16a3184aaeaea3774d87d09fe9588304.png" width="120" height="90" alt="【CDLE主催】ウェルカムイベント 2025年7月" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">【CDLE主催】ウェルカムイベント 2025年7月</h4>
-                <p class="card-source">connpass - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://connpass.com/event/361927/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom" class="card">
-        <div class="card-content">
-            <img src="https://connpass.com/static/img/468_468.png" width="120" height="90" alt="【佐賀現地】【懇親会】地方での複業・働き方・マネジメント実践談" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">【佐賀現地】【懇親会】地方での複業・働き方・マネジメント実践談</h4>
-                <p class="card-source">connpass - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://connpass.com/event/361907/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom" class="card">
-        <div class="card-content">
-            <img src="https://media.connpass.com/thumbs/fd/46/fd463fbb683f9fc12f6567435d74750d.png" width="120" height="90" alt="【佐賀現地・オンライン】地方での複業・働き方・マネジメント実践談" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">【佐賀現地・オンライン】地方での複業・働き方・マネジメント実践談</h4>
-                <p class="card-source">connpass - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://ay-house01.connpass.com/event/362338/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom" class="card">
-        <div class="card-content">
-            <img src="https://media.connpass.com/thumbs/34/74/3474e53d6d73a593fb41d09ffd3d8f8b.png" width="120" height="90" alt="【大井町線・池上線】 定例もくもく会&交流会@旗の台 #162" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">【大井町線・池上線】 定例もくもく会&交流会@旗の台 #162</h4>
-                <p class="card-source">connpass - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://tgd.connpass.com/event/362337/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom" class="card">
-        <div class="card-content">
-            <img src="https://media.connpass.com/thumbs/9e/20/9e203b8997f0c28966e9d0f2291b2102.png" width="120" height="90" alt="【よなよなゲーム】夜な夜なゲーム開発をするもくもく会" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">【よなよなゲーム】夜な夜なゲーム開発をするもくもく会</h4>
-                <p class="card-source">connpass - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://jawsug-niigata.connpass.com/event/362336/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom" class="card">
-        <div class="card-content">
-            <img src="https://media.connpass.com/thumbs/e2/b5/e2b5d050dbaeeccb743f1ea5efaaf0f7.png" width="120" height="90" alt="JAWS-UG 新潟 プチキャッチアップ 2025 #28" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">JAWS-UG 新潟 プチキャッチアップ 2025 #28</h4>
-                <p class="card-source">connpass - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://frenguild.connpass.com/event/362335/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom" class="card">
-        <div class="card-content">
-            <img src="https://media.connpass.com/thumbs/f7/05/f705e7daefd64e5e50e6ef6588225eb3.png" width="120" height="90" alt="フラッと立ち寄れる「もくもく作業 × 雑談会」" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">フラッと立ち寄れる「もくもく作業 × 雑談会」</h4>
-                <p class="card-source">connpass - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://tougebu.connpass.com/event/362333/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom" class="card">
-        <div class="card-content">
-            <img src="https://media.connpass.com/thumbs/b1/83/b183fde190d579bb5f45a7992f56908c.png" width="120" height="90" alt="東ゲ部もくもく会 (目黒区 9回目 都立大学駅 大岡山西住区センター)" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">東ゲ部もくもく会 (目黒区 9回目 都立大学駅 大岡山西住区センター)</h4>
-                <p class="card-source">connpass - イベント</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://techplay.jp/favicon.ico" width="16" height="16" alt="TECH PLAY - イベント"> TECH PLAY - イベント</h2>
-    <a href="https://techplay.jp/event/983532" class="card">
-        <div class="card-content">
-            <img src="https://s3.techplay.jp/tp-images/event/914d4e1dcb1d11a1d61e12d9adfb014cdd383f72.png?w=1200" width="120" height="90" alt="★1周年記念★ 8/23(土)【上野御徒町】オフラインTableauボドゲ会 Vol.6" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">★1周年記念★ 8/23(土)【上野御徒町】オフラインTableauボドゲ会 Vol.6</h4>
-                <p class="card-source">TECH PLAY - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://techplay.jp/event/983673" class="card">
-        <div class="card-content">
-            <img src="https://s3.techplay.jp/tp-images/event/e9073420fa3b47763a28105c5fef455faf865f5f.png?w=1200" width="120" height="90" alt="ChatGPTフル活用で40%のコスト削減を実現！質・量・スピードを担保して業界No.1を目指すオウンドメディア戦略" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">ChatGPTフル活用で40%のコスト削減を実現！質・量・スピードを担保して業界No.1を目指すオウンドメディア戦略</h4>
-                <p class="card-source">TECH PLAY - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://techplay.jp/event/983670" class="card">
-        <div class="card-content">
-            <img src="https://s3.techplay.jp/tp-images/event/888e6c8649adfe98245efdd959875d3378f54be7.png?w=1200" width="120" height="90" alt="生成AI時代におけるリテール業界バリューチェーンの激変紹介" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">生成AI時代におけるリテール業界バリューチェーンの激変紹介</h4>
-                <p class="card-source">TECH PLAY - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://techplay.jp/event/983671" class="card">
-        <div class="card-content">
-            <img src="https://s3.techplay.jp/tp-images/event/e6438ed6237b92a7013cac7462f459ee4014adc2.png?w=1200" width="120" height="90" alt="狙いたいキーワードで「1位に上位表示」SEOで競合サイトに勝つ極意！〜「SEO対策」で圏外の状態からGoogle1位を獲得したSEOのプロが徹底解説〜" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">狙いたいキーワードで「1位に上位表示」SEOで競合サイトに勝つ極意！〜「SEO対策」で圏外の状態からGoogle1位を獲得したSEOのプロが徹底解説〜</h4>
-                <p class="card-source">TECH PLAY - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://techplay.jp/event/983669" class="card">
-        <div class="card-content">
-            <img src="https://s3.techplay.jp/tp-images/event/851124956f180c3c3e33d80e8f247a47e4476698.jpg?w=1200" width="120" height="90" alt="〜【フリビレもくもく会＆交流会】～初心者歓迎！Webプログラム、Webデザイン、スマホアプリを勉強する会～" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">〜【フリビレもくもく会＆交流会】～初心者歓迎！Webプログラム、Webデザイン、スマホアプリを勉強する会～</h4>
-                <p class="card-source">TECH PLAY - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://techplay.jp/event/983596" class="card">
-        <div class="card-content">
-            <img src="https://s3.techplay.jp/tp-images/event/b99452190bf019823c91db1d9403408c315f842f.png?w=1200" width="120" height="90" alt="【AI-OCR×伝票DX】&quot;手書き伝票&quot;でも98%の精度で自動読み取りし、業務を50％短縮する方法" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">【AI-OCR×伝票DX】"手書き伝票"でも98%の精度で自動読み取りし、業務を50％短縮する方法</h4>
-                <p class="card-source">TECH PLAY - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://techplay.jp/event/983636" class="card">
-        <div class="card-content">
-            <img src="https://s3.techplay.jp/tp-images/event/85f138a4ec19dbecd7beedfd46b91bdbd219e11b.png?w=1200" width="120" height="90" alt="8/28 (木) 19:30- 受講料最大80%OFF ! E資格対応・Reスキル（教育訓練給付制度）認定講座説明会" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">8/28 (木) 19:30- 受講料最大80%OFF ! E資格対応・Reスキル（教育訓練給付制度）認定講座説明会</h4>
-                <p class="card-source">TECH PLAY - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://techplay.jp/event/983635" class="card">
-        <div class="card-content">
-            <img src="https://s3.techplay.jp/tp-images/event/85f138a4ec19dbecd7beedfd46b91bdbd219e11b.png?w=1200" width="120" height="90" alt="8/7 (木) 19:30- 受講料最大80%OFF ! E資格対応・Reスキル（教育訓練給付制度）認定講座説明会" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">8/7 (木) 19:30- 受講料最大80%OFF ! E資格対応・Reスキル（教育訓練給付制度）認定講座説明会</h4>
-                <p class="card-source">TECH PLAY - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://techplay.jp/event/983525" class="card">
-        <div class="card-content">
-            <img src="https://s3.techplay.jp/tp-images/event/140db1bdc8f7b7470799321277a1859372cb2ba9.jpg?w=1200" width="120" height="90" alt="【交流会あり】「提案が通るPMO」の思考と戦略 〜市場価値を高める上流工程の実践スキル〜" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">【交流会あり】「提案が通るPMO」の思考と戦略 〜市場価値を高める上流工程の実践スキル〜</h4>
-                <p class="card-source">TECH PLAY - イベント</p>
-            </div>
-        </div>
-    </a>
-    <a href="https://techplay.jp/event/983662" class="card">
-        <div class="card-content">
-            <img src="https://s3.techplay.jp/tp-images/event/f89353bfb96f4fc0f78b9aaad8e4ac2ef1c09c26.png?w=1200" width="120" height="90" alt="【新規事業担当者必見!!】未来を覗けるスタートアップピッチイベント 【earthkey pitch vol.172】" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">【新規事業担当者必見!!】未来を覗けるスタートアップピッチイベント 【earthkey pitch vol.172】</h4>
-                <p class="card-source">TECH PLAY - イベント</p>
-            </div>
-        </div>
-    </a>
-    <hr>
-    <h2><img src="https://www.oreilly.co.jp/favicon.ico" width="16" height="16" alt="O'Reilly Japan - 近刊"> O'Reilly Japan - 近刊</h2>
-    <a href="http://www.oreilly.co.jp/books/9784814401130/?utm_source=feed&utm_mediun=referral&utm_content=new_book" class="card">
-        <div class="card-content">
-            <img src="https://www.oreilly.co.jp/books/images/picture_large978-4-8144-0113-0.jpeg" width="120" height="90" alt="LLMのプロンプトエンジニアリング" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">LLMのプロンプトエンジニアリング</h4>
-                <p class="card-source">O'Reilly Japan - 近刊</p>
-            </div>
-        </div>
-    </a>
-    <a href="http://www.oreilly.co.jp/books/9784814400997/?utm_source=feed&utm_mediun=referral&utm_content=new_book" class="card">
-        <div class="card-content">
-            <img src="https://www.oreilly.co.jp/books/images/picture_large978-4-8144-0099-7.jpeg" width="120" height="90" alt="micro:bitではじめるAI工作" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">micro:bitではじめるAI工作</h4>
-                <p class="card-source">O'Reilly Japan - 近刊</p>
-            </div>
-        </div>
-    </a>
-    <a href="http://www.oreilly.co.jp/books/9784814401222/?utm_source=feed&utm_mediun=referral&utm_content=new_book" class="card">
-        <div class="card-content">
-            <img src="https://www.oreilly.co.jp/books/images/picture_large978-4-8144-0122-2.jpeg" width="120" height="90" alt="PythonによるWebスクレイピング 第3版" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">PythonによるWebスクレイピング 第3版</h4>
-                <p class="card-source">O'Reilly Japan - 近刊</p>
-            </div>
-        </div>
-    </a>
-    <a href="http://www.oreilly.co.jp/books/9784814400744/?utm_source=feed&utm_mediun=referral&utm_content=new_book" class="card">
-        <div class="card-content">
-            <img src="https://www.oreilly.co.jp/books/images/picture_large978-4-8144-0074-4.jpeg" width="120" height="90" alt="SQLアンチパターン 第2版" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">SQLアンチパターン 第2版</h4>
-                <p class="card-source">O'Reilly Japan - 近刊</p>
-            </div>
-        </div>
-    </a>
-    <a href="http://www.oreilly.co.jp/books/9784814401185/?utm_source=feed&utm_mediun=referral&utm_content=new_book" class="card">
-        <div class="card-content">
-            <img src="https://www.oreilly.co.jp/books/images/picture_large978-4-8144-0118-5.jpeg" width="120" height="90" alt="Async Rust" class="card-image">
-            <div class="card-text">
-                <h4 class="card-title">Async Rust</h4>
-                <p class="card-source">O'Reilly Japan - 近刊</p>
-            </div>
-        </div>
-    </a>
-    <hr>
+    <nav class="tab-bar" role="tablist" aria-label="表示切り替え">
+        <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-articles" data-tab="articles">記事</button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-events" data-tab="events">イベント</button>
+        <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-books" data-tab="books">書籍</button>
+    </nav>
+</header>
 
-    <div class="footer">
-        <p>🚀 運営者: <a href="https://x.com/unsoluble_sugar" target="_blank" rel="noopener">@unsoluble_sugar</a> | 
-        📁 <a href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">GitHub Repository</a></p>
+    <main class="app-main">
+        <section class="tab-panel is-active" id="panel-articles" role="tabpanel" data-panel="articles">
+        <nav class="media-toc" aria-label="メディア目次">
+            <div class="media-toc-inner"><a class="toc-chip" href="#media-839acb90">💻 Tech Blog Weekly</a><a class="toc-chip" href="#media-179faac7">Zenn</a><a class="toc-chip" href="#media-c48abbcc">Qiita</a><a class="toc-chip" href="#media-702f7c88">はてブIT（人気）</a><a class="toc-chip" href="#media-5be408ff">はてブIT（新着）</a><a class="toc-chip" href="#media-807ef3e7">DevelopersIO</a><a class="toc-chip" href="#media-71452a2d">gihyo.jp</a><a class="toc-chip" href="#media-46cf5c29">Publickey</a><a class="toc-chip" href="#media-e3454818">CodeZine</a><a class="toc-chip" href="#media-aa2f2940">InfoQ</a></div>
+        </nav>
+        <section class="highlights">
+            <div class="highlights-head">
+                <span class="highlights-title">今日のハイライト</span>
+                <span class="highlights-note">複数メディアで話題</span>
+            </div>
+            <div class="highlight-cards">
+                <a class="highlight-card" href="https://zenn.dev/levtech/articles/db-tech-showcase-2025-report" target="_blank" rel="noopener">
+                    <span class="highlight-rank">1</span>
+                    <span class="highlight-body">
+                        <span class="highlight-title">DB Tech Showcase 2025（１日目）に参加してきたよ | レバテック開発部のフィード</span>
+                        <span class="highlight-meta">💻 Tech Blog Weekly ・ 新着</span>
+                    </span>
+                </a>
+                <a class="highlight-card" href="https://link-and-motivation.hatenablog.com/entry/2025/07/10/215341" target="_blank" rel="noopener">
+                    <span class="highlight-rank">2</span>
+                    <span class="highlight-body">
+                        <span class="highlight-title">プロダクトの成長を支える、&quot;越境するSRE&quot;の挑戦 | Link and Motivation Developers&#x27; Blog</span>
+                        <span class="highlight-meta">💻 Tech Blog Weekly ・ 新着</span>
+                    </span>
+                </a>
+                <a class="highlight-card" href="https://techblog.ap-com.co.jp/entry/2025/07/10/194332" target="_blank" rel="noopener">
+                    <span class="highlight-rank">3</span>
+                    <span class="highlight-body">
+                        <span class="highlight-title">AWS Summit 2025  の見どころを簡単に振り返る！ | APC 技術ブログ</span>
+                        <span class="highlight-meta">💻 Tech Blog Weekly ・ 新着</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+        <section class="media-section" id="media-839acb90">
+            <h2 class="media-heading">💻 Tech Blog Weekly</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-8a9fb86d" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">DB Tech Showcase 2025（１日目）に参加してきたよ | レバテック開発部のフィード</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://zenn.dev/levtech/articles/db-tech-showcase-2025-report" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://zenn.dev/levtech/articles/db-tech-showcase-2025-report" data-share-title="DB Tech Showcase 2025（１日目）に参加してきたよ | レバテック開発部のフィード">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-7ba41d61" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">プロダクトの成長を支える、&quot;越境するSRE&quot;の挑戦 | Link and Motivation Developers&#x27; Blog</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://link-and-motivation.hatenablog.com/entry/2025/07/10/215341" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://link-and-motivation.hatenablog.com/entry/2025/07/10/215341" data-share-title="プロダクトの成長を支える、&quot;越境するSRE&quot;の挑戦 | Link and Motivation Developers&#x27; Blog">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-1fd06853" data-tags="クラウド" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">AWS Summit 2025  の見どころを簡単に振り返る！ | APC 技術ブログ</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://techblog.ap-com.co.jp/entry/2025/07/10/194332" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://techblog.ap-com.co.jp/entry/2025/07/10/194332" data-share-title="AWS Summit 2025  の見どころを簡単に振り返る！ | APC 技術ブログ">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-179faac7">
+            <h2 class="media-heading">Zenn</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-9a13da81" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Grok 4 の発表まとめ＆試してみた</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://zenn.dev/schroneko/articles/grok-4-overview-and-review" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://zenn.dev/schroneko/articles/grok-4-overview-and-review" data-share-title="Grok 4 の発表まとめ＆試してみた">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-29db15f4" data-tags="AI・機械学習,ツール・IDE" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">claude codeにNG Word集を設定すればキレなくてすむのでそのやり方</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">ツール・IDE</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://zenn.dev/sesere/articles/e3d5695e0a7d14" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://zenn.dev/sesere/articles/e3d5695e0a7d14" data-share-title="claude codeにNG Word集を設定すればキレなくてすむのでそのやり方">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-4b3d4a1b" data-tags="AI・機械学習" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">LLM プログラミングのコツ (2025年07月版)</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://zenn.dev/tommy109/articles/08e42e1a30b494" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://zenn.dev/tommy109/articles/08e42e1a30b494" data-share-title="LLM プログラミングのコツ (2025年07月版)">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-c48abbcc">
+            <h2 class="media-heading">Qiita</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-24ed40ae" data-tags="コーディング支援" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">AI時代のコーディングを加速！2025年おすすめプログラマーツールTop10</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">コーディング支援</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://qiita.com/takuya77088/items/44a145c9eb3e45383efb?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://qiita.com/takuya77088/items/44a145c9eb3e45383efb?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" data-share-title="AI時代のコーディングを加速！2025年おすすめプログラマーツールTop10">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-1f817ba9" data-tags="キャリア・組織" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">いま「未経験からエンジニア」を目指す方へ伝えたいこと</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">キャリア・組織</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://qiita.com/hirokiii27/items/5fa7bb3c6dd5739d987f?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://qiita.com/hirokiii27/items/5fa7bb3c6dd5739d987f?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" data-share-title="いま「未経験からエンジニア」を目指す方へ伝えたいこと">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-47c7a5fc" data-tags="Web開発,キャリア・組織" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">「使えるReact」はこうして身につけた - レアゾン・ホールディングス 2025新卒エンジニアReact研修</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">Web開発</span><span class="tag-chip">キャリア・組織</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://qiita.com/ren_matsubara/items/c93d32a5999febd76309?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://qiita.com/ren_matsubara/items/c93d32a5999febd76309?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" data-share-title="「使えるReact」はこうして身につけた - レアゾン・ホールディングス 2025新卒エンジニアReact研修">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-702f7c88">
+            <h2 class="media-heading">はてなブックマーク - IT（人気）</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-58052d61" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">国のデータ、これ一つで丸分かり？　政府が新ダッシュボード　経済・財政・人口など都道府県ごとに可視化</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.itmedia.co.jp/news/articles/2507/10/news115.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.itmedia.co.jp/news/articles/2507/10/news115.html" data-share-title="国のデータ、これ一つで丸分かり？　政府が新ダッシュボード　経済・財政・人口など都道府県ごとに可視化">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-f11c711a" data-tags="AI・機械学習,テクノロジートレンド" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">OpenAI、Webブラウザ発表へ　Chromeに対抗</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">テクノロジートレンド</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.itmedia.co.jp/news/articles/2507/10/news070.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.itmedia.co.jp/news/articles/2507/10/news070.html" data-share-title="OpenAI、Webブラウザ発表へ　Chromeに対抗">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-33c864ef" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">AIパフォーマンスの最適化を学ぶ（2）「SOWを作って」は超便利な指示｜TechRacho by BPS株式会社</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://techracho.bpsinc.jp/hachi8833/2025_07_10/151922" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://techracho.bpsinc.jp/hachi8833/2025_07_10/151922" data-share-title="AIパフォーマンスの最適化を学ぶ（2）「SOWを作って」は超便利な指示｜TechRacho by BPS株式会社">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-5be408ff">
+            <h2 class="media-heading">はてなブックマーク - IT（新着）</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-6003e595" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">XのヤッカリーノCEOが退任表明、AIチャットボットの反ユダヤ投稿が物議醸す中 - BBCニュース</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.bbc.com/japanese/articles/c8xv9nzvdl8o" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.bbc.com/japanese/articles/c8xv9nzvdl8o" data-share-title="XのヤッカリーノCEOが退任表明、AIチャットボットの反ユダヤ投稿が物議醸す中 - BBCニュース">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-bb74b5b3" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">【2025年版】無料VPSホスティングプロバイダー10選｜にゃあ</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://note.com/mandalay/n/naf6d67cd225c" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://note.com/mandalay/n/naf6d67cd225c" data-share-title="【2025年版】無料VPSホスティングプロバイダー10選｜にゃあ">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-41be8490" data-tags="キャリア・組織" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">AIを使うことは、もはやマネジメントであるということ | ベイジの日報</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">キャリア・組織</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://baigie.me/nippo/2025/07/10/ai_ma/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://baigie.me/nippo/2025/07/10/ai_ma/" data-share-title="AIを使うことは、もはやマネジメントであるということ | ベイジの日報">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-807ef3e7">
+            <h2 class="media-heading">DevelopersIO</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-45ed021d" data-tags="ネットワーク" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">ホワイトリストプロキシを運用している企業で Amazon Q Developer を使うために必要な許可ドメインを Squid で検証してみた</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">ネットワーク</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://dev.classmethod.jp/articles/q-dev-squid-whitelist/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://dev.classmethod.jp/articles/q-dev-squid-whitelist/" data-share-title="ホワイトリストプロキシを運用している企業で Amazon Q Developer を使うために必要な許可ドメインを Squid で検証してみた">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-2c62eabc" data-tags="ツール・IDE" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">GitHubのSecret scanningでリポジトリに混入した機密情報を検出してみた</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">ツール・IDE</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://dev.classmethod.jp/articles/shoma-detecting-leaked-secrets-in-repository-with-github-secret-scanning/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://dev.classmethod.jp/articles/shoma-detecting-leaked-secrets-in-repository-with-github-secret-scanning/" data-share-title="GitHubのSecret scanningでリポジトリに混入した機密情報を検出してみた">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-da3938aa" data-tags="クラウド" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">AWS WAFで、テナント別サブドメインごとに接続元IPアドレス制限をやってみた</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://dev.classmethod.jp/articles/aws-waf-tenant-subdomain-ip-restriction/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://dev.classmethod.jp/articles/aws-waf-tenant-subdomain-ip-restriction/" data-share-title="AWS WAFで、テナント別サブドメインごとに接続元IPアドレス制限をやってみた">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-71452a2d">
+            <h2 class="media-heading">gihyo.jp</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-e6758a3f" data-tags="OS・システム" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">openSUSEプロジェクト、8/9の20周年祝賀企画に向け準備中</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">OS・システム</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://gihyo.jp/article/2025/07/daily-linux-250710?utm_source=feed" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://gihyo.jp/article/2025/07/daily-linux-250710?utm_source=feed" data-share-title="openSUSEプロジェクト、8/9の20周年祝賀企画に向け準備中">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-8c2a05fa" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">xAI、Grok 4を発表 ―主要なベンチマークで競合AIベンダのフラッグシップモデルを凌駕する性能</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://gihyo.jp/article/2025/07/grok-4?utm_source=feed" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://gihyo.jp/article/2025/07/grok-4?utm_source=feed" data-share-title="xAI、Grok 4を発表 ―主要なベンチマークで競合AIベンダのフラッグシップモデルを凌駕する性能">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-8cd06581" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Google、Gemmaの新たなオープンモデルをリリース ―エンコーダ・デコーダモデルT5Gemmaと医療分野特化のマルチモーダルモデルMedGemma＋MedSigLip</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://gihyo.jp/article/2025/07/t5gemma?utm_source=feed" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://gihyo.jp/article/2025/07/t5gemma?utm_source=feed" data-share-title="Google、Gemmaの新たなオープンモデルをリリース ―エンコーダ・デコーダモデルT5Gemmaと医療分野特化のマルチモーダルモデルMedGemma＋MedSigLip">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-46cf5c29">
+            <h2 class="media-heading">Publickey</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-856491ce" data-tags="クラウド,DevOps,データベース" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">「Oracle Database@AWS」正式提供開始。これでAWS、Azure、Google CloudすべてでOracle Cloudインフラを用いたデータベースが利用可能に</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span><span class="tag-chip">DevOps</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.publickey1.jp/blog/25/oracle_databaseawsawsazuregoogle_cloudoracle_cloud.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.publickey1.jp/blog/25/oracle_databaseawsawsazuregoogle_cloudoracle_cloud.html" data-share-title="「Oracle Database@AWS」正式提供開始。これでAWS、Azure、Google CloudすべてでOracle Cloudインフラを用いたデータベースが利用可能に">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-eba3beb3" data-tags="クラウド,データベース" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Amazon DynamoDB、複数リージョンでも強整合性によるデータの一貫性を提供開始</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span><span class="tag-chip">データベース</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.publickey1.jp/blog/25/amazon_dynamodb.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.publickey1.jp/blog/25/amazon_dynamodb.html" data-share-title="Amazon DynamoDB、複数リージョンでも強整合性によるデータの一貫性を提供開始">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-621b4f34" data-tags="Web開発" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Nuxtの開発元NuxtLabs、Next.jsの開発元Vercelへの合流を発表</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">Web開発</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.publickey1.jp/blog/25/nuxtjsnuxt_labsnextjsvercel.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.publickey1.jp/blog/25/nuxtjsnuxt_labsnextjsvercel.html" data-share-title="Nuxtの開発元NuxtLabs、Next.jsの開発元Vercelへの合流を発表">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-e3454818">
+            <h2 class="media-heading">CodeZine</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-3d83a466" data-tags="AI・機械学習,キャリア・組織" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">paizaラーニング、生成AI時代に対応したプロンプトエンジニアリング入門講座を無料公開</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">キャリア・組織</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="http://codezine.jp/article/detail/21882" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="http://codezine.jp/article/detail/21882" data-share-title="paizaラーニング、生成AI時代に対応したプロンプトエンジニアリング入門講座を無料公開">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-78fb4b48" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">NTT、漏洩リスクを抑えて応答精度向上を実現 問い合わせ対応の自動化も</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="http://codezine.jp/article/detail/21877" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="http://codezine.jp/article/detail/21877" data-share-title="NTT、漏洩リスクを抑えて応答精度向上を実現 問い合わせ対応の自動化も">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-bf81ea9c" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">データの国外流出を防ぐ！ノーコードAI構築プラットフォーム「miibo」に国産基盤のパッケージが登場</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="http://codezine.jp/article/detail/21878" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="http://codezine.jp/article/detail/21878" data-share-title="データの国外流出を防ぐ！ノーコードAI構築プラットフォーム「miibo」に国産基盤のパッケージが登場">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-aa2f2940">
+            <h2 class="media-heading">InfoQ Japan</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-47ea47b0" data-tags="AI・機械学習,ツール・IDE" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Visual Studio 2022 v17.14がエージェントモードと高度Copilot支援を導入</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">ツール・IDE</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.infoq.com/jp/news/2025/07/visual-studio-copilot-agent/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.infoq.com/jp/news/2025/07/visual-studio-copilot-agent/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" data-share-title="Visual Studio 2022 v17.14がエージェントモードと高度Copilot支援を導入">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-a76161ec" data-tags="クラウド,DevOps" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Docker Model RunnerでLLMモデルのローカル実行を手軽に</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span><span class="tag-chip">DevOps</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.infoq.com/jp/news/2025/07/docker-model-runner/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.infoq.com/jp/news/2025/07/docker-model-runner/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" data-share-title="Docker Model RunnerでLLMモデルのローカル実行を手軽に">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-04d1963c" data-tags="クラウド,DevOps" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">UberのKubernetes上でのRayへの道のり</h3>
+                    <span class="article-time"></span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span><span class="tag-chip">DevOps</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.infoq.com/jp/news/2025/07/uber-journey-ray-kubernetes/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.infoq.com/jp/news/2025/07/uber-journey-ray-kubernetes/?utm_campaign=infoq_content&amp;utm_source=infoq&amp;utm_medium=feed&amp;utm_term=global" data-share-title="UberのKubernetes上でのRayへの道のり">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        </section>
+
+        <section class="tab-panel" id="panel-events" role="tabpanel" data-panel="events" hidden>
+            <p class="panel-note">connpass・TECH PLAY の直近イベント。日付順にまとめて、開催が近いものから表示します。</p>
+            <div class="event-group">
+                <h2 class="event-day">日付不明</h2>
+                <a class="event-row" href="https://ml-for-experts.connpass.com/event/362341/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">シュリーヴ『ファイナンスのための確率解析 II』を読む 第20回</span>
+                        <span class="event-meta">connpass</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://connpass.com/event/361632/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【CDLE主催】ウェルカムイベント 2025年7月</span>
+                        <span class="event-meta">connpass</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://connpass.com/event/361927/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【佐賀現地】【懇親会】地方での複業・働き方・マネジメント実践談</span>
+                        <span class="event-meta">connpass</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://connpass.com/event/361907/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【佐賀現地・オンライン】地方での複業・働き方・マネジメント実践談</span>
+                        <span class="event-meta">connpass</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://ay-house01.connpass.com/event/362338/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【大井町線・池上線】 定例もくもく会&amp;交流会@旗の台 #162</span>
+                        <span class="event-meta">connpass</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://tgd.connpass.com/event/362337/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【よなよなゲーム】夜な夜なゲーム開発をするもくもく会</span>
+                        <span class="event-meta">connpass</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://jawsug-niigata.connpass.com/event/362336/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">JAWS-UG 新潟 プチキャッチアップ 2025 #28</span>
+                        <span class="event-meta">connpass</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://frenguild.connpass.com/event/362335/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">フラッと立ち寄れる「もくもく作業 × 雑談会」</span>
+                        <span class="event-meta">connpass</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://tougebu.connpass.com/event/362333/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">東ゲ部もくもく会 (目黒区 9回目 都立大学駅 大岡山西住区センター)</span>
+                        <span class="event-meta">connpass</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/983532" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">★1周年記念★ 8/23(土)【上野御徒町】オフラインTableauボドゲ会 Vol.6</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/983673" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">ChatGPTフル活用で40%のコスト削減を実現！質・量・スピードを担保して業界No.1を目指すオウンドメディア戦略</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/983670" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">生成AI時代におけるリテール業界バリューチェーンの激変紹介</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/983671" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">狙いたいキーワードで「1位に上位表示」SEOで競合サイトに勝つ極意！〜「SEO対策」で圏外の状態からGoogle1位を獲得したSEOのプロが徹底解説〜</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/983669" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">〜【フリビレもくもく会＆交流会】～初心者歓迎！Webプログラム、Webデザイン、スマホアプリを勉強する会～</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/983596" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【AI-OCR×伝票DX】&quot;手書き伝票&quot;でも98%の精度で自動読み取りし、業務を50％短縮する方法</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/983636" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">8/28 (木) 19:30- 受講料最大80%OFF ! E資格対応・Reスキル（教育訓練給付制度）認定講座説明会</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/983635" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">8/7 (木) 19:30- 受講料最大80%OFF ! E資格対応・Reスキル（教育訓練給付制度）認定講座説明会</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/983525" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【交流会あり】「提案が通るPMO」の思考と戦略 〜市場価値を高める上流工程の実践スキル〜</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/983662" target="_blank" rel="noopener">
+                    <span class="event-time"></span>
+                    <span class="event-body">
+                        <span class="event-title">【新規事業担当者必見!!】未来を覗けるスタートアップピッチイベント 【earthkey pitch vol.172】</span>
+                        <span class="event-meta">TECH PLAY</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <section class="tab-panel" id="panel-books" role="tabpanel" data-panel="books" hidden>
+            <p class="panel-note">O'Reilly Japan の近刊。</p>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401130/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">LLMのプロンプトエンジニアリング</span>
+                <span class="book-meta"></span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814400997/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">micro:bitではじめるAI工作</span>
+                <span class="book-meta"></span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401222/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">PythonによるWebスクレイピング 第3版</span>
+                <span class="book-meta"></span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814400744/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">SQLアンチパターン 第2版</span>
+                <span class="book-meta"></span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401185/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">Async Rust</span>
+                <span class="book-meta"></span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <div class="rss-row">
+            <div class="rss-row-text">
+                <span class="rss-row-title">RSSで購読</span>
+                <span class="rss-row-note">毎朝 JST 7:00 更新</span>
+            </div>
+            <a class="rss-row-btn" href="https://unsolublesugar.github.io/daily-tech-news/rss.xml" target="_blank" rel="noopener">📡 登録</a>
+        </div>
+        <div class="footer-tiles">
+            <a class="footer-tile" href="../../../archives/index.html">
+                <span class="footer-tile-title">📚 アーカイブ</span>
+                <span class="footer-tile-note">過去のニュース</span>
+            </a>
+            <a class="footer-tile" href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">
+                <span class="footer-tile-title">📁 GitHub</span>
+                <span class="footer-tile-note">ソースとフィード設定</span>
+            </a>
+        </div>
+        <p class="footer-credit">Built by <a href="https://github.com/unsolublesugar" target="_blank" rel="noopener">unsolublesugar</a></p>
+    </footer>
+
+</div>
+    <div class="filter-sheet" id="filter-sheet" hidden>
+        <div class="filter-sheet-overlay" data-close-filter></div>
+        <div class="filter-sheet-panel" role="dialog" aria-modal="true" aria-label="絞り込み">
+            <div class="filter-sheet-head">
+                <span class="filter-sheet-title">絞り込み</span>
+                <button type="button" class="filter-sheet-close" data-close-filter aria-label="閉じる">×</button>
+            </div>
+            <div class="filter-sheet-body">
+                <div class="filter-group">
+                    <div class="filter-group-label">よく使う</div>
+                    <div class="filter-chips"><button type="button" class="filter-chip" data-tag="AI・機械学習">AI・機械学習</button><button type="button" class="filter-chip" data-tag="Web開発">Web開発</button><button type="button" class="filter-chip" data-tag="クラウド">クラウド</button><button type="button" class="filter-chip" data-tag="プログラミング">プログラミング</button><button type="button" class="filter-chip" data-tag="ツール・IDE">ツール・IDE</button></div>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-group-label">開発・運用</div>
+                    <div class="filter-chips"><button type="button" class="filter-chip" data-tag="DevOps">DevOps</button><button type="button" class="filter-chip" data-tag="セキュリティ">セキュリティ</button><button type="button" class="filter-chip" data-tag="データベース">データベース</button><button type="button" class="filter-chip" data-tag="データ分析">データ分析</button><button type="button" class="filter-chip" data-tag="ネットワーク">ネットワーク</button><button type="button" class="filter-chip" data-tag="OS・システム">OS・システム</button><button type="button" class="filter-chip" data-tag="システム開発">システム開発</button><button type="button" class="filter-chip" data-tag="トラブルシューティング">トラブルシューティング</button><button type="button" class="filter-chip" data-tag="コーディング支援">コーディング支援</button></div>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-group-label">専門・その他</div>
+                    <div class="filter-chips"><button type="button" class="filter-chip" data-tag="モバイル">モバイル</button><button type="button" class="filter-chip" data-tag="ゲーム開発">ゲーム開発</button><button type="button" class="filter-chip" data-tag="アルゴリズム・数学">アルゴリズム・数学</button><button type="button" class="filter-chip" data-tag="ツール紹介">ツール紹介</button><button type="button" class="filter-chip" data-tag="技術発表・LT">技術発表・LT</button><button type="button" class="filter-chip" data-tag="UI/UX">UI/UX</button><button type="button" class="filter-chip" data-tag="VR・AR・MR">VR・AR・MR</button><button type="button" class="filter-chip" data-tag="キャリア・組織">キャリア・組織</button><button type="button" class="filter-chip" data-tag="ハードウェア・IoT">ハードウェア・IoT</button><button type="button" class="filter-chip" data-tag="オープンソース">オープンソース</button><button type="button" class="filter-chip" data-tag="テクノロジートレンド">テクノロジートレンド</button><button type="button" class="filter-chip" data-tag="その他">その他</button></div>
+                </div>
+            </div>
+            <div class="filter-sheet-foot">
+                <button type="button" class="btn-clear" id="filter-clear">クリア</button>
+                <button type="button" class="btn-apply" id="filter-apply">この条件で表示</button>
+            </div>
+        </div>
     </div>
+
+    <script src="../../../assets/js/app.js"></script>
 </body>
 </html>
