@@ -162,7 +162,9 @@ a:hover {
     display: flex;
     align-items: center;
     justify-self: start;
-    min-width: 0;
+    /* トップページはleadingが空になるが、actions側（テーマ切替 30px）と同じ幅を
+       確保しておくことで、brandの中央寄せがページ種別に関係なくズレないようにする。 */
+    min-width: 30px;
 }
 
 .app-brand {
