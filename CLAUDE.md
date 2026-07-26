@@ -11,21 +11,20 @@ Daily Tech News — 国内主要技術メディアのRSSフィードを自動取
 
 ## Tech Stack
 
-Python 3.9+ / feedparser / requests / concurrent.futures（並列サムネイル取得）/ Jinja2テンプレート
+Python 3.9+ / feedparser / requests / beautifulsoup4 / concurrent.futures（並列サムネイル取得）/ 独自プレースホルダー式テンプレート（`{{key}}`置換、src/templates/template_manager.py。Jinja2は未使用）
 
 ## Commands
 
 - Install: `pip3 install -r requirements.txt`
-- Run: `python3 daily_tech_news.py`
-- Legacy run: `python3 fetch_news.py`
+- Run: `python3 fetch_news.py`（本番でGitHub Actionsが実行する唯一の実装）
 - Dev test: `python3 -c "import feedparser; print(feedparser.parse('https://qiita.com/popular-items/feed').entries[0].title)"`
 
 ## Architecture
 
 ```
 daily-tech-news/
-├── daily_tech_news.py     # メインエントリーポイント
-├── fetch_news.py          # レガシースクリプト
+├── fetch_news.py          # メインスクリプト（本番稼働中の唯一の実装）
+├── daily_tech_news.py     # 新構造移行用エントリーポイント（src/main.pyのmain()は未実装のpassのみで現状非動作）
 ├── src/                   # Pythonモジュール
 │   ├── config/            # フィード設定・定数管理
 │   ├── generators/        # Markdown / HTML / RSS 生成エンジン
@@ -44,7 +43,7 @@ daily-tech-news/
 
 ## Feed Sources
 
-`src/config/` 配下でフィードURLを管理。各フィードは独立してエラーハンドリングされ、1つの失敗が全体に影響しない。取得上限はMAX_ENTRIES定数（デフォルト5件）で制御。
+フィードURLは`fetch_news.py`内の`FEEDS`辞書で管理（`src/config/`はサイト・パス設定のみを担当）。各フィードは独立してエラーハンドリングされ、1つの失敗が全体に影響しない。取得上限はMAX_ENTRIES定数（デフォルト5件）で制御。
 
 対応メディア: Tech Blog Weekly / Zenn / Qiita / はてなブックマーク / DevelopersIO / gihyo.jp / Publickey / CodeZine / InfoQ Japan / connpass / TECH PLAY / O'Reilly Japan
 
