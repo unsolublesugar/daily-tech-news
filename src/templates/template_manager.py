@@ -246,7 +246,16 @@ class TemplateManager:
         ]
 
     def get_filter_sheet_html(self) -> str:
-        """絞り込みボトムシートのHTMLを生成"""
+        """絞り込みボトムシートのマウント枠を生成
+
+        中身（カテゴリ絞り込みチップ）はページに埋め込まず、
+        assets/partials/filter_sheet.html を app.js が起動時に読み込んで差し込む。
+        全ページ共通のため、カテゴリ構成の変更は生成済みページの再生成なしに反映できる。
+        """
+        return self.load_template('filter_sheet.html')
+
+    def get_static_filter_sheet_partial_html(self) -> str:
+        """assets/partials/filter_sheet.html に書き出す、絞り込みシートの中身"""
         groups_html = ''
         for label, categories in self.get_filter_groups():
             if not categories:
@@ -264,7 +273,7 @@ class TemplateManager:
                 '                </div>\n'
             ).format(label=self.escape(label), chips=chips)
 
-        template = self.load_template('filter_sheet.html')
+        template = self.load_template('filter_sheet_content.html')
         return self.render_template(template, groups=groups_html)
 
     # ---------------------------------------------------------------
@@ -378,12 +387,20 @@ class TemplateManager:
         """アーカイブ日別ページのヘッダー用の日付表記（2026/7/26 (日)）"""
         return f"{date_obj.year}/{date_obj.month}/{date_obj.day} ({WEEKDAY_JA[date_obj.weekday()]})"
 
-    def get_footer_html(self, is_archive: bool = False, depth: int = 3) -> str:
-        """フッター（RSS行・リンクタイル・クレジット）を生成"""
-        prefix = self.get_asset_prefix(is_archive, depth)
-        archive_link = f"{prefix}archives/index.html" if not is_archive else f"{prefix}archives/index.html"
+    def get_footer_html(self) -> str:
+        """フッターのマウント枠を生成
 
-        template = self.load_template('footer.html')
+        中身（RSS行・リンクタイル・クレジット）はページに埋め込まず、
+        assets/partials/footer.html を app.js が起動時に読み込んで差し込む。
+        全ページ共通のため、フッター内容の変更は生成済みページの再生成なしに反映できる。
+        """
+        return self.load_template('footer.html')
+
+    def get_static_footer_partial_html(self) -> str:
+        """assets/partials/footer.html に書き出す、絶対URLで解決済みのフッター中身"""
+        archive_link = f"{self.site_config.site_url}archives/index.html"
+
+        template = self.load_template('footer_content.html')
         return self.render_template(
             template,
             rss_url=self.site_config.rss_url,
@@ -700,7 +717,7 @@ class ContentStructure:
 
         head_section = tm.get_html_head(title, date_str, is_archive, depth, canonical_url)
         header = tm.get_header_html(date_obj, is_archive, depth)
-        footer = tm.get_footer_html(is_archive, depth)
+        footer = tm.get_footer_html()
         filter_sheet = tm.get_filter_sheet_html()
         js_path = f"{tm.get_asset_prefix(is_archive, depth)}assets/js/app.js"
 

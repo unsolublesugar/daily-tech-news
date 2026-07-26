@@ -6,9 +6,14 @@
  * - 絞り込みボトムシート（カテゴリ複数選択 = OR）
  * - テーマ切替（localStorage 永続化、未設定時は prefers-color-scheme）
  * - メディア目次チップのスムーススクロール
+ * - フッター・絞り込みシートの中身は assets/partials/ から起動時に読み込んで差し込む
  */
 (function () {
     'use strict';
+
+    // document.currentScript は非同期処理に入ると null になるため、
+    // 同期実行中のうちに自分自身の src（常に絶対URLに解決される）を控えておく
+    var SCRIPT_SRC = document.currentScript ? document.currentScript.src : '';
 
     var THEME_KEY = 'tech-news-theme';
     var FILTER_KEY = 'tech-news-filter-tags';
@@ -397,15 +402,53 @@
         });
     }
 
+    // ---------------------------------------------------------------
+    // 全ページ共通パーツの読み込み（フッター・絞り込みシート）
+    //
+    // assets/partials/ 配下は全ページで内容が同一なため、ページに直接
+    // 埋め込まず起動時に fetch して差し込む。中身に依存するセットアップ
+    // （絞り込みシートのイベント登録など）は差し込み完了後に呼ぶ。
+    // ---------------------------------------------------------------
+
+    function loadPartial(elementId, partialFile, onLoaded) {
+        var mount = document.getElementById(elementId);
+        if (!mount || !SCRIPT_SRC) {
+            return;
+        }
+
+        var assetPrefix = SCRIPT_SRC.replace(/assets\/js\/app\.js(?:[?#].*)?$/, '');
+        fetch(assetPrefix + 'assets/partials/' + partialFile)
+            .then(function (response) {
+                return response.ok ? response.text() : '';
+            })
+            .then(function (html) {
+                if (!html) {
+                    return;
+                }
+                mount.innerHTML = html;
+                if (onLoaded) {
+                    onLoaded();
+                }
+            })
+            .catch(function () {
+                // 共通パーツの取得に失敗しても他の機能に影響させない
+            });
+    }
+
+    function setupPartials() {
+        loadPartial('footer-mount', 'footer.html');
+        loadPartial('filter-sheet', 'filter_sheet.html', setupFilterSheet);
+    }
+
     function init() {
         setupTheme();
         setupHeaderHeight();
         setupTabs();
         setupArticleRows();
         setupShareButtons();
-        setupFilterSheet();
         setupTocScroll();
         setupMonthTabs();
+        setupPartials();
     }
 
     if (document.readyState === 'loading') {

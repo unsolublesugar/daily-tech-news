@@ -704,7 +704,7 @@ a:hover {
     padding: 28px 16px 24px;
 }
 
-.rss-row {
+.footer-highlight {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -715,24 +715,24 @@ a:hover {
     background: var(--card-bg);
 }
 
-.rss-row-text {
+.footer-highlight-text {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
 
-.rss-row-title {
+.footer-highlight-title {
     font-size: 13px;
     font-weight: 700;
     color: var(--heading-color);
 }
 
-.rss-row-note {
+.footer-highlight-note {
     font-size: 11px;
     color: var(--text-secondary);
 }
 
-.rss-row-btn {
+.footer-highlight-btn {
     display: inline-flex;
     align-items: center;
     flex-shrink: 0;
@@ -746,7 +746,7 @@ a:hover {
     color: var(--heading-color);
 }
 
-.rss-row-btn:hover {
+.footer-highlight-btn:hover {
     border-color: var(--link-color);
     color: var(--heading-color);
     text-decoration: none;

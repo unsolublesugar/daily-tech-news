@@ -766,55 +766,10 @@
         </section>
     </main>
 
-    <footer class="app-footer">
-        <div class="rss-row">
-            <div class="rss-row-text">
-                <span class="rss-row-title">RSSで購読</span>
-                <span class="rss-row-note">毎朝 JST 7:00 更新</span>
-            </div>
-            <a class="rss-row-btn" href="https://unsolublesugar.github.io/daily-tech-news/rss.xml" target="_blank" rel="noopener">📡 登録</a>
-        </div>
-        <div class="footer-tiles">
-            <a class="footer-tile" href="../../../archives/index.html">
-                <span class="footer-tile-title">📚 アーカイブ</span>
-                <span class="footer-tile-note">過去のニュース</span>
-            </a>
-            <a class="footer-tile" href="https://github.com/unsolublesugar/daily-tech-news" target="_blank" rel="noopener">
-                <span class="footer-tile-title">📁 GitHub</span>
-                <span class="footer-tile-note">ソースとフィード設定</span>
-            </a>
-        </div>
-        <p class="footer-credit">Built by <a href="https://github.com/unsolublesugar" target="_blank" rel="noopener">unsolublesugar</a></p>
-    </footer>
+    <footer class="app-footer" id="footer-mount"></footer>
 
 </div>
-    <div class="filter-sheet" id="filter-sheet" hidden>
-        <div class="filter-sheet-overlay" data-close-filter></div>
-        <div class="filter-sheet-panel" role="dialog" aria-modal="true" aria-label="絞り込み">
-            <div class="filter-sheet-head">
-                <span class="filter-sheet-title">絞り込み</span>
-                <button type="button" class="filter-sheet-close" data-close-filter aria-label="閉じる">×</button>
-            </div>
-            <div class="filter-sheet-body">
-                <div class="filter-group">
-                    <div class="filter-group-label">よく使う</div>
-                    <div class="filter-chips"><button type="button" class="filter-chip" data-tag="AI・機械学習">AI・機械学習</button><button type="button" class="filter-chip" data-tag="Web開発">Web開発</button><button type="button" class="filter-chip" data-tag="クラウド">クラウド</button><button type="button" class="filter-chip" data-tag="プログラミング">プログラミング</button><button type="button" class="filter-chip" data-tag="ツール・IDE">ツール・IDE</button></div>
-                </div>
-                <div class="filter-group">
-                    <div class="filter-group-label">開発・運用</div>
-                    <div class="filter-chips"><button type="button" class="filter-chip" data-tag="DevOps">DevOps</button><button type="button" class="filter-chip" data-tag="セキュリティ">セキュリティ</button><button type="button" class="filter-chip" data-tag="データベース">データベース</button><button type="button" class="filter-chip" data-tag="データ分析">データ分析</button><button type="button" class="filter-chip" data-tag="ネットワーク">ネットワーク</button><button type="button" class="filter-chip" data-tag="OS・システム">OS・システム</button><button type="button" class="filter-chip" data-tag="システム開発">システム開発</button><button type="button" class="filter-chip" data-tag="トラブルシューティング">トラブルシューティング</button><button type="button" class="filter-chip" data-tag="コーディング支援">コーディング支援</button></div>
-                </div>
-                <div class="filter-group">
-                    <div class="filter-group-label">専門・その他</div>
-                    <div class="filter-chips"><button type="button" class="filter-chip" data-tag="モバイル">モバイル</button><button type="button" class="filter-chip" data-tag="ゲーム開発">ゲーム開発</button><button type="button" class="filter-chip" data-tag="アルゴリズム・数学">アルゴリズム・数学</button><button type="button" class="filter-chip" data-tag="ツール紹介">ツール紹介</button><button type="button" class="filter-chip" data-tag="技術発表・LT">技術発表・LT</button><button type="button" class="filter-chip" data-tag="UI/UX">UI/UX</button><button type="button" class="filter-chip" data-tag="VR・AR・MR">VR・AR・MR</button><button type="button" class="filter-chip" data-tag="キャリア・組織">キャリア・組織</button><button type="button" class="filter-chip" data-tag="ハードウェア・IoT">ハードウェア・IoT</button><button type="button" class="filter-chip" data-tag="オープンソース">オープンソース</button><button type="button" class="filter-chip" data-tag="テクノロジートレンド">テクノロジートレンド</button><button type="button" class="filter-chip" data-tag="その他">その他</button></div>
-                </div>
-            </div>
-            <div class="filter-sheet-foot">
-                <button type="button" class="btn-clear" id="filter-clear">クリア</button>
-                <button type="button" class="btn-apply" id="filter-apply">この条件で表示</button>
-            </div>
-        </div>
-    </div>
+    <div class="filter-sheet" id="filter-sheet" hidden></div>
 
     <script src="../../../assets/js/app.js"></script>
 </body>

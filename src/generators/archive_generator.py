@@ -44,7 +44,21 @@ class ArchiveGenerator:
         self._ensure_directory(os.path.dirname(file_path))
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
-    
+
+    def write_static_partials(self) -> None:
+        """全ページ共通で読み込む静的パーツ（assets/partials/）を書き出す
+
+        フッター・絞り込みシートは各ページに直接埋め込まず、app.js が
+        起動時にこれらのファイルを fetch して差し込む。内容の変更は
+        ここを更新するだけで全ページに反映され、生成済みページの
+        再生成が不要になる。
+        """
+        footer_html = self.template_manager.get_static_footer_partial_html()
+        self._save_content(footer_html, "assets/partials/footer.html")
+
+        filter_sheet_html = self.template_manager.get_static_filter_sheet_partial_html()
+        self._save_content(filter_sheet_html, "assets/partials/filter_sheet.html")
+
     # ---------------------------------------------------------------
     # 記事タブ
     # ---------------------------------------------------------------
@@ -600,7 +614,7 @@ class ArchiveIndexGenerator:
             "アーカイブ | 今日のテックニュース", '', is_archive=True, depth=1,
             canonical_url=f"{site_url}archives/index.html"
         )
-        footer_html = tm.get_footer_html(is_archive=True, depth=1)
+        footer_html = tm.get_footer_html()
         js_path = f"{tm.get_asset_prefix(True, 1)}assets/js/app.js"
 
         return f"""{head_section}
