@@ -655,6 +655,9 @@ if __name__ == "__main__":
     # アーカイブ索引（年月タブ＋カレンダー）を更新
     day_summary = _archive_generator.build_day_summary(all_entries, today, mention_counts)
     _archive_index_generator.update_index(day_summary)
+
+    # 全ページ共通の静的パーツ（フッターなど）を更新
+    _archive_generator.write_static_partials()
     
     # daily_news.md更新（アーカイブリンク付き）
     daily_news_content = update_readme_with_archive_link(markdown_content)
