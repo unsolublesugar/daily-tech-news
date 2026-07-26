@@ -19,8 +19,8 @@ _PLACEHOLDER_PATTERN = re.compile(r'\{\{(\w+)\}\}')
 # 曜日の日本語表記（月曜=0）
 WEEKDAY_JA = ['月', '火', '水', '木', '金', '土', '日']
 
-# カレンダーの曜日ヘッダー（日曜始まり）
-CALENDAR_WEEKDAY_JA = ['日', '月', '火', '水', '木', '金', '土']
+# カレンダーの曜日ヘッダー（月曜始まり）
+CALENDAR_WEEKDAY_JA = ['月', '火', '水', '木', '金', '土', '日']
 
 
 class TemplateManager:
@@ -597,8 +597,8 @@ class TemplateManager:
                         latest_date: str) -> str:
         """指定した年月のカレンダーグリッドをレンダリング"""
         first_weekday, days_in_month = monthrange(year, month)
-        # Python の monthrange は月曜=0。日曜始まりのオフセットに変換する
-        leading_empty = (first_weekday + 1) % 7
+        # Python の monthrange は月曜=0 を返すため、月曜始まりのオフセットはそのまま使える
+        leading_empty = first_weekday
 
         weekday_headers = ''.join(f'<span>{label}</span>' for label in CALENDAR_WEEKDAY_JA)
 
