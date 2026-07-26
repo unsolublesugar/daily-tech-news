@@ -122,12 +122,9 @@ class ArchiveGenerator:
 
         highlights = []
         for item in candidates[:limit]:
+            meta_parts = [get_media_short_name(item['feed_name'])]
             if item['mentions'] > 1:
-                mention_label = f"他{item['mentions'] - 1}メディアで言及"
-            else:
-                mention_label = '新着'
-
-            meta_parts = [get_media_short_name(item['feed_name']), mention_label]
+                meta_parts.append(f"他{item['mentions'] - 1}メディアで言及")
             time_label = tm.format_time_label(item['published'], now)
             if time_label:
                 meta_parts.append(time_label)
@@ -142,7 +139,9 @@ class ArchiveGenerator:
 
     def build_articles_tab(self, all_entries: Dict[str, List[Any]],
                            mention_counts: Dict[str, int] = None,
-                           now: datetime = None) -> str:
+                           now: datetime = None,
+                           date_obj: datetime = None,
+                           is_archive: bool = False) -> str:
         """記事タブ（メディア目次＋ハイライト＋メディアごと3件固定）を生成"""
         tm = self.template_manager
         now = now or datetime.now(JST)
@@ -152,9 +151,15 @@ class ArchiveGenerator:
         if not feed_names:
             return '            <p class="empty-note">記事を取得できませんでした。</p>\n'
 
+        if is_archive and date_obj is not None:
+            highlights_heading = f"{date_obj.month}/{date_obj.day}のハイライト"
+        else:
+            highlights_heading = "今日のハイライト"
+
         html_content = tm.render_media_toc(feed_names)
         html_content += tm.render_highlights(
-            self.select_highlights(all_entries, mention_counts, now=now)
+            self.select_highlights(all_entries, mention_counts, now=now),
+            heading=highlights_heading
         )
 
         for feed_name in feed_names:
@@ -345,7 +350,7 @@ class ArchiveGenerator:
         return self.content_structure.build_html_page(
             title=title,
             date_obj=date_obj,
-            articles_html=self.build_articles_tab(all_entries, mention_counts, now),
+            articles_html=self.build_articles_tab(all_entries, mention_counts, now, date_obj, is_archive),
             events_html=self.build_events_tab(all_entries, now),
             books_html=self.build_books_tab(all_entries),
             is_archive=is_archive,

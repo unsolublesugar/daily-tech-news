@@ -347,16 +347,16 @@ class TemplateManager:
     def get_header_html(self, date_obj: datetime, is_archive: bool = False,
                         depth: int = 3) -> str:
         """固定ヘッダー（サイト名・日付・絞り込み・テーマ切替・タブ）を生成"""
-        date_label = self.format_header_date(date_obj)
 
         if is_archive:
-            back_link = f"{self.get_asset_prefix(is_archive, depth)}index.html"
+            back_link = f"{'../' * (depth - 1)}index.html"
+            date_label = self.format_archive_header_date(date_obj)
             brand = (
-                f'<a class="icon-btn" href="{back_link}" aria-label="メインページへ戻る" title="メインページへ戻る">←</a>'
-                f'<span class="site-name">今日のテックニュース</span>'
-                f'<span class="site-date">{date_label}</span>'
+                f'<a class="icon-btn" href="{back_link}" aria-label="アーカイブ一覧へ戻る" title="アーカイブ一覧へ戻る">←</a>'
+                f'<span class="site-name">{date_label}</span>'
             )
         else:
+            date_label = self.format_header_date(date_obj)
             brand = (
                 f'<span class="site-name">今日のテックニュース</span>'
                 f'<span class="site-date">{date_label}</span>'
@@ -373,6 +373,10 @@ class TemplateManager:
     def format_header_date(self, date_obj: datetime) -> str:
         """ヘッダー用の日付表記（7/26 (日)）"""
         return f"{date_obj.month}/{date_obj.day} ({WEEKDAY_JA[date_obj.weekday()]})"
+
+    def format_archive_header_date(self, date_obj: datetime) -> str:
+        """アーカイブ日別ページのヘッダー用の日付表記（2026/7/26 (日)）"""
+        return f"{date_obj.year}/{date_obj.month}/{date_obj.day} ({WEEKDAY_JA[date_obj.weekday()]})"
 
     def get_footer_html(self, is_archive: bool = False, depth: int = 3) -> str:
         """フッター（RSS行・リンクタイル・クレジット）を生成"""
@@ -463,8 +467,9 @@ class TemplateManager:
             '        </nav>\n'
         )
 
-    def render_highlights(self, highlights: List[Dict[str, Any]]) -> str:
-        """今日のハイライト（3件）をレンダリング"""
+    def render_highlights(self, highlights: List[Dict[str, Any]],
+                          heading: str = "今日のハイライト") -> str:
+        """ハイライト（3件）をレンダリング"""
         if not highlights:
             return ''
 
@@ -488,7 +493,7 @@ class TemplateManager:
         return (
             '        <section class="highlights">\n'
             '            <div class="highlights-head">\n'
-            '                <span class="highlights-title">今日のハイライト</span>\n'
+            f'                <span class="highlights-title">{self.escape(heading)}</span>\n'
             '                <span class="highlights-note">複数メディアで話題</span>\n'
             '            </div>\n'
             '            <div class="highlight-cards">\n'

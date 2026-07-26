@@ -157,13 +157,9 @@ a:hover {
 
 .app-brand {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 8px;
     min-width: 0;
-}
-
-.app-brand .icon-btn {
-    align-self: center;
 }
 
 .site-name {
