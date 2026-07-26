@@ -81,22 +81,23 @@ python3 fetch_news.py
 
 ```
 daily-tech-news/
-├── fetch_news.py              # メインスクリプト
-├── daily_tech_news.py         # 新エントリーポイント
+├── fetch_news.py              # メインスクリプト（本番でGitHub Actionsが実行する唯一の実装）
+├── daily_tech_news.py         # 新構造移行用エントリーポイント（src/main.pyのmain()は未実装のため現状は非動作）
 ├── daily_news.md              # 今日のニュース（自動生成）
 ├── index.html                 # カード表示版（自動生成）
 ├── rss.xml                    # RSSフィード（自動生成）
 ├── requirements.txt           # Python依存関係
 ├── CLAUDE.md                  # AI開発用プロジェクト指示書
 ├── src/                       # Pythonモジュール
-│   ├── config/                # 設定管理
+│   ├── config/                # サイト・パス設定管理（フィードURLはfetch_news.py内で管理）
 │   ├── generators/            # 生成エンジン
 │   ├── templates/             # テンプレート管理
-│   └── utils/                 # ユーティリティ
+│   └── utils/                 # ユーティリティ（現状未使用）
 ├── assets/                    # 静的アセット
 │   ├── css/                   # スタイルシート
 │   ├── js/                    # JavaScript
 │   ├── images/                # 画像ファイル
+│   ├── favicons/              # ファビコン各種
 │   ├── partials/              # フッター等の共通パーツ（自動生成、app.jsが起動時にfetch）
 │   └── templates/             # HTMLテンプレート
 ├── archives/                  # 過去ニュースアーカイブ
