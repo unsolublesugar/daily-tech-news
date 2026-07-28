@@ -1,5 +1,6 @@
 import feedparser
 import datetime
+import html
 import os
 import sys
 from pathlib import Path
@@ -43,6 +44,35 @@ EXCLUDED_DOMAINS = {
 # 各フィードから取得する記事の件数
 MAX_ENTRIES = 5
 
+# セミナー／ウェビナーの申込ページだけの記事を弾くためのパターン。
+# 記事フィードにのみ適用する（connpass・TECH PLAYのイベントは正規コンテンツなので対象外）。
+
+# URLだけで申込ページと断定できるもの（単独で除外根拠になる）
+SEMINAR_URL_PATTERNS = tuple(re.compile(pattern, re.IGNORECASE) for pattern in (
+    # 「webinar-registration-system」のような技術記事を巻き込まないよう、
+    # 受付を表す語がパスの区切りか数字で終わる場合だけを対象にする
+    r'/(?:seminar|webinar)s?[-_/]?(?:reception|registration|register|entry|apply|form|moushikomi)(?=[/\d]|$)',
+    r'/(?:seminar|webinar)s?[-_]?\d{6,8}/?$',
+))
+
+# タイトル側の「開催告知」シグナル
+SEMINAR_TITLE_PATTERNS = tuple(re.compile(pattern) for pattern in (
+    r'アーカイブ配信',
+    r'ウェビナー',
+    r'セミナー',
+    r'(?:参加|受講|申[しシ]?込み?|お申込)(?:受付|募集|はこちら)',
+    r'開催のお知らせ',
+    r'\d{1,2}/\d{1,2}\s*[（(][月火水木金土日][）)]',
+))
+
+# 本文側の「申込フォームへの導線しかない」シグナル。
+# 「受講料」「定員」などは開催報告や告知ニュース記事にも出るため入れない。
+SEMINAR_BODY_PATTERNS = tuple(re.compile(pattern) for pattern in (
+    r'(?:お)?申[しシ]?込み?フォーム',
+    r'参加(?:登録|申[しシ]?込み?)フォーム',
+    r'(?:参加|受講|申[しシ]?込み?)(?:登録)?はこちら',
+))
+
 _TRACKING_PARAMS = frozenset({
     "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
     "ref", "fbclid", "gclid",
@@ -84,6 +114,58 @@ def filter_entries_by_domain(entries, domain, label):
         print(f"Excluded {excluded_count} {label} entries")
     
     return filtered_entries
+
+def get_entry_plain_text(entry):
+    """エントリー本文（summary / description / content）をタグを落とした素のテキストで返す"""
+    raw = ''
+    for attr in ('summary', 'description'):
+        value = getattr(entry, attr, None)
+        if value:
+            raw = value
+            break
+
+    if not raw:
+        content = getattr(entry, 'content', None)
+        if isinstance(content, list) and content:
+            raw = content[0].get('value', '')
+
+    if not raw:
+        return ''
+
+    text = re.sub(r'<[^>]+>', ' ', str(raw))
+    text = html.unescape(text)
+    return re.sub(r'\s+', ' ', text).strip()
+
+
+def is_seminar_signup_entry(entry):
+    """セミナー／ウェビナーの申込ページだけの記事かどうかを判定する
+
+    申込受付専用のURLは単独で除外する。それ以外は「タイトルが開催告知」かつ
+    「本文が申込フォームの案内」の両方を満たす場合のみ除外し、タイトルに
+    「セミナー」を含むだけの登壇レポートなどを誤除外しないようにする。
+    """
+    link = getattr(entry, 'link', '') or ''
+    if any(pattern.search(link) for pattern in SEMINAR_URL_PATTERNS):
+        return True
+
+    title = re.sub(r'<[^>]+>', '', getattr(entry, 'title', '') or '')
+    if not any(pattern.search(title) for pattern in SEMINAR_TITLE_PATTERNS):
+        return False
+
+    body = get_entry_plain_text(entry)
+    return any(pattern.search(body) for pattern in SEMINAR_BODY_PATTERNS)
+
+
+def filter_seminar_signup_entries(entries, feed_name):
+    """記事フィードからセミナー申込ページだけの記事を除外する"""
+    filtered_entries = [entry for entry in entries if not is_seminar_signup_entry(entry)]
+
+    excluded_count = len(entries) - len(filtered_entries)
+    if excluded_count > 0:
+        print(f"Excluded {excluded_count} seminar signup entries from {feed_name}")
+
+    return filtered_entries
+
 
 def extract_author_info(entry):
     """RSSエントリーから著者情報を抽出する"""
@@ -632,7 +714,12 @@ if __name__ == "__main__":
             if domain == 'anond.hatelabo.jp' and name not in ["はてなブックマーク - IT（人気）", "はてなブックマーク - IT（新着）"]:
                 continue
             entries = filter_entries_by_domain(entries, domain, label)
-        
+
+        # セミナー申込ページだけの記事は記事フィードからのみ除外する
+        # （イベントフィードのセミナーはイベントタブの正規コンテンツなので残す）
+        if is_article_feed(name):
+            entries = filter_seminar_signup_entries(entries, name)
+
         all_entries[name] = entries
     
     # ハイライト選定用にフィード間の言及数を数える（重複除去より先に行う）
