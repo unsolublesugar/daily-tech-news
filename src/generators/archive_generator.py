@@ -170,15 +170,27 @@ class ArchiveGenerator:
         else:
             highlights_heading = "今日のハイライト"
 
-        html_content = tm.render_media_toc(feed_names)
-        html_content += tm.render_highlights(
-            self.select_highlights(all_entries, mention_counts, now=now),
-            heading=highlights_heading
-        )
+        highlights = self.select_highlights(all_entries, mention_counts, now=now)
+        highlight_links = {item['link'] for item in highlights}
 
+        # ハイライトに出した記事はメディアセクションから外す（ファーストビューとの重複回避）。
+        # 除外してから display_count 件を取るので、表示件数は減らず次の記事が繰り上がる。
+        sections = []
         for feed_name in feed_names:
+            entries = [entry for entry in all_entries[feed_name]
+                       if entry.link not in highlight_links]
+            if entries:
+                sections.append((feed_name, entries[:display_count]))
+
+        if not sections:
+            return tm.render_highlights(highlights, heading=highlights_heading)
+
+        html_content = tm.render_media_toc([feed_name for feed_name, _ in sections])
+        html_content += tm.render_highlights(highlights, heading=highlights_heading)
+
+        for feed_name, entries in sections:
             rows = ''
-            for entry in all_entries[feed_name][:display_count]:
+            for entry in entries:
                 rows += tm.render_article_row(entry, feed_name, now)
             html_content += tm.render_media_section(feed_name, rows)
 
