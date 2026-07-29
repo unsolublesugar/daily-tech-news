@@ -766,9 +766,9 @@ class ContentStructure:
         site_url = self.template_manager.site_config.site_url
         
         if is_archive:
-            nav_links = f'📚 [過去のニュースを見る](../../index.md) | 🎨 [カード表示版を見る]({site_url}) | 📡 [RSSフィードを購読]({site_url}rss.xml)'
+            nav_links = f'📚 [過去のニュースを見る](../../index.md) | 🌐 [Web版を見る]({site_url}) | 📡 [RSSフィードを購読]({site_url}rss.xml)'
         else:
-            nav_links = f'📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る]({site_url}) | 📡 [RSSフィードを購読]({site_url}rss.xml)'
+            nav_links = f'📚 [過去のニュースを見る](archives/index.md) | 🌐 [Web版を見る]({site_url}) | 📡 [RSSフィードを購読]({site_url}rss.xml)'
         
         return f"""# {title}
 
@@ -776,9 +776,9 @@ class ContentStructure:
 
 {self.template_manager.site_config.SITE_DESCRIPTION}
 
-## 🎨 カード表示版もあります
+## 🌐 Web版もあります
 
-GitHub Pages版では各記事がカード形式で見やすく表示されます：  
+GitHub Pages版では記事／イベント／書籍のタブ切り替えやタグ絞り込み、要約のインライン表示ができます：  
 {site_url}
 
 ---

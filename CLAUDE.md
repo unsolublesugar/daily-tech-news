@@ -38,7 +38,7 @@ daily-tech-news/
 
 **出力ファイル（自動生成）**
 - `daily_news.md` — 今日のニュース（Markdown）
-- `index.html` — カード表示版（HTML）
+- `index.html` — Web版（HTML）
 - `rss.xml` — RSSフィード
 
 ## Feed Sources

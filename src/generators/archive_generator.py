@@ -550,7 +550,7 @@ class ArchiveIndexGenerator:
     """アーカイブ索引（年月タブ＋カレンダーの1ページ）の生成を管理するクラス
 
     日別サマリーを archives/index.json に蓄積し、そこから
-    archives/index.html（カード表示版）と archives/index.md（Markdown版）を組み立てる。
+    archives/index.html（Web版）と archives/index.md（Markdown版）を組み立てる。
     """
 
     INDEX_JSON_FILENAME = "index.json"
@@ -646,7 +646,7 @@ class ArchiveIndexGenerator:
         """archives/index.md（Markdown版の日付一覧）を生成"""
         md_content = "# 📚 過去のニュース一覧\n\n"
         md_content += f"{self.site_config.SITE_DESCRIPTION}\n\n"
-        md_content += f"カード表示版はこちら： {self.site_config.site_url}archives/index.html\n\n"
+        md_content += f"Web版はこちら： {self.site_config.site_url}archives/index.html\n\n"
 
         if not day_summaries:
             md_content += "アーカイブファイルが見つかりませんでした。\n"
@@ -660,7 +660,7 @@ class ArchiveIndexGenerator:
                     headline = day.get('headline') or '概要なし'
                     md_content += (
                         f"- [{month:02d}/{day_num}]({year}/{month:02d}/{date_str}.md) "
-                        f"| [カード表示版]({year}/{month:02d}/{date_str}.html) — {headline}\n"
+                        f"| [Web版]({year}/{month:02d}/{date_str}.html) — {headline}\n"
                     )
                 md_content += "\n"
 
