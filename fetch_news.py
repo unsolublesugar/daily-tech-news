@@ -76,7 +76,16 @@ SEMINAR_BODY_PATTERNS = tuple(re.compile(pattern) for pattern in (
 # タイトルに付くPR表記（広告・タイアップ記事の目印）。
 # 「PRを送る」「PRレビュー」などGitHubのPull Request文脈を巻き込まないよう、
 # 角括弧・隅付き括弧で囲まれた表記だけを対象にする（全角半角・大文字小文字は問わない）。
-PR_TITLE_PATTERN = re.compile(r'[\[［【]\s*(?:PR|ＰＲ)\s*[\]］】]', re.IGNORECASE)
+_PR_MARKER = r'[\[［【]\s*(?:PR|ＰＲ)\s*[\]］】]'
+
+# 実際の広告記事はタイトルの先頭（【PR】…）か末尾（…教えます［PR］）にPR表記が付く。
+# タイトル中間の表記は引用文の一部（例:「AIパートナー「[PR] この製品を…」」）であり
+# 広告記事ではないため、位置を先頭・末尾に限定して誤除外を防ぐ。
+# 末尾側は、はてなブックマーク等が付与する「 | サイト名」の後置を許容する。
+PR_TITLE_PATTERN = re.compile(
+    rf'^\s*{_PR_MARKER}|{_PR_MARKER}\s*(?:[|｜]\s*[^|｜]*)?$',
+    re.IGNORECASE
+)
 
 _TRACKING_PARAMS = frozenset({
     "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
