@@ -40,7 +40,7 @@ daily-tech-news/
 ├── .github/
 │   └── workflows/               # GitHub Actions設定
 ├── daily_news.md                 # 今日のニュース（自動生成）
-├── index.html                    # カード表示版（自動生成）
+├── index.html                    # Web版（自動生成）
 ├── rss.xml                       # RSSフィード（自動生成）
 ├── requirements.txt              # 依存関係
 └── README.md                     # プロジェクト概要

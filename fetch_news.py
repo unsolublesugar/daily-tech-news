@@ -492,15 +492,15 @@ def generate_html(all_entries, date_obj, mention_counts=None):
 def generate_markdown(all_entries, date_str):
     """取得したエントリーからMarkdownコンテンツを生成する"""
     markdown = f"# 今日のテックニュース ({date_str})\n\n"
-    markdown += f"""📚 [過去のニュースを見る](archives/index.md) | 🎨 [カード表示版を見る]({DEFAULT_SITE_CONFIG.site_url}) | 📡 [RSSフィードを購読]({DEFAULT_SITE_CONFIG.rss_url})
+    markdown += f"""📚 [過去のニュースを見る](archives/index.md) | 🌐 [Web版を見る]({DEFAULT_SITE_CONFIG.site_url}) | 📡 [RSSフィードを購読]({DEFAULT_SITE_CONFIG.rss_url})
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
 
 ※毎日JST 7:00に自動更新
 
-## 🎨 カード表示版もあります
+## 🌐 Web版もあります
 
-GitHub Pages版では各記事がカード形式で見やすく表示されます：  
+GitHub Pages版では記事／イベント／書籍のタブ切り替えやタグ絞り込み、要約のインライン表示ができます：  
 {DEFAULT_SITE_CONFIG.site_url}
 
 ---
@@ -528,13 +528,13 @@ GitHub Pages版では各記事がカード形式で見やすく表示されま�
 def generate_archive_markdown(all_entries, date_str):
     """アーカイブ用のMarkdownコンテンツを生成する（相対パス修正版）"""
     markdown = f"# 今日のテックニュース ({date_str})\n\n"
-    markdown += f"""📚 [過去のニュースを見る](../../daily_news.md) | 🎨 [カード表示版を見る]({DEFAULT_SITE_CONFIG.site_url}) | 📡 [RSSフィードを購読]({DEFAULT_SITE_CONFIG.rss_url})
+    markdown += f"""📚 [過去のニュースを見る](../../daily_news.md) | 🌐 [Web版を見る]({DEFAULT_SITE_CONFIG.site_url}) | 📡 [RSSフィードを購読]({DEFAULT_SITE_CONFIG.rss_url})
 
 日本の主要な技術系メディアの最新人気エントリーをお届けします。
 
-## 🎨 カード表示版もあります
+## 🌐 Web版もあります
 
-GitHub Pages版では各記事がカード形式で見やすく表示されます：  
+GitHub Pages版では記事／イベント／書籍のタブ切り替えやタグ絞り込み、要約のインライン表示ができます：  
 {DEFAULT_SITE_CONFIG.site_url}
 
 ---
@@ -707,7 +707,7 @@ def generate_slack_message(all_entries, date):
                 "type": "section",
                 "text": {
                     "type": "mrkdwn",
-                    "text": f"📊 *更新サマリー*: {total_articles}記事を更新\n\n🔗 <{DEFAULT_SITE_CONFIG.site_url}|カード表示版を見る>\n📰 <{DEFAULT_SITE_CONFIG.github_repo_url}|GitHub リポジトリ>"
+                    "text": f"📊 *更新サマリー*: {total_articles}記事を更新\n\n🔗 <{DEFAULT_SITE_CONFIG.site_url}|Web版を見る>\n📰 <{DEFAULT_SITE_CONFIG.github_repo_url}|GitHub リポジトリ>"
                 }
             },
             {

@@ -8,7 +8,7 @@
 
 ## 📰 今日のニュースを見る
 
-**➡️ [今日のテックニュース](daily_news.md)** | **🎨 [カード表示版](https://unsolublesugar.github.io/daily-tech-news/)** | **📡 [RSS](https://unsolublesugar.github.io/daily-tech-news/rss.xml)**
+**➡️ [今日のテックニュース](daily_news.md)** | **🌐 [Web版](https://unsolublesugar.github.io/daily-tech-news/)** | **📡 [RSS](https://unsolublesugar.github.io/daily-tech-news/rss.xml)**
 
 ## 🎯 用途
 
@@ -73,7 +73,7 @@ python3 fetch_news.py
 実行後、以下のファイルが生成されます：
 
 - `daily_news.md` - 今日のニュース（Markdown形式）
-- `index.html` - カード表示版（HTML形式）
+- `index.html` - Web版（HTML形式）
 - `rss.xml` - RSSフィード
 - `archives/` - 過去のニュースアーカイブ
 
@@ -84,7 +84,7 @@ daily-tech-news/
 ├── fetch_news.py              # メインスクリプト（本番でGitHub Actionsが実行する唯一の実装）
 ├── daily_tech_news.py         # 新構造移行用エントリーポイント（src/main.pyのmain()は未実装のため現状は非動作）
 ├── daily_news.md              # 今日のニュース（自動生成）
-├── index.html                 # カード表示版（自動生成）
+├── index.html                 # Web版（自動生成）
 ├── rss.xml                    # RSSフィード（自動生成）
 ├── requirements.txt           # Python依存関係
 ├── CLAUDE.md                  # AI開発用プロジェクト指示書
@@ -259,4 +259,4 @@ HTMLテンプレートは`src/templates/`ディレクトリで管理されてい
 
 ---
 
-**📱 最新ニュース**: [daily_news.md](daily_news.md) | **🌐 カード表示**: [GitHub Pages](https://unsolublesugar.github.io/daily-tech-news/)
+**📱 最新ニュース**: [daily_news.md](daily_news.md) | **🌐 Web版**: [GitHub Pages](https://unsolublesugar.github.io/daily-tech-news/)
