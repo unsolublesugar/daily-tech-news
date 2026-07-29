@@ -73,6 +73,11 @@ SEMINAR_BODY_PATTERNS = tuple(re.compile(pattern) for pattern in (
     r'(?:参加|受講|申[しシ]?込み?)(?:登録)?はこちら',
 ))
 
+# タイトルに付くPR表記（広告・タイアップ記事の目印）。
+# 「PRを送る」「PRレビュー」などGitHubのPull Request文脈を巻き込まないよう、
+# 角括弧・隅付き括弧で囲まれた表記だけを対象にする（全角半角・大文字小文字は問わない）。
+PR_TITLE_PATTERN = re.compile(r'[\[［【]\s*(?:PR|ＰＲ)\s*[\]］】]', re.IGNORECASE)
+
 _TRACKING_PARAMS = frozenset({
     "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
     "ref", "fbclid", "gclid",
@@ -163,6 +168,23 @@ def filter_seminar_signup_entries(entries, feed_name):
     excluded_count = len(entries) - len(filtered_entries)
     if excluded_count > 0:
         print(f"Excluded {excluded_count} seminar signup entries from {feed_name}")
+
+    return filtered_entries
+
+
+def is_pr_entry(entry):
+    """タイトルにPR表記（[PR]・［PR］・【PR】）が付いた広告記事かどうかを判定する"""
+    title = re.sub(r'<[^>]+>', '', getattr(entry, 'title', '') or '')
+    return bool(PR_TITLE_PATTERN.search(title))
+
+
+def filter_pr_entries(entries, feed_name):
+    """PR表記付きの広告・タイアップ記事を除外する"""
+    filtered_entries = [entry for entry in entries if not is_pr_entry(entry)]
+
+    excluded_count = len(entries) - len(filtered_entries)
+    if excluded_count > 0:
+        print(f"Excluded {excluded_count} PR entries from {feed_name}")
 
     return filtered_entries
 
@@ -714,6 +736,9 @@ if __name__ == "__main__":
             if domain == 'anond.hatelabo.jp' and name not in ["はてなブックマーク - IT（人気）", "はてなブックマーク - IT（新着）"]:
                 continue
             entries = filter_entries_by_domain(entries, domain, label)
+
+        # PR表記付きの広告・タイアップ記事は全フィードから除外する
+        entries = filter_pr_entries(entries, name)
 
         # セミナー申込ページだけの記事は記事フィードからのみ除外する
         # （イベントフィードのセミナーはイベントタブの正規コンテンツなので残す）
