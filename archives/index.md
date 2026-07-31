@@ -4,6 +4,10 @@
 
 Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/index.html
 
+## 2026年8月
+
+- [08/01](2026/08/2026-08-01.md) | [Web版](2026/08/2026-08-01.html) — GitHubにスタックプルリクエストが登場。gh stackでPRを分割して積み上げよう | Ubie テックブログのフィード
+
 ## 2026年7月
 
 - [07/31](2026/07/2026-07-31.md) | [Web版](2026/07/2026-07-31.html) — 生成AIにおけるHTML/画像出力の必要性と改善案としてのRHW(reviewable-html-workbench)の紹介
