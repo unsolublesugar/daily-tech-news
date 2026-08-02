@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年8月
 
+- [08/03](2026/08/2026-08-03.md) | [Web版](2026/08/2026-08-03.html) — Windowsユーザーは「ホテルのWi-Fiは使うな」マイクロソフトが緊急警告 | Forbes JAPAN 公式サイト（フォーブス ジャパン）
 - [08/02](2026/08/2026-08-02.md) | [Web版](2026/08/2026-08-02.html) — Web Streams API 入門 ― 基本概念から実践まで
 - [08/01](2026/08/2026-08-01.md) | [Web版](2026/08/2026-08-01.html) — GitHubにスタックプルリクエストが登場。gh stackでPRを分割して積み上げよう | Ubie テックブログのフィード
 
