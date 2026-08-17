@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年8月
 
+- [08/18](2026/08/2026-08-18.md) | [Web版](2026/08/2026-08-18.html) — Codexを効率よく使う方法（ChatGPT + GitHub）
 - [08/17](2026/08/2026-08-17.md) | [Web版](2026/08/2026-08-17.html) — タブもテーマも拡張機能もないAI専用の超軽量ヘッドレスブラウザ「Kitesurf」、Cloudflareが発表
 - [08/16](2026/08/2026-08-16.md) | [Web版](2026/08/2026-08-16.html) — 同じ Sonnet 5 でも Claude Code と GitHub Copilot では使い方が違った（オトナの自由研究 #35）
 - [08/15](2026/08/2026-08-15.md) | [Web版](2026/08/2026-08-15.html) — なぜAI時代にGoが最適な言語なのか
