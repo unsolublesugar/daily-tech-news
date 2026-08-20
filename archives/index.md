@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年8月
 
+- [08/21](2026/08/2026-08-21.md) | [Web版](2026/08/2026-08-21.html) — AI Agentに社内知識をオンボーディングする：SkillsとEvalの設計
 - [08/20](2026/08/2026-08-20.md) | [Web版](2026/08/2026-08-20.html) — AWS の新ポリシー言語 Dogwood を試す
 - [08/19](2026/08/2026-08-19.md) | [Web版](2026/08/2026-08-19.html) — オントロジーについて - Qiita
 - [08/18](2026/08/2026-08-18.md) | [Web版](2026/08/2026-08-18.html) — Codexを効率よく使う方法（ChatGPT + GitHub）
