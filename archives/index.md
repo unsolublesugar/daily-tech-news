@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年8月
 
+- [08/30](2026/08/2026-08-30.md) | [Web版](2026/08/2026-08-30.html) — 多観点で比較する Lambdalith vs 単一目的 Lambda | DevelopersIO
 - [08/29](2026/08/2026-08-29.md) | [Web版](2026/08/2026-08-29.html) — OKFやDiátaxisを活用してDevinによるお問い合わせ対応をしている話 - エムスリーテックブログ
 - [08/28](2026/08/2026-08-28.md) | [Web版](2026/08/2026-08-28.html) — DuckDBの開発元であるDuckLabsがAWS子会社になると発表。DuckDBはオープンソースのMITライセンスを維持
 - [08/27](2026/08/2026-08-27.md) | [Web版](2026/08/2026-08-27.html) — ローカルでの開発やめませんか？Claude Code / Cursorで開発の8割をクラウドに移した話
