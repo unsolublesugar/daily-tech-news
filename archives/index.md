@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年9月
 
+- [09/02](2026/09/2026-09-02.md) | [Web版](2026/09/2026-09-02.html) — Claude Codeでトークンリミットが頻発したので、作業ごとにリミットを設定した | エムスリーテックブログ
 - [09/01](2026/09/2026-09-01.md) | [Web版](2026/09/2026-09-01.html) — AIエージェントとの協働を考え続けた結果、タスク管理ツールとチャットツールを内製しました - Generative Agents Tech Blog
 
 ## 2026年8月
