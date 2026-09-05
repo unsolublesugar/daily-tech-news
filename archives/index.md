@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年9月
 
+- [09/06](2026/09/2026-09-06.md) | [Web版](2026/09/2026-09-06.html) — Power AutomateとPower Appsを活用し、セキュリティ担当者の月次確認業務を50％削減！
 - [09/05](2026/09/2026-09-05.md) | [Web版](2026/09/2026-09-05.html) — AIでチーム感が薄れたSREチームで始めた、AIによる週次チーム評価
 - [09/04](2026/09/2026-09-04.md) | [Web版](2026/09/2026-09-04.html) — WebMCPがアツいので見てほしい | DevelopersIO
 - [09/03](2026/09/2026-09-03.md) | [Web版](2026/09/2026-09-03.html) — ECS デプロイパイプラインと構成管理を GitHub Actionsと ecspresso に移行しました
