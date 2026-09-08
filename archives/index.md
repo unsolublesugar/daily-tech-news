@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年9月
 
+- [09/09](2026/09/2026-09-09.md) | [Web版](2026/09/2026-09-09.html) — 2026年版: Mac開発環境の最新セットアップとインストールスクリプト（翻訳）｜TechRacho by BPS株式会社
 - [09/08](2026/09/2026-09-08.md) | [Web版](2026/09/2026-09-08.html) — GitHub - Tencent/teamai-cli: Make Every Team AI Native
 - [09/07](2026/09/2026-09-07.md) | [Web版](2026/09/2026-09-07.html) — VS Code誕生から現在までの物語「The Story of VS Code」YouTubeで公開。作者のエリック・ガンマ氏はなぜIBMからMSへ移籍してVS Codeを作ることになったか
 - [09/06](2026/09/2026-09-06.md) | [Web版](2026/09/2026-09-06.html) — Power AutomateとPower Appsを活用し、セキュリティ担当者の月次確認業務を50％削減！
