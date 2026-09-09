@@ -72,3 +72,6 @@ thumbnail_cache.json
 # ローカル動作確認時に生成されるSlack通知ペイロード（GitHub Actions側で都度生成）
 slack_message.json
 
+
+# Claude Code の個人設定（許可コマンド等）。共有設定は .claude/settings.json
+.claude/settings.local.json

@@ -13,12 +13,15 @@
 2. mainブランチに切り替え・最新pull
 3. Issueに対応するブランチを作成（ブランチ名にIssue番号を含める）
 4. 変更を実装・テスト
-5. **ローカル環境で動作確認**: `python3 -m http.server` などで簡易サーバーを起動し、ブラウザで想定どおりの挙動になっているか目視確認（UI変更時は特に必須）
-6. ブランチをリモートにプッシュ
-7. Pull Requestを作成
-8. レビュー・承認後にmainにマージ
+5. **ローカル環境で動作確認**: `python3 fetch_news.py` で生成した後、`python3 -m http.server` で簡易サーバーを起動し、ブラウザで想定どおりの挙動になっているか目視確認（UI変更時は特に必須）
+6. **生成物を戻す**: `daily_news.md` / `index.html` / `rss.xml` / `archives/` / `assets/partials/` / `data/summaries.json` の差分は `git restore` で戻し、PRにはソースの変更だけを含める（生成物はActionsがコミットする）
+7. ブランチをリモートにプッシュ
+8. Pull Requestを作成
+9. レビュー・承認後にmainにマージ
 
 ## Issue作成ルール
+
+複数行の本文は `--body` にエスケープ文字列を渡さず、ファイルに書いて `--body-file` で渡す（改行崩れと許可プロンプトの増殖を防ぐ）。
 
 ```bash
 # 機能追加
@@ -29,6 +32,9 @@ gh issue create --title "🐛 バグ: 問題の説明" --body "再現手順と�
 
 # ドキュメント更新
 gh issue create --title "📚 ドキュメント: 更新内容" --body "更新理由と詳細" --label documentation --assignee @me
+
+# 本文が長い場合
+gh issue create --title "✨ 機能名: 簡潔な説明" --label enhancement --assignee @me --body-file /path/to/issue-body.md
 ```
 
 ### Issue作成チェックリスト
@@ -60,6 +66,9 @@ gh pr create --title "✨ 機能名: 簡潔な説明 (#13)" --assignee @me --lab
 
 # バグ修正（Issue #14に対応）
 gh pr create --title "🐛 修正: 問題の説明 (#14)" --assignee @me --label bug --body "Fixes #14\n\n修正内容の詳細"
+
+# 本文が長い場合（推奨）
+gh pr create --title "✨ 機能名: 簡潔な説明 (#13)" --assignee @me --label enhancement --body-file /path/to/pr-body.md
 ```
 
 ### PRチェックリスト
@@ -68,6 +77,8 @@ gh pr create --title "🐛 修正: 問題の説明 (#14)" --assignee @me --label
 - [ ] assigneeが設定されているか（`@me`）
 - [ ] 適切なlabelが設定されているか
 - [ ] 本文先頭に `Closes #番号` または `Fixes #番号` が記載されているか
+- [ ] 自動生成物（`daily_news.md` / `index.html` / `rss.xml` / `archives/` / `assets/partials/`）の差分が混入していないか
+- [ ] コミットメッセージにも絵文字プレフィックスと `(#番号)` が付いているか
 
 ### PR本文テンプレート
 
