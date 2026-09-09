@@ -17,6 +17,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 # 設定のインポート
 from config.archive_config import DEFAULT_SITE_CONFIG, is_article_feed
 from generators.archive_generator import ArchiveGenerator, ArchiveIndexGenerator
+from ai_summary import attach_ai_summaries
 
 # 取得するRSSフィードのリスト
 FEEDS = {
@@ -516,14 +517,31 @@ GitHub Pages版では記事／イベント／書籍のタブ切り替えやタ�
                 title = entry.title
                 link = entry.link
                 
-                # シンプルなリンク形式で表示
+                # シンプルなリンク形式で表示（AI要約があれば主題を1行添える）
                 markdown += f"- [{title}]({link})\n"
+                markdown += format_markdown_topic_line(entry)
         
         markdown += "\n\n---\n"
     
     markdown += "## License\n\nThis project is licensed under the [MIT License](LICENSE).\n"
     
     return markdown
+
+def format_markdown_topic_line(entry):
+    """AI要約の主題をMarkdownのネストした箇条書き1行として返す（要約がなければ空文字）"""
+    ai_summary = getattr(entry, 'ai_summary', None)
+    topic = (ai_summary or {}).get('topic', '').strip() if isinstance(ai_summary, dict) else ''
+    if not topic:
+        return ''
+    return f"  - {topic}\n"
+
+def format_rss_description(entry, feed_name):
+    """RSSのdescription。AI要約があれば主題＋3行要約、なければ従来の定型文"""
+    ai_summary = getattr(entry, 'ai_summary', None)
+    if isinstance(ai_summary, dict) and ai_summary.get('summary_lines'):
+        lines = [ai_summary.get('topic', '').strip()] + [line.strip() for line in ai_summary['summary_lines']]
+        return '\n'.join(line for line in lines if line)
+    return f'{feed_name}からの記事: {entry.title}'
 
 def generate_archive_markdown(all_entries, date_str):
     """アーカイブ用のMarkdownコンテンツを生成する（相対パス修正版）"""
@@ -550,8 +568,9 @@ GitHub Pages版では記事／イベント／書籍のタブ切り替えやタ�
                 title = entry.title
                 link = entry.link
                 
-                # シンプルなリンク形式で表示
+                # シンプルなリンク形式で表示（AI要約があれば主題を1行添える）
                 markdown += f"- [{title}]({link})\n"
+                markdown += format_markdown_topic_line(entry)
         
         markdown += "\n\n---\n"
     
@@ -632,7 +651,7 @@ def generate_rss_feed(all_entries, date_obj):
             clean_title = re.sub(r'<[^>]+>', '', entry.title)  # HTMLタグを除去
             ET.SubElement(item, 'title').text = clean_title
             ET.SubElement(item, 'link').text = entry.link
-            ET.SubElement(item, 'description').text = f'{feed_name}からの記事: {entry.title}'
+            ET.SubElement(item, 'description').text = format_rss_description(entry, feed_name)
             ET.SubElement(item, 'guid').text = entry.link
             
             # 公開日（エントリーに日付があれば使用、なければ今日）
@@ -762,6 +781,13 @@ if __name__ == "__main__":
     # フィード間URL重複除去と補填
     print("Removing duplicate URLs across feeds...")
     all_entries = deduplicate_urls_across_feeds(all_entries)
+
+    # AI要約（LLM_API_KEY未設定時はスキップ。失敗しても従来のRSS抜粋で続行する）
+    print("Generating AI summaries...")
+    try:
+        attach_ai_summaries(all_entries, is_article_feed)
+    except Exception as e:
+        print(f"AI summary step failed, continuing without summaries: {e}")
 
     # Markdownコンテンツ生成
     markdown_content = generate_markdown(all_entries, today.isoformat())
