@@ -10,6 +10,11 @@ case "$cmd" in
   *) exit 0 ;;
 esac
 
+# リリース手順のタグpush（git push origin vX.Y.Z / --tags）はmain上でも許可する
+if printf '%s' "$cmd" | grep -Eq 'git push[^|;&]*(--tags|refs/tags/| v[0-9]+\.[0-9]+)'; then
+  exit 0
+fi
+
 branch=$(git -C "${CLAUDE_PROJECT_DIR:-.}" symbolic-ref --short -q HEAD 2>/dev/null || true)
 if [ "$branch" = "main" ]; then
   echo "mainブランチへの直接コミット/マージ/pushは禁止です。feature/ fix/ docs/ ブランチを作成してから実行してください（.claude/rules/git-workflow.md）" >&2
