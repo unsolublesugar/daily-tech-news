@@ -50,7 +50,7 @@ daily-tech-news/
 
 ## AI Summary
 
-`src/ai_summary.py`が記事フィード（イベント・書籍は対象外）の各エントリーに`ai_summary`属性（topic / summary_lines / keywords / input_type）を付与する。`LLM_API_KEY`未設定時はスキップして従来のRSS抜粋表示になる。LLMはGemini固定（`LLM_MODEL`で差し替え、既定`gemini-3.5-flash-lite`）。本文取得に失敗した記事は`prompts/summarize_fallback.txt`でメタデータのみから簡易要約する。要約の失敗は実行全体を止めない。
+`src/ai_summary.py`が記事フィード（イベント・書籍は対象外）の各エントリーに`ai_summary`属性（topic / summary_lines / keywords / input_type）を付与する。表示はWeb版（HTML）の展開部のみで、Markdown / RSSには反映しない。`LLM_API_KEY`未設定時はスキップして従来のRSS抜粋表示になる。LLMはGemini固定（`LLM_MODEL`で差し替え、既定`gemini-3.5-flash-lite`）。本文取得に失敗した記事は`prompts/summarize_fallback.txt`でメタデータのみから簡易要約する。要約の失敗は実行全体を止めない。
 
 対応メディア: Tech Blog Weekly / Zenn / Qiita / はてなブックマーク / DevelopersIO / gihyo.jp / Publickey / CodeZine / InfoQ Japan / connpass / TECH PLAY / O'Reilly Japan
 

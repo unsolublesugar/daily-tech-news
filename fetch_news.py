@@ -517,31 +517,14 @@ GitHub Pages版では記事／イベント／書籍のタブ切り替えやタ�
                 title = entry.title
                 link = entry.link
                 
-                # シンプルなリンク形式で表示（AI要約があれば主題を1行添える）
+                # シンプルなリンク形式で表示
                 markdown += f"- [{title}]({link})\n"
-                markdown += format_markdown_topic_line(entry)
         
         markdown += "\n\n---\n"
     
     markdown += "## License\n\nThis project is licensed under the [MIT License](LICENSE).\n"
     
     return markdown
-
-def format_markdown_topic_line(entry):
-    """AI要約の主題をMarkdownのネストした箇条書き1行として返す（要約がなければ空文字）"""
-    ai_summary = getattr(entry, 'ai_summary', None)
-    topic = (ai_summary or {}).get('topic', '').strip() if isinstance(ai_summary, dict) else ''
-    if not topic:
-        return ''
-    return f"  - {topic}\n"
-
-def format_rss_description(entry, feed_name):
-    """RSSのdescription。AI要約があれば主題＋3行要約、なければ従来の定型文"""
-    ai_summary = getattr(entry, 'ai_summary', None)
-    if isinstance(ai_summary, dict) and ai_summary.get('summary_lines'):
-        lines = [ai_summary.get('topic', '').strip()] + [line.strip() for line in ai_summary['summary_lines']]
-        return '\n'.join(line for line in lines if line)
-    return f'{feed_name}からの記事: {entry.title}'
 
 def generate_archive_markdown(all_entries, date_str):
     """アーカイブ用のMarkdownコンテンツを生成する（相対パス修正版）"""
@@ -568,9 +551,8 @@ GitHub Pages版では記事／イベント／書籍のタブ切り替えやタ�
                 title = entry.title
                 link = entry.link
                 
-                # シンプルなリンク形式で表示（AI要約があれば主題を1行添える）
+                # シンプルなリンク形式で表示
                 markdown += f"- [{title}]({link})\n"
-                markdown += format_markdown_topic_line(entry)
         
         markdown += "\n\n---\n"
     
@@ -651,7 +633,7 @@ def generate_rss_feed(all_entries, date_obj):
             clean_title = re.sub(r'<[^>]+>', '', entry.title)  # HTMLタグを除去
             ET.SubElement(item, 'title').text = clean_title
             ET.SubElement(item, 'link').text = entry.link
-            ET.SubElement(item, 'description').text = format_rss_description(entry, feed_name)
+            ET.SubElement(item, 'description').text = f'{feed_name}からの記事: {entry.title}'
             ET.SubElement(item, 'guid').text = entry.link
             
             # 公開日（エントリーに日付があれば使用、なければ今日）
