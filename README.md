@@ -185,7 +185,7 @@ GitHub Actionsで自動実行する場合は、リポジトリのSecrets設定�
 - `LLM_API_KEY`: Gemini APIキー（[Google AI Studio](https://aistudio.google.com/apikey) で発行）
 - `LLM_MODEL`: モデル名（省略時は `gemini-3.5-flash-lite`）
 
-AI要約は `LLM_API_KEY` が設定されている場合だけ動作し、未設定なら従来どおりRSSの抜粋を表示します。要約結果は `data/summaries.json` にコミットされ、同じURLの記事は30日間再要約されません。1回の実行で新規に要約する件数は `MAX_SUMMARIZE_PER_RUN`（既定60件）で制限できます。
+AI要約は `LLM_API_KEY` が設定されている場合だけ動作し、未設定なら従来どおりRSSの抜粋を表示します。要約結果は `data/summaries.json` にコミットされ、同じURLの記事は30日間再要約されません。1回の実行で新規に要約する件数は `MAX_SUMMARIZE_PER_RUN`（既定60件）、LLM呼び出しの間隔は `LLM_MIN_INTERVAL_SECONDS`（既定4秒。無料枠の15リクエスト/分に収まる値）で調整できます。
 
 **自動検出機能**: 
 - GitHub Actionsでは`GITHUB_REPOSITORY_OWNER`環境変数からユーザー名を自動取得

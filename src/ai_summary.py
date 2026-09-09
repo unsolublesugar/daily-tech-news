@@ -12,6 +12,7 @@ tsuyu-mi (https://github.com/unsolublesugar/tsuyu-mi) の要約パイプライ�
     LLM_MODEL                モデル名（既定: gemini-3.5-flash-lite）
     MAX_SUMMARIZE_PER_RUN    1回の実行で新規に要約する上限件数（既定: 60）
     REQUEST_TIMEOUT_SECONDS  本文取得のタイムアウト秒（既定: 15）
+    LLM_MIN_INTERVAL_SECONDS LLM呼び出しの最小間隔秒（既定: 4。無料枠の15リクエスト/分に収める）
 """
 
 import html as html_module
@@ -41,8 +42,9 @@ MIN_BODY_CHARS = 100
 
 USER_AGENT = "daily-tech-news/1.0 (+https://github.com/unsolublesugar/daily-tech-news)"
 
-# LLM呼び出しの再試行（レート制限・一時的エラー向け）。待機秒は試行ごとに使う
-LLM_RETRY_WAITS = (5, 15, 30)
+# LLM呼び出しの再試行（レート制限・一時的エラー向け）。待機秒は試行ごとに使う。
+# Gemini無料枠の429は「約30〜60秒後に再試行」を要求するため、最後は60秒待つ
+LLM_RETRY_WAITS = (10, 30, 60)
 
 
 def _log(message: str) -> None:
@@ -62,6 +64,7 @@ class SummaryConfig:
         self.model = os.environ.get("LLM_MODEL", "").strip() or DEFAULT_MODEL
         self.max_per_run = _env_int("MAX_SUMMARIZE_PER_RUN", 60)
         self.request_timeout = _env_int("REQUEST_TIMEOUT_SECONDS", 15)
+        self.llm_min_interval = _env_float("LLM_MIN_INTERVAL_SECONDS", 4.0)
 
     @property
     def enabled(self) -> bool:
@@ -71,6 +74,13 @@ class SummaryConfig:
 def _env_int(name: str, default: int) -> int:
     try:
         return int(os.environ.get(name, "") or default)
+    except ValueError:
+        return default
+
+
+def _env_float(name: str, default: float) -> float:
+    try:
+        return float(os.environ.get(name, "") or default)
     except ValueError:
         return default
 
@@ -270,10 +280,16 @@ def _call_llm(provider: Any, prompt: str) -> Optional[Dict[str, Any]]:
             last_error = e
             if wait is None:
                 break
-            _log(f"LLM呼び出し/パース失敗（{attempt + 1}回目）、{wait}秒後に再試行します: {e}")
+            _log(f"LLM呼び出し/パース失敗（{attempt + 1}回目）、{wait}秒後に再試行します: {_short_error(e)}")
             time.sleep(wait)
-    _log(f"LLM呼び出しを断念しました: {last_error}")
+    _log(f"LLM呼び出しを断念しました: {_short_error(last_error)}")
     return None
+
+
+def _short_error(error: Any) -> str:
+    """APIエラーはJSON全文を含んで長大になるため、ログ用に1行に切り詰める"""
+    text = " ".join(str(error).split())
+    return text if len(text) <= 200 else text[:200] + "..."
 
 
 # ---------------------------------------------------------------
@@ -361,7 +377,8 @@ def attach_ai_summaries(
     _log(f"{len(pending)} 件の本文を取得します...")
     texts = fetch_article_texts([entry.link for entry, _ in pending], timeout=config.request_timeout)
 
-    # 3. LLMで要約（レート制限を考慮して直列）
+    # 3. LLMで要約（レート制限を考慮して直列・間隔を空ける）
+    last_call_at = 0.0
     for entry, feed_name in pending:
         title = html_module.unescape(re.sub(r"<[^>]+>", "", getattr(entry, "title", "") or "")).strip()
         body = texts.get(entry.link, "")
@@ -372,6 +389,10 @@ def attach_ai_summaries(
             prompt = build_fallback_prompt(title, entry.link, feed_name, _entry_excerpt(entry))
             input_type = "metadata"
 
+        wait = config.llm_min_interval - (time.monotonic() - last_call_at)
+        if wait > 0:
+            time.sleep(wait)
+        last_call_at = time.monotonic()
         result = _call_llm(provider, prompt)
         if result is None:
             stats["failed"] += 1
