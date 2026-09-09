@@ -130,6 +130,27 @@ def filter_entries_by_domain(entries, domain, label):
     
     return filtered_entries
 
+# タイトルのHTMLエンティティを戻す最大回数
+# 一部フィード（Tech Blog Weekly など）は CDATA 内に `&amp;amp;` と二重エスケープした
+# タイトルを配信するため2回まで戻す。意図して `&amp;` と書かれたタイトルを壊さないよう
+# 上限を設けている。
+MAX_TITLE_UNESCAPE_PASSES = 2
+
+
+def normalize_entry_title(raw_title):
+    """エントリーのタイトルをHTMLエンティティ・タグを落とした素のテキストに整える"""
+    text = str(raw_title or '')
+
+    for _ in range(MAX_TITLE_UNESCAPE_PASSES):
+        unescaped = html.unescape(text)
+        if unescaped == text:
+            break
+        text = unescaped
+
+    text = re.sub(r'<[^>]+>', ' ', text)
+    return re.sub(r'\s+', ' ', text).strip()
+
+
 def get_entry_plain_text(entry):
     """エントリー本文（summary / description / content）をタグを落とした素のテキストで返す"""
     raw = ''
@@ -240,9 +261,10 @@ def fetch_feed_entries(feed_url):
     try:
         feed = feedparser.parse(feed_url)
         
-        # 各エントリに著者情報を追加
+        # 各エントリに著者情報を追加し、タイトルの二重エスケープをここで一度だけ解く
         for entry in feed.entries:
             entry.author_info = extract_author_info(entry)
+            entry['title'] = normalize_entry_title(getattr(entry, 'title', ''))
         
         return feed.entries
     except Exception as e:
