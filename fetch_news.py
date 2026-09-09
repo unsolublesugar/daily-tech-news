@@ -17,6 +17,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 # 設定のインポート
 from config.archive_config import DEFAULT_SITE_CONFIG, is_article_feed
 from generators.archive_generator import ArchiveGenerator, ArchiveIndexGenerator
+from ai_summary import attach_ai_summaries
 
 # 取得するRSSフィードのリスト
 FEEDS = {
@@ -762,6 +763,13 @@ if __name__ == "__main__":
     # フィード間URL重複除去と補填
     print("Removing duplicate URLs across feeds...")
     all_entries = deduplicate_urls_across_feeds(all_entries)
+
+    # AI要約（LLM_API_KEY未設定時はスキップ。失敗しても従来のRSS抜粋で続行する）
+    print("Generating AI summaries...")
+    try:
+        attach_ai_summaries(all_entries, is_article_feed)
+    except Exception as e:
+        print(f"AI summary step failed, continuing without summaries: {e}")
 
     # Markdownコンテンツ生成
     markdown_content = generate_markdown(all_entries, today.isoformat())

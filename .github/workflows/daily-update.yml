@@ -25,7 +25,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v6
       with:
-        python-version: '3.9'
+        python-version: '3.11'
 
     - name: Cache thumbnail data
       uses: actions/cache@v5
@@ -56,6 +56,9 @@ jobs:
       env:
         USER_NAME: ${{ secrets.USER_NAME }}
         X_USERNAME: ${{ secrets.X_USERNAME }}
+        # AI要約（Gemini）。LLM_API_KEY未設定ならRSS抜粋のまま動作する
+        LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        LLM_MODEL: ${{ secrets.LLM_MODEL }}
       run: |
         python fetch_news.py
 
@@ -75,6 +78,8 @@ jobs:
     - name: Commit and push changes
       run: |
         git add daily_news.md archives/ rss.xml index.html
+        # AI要約キャッシュ（LLM_API_KEY未設定時はディレクトリ自体が無い）
+        if [ -d data ]; then git add data/; fi
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else

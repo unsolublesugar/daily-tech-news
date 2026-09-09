@@ -9,6 +9,7 @@ daily-tech-news/
 ├── src/                          # Pythonソースコード
 │   ├── __init__.py              # メインパッケージ初期化
 │   ├── main.py                  # 新構造移行用モジュール（main()は未実装のpassのみ、現状非動作）
+│   ├── ai_summary.py            # AI要約（本文取得→Gemini→data/summaries.jsonにキャッシュ）
 │   ├── config/                  # 設定管理
 │   │   ├── __init__.py
 │   │   └── archive_config.py    # サイト・パス設定（フィードURLはfetch_news.py側で管理）
@@ -20,6 +21,11 @@ daily-tech-news/
 │   │   └── template_manager.py  # HTML/CSS テンプレート（独自の{{key}}プレースホルダー方式、Jinja2は未使用）
 │   └── utils/                   # ユーティリティ（現状未使用）
 │       └── __init__.py
+├── prompts/                      # AI要約のプロンプト
+│   ├── summarize_full.txt       # 本文あり
+│   └── summarize_fallback.txt   # 本文未取得（メタデータのみ）
+├── data/
+│   └── summaries.json           # AI要約キャッシュ（URLキー、30日で刈り込み、Actionsが自動コミット）
 ├── assets/                       # 静的アセット
 │   ├── css/                    # スタイルシート
 │   ├── js/                     # JavaScript（app.js）

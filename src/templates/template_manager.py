@@ -448,8 +448,8 @@ class TemplateManager:
             f'<span class="tag-chip">{self.escape(tag)}</span>' for tag in tags[:2]
         )
 
-        summary_html = ''
-        if summary:
+        summary_html = self.render_ai_summary(getattr(entry, 'ai_summary', None))
+        if not summary_html and summary:
             summary_html = f'\n                        <p class="article-summary">{self.escape(summary)}</p>'
 
         template = self.load_template('article_row.html')
@@ -463,6 +463,24 @@ class TemplateManager:
             tag_chips=tag_chips,
             summary_html=summary_html,
             link=self.escape(link)
+        )
+
+    def render_ai_summary(self, ai_summary: Any) -> str:
+        """AI要約（主題＋3行要約）の展開部HTMLを生成。要約がなければ空文字"""
+        if not isinstance(ai_summary, dict):
+            return ''
+        lines = [str(line).strip() for line in ai_summary.get('summary_lines', []) if str(line).strip()]
+        if not lines:
+            return ''
+
+        topic = str(ai_summary.get('topic', '')).strip()
+        note = '本文未取得のため簡易要約' if ai_summary.get('input_type') == 'metadata' else 'AIによる自動要約'
+        items = ''.join(f'<li>{self.escape(line)}</li>' for line in lines)
+        topic_html = f'<p class="article-summary-topic">{self.escape(topic)}</p>' if topic else ''
+        return (
+            '\n                        <div class="article-summary article-summary-ai">'
+            f'<span class="ai-summary-label" title="{self.escape(note)}">AI要約</span>'
+            f'{topic_html}<ul class="article-summary-lines">{items}</ul></div>'
         )
 
     def render_media_section(self, feed_name: str, rows_html: str) -> str:
