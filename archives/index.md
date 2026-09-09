@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年9月
 
+- [09/10](2026/09/2026-09-10.md) | [Web版](2026/09/2026-09-10.html) — AIエージェント向けコーディングルールをArchUnitで機械的に検証する運用 - ZOZO TECH BLOG
 - [09/09](2026/09/2026-09-09.md) | [Web版](2026/09/2026-09-09.html) — 深刻化する“サイバー蝗害”―Linuxカーネルソースに群がる貪欲で超非効率な「AIイナゴ」たち | gihyo.jp
 - [09/08](2026/09/2026-09-08.md) | [Web版](2026/09/2026-09-08.html) — GitHub - Tencent/teamai-cli: Make Every Team AI Native
 - [09/07](2026/09/2026-09-07.md) | [Web版](2026/09/2026-09-07.html) — VS Code誕生から現在までの物語「The Story of VS Code」YouTubeで公開。作者のエリック・ガンマ氏はなぜIBMからMSへ移籍してVS Codeを作ることになったか
