@@ -53,7 +53,7 @@
 
 ### 必要環境
 
-- Python 3.9+
+- Python 3.11+（GitHub Actions と同じ版）
 - pip
 - Node.js 18+ (Claude Code使用時)
 
@@ -89,6 +89,7 @@ daily-tech-news/
 ├── rss.xml                    # RSSフィード（自動生成）
 ├── requirements.txt           # Python依存関係
 ├── CLAUDE.md                  # AI開発用プロジェクト指示書
+├── .claude/                   # Claude Code用のルール・共有設定・フック・スキル
 ├── src/                       # Pythonモジュール
 │   ├── config/                # サイト・パス設定管理（フィードURLはfetch_news.py内で管理）
 │   ├── generators/            # 生成エンジン
@@ -106,9 +107,11 @@ daily-tech-news/
 │   ├── index.md               # アーカイブ一覧（Markdown版、自動生成）
 │   ├── index.json             # 日別サマリーの索引データ（自動生成）
 │   └── [年]/[月]/[日付].{md,html}
+├── prompts/                   # AI要約プロンプト
+├── data/summaries.json        # AI要約キャッシュ（自動コミット）
 ├── docs/                      # プロジェクトドキュメント
 └── .github/
-    └── workflows/            # GitHub Actions設定
+    └── workflows/            # GitHub Actions設定（daily-update.yml / test-branch.yml）
 ```
 
 ## ⚙️ 設定
@@ -240,12 +243,12 @@ HTMLテンプレートは`src/templates/`ディレクトリで管理されてい
 ## 🤝 コントリビューション
 
 1. このリポジトリをフォーク
-2. フィーチャーブランチを作成 (`git checkout -b feature/amazing-feature`)
-3. 変更をコミット (`git commit -m 'Add amazing feature'`)
-4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
-5. プルリクエストを作成
+2. Issueを作成し、Issue番号入りのブランチを作成 (`git checkout -b feature/issue-123-amazing-feature`)
+3. 変更をコミット（`✨ 機能名: 説明 (#123)` のように絵文字プレフィックスとIssue番号を付ける）
+4. ローカルで動作確認（`python3 fetch_news.py` → `python3 -m http.server`）し、生成物（`daily_news.md` / `index.html` / `rss.xml` / `archives/`）の差分は戻す
+5. ブランチにプッシュしてプルリクエストを作成（本文先頭に `Closes #123`）
 
-詳細は[CLAUDE.md](CLAUDE.md)の開発ワークフローを参照してください。
+詳細は[.claude/rules/git-workflow.md](.claude/rules/git-workflow.md)を参照してください。Claude Code を使う場合は `/start-work` `/local-preview` `/create-pr` スキルで同じ手順を実行できます。
 
 ## 📄 ライセンス
 

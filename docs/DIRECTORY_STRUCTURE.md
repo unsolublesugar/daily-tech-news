@@ -42,7 +42,10 @@ daily-tech-news/
 ├── docs/                         # ドキュメント
 │   └── DIRECTORY_STRUCTURE.md
 ├── .claude/                      # Claude Code用ルール・設定
-│   └── rules/                   # git-workflow.md / ai-principles.md
+│   ├── settings.json            # 共有設定（読み取り系コマンドの許可・フック。書き込み系は各自のsettings.local.jsonへ）
+│   ├── hooks/                   # protect-main.sh（main直接コミット/force pushを拒否）
+│   ├── rules/                   # git-workflow.md / ai-principles.md
+│   └── skills/                  # /start-work /create-pr /local-preview /release
 ├── .github/
 │   └── workflows/               # GitHub Actions設定
 ├── daily_news.md                 # 今日のニュース（自動生成）
