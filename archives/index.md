@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年9月
 
+- [09/11](2026/09/2026-09-11.md) | [Web版](2026/09/2026-09-11.html) — メモリに載らないGROUP BYをDuckDBはどう処理するのか
 - [09/10](2026/09/2026-09-10.md) | [Web版](2026/09/2026-09-10.html) — AIエージェント向けコーディングルールをArchUnitで機械的に検証する運用 - ZOZO TECH BLOG
 - [09/09](2026/09/2026-09-09.md) | [Web版](2026/09/2026-09-09.html) — 深刻化する“サイバー蝗害”―Linuxカーネルソースに群がる貪欲で超非効率な「AIイナゴ」たち | gihyo.jp
 - [09/08](2026/09/2026-09-08.md) | [Web版](2026/09/2026-09-08.html) — GitHub - Tencent/teamai-cli: Make Every Team AI Native
