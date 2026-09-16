@@ -87,6 +87,24 @@
     ],
     "topic": "CERNが加速器制御OSをCentOSからDebianへ移行する理由"
   },
+  "https://atmarkit.itmedia.co.jp/ait/articles/2609/17/news006.html": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AIエージェント",
+      "APIキー",
+      "シークレット管理",
+      "OAuth",
+      "セキュリティ対策"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIエージェントの普及に伴い、APIキーなどの認証情報を悪用されるセキュリティリスクが懸念されている。",
+      "従来の.envファイル管理ではなく、専用のシークレット管理や動的なトークン発行・権限制限の仕組みが重要となる。",
+      "ゲートウェイを用いたアクセス制御やHuman-in-the-loopによる監視など、多層的な対策が求められている。"
+    ],
+    "topic": "AIエージェントの認証情報管理とセキュリティ対策"
+  },
   "https://automaton-media.com/articles/newsjp/20260911-466913/": {
     "generated_at": "2026-09-11T22:04:12.644451Z",
     "input_type": "fulltext",
@@ -246,6 +264,24 @@
       "Power AutomateのJSONの解析やスキーマ修正、SharePointへの保存処理を設定する。"
     ],
     "topic": "Power AppsからPower Automateへ添付ファイルをJSON送信する方法"
+  },
+  "https://blog.s-style.co.jp/2026/09/16747/": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Percona Server",
+      "OpenTelemetry",
+      "PMM",
+      "MySQL",
+      "Observability"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Percona Server 9.7.1-1のOpenTelemetry機能とPMMを比較検証した。",
+      "OpenTelemetryはリクエスト単位の横断的な切り分けやログ連携に有効である。",
+      "DB単体の監視にはPMMが容易だが、既存のオブザーバビリティ基盤がある場合に導入価値がある。"
+    ],
+    "topic": "Percona ServerのOpenTelemetry検証とPMM比較"
   },
   "https://blog.serverworks.co.jp/claude-code-ccusage-cost-tracking": {
     "generated_at": "2026-09-10T22:03:41.306102Z",
@@ -807,6 +843,23 @@
     ],
     "topic": "はてなブログ運営エンジニアnwiizo氏の初著書刊行"
   },
+  "https://codezine.jp/article/detail/29695": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "metadata",
+    "keywords": [
+      "Node.js",
+      "LTS",
+      "JavaScript",
+      "バックエンド"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "CodeZineにおいて「Node.js 24.21.0（LTS）」が公開されたことが報じられているとみられる。",
+      "長期サポート（LTS）版である同バージョンの主な変更点やアップデート内容が紹介されている可能性が高い。",
+      "詳細は元の記事および公式サイトを参照する必要がある。"
+    ],
+    "topic": "Node.js 24.21.0（LTS）の公開"
+  },
   "https://codezine.jp/article/detail/29699": {
     "generated_at": "2026-09-15T22:04:24.286898Z",
     "input_type": "metadata",
@@ -823,6 +876,75 @@
       "国内におけるGoogle Cloud環境での利用可能性に関する情報が含まれると推測される。"
     ],
     "topic": "SnowflakeのGoogle Cloud東京リージョン対応予定"
+  },
+  "https://codezine.jp/article/detail/29704": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "metadata",
+    "keywords": [
+      "開発組織ブランドアワード",
+      "日本CTO協会",
+      "技術広報",
+      "AI",
+      "採用戦略"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "日本CTO協会が開催した「開発組織ブランドアワード2026」の受賞結果を振り返る記事と見られる。",
+      "今年からAIによる生産性向上が新たな評価項目に加わり、その傾向について解説されているも模様。",
+      "受賞企業3社の事例をもとに、AI時代の技術広報や採用戦略について紹介されている可能性がある。"
+    ],
+    "topic": "開発組織ブランドアワード2026の受賞企業と技術広報の傾向"
+  },
+  "https://codezine.jp/article/detail/29707": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "metadata",
+    "keywords": [
+      "フィジカルAI",
+      "技術的ボトルネック",
+      "AIの未来",
+      "対談イベント"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "「話せるAI」から「動けるAI」への移行に関する対談イベントのレポートとみられる。",
+      "フィジカルAIにおける技術的なボトルネックについて議論されているもよう。",
+      "10年後の未来の展望について語られている可能性がある。"
+    ],
+    "topic": "フィジカルAIの技術的課題と未来に関する対談"
+  },
+  "https://codezine.jp/article/detail/29708": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "metadata",
+    "keywords": [
+      "探索的テスト",
+      "品質管理",
+      "ソフトウェアテスト",
+      "イベント"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "探索的テストをテーマにした書籍『Explore It!』の出版記念イベントが開催された模様です。",
+      "プロダクトの品質や価値を高めるためのテスト手法について扱っていると見られます。",
+      "詳細は不明ですが、探索的テストや品質向上に関心のあるエンジニア向けの話題と推測されます。"
+    ],
+    "topic": "書籍『Explore It!』出版記念の探索的テストイベント"
+  },
+  "https://codezine.jp/article/detail/29709": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "metadata",
+    "keywords": [
+      "顧客の声",
+      "VOC",
+      "AIマネジメント",
+      "ベクスト"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "ベクストが顧客の声（VOC）を品質知へ変換する手法に関する実務書を刊行したと見られる。",
+      "AIマネジメントの観点から経営判断への活用方法が解説されている可能性がある。",
+      "具体的な内容や技術詳細はメタデータからは不明である。"
+    ],
+    "topic": "顧客の声を経営判断に活用するAIマネジメント実務書の刊行"
   },
   "https://darioamodei.com/post/we-must-pace-the-frontier": {
     "generated_at": "2026-09-12T22:04:31.942470Z",
@@ -859,6 +981,23 @@
       "C4K/4K動画撮影や手持ちハイレゾショットなどの高度な撮影アシスト機能に対応し、2026年10月下旬に発売する。"
     ],
     "topic": "EVFと防塵防滴を備えたOM SYSTEM PENの発売"
+  },
+  "https://dc.watch.impress.co.jp/docs/news/2141517.html": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "EOS R8 Mark II",
+      "キヤノン",
+      "フルサイズミラーレス",
+      "Dual Pixel 3D Converter"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "キヤノンは20万円台のエントリー向けフルサイズミラーレスカメラ「EOS R8 Mark II」を10月29日に発売する。",
+      "若年層を意識した直線的な新デザインを採用し、ボディ内手ブレ補正や初心者向けの自動撮影モードを新たに搭載した。",
+      "写真1枚から3Dデータを作成できるWindows用無償ソフト「Dual Pixel 3D Converter」も発表された。"
+    ],
+    "topic": "キヤノンのエントリー向けフルサイズミラーレスカメラEOS R8 Mark IIの発表"
   },
   "https://dev.classmethod.jp/articles/20260908-opsmethod4-agent-skills-for-operation/": {
     "generated_at": "2026-09-10T22:03:41.306102Z",
@@ -1216,6 +1355,60 @@
     ],
     "topic": "Claude CodeによるレガシーコードからのSQL自動抽出検証"
   },
+  "https://dev.classmethod.jp/articles/claude-code-settings-permissions-deny-verify/": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Claude Code",
+      "Amazon Bedrock",
+      "settings.json",
+      "アクセス制御",
+      "セキュリティ"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "settings.jsonのdenyに設定したrmコマンドは確実にブロックされ、allowと重複した場合はdenyが優先されることを確認した。",
+      "find -deleteなど、コマンドを言い換えた類似の削除操作はdenyの対象外となりブロックされないことを検証した。",
+      "manualモードとautoモードの違いによる確認プロンプトの挙動や、ファイル内容に応じたClaudeの判断挙動を解説した。"
+    ],
+    "topic": "Claude Codeにおけるsettings.jsonのdeny機能の検証"
+  },
+  "https://dev.classmethod.jp/articles/cloudtrail-amazon-q-console-japanese-search/": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AWS CloudTrail",
+      "Amazon Q",
+      "日本語検索",
+      "ログ調査",
+      "AWS"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWS CloudTrailがAmazon Q Consoleとの統合を強化し、日本語によるログ調査をサポートした。",
+      "ユーザーの操作履歴やサービス別の作成・削除数、エラーAPI、IAM変更などを自然言語で検索した。",
+      "属性の絞り込みを意識せず日本語で初期調査が行えるため、手軽なログ確認手段として活用できる。"
+    ],
+    "topic": "AWS CloudTrailとAmazon Qの統合による日本語でのログ調査"
+  },
+  "https://dev.classmethod.jp/articles/context-layer-dbt-agents-schema-try/": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Agents Schema",
+      "dbt",
+      "Snowflake",
+      "コンテキストレイヤー",
+      "AIエージェント"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIエージェント向けコンテキストレイヤーのAgents SchemaをSnowflake上で試した。",
+      "dbtとOSIプロバイダーを使用し、メタデータやリネージをスキーマに集約する手順を解説している。",
+      "YAMLでのドキュメント整備を通じてAGENTSスキーマに各種テーブルが構築されることを確認した。"
+    ],
+    "topic": "Agents Schemaによるコンテキストレイヤーの検証"
+  },
   "https://dev.classmethod.jp/articles/dbt-projects-on-snowflake-run-one-project-concurrently/": {
     "generated_at": "2026-09-11T22:04:12.644451Z",
     "input_type": "fulltext",
@@ -1268,6 +1461,24 @@
       "顔検出に加えラベルやテキスト等を活用した切り抜き設定の動作を確認した。"
     ],
     "topic": "CloudFront画像変換ソリューションの新機能検証"
+  },
+  "https://dev.classmethod.jp/articles/ecs-express-mode-cpu-architecture-arm64/": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Amazon ECS",
+      "ECS Express Mode",
+      "ARM64",
+      "AWS CLI",
+      "AWS Fargate"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWS CLI v2.36.44以降でECS Express Modeのサービス作成時にARM64の指定が可能になった。",
+      "CLIを使用してマルチアーキテクチャイメージを利用したARM64サービスの作成手順を検証した。",
+      "初回サービス作成時からARM64を利用できるため、カスタムタスク定義との入れ替え手間が解消される。"
+    ],
+    "topic": "ECS Express ModeでのARM64指定機能の検証"
   },
   "https://dev.classmethod.jp/articles/investigate-cost-anomaly-with-finops-agent/": {
     "generated_at": "2026-09-13T22:03:52.034540Z",
@@ -1357,6 +1568,23 @@
       "GlueとAthenaを用いたデータ検索の設定や、Grafanaでの時系列グラフの表示手順を紹介。"
     ],
     "topic": "M5StickS3のIMUデータを活用した筋トレ分析パイプラインの構築"
+  },
+  "https://dev.classmethod.jp/articles/monitor-detected-anomalies-using-dashboards/": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AWS",
+      "Billing and Cost Management",
+      "Cost Anomaly Detection",
+      "ダッシュボード"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWSの請求とコスト管理ダッシュボードにCost Anomaly Detectionのウィジェットが追加された。",
+      "追加されたDetected Anomaliesウィジェットでは深刻度や評価などのパラメータで絞り込みが可能である。",
+      "ウィジェット上のリンクからCost Anomaly Detectionのコンソールや詳細画面へ直接遷移できる。"
+    ],
+    "topic": "AWS BillingのダッシュボードへのCost Anomaly Detectionウィジェット追加"
   },
   "https://dev.classmethod.jp/articles/myan-google-cloud-run-sql-private-20260911/": {
     "generated_at": "2026-09-13T22:03:52.034540Z",
@@ -1784,6 +2012,24 @@
     ],
     "topic": "ローカルAIの導入費用回収期間を試算できるウェブアプリ「Sunk Cost」"
   },
+  "https://gigazine.net/news/20260916-capsule/": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Capsule",
+      "Rust",
+      "Tauri 2.0",
+      "SQLite",
+      "オフラインアプリ"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIで作ったアプリのUIとデータを「.capsule」ファイルにまとめて持ち運べる無料ツールが公開された。",
+      "実体はSQLiteデータベースで、クラウド不要・完全オフラインで動作し、メール等で共有が可能。",
+      "Windows等に対応し、AIアシスタントを活用して独自のアプリを作成・実行することができる。"
+    ],
+    "topic": "アプリとデータを単一ファイルで管理する無料ツール「Capsule」"
+  },
   "https://gihyo.jp/admin/serial/01/ubuntu-recipe/0926?utm_source=feed": {
     "generated_at": "2026-09-09T09:33:04.577290Z",
     "input_type": "fulltext",
@@ -1961,6 +2207,23 @@
     ],
     "topic": "オープンソースのコーディングエージェントClineのデスクトップ版"
   },
+  "https://gihyo.jp/article/2026/09/cloudflare-news-disallow-ai-training-setting?utm_source=feed": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Cloudflare",
+      "AI学習",
+      "クローラー",
+      "robots.txt"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Cloudflareは検索アクセスを維持しつつAI学習を拒否する設定を発表した。",
+      "AppleやGoogleの拒否指定を利用し、検索用クローラーのアクセスを維持する。",
+      "広告収益サイト向けに学習利用の拒否設定とクローラー制御の仕組みを提供する。"
+    ],
+    "topic": "検索を許可しAI学習を拒否するCloudflareの新設定"
+  },
   "https://gihyo.jp/article/2026/09/cuda-rust?utm_source=feed": {
     "generated_at": "2026-09-10T22:03:41.306102Z",
     "input_type": "fulltext",
@@ -2033,6 +2296,24 @@
     ],
     "topic": "画像理解に対応したAIモデル「DeepSeek-V4.1-Flash」の発表"
   },
+  "https://gihyo.jp/article/2026/09/gemini-3.8-live?utm_source=feed": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Gemini 3.8 Live",
+      "Google",
+      "音声対話AI",
+      "Extended Thinking",
+      "Gemini API"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Googleは会話や外部ツール実行が可能な音声対話AI「Gemini 3.8 Live」を発表した。",
+      "音声を直接扱いながら、97言語の自動検出やリアルタイムの視覚情報理解に対応する。",
+      "開発者向けAPI提供のほか、一般ユーザーや企業向けサービスへ順次展開される。"
+    ],
+    "topic": "Googleが音声対話AIモデル「Gemini 3.8 Live」を発表"
+  },
   "https://gihyo.jp/article/2026/09/gemini-app-for-windows?utm_source=feed": {
     "generated_at": "2026-09-11T22:04:12.644451Z",
     "input_type": "fulltext",
@@ -2050,6 +2331,24 @@
       "一部の高機能な機能の利用にはGoogle AIサブスクリプションへの加入などの条件があり、Windowsへも順次機能が追加される予定。"
     ],
     "topic": "GoogleによるWindows向けGeminiアプリの提供開始"
+  },
+  "https://gihyo.jp/article/2026/09/gemini-notebook-study-updates?utm_source=feed": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Gemini Notebook",
+      "音声対話",
+      "録音機能",
+      "学習の概要",
+      "学生向け特典"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "モバイルアプリに音声対話や講義などを自動保存できる録音機能が追加される。",
+      "要約に図解やクイズを組み合わせた「学習の概要」機能がレポート作成に加わる。",
+      "対象の大学生を対象にGoogle AIプランを1年間無料で利用できる特典が提供されている。"
+    ],
+    "topic": "Gemini Notebookのモバイルアプリ向け新機能とアップデート"
   },
   "https://gihyo.jp/article/2026/09/github-copilot-auto-model-selection?utm_source=feed": {
     "generated_at": "2026-09-15T22:04:24.286898Z",
@@ -2120,6 +2419,24 @@
       "音声部分は1分0.05ドルで提供され、声の調子や話す速さの調整にも対応する。"
     ],
     "topic": "OpenAIの新音声モデルGPT-Live-1のAPI提供開始"
+  },
+  "https://gihyo.jp/article/2026/09/jev-early-access?utm_source=feed": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "TypeSafe AI",
+      "Jev",
+      "AIモデル",
+      "構造化データ",
+      "早期アクセス"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "TypeSafe AIがソフトウェアの判断処理に特化したAIモデル「Jev」の早期提供を開始した。",
+      "データと質問から選択肢や評価値などを構造化データとして高速に出力し、プログラムでの直接利用を可能にする。",
+      "LLMと比較して高速な処理や低コストを実現し、公式サイトで早期アクセスの申し込みを受け付けている。"
+    ],
+    "topic": "ソフトウェアの判断処理に特化したAIモデル「Jev」の提供開始"
   },
   "https://gihyo.jp/article/2026/09/knap?utm_source=feed": {
     "generated_at": "2026-09-14T22:03:57.655247Z",
@@ -2193,6 +2510,24 @@
     ],
     "topic": "MySQL Group Replicationの分散リカバリ機能の仕組みと動作"
   },
+  "https://gihyo.jp/article/2026/09/oj?utm_source=feed": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Lovable",
+      "OJ",
+      "Vite",
+      "Rust",
+      "Rolldown"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Lovableはアプリのプレビュー機能をViteからRust製のOJへ移行している。",
+      "OJはRolldownとOxcを基盤にし、メモリ使用量削減や起動時間の短縮を実現した。",
+      "実サービスでの実験では、プレビュー表示や環境確保にかかる時間が大幅に短縮された。"
+    ],
+    "topic": "LovableによるViteからRust製開発ツールOJへの移行"
+  },
   "https://gihyo.jp/article/2026/09/openai-agents-api-public-beta?utm_source=feed": {
     "generated_at": "2026-09-11T22:04:12.644451Z",
     "input_type": "fulltext",
@@ -2247,6 +2582,24 @@
     ],
     "topic": "Safari 27におけるtop-level awaitの不具合修正とモジュールローダー刷新"
   },
+  "https://github.com/Gabberflast/academic-pptx-skill": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Claude",
+      "PowerPoint",
+      "学術発表",
+      "プレゼンテーション",
+      "GitHub"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "学会発表や論文防衛などの学術的プレゼン作成に特化したClaude用の拡張スキル。",
+      "メッセージ性の高いアクションタイトルの使用や論理的な構成など、学術基準に適合させる。",
+      "Claudeの設定画面からリポジトリをアップロードし、通常のチャット指示で利用可能。"
+    ],
+    "topic": "学術発表用スライド作成を支援するClaudeの拡張スキル"
+  },
   "https://hotsuyuki.github.io/2026/09/07/how-i-joined-waymo.html": {
     "generated_at": "2026-09-14T22:03:57.655247Z",
     "input_type": "fulltext",
@@ -2282,6 +2635,24 @@
       "同社はデータ持ち出しや二次被害の確認はないとし、再発防止策を公表した。"
     ],
     "topic": "さくらインターネットの不正アクセス調査結果"
+  },
+  "https://internet.watch.impress.co.jp/docs/news/2141538.html": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Gyazo",
+      "Helpfeel",
+      "不正アクセス",
+      "情報漏えい",
+      "脆弱性"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Gyazoに不正アクセスがありユーザー情報と画像メタデータが漏えいした。",
+      "ユーザー情報約2362万件や2019年以前を中心に約4.9億件のメタデータが対象。",
+      "決済情報の漏えいはなく、二次被害防止のため一部画像の閲覧が一時無効化された。"
+    ],
+    "topic": "画像共有サービス「Gyazo」の不正アクセスによる情報漏えい"
   },
   "https://iphone-mania.jp/ios-605942/": {
     "generated_at": "2026-09-14T22:03:57.655247Z",
@@ -2352,6 +2723,23 @@
       "実環境におけるロボットの安全性確保や、暴力性を称賛する風潮に対する責任が問われている。"
     ],
     "topic": "技術の祭典で見られたロボットの暴力的な演出に対する懸念"
+  },
+  "https://k-tai.watch.impress.co.jp/docs/column/ishikawa/2141518.html": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "iPhone 18 Pro",
+      "可変絞り",
+      "スマートフォンカメラ",
+      "動画撮影"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "アップルは2026年9月に「iPhone 18 Pro」「iPhone 18 Pro Max」を発売する。",
+      "メインカメラに6枚羽根の可変絞りを搭載し、本格的な撮影機能やプロ仕様の設定に対応した。",
+      "動画撮影時も可変絞りやヒストグラム表示が有効になり、音声分離機能なども強化されている。"
+    ],
+    "topic": "「iPhone 18 Pro」のカメラと動画機能の進化について"
   },
   "https://k-tai.watch.impress.co.jp/docs/column/value/2139538.html": {
     "generated_at": "2026-09-09T22:03:43.274774Z",
@@ -2459,6 +2847,23 @@
       "対策としてロボット税の導入や、介護などをあえて残す「人間専用の職業」の創出を提案した。"
     ],
     "topic": "ビル・ゲイツによるAI時代の雇用危機への警鐘と提言"
+  },
+  "https://note.com/bunsekiya_tech/n/n6361ea24a95c": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "SAS",
+      "TRANWRD",
+      "TRANSLATE",
+      "文字列操作"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "SASの文字列置き換え関数である「TRANWRD」と「TRANSLATE」の使い方を解説しています。",
+      "TRANWRDは指定した文字列全体を別の文字列に置き換え、全角文字にも対応します。",
+      "TRANSLATEは1文字単位で文字を対応付けて置き換えるため、用途に応じた使い分けが可能です。"
+    ],
+    "topic": "SASにおける文字列置き換え関数の使い方と違い"
   },
   "https://note.com/yubais/n/nd4505991a6d6": {
     "generated_at": "2026-09-12T22:04:31.942470Z",
@@ -2690,6 +3095,23 @@
     ],
     "topic": "パスキーをバイパスするデバイスコードフロー攻撃の仕組みと対策"
   },
+  "https://qiita.com/fe1ix/items/5d733c267370e0e06661?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "1on1",
+      "マネジメント",
+      "コミュニケーション",
+      "退職防止"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "「最近どう？」という抽象的な質問だけの1on1を続けた結果、メンバーの退職兆候に気づけなかった失敗談を紹介する。",
+      "抽象的な質問では相手の本音を引き出せないため、事実、感情、将来という3層構造の質問に切り替える重要性を説く。",
+      "まずは観察可能な事実を聞き、次にそれに紐づく感情、最後に将来について踏み込んで聞くことで1on1の質を改善した。"
+    ],
+    "topic": "「最近どう？」しか聞かない1on1の失敗と改善策"
+  },
   "https://qiita.com/iketani45664566/items/898986475ce74e7b52ee?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-09-14T22:03:57.655247Z",
     "input_type": "fulltext",
@@ -2833,6 +3255,23 @@
       "クリックや数字キーで数秒で回答できる仕様にし継続しやすいUIや進捗管理機能を実装している"
     ],
     "topic": "AI時代のコード理解を習慣化する社内学習アプリの開発"
+  },
+  "https://qiita.com/kskwtnk/items/aa21e7f57feb43e970e0": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AI文章作成",
+      "Slidev",
+      "プロンプト",
+      "スライド作成"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIによる表現の拒否感を避けるため、文章やスライド作成での工夫を解説している。",
+      "AIには初期の下書きや構成案の作成までを任せ、最終的な文章は自分の手で書き直す。",
+      "自作のテンプレート使用や変な改行の修正など、細部の調整によって質を高める。"
+    ],
+    "topic": "AIを使った文章やスライド作成で「自分らしさ」を保つ方法"
   },
   "https://qiita.com/kuma_3838/items/00cb0b8d61ca76769c88": {
     "generated_at": "2026-09-09T09:33:04.577290Z",
@@ -3013,6 +3452,24 @@
     ],
     "topic": "AI時代におけるエンジニアの仕事と生き残り戦略"
   },
+  "https://qiita.com/ryoheiiwamoto/items/7f388029f8821fc3ea6c?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AI",
+      "エンジニア採用",
+      "人間力",
+      "当事者意識",
+      "実直さ"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIによるスキルの均一化が進む中、採用においてスキルよりも人間性が重視される傾向を解説している。",
+      "代表的な判断基準として、「一緒に働きたい人間力」「会社を作る当事者意識」「実直さ」の3つを挙げる。",
+      "技術力を飾るよりも、マナーや素直さ、主体性といった変わらない要素を磨くことが重要であると述べている。"
+    ],
+    "topic": "AI時代のエンジニア採用における3つの基準について"
+  },
   "https://qiita.com/songchong/items/9dc9ee419d2764d2aa06?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-09-13T22:03:52.034540Z",
     "input_type": "fulltext",
@@ -3082,6 +3539,23 @@
       "公式の評価コマンド機能が追加されたが、スキルの定量的な出力変化の測定には手動検証が必要となる。"
     ],
     "topic": "Claude Codeのスキル運用に関する7つの検証"
+  },
+  "https://qiita.com/suwa_nobu/items/5145961004e38e2fe316?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Claude Code",
+      "静的解析",
+      "アクセス権限",
+      "セキュリティ"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Claude Codeの複数バージョンで拒否ルールと実行挙動を検証した結果を報告している。",
+      "evalやenvなどのコマンドを実際に止めていたのは拒否ルールではなく手前の静的解析であると判明した。",
+      "危険な権限スキップモードでは解析可能な書き込みは拒否されるがeval経由では書き込みが可能になる。"
+    ],
+    "topic": "Claude Codeにおけるアクセス権限と静的解析の検証"
   },
   "https://qiita.com/suwa_nobu/items/b465ef863f8d8608f497?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-09-15T22:04:24.286898Z",
@@ -3153,6 +3627,23 @@
     ],
     "topic": "深夜のAWS GameDay個人戦の参加レポート"
   },
+  "https://qiita.com/yoshioterada/items/c42534895d5ca89b91b1?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Microsoft Copilot",
+      "Microsoft IQ",
+      "Frontier Transformation",
+      "Microsoft Foundry"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "MicrosoftのAI戦略は仕事の支援や情報活用、管理・保護の3つに分類される。",
+      "CopilotやMicrosoft IQ、Agent 365などの主要な製品や機能群の役割を解説する。",
+      "エージェントの活用段階や、標準機能から独自開発までの選択肢を整理している。"
+    ],
+    "topic": "2026年9月時点のMicrosoftのAI戦略の全体像"
+  },
   "https://scrapbox.io/uvb-76/%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE_created_at_%E3%81%AB%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF%E3%82%92%E6%8C%81%E3%81%9F%E3%81%9B%E3%81%AA%E3%81%84": {
     "generated_at": "2026-09-13T22:03:52.034540Z",
     "input_type": "fulltext",
@@ -3223,6 +3714,42 @@
     ],
     "topic": "伝わる発表の準備に関するワークショップの案内"
   },
+  "https://speakerdeck.com/kawasima/ningen-ha-dono-ishi-kettei-o-tebanaseru-no-ka": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AIエージェント",
+      "コーディングエージェント",
+      "Evaluability",
+      "Controllability",
+      "Souther"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIへの業務委譲において人間が手放せる意思決定の基準を解説している。",
+      "成果物の正当性を評価できるEvaluabilityと失敗を制御するControllabilityが重要である。",
+      "モデルとexampleを同時に構築する手法により、仕様定義の限界を突破するアプローチを提示している。"
+    ],
+    "topic": "AI開発における人間が手放せる意思決定の条件と限界"
+  },
+  "https://speakerdeck.com/m3m0r7/thinking-about-tech-debt-in-ai-era": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "技術的負債",
+      "AI",
+      "スタートアップ",
+      "技術戦略",
+      "全体最適"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIの普及によりプロダクト開発が高速化し、技術的負債が従来よりも急速に蓄積する構造を解説している。",
+      "スタートアップの資金調達環境や事業価値の観点から、全体最適を見据えた技術戦略の重要性を論じている。",
+      "個別最適ではなく、AI時代の開発スピードや技術的負債の返済投資に対する感度を高める必要性を説いている。"
+    ],
+    "topic": "AI時代のスタートアップにおける技術的負債との向き合い方"
+  },
   "https://speakerdeck.com/upsider_tech/enjinia-ha-doko-made-ekkyou-surubeki-ka-take": {
     "generated_at": "2026-09-09T22:03:43.274774Z",
     "input_type": "fulltext",
@@ -3274,6 +3801,24 @@
       "オープンソースのTailwind CSSやライセンス、メンテンス体制に変更はない。"
     ],
     "topic": "Tailwind LabsがShopifyへの参入を発表"
+  },
+  "https://tech-blog.abeja.asia/entry/codas-aws-report-202609": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AWS",
+      "大規模言語モデル",
+      "AWS ParallelCluster",
+      "Slurm",
+      "Amazon FSx for Lustre"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "CODASプロジェクトでのAI学習基盤の設計についてAWSブログで公開された。",
+      "AWS ParallelClusterやSlurmを用いたクラスター構築などを紹介している。",
+      "ストレージ基盤や複数チーム向けのユーザー管理・監視の仕組みも解説されている。"
+    ],
+    "topic": "産業特化型LLMに向けたAWS上の学習・推論基盤設計"
   },
   "https://tech-blog.voicy.jp/entry/2026/09/10/183722": {
     "generated_at": "2026-09-11T22:04:12.644451Z",
@@ -3364,6 +3909,23 @@
       "チームの生産性を上げるため、AI生成物の推敲や不要な情報の削除が重要である。"
     ],
     "topic": "AI活用の普及がもたらすレビューや確認コストの増加"
+  },
+  "https://tech.smarthr.jp/entry/2026/09/16/110205": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Claude Code",
+      "AIエージェント",
+      "テスト駆動開発",
+      "モジュラーモノリス"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "SmartHRの情シス領域における機能開発で、AIエージェントの成果を最大化する「ハーネス」を導入した。",
+      "スキルファイル、JSON状態ファイル、検査スクリプトを活用し、コンテキストの圧迫とデグレを防いだ。",
+      "準備フェーズでの仕様合意やTDDの徹底により、手戻りを抑えて約1か月の実装完了を実現した。"
+    ],
+    "topic": "Claude Codeを活用した開発期間短縮のためのハーネス設計手法"
   },
   "https://tech.youtrust.co.jp/entry/2026/09/09/170000": {
     "generated_at": "2026-09-09T09:33:04.577290Z",
@@ -3950,6 +4512,24 @@
     ],
     "topic": "Amazon Linux 2027パブリックプレビューの公開について"
   },
+  "https://www.publickey1.jp/blog/26/androidgoogle1passwordbitwardendashlane.html": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Android",
+      "パスキー",
+      "パスワードマネージャ",
+      "1Password",
+      "Bitwarden"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "GoogleはAndroid上でパスワードマネージャ間のパスキーやパスワードの安全な転送を発表した。",
+      "Googleパスワードマネージャ、1Password、Bitwarden、Dashlaneなどが対応している。",
+      "従来は困難だったパスワードマネージャの乗り換えが容易になり、利便性が向上する。"
+    ],
+    "topic": "Androidでのパスワードマネージャ間におけるパスキー転送機能の対応"
+  },
   "https://www.publickey1.jp/blog/26/anthropicmcpmcpagntconmcpcon_japan_2026.html": {
     "generated_at": "2026-09-14T22:03:57.655247Z",
     "input_type": "fulltext",
@@ -4002,6 +4582,24 @@
       "作成したアプリケーションは社内や社外へ公開でき、PlusやProfessionalなどのプランで利用可能である。"
     ],
     "topic": "Amazon Quickに自然言語でデータ分析アプリを構築可能な新機能"
+  },
+  "https://www.publickey1.jp/blog/26/devinmacosmacdevinappstore.html": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Devin",
+      "macOS",
+      "iOS",
+      "TestFlight",
+      "Cognition AI"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "コーディングAIツールのDevinが、仮想環境でのmacOSの提供を開始した。",
+      "ユーザーは実機のMacを持たずに、仮想環境上でiOSアプリの開発やテストを行える。",
+      "コード生成からiOSシミュレータでの実行、TestFlightによるベータ公開まで自動化できる。"
+    ],
+    "topic": "Devinによる仮想環境でのmacOSサポート開始"
   },
   "https://www.publickey1.jp/blog/26/eve_online240python_27python_3.html": {
     "generated_at": "2026-09-09T09:33:04.577290Z",
@@ -4414,6 +5012,24 @@
     ],
     "topic": "font-familyの指定におけるsans-serifとsystem-uiの活用"
   },
+  "https://zenn.dev/chot/articles/nextjs-proxy-redirect": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Next.js",
+      "Proxy",
+      "Middleware",
+      "リダイレクト",
+      "URL"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Next.jsのProxyで絶対URLを指定してもLocationヘッダーが相対URLになる挙動を検証する。",
+      "ホスティング環境によってrequest.urlのオリジンが異なる問題へのNext.jsの対処を解説する。",
+      "Route Handlerでのリダイレクト処理との挙動の違いや注意点について説明する。"
+    ],
+    "topic": "Next.jsのProxyでのリダイレクトとURL挙動の解説"
+  },
   "https://zenn.dev/cloud_ace_jp/articles/fb0f0fdd7d7e7b": {
     "generated_at": "2026-09-14T22:03:57.655247Z",
     "input_type": "fulltext",
@@ -4485,6 +5101,23 @@
     ],
     "topic": "AI開発における意思決定のボトルネックと対策"
   },
+  "https://zenn.dev/dress_code/articles/fc3d9e985a1a8c": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "プロダクトエンジニア",
+      "アジャイル開発",
+      "ADR",
+      "アジャイルテスティング"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIの普及により実装のコストが下がる中、プロダクトエンジニアにはどこまで作るかを決める能力が求められる。",
+      "プロダクト、顧客、組織の状況を観察し、実装中に得た違和感や情報を関係者に早めに頭出しして判断を下す。",
+      "ADRや横断ミーティングなどの仕組みを活用しながら、主体的にスコープの調整や機能の取捨選択を行う。"
+    ],
+    "topic": "プロダクトエンジニアに必要な「いい感じ」に作る能力の解説"
+  },
   "https://zenn.dev/edash_tech_blog/articles/a8b316340d017c": {
     "generated_at": "2026-09-15T22:04:24.286898Z",
     "input_type": "fulltext",
@@ -4520,6 +5153,24 @@
       "AIとの対話時間増加に伴い、コード編集時のみVS Codeを併用するワークフローを紹介している。"
     ],
     "topic": "開発環境をVS CodeからCodex Appへ移行した理由と利点"
+  },
+  "https://zenn.dev/finatext/articles/2e47814137e8ae": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "DataOps",
+      "Snowflake",
+      "dbt",
+      "セマンティックレイヤー",
+      "データガバナンス"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "ナウキャストがセマンティックレイヤーの自動構築や多層防御によるガバナンス設計を発表した。",
+      "フェズがAIコーディング普及に伴うPRレビューを活用したコンテキスト自動管理の仕組みを紹介した。",
+      "三菱UFJ信託銀行と三菱UFJトラストシステムがSnowflakeの段階的解放と安全な運用手法を解説した。"
+    ],
+    "topic": "金融データ基盤とデータエンジニアリングの事例"
   },
   "https://zenn.dev/finatext/articles/7dbbd9371fe046": {
     "generated_at": "2026-09-14T22:03:57.655247Z",
@@ -4627,6 +5278,24 @@
       "GUIでの設定管理や内蔵ブラウザ・ターミナルなどの機能により、効率的な作業が可能。"
     ],
     "topic": "Claude Code Desktopの機能と使いやすさの向上について"
+  },
+  "https://zenn.dev/hampen2929/books/ai-dev-team-guide": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "マルチエージェント",
+      "AI開発",
+      "組織設計",
+      "TypeScript",
+      "Claude"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AI開発チームの設計から運用・育成までの一連のプロセスを解説する無料の技術書。",
+      "役割分担や受け渡し、並列化、検収などの組織設計を体系的に扱う。",
+      "TypeScript製アプリの実装例を通し仕様やテスト、AIレビューの連携を学べる。"
+    ],
+    "topic": "マルチエージェントを活用したAI開発チームの設計と運用"
   },
   "https://zenn.dev/hatose/articles/ebc0dd996b2cbd": {
     "generated_at": "2026-09-09T09:33:04.577290Z",
@@ -4950,6 +5619,24 @@
     ],
     "topic": "フロントエンドカンファレンス福岡 2026の参加レポート"
   },
+  "https://zenn.dev/rescuenow/articles/5aa26aebd7ae78": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "LLM",
+      "個人開発",
+      "ナレッジベース",
+      "グラフDB",
+      "情報整理"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "個人開発で蓄積した記録を元にLLMでタグごとのWikiページを自動生成するシステムを構築した。",
+      "LLMに文章を書かせる機能自体は「ふーん」となる平坦な結果になったが、タグの構造化や関心の可視化が役立った。",
+      "LLMの役割は文章生成ではなく、裏方としての分類や構造化によるデータの整理にあると気付いた。"
+    ],
+    "topic": "LLMを用いた個人用Wiki自動生成システムの半年間の運用検証"
+  },
   "https://zenn.dev/ryo_a/articles/e396b36ad3f183": {
     "generated_at": "2026-09-14T22:03:57.655247Z",
     "input_type": "fulltext",
@@ -4985,6 +5672,23 @@
       "未知のkindをエラーにするなど、型定義やCIによる再発防止策を構築。"
     ],
     "topic": "帳票デザイナにおけるプレビューとPDFの一致検証の記録"
+  },
+  "https://zenn.dev/skmkzyk/books/github-copilot-app-guide": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "GitHub Copilot",
+      "自動化",
+      "開発ツールの設定",
+      "セッション管理"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "GitHub Copilot appのインストールと初期設定の手順を解説している。",
+      "セッションの管理方法やスケジュールタスクの設定、自動化について紹介している。",
+      "用途別のスラッシュコマンドの整理や、見直したい設定項目をまとめている。"
+    ],
+    "topic": "GitHub Copilot appの活用方法と設定の解説"
   },
   "https://zenn.dev/socialplus/articles/f5d9e28470eb99": {
     "generated_at": "2026-09-09T22:03:43.274774Z",
@@ -5075,6 +5779,24 @@
       "macOSの中核的な並行処理フレームワークにおけるレースコンディション検出手法に言及。"
     ],
     "topic": "Black Hat USA 2026とDEF CON 34の注目講演レポート"
+  },
+  "https://zenn.dev/tellernovel_inc/articles/5b4b947db4f2cd": {
+    "generated_at": "2026-09-16T22:03:51.510318Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Expo SDK 58",
+      "React Native",
+      "Expo Modules 2.0",
+      "iOS 27",
+      "TypeScript"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "iOS 27のUIScene対応やExpo Modules 2.0のベータ版公開など、基盤に関わる多くの変更が行われた。",
+      "AndroidでのR8有効化やTypeScriptの厳格化など、アップグレード時の破壊的変更が含まれている。",
+      "React Native 0.88 RCへの更新や、新ツール expo-device-hub の追加などに対応している。"
+    ],
+    "topic": "Expo SDK 58 Betaの主な変更点と破壊的変更"
   },
   "https://zenn.dev/trefac/articles/97e79f3841bbb3": {
     "generated_at": "2026-09-15T22:04:24.286898Z",
