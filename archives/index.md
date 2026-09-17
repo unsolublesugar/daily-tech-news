@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年9月
 
+- [09/18](2026/09/2026-09-18.md) | [Web版](2026/09/2026-09-18.html) — WebMCPを試してみた感想。フロントエンドの必須技術になりそうな予感。
 - [09/17](2026/09/2026-09-17.md) | [Web版](2026/09/2026-09-17.html) — Claude Codeで開発期間を2.5か月から1か月に縮めた「ハーネス」の設計手法 - SmartHR Tech Blog
 - [09/16](2026/09/2026-09-16.md) | [Web版](2026/09/2026-09-16.html) — 生成AIが書いたドキュメントを読みたくない
 - [09/15](2026/09/2026-09-15.md) | [Web版](2026/09/2026-09-15.html) — OpenAIやAnthropicなどAIベンダごとのAPIの違いを吸収し統合する「Agent Router」、Linux Foundation傘下で業界標準へ
