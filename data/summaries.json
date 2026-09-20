@@ -1084,6 +1084,23 @@
     ],
     "topic": "AI駆動開発メソッドのアップデートに関する解説"
   },
+  "https://codezine.jp/article/detail/29728": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "metadata",
+    "keywords": [
+      "AI活用",
+      "内製開発",
+      "みずほFG",
+      "三菱重工業",
+      "CodeZine"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "CodeZineにおいて、みずほフィナンシャルグループや三菱重工業などの日経225企業によるAI活用および内製開発の事例が紹介されていると見られます。",
+      "詳細は不明ですが、企業のAI導入やシステム内製化に関する事例資料の提供や関連記事である可能性が高いです。"
+    ],
+    "topic": "日経225企業におけるAI活用と内製開発事例の紹介"
+  },
   "https://codezine.jp/article/detail/29731": {
     "generated_at": "2026-09-17T22:04:08.930319Z",
     "input_type": "metadata",
@@ -1150,6 +1167,22 @@
     ],
     "topic": "AWS LambdaのAmazon S3 Files直接読み取り対応"
   },
+  "https://codezine.jp/article/detail/29747": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "metadata",
+    "keywords": [
+      "AWS",
+      "DevOps",
+      "Slack",
+      "エージェント"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWSのDevOps関連エージェント機能が、Slackとの双方向通信に対応したと見られる記事です。",
+      "Slack上からの操作や通知のやり取りに関するアップデート情報が含まれている可能性があります。"
+    ],
+    "topic": "AWS DevOps エージェントのSlack双方向通信対応"
+  },
   "https://codezine.jp/article/detail/29754": {
     "generated_at": "2026-09-19T22:03:55.729178Z",
     "input_type": "metadata",
@@ -1182,6 +1215,23 @@
       "詳細な変更点や利用手順については記事本文の確認が推奨される。"
     ],
     "topic": "GitHub Actions向けUbuntu 26.04ランナーの提供開始"
+  },
+  "https://codezine.jp/article/detail/29757": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "metadata",
+    "keywords": [
+      "GitHub Copilot",
+      "CLI",
+      "API",
+      "メトリクス"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "GitHub Copilot CLIのカスタマイズ利用状況が利用メトリクスAPIに追加されたと見られる。",
+      "開発者向けの開発ツールの機能拡張やAPI連携に関する内容が含まれている可能性が高い。",
+      "詳細な仕様や利用手順については元記事の確認が推奨される。"
+    ],
+    "topic": "GitHub Copilot CLIのAPI機能追加に関する情報"
   },
   "https://codezine.jp/article/detail/29765": {
     "generated_at": "2026-09-18T22:03:51.810869Z",
@@ -1232,6 +1282,23 @@
       "具体的な議論の詳細や技術的な背景についてはメタデータから確認できない。"
     ],
     "topic": "書籍『Noを伝える技術』に関するイベントの開催"
+  },
+  "https://cyzennt.co.jp/blog/2026/09/20/%e3%83%9e%e3%82%b8%e3%83%83%e3%82%af%e3%83%8a%e3%83%b3%e3%83%90%e3%83%bc%e3%81%af%e7%b5%b6%e5%af%be%e6%82%aa%e3%81%a7%e3%81%af%e3%81%aa%e3%81%84%ef%bc%9f%e4%bd%bf%e3%81%a3%e3%81%a6%e3%82%82%e5%95%8f/": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "マジックナンバー",
+      "可読性",
+      "ビジネスロジック",
+      "Java"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "ソースコード中のマジックナンバーは一般的に避けるべきアンチパターンとされています。",
+      "しかし、ドメイン知識として数値そのものが意味を持つ場合、直感的な理解を助けることがあります。",
+      "計算式が仕様書と一致し可読性が向上する例が示され、定数化の是非について問い直しています。"
+    ],
+    "topic": "マジックナンバーがコードの可読性を高めるケースの解説"
   },
   "https://darioamodei.com/post/we-must-pace-the-frontier": {
     "generated_at": "2026-09-12T22:04:31.942470Z",
@@ -1873,6 +1940,24 @@
     ],
     "topic": "CloudFront画像変換ソリューションの新機能検証"
   },
+  "https://dev.classmethod.jp/articles/ec2-t8i-tokyo-launch/": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Amazon EC2",
+      "T8iインスタンス",
+      "東京リージョン",
+      "Intel Xeon",
+      "AWS"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "2026年9月にGAとなったAmazon EC2 T8iインスタンスが東京リージョンで利用可能になった。",
+      "t8i.smallインスタンスを起動し、lscpuコマンドでカスタム版第6世代Intel Xeonプロセッサを確認した。",
+      "東京リージョンでのT8iの料金は同サイズのT3と比較して一律20%増額となることを確認した。"
+    ],
+    "topic": "GAとなったEC2 T8iインスタンスの東京リージョンでの起動とCPU情報の確認"
+  },
   "https://dev.classmethod.jp/articles/ecs-express-mode-cpu-architecture-arm64/": {
     "generated_at": "2026-09-16T22:03:51.510318Z",
     "input_type": "fulltext",
@@ -1980,6 +2065,24 @@
     ],
     "topic": "確率のみを返すモデル「Jev」で無理やり文章生成を試みた検証"
   },
+  "https://dev.classmethod.jp/articles/jev-guide-with-examples/": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Jev",
+      "TypeSafe AI",
+      "AIモデル",
+      "LLM",
+      "API"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "テキストを生成せず型付きの判断と確信度を返すAIモデル「Jev」の概要と使い方を解説しています。",
+      "Choice、Score、Noulの3つの出力タイプがあり、複数の判定基準を同時にリクエスト可能です。",
+      "従来のLLMと比較してインプット料金が圧倒的に安く、高速なレスポンスを実現している点が特徴です。"
+    ],
+    "topic": "判断特化型AIモデル「Jev」の機能と特徴の解説"
+  },
   "https://dev.classmethod.jp/articles/kiro-fable-5-1-for-enterprise/": {
     "generated_at": "2026-09-17T22:04:08.930319Z",
     "input_type": "fulltext",
@@ -2032,6 +2135,24 @@
       "あわせてデフォルトルートオブジェクトやカスタムエラーレスポンスの設定機能も追加された。"
     ],
     "topic": "Lightsailディストリビューションのプライベートオリジン対応"
+  },
+  "https://dev.classmethod.jp/articles/m365-e5-sandbox-purview/": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Microsoft Purview",
+      "秘密度ラベル",
+      "Microsoft 365 E5",
+      "情報保護",
+      "DevelopersIO"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Microsoft 365 Developer E5のサンドボックス環境を使用して検証を行った。",
+      "Microsoft Purviewポータルで新しい秘密度ラベルを作成し、ラベルを発行してポリシーを同期した。",
+      "Excel for the webでファイルにラベルを適用し、透かしやヘッダー等の表示を確認した。"
+    ],
+    "topic": "Microsoft Purviewの秘密度ラベルの作成と適用手順"
   },
   "https://dev.classmethod.jp/articles/m5sticks3-iot-core-firehose-athena-grafana/": {
     "generated_at": "2026-09-12T22:04:31.942470Z",
@@ -2121,6 +2242,24 @@
       "初期同期やデータの変更反映、テスト実行からリソース削除までの手順を検証した。"
     ],
     "topic": "VirtualBoxのVMをAWS Transform MGNで移行する方法"
+  },
+  "https://dev.classmethod.jp/articles/privatelink-tunnel-endpoint-cidr-overlap/": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AWS PrivateLink",
+      "トンネルエンドポイント",
+      "GENEVE",
+      "CIDR重複",
+      "HAProxy"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWS PrivateLinkのトンネルエンドポイントを用いたCIDR重複VPC間接続を検証した。",
+      "GENEVEリレーを活用した直接起動、HAProxy、NAT透過中継の3つの方式を比較した。",
+      "サブネットの重複有無やルート管理の要件に応じた使い分けと注意点を解説している。"
+    ],
+    "topic": "CIDRが重複するVPC間のPrivateLink接続検証"
   },
   "https://dev.classmethod.jp/articles/rapid_localgovernment/": {
     "generated_at": "2026-09-11T22:04:12.644451Z",
@@ -2228,6 +2367,24 @@
       "Amazon VPCコンソールまたはAWS CLIを用いた具体的な設定変更方法を紹介している。"
     ],
     "topic": "Security HubコントロールNetworkFirewall.10の修復手順"
+  },
+  "https://dev.classmethod.jp/articles/sliding-with-claude-cowork-and-slack/": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Slack MCP",
+      "Claude Cowork",
+      "生成AI",
+      "コンテキスト管理",
+      "提案書作成"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Slackスレッドを案件データの置き場として活用し、Claude Coworkとの連携で提案書作成を半自動化する手法を解説する。",
+      "Slack MCP経由で時系列の商談履歴や議事録をClaudeに読み込ませ、構成案の策定からスライド生成までを実行する。",
+      "テンプレートや規約の徹底、セルフレビューや関係者のフィードバック反映により、手戻りの少ない効率的な運用を実現する。"
+    ],
+    "topic": "Slack MCPとClaudeによる提案書作成の半自動化手法"
   },
   "https://dev.classmethod.jp/articles/slug-claude-enterprise-mobile-desktop-web/": {
     "generated_at": "2026-09-12T22:04:31.942470Z",
@@ -2388,6 +2545,24 @@
       "TiDBはMySQLのレプリケーションプロトコルに非対応のため、CDCによるリアルタイム同期は動作しなかった。"
     ],
     "topic": "TiDB Cloud LakeとTiDB Cloud間のデータ同期検証"
+  },
+  "https://dev.classmethod.jp/articles/typesafe-jev-cross-match/": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "TypeSafe Jev",
+      "書類突合",
+      "表記ゆれ",
+      "LLM",
+      "Python"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "TypeSafeのJevモデルを用いた書類項目の意味的突合の精度とコストを検証した。",
+      "107ケースのテストデータを用い、完全一致と意味的一致の2軸で確率値を評価した。",
+      "日本語と英語の質問文における結果の比較や、レイテンシ・トークン消費量を計測した。"
+    ],
+    "topic": "TypeSafe Jevによる書類項目の突合精度・速度・コストの検証"
   },
   "https://developer.diverse-inc.com/entry/2026/09/11/182829": {
     "generated_at": "2026-09-11T22:04:12.644451Z",
@@ -3491,6 +3666,24 @@
     ],
     "topic": "RustとGPUで書き直されたモダンなEmacs「NEO Emacs」"
   },
+  "https://github.com/minorun365/minorun-marp-skill": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Marp",
+      "Claude Code",
+      "AIエージェント",
+      "スライド作成",
+      "Markdown"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Marpで登壇スライドを作るためのストーリーや図、デザインの型をまとめたスキル集。",
+      "Claude CodeなどのAIエージェントに読み込ませてスライド作成を補助させることが可能。",
+      "黒地の独自テーマや、PDF・SVGを実測してレイアウト崩れを検出する検査スクリプトを含む。"
+    ],
+    "topic": "Marpでの登壇スライド作成スキルと検査ツール"
+  },
   "https://github.com/uehaj/jev-semgrep": {
     "generated_at": "2026-09-19T22:03:55.729178Z",
     "input_type": "fulltext",
@@ -3933,6 +4126,24 @@
     ],
     "topic": "SASにおける文字列置き換え関数の使い方と違い"
   },
+  "https://note.com/kantahayashiai/n/n4c54eed30787": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Jev",
+      "TypeSafe AI",
+      "確率の較正",
+      "LLM",
+      "エージェント"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "判断特化型AIモデル「Jev」の出力する確率が適切に較正されているかを検証した。",
+      "不確実な状況でサイコロの目を推測させた実験では、実際の確率と乖離した過大な確率を報告した。",
+      "業務文書の予測数値に対しても極端な出力変化が見られ、システム導入時には独自の検証が必要である。"
+    ],
+    "topic": "判断特化型AI「Jev」の確率較正における課題"
+  },
   "https://note.com/shi3zblog/n/n6d4fbe03218e": {
     "generated_at": "2026-09-18T22:03:51.810869Z",
     "input_type": "fulltext",
@@ -4180,6 +4391,24 @@
     ],
     "topic": "Claude Codeのプロジェクト機能刷新と並行作業対応"
   },
+  "https://performance.dev/chatgpt": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "ChatGPT",
+      "React Router",
+      "Vite",
+      "SSR",
+      "Tailwind CSS"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "筆者がページソースやネットワーク要求からChatGPTのWeb版をリバースエンジニアリングした。",
+      "Next.jsからRemixを経てReact Router 7へと移行した技術的な変遷を調査している。",
+      "SSRやストリーミング、パフォーマンス最適化など、大規模運用を支える構成を分析している。"
+    ],
+    "topic": "ChatGPTのWeb版フロントエンド技術スタックの解説"
+  },
   "https://piyolog.hatenadiary.jp/entry/2026/09/11/220855": {
     "generated_at": "2026-09-11T22:04:12.644451Z",
     "input_type": "fulltext",
@@ -4197,6 +4426,23 @@
       "デジタル庁は原因究明と脆弱性管理方法の見直しなど再発防止策を進めています。"
     ],
     "topic": "デジタル庁GSSへの不正アクセスと情報漏えい"
+  },
+  "https://qiita.com/Ninagawa123/items/8ec3f5fe18c20fab1b2a?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Jev",
+      "TypeSafe ai",
+      "AI判定",
+      "Playground"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "TypeSafe aiのサイトからウィッシュリストに登録し、確認メールを経てコンソール画面へアクセスする。",
+      "Playground機能を使用し、条件や判定させたい質問を入力してポエムのAI生成確率を測定する。",
+      "回答のタイプとして「noul」や「choice」「score」などを指定して結果を取得できる。"
+    ],
+    "topic": "超短時間で回答を返すAI「Jev」の初期設定と利用手順"
   },
   "https://qiita.com/carol0226/items/c9cccdd64e71a731a58d?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-09-10T22:03:41.306102Z",
@@ -4376,6 +4622,24 @@
       "Main Worker上でのAtomics.waitによりUIを固めず同期ブロッキングを行う。"
     ],
     "topic": "極小Wasmコンパイラにおけるマルチスレッド並行処理の実装"
+  },
+  "https://qiita.com/kf_webdev/items/cbd1d7bb724676a3b686?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "生成AIセキュリティ",
+      "Prompt Injection",
+      "RAG",
+      "多層防御",
+      "アクセス制御"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "入力情報の扱いやPrompt Injectionなどのセキュリティ概念を学習した変化を解説",
+      "RAGにおける検索時の権限管理や、多層防御の重要性について技術的視点を整理",
+      "個人利用における入力の選別や間接的インジェクション対策などの独自ルールを提示"
+    ],
+    "topic": "生成AIセキュリティの学習を通じた実践的なリスク管理の理解"
   },
   "https://qiita.com/kinop3/items/fdb57313458c2aa1bcdc?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-09-17T22:04:08.930319Z",
@@ -5135,6 +5399,24 @@
     ],
     "topic": "Tailwind LabsがShopifyへの参入を発表"
   },
+  "https://tarosite.net/tech/2026/09/20/iphone-duo-weight-and-touch-id/": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "iPhone Duo",
+      "iPhone 17 Pro Max",
+      "Touch ID",
+      "Face ID",
+      "ハンズオン"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "iPhone 17 Pro Maxユーザーが新機種「iPhone Duo」の短時間ハンズオンを体験。",
+      "重量の増加は許容範囲内で、むしろ閉じた状態の短い本体形状とホールド感を高く評価。",
+      "Face IDがなくTouch IDを搭載している点については、利便性の面で違和感があると言及。"
+    ],
+    "topic": "iPhone Duoのハンズオンインプレッション"
+  },
   "https://tech-blog.abeja.asia/entry/codas-aws-report-202609": {
     "generated_at": "2026-09-16T22:03:51.510318Z",
     "input_type": "fulltext",
@@ -5654,6 +5936,23 @@
     ],
     "topic": "グーグルのAIジェミニによるパスワード推測と不正アクセス事案"
   },
+  "https://www.channelinsider.com/ai/news-microsoft-frontier-playbook-enterprise-ai-transformation/": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Microsoft",
+      "AIエージェント",
+      "プロセス再設計",
+      "基盤モデル"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "マイクロソフトが公開したAI活用の手引きでは、単なるライセンス配布ではなく業務プロセスの簡素化と再設計の重要性が強調されている。",
+      "開発現場ではコーディング中心からシステム設計中心への移行が進み、基盤モデルは変更可能なものとして独自知識や評価システムの保持を推奨している。",
+      "AI導入の効果を高めるには管理職の積極的な活用姿勢やガバナンスの確立が不可欠であり、組織的な変革の必要性が示されている。"
+    ],
+    "topic": "マイクロソフト社によるAI活用と業務プロセス再設計の指針"
+  },
   "https://www.cybertrust.co.jp/info/2026/0904-tls-announce.html": {
     "generated_at": "2026-09-10T22:03:41.306102Z",
     "input_type": "fulltext",
@@ -5884,6 +6183,24 @@
     ],
     "topic": "新モデル「DeepSeek-V4.1-Flash」の発表と値下げ"
   },
+  "https://www.itmedia.co.jp/aiplus/article/2609/20/2000001664/": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Jev",
+      "TypeSafe AI",
+      "System One モデル",
+      "LLM",
+      "構造化データ"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "TypeSafe AIが発表した「Jev」は、会話ではなく構造化データの判断結果を出力するAIモデルである。",
+      "入力に対して選択肢の選択や数値、はい・いいえの確率と確信度を高速かつ低コストで返す。",
+      "LLMと比較して処理速度が大幅に向上し、スキーマ外の出力エラーが起きない特長を持つ。"
+    ],
+    "topic": "元OpenAI研究者による文章を書かないAIモデル「Jev」の概要"
+  },
   "https://www.itmedia.co.jp/mobile/articles/2609/10/news091.html": {
     "generated_at": "2026-09-10T22:03:41.306102Z",
     "input_type": "fulltext",
@@ -6004,6 +6321,24 @@
       "AIの台頭により同社のサプライチェーン支配に陰りが見え始めている。"
     ],
     "topic": "アップルのiPhone全機種値上げと固定客依存の動向"
+  },
+  "https://www.nikkei.com/article/DGXZQOUB164ZN0W6A910C2000000/": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AIバブル",
+      "収穫逓減の法則",
+      "Anthropic",
+      "OpenAI",
+      "金利高"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "米AI企業が開発の減速を呼びかける背景には、資本枯渇の懸念がある。",
+      "AI産業は、追加投資に対する収益が伸び悩む収穫逓減の課題に直面している。",
+      "肥料の例えのように、過剰な投資が必ずしも大きな収穫につながらない問題が指摘されている。"
+    ],
+    "topic": "AI産業における金利高と収穫逓減の影響"
   },
   "https://www.nikkei.com/article/DGXZQOUC089IZ0Y6A900C2000000/": {
     "generated_at": "2026-09-12T22:04:31.942470Z",
@@ -6397,6 +6732,24 @@
     ],
     "topic": "東プレ初の左右分割型キーボード「REALFORCE RS1」の登場"
   },
+  "https://www.techno-edge.net/article/2026/09/20/5510.html": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "MiniMax H3",
+      "ComfyUI",
+      "動画生成AI",
+      "カスタムノード",
+      "VOSR2"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "ComfyUIを用いたMiniMax H3の生成速度向上のための4つの基本テクニックを解説している。",
+      "VOSR2による顔の再修復や、複数のクリップをつなぎ合わせる動画の拡張手法を紹介している。",
+      "公式の制限を超える参照画像の拡張や、類似動画をつなぐブリッジ機能などの応用テクニックを網羅。"
+    ],
+    "topic": "「MiniMax H3」を活用した生成AIグラビア制作の高速化と応用テクニック"
+  },
   "https://www.uber.com/in/en/blog/postgres-to-mysql-migration/": {
     "generated_at": "2026-09-09T09:33:04.577290Z",
     "input_type": "fulltext",
@@ -6576,6 +6929,24 @@
     ],
     "topic": "DGX Sparkでapt upgrade後に起きたGPUドライバ障害と復旧手順"
   },
+  "https://zenn.dev/aws_japan/articles/agentcore-runtime-v2-platform-version": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Amazon Bedrock",
+      "AgentCore Runtime",
+      "microVM",
+      "コールドスタート",
+      "スナップショット"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Amazon Bedrock AgentCore Runtimeの新しいプラットフォームバージョンV2が提供開始された。",
+      "V2ではスナップショットからの復元によりコールドスタートの高速化と一貫したレイテンシーを実現している。",
+      "V1とV2の比較検証を通じて、起動時間の短縮やコンテナ・CodeZipデプロイでの効果が示されている。"
+    ],
+    "topic": "Amazon Bedrock AgentCore Runtime V2の機能と検証"
+  },
   "https://zenn.dev/aws_japan/articles/lambda-90-minutes-timeout": {
     "generated_at": "2026-09-14T22:03:57.655247Z",
     "input_type": "fulltext",
@@ -6718,6 +7089,24 @@
       "高度なセッション内容やAIに関する議論から、海外カンファレンスならではの刺激と学びを得たとしている。"
     ],
     "topic": "台湾のセキュリティカンファレンスHITCON 2026参加レポート"
+  },
+  "https://zenn.dev/cybernetics/articles/4f3762bd470fc4": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Jev",
+      "テキスト分類",
+      "自然言語処理",
+      "確率的分類器",
+      "DSPy"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Jevを活用し、自然言語で質問と分類基準を指定して文書を識別する手法を解説している。",
+      "配送問い合わせの振り分けや実験報告書の検索を例に、具体的なAPIの利用法や確率の活用方法を示す。",
+      "プロンプト最適化フレームワーク等を用いた分類基準の改善や今後の展望に言及している。"
+    ],
+    "topic": "自然言語で分類基準を渡せる識別モデルJevの活用法"
   },
   "https://zenn.dev/dokusy/articles/bc77254466f58d": {
     "generated_at": "2026-09-19T22:03:55.729178Z",
@@ -7181,6 +7570,24 @@
     ],
     "topic": "ローカルLLMレビュースクリプトの設計見直し"
   },
+  "https://zenn.dev/karaage0703/articles/jev-use-cases-open-implementations": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Jev",
+      "TypeSafe",
+      "大規模言語モデル",
+      "構造化出力",
+      "オープンソース実装"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "文章生成の代わりに定義済みの判断と確率を返すAIモデルJevの仕組みとユースケースを解説する。",
+      "従来のLLMのStructured Outputとの違いや、ハルシネーションに関する注意点を整理している。",
+      "Jev本体は非公開であるものの、既存モデルを活用した多数のオープンな類似実装やツールを紹介している。"
+    ],
+    "topic": "高速判断AIモデルJevの特徴と類似実装のまとめ"
+  },
   "https://zenn.dev/kawasima/articles/souther-ddd-trilemma": {
     "generated_at": "2026-09-10T22:03:41.306102Z",
     "input_type": "fulltext",
@@ -7360,6 +7767,24 @@
     ],
     "topic": "構造化AIエージェント「jev」同士による五目並べ対戦の検証"
   },
+  "https://zenn.dev/mizchi/articles/laya-mlx-60fps": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Laya",
+      "Jev",
+      "MLX",
+      "WebGPU",
+      "ONNX"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Jevのオープンウェイト版であるLayaをApple SiliconやWebGPUで動かす検証を実施した。",
+      "MLX環境ではSnakeゲームの判断が秒間90回以上と高速に動作する一方、ブラウザのWebGPUでは約20fpsとなった。",
+      "モデルのサイズやパフォーマンス、多言語対応BERTベースの構造上の特徴について解説している。"
+    ],
+    "topic": "JevクローンLLM「Laya」のローカル・ブラウザ上での動作検証"
+  },
   "https://zenn.dev/ml_bear/articles/e5cc1047cba176": {
     "generated_at": "2026-09-09T09:33:04.577290Z",
     "input_type": "fulltext",
@@ -7396,6 +7821,24 @@
     ],
     "topic": "日比谷高校文化祭オンライン整理券システム開発"
   },
+  "https://zenn.dev/ncdc/articles/93cd19a1d882f7": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "x402",
+      "MCP",
+      "MCP Apps",
+      "Amazon Bedrock AgentCore payments",
+      "USDC"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "決済プロトコルx402とAmazon Bedrock AgentCore paymentsを組み合わせて有料MCPを構築した。",
+      "事前認証やアカウント登録不要で少額決済が可能な一方で、AIエージェントの誤動作による無駄な課金リスクが課題となった。",
+      "少額の薄利多売モデルに適した仕組みであり、AIに支払いを任せる際の注意点が示された。"
+    ],
+    "topic": "決済プロトコルx402を活用した有料MCPの開発と検証"
+  },
   "https://zenn.dev/ncdc/articles/b4c782e2503539": {
     "generated_at": "2026-09-12T22:04:31.942470Z",
     "input_type": "fulltext",
@@ -7413,6 +7856,24 @@
       "jpプレフィックスが付くモデルは日本国内に推論を閉じられるが、apacプレフィックスでは他国リージョンも含まれる。"
     ],
     "topic": "Amazon Bedrockで日本リージョン内に推論を限定して確認する方法"
+  },
+  "https://zenn.dev/ncdc/articles/ec72bc1882d597": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AWS",
+      "AIエージェント",
+      "x402",
+      "Amazon Bedrock",
+      "MCP"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWS上でAIエージェントがx402とAgentCore paymentsを使いMCPサーバーへ課金する仕組みを構築した。",
+      "売り手はLambdaで無認証公開してx402で課金し、買い手はAWS BlocksとAmplifyで実装した。",
+      "MCPやx402、AgentCore payments等の最新技術を用いた実装上の課題やハマりどころを解説している。"
+    ],
+    "topic": "AIエージェントがx402で課金するアプリのAWS上での構築"
   },
   "https://zenn.dev/nkzn/articles/cross-platform-development-costs-2026": {
     "generated_at": "2026-09-13T22:03:52.034540Z",
@@ -7467,6 +7928,24 @@
       "専用モデルの優位性や今後の実用的な価値についてはまだ議論の余地がある。"
     ],
     "topic": "TypeSafeのJevと既存LLMによる推論の比較検証"
+  },
+  "https://zenn.dev/okame_rara/articles/bonsai_2_27b_m1": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Ternary Bonsai 2",
+      "Apple M1 Pro",
+      "llama.cpp",
+      "PrismML",
+      "GGUF"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "M1 Pro・メモリ16GBのMacBook ProでTernary Bonsai 2 27Bを動かす手順を解説している。",
+      "本家llama.cppでは非対応のため、PrismML公式のforkをソースからビルドして実行環境を構築した。",
+      "PQ2_0形式のモデルを使用し、コマンド実行や対話スクリプトの作成により日本語での推論を確認した。"
+    ],
+    "topic": "M1 Pro搭載MacでのTernary Bonsai 2 27Bの実行手順"
   },
   "https://zenn.dev/peoplex_blog/articles/65768c769de4b0": {
     "generated_at": "2026-09-10T22:03:41.306102Z",
@@ -7772,6 +8251,24 @@
       "組織設定やユーザー管理を対象とした新規APIエンドポイントが多数追加されました。"
     ],
     "topic": "Sigma Computingの2026年9月11日リリース情報まとめ"
+  },
+  "https://zenn.dev/truestar/articles/85934f8c0cf98e": {
+    "generated_at": "2026-09-20T22:03:41.112607Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Sigma Computing",
+      "BIツール",
+      "AIアシスタント",
+      "API",
+      "リリースノート"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIを活用した他BIツールからの移行スキルやビルドモードの刷新がBeta提供された。",
+      "ワークブックのコード表現管理やAPI経由のSigmaエージェント実行機能が追加された。",
+      "スタンドアロンのAI埋め込みなど一部機能の非推奨化とサポート終了予定が発表された。"
+    ],
+    "topic": "Sigma Computingの2026年9月18日リリース情報まとめ"
   },
   "https://zenn.dev/watany/articles/36e11a20ce3743": {
     "generated_at": "2026-09-18T22:03:51.810869Z",
