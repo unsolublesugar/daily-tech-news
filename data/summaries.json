@@ -69,6 +69,24 @@
     ],
     "topic": "メルカリの限定公開機能の試験提供と悪用懸念"
   },
+  "https://ascii.jp/elem/000/004/436/4436315/": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "006P型電池",
+      "9V角型電池",
+      "USB Type-C充電池",
+      "リチウムイオン充電池",
+      "ENEGON"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "あまり使われなくなった006P型9V電池の充電式としてUSB Type-C対応製品を紹介している。",
+      "リチウムイオンの9V充電池には、電源回路で9Vを出力するものと7.4Vの2種類が存在する。",
+      "記事では電圧の違いによる特性やノイズの懸念、製品選びのポイントについて解説している。"
+    ],
+    "topic": "USB Type-Cで充電できる006P型9V充電池の特徴と違いについて"
+  },
   "https://ashunar0.dev/posts/does-your-project-need-nextjs/": {
     "generated_at": "2026-09-13T22:03:52.034540Z",
     "input_type": "fulltext",
@@ -1084,6 +1102,23 @@
     ],
     "topic": "AI駆動開発メソッドのアップデートに関する解説"
   },
+  "https://codezine.jp/article/detail/29723": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "metadata",
+    "keywords": [
+      "IBM Bob",
+      "エンタープライズ開発",
+      "デブクロ2026",
+      "CodeZine"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "IBM Bobがエンタープライズ開発をどう変えるのかについて解説しているとみられる。",
+      "CodeZineのデブクロ2026注目セッションに関する記事である。",
+      "本文は未取得であり、詳細な内容は不明である。"
+    ],
+    "topic": "IBM Bobによるエンタープライズ開発への影響"
+  },
   "https://codezine.jp/article/detail/29728": {
     "generated_at": "2026-09-20T22:03:41.112607Z",
     "input_type": "metadata",
@@ -1183,6 +1218,41 @@
     ],
     "topic": "AWS DevOps エージェントのSlack双方向通信対応"
   },
+  "https://codezine.jp/article/detail/29748": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "metadata",
+    "keywords": [
+      "AWS",
+      "AWS Outposts",
+      "クラウド",
+      "オンプレミス",
+      "ハードウェア"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWSは、第2世代となるシングルラック型の「AWS Outposts」の一般提供を開始した模様です。",
+      "オンプレミス環境でAWSのインフラやサービスを利用可能にするハードウェアに関する情報とみられます。",
+      "詳細なスペックや提供条件については、元記事の確認が推奨されます。"
+    ],
+    "topic": "第2世代シングルラック型AWS Outpostsの一般提供開始"
+  },
+  "https://codezine.jp/article/detail/29752": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "metadata",
+    "keywords": [
+      "CodeZine",
+      "ニュースランキング",
+      "ITエンジニア",
+      "トレンド"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "CodeZineなどの最新ニュースから注目トピックスを紹介するとみられる",
+      "2026年9月11日～9月17日までの人気ランキングを発表しているとみられる",
+      "ITエンジニアの注目トレンド総まとめ記事であるとみられる"
+    ],
+    "topic": "ITエンジニア向け週間ニュースランキングTOP10"
+  },
   "https://codezine.jp/article/detail/29754": {
     "generated_at": "2026-09-19T22:03:55.729178Z",
     "input_type": "metadata",
@@ -1232,6 +1302,22 @@
       "詳細な仕様や利用手順については元記事の確認が推奨される。"
     ],
     "topic": "GitHub Copilot CLIのAPI機能追加に関する情報"
+  },
+  "https://codezine.jp/article/detail/29758": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "metadata",
+    "keywords": [
+      "デジタル庁",
+      "古川俊治",
+      "人事情報"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "デジタル庁が幹部一覧を更新したと報じられている。",
+      "新デジタル大臣に古川俊治氏が就任したとみられる。",
+      "組織体制の変更や新体制の陣容について伝えられている。"
+    ],
+    "topic": "デジタル庁の幹部一覧更新と新大臣就任"
   },
   "https://codezine.jp/article/detail/29765": {
     "generated_at": "2026-09-18T22:03:51.810869Z",
@@ -2172,6 +2258,24 @@
     ],
     "topic": "M5StickS3のIMUデータを活用した筋トレ分析パイプラインの構築"
   },
+  "https://dev.classmethod.jp/articles/matlab-ec2-install-mpm-cli/": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "MATLAB",
+      "EC2",
+      "mpm",
+      "Ubuntu",
+      "AWS"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "EC2インスタンスのUbuntu 24.04環境へ、公式ツールのmpmを使いMATLABをCLIで導入した。",
+      "ライセンス発行にはEC2のMACアドレスとログイン名が必要で、事前準備としてWebからの取得が求められる。",
+      "依存パッケージの導入と本体インストールは約1分20秒で完了し、バッチ処理でのスクリプト実行を確認した。"
+    ],
+    "topic": "EC2へのMATLABのCLIインストール手順"
+  },
   "https://dev.classmethod.jp/articles/monitor-detected-anomalies-using-dashboards/": {
     "generated_at": "2026-09-16T22:03:51.510318Z",
     "input_type": "fulltext",
@@ -2546,6 +2650,58 @@
     ],
     "topic": "TiDB Cloud LakeとTiDB Cloud間のデータ同期検証"
   },
+  "https://dev.classmethod.jp/articles/tsnote-thai-aws-backup-ebs-snapshot-lock-recommendations/": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AWS Backup",
+      "EBS Snapshot Lock",
+      "AWS Backup Vault Lock",
+      "Amazon EBS"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWS Backupで取得したEBSスナップショットにEBS Snapshot Lockを適用すべきか解説。",
+      "AWS Backupには保持期間前の削除を防ぐ機能があるため、直接のロックは推奨されない。",
+      "追加のセキュリティが必要な場合は、AWS Backup Vault Lockの利用が推奨される。"
+    ],
+    "topic": "AWS Backupで作成したEBSスナップショットへのロック適用について"
+  },
+  "https://dev.classmethod.jp/articles/tsnote-thai-aws-backup-ec2-exclude-specific-volumes/": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AWS Backup",
+      "Amazon EC2",
+      "Amazon EBS",
+      "バックアップ",
+      "スナップショット"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWS BackupによるEC2のAMIバックアップでは特定ボリュームを除外できない。",
+      "不要なボリュームを除外するには、バックアップ単位をEC2からEBSに変更する。",
+      "EBS単位のバックアップでは、リソースIDを指定して特定のボリュームを除外可能。"
+    ],
+    "topic": "AWS BackupでEC2の特定ボリュームを除外する方法"
+  },
+  "https://dev.classmethod.jp/articles/tsnote-thai-ebs-ec2-ami-creation-time/": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AWS",
+      "EC2",
+      "AMI",
+      "EBS Snapshot"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWSでAMI作成にかかる正確な時間は規定されておらず、最大24時間かかる場合がある。",
+      "ボリュームサイズやストレージの負荷など複数の要因が作成時間に影響するため予測や加速はできない。",
+      "事前にEBSスナップショットを作成しておくことで、AMI作成時の処理を効率化できる。"
+    ],
+    "topic": "EC2のAMI作成完了までにかかる時間と影響要因について"
+  },
   "https://dev.classmethod.jp/articles/typesafe-jev-cross-match/": {
     "generated_at": "2026-09-20T22:03:41.112607Z",
     "input_type": "fulltext",
@@ -2563,6 +2719,24 @@
       "日本語と英語の質問文における結果の比較や、レイテンシ・トークン消費量を計測した。"
     ],
     "topic": "TypeSafe Jevによる書類項目の突合精度・速度・コストの検証"
+  },
+  "https://dev.classmethod.jp/articles/typesafe-jev-doc-type-classification/": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Jev",
+      "OCR",
+      "Amazon Bedrock",
+      "Claude Sonnet",
+      "書類種別判定"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "OCR済みの貿易書類テキストをJevに渡し、ページごとに書類種別を判定できるかを検証した。",
+      "1ページ単体では20ページ中19ページ正解し、直前のページを一緒に渡すことで全20ページ正解となった。",
+      "誤判定したページの確率は低く出るため、低確率なページを人が確認する運用で実用的なフローを作れる。"
+    ],
+    "topic": "Jevを用いたOCR済み書類のページ別種別判定の検証"
   },
   "https://developer.diverse-inc.com/entry/2026/09/11/182829": {
     "generated_at": "2026-09-11T22:04:12.644451Z",
@@ -2688,6 +2862,23 @@
       "「Claude Code」と連携し、AIと対話しながら操作できる機能も開発中である。"
     ],
     "topic": "商用無料で本物の墨消しに対応するPDF編集ソフト"
+  },
+  "https://garumax.com/windows-11-home-local-account-new-workaround": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Windows 11",
+      "ローカルアカウント",
+      "Microsoftアカウント",
+      "OOBE"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Windows 11 Homeの初期設定でMicrosoftアカウントを回避する新たな抜け道が発見された。",
+      "サインイン画面の「詳細」リンクをクリックするだけで、コマンドプロンプトを使わずにローカルアカウント作成画面へ移行可能。",
+      "本来の挙動ではないため、今後のアップデートで塞がれる可能性があると指摘されている。"
+    ],
+    "topic": "Windows 11 Homeでの新たなローカルアカウント作成手順の発見"
   },
   "https://gigazine.net/news/20260909-mercury-2-5/": {
     "generated_at": "2026-09-09T09:38:38.426965Z",
@@ -2828,6 +3019,24 @@
       "メモリ最適化や高密度フィードバックループの導入によりNVIDIA GPU同等の効率を実現した。"
     ],
     "topic": "中国製AIインフラにおけるGLM-5.3-Flashの推論構築ノウハウ"
+  },
+  "https://gigazine.net/news/20260921-locally-ai-apple-foundation-models/": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Apple Foundation Models",
+      "Locally AI",
+      "Apple Intelligence",
+      "iOS 27",
+      "画像認識"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "iOS 27等に搭載された「Apple Foundation Models」とチャットできるアプリ「Locally AI」を紹介。",
+      "iPhone上でローカル動作し、機内モードでもテキスト生成や画像認識の機能を高速で利用できることを確認。",
+      "一般的な質問には正確に答える一方、著名人の特定など一部の処理には制限があることを検証。"
+    ],
+    "topic": "iPhoneのApple製AIとチャットできる無料アプリ「Locally AI」の検証"
   },
   "https://gihyo.jp/admin/clip/01/ubuntu-topics/202609/18": {
     "generated_at": "2026-09-18T22:03:51.810869Z",
@@ -3112,6 +3321,24 @@
       "広告収益サイト向けに学習利用の拒否設定とクローラー制御の仕組みを提供する。"
     ],
     "topic": "検索を許可しAI学習を拒否するCloudflareの新設定"
+  },
+  "https://gihyo.jp/article/2026/09/compositor?utm_source=feed": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Compositor",
+      "Mac",
+      "画像編集アプリ",
+      "オープンソース",
+      "Swift"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "デザイナーのRobbie Tilton氏がPhotoshop風のMac向け画像編集アプリ「Compositor」を公開した。",
+      "レイヤーやマスク、色調補正、レタッチ機能を備え、軽量なオープンソースソフトウェアとして提供される。",
+      "JPEGやPNGなどの形式に対応し、編集内容は独自形式で保存可能で、公式サイトとGitHubで入手できる。"
+    ],
+    "topic": "Photoshop風Mac向け画像編集アプリ「Compositor」"
   },
   "https://gihyo.jp/article/2026/09/cuda-rust?utm_source=feed": {
     "generated_at": "2026-09-10T22:03:41.306102Z",
@@ -3559,6 +3786,24 @@
       "レジストリごとのメタデータ分離保存などキャッシュ処理の仕様を変更"
     ],
     "topic": "pnpm 12.4のRustとPython依存関係統合管理機能"
+  },
+  "https://gihyo.jp/article/2026/09/qwen-image-2.1?utm_source=feed": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Qwen-Image-2.1",
+      "Alibaba",
+      "画像生成",
+      "画像編集",
+      "Hugging Face"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Alibabaが透明背景画像の生成や複数画像を使う編集に対応したQwen-Image-2.1を公開した。",
+      "被写体の切り出し、着せ替え、パノラマやインフォグラフィックの生成、文字や質感の表現が向上している。",
+      "7Bのパラメータを持ち、Hugging FaceやModelScopeから研究・商用利用向けに提供されている。"
+    ],
+    "topic": "Alibabaの画像生成・編集モデルQwen-Image-2.1の公開"
   },
   "https://gihyo.jp/article/2026/09/rustfs-1-0-0?utm_source=feed": {
     "generated_at": "2026-09-17T22:04:08.930319Z",
@@ -4039,6 +4284,24 @@
     ],
     "topic": "PdEConf 2026参加を通じたプラットフォームエンジニアの越境の考察"
   },
+  "https://mtx2s.hatenablog.com/entry/2026/09/21/182658": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "テックリード",
+      "EM",
+      "アーキテクト",
+      "エンジニアリングマネージャー",
+      "ロール定義"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "テックリードの役割が組織内で曖昧になっている現状を解説する。",
+      "テックリードとEMはキャリアパスやピープルマネジメントの有無で異なる。",
+      "テックリードとアーキテクトは向き合う対象や責任のスコープが異なる。"
+    ],
+    "topic": "テックリード、EM、アーキテクトの役割と違いについて"
+  },
   "https://munchkins-diary.hatenablog.com/entry/2026/09/17/192932": {
     "generated_at": "2026-09-17T22:04:08.930319Z",
     "input_type": "fulltext",
@@ -4109,6 +4372,24 @@
     ],
     "topic": "日販の米AI企業への書籍販売を巡る業界団体の説明要求"
   },
+  "https://news.yahoo.co.jp/articles/c3af48e96bb9fd049a1c6e68ab222c8ae126237b": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "交通反則通告制度",
+      "青切符",
+      "交通安全協会",
+      "天下り",
+      "自転車交通違反"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "自転車の交通違反に対する青切符導入の背景と警察の懐事情を解説",
+      "若者の車離れなどで反則金の確保が難しくなったことが制度化の要因と指摘",
+      "集められた反則金や免許更新手数料は警察OBの天下り先である交通安全協会等へ流れている"
+    ],
+    "topic": "自転車の青切符導入と警察の財政・天下り組織の関係について"
+  },
   "https://note.com/bunsekiya_tech/n/n6361ea24a95c": {
     "generated_at": "2026-09-16T22:03:51.510318Z",
     "input_type": "fulltext",
@@ -4125,6 +4406,24 @@
       "TRANSLATEは1文字単位で文字を対応付けて置き換えるため、用途に応じた使い分けが可能です。"
     ],
     "topic": "SASにおける文字列置き換え関数の使い方と違い"
+  },
+  "https://note.com/bunsekiya_tech/n/nef06ada52f51": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Ollama",
+      "ローカルLLM",
+      "Qwen",
+      "Llama",
+      "DeepSeek"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "ローカルLLM実行ツールOllamaのビジネス向けモデル選定ガイド。",
+      "日本語文章やコード作成、思考特化など用途別の最適モデルを紹介。",
+      "WebUIの導入やModelfile活用など実践的なテクニックを解説。"
+    ],
+    "topic": "Ollamaで使えるビジネス向けAIモデルの用途別まとめ"
   },
   "https://note.com/kantahayashiai/n/n4c54eed30787": {
     "generated_at": "2026-09-20T22:03:41.112607Z",
@@ -4427,6 +4726,23 @@
     ],
     "topic": "デジタル庁GSSへの不正アクセスと情報漏えい"
   },
+  "https://posfie.com/@petaritape/p/Es0IJEZ": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "ファイル名",
+      "日付フォーマット",
+      "ソート順",
+      "ファイルシステム"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "夫が付けた「YYYY-MM-DD」形式のフォルダ名を発端に、日付の表記順やファイル名の命名規則に関する議論が展開されている。",
+      "ヨーロッパの習慣や視認性の高さ、ソートの利便性からハイフン区切りを支持する意見が挙げられている。",
+      "一方で区切り文字の有無やファイルシステムへの影響、自動検索の普及など、命名規則に関する多様な見解が交わされている。"
+    ],
+    "topic": "フォルダ名の日付表記とソート順に関する議論"
+  },
   "https://qiita.com/Ninagawa123/items/8ec3f5fe18c20fab1b2a?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-09-20T22:03:41.112607Z",
     "input_type": "fulltext",
@@ -4443,6 +4759,24 @@
       "回答のタイプとして「noul」や「choice」「score」などを指定して結果を取得できる。"
     ],
     "topic": "超短時間で回答を返すAI「Jev」の初期設定と利用手順"
+  },
+  "https://qiita.com/Sicut_study/items/b2ef2f7a6ee0dbbf0001?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AI",
+      "エンジニア",
+      "具体と抽象",
+      "ドメインモデリング",
+      "設計"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIの普及により、コーディングなどの具体的な作業が自動化されエンジニアの仕事構造が変化している。",
+      "SIer構造やAIの発展に伴い、今後は抽象的な問題発見や設計を行う人材とタスク処理層に二極化する。",
+      "抽象的思考やドメインモデリングのスキルを実践的に身につける重要性を解説している。"
+    ],
+    "topic": "AI時代のエンジニアに求められる具体と抽象のスキル"
   },
   "https://qiita.com/carol0226/items/c9cccdd64e71a731a58d?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-09-10T22:03:41.306102Z",
@@ -4837,6 +5171,23 @@
     ],
     "topic": "Terraform v1.17の新機能minimal-refreshによるplan高速化"
   },
+  "https://qiita.com/minorun365/items/ed4c760f616cf3c0a958?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Marp",
+      "AIエージェント",
+      "Claude Code",
+      "登壇資料"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Marpでの登壇スライド作成ノウハウをAIエージェント用スキルとして公開した。",
+      "ストーリー構成や図の簡素化、配色、検査スクリプトなどのノウハウが含まれる。",
+      "AIデスクトップアプリからスキルを導入してスライド作成を効率化できる。"
+    ],
+    "topic": "みのるんの登壇スライド作成ノウハウとAI用スキル公開"
+  },
   "https://qiita.com/nasuvitz/items/44f20ed515b9734afb26?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-09-17T22:04:08.930319Z",
     "input_type": "fulltext",
@@ -4854,6 +5205,24 @@
       "Jevを活用することで、業務アプリケーションにおける処理を低遅延かつ低コストで実行することが期待できる。"
     ],
     "topic": "新世代AIモデル「Jev」と従来型LLM・AIエージェントの違い"
+  },
+  "https://qiita.com/nasuvitz/items/4d27833640ff36b5d8c5?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Amazon Nova Micro",
+      "Jev",
+      "Amazon Bedrock",
+      "LLM",
+      "コスト比較"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWSの最軽量LLM「Amazon Nova Micro」でJevを代替できるか検証した。",
+      "パフォーマンス、コスト、出力検証の成功率の全項目でJevが勝る結果となった。",
+      "両者の判定結果には大きな差があり、単純な置き換えは困難であると結論付けた。"
+    ],
+    "topic": "Amazon Nova MicroによるJevの代替検証"
   },
   "https://qiita.com/nolanlover0527/items/24ee07122dd4d0523069?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-09-09T09:33:04.577290Z",
@@ -5382,6 +5751,24 @@
     ],
     "topic": "Claude CodeのAgent Skillsの見直しと管理方法"
   },
+  "https://syu-m-5151.hatenablog.com/entry/2026/09/21/104258": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Claude Code",
+      "Agent view",
+      "Git Worktree",
+      "セッション間通信",
+      "開発効率化"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Claude CodeのAgent viewを活用して複数セッションの状態を一覧し並行作業を進める手法を解説する。",
+      "Git Worktreeやセッション間通信を組み合わせ、編集範囲や決定事項を適切に分離して管理する方法を紹介する。",
+      "エージェントの完了状態だけでなく、成果物やテスト結果を人間が確認する重要性と分担のコツを説明する。"
+    ],
+    "topic": "Claude CodeのAgent viewとセッション間通信の活用法"
+  },
   "https://tailwindcss.com/blog/tailwind-is-joining-shopify": {
     "generated_at": "2026-09-09T22:03:43.274774Z",
     "input_type": "fulltext",
@@ -5416,6 +5803,24 @@
       "Face IDがなくTouch IDを搭載している点については、利便性の面で違和感があると言及。"
     ],
     "topic": "iPhone Duoのハンズオンインプレッション"
+  },
+  "https://tech-blog-v2-opal.vercel.app/article/balancing-engineering-and-parenting": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "育児",
+      "エンジニア",
+      "ワークライフバランス",
+      "リモートワーク",
+      "自己肯定感"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "子供の誕生に伴い自由な時間が激減し、仕事や技術のキャッチアップが制限される中でメンタル不調を経験した。",
+      "自己評価の基準を下げて限られた時間での成果を肯定するマインドセットへ切り替えたことで精神的な負担が軽減した。",
+      "柔軟な働き方ができる職場環境や配偶者のサポートへの感謝、限られた子供との時間を大切にする心構えを綴っている。"
+    ],
+    "topic": "エンジニアと育児の両立における課題とマインドセットの変化"
   },
   "https://tech-blog.abeja.asia/entry/codas-aws-report-202609": {
     "generated_at": "2026-09-16T22:03:51.510318Z",
@@ -5525,6 +5930,23 @@
     ],
     "topic": "Tailwind CSS v4とShadow DOM併用時のスタイル崩れの原因と回避策"
   },
+  "https://tech.kentem.jp/entry/2026/09/21/090000": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "GitHub",
+      "API",
+      "gh CLI",
+      "Claude Code"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "GitHubのissue添付画像は通常のAPIトークンでは404になり取得できない。",
+      "gh CLIの認証情報を使用することで、画像ファイルの正常なダウンロードが可能になる。",
+      "この仕組みを活用したCLIツールとClaude Code連携による効率化について紹介。"
+    ],
+    "topic": "GitHub issueの添付画像がAPIから取得できない仕様の回避策"
+  },
   "https://tech.layerx.co.jp/entry/2026/09/18/185816": {
     "generated_at": "2026-09-18T22:03:51.810869Z",
     "input_type": "fulltext",
@@ -5595,6 +6017,24 @@
       "機能開発のスコープ縮小や待ち時間の削減、判断経緯の記録による改善を提案する。"
     ],
     "topic": "リソース効率重視組織におけるPdMの改善アプローチ"
+  },
+  "https://tech.unifa-e.com/entry/2026/09/21/080000": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "生成AI",
+      "ChatGPT",
+      "Claude",
+      "Cursor",
+      "Rails"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "質問相手としての利用から始まったAI開発での活用が、複雑なタスクでの協働へと変化した。",
+      "バージョンアップ調査やテスト作成などでAIを併用し、開発フローに深く組み込んでいる。",
+      "AIの回答に対する最終判断や安全性の確保など、人間の役割の重要性について述べている。"
+    ],
+    "topic": "生成AIを活用したサーバーサイド開発の変遷と実践"
   },
   "https://tech.youtrust.co.jp/entry/2026/09/09/170000": {
     "generated_at": "2026-09-09T09:33:04.577290Z",
@@ -6217,6 +6657,23 @@
       "技術的な課題やディスプレイ構造に関する様々な憶測やリーク情報が報じられている。"
     ],
     "topic": "Apple初折りたたみ端末「iPhone Duo」の噂と実機画像"
+  },
+  "https://www.itmedia.co.jp/mobile/articles/2609/21/news035.html": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "キャリアショップ",
+      "家電量販店",
+      "併売店",
+      "携帯電話"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "記事本文が文字化けまたはエンコードの不具合により判読不能な状態となっている。",
+      "そのため、キャリアショップや家電量販店と比較した街中の併売店の具体的な現状に関する情報は読み取れない。",
+      "詳細な内容については、正常に表示された状態の元記事を確認する必要がある。"
+    ],
+    "topic": "街中の携帯電話の併売店が置かれている厳しい現状について"
   },
   "https://www.itmedia.co.jp/news/article/2609/09/2000001308/": {
     "generated_at": "2026-09-09T09:33:04.577290Z",
@@ -7108,6 +7565,24 @@
     ],
     "topic": "自然言語で分類基準を渡せる識別モデルJevの活用法"
   },
+  "https://zenn.dev/cybernetics/articles/71ea975d935414": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Jev",
+      "TypeSafe",
+      "確率モデル",
+      "ベイズネットワーク",
+      "セマンティック特徴量"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Jevを単なる高速分類器ではなく確率変数の抽出器として捉える。",
+      "非構造情報を確率に変換し、確率モデルの条件付き分布へ組み込む。",
+      "従来の数理モデルとFoundation Modelを接続する設計を検討する。"
+    ],
+    "topic": "Jevを確率モデルの部品として活用するアプローチの提案"
+  },
   "https://zenn.dev/dokusy/articles/bc77254466f58d": {
     "generated_at": "2026-09-19T22:03:55.729178Z",
     "input_type": "fulltext",
@@ -7534,6 +8009,24 @@
     ],
     "topic": "自然言語処理若手会YANSへのスポンサー参加レポート"
   },
+  "https://zenn.dev/jackojacko05/articles/08df79d47f4219": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Jev",
+      "BigQuery",
+      "Gemini",
+      "Vercel AI Gateway",
+      "テキスト分類"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "BigQueryのデータを使いJevとGeminiの分類精度や費用を比較した。",
+      "JevはGeminiと同等の精度を維持しつつ費用とレイテンシを削減できた。",
+      "二段階判定やモデルの変更による効率化の検証結果と注意点を解説している。"
+    ],
+    "topic": "BigQueryとJev・Geminiの分類性能と費用の比較"
+  },
   "https://zenn.dev/jtcc/articles/7e74fef42580a1": {
     "generated_at": "2026-09-18T22:03:51.810869Z",
     "input_type": "fulltext",
@@ -7820,6 +8313,24 @@
       "サーバーのクォータ制限やQRコードの表示不良などのトラブルを解決した。"
     ],
     "topic": "日比谷高校文化祭オンライン整理券システム開発"
+  },
+  "https://zenn.dev/ncdc/articles/84f508118f0532": {
+    "generated_at": "2026-09-21T22:04:18.408096Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "DynamoDB",
+      "ベクトル検索",
+      "GSI",
+      "スパースインデックス",
+      "コスト最適化"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "DynamoDBのネイティブベクトル検索導入時のデータ設計について解説する記事。",
+      "問題アイテムにベクトルデータを同居させると、全属性を保持するGSI等によりコストが増加する。",
+      "別アイテムとしてスパースインデックスを活用することで、不要な書き込みや読み取りコストを回避できる。"
+    ],
+    "topic": "DynamoDBのベクトル検索導入におけるGSI射影タイプの注意点"
   },
   "https://zenn.dev/ncdc/articles/93cd19a1d882f7": {
     "generated_at": "2026-09-20T22:03:41.112607Z",
