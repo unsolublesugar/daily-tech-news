@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年9月
 
+- [09/28](2026/09/2026-09-28.md) | [Web版](2026/09/2026-09-28.html) — Platform Engineering Kaigi 2026 登壇資料まとめ
 - [09/27](2026/09/2026-09-27.md) | [Web版](2026/09/2026-09-27.html) — Docker、AIコーディングエージェント向けの公式スキル「Docker Skills」を公開
 - [09/26](2026/09/2026-09-26.md) | [Web版](2026/09/2026-09-26.html) — EXPLAIN で詰まったときの三つ目の手札、Optimizer Trace の話 - Timee Product Team Blog
 - [09/25](2026/09/2026-09-25.md) | [Web版](2026/09/2026-09-25.html) — Go言語で書かれた高速なIDE「Rune」、オープンソースで公開。ターミナルとコマンドプロンプト中心の開発環境、複数リモートノードをローカルのように操作可能
