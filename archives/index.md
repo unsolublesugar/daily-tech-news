@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年9月
 
+- [09/30](2026/09/2026-09-30.md) | [Web版](2026/09/2026-09-30.html) — レノボ、4K液晶&ジェスチャーAI搭載の「Lenovo Yoga Tab」2モデルを発表
 - [09/29](2026/09/2026-09-29.md) | [Web版](2026/09/2026-09-29.html) — MySQLクライアントをTrilogyへ移行しました - inSmartBank
 - [09/28](2026/09/2026-09-28.md) | [Web版](2026/09/2026-09-28.html) — Platform Engineering Kaigi 2026 登壇資料まとめ
 - [09/27](2026/09/2026-09-27.md) | [Web版](2026/09/2026-09-27.html) — Docker、AIコーディングエージェント向けの公式スキル「Docker Skills」を公開
