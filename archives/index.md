@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年10月
 
+- [10/02](2026/10/2026-10-02.md) | [Web版](2026/10/2026-10-02.html) — Introducing Clef: our open-source decision models, and new RL fine-tuning platform
 - [10/01](2026/10/2026-10-01.md) | [Web版](2026/10/2026-10-01.html) — Next.jsアプリをCloudflare WorkersやAWS LambdaなどVercel以外のサーバレス基盤へデプロイできる「Vinext 1.0」リリース
 
 ## 2026年9月
