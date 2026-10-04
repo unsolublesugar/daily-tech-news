@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年10月
 
+- [10/05](2026/10/2026-10-05.md) | [Web版](2026/10/2026-10-05.html) — Supabase、1サーバあたり数百万ものSQLiteをホストする「Turso」買収を発表。AIエージェントで加速するDB需要に対応
 - [10/04](2026/10/2026-10-04.md) | [Web版](2026/10/2026-10-04.html) — 実務において敵対的レビューはどの程度有効なのか
 - [10/03](2026/10/2026-10-03.md) | [Web版](2026/10/2026-10-03.html) — 【Cursor pstack】AIエージェントに開発を任せる環境をつくる ―月2,500件のPRを支えた開発基盤とは？
 - [10/02](2026/10/2026-10-02.md) | [Web版](2026/10/2026-10-02.html) — Introducing Clef: our open-source decision models, and new RL fine-tuning platform

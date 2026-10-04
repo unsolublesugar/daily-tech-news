@@ -2704,6 +2704,22 @@
     ],
     "topic": "技術者向けカンファレンス「デブクロ」の開催情報"
   },
+  "https://codezine.jp/article/detail/29896": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "metadata",
+    "keywords": [
+      "GitHub Copilot",
+      "VS Code",
+      "CodeZine",
+      "開発ツール"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "GitHub Copilotに関して9月に発表されたVS Code向け新機能が紹介されていると見られる。",
+      "具体的な新機能の詳細やアップデート内容はメタデータからは不明である。"
+    ],
+    "topic": "GitHub CopilotのVS Code向け新機能紹介"
+  },
   "https://codezine.jp/article/detail/29897": {
     "generated_at": "2026-10-03T22:53:29.699146Z",
     "input_type": "metadata",
@@ -2754,6 +2770,39 @@
       "詳細は元記事の確認が必要である。"
     ],
     "topic": "GitHub Copilotの新機能とデスクトップ操作"
+  },
+  "https://codezine.jp/article/detail/29900": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "metadata",
+    "keywords": [
+      "AWS",
+      "ListBillingViewSegments",
+      "API",
+      "請求管理"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWSは、請求コンテキストを返す「ListBillingViewSegments API」の提供を開始したと見られる。",
+      "詳細な機能や仕様については記事本文の確認が必要とされる。"
+    ],
+    "topic": "AWSが請求コンテキストを返す新APIの提供を開始"
+  },
+  "https://codezine.jp/article/detail/29901": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "metadata",
+    "keywords": [
+      "Microsoft",
+      "Data API builder",
+      "API",
+      "データベース"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Microsoftの「Data API builder」のバージョン2.1.5が安定版になったとみられる。",
+      "データベースへのアクセス用APIを構築するツールに関するアップデート情報が伝えられている。",
+      "詳細は元の記事を参照する必要がある。"
+    ],
+    "topic": "MicrosoftのData API builder 2.1.5安定版リリース"
   },
   "https://cyzennt.co.jp/blog/2026/09/20/%e3%83%9e%e3%82%b8%e3%83%83%e3%82%af%e3%83%8a%e3%83%b3%e3%83%90%e3%83%bc%e3%81%af%e7%b5%b6%e5%af%be%e6%82%aa%e3%81%a7%e3%81%af%e3%81%aa%e3%81%84%ef%bc%9f%e4%bd%bf%e3%81%a3%e3%81%a6%e3%82%82%e5%95%8f/": {
     "generated_at": "2026-09-20T22:03:41.112607Z",
@@ -3751,6 +3800,42 @@
     ],
     "topic": "決定モデルCLMをSwitchyardの判定役として検証"
   },
+  "https://dev.classmethod.jp/articles/cloudflare-clef-ocr-verification-ja/": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Cloudflare",
+      "Clef",
+      "OCR",
+      "VLM",
+      "日本語書類"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Cloudflare Workers AIのClefを用いて日本語書類のOCR抽出結果の検証を実施した。",
+      "36件の意図的な誤りとVLMの読み間違いを含むデータでclefとclef-flashの性能を評価した。",
+      "大半の誤りを検出できた一方で、全角半角の違いや微細な誤りの検出には課題が残る結果となった。"
+    ],
+    "topic": "Cloudflare Clefによる日本語書類のOCR誤り検出検証"
+  },
+  "https://dev.classmethod.jp/articles/cloudflare-clef-ocr-verification/": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Cloudflare",
+      "Clef",
+      "OCR",
+      "VLM",
+      "LLM"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Cloudflareのdecision model「Clef」を用いOCR結果の誤り検出精度を検証した。",
+      "書類画像と抽出結果を渡し検証した結果、clefは注入した36件の誤りを全件検知し誤検知も0件だった。",
+      "clef-flashは誤りを全件検知したものの数件の誤検知が発生し、処理時間と費用も低コストで実用的である。"
+    ],
+    "topic": "CloudflareのClefによるOCR結果の誤り検出検証"
+  },
   "https://dev.classmethod.jp/articles/cloudtrail-amazon-q-console-japanese-search/": {
     "generated_at": "2026-09-16T22:03:51.510318Z",
     "input_type": "fulltext",
@@ -4497,6 +4582,24 @@
     ],
     "topic": "Nitro世代EC2インスタンスにおけるVM-Generation IDの利用検証"
   },
+  "https://dev.classmethod.jp/articles/obsidian-ai-second-brain-devio2026/": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Obsidian",
+      "AI",
+      "Web Clipper",
+      "Markdown",
+      "ナレッジマネジメント"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "DevelopersIO 2026 OkinawaでのObsidianとAIを活用したメモ環境に関するセッションのレポート。",
+      "Obsidianの「ためる・探す・つながる・渡す」という4つの役割とAIによる情報の自動整理手法を解説。",
+      "Web Clipperによる自動要約やタグ付け、プラグインを用いた各種AIツールとの連携方法を紹介。"
+    ],
+    "topic": "ObsidianとAIを組み合わせた第二の脳の構築手法"
+  },
   "https://dev.classmethod.jp/articles/openai-gpt-6-astra-bedrock/": {
     "generated_at": "2026-09-09T09:33:04.577290Z",
     "input_type": "fulltext",
@@ -4764,6 +4867,24 @@
       "ENHANCEDモードと従来型CLASSICモードの仕様の違いを比較・整理している。"
     ],
     "topic": "Amazon S3 Vectorsの新機能メタデータプレフィルタリングの検証"
+  },
+  "https://dev.classmethod.jp/articles/security-agent-pr-review-condition/": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AWS Security Agent",
+      "コードレビュー",
+      "GitHub",
+      "トリガーフィルター",
+      "プルリクエスト"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWS Security Agentのコードレビューにトリガーフィルター機能が追加された。",
+      "対象ブランチやラベル、PRイベントごとに自動レビューの起動条件を絞り込める。",
+      "プライベートリポジトリを対象に条件ごとのレビュー起動を検証し確認した。"
+    ],
+    "topic": "AWS Security AgentのPR自動レビューのトリガーフィルター追加"
   },
   "https://dev.classmethod.jp/articles/securityhub-fsbp-remediation-elb-18/": {
     "generated_at": "2026-09-28T22:04:30.756439Z",
@@ -5104,6 +5225,24 @@
     ],
     "topic": "TiDB Cloud LakeとTiDB Cloud間のデータ同期検証"
   },
+  "https://dev.classmethod.jp/articles/toyota-woven-city-visit-reservation-entry/": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Toyota Woven City",
+      "トヨタ自動車",
+      "実証実験",
+      "顔認証",
+      "One Day Weavers"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "2026年10月に全国民へ開放されたトヨタ・ウーブン・シティの訪問手順を解説。",
+      "事前予約やID作成、顔認証登録、無料駐車場や岩波駅からのアクセス方法を紹介。",
+      "初回訪問時の岩波エントランスでの受付、オリエンテーション、顔認証での入場を説明。"
+    ],
+    "topic": "トヨタ・ウーブン・シティの訪問予約と入場方法"
+  },
   "https://dev.classmethod.jp/articles/tsnote-thai-aws-backup-ebs-snapshot-lock-recommendations/": {
     "generated_at": "2026-09-21T22:04:18.408096Z",
     "input_type": "fulltext",
@@ -5439,6 +5578,24 @@
     ],
     "topic": "Java 27で導入されたオブジェクトヘッダの縮小化"
   },
+  "https://future-architect.github.io/articles/20261005a/": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Java 26",
+      "Java 27",
+      "G1 GC",
+      "AOTオブジェクトキャッシュ",
+      "JEP"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "2026年3月のJava 26と9月のJava 27における主なJEPや運用上の変更点を解説する。",
+      "Java 27ではG1 GCやコンパクトオブジェクトヘッダがデフォルト化され性能が向上した。",
+      "ヒープ既定値の変更や一部オプションの削除など、アップグレード時の注意点がまとめられている。"
+    ],
+    "topic": "Java 26およびJava 27の主要な変更点と移行時の注意点"
+  },
   "https://garumax.com/windows-11-home-local-account-new-workaround": {
     "generated_at": "2026-09-21T22:04:18.408096Z",
     "input_type": "fulltext",
@@ -5685,6 +5842,23 @@
       "動的メモリ管理やプレフィックスキャッシュを備え、複数のAIエージェントの長時間運用を効率化。"
     ],
     "topic": "AIエージェント向けオープンソース推論エンジン「Magnitude」"
+  },
+  "https://gigazine.net/news/20261004-mobile-stationery-business-card-case/": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "BANDAI SPIRITS",
+      "機動文具",
+      "自動変形名刺ケース",
+      "おもちゃ"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "BANDAI SPIRITSの新シリーズ第1弾として自動変形名刺ケースが登場。",
+      "ボタンを押すとわずか0.2〜0.3秒でケースが展開し名刺を差し出す。",
+      "カラーは3種類で価格は税込3300円、使用時の注意点も解説されている。"
+    ],
+    "topic": "「機動文具 自動変形名刺ケース」の機能と使用レビュー"
   },
   "https://gihyo.jp/admin/clip/01/ubuntu-topics/202609/18": {
     "generated_at": "2026-09-18T22:03:51.810869Z",
@@ -7342,6 +7516,24 @@
     ],
     "topic": "Marpでの登壇スライド作成スキルと検査ツール"
   },
+  "https://github.com/sh1ma/Angelic-Angel": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Web Push",
+      "Twitter/X",
+      "Rust",
+      "Mozilla AutoPush",
+      "Webhook"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "MozillaのWeb Pushインフラを模倣しTwitter/Xの通知を受信するRust製のCLIツール。",
+      "APIやスクレイピングを使わず、WebSocket経由で通知を受け取りWebhookに転送する。",
+      "初期設定でブラウザの認証クッキーを使用し、購読登録後はリアルタイムに通知を受け取る。"
+    ],
+    "topic": "Twitter/Xの通知をWeb Push経由で受信するCLIツール"
+  },
   "https://github.com/uehaj/jev-semgrep": {
     "generated_at": "2026-09-19T22:03:55.729178Z",
     "input_type": "fulltext",
@@ -8254,6 +8446,24 @@
     ],
     "topic": "判断特化型AI「Jev」の確率較正における課題"
   },
+  "https://note.com/keitaro_shimizu/n/n1cd34c93e432": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "社会人博士",
+      "博士課程",
+      "アカデミックライティング",
+      "研究設計",
+      "論文執筆"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "東京大学の社会人博士課程に6年在籍したものの、修了できず退学した経験を振り返る。",
+      "孤独への耐性不足、スモールウィンの欠如、サンクコストによる方針転換の遅れを敗因に挙げる。",
+      "論文執筆技術などの得られた成果を示しつつ、今後の社会人博士志望者へ向けたチェックリストを提示する。"
+    ],
+    "topic": "社会人博士課程を退学した著者の反省と教訓"
+  },
   "https://note.com/naoki85/n/nc7b4949bd54f": {
     "generated_at": "2026-09-23T22:04:06.416491Z",
     "input_type": "fulltext",
@@ -8376,6 +8586,24 @@
       "基本の比率として「米100gに対して、米と水の合計240g」という計算式を提案し、注意点や補足を述べている。"
     ],
     "topic": "「1合」にとらわれない重量ベースのご飯の炊き方"
+  },
+  "https://note.com/yoshiki_shibata/n/n185f3d9e13bc": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "生成AI",
+      "ソフトウェア開発",
+      "ベテランエンジニア",
+      "エンジニア育成",
+      "経験と熟達"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "生成AIは仕様から実装までの時間を短縮し、若手の助けとなると同時にベテランの能力を増幅する。",
+      "一方で、AIが試行錯誤を代替することで、従来の方法では将来の判断に必要な経験が積めなくなる懸念がある。",
+      "AIを学習の道具として活用し、従来のベテランとは異なる新しい種類のエンジニア熟達のあり方を考える必要がある。"
+    ],
+    "topic": "生成AI時代におけるエンジニアの育成と経験の積み方"
   },
   "https://note.com/yubais/n/nd4505991a6d6": {
     "generated_at": "2026-09-12T22:04:31.942470Z",
@@ -9603,6 +9831,24 @@
     ],
     "topic": "ローカル環境でJev風の確率分布取得とマルチモーダル入力を実現する方法"
   },
+  "https://qiita.com/moritalous/items/8b663db633dde3c49d62?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Claude Code",
+      "Mods",
+      "Jev",
+      "モデルルーター",
+      "API"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Claude CodeのMods機能とJevを組み合わせてモデルルーターを構築した手順を紹介している。",
+      "モデル切り替えによるキャッシュ無効化の懸念から、現在はEffort切り替えを採用している。",
+      "Modsの分類機能を利用することで、サブスク契約の範囲内で効率的な処理の振り分けが可能になる。"
+    ],
+    "topic": "Claude Code Modsを活用したモデルルーターの構築"
+  },
   "https://qiita.com/nasuvitz/items/44f20ed515b9734afb26?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-09-17T22:04:08.930319Z",
     "input_type": "fulltext",
@@ -9851,6 +10097,42 @@
       "APIキーをSQLに直書きせず、OCI Vaultと連携することで安全なローテーションや運用が可能になることを示している。"
     ],
     "topic": "Autonomous AI DatabaseでのOpenAI APIキーのセキュアな管理"
+  },
+  "https://qiita.com/songchong/items/02672765fe53f911a1a0?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "APIキー",
+      "環境変数",
+      ".env",
+      "シークレットスキャン",
+      "AIエージェント"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "APIキーの漏洩経路を公開リポジトリやWebサイト、AI関連など7つに分類して解説している。",
+      "GitGuardianなどの調査データや実サイトへのアクセス記録をもとに、具体的な漏洩事例を紹介している。",
+      "経路ごとの対策として、鍵の取り消しや権限の制限、設定ファイルの適切な管理の重要性を挙げている。"
+    ],
+    "topic": "APIキーが漏洩する7つの経路と対策について"
+  },
+  "https://qiita.com/songchong/items/5ee39ef5b71510e36c2a?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "シークレットスキャン",
+      "APIキー",
+      "GitHub",
+      "GitLab",
+      "プッシュ保護"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "GitHubなどのシークレットスキャン機能の仕組みと漏洩時の対応を解説している。",
+      "主要な海外SaaSは検出対象だが、日本の民間SaaSの多くは検出対象外である。",
+      "非公開リポジトリでの設定要否や、漏洩時の適切な対処手順をまとめている。"
+    ],
+    "topic": "GitHub等のシークレットスキャン機能と業務システムの鍵漏洩リスク"
   },
   "https://qiita.com/songchong/items/7306e0b1a9207e08d86e?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-09-23T22:04:06.416491Z",
@@ -11158,6 +11440,24 @@
     ],
     "topic": "MySQLのオプティマイザトレースを活用したクエリ遅延の原因調査"
   },
+  "https://tech.timee.co.jp/entry/2026/10/05/000000": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Renovate",
+      "モノレポ",
+      "AIエージェント",
+      "Python",
+      "uv"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "ローカルやCI/CD環境でRenovateの設定検証とdry runを実行する仕組みを導入した。",
+      "managerごとにpackageFileDirを正規化し、アプリケーション単位のPRにまとめた。",
+      "グループ化された更新に対し、bumpVersionsで対象ファイルを漏れなく更新する設定を実装した。"
+    ],
+    "topic": "モノレポ環境におけるRenovate設定の改善と検証手法"
+  },
   "https://tech.unifa-e.com/entry/2026/09/21/080000": {
     "generated_at": "2026-09-21T22:04:18.408096Z",
     "input_type": "fulltext",
@@ -11443,6 +11743,42 @@
       "VPNがネットワーク接続を起点とするのに対し、ZPAはアプリケーション接続を起点とする違いがある。"
     ],
     "topic": "VPNの仕組みとZPAとの設計思想の違いについて"
+  },
+  "https://techblog.ap-com.co.jp/entry/2026/10/04/102241": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "MFA",
+      "ゼロトラスト",
+      "Identity",
+      "Device Posture",
+      "Zscaler"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "MFAはパスワードに依存しない本人確認の強化を行う仕組みである。",
+      "ゼロトラストでは認証結果に加え、端末や状況など多角的にアクセスを判断する。",
+      "一連の技術要素は、誰がどの端末から何へアクセスするかを確認するために連携する。"
+    ],
+    "topic": "MFAとゼロトラストの関係性と役割の解説"
+  },
+  "https://techblog.ap-com.co.jp/entry/2026/10/04/oci-free-cert": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "OCI",
+      "Oracle Cloud Infrastructure",
+      "クラウド資格",
+      "生成AI",
+      "AIデータベース"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "無償で受験できる5つのOCI認定資格を全て取得した体験談を解説している。",
+      "対象となる基礎からAI・データベース関連までの5つの資格と特徴を紹介している。",
+      "各試験の受験感想や、資格を通じて体系的に学ぶメリットについて述べている。"
+    ],
+    "topic": "無償受験できる5つのOCI認定資格の取得体験"
   },
   "https://techblog.ap-com.co.jp/entry/zscaler/zia/cloudnss/sentinel-secret-rotation": {
     "generated_at": "2026-09-28T22:04:30.756439Z",
@@ -11817,6 +12153,23 @@
       "セキュリティ脆弱性などのベンチマーク結果をもとに、ツールごとの役割分担を紹介している。"
     ],
     "topic": "追加課金なしで運用するAIコードレビューの3層構造"
+  },
+  "https://www.dtmstation.com/archives/80372.html": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "WaoN",
+      "自動採譜",
+      "フェイズボコーダー",
+      "iOSアプリ"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "1996年から開発されてきたオープンソースの自動採譜プログラムWaoNが、iOS/Mac向けアプリとしてリリースされた。",
+      "フェイズボコーダーを用いた独自の周波数補正により低音域の検出精度を高め、音程を維持した0倍速再生機能などを備える。",
+      "開発者の市來健吾氏へのインタビューを通じて、位相情報を使った解析技術の仕組みやAI全盛時代におけるアプリ開発の背景を伝える。"
+    ],
+    "topic": "自動耳コピプログラム「WaoN」のiOS/Macアプリ化"
   },
   "https://www.gizmodo.jp/article/2609-m6-mac-mini-review/": {
     "generated_at": "2026-09-23T22:04:06.416491Z",
@@ -12593,6 +12946,24 @@
     ],
     "topic": "マイクロソフトが公開した2026年版デジタル防衛レポートの概要"
   },
+  "https://www.nikkei.co.jp/nikkeiinfo/news/information/1547.html": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "不正ログイン",
+      "情報漏洩",
+      "Google Workspace",
+      "日本経済新聞社",
+      "個人情報"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "日本経済新聞社の社内向けGoogle Workspaceアカウントが不正アクセスを受けた。",
+      "役員や社員など最大1646人分の個人情報が流出した可能性がある。",
+      "クレジットカード情報などは含まれず、現時点で二次被害は確認されていない。"
+    ],
+    "topic": "不正ログインによる個人情報漏洩"
+  },
   "https://www.nikkei.com/article/DGXZQOGM230CK0T20C26A9000000/": {
     "generated_at": "2026-09-23T22:04:06.416491Z",
     "input_type": "fulltext",
@@ -12681,6 +13052,23 @@
       "なりすましによるクレジットカードの不正発行などの危険性がある。"
     ],
     "topic": "タイムズカーの免許証画像流出と不正アクセスの影響"
+  },
+  "https://www.nikkei.com/article/DGXZQOUD02B5F0S6A001C2000000/": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "サイバー攻撃",
+      "情報漏洩",
+      "マイクロソフト365",
+      "不正ログイン"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "日本経済新聞社は、業務ソフトのアカウントがサイバー攻撃を受けたと発表した。",
+      "不正ログインにより、社内や取材先へなりすましメール約9000件が送信された。",
+      "送信先のアドレスや氏名、一部メール内容が漏洩したとみられ調査を行っている。"
+    ],
+    "topic": "日本経済新聞社に対するサイバー攻撃と情報漏洩について"
   },
   "https://www.nikkei.com/article/DGXZQOUF1158N0R10C26A9000000/": {
     "generated_at": "2026-09-25T22:04:05.867153Z",
@@ -13181,6 +13569,42 @@
       "Windowsのネイティブ開発環境との統合が進み、すでに100以上のプロジェクトでRustが採用されている。"
     ],
     "topic": "マイクロソフトにおけるRustのTier 1言語への昇格について"
+  },
+  "https://www.publickey1.jp/blog/26/state_of_devs_2026_ai.html": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "State of Devs 2026",
+      "ソフトウェア開発者",
+      "Devographics",
+      "AIコード生成",
+      "年収調査"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "世界中のソフトウェア開発者を対象にした調査結果「State of Devs 2026」が公開された。",
+      "開発者の年齢中央値は36歳、経験年数中央値は12年で、年収やAIの活用状況などが集計されている。",
+      "AIによるコード生成の割合や、開発者の健康状態、趣味などの幅広いデータが紹介されている。"
+    ],
+    "topic": "世界中のソフトウェア開発者の実態調査"
+  },
+  "https://www.publickey1.jp/blog/26/supabase1sqlitetursoaidb.html": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Supabase",
+      "Turso",
+      "SQLite",
+      "AIエージェント",
+      "データベース"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Supabaseが1サーバーで数百万のSQLiteをホストする「Turso」の買収を発表した。",
+      "AIエージェントの普及に伴う軽量データベースの急激な需要増加に対応する狙いがある。",
+      "Tursoは軽量で高速なSQLiteデータベースサービスや関連技術を提供している。"
+    ],
+    "topic": "SupabaseによるTurso買収とAI時代に向けたDB戦略"
   },
   "https://www.publickey1.jp/blog/26/tailscalevpnaiapertureaitailscale.html": {
     "generated_at": "2026-09-13T22:03:52.034540Z",
@@ -13826,6 +14250,24 @@
       "APIテストとREADMEの導入により、リファクタリング耐性と仕様の網羅性が向上し品質への自信につながった。"
     ],
     "topic": "バックエンドの自動テスト戦略をUT中心からAPIテスト中心へ移行した事例"
+  },
+  "https://zenn.dev/carenet/articles/zenn-weekly-claude-articles-2026-10": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Claude",
+      "Claude Code",
+      "Opus 5.5",
+      "Agent Skills",
+      "Claude Mods"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIによる敵対的レビューの有効性検証や、Claude Codeのカスタマイズ手法を解説している。",
+      "使用量制限の消費メカニズムの実測データや、Agent Skillsを活用した不具合分析の仕組み化を紹介している。",
+      "Opus 5.5の公式ガイドをもとにした実務での効率的な使いこなし方や、個人開発の事例をまとめている。"
+    ],
+    "topic": "Claude関連の人気記事や活用ノウハウのまとめ"
   },
   "https://zenn.dev/chot/articles/268804cd6694ab": {
     "generated_at": "2026-09-17T22:04:08.930319Z",
@@ -15110,6 +15552,24 @@
     ],
     "topic": "Pokémon GO Plus +の分解と自動睡眠計測装置の制作"
   },
+  "https://zenn.dev/kyami/articles/97231d0de16f31": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "データエンジニア",
+      "副業",
+      "Google Cloud",
+      "生成AI",
+      "データ基盤"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "スキルアップを目的としてデータエンジニアの副業を1年間続けた体験談。",
+      "保守運用やAIコードのレビューが中心となり、期待したスキルが得られなかった。",
+      "自由な時間を失ったことや仕事内容とのズレから、副業を終了するに至った経緯。"
+    ],
+    "topic": "データエンジニアの副業を1年で辞めた理由と得られた学びについて"
+  },
   "https://zenn.dev/levtech/articles/cartesian-product-doctrine-orm": {
     "generated_at": "2026-09-12T22:04:31.942470Z",
     "input_type": "fulltext",
@@ -15731,6 +16191,24 @@
       "gRPC over HTTP/3、WASM、自作ブラウザ、組み込みDBなど多様な技術に関する発表とLT大会の模様を伝える。"
     ],
     "topic": "初開催されたC# Kaigi 2026の参加レポートとセッション概要"
+  },
+  "https://zenn.dev/qnighy/articles/json-ambiguity": {
+    "generated_at": "2026-10-04T22:04:10.086705Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "JSON",
+      "仕様",
+      "RFC 8259",
+      "ECMA-404",
+      "相互運用性"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "JSON仕様の曖昧さや実装依存性について主要な処理系を比較している。",
+      "数値の扱いにおける整数・小数・精度の差異や範囲外の値の挙動を解説する。",
+      "サロゲートの扱いとオブジェクトキーの重複・順序性の仕様差をまとめている。"
+    ],
+    "topic": "JSONの仕様における微妙な実装差異の比較"
   },
   "https://zenn.dev/remotive/articles/cloudflare-birthday-week-2026-day1": {
     "generated_at": "2026-09-29T22:04:25.316375Z",
