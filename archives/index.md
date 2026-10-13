@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年10月
 
+- [10/14](2026/10/2026-10-14.md) | [Web版](2026/10/2026-10-14.html) — Redesigning source control at Anthropic
 - [10/13](2026/10/2026-10-13.md) | [Web版](2026/10/2026-10-13.html) — Deno開発元がCloudflareに合流。Denoの開発は終了へ、今後はCloudflare WorkersとDurable Objectsのオープンソース実装に注力
 - [10/12](2026/10/2026-10-12.md) | [Web版](2026/10/2026-10-12.html) — AIで浮いた時間を「もっと作る」に使っていませんか
 - [10/11](2026/10/2026-10-11.md) | [Web版](2026/10/2026-10-11.html) — SQLite 本体にベクトル検索拡張 vec1 がやってきた
