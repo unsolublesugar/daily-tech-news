@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年10月
 
+- [10/17](2026/10/2026-10-17.md) | [Web版](2026/10/2026-10-17.html) — Windows PC向けNVIDIA製SoC「RTX Spark」の正体が明らかに。Microsoftと共同でゲームへの対応も進める
 - [10/16](2026/10/2026-10-16.md) | [Web版](2026/10/2026-10-16.html) — 台湾TSMC過去最高益「需要減速の兆候なし」 | NHKニュース
 - [10/15](2026/10/2026-10-15.md) | [Web版](2026/10/2026-10-15.html) — 仕組みを動く図で説明するエージェントスキルAnatomy公開 | gihyo.jp
 - [10/14](2026/10/2026-10-14.md) | [Web版](2026/10/2026-10-14.html) — Redesigning source control at Anthropic
