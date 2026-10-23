@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年10月
 
+- [10/24](2026/10/2026-10-24.md) | [Web版](2026/10/2026-10-24.html) — PHP2Shellへの対応を振り返って - コドモン Product Team Blog
 - [10/23](2026/10/2026-10-23.md) | [Web版](2026/10/2026-10-23.html) — eMudhraの中間CAの秘密鍵が公開された証明書から復元可能と判明、pip・uvなどの開発ツールに修正版 | gihyo.jp
 - [10/22](2026/10/2026-10-22.md) | [Web版](2026/10/2026-10-22.html) — Patch the Planet — OpenAI
 - [10/21](2026/10/2026-10-21.md) | [Web版](2026/10/2026-10-21.html) — 社内最大のRailsアプリのテスト高速化に挑戦した半年 | inSmartBank
