@@ -1,4 +1,4 @@
-# 今日のテックニュース (2026-10-24)
+# 今日のテックニュース (2026-10-25)
 
 📚 [過去のニュースを見る](archives/index.md) | 🌐 [Web版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
 
@@ -14,61 +14,61 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## Tech Blog Weekly
 
-- [PHP2Shellを狙った攻撃を日本国内でも観測 (IIJ MITFハニーポット) | IIJ Engineers Blog](https://eng-blog.iij.ad.jp/archives/38064)
-- [チャット型AIライブラリ「Chainlit」のすすめ | 分析屋](https://note.com/bunsekiya_tech/n/n9a1a43f29a2f)
-- [【イベント参加レポート】現場で使える「データの出口」とは｜Squadbase Community Meetup #0 | NTT DATA TECHのフィード](https://zenn.dev/nttdata_tech/articles/2e1d45ec3638ce)
-- [社内 LT 会「てっくじゃむ」9月29日のイベントレポート | PLAY DEVELOPERS BLOG](https://developers.play.jp/entry/2026/10/23/182806)
-- [「読みにくいDB」はAI開発のコストを1.9倍にする――Claude Codeで検証したDB設計の影響 | 株式会社アクトビのフィード](https://zenn.dev/actbe_tech/articles/8b4a9991d5365d)
+- [GH-600とは？試験の概要と受験前に押さえておきたい学習テーマ | Alternative Architecture DOJO](https://aadojo.alterbooth.com/entry/2026/10/24/155443)
+- [Microsoft Graph APIでOutlookのメールを取得する | ヘッドウォータースのフィード](https://zenn.dev/headwaters/articles/30b7bfb72d41c2)
+- [webauthn-ruby をもう一回覗いてみた | SMARTCAMP Engineer Blogのフィード](https://zenn.dev/smartcamp/articles/22bde5829493e5)
+- [Agent が溜め込んだデータをメッセージ形式で掃除するアプリを作った | ゆめみのフィード](https://zenn.dev/yumemi_inc/articles/38e55e0ba101d0)
+- [Vueの好きで、街を作ろう。 - Vue Fes Japan 2026のブース向け企画 | Finatext Tech Blogのフィード](https://zenn.dev/finatext/articles/vue-fes-japan-2026-town)
 
 
 ---
 ## Zenn
 
-- [Better AuthをMCPの認可サーバーにして、AI Agent からOAuthでアプリを操作させる](https://zenn.dev/sakagi/articles/8caa896e649005)
-- [Excel読込をcalamineで19秒→5秒にしたら、別名パッケージ経由のimportだけ壊れた【Python】](https://zenn.dev/cutlet_of_pork/articles/calamine-excel-read-alias-package-import)
-- [AlphaEngine : 最適化編①](https://zenn.dev/reu/articles/f79a89bd44b541)
-- [そのProvider、どこから更新する？ FlutterとRiverpodで考える操作完了通知](https://zenn.dev/simplex/articles/dc17c45b57af0e)
-- [2年間放置していたPwnagotchiをクリーンインストールして使えるようにするまで](https://zenn.dev/kuroikotech/articles/pwnagotchi-zero2w-clean-install)
+- [MultiheadAttentionの高速経路がVRAMを18GB食っていた話](https://zenn.dev/genelab_999/articles/387bf151caf716)
+- [リンクで確認した SNS のメール購読に、作り直さずに「解除の保護」を付ける](https://zenn.dev/sk8jp/articles/260e3c0fa07ed9)
+- [Laravel を IdP にして Ory Hydra で SSO を組み、PHP 5.6 のレガシーアプリも認証ブローカーで乗せる](https://zenn.dev/sprix_it/articles/464d97d1ebdbfd)
+- [Gowin FPGAの配置配線オプションを実測比較 — ビルド時間とFmaxのバランス](https://zenn.dev/akiyukiokayasu/articles/66be017200e64e)
+- [AIコードレビューの不合格率が51%→13%に。3モデル中2つは判定していなかった](https://zenn.dev/taka8823/articles/2df36d66844c15)
 
 
 ---
 ## Qiita
 
-- [「ドパ資料」の作り方](https://qiita.com/kikuziro/items/b6a0743b070d7320c36d?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [PHP脆弱性php2shell対応、7.4本番を止めずに守った夜と実際の攻撃](https://qiita.com/kenimo49/items/30f290bf0f4fff021fb3?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [「PHPなんて使ってるやつが悪い」と言っている輩が一番危ない](https://qiita.com/kotowazaman/items/aab621d31a8501617eb4?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [canvas上の文字にプロポーショナルメトリクスを適用したい！](https://qiita.com/Kaitou/items/9746c5c262f994c1548c?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [Codexに「承認待ちをDiscordに通知してほしい」と相談して、通知ツールを作ってみた](https://qiita.com/shota_hirano/items/5aa037294434003db2db?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [3KBしか使えない！奇妙で素敵なゲームエンジン「Playload」のご紹介](https://qiita.com/kitao/items/7fac93e8a7ad6015b0b0?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [Copilot の Agent Builder が凄く進化した。何ができるようになったか、Copilot Studio（GitHub Copilot ハーネス）との違いも整理してみる](https://qiita.com/Takashi_Masumori/items/c559b0291db39b2169c1?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [【速報】VS Code 1.142 に Canvas が来た！チャットの横でエージェントと同じ画面を触れる「Interactive Canvases」を整理してみた](https://qiita.com/shahin0809/items/81e6a6737b2254bdc6ed?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [日本と同じ条件の国は何をしたか ― 財政政策の国際比較実証研究 : システム設計視点の行動経済学 (48)](https://qiita.com/maskot1977/items/faa29f9bdce4dab79040?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [【緊急】Node.jsの重大脆弱性に対応するセキュリティアップデートを安全に適用する方法](https://qiita.com/superdora-cloud/items/8cad27487cd0e67d088c?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
 
 
 ---
 ## はてなブックマーク - IT（人気）
 
-- [パナソニックHD、利用禁止の生成AIに従業員らの情報送出 33万人分 - 日本経済新聞](https://www.nikkei.com/article/DGXZQOUF237Z60T21C26A0000000/)
-- [PHP2Shellへの対応を振り返って - コドモン Product Team Blog](https://tech.codmon.com/entry/2026/10/23/173909)
-- [タイムズカー免許証画像流出、「お見舞い」1人3000円 146万人が対象 - 日本経済新聞](https://www.nikkei.com/article/DGXZQOUC231CP0T21C26A0000000/)
-- [「Mermaid」図を描けるMarkdownエディター「MerMark Editor」が日本語化／有志の貢献により、v0.8.1から](https://forest.watch.impress.co.jp/docs/news/2150751.html)
-- [佐川急便 流出した個人情報は最大5300万件超の可能性 | NHKニュース](https://news.web.nhk/newsweb/na/nd-20261023de64285)
+- [JSがこんなに減る！ HTML・CSS最新技術2026](https://ics-ikeda.github.io/261024_vuefes_2026/)
+- [「HTTP2Shell」CVE-2026-111497、Node.js・Python・Bun・Envoyに影響 Brotliの重大脆弱性と修正版を確認|セキュリティニュースのセキュリティ対策Lab](https://rocket-boys.co.jp/security-measures-lab/brotli_cve-2026-111497_http2shell_20261024/)
+- [みんなはどのダークパターン広告が好き？ - orangestar2](https://orangestar2.hatenadiary.com/entry/2026/10/23/163042)
+- [ＧＭＯの「能動的サイバー防御」緊急要請、政府関係者「求めに応じ発動決める制度ではない」](https://www.yomiuri.co.jp/politics/20261024-GYT1T00257/)
+- [人間が時間を使うべきところはどこか](https://tellme.tokyo/post/2026/10/24/where-humans-spend-time/)
 
 
 ---
 ## はてなブックマーク - IT（新着）
 
-- [「この男に何かあったら終わり」と評されるPHPの保守とパッチの自動化を行うボランティア「オンドレイ・スーリー」氏とは何者か？](https://gigazine.net/news/20261023-ondrej-sury-interview/)
-- [ドイツ・ミュンヘン市が再びオープンソースに移行--「Linux」デスクトップを含まず](https://japan.zdnet.com/article/35253683/)
-- [マイクロソフトによる「シェーダーコンパイル要らず」の新技術、ついにNVIDIAグラボ向けに解禁。ゲーム起動時の“あの待ち時間”とおさらば - AUTOMATON](https://automaton-media.com/articles/newsjp/20261023-475245/)
-- [外部生成AIサービスへの個人情報アップロードに関するお詫びとお知らせ - パナソニック ホールディングス](https://holdings.panasonic/jp/information/topics/20261023.html)
-- [Node2Shell: Node.js Brotli vulnerability allows remote code execution (CVE-2026-111497) and the fix](https://www.aikido.dev/blog/node2shell-nodejs-brotli-rce-cve-2026-111497)
+- [AIで加速するサイバー攻撃と、防御をめぐる動き ――脆弱性の修正から、AIエージェントの行動制御まで | gihyo.jp](https://gihyo.jp/article/2026/10/ai-security-defense)
+- [GitHub - Zagitta/gpu-unlock: Unlock FP/BF16 instruction issue rate on Nvidia 3000's cards to their professional equivalents](https://github.com/Zagitta/gpu-unlock)
+- [「お名前.com デスクトップクラウド」ご利用のお客様へ改めてのお願い（第5報） | GMOインターネットグループ株式会社](https://group.gmo/info/alert/2026102402/)
+- [GitHub CLI が短命 token をサポートしても ghtkn が必要な理由](https://zenn.dev/shunsuke_suzuki/articles/ghtkn-advantage-over-gh-cli-expiring-token)
+- [GitHub Actions Self-hosted runnerをお手軽にスケールさせる ghalet | おそらくはそれさえも平凡な日々](https://songmu.jp/riji/entry/2026-10-24-scaling-github-actions-runners-with-ghalet.html)
 
 
 ---
 ## DevelopersIO
 
-- [[Kitesurf] I let Claude drive Cloudflare's new Kitesurf browser: lighter browser, slower agent~](https://dev.classmethod.jp/articles/kitesurf-vs-chrome/)
-- [Wiz CIRTのLLMjacking報告を読む：Google Cloudの請求先アカウントを乗っ取られ、他人のGemini API利用料を払わされるまでの流れと確かめること](https://dev.classmethod.jp/articles/gcp-billing-llmjacking-phishing-ads/)
-- [Muse Gadget SDKをM5Stack Core2 for AWSで試す](https://dev.classmethod.jp/articles/shuntaka-muse-gadget-sdk-m5stack-core2/)
-- [pnpmで特定パッケージだけビルドキャッシュの再利用を除外する](https://dev.classmethod.jp/articles/pnpm-side-effects-cache-exclude/)
-- [pnpm 12.9で社内レジストリだけ並列リクエスト数を下げる](https://dev.classmethod.jp/articles/pnpm-registry-network-concurrency/)
+- [[アップデート] AgentCore GatewayがBedrockのInvokeModel APIとモデルのフォールバックに対応したので試してみた](https://dev.classmethod.jp/articles/agentcore-gateway-model-fallback/)
+- [有効期限なしだったGitHub CLIのトークンが、数時間で失効して自動更新される方式を選べるようになりました](https://dev.classmethod.jp/articles/gh-cli-expiring-oauth-tokens/)
+- [組み込み未経験でもAIでロボットは動かせる？StackChanライブデモ #devio2026](https://dev.classmethod.jp/articles/ai-real-m5stack/)
+- [[アップデート] Amazon Quick でブランドテンプレートが使えるようになったので、提案書テンプレートから資料を作ってみた](https://dev.classmethod.jp/articles/20261025-amazon-quick-brand-templates/)
+- [SQS のデッドレターキューの中身を、受信の回数を増やさずに確認できるか試してみた](https://dev.classmethod.jp/articles/sqs-dlq-peek-receive-count/)
 
 
 ---
@@ -94,11 +94,11 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## CodeZine
 
+- [Google スプレッドシート、箱ひげ図をネイティブサポート](https://codezine.jp/article/detail/30123)
+- [AWS、Lambda Durable Execution SDK for Goを一般提供開始](https://codezine.jp/article/detail/30121)
+- [GitHub Copilo、Visual Studio向けの9月アップデートまとめ](https://codezine.jp/article/detail/30122)
 - [IBMとRed Hat、Lightwellで未知のOSS脆弱性400件超を修正](https://codezine.jp/article/detail/30120)
 - [GitHub CLI、有効期限付きで自動更新されるOAuthトークンをプレビュー提供](https://codezine.jp/article/detail/30112)
-- [日経リサーチとRelic、AIペルソナで事業アイデアを1ループ1時間で検証する「Idea Echo」を提供開始](https://codezine.jp/article/detail/30118)
-- [数百人規模のN1インタビューをAIと音声で実現、ヴィアゲートが「エモミル」に新機能を追加](https://codezine.jp/article/detail/30117)
-- [Googleドキュメントのモバイルアプリに、音声で構造化文書を作成できる「Docs Live」追加](https://codezine.jp/article/detail/30111)
 
 
 ---
@@ -114,31 +114,31 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## connpass - イベント
 
-- [IT系&誰でも参加OK！もくもく会_朝活_10/28(水)](https://morimori.connpass.com/event/410871/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [IT系&誰でも参加OK！もくもく会_朝活_10/27(火)](https://morimori.connpass.com/event/410869/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [kintone Café 東京 Vol.34 petit 〜Days振り返り会＆年忘れLT大会〜](https://kintone-cafe-tokyo.connpass.com/event/410485/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [アニメから得た学びを発表会](https://engineers-anime.connpass.com/event/410843/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [[Lean] Theorem proving in Lean4 読書会 2.4章~ /ゆる](https://yurufuwait-hmmt-online.connpass.com/event/410866/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [（オンライン 第10章限定）C#読書会 DIの原理・原則とパターン No.50](https://cs-reading.connpass.com/event/410863/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [積ん読リーディング#8（読書会）](https://techbooklibrary.connpass.com/event/410861/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [AKARI physical AI Night vol.2](https://akari.connpass.com/event/410856/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [AKARI physical AI Night vol.1](https://akari.connpass.com/event/410855/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [【PowerAutomate45】第34回「完了した？」と聞かなくていい。ステータス変更時にだけ通知](https://powerautomate-create.connpass.com/event/410848/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [Clash Verge に予備サブスクリプションを追加する方法（オンライン・自習形式）](https://connpass.com/event/410934/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [第30回ｽﾀｯｸﾁｬﾝ もくもく会 in 東京・赤坂(2026第13回)](https://stack-chan-mokumoku.connpass.com/event/410490/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [第04回shirosec セキュリティフレームワーク編](https://shirosec.connpass.com/event/410931/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [「マツタケ」読書会 第1回(全7回)](https://anthropology-starting-with-everyone.connpass.com/event/410929/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [情シス in 新潟 #14 SCS評価制度勉強会Vol.1](https://infosys-niigata.connpass.com/event/410924/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [OSM/Wikimedia Meetup #08](https://countries-romantic.connpass.com/event/410928/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [[修了生・受講生限定]LT会 11月](https://manabi-dx-quest-alumni.connpass.com/event/410927/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [業務フロー図が描けない」を終わらせる、AIと進める業務棚卸しデモ](https://monstar-lab.connpass.com/event/410925/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [ゆるっとPurviewオフ会：ameさん出版記念](https://purview.connpass.com/event/408028/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [CoderDojo和歌山#94](https://coderdojowakayama.connpass.com/event/410920/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 
 
 ---
 ## TECH PLAY - イベント
 
+- [【統計検定2級の講座受け、合格目指しませんか？】【内容：①4日間のzoom講座(土日開催) ＋②CBT問題集解説動画(17時間)の視聴と演習 】](https://techplay.jp/event/1002054)
+- [事業成果を創出する「AIエージェント」設計術〜「業務フロー図が描けない」を終わらせる、AIと進める業務棚卸しデモ〜](https://techplay.jp/event/1002055)
+- [【SnowVillageデータマネジメント入門講座】第5回：中央集権と非中央集権（メッシュ、ファブリック）](https://techplay.jp/event/1002052)
+- [暗黙知・秘匿データ・オフライン環境でもAIは使える。〜製造現場を止めない「ローカルLLM」の始め方〜](https://techplay.jp/event/1002053)
+- [【実機×AWS】ネットワーク構築実践ハンズオン研修（CCNAレベル～クラウド連携）](https://techplay.jp/event/1002047)
 - [Canva Village Meet for education](https://techplay.jp/event/1002040)
 - [〜Qlik TECH TALK セミナー：What's New in Qlik ～ 2026年 10月 リリース 最新機能のご紹介 ～](https://techplay.jp/event/1002037)
 - [シン・FDE - 住み込みまで行ったエンジニアのFDE論](https://techplay.jp/event/1002036)
 - [AI生成コード・レガシーコードを可視化！ ソースコード構造解析ツール 「Understand 」紹介WEBセミナー](https://techplay.jp/event/999412)
 - [SaaSにAIを組み込むための境界設計](https://techplay.jp/event/1002034)
-- [ざっくり分かるTerraformのリアル 〜失敗談とモジュール運用術〜](https://techplay.jp/event/1002033)
-- [MyTokkyo.Aiで何ができる？ MyTokkyo.Ai導入検討者向け説明会｜研究開発・知財のための基本機能と活用事例](https://techplay.jp/event/1002032)
-- [Claude Codeを安心して業務で使うには？導入前に押さえたい、基本のセットアップと安全設定](https://techplay.jp/event/1002014)
-- [WEB広告代理店乗り換え前に知るべき10のリスクと対処法](https://techplay.jp/event/1001152)
-- [【動かし続けるための品質保証】 デスクトップアプリの継続運用を支える、テスト自動化の定石](https://techplay.jp/event/1001893)
 
 
 ---
