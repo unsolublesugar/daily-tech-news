@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年10月
 
+- [10/26](2026/10/2026-10-26.md) | [Web版](2026/10/2026-10-26.html) — ソフトウェアの脆弱性情報をいち早く入手する - CVE・CISA KEV・JPCERT/CC・OSV｜npaka
 - [10/25](2026/10/2026-10-25.md) | [Web版](2026/10/2026-10-25.html) — AIで加速するサイバー攻撃と、防御をめぐる動き ――脆弱性の修正から、AIエージェントの行動制御まで | gihyo.jp
 - [10/24](2026/10/2026-10-24.md) | [Web版](2026/10/2026-10-24.html) — PHP2Shellへの対応を振り返って - コドモン Product Team Blog
 - [10/23](2026/10/2026-10-23.md) | [Web版](2026/10/2026-10-23.html) — eMudhraの中間CAの秘密鍵が公開された証明書から復元可能と判明、pip・uvなどの開発ツールに修正版 | gihyo.jp
