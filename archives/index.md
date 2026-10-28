@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年10月
 
+- [10/29](2026/10/2026-10-29.md) | [Web版](2026/10/2026-10-29.html) — Gemini 4 Carbon: our next frontier model
 - [10/28](2026/10/2026-10-28.md) | [Web版](2026/10/2026-10-28.html) — 公開された情報と氏名など同一の人物、ＧＭＯクラウドサービスの利用「一度もない」
 - [10/27](2026/10/2026-10-27.md) | [Web版](2026/10/2026-10-27.html) — AI の謎な説明文を直すスキル
 - [10/26](2026/10/2026-10-26.md) | [Web版](2026/10/2026-10-26.html) — ソフトウェアの脆弱性情報をいち早く入手する - CVE・CISA KEV・JPCERT/CC・OSV｜npaka

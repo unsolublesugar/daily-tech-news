@@ -1,4 +1,4 @@
-# 今日のテックニュース (2026-10-28)
+# 今日のテックニュース (2026-10-29)
 
 📚 [過去のニュースを見る](archives/index.md) | 🌐 [Web版を見る](https://unsolublesugar.github.io/daily-tech-news/) | 📡 [RSSフィードを購読](https://unsolublesugar.github.io/daily-tech-news/rss.xml)
 
@@ -14,21 +14,21 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## Tech Blog Weekly
 
-- [PHP2Shell（CVE-2026-109618）とは？脆弱性対策が必要な理由を歴史から学ぶ【初心者向け】 | ヘッドウォータースのフィード](https://zenn.dev/headwaters/articles/b7a07d0c98d3fe)
-- [GitHub ActionsからSSM経由でプライベートEC2上のコマンドを実行する | APC 技術ブログ](https://techblog.ap-com.co.jp/entry/2026/10/27/205937)
-- [オーケストレーションを前提とした体制づくり | Wantedly Engineer Blog](https://www.wantedly.com/companies/wantedly/post_articles/1101651)
-- [OntobricksのDashboard Mappingを使ってみる | Vポイントマーケティング｜TECH LABの Tech Blog](https://techblog.vpoint.co.jp/entry/2026/10/27/175427)
-- [新時代のE2Eテスト、TesterArmyのe2eをReact Nativeアプリに導入してみた | テラーノベル テックブログのフィード](https://zenn.dev/tellernovel_inc/articles/testerarmy-e2e-react-native)
+- [【既存のSQL, PL/SQLをAIを用いて移行する】第1回：SQLGlot で既存の SQL を ScalarDB SQL に変換する | Scalar Solution Engineer Blogのフィード](https://zenn.dev/scalar_sol_blog/articles/20260923-100100-scalardb-migrate-1-sqlglot)
+- [git タグで固定すれば skills update でも変わらない | Algomatic Tech Blog](https://tech.algomatic.jp/entry/2026/10/28/201006)
+- [楕円曲線の埋め込み次数とペアリング — MOV / Frey–Rück 攻撃 | HashPort技術ブログ](https://tech.hashport.io/5663/)
+- [AWS EC2 Auto Scaling の「終了前に起動」をアカウントレベルで有効にしてみた | サーバーワークスエンジニアブログ](https://blog.serverworks.co.jp/ec2-auto-scaling-launch-before-terminate)
+- [【Google Cloud Spanner】stagingで読む行数を減らした「FORCE_INDEX」が本番で3倍遅くなった理由 | asoview! Tech Blog](https://tech.asoview.co.jp/entry/2026/10/28/193257)
 
 
 ---
 ## Zenn
 
-- [AAIF に加わった Open Responses を Amazon Bedrock で試す](https://zenn.dev/exwzd/articles/20261023-open-responses)
-- [Jevに問い合わせメッセージを仕分けてもらう](https://zenn.dev/chot/articles/980c44e5a19736)
-- [GASで素のJSを埋め込むと < がエスケープされて動かない：getContent() の落とし穴と直し方](https://zenn.dev/kimura0314/articles/gas-htmloutput-getcontent-escapes-lt)
-- [Chromium(V8)のArray.prototype.lastIndexOfを最大約26000倍高速化した](https://zenn.dev/dinii/articles/2f66b147007cf8)
-- [Dockerのビルドを遅くしたコミットをGrafana Tempoのトレースで見つける](https://zenn.dev/ymotongpoo/articles/20261027-buildkit-traces-tempo)
+- [MCP ツールの引数と結果に入った個人番号を、AgentCore Gateway のインターセプターでマスクする](https://zenn.dev/aws_japan/articles/49bf6abcee64bc)
+- [人間が見るのは設計書だけ ― PdM不在・バグ修正中心のチームで、AI-DLCを開発フローごと作り直した話](https://zenn.dev/canly/articles/85dc645c252832)
+- [業務マスタの新規登録をSeleniumで連続化したら、「新規」の判定を2回直すことになった【Python】](https://zenn.dev/cutlet_of_pork/articles/selenium-rpa-new-entry-key-definition)
+- [図で理解する Dagster on ECS の構成と、失敗に気づく仕組み](https://zenn.dev/safie_inc/articles/dagster_on_ecs)
+- [Flutter やめました。電話アプリを Native にした理由](https://zenn.dev/ivry/articles/d155267331a3ca)
 
 
 ---
@@ -36,69 +36,69 @@ https://unsolublesugar.github.io/daily-tech-news/
 
 - [エンジニア歴数か月の私「理論上、理解できない物事はない」](https://qiita.com/Minotaurasu/items/a13a3fc940c2cd384063?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
 - [目指せClaude全冠！4つの試験を全部受けたので攻略法を紹介します](https://qiita.com/minorun365/items/59783841e48f5467594f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [記憶に頼るな。Claudeセッションの記録を取ろう](https://qiita.com/qwertyhoge/items/987c0ea8afdb5cd045e8?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [【解説】クリーンアーキテクチャとは何か？ 炎上議論はなぜ起きるのか？](https://qiita.com/Sicut_study/items/3c1995d2a3f1695a18a7?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
-- [先週の PHP 祭りから見えた、業務システムの「止まり方」の共通点と違い — 予防的な停止・障害・計画メンテを、日本・海外・AI の告知 751 件で比べた](https://qiita.com/songchong/items/eb2e60b469a148c2fb8b?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [実際に試したClaude便利術20選 まとめ](https://qiita.com/N-Kyo/items/bf4a3a2185db2d28eee5?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [【PHP2Shell】PHP公式の発表『本日のセキュリティリリースと、セキュリティ対策について』](https://qiita.com/rana_kualu/items/f5a44b09241bdb21907e?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
+- [【宇宙最速書評】AWSでRAGとAIエージェントをがっつり業務実践できる名著「Amazon Bedrock実践ガイド」](https://qiita.com/minorun365/items/84cd50fda97df62cff88?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items)
 
 
 ---
 ## はてなブックマーク - IT（人気）
 
-- [公開された情報と氏名など同一の人物、ＧＭＯクラウドサービスの利用「一度もない」](https://www.yomiuri.co.jp/national/20261027-GYT1T00367/)
-- [GMO、不正アクセス実行犯の手がかりに懸賞金 1億5000万円規模](https://www.itmedia.co.jp/news/article/2610/27/2000002642/)
-- [スライド作成入門_2024.indd](https://home.riise.hiroshima-u.ac.jp/~ten/slide_20240328.pdf?utm_source=chatgpt.com)
-- [パナソニック、ミニコンポ全機種の生産を11月以降順次完了。「後継商品は無い」](https://av.watch.impress.co.jp/docs/news/2151398.html)
-- [コードを読まずにマージするために必要なこと](https://zenn.dev/nrs/articles/c777388530aa84)
+- [MarkdownからきれいなPDFを作るCLIツールpfpdfを公開しました｜株式会社Preferred Networks](https://www.preferred.jp/ja/blog/tech/1798)
+- [pfpdf — Markdown から、印刷品質の PDF へ](https://pfpdf.preferred.tech/ja/)
+- [GMO熊谷正寿事件の概要と雑感｜山本一郎（やまもといちろう）](https://note.com/kirik/n/n72f93c8a2819)
+- [Gemini 4 Carbon: our next frontier model](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/)
+- [はてな株主総会2026｜近藤淳也・取締役（創業者）「資金流出事案について、私自身も大きな衝撃を受けた。技術だけではなく、人や組織の部分を強くしていく必要がある」 - スズキオンライン](https://michsuzuki.hatenablog.com/entry/2026/10/28/000042)
 
 
 ---
 ## はてなブックマーク - IT（新着）
 
-- [3回つくってわかった、 定期実行ジョブ基盤の本質情報](https://speakerdeck.com/takai/i-built-a-scheduled-job-platform-three-times-and-now-i-know-the-essential-truths)
-- [公開された情報と氏名など同一の人物、ＧＭＯクラウドサービスの利用「一度もない」](https://www.yomiuri.co.jp/national/20261027-GYT1T00367/2/)
-- [書き手が人でもAIでも正しくなる道、�SREを埋め込んだDeveloper Platform / tech drivers day8](https://speakerdeck.com/chmikata/tech-drivers-day8)
-- [Claude Codeから見る、エンジニアの世界の変容とその先](https://speakerdeck.com/oikon48/qiita-con-claude-code)
-- [PHP2Shellの影響製品・ソフトウェア一覧 PAN-OS、NetScaler、QNAP、Cisco、F5、WordPressなどの修正状況を整理（CVE-2026-109618／CVE-2026-109619）|セキュリティ対策Lab](https://rocket-boys.co.jp/security-measures-lab/php2shell-affected-products-software-20261027/)
+- [Amadeus の旅客サービスシステムへの不正アクセスについてまとめてみた - piyolog](https://piyolog.hatenadiary.jp/entry/2026/10/28/214917)
+- [アマゾン「Alexa+」、提供開始 月額3000円でプライム会員は無料](https://k-tai.watch.impress.co.jp/docs/news/2151993.html)
+- [AI時代のシニアエンジニアとは](https://speakerdeck.com/yosuke_furukawa/ai-jidai-no-shinia-enjinia-toha)
+- [「推しがそばにいる日常」を ソニー、5万円台の裸眼3Dディスプレイ アニメ公式コンテンツに対応](https://www.itmedia.co.jp/news/article/2610/28/2000002670/)
+- [ヨドバシカメラ、免税分をその場で“現金還付” 主要11店舗で11月1日から](https://ascii.jp/elem/000/004/446/4446516/)
 
 
 ---
 ## DevelopersIO
 
-- [[2026年10月28日号]個人的に気になったModern Data Stack情報まとめ](https://dev.classmethod.jp/articles/modern-data-stack-info-summary-20261028/)
-- [Lambda 関数の呼び出し（Invoke）で TooManyRequestsException（429）が返りました。再試行しても二重に実行されませんか。](https://dev.classmethod.jp/articles/tsnote-lambda-invoke-429-retry-idempotent/)
-- [[新機能]Snowflake の Pipeline Builder で SQL + Python パイプラインを GUI で組んで Deploy してみた](https://dev.classmethod.jp/articles/snowflake-pipeline-builder-sql-python-task-graph-deploy/)
-- [【Windows】パスが長すぎると言われたときの対処法](https://dev.classmethod.jp/articles/windows-path-too-long-error/)
-- [Github AppのWebhookを使って使用できるOrganizationを制限する](https://dev.classmethod.jp/articles/restrict-github-app-installations-with-webhooks/)
+- [Cloudflare WorkersのspanContext()でtraceIdをレスポンスに入れる：setStatus・updateNameとあわせて挙動を確かめる](https://dev.classmethod.jp/articles/cloudflare-workers-span-context-status/)
+- [[アップデート] Amazon ElastiCache for Valkey で既存クラスターの耐久性（durability）を変更できるようになりました](https://dev.classmethod.jp/articles/elasticache-changing-durability/)
+- [[小ネタ] Amazon RDSをIaCで作成する際は EnablePerformanceInsights = true にしておいた方が良いはなし](https://dev.classmethod.jp/articles/amazon-rds-still-require-enableperfomanceinsights-true/)
+- [Lambda Web Functionsをaws-sam-cliでデプロイする](https://dev.classmethod.jp/articles/deploy-lambda-web-functions-with-aws-sam-cli/)
+- [Amazon SES で本番アクセスが承認された後も "Email address is not verified" のエラーが出る原因を教えてください](https://dev.classmethod.jp/articles/tsnote-ses-email-not-verified-region-identity/)
 
 
 ---
 ## gihyo.jp
 
+- [Google、Elephant-Goldfish Modelプラグインを公開 ——AIが設計文書の作成と検証を分担](https://gihyo.jp/article/2026/10/elephant-goldfish-model-plugin?utm_source=feed)
+- [dotsとCodexの活用を紹介 ——OpenAI DevDay Exchange Tokyoレポート](https://gihyo.jp/article/2026/10/openai-devday-exchange-tokyo-report?utm_source=feed)
+- [コーディングエージェントで変わったOSS開発 ——pecoの改修から3Dモデリング、開発ループの整備とメンテナンスの課題まで](https://gihyo.jp/article/2026/10/life-with-ai-agents-01?utm_source=feed)
+- [第932回 1.0を迎えたオブジェクトストレージサーバー、RustFSを使用する](https://gihyo.jp/admin/serial/01/ubuntu-recipe/0932?utm_source=feed)
 - [OpenAI、視覚的理解とコンピューター操作を強化した「GPT-6.1 Terra」の提供を開始 ―APIコストはGPT-5.6 Terraの半額に](https://gihyo.jp/article/2026/10/gpt-6-1-terra?utm_source=feed)
-- [第282回 statement_digestでSQLを正規化してみる](https://gihyo.jp/article/2026/10/mysql-rcn0282?utm_source=feed)
-- [非エンジニアでもClaudeでここまでできる！ 新機能「Claude for Google Workspace」で広がった「自分で作れる範囲」](https://gihyo.jp/article/2026/10/claude-business-guide-01?utm_source=feed)
-- [Moonshot AI、最高性能のオープンウェイトMoEモデル「Kimi K3.1 Pro」を発表 ―2～3倍高速な「Kimi K3.1 Pro Highspeed」も提供開始](https://gihyo.jp/article/2026/10/kimi-k3-1-pro?utm_source=feed)
-- [PyCon JP 2026 開催レポート ―Pythonコミュニティの熱気と学びが詰まった3日間 in 広島](https://gihyo.jp/article/2026/10/pycon-jp-2026-report?utm_source=feed)
 
 
 ---
 ## Publickey
 
+- [オラクル、社員が業務アプリをAIで自動作成、Oracle Cloud上で共有できる「Oracle App Composer」発表。Oracle AI World 2026](https://www.publickey1.jp/blog/26/aioracle_cloudoracle_app_composeroracle_ai_world_2026.html)
 - [Oracle CloudがGoogle TPU導入を発表、2027年に提供を開始。Oracle AI World 2026](https://www.publickey1.jp/blog/26/oracle_cloudgoogle_tpu2027oracle_ai_world_2026.html)
 - [JavaScriptランタイムの「Bun」がPrettier互換で300倍以上高速なフォーマッタに。Prettier設定ファイルもそのまま利用可能](https://www.publickey1.jp/blog/26/javascriptbunprettier300prettier.html)
 - [AWSとGoogle Cloudが「PyTorch」のAWS Trainium、Google Cloud TPU対応版をオープンソースで公開。NVIDIAからの移行に挑む](https://www.publickey1.jp/blog/26/awsgoogle_cloudpytorchaws_trainiumgoogle_cloud_tpunvidia.html)
 - [「DuckDB 2.0 LTS」正式リリース。Quackプロトコルによるクライアント/サーバ機能や非同期処理による高速化など](https://www.publickey1.jp/blog/26/duckdb_20_ltsquack.html)
-- [Cloudflare、TypeScriptをRustに移植した「tsrs」を発表。TypeScript 7より最大で70％少ないメモリで8倍速。今後、LSPなどTypeScriptの全機能をサポート予定](https://www.publickey1.jp/blog/26/cloudflaretypescriptrusttsrstypescript_7708lsptypescript.html)
 
 
 ---
 ## CodeZine
 
-- [2028年には1社15万エージェント。IBM、身元管理と短命な認証情報でAIエージェントを統制する新機能](https://codezine.jp/article/detail/30155)
-- [AWS、Trainium向けPyTorchバックエンド「TorchNeuron」のベータ版を公開](https://codezine.jp/article/detail/30145)
-- [PFN、Deep Researchを搭載した「PLaMo 3.1 Prime」を提供開始](https://codezine.jp/article/detail/30154)
-- [Chrome 155、Digital Credentials APIの発行機能をデフォルトで有効に](https://codezine.jp/article/detail/30144)
-- [GitHub、Teams向け新アプリで通知からCopilotによるコード修正が可能に](https://codezine.jp/article/detail/30143)
+- [AWS Transform、S3/EBS/EFS/FSxへのストレージ移行評価に対応](https://codezine.jp/article/detail/30153)
+- [メシウス、「ActiveReportsJS V6.2J」で生成AIによるレポート作成支援機能を追加](https://codezine.jp/article/detail/30160)
+- [11/20発売の新刊『Windows ～熱狂と失敗と決断の40年史～』、第1章から第6章を先読み限定公開](https://codezine.jp/article/detail/29977)
+- [GitHub Copilotの「assisted permissions」が一般提供開始](https://codezine.jp/article/detail/30152)
+- [AIネイティブ化を進めるみずほFG、技術選定と標準化はどう実践されているか？](https://codezine.jp/article/detail/30147)
 
 
 ---
@@ -113,28 +113,25 @@ https://unsolublesugar.github.io/daily-tech-news/
 ---
 ## connpass - イベント
 
-- [AI研究会｜AI×セールスBootCamp](https://connpass.com/event/411287/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [第３回 Claude Codeで挑戦！〜アプリを１日で作る会〜](https://tunagu-engineer.connpass.com/event/411283/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [なんでもCopilot（プレビュー）#11「Copilot Studioなんか新しいハーネス試す会」](https://nandemo.connpass.com/event/411265/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [VRChat.rb #15](https://vrcrb.connpass.com/event/411280/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [【昼開催】なんでもCopilot#108「Copilot Coworkで『みのるん式』をやってみた」](https://nandemo.connpass.com/event/411278/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [もくもく＆相談会 #23](https://cwbjmotivate.connpass.com/event/409506/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
-- [【オンライン】夜のもくもく勉強会【途中入退室OK】](https://yoruno-mokumoku.connpass.com/event/411272/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [【大阪】GitHub Universe 2026 Recap - Agentic era](https://lycorptech-jp.connpass.com/event/411016/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [PyCon JP 2027 主催メンバー相談会 #4](https://pyconjp-staff.connpass.com/event/411396/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [【11/19 無料ウェビナー】AIのリサーチ力をあげてみよう！データを制する者が情報戦を制す](https://connpass.com/event/411387/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [【オンライン】「エンジニアでいたいので」と断られる会社の、管理職の育て方](https://shuji-dogs.connpass.com/event/411376/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [OSH実行委員会 2026.11.5(木)](https://osh-staff.connpass.com/event/411375/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [GPT-2 推論エンジン入門 (3)](https://ai-internals-study.connpass.com/event/411370/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
+- [Go Connect Day](https://gotalk.connpass.com/event/408262/?utm_campaign=recent_events&utm_source=feed&utm_medium=atom)
 
 
 ---
 ## TECH PLAY - イベント
 
-- [Tableau tuneup vol.26 脱・初心者！一歩先のTableau ～その機能、使ったことある？～](https://techplay.jp/event/1002056)
-- [【11/25開催無料ウェビナー】新入社員エンジニア研修に、AI駆動開発をどう組み込むか？](https://techplay.jp/event/1002154)
-- [【11/18開催無料ウェビナー】新入社員エンジニア研修に、AI駆動開発をどう組み込むか？](https://techplay.jp/event/1001894)
-- [AI時代、サイバー攻撃から情報をどう守るか ― 情報漏洩・ランサムウェアに備える、企業のサイバー防御 ―](https://techplay.jp/event/1002152)
-- [【無料ウェビナー】大手が次々やられる攻撃の手口はこれだ ― 連続情報漏えいの3つの侵入口とAI時代の守り方](https://techplay.jp/event/1002151)
-- [【リアルイベント・事前審査制】Fukuoka EC Community Meetup 2026 Winter（大忘年会） 〜今年のファンづくり、全部話します〜](https://techplay.jp/event/1002134)
-- [AI とマルチクラウドが熱い！ラスベガスからの最新情報をお届け！Oracle AI World 2026 recap｜iret tech labo with partners #41](https://techplay.jp/event/1002128)
-- [「AIで時短できた」その数字に、確認・修正の時間は入っていますか？](https://techplay.jp/event/1002096)
-- [【リアルイベント・招待制】Osaka EC Community Meetup 2026 Autumn 複数チャネル前提時代の顧客との関係の考え方・作り方〜AI時代の次の成長をどう設計するか〜](https://techplay.jp/event/1002131)
-- [AIがSEOと検索に与えた影響とAIOの考え方セミナー](https://techplay.jp/event/1002132)
+- [事例から学ぶ内部不正対策セミナー 〜技術と組織の両輪で防ぐ予防策とISMS審査のポイント〜](https://techplay.jp/event/1002233)
+- [QMS・EMS基礎＆2026年改訂セミナー ～規格の基本から最新の変更点まで徹底解説～](https://techplay.jp/event/1002232)
+- [開発現場で活かすISMS管理策セミナー ～要件定義からリリース・委託先管理まで～](https://techplay.jp/event/1002231)
+- [ISMS（ISO27001）基礎セミナー 〜リスクアセスメントからリスク対応まで〜](https://techplay.jp/event/1002230)
+- [商社・卸の見積AI入門｜届いた見積依頼を自社の品番と単価に【無料・実演つき】](https://techplay.jp/event/1002221)
+- [【11/18(水)オンライン・参加無料】AI時代のサイトリニューアル、いまから押さえたい3つの考え方 ―― アンダーワークス自社サイトの構築と運用の実例から](https://techplay.jp/event/1002218)
+- [超初心者向け！Webサイト制作担当のあなたにむけた「何からはじめたらいいのかわかる」セミナー](https://techplay.jp/event/1002198)
 
 
 ---
