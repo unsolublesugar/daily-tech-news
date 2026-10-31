@@ -1,4 +1,21 @@
 {
+  "https://2arctan-1.hatenablog.com/entry/2026/10/31/125102": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "コンサルタント",
+      "転職",
+      "キャリア",
+      "エンジニア"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "未経験でコンサルファームに転職した執筆者が、最初のプロジェクトで直面した過酷な環境と心身の不調について語る。",
+      "プロジェクトの変更やアベイラブル期間を経て1年間勤め上げた後、自身の適性を見極めながら転職活動を進める。",
+      "エンジニアとコンサルの経験を活かせる事業会社のポジションへ円満に再転職を果たした経験を振り返る。"
+    ],
+    "topic": "未経験からコンサルに転職した執筆者の経験と事業会社への再転職"
+  },
   "https://aadojo.alterbooth.com/entry/2026/10/16/200737": {
     "generated_at": "2026-10-16T22:04:23.125436Z",
     "input_type": "fulltext",
@@ -51,6 +68,24 @@
       "Enterprise環境でのポリシー強制や設定方法、注意点について説明している。"
     ],
     "topic": "GitHub Copilotのローカルサンドボックス機能の解説"
+  },
+  "https://aadojo.alterbooth.com/entry/2026/10/31/195211": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "GitHub Copilot",
+      "Hooks",
+      "VS Code",
+      "Prettier",
+      "ESLint"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "GitHub Copilot Hooksはイベントを契機にスクリプトを実行する機能である。",
+      "操作ログ記録、自動整形、編集ブロック、品質チェックの4つの活用法を確認した。",
+      "リポジトリ共有や管理者によるポリシー強制などの管理手法にも対応している。"
+    ],
+    "topic": "GitHub Copilot Hooksの仕組みと4つのユースケース"
   },
   "https://aba.hatenablog.com/entry/2026/10/22/194027": {
     "generated_at": "2026-10-22T22:04:11.113847Z",
@@ -478,24 +513,6 @@
       "次回はCodexやClaude Codeなどのハーネスを切り替える「HarnessRouter」をテーマに開催予定である。"
     ],
     "topic": "オープンソースのエージェントハーネスDeepSeek Harnessの解説"
-  },
-  "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "Gemini 4 Argon",
-      "Google",
-      "AIモデル",
-      "サイバーセキュリティ",
-      "大規模言語モデル"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "Googleが高度な推論と長時間のワークフローに対応する新モデル「Gemini 4 Argon」を発表した。",
-      "ソフトウェア開発、金融、法律、サイバーセキュリティ防衛などの複雑なタスクで高い性能を発揮する。",
-      "出力トークン上限が100万に拡大され、まずはサイバー防衛者やテスター向けに限定提供される。"
-    ],
-    "topic": "新世代AIモデル「Gemini 4 Argon」の発表"
   },
   "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/": {
     "generated_at": "2026-10-28T22:03:00.921599Z",
@@ -1008,91 +1025,6 @@
       "自社プロダクト「toitta」の2年の実践を通じた階段の上り方が紹介されているようだ。"
     ],
     "topic": "プロダクト開発における顧客理解の3段階"
-  },
-  "https://codezine.jp/article/detail/29853": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "metadata",
-    "keywords": [
-      "Alibaba",
-      "Qwen Intelligence",
-      "エージェント型AI",
-      "スマートフォン"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "Alibabaがスマートフォンメーカー向けのエージェント型AIソリューション「Qwen Intelligence」を発表したと見られる。",
-      "Qwenシリーズに関連する技術を用いたモバイル端末向けの機能やサービス展開について解説されている可能性がある。",
-      "詳細は不明だが、モバイル分野におけるAI活用に関する最新動向を伝える記事と推測される。"
-    ],
-    "topic": "Alibabaによるスマホ向けAIソリューションの発表"
-  },
-  "https://codezine.jp/article/detail/29855": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "metadata",
-    "keywords": [
-      "LINEヤフー",
-      "Messaging API",
-      "デモアプリ",
-      "提供終了"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "LINEヤフーは、Messaging APIなどのデモアプリの提供を終了するとみられる。",
-      "提供終了日は2024年9月30日と設定されている模様である。",
-      "詳細な理由や影響範囲については記事本文の確認が必要と推測される。"
-    ],
-    "topic": "Messaging API等のデモアプリ提供終了"
-  },
-  "https://codezine.jp/article/detail/29865": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "metadata",
-    "keywords": [
-      "Postman",
-      "AIエージェント",
-      "Fabric Gateway",
-      "API"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "PostmanがAIエージェントの統制基盤「Fabric Gateway」の一般提供を開始したと見られる。",
-      "AIエージェントの管理や統制に関する機能やサービス詳細が解説されている可能性がある。",
-      "API開発・管理ツールに関連するAI活用の動向を知りたい技術者向けの情報のようだ。"
-    ],
-    "topic": "PostmanによるAIエージェント統制基盤の提供開始"
-  },
-  "https://codezine.jp/article/detail/29871": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "metadata",
-    "keywords": [
-      "Cloudflare",
-      "耐量子暗号",
-      "マークルツリー証明書",
-      "認証局",
-      "セキュリティ"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "Cloudflareが耐量子計算機に対応したマークルツリー証明書を扱うパブリック認証局の設立を発表したとみられる。",
-      "量子コンピュータの脅威を見据えた次世代の暗号化技術やセキュリティ対策に関する内容が扱われている可能性が高い。",
-      "具体的なサービスや導入要件、技術仕様の詳細については元記事の確認が必要である。"
-    ],
-    "topic": "Cloudflareによる耐量子マークルツリー証明書対応の公開"
-  },
-  "https://codezine.jp/article/detail/29873": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "metadata",
-    "keywords": [
-      "CodeZine",
-      "デブクロ",
-      "早期特典"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "CodeZineに掲載された「デブクロ」の早期特典締切に関する記事と見られる。",
-      "本日日付が変わるまでが締切である旨が告知されている。",
-      "詳細な技術内容やイベントの詳細はメタデータからは不明である。"
-    ],
-    "topic": "「デブクロ」早期特典の締切に関する案内"
   },
   "https://codezine.jp/article/detail/29876": {
     "generated_at": "2026-10-01T22:04:21.727100Z",
@@ -3323,6 +3255,57 @@
     ],
     "topic": "アトラシアンによるSDLCのAIネイティブ化機能の日本展開"
   },
+  "https://codezine.jp/article/detail/30186": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "metadata",
+    "keywords": [
+      "Gemini",
+      "アプリ",
+      "ファイル生成",
+      "編集"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Geminiアプリに関する新機能についての記事と見られる。",
+      "チャット内でのファイルの生成やプレビュー、編集が可能になった模様である。",
+      "詳細は不明だが、アプリの利便性向上に関するアップデート情報と推測される。"
+    ],
+    "topic": "Geminiアプリのファイル生成・編集機能追加"
+  },
+  "https://codezine.jp/article/detail/30188": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "metadata",
+    "keywords": [
+      "OpenAI",
+      "GPT-6.1 Terra",
+      "Amazon Bedrock",
+      "AWS"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "OpenAIの「GPT-6.1 Terra」がAmazon Bedrockで一般提供を開始したとみられる。",
+      "AWS環境において同モデルを利用可能になった背景や仕様に関する情報が含まれる可能性がある。",
+      "詳細な機能や導入手順については元記事の確認が推奨される。"
+    ],
+    "topic": "OpenAIの新モデル「GPT-6.1 Terra」の提供開始"
+  },
+  "https://codezine.jp/article/detail/30191": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "metadata",
+    "keywords": [
+      "GitHub Enterprise",
+      "GitHub Copilot",
+      "ライセンス",
+      "開発支援ツール"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "GitHub Enterpriseにおいて、すべてのライセンスユーザーがGitHub Copilotを利用可能になったと伝えられている。",
+      "開発者向けのAI支援ツールの導入範囲が組織全体に広がる変更に関するニュースと見られる。",
+      "詳細は元記事のリンク先を参照する必要がある。"
+    ],
+    "topic": "GitHub EnterpriseのCopilot利用対象拡大に関する情報"
+  },
   "https://contents.xj-storage.jp/xcontents/AS04721/9cd22cba/ef69/4403/bd9a/59025ae1c745/20261026193119181s.pdf": {
     "generated_at": "2026-10-26T22:04:35.064214Z",
     "input_type": "metadata",
@@ -3641,6 +3624,23 @@
     ],
     "topic": "Amazon QuickのSmart Approvals機能の検証"
   },
+  "https://dev.classmethod.jp/articles/20261031-amazon-redshift-automated-cross-region-backups/": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Amazon Redshift",
+      "Redshift Serverless",
+      "クロスリージョンバックアップ",
+      "スナップショット"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Amazon Redshift Serverlessの自動クロスリージョンバックアップ機能を検証した。",
+      "有効化により既存の最新スナップショットがコピー先へ自動転送されることを確認した。",
+      "コピー先リージョンの指定は1つまでであり、仕様や動作の詳細を実機で確かめた。"
+    ],
+    "topic": "Amazon Redshiftの自動クロスリージョンバックアップ検証"
+  },
   "https://dev.classmethod.jp/articles/accessing-iceberg-in-s3-tables-via-agent-developersio-2026-joetsu/": {
     "generated_at": "2026-10-18T22:03:37.056759Z",
     "input_type": "fulltext",
@@ -3783,24 +3783,6 @@
       "Corretto 25にバックポートされたTLS 1.3ハイブリッド鍵交換の動作検証を行った。"
     ],
     "topic": "Amazon Corretto 2026年10月四半期アップデートの検証"
-  },
-  "https://dev.classmethod.jp/articles/amazon-elasticache-serverless-public-endpoints/": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "ElastiCache",
-      "Valkey",
-      "サーバーレス",
-      "IAM認証",
-      "パブリックエンドポイント"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "Amazon ElastiCache Serverless for Valkeyがパブリックエンドポイントに対応した。",
-      "Valkeyバージョン9以上かつIAM認証とTLS 1.3が必須でインターネット経由の接続が可能になる。",
-      "Python等のクライアントからIAMトークンを用いて直接キャッシュに接続・操作できる。"
-    ],
-    "topic": "ElastiCache Serverless for Valkeyのパブリックエンドポイント対応"
   },
   "https://dev.classmethod.jp/articles/amazon-quick-some-features-support-only-legacy-experience/": {
     "generated_at": "2026-10-09T22:04:33.624807Z",
@@ -4033,24 +4015,6 @@
       "アプリの割り当て制限やサインインログの確認方法とFreeの制限を解説した。"
     ],
     "topic": "Entra ID Freeでのユーザー作成からSSO実装までの検証"
-  },
-  "https://dev.classmethod.jp/articles/bedrock-openai-gpt61-sol/": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "Amazon Bedrock",
-      "GPT-6.1 Sol",
-      "推論プロファイル",
-      "bedrock-runtime",
-      "CloudTrail"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "Amazon Bedrockで利用可能になったOpenAIのGPT-6.1 Solの検証内容を紹介する。",
-      "Converse APIやbedrock-mantleからの呼び出し方法と処理リージョンの挙動を解説する。",
-      "モデルカードに基づく料金体系や従来のGPT-6 Solとのキャッシュ読み取り単価の比較を行う。"
-    ],
-    "topic": "Amazon BedrockにおけるGPT-6.1 Solの検証"
   },
   "https://dev.classmethod.jp/articles/bedrock-openai-reasoning-summaries/": {
     "generated_at": "2026-10-10T22:04:35.013785Z",
@@ -4458,6 +4422,24 @@
     ],
     "topic": "CloudFront Origin ShieldによるS3参照性能の改善検証"
   },
+  "https://dev.classmethod.jp/articles/cloudfront-viewer-isp-tls-details/": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Amazon CloudFront",
+      "CloudFront-Viewer-ISP",
+      "CloudFront-Viewer-TLS-Details",
+      "TLS 1.3",
+      "PQC"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Amazon CloudFrontに追加されたISPやTLS接続情報をオリジンへ転送する新ヘッダーの動作検証について解説している。",
+      "オリジンリクエストポリシーを作成してディストリビューションに紐づけ、nginxのアクセスログで値の受信を確認している。",
+      "PQCを含む鍵交換方式やISP名がオリジン側で正しく取得できることを具体的な検証結果とともに紹介している。"
+    ],
+    "topic": "CloudFrontの新ヘッダーによるISPとTLS情報の取得検証"
+  },
   "https://dev.classmethod.jp/articles/cloudwatc-upadte-summary-devio-2026/": {
     "generated_at": "2026-10-30T22:02:30.853919Z",
     "input_type": "fulltext",
@@ -4688,23 +4670,23 @@
     ],
     "topic": "Google Workspace Studioを活用した業務改善の解説"
   },
-  "https://dev.classmethod.jp/articles/devio2026-osaka-operations-onboarding-is-a-project/": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
+  "https://dev.classmethod.jp/articles/devio2026-tokyo-cloud-run/": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
     "input_type": "fulltext",
     "keywords": [
-      "運用導入",
-      "プロジェクトマネジメント",
-      "オペレーションマネジメント",
-      "MSP",
-      "DevelopersIO"
+      "Cloud Run",
+      "ECS",
+      "Google Cloud",
+      "AWS",
+      "IAP"
     ],
     "model": "gemini-3.5-flash-lite",
     "summary_lines": [
-      "DevelopersIO 2026 Osakaでの「運用導入はプロジェクトだ！！」と題したセッションの振り返り記事である。",
-      "運用のはじめ方をプロジェクトとして捉え、7つの段階や4つの意識すべきポイントを交えて解説している。",
-      "はじめるまでのプロジェクト管理と、はじまってからのオペレーション管理の組み合わせの重要性を説いている。"
+      "AWSメインの参加者向けにECSとCloud Runの比較と魅力を紹介した。",
+      "VPCやLB不要でのHTTPS公開や0スケール、IAP連携などの利点を解説した。",
+      "ECSに慣れた開発者が手軽に始められ本番規模にも対応できる点をまとめた。"
     ],
-    "topic": "運用導入をプロジェクトとして管理する手法の解説"
+    "topic": "DevelopersIO 2026 TokyoでのCloud Run登壇レポート"
   },
   "https://dev.classmethod.jp/articles/devio2026osaka-day2-ai-app-tool/": {
     "generated_at": "2026-10-05T22:04:24.062330Z",
@@ -5380,24 +5362,6 @@
     ],
     "topic": "mise config explainコマンドによる設定ファイルの検証"
   },
-  "https://dev.classmethod.jp/articles/modern-data-stack-info-summary-20260930/": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "Modern Data Stack",
-      "Jev",
-      "Databricks",
-      "dbt v2",
-      "Snowflake"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "DuckDBやDatabricksでの分類モデルJevの利用や、Fivetranのcronスケジュール機能が紹介された。",
-      "Snowflake、BigQuery、DatabricksなどのDWHやレイクハウス製品の新機能や買収情報が報じられた。",
-      "dbt Summitで発表されたRustベースのdbt v2のGAや、TableauなどのBIツール動向がまとめられた。"
-    ],
-    "topic": "直近のModern Data Stack関連の主要アップデートまとめ"
-  },
   "https://dev.classmethod.jp/articles/modern-data-stack-info-summary-20261028/": {
     "generated_at": "2026-10-27T22:03:09.755958Z",
     "input_type": "fulltext",
@@ -5808,24 +5772,6 @@
     ],
     "topic": "Security HubコントロールKMS.2の修復手順"
   },
-  "https://dev.classmethod.jp/articles/shoma-connect-claude-code-and-miro-to-auto-capture-all-web-app-screens-and-create-screen-transition-diagram/": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "Claude Code",
-      "Miro",
-      "Playwright",
-      "画面遷移図",
-      "MCP"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "Claude Codeがコードから画面や動線を洗い出しPlaywrightで自動撮影する。",
-      "Miro REST APIやMCPを活用してキャプチャと遷移をボードに配置する。",
-      "手作業を省いて大量の画面遷移図を作成できアプリの棚卸しにも役立つ。"
-    ],
-    "topic": "Claude CodeとMiro連携による画面遷移図の自動生成"
-  },
   "https://dev.classmethod.jp/articles/shoma-tried-creating-feature-to-notify-latest-it-information-every-morning-using-schedule-in-claude-smartphone-version/": {
     "generated_at": "2026-10-13T22:03:57.801859Z",
     "input_type": "fulltext",
@@ -6003,6 +5949,24 @@
     ],
     "topic": "トヨタ・ウーブン・シティの訪問予約と入場方法"
   },
+  "https://dev.classmethod.jp/articles/try-amazon-ecs-gateway/": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Amazon ECS",
+      "ECS Gateway",
+      "ALB",
+      "AWS Fargate",
+      "コンテナ"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "ECS GatewayはALBなどの入口リソースを管理し1台のALBを複数サービスで共有する新機能である。",
+      "検証環境でパブリックおよびプライベートのゲートウェイとECSサービスを作成し動作を確認した。",
+      "入口管理を基盤側、タスク定義などをアプリ側に分離しALBの維持費削減や効率化を図ることができる。"
+    ],
+    "topic": "Amazon ECS新機能「ECS Gateway」の検証と仕組み"
+  },
   "https://dev.classmethod.jp/articles/tsnote-lambda-invoke-429-retry-idempotent/": {
     "generated_at": "2026-10-27T22:03:09.755958Z",
     "input_type": "fulltext",
@@ -6054,6 +6018,24 @@
       "最新のAI機能であるTwilio ConversationRelayを活用したデモや事例が発表された。"
     ],
     "topic": "Twilio SIGNAL Tokyo 2026のイベントレポート"
+  },
+  "https://dev.classmethod.jp/articles/waf-cloudfront-automatic-sdk-integration/": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "CloudFront",
+      "AWS WAF",
+      "Bot Control",
+      "JavaScript SDK",
+      "SDK自動統合"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWS WAFのSDK自動統合有効化によるHTMLや応答の変化を検証した。",
+      "HTMLへのscriptタグ自動挿入やETag、Range要求への影響を確認した。",
+      "既存アプリケーションを変更せずにBot制御用のシグナルが利用可能になる。"
+    ],
+    "topic": "CloudFrontのAWS WAF SDK自動統合の挙動検証"
   },
   "https://dev.classmethod.jp/articles/windows-path-too-long-error/": {
     "generated_at": "2026-10-27T22:03:09.755958Z",
@@ -6725,24 +6707,6 @@
     ],
     "topic": "Ubuntu 27.04の開発動向とCore Desktopの再始動"
   },
-  "https://gihyo.jp/admin/serial/01/ubuntu-recipe/0928?utm_source=feed": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "AMD NPU",
-      "Ubuntu",
-      "FastFlowLM",
-      "Lemonade",
-      "OpenClaw"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "Ubuntu環境においてAMDのNPUを利用してAIモデルを動かす手法を解説する。",
-      "FastFlowLMとLemonadeサーバーを用いてNPUでAIモデルを簡単に実行する手順を紹介。",
-      "snapパッケージのOpenClawをLemonadeのバックエンドとして活用する方法に触れている。"
-    ],
-    "topic": "UbuntuでAMDのNPUを活用したAIモデルの利用方法"
-  },
   "https://gihyo.jp/admin/serial/01/ubuntu-recipe/0929?utm_source=feed": {
     "generated_at": "2026-10-07T22:04:20.015971Z",
     "input_type": "fulltext",
@@ -6796,60 +6760,6 @@
       "実験的サービスのOpalは2026年11月に終了し、ワークフローは手動設定が必要となる。"
     ],
     "topic": "Geminiのチャットに導入された「Skills」機能とGemsの移行"
-  },
-  "https://gihyo.jp/article/2026/09/monthly-python-2609?utm_source=feed": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "Python",
-      "free-threading",
-      "asyncio",
-      "並行処理",
-      "パフォーマンス"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "free-threaded Python環境で複数スレッドのイベントループを動かす検証を行っている。",
-      "純粋なI/O処理では効果がない一方、I/OとCPU処理が混在するケースでは性能向上が見られた。",
-      "HTTPサーバーのベンチマークを通じて、接続の分配やイベントループ数の影響を解説している。"
-    ],
-    "topic": "free-threaded Pythonにおける複数asyncioイベントループの検証"
-  },
-  "https://gihyo.jp/article/2026/09/openai-devday-20206-with-gpt-6.1-sol-and-dots?utm_source=feed": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "ChatGPT",
-      "dots",
-      "GPT-6.1 Sol",
-      "Codex",
-      "OpenAI"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "チーム共同作業機能Spaceやクラウドエージェントdotsを発表した。",
-      "新モデルGPT-6.1 Solや高速処理オプションのUltrafastを提供開始した。",
-      "外部アプリで利用枠を使える仕組みや開発者向けAPIの拡張を刷新した。"
-    ],
-    "topic": "OpenAIが発表した新機能や新モデルの概要"
-  },
-  "https://gihyo.jp/article/2026/09/wsl-containers-ga?utm_source=feed": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "WSL",
-      "WSL containers",
-      "Microsoft",
-      "Linuxコンテナ",
-      "Windows"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "MicrosoftはWindowsからLinuxコンテナを操作できるWSL containersの一般提供を開始した。",
-      "CLIやAPIを通じてコンテナのビルドや実行が可能になり、Windowsアプリへの組み込みにも対応する。",
-      "企業向けにIntuneでの利用制御やDefenderによるセキュリティ監視機能を提供する。"
-    ],
-    "topic": "MicrosoftがWSL containersの一般提供を開始"
   },
   "https://gihyo.jp/article/2026/10/_typescript-7.1-beta?utm_source=feed": {
     "generated_at": "2026-10-21T22:03:48.116776Z",
@@ -8538,6 +8448,24 @@
     ],
     "topic": "文章のAIっぽさを抑えるプロンプトと修正事例"
   },
+  "https://imoz.jp/scraps/202610_isucon.html": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "ISUCON2026",
+      "チームAnago",
+      "ベンチマーク",
+      "高速化",
+      "AIエージェント"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "チームAnagoによるISUCON2026の参加レポート。",
+      "AIエージェントを活用した並行開発と高速化の進め方を解説。",
+      "公式ベンチマークのスコア向上に向けた役割分担と検証方針を記載。"
+    ],
+    "topic": "ISUCON2026参加記とAIエージェントを活用した高速化手法"
+  },
   "https://inside.pixiv.blog/2026/10/22/193321": {
     "generated_at": "2026-10-22T22:04:11.113847Z",
     "input_type": "fulltext",
@@ -8837,23 +8765,6 @@
       "再発防止策として生体認証の導入やセキュリティ強化が検討されている。"
     ],
     "topic": "伝書鳩への不正アクセスと情報漏えい事案について"
-  },
-  "https://labo.hatenastaff.com/entry/2026/09/30/151500": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "はてな匿名ダイアリー",
-      "ChatGPT",
-      "プラグイン",
-      "AI連携"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "はてな匿名ダイアリーが実験的にChatGPTから利用できるようになりました。",
-      "ChatGPTのプラグインを追加して連携することで、記事の検索や閲覧、投稿が可能になります。",
-      "利用時は通常と同様に規約を守る必要があり、ChatGPTからの投稿は内部で記録されます。"
-    ],
-    "topic": "はてな匿名ダイアリーがChatGPTから利用可能に"
   },
   "https://labs.gree.jp/blog/2026/10/25339/": {
     "generated_at": "2026-10-16T22:04:23.125436Z",
@@ -9271,6 +9182,40 @@
       "およそ100万件のメールアドレスが流出したとされる。"
     ],
     "topic": "「ピッコマ」の顧客メールアドレス流出について"
+  },
+  "https://news.web.nhk/newsweb/na/nd-20261031de69024": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "GMOインターネットグループ",
+      "不正アクセス",
+      "脆弱性",
+      "個人情報流出"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "GMOグループのサービスにおける個人情報公開問題に関する報道。",
+      "2年前に子会社のセキュリティ企業がシステムの脆弱性を指摘していたことが判明。",
+      "本件に関して来週2日に会見が開催される予定。"
+    ],
+    "topic": "GMO子会社によるシステム脆弱性の事前指摘について"
+  },
+  "https://news.web.nhk/newsweb/na/nd-20261031de69043": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "GMOインターネットグループ",
+      "不正アクセス",
+      "セキュリティ",
+      "情報流出"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "GMOインターネットグループの不正アクセス問題を巡る動向が報じられた。",
+      "被害者に情報共有を呼びかける不審なサイトが公開されていたことが判明した。",
+      "当該サイトはハッカー側と関連している可能性があるとセキュリティー会社が調査している。"
+    ],
+    "topic": "GMO不正アクセス問題を巡る不審サイトの確認について"
   },
   "https://news.yahoo.co.jp/articles/4281d049b33e5a3349a912eddf42476b228f1879": {
     "generated_at": "2026-10-22T22:04:11.113847Z",
@@ -10332,6 +10277,24 @@
     ],
     "topic": "Claude Codeの実践的な便利機能と活用術まとめ"
   },
+  "https://qiita.com/NoguchiHikaru/items/dccd98d85a31c0cec279?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Docker",
+      "Ubuntu 24.04",
+      "WSL2",
+      "Docker Volume",
+      "Windows 11"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Windows 11とWSL2環境でDocker Desktopを使いUbuntu 24.04コンテナを実行する手順を解説",
+      "コンテナの停止や再起動、削除におけるファイルの保持と消失の挙動を実機検証を通じて確認",
+      "Docker Volumeを利用したデータの永続化手法や、よくあるトラブルの対処法を紹介"
+    ],
+    "topic": "Windows 11上のDocker環境におけるUbuntu 24.04コンテナの検証"
+  },
   "https://qiita.com/PDC-Kurashinak/items/bde0e380eeb04fa28f40?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-10-01T22:04:21.727100Z",
     "input_type": "fulltext",
@@ -10367,24 +10330,6 @@
       "HttpOnly CookieやCSPによる多層防御を活用し、被害を抑える重要性をまとめている。"
     ],
     "topic": "XSSの基礎知識と脆弱性対策の解説"
-  },
-  "https://qiita.com/Pigeon_gate/items/b33b4e337c15dddae20a?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "CSRF",
-      "セキュリティ",
-      "SameSite Cookie",
-      "CORS",
-      "CSRF Token"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "未経験から実務に携わる中で学んだWebセキュリティの基礎とCSRFの攻撃メカニズムを解説している。",
-      "CSRF攻撃の特徴や狙われやすい処理を整理し、Cookieの仕組みや脆弱性の原因を紐解いている。",
-      "SameSite属性、Trusted Origins、CORS、CSRFトークンを活用した多層防御の手法を紹介している。"
-    ],
-    "topic": "WebアプリケーションにおけるCSRFの仕組みと防御策"
   },
   "https://qiita.com/Sicut_study/items/3c1995d2a3f1695a18a7?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-10-26T22:04:35.064214Z",
@@ -10704,6 +10649,23 @@
       "ゼロから手順を踏むことで汎用的なデザインから脱却できる一方で、人間による判断や調整の重要性を示した。"
     ],
     "topic": "AIデザインの定番化を防ぐスキルImpeccableの検証"
+  },
+  "https://qiita.com/jnchito/items/636c519c0b1d347c79b7?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AI",
+      "コードコメント",
+      "コードレビュー",
+      "Ruby"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIが生成したコードに見られる不適切なコメントの傾向を解説している。",
+      "コードを読めばわかる内容や不自然な日本語など9つの問題パターンを提示。",
+      "AIのコメントを過信せず人間によるコードレビューの重要性を説いている。"
+    ],
+    "topic": "AI生成コードにありがちなイマイチなコメント9パターン"
   },
   "https://qiita.com/k2_naka/items/fa87685231377f15e7e3?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-10-17T22:03:43.441634Z",
@@ -11132,6 +11094,24 @@
     ],
     "topic": "日本の財政政策の国際比較実証研究について"
   },
+  "https://qiita.com/maskot1977/items/fc7cd77557e946cac2ba?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "現状バイアス",
+      "デフォルト効果",
+      "並行社会",
+      "システム設計",
+      "行動経済学"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "システム設計と行動経済学の視点から、社会問題の長期放置を分析する。",
+      "現状維持バイアスとデフォルト効果により、不作為が選択される構造を解説。",
+      "欧州の事例を基に、制度的選択の失敗と早期の統合投資の必要性を論じる。"
+    ],
+    "topic": "現状バイアスとデフォルト効果が並行社会を許容するメカニズム"
+  },
   "https://qiita.com/minorun365/items/59783841e48f5467594f?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-10-27T22:03:09.755958Z",
     "input_type": "fulltext",
@@ -11167,42 +11147,6 @@
       "AWS環境でAI機能を業務実践したいエンジニアやプリセールス向けのハンズオン内容を紹介。"
     ],
     "topic": "新刊書籍『Amazon Bedrock実践ガイド』の書評と内容紹介"
-  },
-  "https://qiita.com/miruky/items/6577a57b9b62c8f97e11?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "タイムズカー",
-      "情報漏えい",
-      "Teeda",
-      "SQLインジェクション",
-      "アクセス制御"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "パーク24のタイムズカーで発生した約660万件の個人情報漏えい事案について、公開情報から原因を考察している。",
-      "公開HTMLに残る古いフレームワークの痕跡や、非同期通信における適切な認可制御の重要性をセキュアプログラミングの視点で解説している。",
-      "侵入後の大量データ取得を防ぐための権限設計や、不要データの削除といった対策の必要性について言及している。"
-    ],
-    "topic": "タイムズカー情報漏えい事故の原因と実装に関する考察"
-  },
-  "https://qiita.com/moritalous/items/1b6a05842724fc1fff66?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "Amazon Bedrock",
-      "Claude",
-      "プロンプトキャッシュ",
-      "Converse API",
-      "Boto3"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "Amazon Bedrockのドキュメントに記載された暗黙的プロンプトキャッシュについて検証を行った。",
-      "Converse APIでadditionalModelRequestFieldsにcache_controlを指定する方法を試した。",
-      "特定のモデルでキャッシュが正常に機能することを確認し、対応モデルの範囲を調査した。"
-    ],
-    "topic": "Amazon BedrockのClaudeにおけるプロンプトキャッシュ検証"
   },
   "https://qiita.com/moritalous/items/8b663db633dde3c49d62?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-10-04T22:04:10.086705Z",
@@ -11685,6 +11629,24 @@
     ],
     "topic": "codex app-serverを用いた外部ツールからの機能利用"
   },
+  "https://qiita.com/tetsuro731/items/65590daa94499e705850?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "ADR",
+      "AIエージェント",
+      "アーキテクチャ",
+      "技術選定",
+      "Markdown"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIエージェントはコードから実装内容を把握できるが、決定の背景にある理由であるWhyまでは理解できない。",
+      "意思決定の経緯を記したADRをリポジトリ内に配置することで、AIに適切な文脈を伝えることが可能になる。",
+      "ADRは毎回読み込ませず、索引を活用して必要なときだけ参照させる運用が効率的である。"
+    ],
+    "topic": "AI開発におけるADR活用の重要性"
+  },
   "https://qiita.com/tks_1128/items/e4cde327a910b5beba11?utm_campaign=popular_items&utm_medium=feed&utm_source=popular_items": {
     "generated_at": "2026-10-19T22:04:15.460644Z",
     "input_type": "fulltext",
@@ -12097,6 +12059,24 @@
     ],
     "topic": "相次ぐWEBシステムからの情報漏洩事案の傾向と対策"
   },
+  "https://sizu.me/hayatosc/posts/oxi9cff8k2bn": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "1Password",
+      "パスキー",
+      "ゼロ知識暗号化",
+      "1Password CLI",
+      "AIエージェント"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "パスワードの使い回しや複数マネージャーでの管理を解消するため、1Passwordへ移行した体験を紹介している。",
+      "デバイス間で共有困難だったパスキーの統合管理や、開発者向けのCLIツールによる安全な秘密情報管理が可能になる。",
+      "ゼロ知識暗号化による高い安全性に加え、AIエージェントに平文パスワードを渡さず認証を行える機能が解説されている。"
+    ],
+    "topic": "1Passwordの導入メリットとセキュリティ機能の解説"
+  },
   "https://slides.yusu.ke/honoconf-2026": {
     "generated_at": "2026-10-11T22:04:17.531677Z",
     "input_type": "fulltext",
@@ -12256,23 +12236,6 @@
       "多忙な採用マネージャが要点を見つけやすいよう、相手が求めるシグナルを優先して提示することを推奨している。"
     ],
     "topic": "企業視点から考える職務経歴書の書き方と改善手法"
-  },
-  "https://speakerdeck.com/minodriven/designing-for-code-reading": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "ソフトウェア設計",
-      "AIコード",
-      "Findy",
-      "イベント資料"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "「今こそ聞きたいソフトウェア設計 #2」のイベント登壇資料。",
-      "設計の工夫次第でAIが生成したコードを読む量を減らせる点を解説。",
-      "Findy主催のイベントにおける発表内容を紹介している。"
-    ],
-    "topic": "ソフトウェア設計によるAIコードリーディング量の削減"
   },
   "https://speakerdeck.com/minodriven/invisible-requirement-thinking": {
     "generated_at": "2026-10-06T22:04:27.404746Z",
@@ -12501,24 +12464,6 @@
       "調査では17種類のアニメーションライブラリを基準に各サイトのアイコンの動きを分類している。"
     ],
     "topic": "大手企業のハンバーガーメニューのアニメーションスタイル調査"
-  },
-  "https://tech.algomatic.jp/entry/2026/09/30/215943": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "OpenAI",
-      "dots",
-      "仮想マシン",
-      "AIエージェント",
-      "DevDay 2026"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "OpenAIの常時稼働エージェント「dots」の専用VM環境を実機で検証した結果を報告している。",
-      "sudoやGPUが使えずファイル保存の保証もないなど、意図的に機能が制限された設計であることを確認した。",
-      "制限された仕様から、ファイルやテキストで完結する事務作業やバックグラウンド処理への活用が適していると分析している。"
-    ],
-    "topic": "OpenAI dotsのVM環境の仕様と権限に関する検証"
   },
   "https://tech.algomatic.jp/entry/2026/10/05/201035": {
     "generated_at": "2026-10-05T22:04:24.062330Z",
@@ -13165,6 +13110,60 @@
     ],
     "topic": "SSMとGitHub ActionsでEC2コマンドを実行する方法"
   },
+  "https://techblog.ap-com.co.jp/entry/2026/10/31/174618": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Zscaler",
+      "ゼロトラスト",
+      "ネットワーク",
+      "ID管理",
+      "セキュリティ"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Zscalerエンジニアには製品の知識だけでなくアーキテクチャを考える力が求められる。",
+      "ネットワーク、ID、セキュリティ、UXを横断し、通信やアクセスを説明できる基礎が重要である。",
+      "得た知識を実務やハンズオンで経験に変え、運用設計や問題解決に活かすことが必要となる。"
+    ],
+    "topic": "これからのZscalerエンジニアに求められるスキルと心構え"
+  },
+  "https://techblog.ap-com.co.jp/entry/2026/10/31/183000": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AWS",
+      "DOP-C02",
+      "DevOps Engineer Professional",
+      "AWS認定資格",
+      "Udemy"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWS Certified DevOps Engineer - Professional(DOP-C02)の再認定試験に合格した体験談。",
+      "試験当日の直前に対策を行い、Udemyの演習問題を活用して合格点を獲得した。",
+      "問題文と選択肢が長いため、難問をスキップするなどの時間配分戦略が有効であったことなどを紹介している。"
+    ],
+    "topic": "AWS認定DevOpsエンジニアProfessional再認定の受験体験記"
+  },
+  "https://techblog.ap-com.co.jp/entry/2026/10/31/193000": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AWS Certified Generative AI Developer",
+      "AIP-C01",
+      "AWS Bedrock",
+      "生成AI",
+      "AWS認定資格"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AWS Certified Generative AI Developer (AIP-C01)に合格した体験談を紹介している。",
+      "試験当日に数時間の勉強とUdemyの演習講座を活用して合格した受験の経緯が述べられている。",
+      "Professional試験特有の問題の多さや、事前に触れていた関連技術が役立った点に言及している。"
+    ],
+    "topic": "AWS Certified Generative AI Developer合格体験記"
+  },
   "https://techblog.ap-com.co.jp/entry/zscaler/zia/entra-id-saml-certificate-renewal": {
     "generated_at": "2026-10-10T22:04:35.013785Z",
     "input_type": "fulltext",
@@ -13289,24 +13288,6 @@
       "個人開発とチーム開発におけるコンテキスト管理や、エージェントを制御するハーネスエンジニアリングの課題を解説する。"
     ],
     "topic": "AIコーディングエージェント活用と人間の時間配分"
-  },
-  "https://timescar-lawsuit.com/": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "タイムズカー",
-      "情報漏洩",
-      "集団訴訟",
-      "個人情報",
-      "損害賠償"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "タイムズカーの不正アクセスによる情報漏洩を巡り、被害者が運営会社に損害賠償を求める集団訴訟の参加者を募っている。",
-      "運転免許証の画像や本人確認書類、利用履歴などの機微な個人情報が含まれており、法的な損害賠償請求が行われる。",
-      "過去の類似裁判例に基づき、弁護士費用等の負担や対象者の確認方法、参加に向けた手順などが案内されている。"
-    ],
-    "topic": "タイムズカー情報漏洩に関する集団訴訟の参加者募集"
   },
   "https://tools.oyasumi-gamedev.com/worldgacha/": {
     "generated_at": "2026-10-15T22:04:07.928718Z",
@@ -13803,6 +13784,24 @@
       "開発者の市來健吾氏へのインタビューを通じて、位相情報を使った解析技術の仕組みやAI全盛時代におけるアプリ開発の背景を伝える。"
     ],
     "topic": "自動耳コピプログラム「WaoN」のiOS/Macアプリ化"
+  },
+  "https://www.gamespark.jp/article/2026/10/31/174341.html": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Claude Code",
+      "Anthropic",
+      "Addy Osmani",
+      "ゲーム開発",
+      "著作権"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Anthropicの開発者は、Claude Codeに既存ゲームの再現を避ける指示を追加したと明らかにした。",
+      "オリジナル作品やユーザー自身のデザインによるゲーム制作は引き続き可能とされる。",
+      "AIによるゲーム模倣や著作権の扱いを巡り、ユーザーの間では懸念や批判の声も上がっている。"
+    ],
+    "topic": "Claude Codeにおける既存ゲーム再現の制限措置について"
   },
   "https://www.gizmodo.jp/article/sunrun-tesla-home-battery-power-plant/": {
     "generated_at": "2026-10-03T22:53:29.699146Z",
@@ -14302,40 +14301,6 @@
     ],
     "topic": "スマホの80%充電制限や挿しっぱなし充電の劣化への影響検証"
   },
-  "https://www.itmedia.co.jp/news/article/2609/30/2000001899/": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "menu",
-      "KDDI",
-      "レアゾン・ホールディングス",
-      "フードデリバリー"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "デリバリー・テイクアウトサービス「menu」が2026年9月30日午後8時にサービスを終了した。",
-      "事業環境の変化に伴い持続的な提供が困難となったためで、約6年半の歴史に幕を下ろした。",
-      "親会社のKDDIはサービス終了後にmenu社を解散・清算する方針を示している。"
-    ],
-    "topic": "フードデリバリーサービス「menu」のサービス終了について"
-  },
-  "https://www.itmedia.co.jp/news/article/2609/30/2000001908/": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "ベネフィット・ワン",
-      "ベネワン・プラットフォーム",
-      "個人情報漏えい",
-      "セキュリティインシデント"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "ベネフィット・ワンは「ベネワン・プラットフォーム」で1万3460人分の個人情報が漏えいしたと発表した。",
-      "アンケート結果のダウンロード機能に設定不備があり、他社の従業員情報が表示される状態になっていた。",
-      "システム改修時の不備が原因であり、現時点で情報の拡散や不正利用などの二次被害は確認されていない。"
-    ],
-    "topic": "ベネフィット・ワンの個人情報漏えいに関する発表"
-  },
   "https://www.itmedia.co.jp/news/article/2610/03/2000001935/": {
     "generated_at": "2026-10-03T22:53:29.699146Z",
     "input_type": "fulltext",
@@ -14637,6 +14602,24 @@
     ],
     "topic": "エムスリーテックブログによるRecSys論文紹介"
   },
+  "https://www.makeuseof.com/windows-services-hogging-cpu/": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Windows 11",
+      "CPU使用率",
+      "バックグラウンドサービス",
+      "タスクマネージャー",
+      "最適化"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "WindowsでCPUを消費するRuntime Brokerなどの背景サービスを解説する。",
+      "不要なサービスやWindowsストアアプリの背景実行を無効化する手順を紹介する。",
+      "検索インデクサーやセキュリティ機能の停止によるリスクと対策について述べる。"
+    ],
+    "topic": "WindowsのCPU使用率を圧迫する隠しサービスの停止方法"
+  },
   "https://www.microsoft.com/en-us/corporate-responsibility/topics/cybersecurity/reports/microsoft-digital-defense-report/": {
     "generated_at": "2026-10-03T22:53:29.699146Z",
     "input_type": "fulltext",
@@ -14796,23 +14779,23 @@
     ],
     "topic": "楽天トラベルにおける不正アクセスによる顧客情報流出"
   },
-  "https://www.nikkei.com/article/DGXZQOUC303V60Q6A930C2000000/": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
+  "https://www.nikkei.com/article/DGXZQOUC30A460Q6A031C2000000/": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
     "input_type": "fulltext",
     "keywords": [
-      "タイムズカー",
-      "パーク24",
+      "GMOインターネットグループ",
+      "脆弱性",
       "不正アクセス",
-      "情報流出",
-      "運転免許証"
+      "情報漏洩",
+      "GMOサイバーセキュリティbyイエラエ"
     ],
     "model": "gemini-3.5-flash-lite",
     "summary_lines": [
-      "パーク24のカーシェア「タイムズカー」で不正アクセスが発生した。",
-      "運転免許証画像など約160万件が流出し、国内最大規模の流出となった。",
-      "なりすましによるクレジットカードの不正発行などの危険性がある。"
+      "GMOインターネットグループの不正アクセス問題で、子会社が2年前にシステムの脆弱性を指摘していたことが判明した。",
+      "GMOサイバーセキュリティbyイエラエが抜本的な見直しを求めたが、十分な対策が行われず被害につながった。",
+      "インターネット上では個人情報の流出事案が相次ぎ、パスワード変更などの対策が求められている。"
     ],
-    "topic": "タイムズカーの免許証画像流出と不正アクセスの影響"
+    "topic": "GMOの不正アクセス問題と脆弱性指摘の経緯について"
   },
   "https://www.nikkei.com/article/DGXZQOUD02B5F0S6A001C2000000/": {
     "generated_at": "2026-10-04T22:04:10.086705Z",
@@ -14882,6 +14865,23 @@
       "禁則処理、句読点調整、フォントごとのスケール設定、レイアウト情報の取得機能などを備えている。"
     ],
     "topic": "iOS用文字組みエンジンstone engineのJavaScript移植"
+  },
+  "https://www.nttdata.com/jp/ja/-/media/nttdatajapan/files/services/adm/ai-native.pdf": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "metadata",
+    "keywords": [
+      "AI-Native",
+      "アカウンタビリティ",
+      "デザイン戦略",
+      "ソフトウェア開発"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIを前提とした開発手法に関するデザイン戦略を解説していると見られる。",
+      "特にアカウンタビリティ（説明責任）を軸にしたアプローチについて論じられている可能性がある。",
+      "NTTデータが公開したPDF資料として、開発プロセスの参考情報が含まれていると推測される。"
+    ],
+    "topic": "AIネイティブ開発におけるデザイン戦略"
   },
   "https://www.oricon.co.jp/news/2484761/full/": {
     "generated_at": "2026-10-06T22:04:27.404746Z",
@@ -15206,24 +15206,6 @@
     ],
     "topic": "Bun v1.4.4で追加された高速なコードフォーマッタについて"
   },
-  "https://www.publickey1.jp/blog/26/javascriptvite_10.html": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "Vite+",
-      "VoidZero",
-      "Rolldown",
-      "Vite",
-      "JavaScript"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "VoidZeroは、JavaScriptの統合ツールチェーン「Vite+ 1.0」を正式リリースした。",
-      "単一のCLIにより、ランタイムやパッケージマネージャー、ビルドツールなどを統一して管理できる。",
-      "RolldownやViteなどの最新バージョンを組み込み、単一の設定ファイルで開発環境を構築する。"
-    ],
-    "topic": "JavaScriptの統合ツールチェーン「Vite+ 1.0」の正式リリース"
-  },
   "https://www.publickey1.jp/blog/26/linuxpwnescapecve-2026-99999linux_os.html": {
     "generated_at": "2026-10-17T22:03:43.441634Z",
     "input_type": "fulltext",
@@ -15313,24 +15295,6 @@
     ],
     "topic": "SupabaseによるTurso買収とAI時代に向けたDB戦略"
   },
-  "https://www.publickey1.jp/blog/26/vercelnextjscloudflare_workersaws_lambdavercelvinext_10.html": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "Vinext",
-      "Next.js",
-      "Cloudflare Workers",
-      "Vite",
-      "AWS Lambda"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "Cloudflareは、Next.jsアプリをVercel以外の基盤へデプロイするVinext 1.0を発表した。",
-      "Turbopackの代わりにViteを使用し、Cloudflare WorkersやAWS Lambdaなどで実行可能にする。",
-      "App/Pages Routerや主要機能の約99%をサポートし、高度なキャッシュや可観測性にも対応する。"
-    ],
-    "topic": "Vercel以外へNext.jsをデプロイできるVinext 1.0のリリース"
-  },
   "https://www.publickey1.jp/blog/26/vs_codeaiaihydrafusion.html": {
     "generated_at": "2026-10-06T22:04:27.404746Z",
     "input_type": "fulltext",
@@ -15382,24 +15346,6 @@
       "AppContainerやWSLコンテナを用いた柔軟な隔離レベルの設定に対応し、Intuneによる集中管理も可能となっている。"
     ],
     "topic": "Windows向けAIエージェント隔離環境MXCの正式リリース"
-  },
-  "https://www.publickey1.jp/blog/26/windowslinuxwsl_containersapi.html": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "WSL Containers",
-      "Windows Subsystem for Linux",
-      "Linuxコンテナ",
-      "Microsoft",
-      "wslc"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "MicrosoftはWindows上でLinuxコンテナの作成と実行を可能にするWSL Containersを正式リリースした。",
-      "ユーザーはコマンドラインツール「wslc」やAPIを利用してコンテナ環境を操作できる。",
-      "Microsoft IntuneやMDEとの統合による一元管理や、起動中のコンテナ再起動などの機能に対応する。"
-    ],
-    "topic": "WindowsでLinuxコンテナを実行できるWSL Containersの正式リリース"
   },
   "https://www.sakura.ad.jp/corporate/information/announcements/2026/10/16/1968226051/": {
     "generated_at": "2026-10-16T22:04:23.125436Z",
@@ -15470,24 +15416,6 @@
       "報告フォームの入力ガイドが含まれており、委託元の事業者における初動対応の支援を目的としている。"
     ],
     "topic": "個人情報漏えいインシデント対応実務書の原稿公開"
-  },
-  "https://www.shibaura-it.ac.jp/headline/detail/20260930_7070_51_1.html": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "Ozaki Scheme II",
-      "NVIDIA CUDA",
-      "芝浦工業大学",
-      "GPU計算",
-      "科学シミュレーション"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "芝浦工業大学の尾崎克久教授らが開発した高精度計算手法「Ozaki Scheme II」がNVIDIAのCUDA Toolkit 13.4に正式採用された。",
-      "AI向けに特化して低精度化が進む近年のGPUにおいて、整数演算やシミュレーションに不可欠な高精度計算を高速に引き出す。",
-      "日本の次世代スーパーコンピュータ「富岳NEXT」や米国の科学研究プログラムなどでの活用が期待されている。"
-    ],
-    "topic": "NVIDIAのCUDAに採用された芝浦工業大学の計算アルゴリズム"
   },
   "https://www.sourcenext.com/support/i/2026/1015_info/": {
     "generated_at": "2026-10-15T22:04:07.928718Z",
@@ -15576,6 +15504,24 @@
       "店頭在庫の不足も懸念され、すでにフリマサイトやオークションでは高額転売が確認されている。"
     ],
     "topic": "アップルの初折りたたみスマホ「iPhone Duo」の予約状況"
+  },
+  "https://www.techno-edge.net/article/2026/10/31/5657.html": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "OpenAI",
+      "サム・アルトマン",
+      "DRAM",
+      "ローカルAI",
+      "データセンター"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "OpenAIのサム・アルトマンCEOは、個人PCに大量のDRAMを搭載することに問題があると指摘した。",
+      "理由は、個人所有のメモリーは稼働率が低く、クラウドのデータセンターに集約して共有する方が効率的だからである。",
+      "この発言は、世界全体の資源配分とAIインフラの観点から、クラウド活用を重視する立場を反映している。"
+    ],
+    "topic": "PCへの大量RAM搭載に対するアルトマンCEOの見解"
   },
   "https://www.trustbank.co.jp/newsroom/newsrelease/news261020/": {
     "generated_at": "2026-10-20T22:04:19.767134Z",
@@ -15837,24 +15783,6 @@
       "原因を明示する企業がある一方で、委託先やクラウドの不具合と説明する事例もある。"
     ],
     "topic": "IDCフロンティアのランサムウェア攻撃の影響"
-  },
-  "https://ypresto.hatenablog.jp/entry/2026/09/30/233500": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "凸凹育児",
-      "不登校",
-      "リモートワーク",
-      "ソフトウェアエンジニア",
-      "ワークライフバランス"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "凸凹育児や不登校の子どもを持つエンジニアとしての日常と、家庭生活の現実を解説している。",
-      "限られた時間の中で仕事と家事・育児を両立させるためのマインドセットや生活の工夫を紹介している。",
-      "リモートワーク環境下でのチームとの信頼関係構築や、キャリアと現実のバランスについて考察している。"
-    ],
-    "topic": "凸凹育児・不登校とエンジニア業務の両立"
   },
   "https://yurinchi2525.com/20261025emdash/": {
     "generated_at": "2026-10-25T22:03:36.518075Z",
@@ -16318,24 +16246,6 @@
     ],
     "topic": "Anthropicが発表したClaudeの新機能Claude Motionの概要"
   },
-  "https://zenn.dev/canary_techblog/articles/348d976da70857": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "APIテスト",
-      "自動テスト戦略",
-      "runn",
-      "Go",
-      "クリーンアーキテクチャ"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "複雑なビジネスロジックの増加に伴いUT中心の品質保証に限界を感じ、APIテスト主軸への戦略変更を実施した。",
-      "Goとrunnを活用し、API GatewayからDBまでを検証する並列可能なAPIテストアーキテクチャを構築した。",
-      "APIテストとREADMEの導入により、リファクタリング耐性と仕様の網羅性が向上し品質への自信につながった。"
-    ],
-    "topic": "バックエンドの自動テスト戦略をUT中心からAPIテスト中心へ移行した事例"
-  },
   "https://zenn.dev/canly/articles/85dc645c252832": {
     "generated_at": "2026-10-28T22:03:00.921599Z",
     "input_type": "fulltext",
@@ -16479,23 +16389,6 @@
     ],
     "topic": "問い合わせメッセージ仕分けにおけるJevの活用と評価"
   },
-  "https://zenn.dev/chot/articles/html-in-canvas-dom-to-video": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "HTML-in-Canvas",
-      "Canvas API",
-      "Web Animations API",
-      "Mediabunny"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "提案中のHTML-in-Canvas APIを用いたDOMの画像化手法を解説する。",
-      "canvas要素でDOMのスナップショットを描画する基本コードと仕様を説明する。",
-      "Web Animations API等と組み合わせてアニメーションを動画化する方法を紹介する。"
-    ],
-    "topic": "HTML-in-CanvasによるDOMの画像化と動画書き出し"
-  },
   "https://zenn.dev/cloud_ace_jp/articles/google-secops-triage-investigation-agent": {
     "generated_at": "2026-10-14T22:04:07.125004Z",
     "input_type": "fulltext",
@@ -16531,6 +16424,24 @@
       "10月は内定式やOJTの担当者変更にともない、新しい視点で学習を継続する。"
     ],
     "topic": "新卒エンジニアの9月の業務とイベント参加の振り返り"
+  },
+  "https://zenn.dev/comamoca/articles/2026-10-30-trying-hello-world-with-goda-vim": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "goda.vim",
+      "Vim",
+      "Neovim",
+      "Go",
+      "Nix"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "goda.vimは外部プロセスと通信してGoでVimプラグインを開発できるツールである。",
+      "Go側でのプラグイン構造体の定義やVim側からの関数呼び出しの実装手順を解説している。",
+      "Go製であるためNixによるパッケージングやビルド管理が容易に行える点が特徴である。"
+    ],
+    "topic": "Shougo氏のgoda.vimを用いたGo言語によるVimプラグイン開発の解説"
   },
   "https://zenn.dev/crayfisher_zari/articles/75619d5860f885": {
     "generated_at": "2026-10-14T22:04:07.125004Z",
@@ -17357,24 +17268,6 @@
     ],
     "topic": "テストの前提を実プレイのセーブデータに置き換える手法"
   },
-  "https://zenn.dev/gzer0/articles/timescar-leak-countermeasures": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "タイムズカー",
-      "不正アクセス",
-      "個人情報流出",
-      "本人確認書類",
-      "セキュリティ対策"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "タイムズカーの不正アクセスで免許証画像など個人情報が流出しました。",
-      "詐欺連絡への警戒やパスワード変更、SMS認証の切り替えが推奨されています。",
-      "SIM乗っ取りやなりすましを防ぐ具体的な対策と相談先がまとめられています。"
-    ],
-    "topic": "タイムズカー情報流出の被害と対策の解説"
-  },
   "https://zenn.dev/hand_dot/articles/ecb391d4322330": {
     "generated_at": "2026-10-16T22:04:23.125436Z",
     "input_type": "fulltext",
@@ -17501,6 +17394,23 @@
     ],
     "topic": "Microsoft-Decision-1を用いたAI-OCRの品質ゲート構築"
   },
+  "https://zenn.dev/headwaters/articles/7042a1819dfe8c": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "AI",
+      "Webサイト制作",
+      "UIコンポーネント",
+      "要件定義"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "AIを活用してエンジニア向け眼鏡通販の架空サイトを制作した事例を紹介。",
+      "ハンバーガーメニューやパンくずリストなど5つの主要部品の役割を解説。",
+      "コンポーネントはユーザーに情報を正しく伝える手段であると説いている。"
+    ],
+    "topic": "AIを活用したWebサイト制作におけるUIコンポーネントの役割"
+  },
   "https://zenn.dev/headwaters/articles/a56921c63ce21c": {
     "generated_at": "2026-10-08T22:04:28.545009Z",
     "input_type": "fulltext",
@@ -17606,6 +17516,24 @@
       "制作時間が64時間から15分未満に短縮され、更新頻度の向上が実現した。"
     ],
     "topic": "ClaudeやGeminiを活用した動画自動生成パイプラインの開発"
+  },
+  "https://zenn.dev/hiro_pon/articles/2f3b68ec60ddae": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "FlutterKaigi",
+      "GStreamer",
+      "Amazon Transcribe",
+      "Amazon Translate",
+      "SRT"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "FlutterKaigi 2026会場でスライドとカメラ映像に生字幕を合成して投影するシステムの構成を解説",
+      "Amazon TranscribeとTranslateを活用し、資料を用いた専門用語の認識精度向上や言語判定を実現",
+      "GStreamerやSRTを用いた映像の合成と安定した配信・収録の仕組みを紹介"
+    ],
+    "topic": "FlutterKaigi 2026の生字幕投影システムの仕組み"
   },
   "https://zenn.dev/hk_work/articles/sole-proprietor-app-store-paid-apps-agreement": {
     "generated_at": "2026-10-21T22:03:48.116776Z",
@@ -17838,24 +17766,6 @@
     ],
     "topic": "新刊書籍『構文解析のしくみ』の内容と裏話"
   },
-  "https://zenn.dev/knowledgework/articles/2691721311c2e4": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "LLM",
-      "GGUF",
-      "llama.cpp",
-      "量子化",
-      "VRAM最適化"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "オンラインゲーム中の翻訳用LLMをゲーミングPC向けに軽量化する手法を解説している。",
-      "不要な視覚モジュールや未使用語彙の削除、量子化によりモデルサイズを大幅に縮小した。",
-      "プロセスメモリやランタイムも見直すことで、2から3GBのVRAMでの動作を実現している。"
-    ],
-    "topic": "ゲーミングPC向けLLMとデプロイ環境の最適化"
-  },
   "https://zenn.dev/kodak_20/articles/3b0ba74333b56c": {
     "generated_at": "2026-10-25T22:03:36.518075Z",
     "input_type": "fulltext",
@@ -18053,6 +17963,24 @@
     ],
     "topic": "SQLiteの公式ベクトル検索拡張「vec1」の概要と使い方"
   },
+  "https://zenn.dev/michiharu/articles/9562dfd249c8e3": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "NoSQL",
+      "DynamoDB",
+      "Firestore",
+      "Zod",
+      "Schema Versioning"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "データにスキーマバージョンを持たせ、読み込み時に古い形式を最新に変換する手法を解説している。",
+      "Zodを用いたTypeScriptでの実装例や、部分更新およびデプロイ時の注意点を紹介している。",
+      "検索キーの変更など変換できない処理については、一括のデータ書き換えで対応することを説明している。"
+    ],
+    "topic": "NoSQLデータベースにおけるスキーマ変更の管理手法"
+  },
   "https://zenn.dev/microsoft/articles/explain-before-shorten": {
     "generated_at": "2026-10-26T22:04:35.064214Z",
     "input_type": "fulltext",
@@ -18142,6 +18070,24 @@
       "不要な通信の遮断などCDPを活用したクロール処理の高速化事例を紹介する。"
     ],
     "topic": "Pythonによるブラウザ自動操作とスクレイピング手法"
+  },
+  "https://zenn.dev/mrs1669/articles/20261031_visionos-dismiss-immersive-space": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Apple Vision Pro",
+      "visionOS",
+      "SwiftUI",
+      "RealityKit",
+      "Immersive Space"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Apple Vision Proで重いImmersive Spaceを閉じる際の挙動を実機とシミュレーターで検証した。",
+      "シミュレーターではonDisappearの処理に遅延が生じる一方、実機では約430msで正常に終了することを確認した。",
+      "実機での正確な計測方法や、クラッシュの原因となったメインスレッドの負荷に関する考察をまとめている。"
+    ],
+    "topic": "Vision ProにおけるImmersive Space終了時の挙動の差"
   },
   "https://zenn.dev/nauh_blog/articles/7f19a2f193d15d": {
     "generated_at": "2026-10-22T22:04:11.113847Z",
@@ -18732,42 +18678,6 @@
     ],
     "topic": "AWS経験者がGCPでつまずいたVaultとGKE認可の解説"
   },
-  "https://zenn.dev/schroneko/articles/openai-devday-2026": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "OpenAI DevDay 2026",
-      "dots",
-      "GPT-6.1 Sol",
-      "Ultrafast",
-      "Agents API"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "24時間稼働のエージェント「dots」や高速な「GPT-6.1 Sol」などの新モデルが公開された。",
-      "Codexのクラウド実行やAgents APIのComputer Use対応など開発者向け機能が強化された。",
-      "ChatGPT SpaceやPagesなどの共同作業機能や外部アプリ連携機能が追加された。"
-    ],
-    "topic": "OpenAI DevDay 2026での新機能やアップデート"
-  },
-  "https://zenn.dev/securenavi_tech/articles/yaml-policy-audit-automation": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "Gemara",
-      "GRC",
-      "YAML",
-      "Privateer",
-      "監査自動化"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "Linux Foundation傘下のGRCモデルGemaraを活用した社内規程のYAML化と監査自動化の仕組みを解説。",
-      "システム管理規程をYAMLで記述し、CUEによるスキーマ検証やPrivateerによる自動検証の手順を紹介。",
-      "規程や点検結果を機械可読な形式で管理することで、セキュリティ監査の継続的なモニタリングを実現。"
-    ],
-    "topic": "Gemaraを用いた社内規程のコード化と監査自動化"
-  },
   "https://zenn.dev/seisei89628/articles/cd976e4c7d78c7": {
     "generated_at": "2026-10-14T22:04:07.125004Z",
     "input_type": "fulltext",
@@ -18946,24 +18856,6 @@
     ],
     "topic": "新卒エンジニアがAWS Summit Japan 2026で見つけた注目技術"
   },
-  "https://zenn.dev/sonicmoov/articles/161912ea458641": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "CSS論理プロパティ",
-      "物理プロパティ",
-      "marginの相殺",
-      "書字方向",
-      "stylelint"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "物理プロパティと論理プロパティの違いやblock・inline軸の挙動を解説している。",
-      "marginの相殺現象を防ぐための方向統一やgapの活用方法について検証している。",
-      "個々のプロパティ選択よりもコードベース全体の一貫性を保つことが重要であると述べている。"
-    ],
-    "topic": "CSS論理プロパティと余白管理の仕組みと一貫性の重要性"
-  },
   "https://zenn.dev/sonicmoov/articles/a4b81f065cf7ba": {
     "generated_at": "2026-10-29T22:03:15.366190Z",
     "input_type": "fulltext",
@@ -18982,24 +18874,6 @@
     ],
     "topic": "SwiftUIとComposeにおける画面状態の設計手法"
   },
-  "https://zenn.dev/sonicmoov/articles/e5cab621dc8033": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "BEM",
-      "PDFLOCSS",
-      "SCSS",
-      "CSS設計",
-      "フロントエンド"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "HTMLの入れ子構造をそのままBEMの命名やSCSSの階層に反映させない設計手法を解説している。",
-      "Elementの2重ネストや、ハイフンを含むElement名をSCSS内で分割して記述することを避けるべきと述べている。",
-      "不要な祖先への依存を減らし、要素の役割に基づいたシンプルなクラス設計を行う重要性をまとめている。"
-    ],
-    "topic": "PDFLOCSSを活用したBEM命名とSCSSネストの整理"
-  },
   "https://zenn.dev/sonicmoov/articles/oreilly-subscription-acm": {
     "generated_at": "2026-10-16T22:04:23.125436Z",
     "input_type": "fulltext",
@@ -19017,6 +18891,24 @@
       "年に数冊しか買わない場合でも、つまみ読みの利便性やClaudeからの検索機能に価値があるとしている。"
     ],
     "topic": "ACM経由でのオライリーサブスク契約とMCPの活用"
+  },
+  "https://zenn.dev/sonsu/articles/67fbd9a1cf8914": {
+    "generated_at": "2026-10-31T22:02:52.439511Z",
+    "input_type": "fulltext",
+    "keywords": [
+      "Claude Code",
+      "Cursor",
+      "バックドア",
+      "拡張機能",
+      "セキュリティ"
+    ],
+    "model": "gemini-3.5-flash-lite",
+    "summary_lines": [
+      "Cursorのマーケットプレイスで悪意あるClaude Code拡張機能が約11時間配布された。",
+      "感染するとSSH鍵の追加や自動実行スクリプトの登録などの不正な処理が行われる。",
+      "該当期間に利用したユーザーは確認方法と公式の修復スクリプトによる対応が必要となる。"
+    ],
+    "topic": "CursorのClaude Code拡張機能バックドア事件の解説"
   },
   "https://zenn.dev/spookies/articles/82112154145e4c": {
     "generated_at": "2026-10-22T22:04:11.113847Z",
@@ -19623,24 +19515,6 @@
       "Rangeセンサーの変換処理で、未検知時に無限大を返すよう仕様を修正した。"
     ],
     "topic": "ros_gzにおける終了時クラッシュとRange変換の修正"
-  },
-  "https://zenn.dev/yy7613/articles/c150ef962ccc1f": {
-    "generated_at": "2026-09-30T22:04:34.909615Z",
-    "input_type": "fulltext",
-    "keywords": [
-      "Blender",
-      "生成AI",
-      "Claude Code",
-      "MPFB2",
-      "3DCG"
-    ],
-    "model": "gemini-3.5-flash-lite",
-    "summary_lines": [
-      "生成AIとBlenderを連携させ、ゲーム用アニメ調キャラクターの素体を作成する手順を解説する。",
-      "Claude CodeなどのAIエージェントを用いて、頭部のトポロジー設計や断面グラフによる面質評価を自動化している。",
-      "MPFB2を活用したボディの生成や、シェイプキー、ウェイト調整、体型スライダーによる変形手法を網羅する。"
-    ],
-    "topic": "生成AIとBlenderを活用したゲーム用キャラ素体制作"
   },
   "https://zenn.dev/zhidao/articles/2bbdf37363dec1": {
     "generated_at": "2026-10-06T22:04:27.404746Z",
