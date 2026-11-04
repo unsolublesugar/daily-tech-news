@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年11月
 
+- [11/05](2026/11/2026-11-05.md) | [Web版](2026/11/2026-11-05.html) — OpenCode+Docker+GitHub Actionsで全自動AIペネトレーションテストはじめました
 - [11/04](2026/11/2026-11-04.md) | [Web版](2026/11/2026-11-04.html) — ADRをregoでlintする
 - [11/03](2026/11/2026-11-03.md) | [Web版](2026/11/2026-11-03.html) — ミラティブのエンジニア3人でISUCON2026に参加しました！ | Mirrativ Tech Blog
 - [11/02](2026/11/2026-11-02.md) | [Web版](2026/11/2026-11-02.html) — 【独自】GMO攻撃、北朝鮮ハッカーか 複数の痕跡、政府に報告
