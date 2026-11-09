@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年11月
 
+- [11/10](2026/11/2026-11-10.md) | [Web版](2026/11/2026-11-10.html) — ShopifyのReact Native→ネイティブ移行を支える「Reflex」をSwiftとKotlinで試す
 - [11/09](2026/11/2026-11-09.md) | [Web版](2026/11/2026-11-09.html) — 人生タイムライン
 - [11/08](2026/11/2026-11-08.md) | [Web版](2026/11/2026-11-08.html) — Weight-Space Programming やってみた(やらせてみた)
 - [11/07](2026/11/2026-11-07.md) | [Web版](2026/11/2026-11-07.html) — [破壊的変更] 明治時代の開始日が変更になって単体テストが失敗した件
