@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年11月
 
+- [11/11](2026/11/2026-11-11.md) | [Web版](2026/11/2026-11-11.html) — NVIDIAの「長文コンテキスト不要」論文
 - [11/10](2026/11/2026-11-10.md) | [Web版](2026/11/2026-11-10.html) — ShopifyのReact Native→ネイティブ移行を支える「Reflex」をSwiftとKotlinで試す
 - [11/09](2026/11/2026-11-09.md) | [Web版](2026/11/2026-11-09.html) — 人生タイムライン
 - [11/08](2026/11/2026-11-08.md) | [Web版](2026/11/2026-11-08.html) — Weight-Space Programming やってみた(やらせてみた)
