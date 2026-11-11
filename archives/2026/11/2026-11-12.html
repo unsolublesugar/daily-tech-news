@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日のテックニュース (2026-11-12)</title>
+
+    <!-- OGP Tags -->
+    <meta property="og:title" content="今日のテックニュース (2026-11-12)">
+    <meta property="og:description" content="忙しいエンジニアのために。毎日サクッとキャッチアップ。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unsolublesugar.github.io/daily-tech-news/archives/2026/11/2026-11-12.html">
+    <meta property="og:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+    <meta property="og:site_name" content="今日のテックニュース">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@unsoluble_sugar">
+    <meta name="twitter:title" content="今日のテックニュース (2026-11-12)">
+    <meta name="twitter:description" content="忙しいエンジニアのために。毎日サクッとキャッチアップ。">
+    <meta name="twitter:image" content="https://unsolublesugar.github.io/daily-tech-news/assets/images/OGP.png">
+
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="../../../assets/favicons/site.webmanifest">
+    <link rel="shortcut icon" href="../../../assets/favicons/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../../assets/css/main.css">
+
+    <!-- 初期描画前にテーマを適用してちらつきを防ぐ -->
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('tech-news-theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { /* localStorage 不可の環境では何もしない */ }
+        })();
+    </script>
+</head>
+<body>
+<div class="app">
+<header class="app-header">
+    <div class="app-header-top">
+        <div class="app-header-leading"><a class="icon-btn" href="../../index.html" aria-label="アーカイブ一覧へ戻る" title="アーカイブ一覧へ戻る"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></a></div>
+        <div class="app-brand"><span class="site-name">2026/11/12 (木)</span></div>
+        <div class="app-header-actions">
+            <button type="button" id="filter-open" class="icon-btn" aria-label="絞り込み" title="絞り込み"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg><span class="filter-count" id="filter-count" hidden></span></button>
+            <button type="button" id="theme-toggle" class="icon-btn" aria-label="テーマを切り替える" title="テーマを切り替える"><span id="theme-icon">🌙</span></button>
+        </div>
+    </div>
+    <nav class="tab-bar" role="tablist" aria-label="表示切り替え" data-current-date="2026-11-12">
+        <a id="date-nav-newer" class="date-nav-btn is-disabled" aria-label="新しい日付のニュースへ" title="新しい日付のニュースへ" aria-disabled="true"><span aria-hidden="true">‹</span></a>
+        <div class="tab-bar-tabs">
+            <button type="button" class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-articles" data-tab="articles">記事</button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-events" data-tab="events">イベント</button>
+            <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-books" data-tab="books">書籍</button>
+        </div>
+        <a id="date-nav-older" class="date-nav-btn is-disabled" aria-label="過去の日付のニュースへ" title="過去の日付のニュースへ" aria-disabled="true"><span aria-hidden="true">›</span></a>
+    </nav>
+</header>
+
+    <main class="app-main">
+        <section class="tab-panel is-active" id="panel-articles" role="tabpanel" data-panel="articles">
+        <nav class="media-toc" aria-label="メディア目次">
+            <div class="media-toc-inner"><a class="toc-chip" href="#media-8bf14d5c">Tech Blog Weekly</a><a class="toc-chip" href="#media-179faac7">Zenn</a><a class="toc-chip" href="#media-c48abbcc">Qiita</a><a class="toc-chip" href="#media-702f7c88">はてブIT（人気）</a><a class="toc-chip" href="#media-5be408ff">はてブIT（新着）</a><a class="toc-chip" href="#media-807ef3e7">DevelopersIO</a><a class="toc-chip" href="#media-71452a2d">gihyo.jp</a><a class="toc-chip" href="#media-46cf5c29">Publickey</a><a class="toc-chip" href="#media-e3454818">CodeZine</a></div>
+        </nav>
+        <section class="highlights">
+            <div class="highlights-head">
+                <span class="highlights-title">11/12のハイライト</span>
+                <span class="highlights-note">複数メディアで話題</span>
+            </div>
+            <div class="highlight-cards">
+                <a class="highlight-card" href="https://pc.watch.impress.co.jp/docs/news/2155676.html" target="_blank" rel="noopener">
+                    <span class="highlight-rank">1</span>
+                    <span class="highlight-body">
+                        <span class="highlight-title">ローカルLLMはゲーム開発に使えるか、スクウェア・エニックスがNemotronで検証</span>
+                        <span class="highlight-meta">はてブIT（新着） ・ 他1メディアで言及 ・ 昨日</span>
+                    </span>
+                </a>
+                <a class="highlight-card" href="https://forbesjapan.com/articles/detail/107841" target="_blank" rel="noopener">
+                    <span class="highlight-rank">2</span>
+                    <span class="highlight-body">
+                        <span class="highlight-title">Z世代がAIブームから一斉に「ログアウト」し始めた深刻な理由 米国 | Forbes JAPAN 公式サイト（フォーブス ジャパン）</span>
+                        <span class="highlight-meta">はてブIT（人気） ・ 他1メディアで言及 ・ 昨日</span>
+                    </span>
+                </a>
+                <a class="highlight-card" href="https://www.jpcert.or.jp/ir_report_checklist_20261111.html" target="_blank" rel="noopener">
+                    <span class="highlight-rank">3</span>
+                    <span class="highlight-body">
+                        <span class="highlight-title">インシデント調査報告書チェックリスト公開のお知らせ</span>
+                        <span class="highlight-meta">はてブIT（人気） ・ 他1メディアで言及 ・ 昨日</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+        <section class="media-section" id="media-8bf14d5c">
+            <h2 class="media-heading">Tech Blog Weekly</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-f2bd1c8f" data-tags="キャリア・組織" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">AIと愛で壁を超えろ。Snowflake Data Superheroes x Streamlit Creatorディスカッション | Snowflake Data Heroesのフィード</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">キャリア・組織</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">SnowflakeとStreamlitのコミュニティによるディスカッション</p><ul class="article-summary-lines"><li>Snowflake Data SuperheroesとStreamlit Creatorらがコミュニティの活性化に向けたディスカッションを実施した。</li><li>議論では日本と英語圏の間にある言語の壁や異文化交流の課題について意見が交わされた。</li><li>高精度な同時翻訳AIの活用に加え、愛を持ってコミュニケーションの壁を乗り越えていく重要性が語られた。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://zenn.dev/dataheroes/articles/b9a548490b7bb1" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://zenn.dev/dataheroes/articles/b9a548490b7bb1" data-share-title="AIと愛で壁を超えろ。Snowflake Data Superheroes x Streamlit Creatorディスカッション | Snowflake Data Heroesのフィード">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-59f23317" data-tags="AI・機械学習,キャリア・組織" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Fable 5.2・Mythos 5.2 リリース！単価20%減とFast mode対応 | サーバーワークスエンジニアブログ</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">キャリア・組織</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">Anthropicの新型モデルClaude Fable 5.2の解説</p><ul class="article-summary-lines"><li>AnthropicがClaude Fable 5.2とMythos 5.2を発表した。</li><li>前モデルから単価20%減となり、Fast modeや各種ベンチマーク対応が行われた。</li><li>Claude Codeでの利用方法や価格、安全装置の変更点について解説されている。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://blog.serverworks.co.jp/2026/11/11/190000" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://blog.serverworks.co.jp/2026/11/11/190000" data-share-title="Fable 5.2・Mythos 5.2 リリース！単価20%減とFast mode対応 | サーバーワークスエンジニアブログ">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-f97a89de" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">内製のChrome拡張機能をChromeウェブストアから社内に配布する | kickflow Tech Blog</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">Chrome拡張機能の社内向けドメイン限定配布と自動化</p><ul class="article-summary-lines"><li>Chromeウェブストアのドメイン限定公開を用いて社内製拡張機能を安全に配布する仕組みを構築した。</li><li>GitHubのモノレポとGitHub Actionsを連携させ、PRのマージによる更新の自動化を実現した。</li><li>初回登録のみ手作業で実施し、Workload Identity連携によるセキュアな認証基盤を採用している。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://tech.kickflow.co.jp/entry/2026/11/11/182411" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://tech.kickflow.co.jp/entry/2026/11/11/182411" data-share-title="内製のChrome拡張機能をChromeウェブストアから社内に配布する | kickflow Tech Blog">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-179faac7">
+            <h2 class="media-heading">Zenn</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-0e4f79a2" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">ISUCON2026 で優勝しました（準備編）</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">ISUCON2026優勝に向けた完全自律AIエージェントの準備工程</p><ul class="article-summary-lines"><li>ISUCON2026で完全自律エージェントによる優勝を目指した3か月の準備期間の記録。</li><li>Claude Codeを活用し、評価ランナーや複数台構成の検証を時系列で振り返る。</li><li>複数問題への対応や環境改善を通じて、エージェントの自律的な性能向上を検証した。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://zenn.dev/luvtechno/articles/isucon2026-preparation" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://zenn.dev/luvtechno/articles/isucon2026-preparation" data-share-title="ISUCON2026 で優勝しました（準備編）">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-611c0a30" data-tags="テクノロジートレンド" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">AIに書かせた、が全然AIが書いてない件</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">テクノロジートレンド</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">AIに技術記事を自動執筆させる試行錯誤の記録</p><ul class="article-summary-lines"><li>Slack連携とClaudeを用いて技術記事を自動生成する仕組みを構築した。</li><li>文体や構成の指示書を作成して執筆させたが、修正と指示出しに多くの手間がかかった。</li><li>最終的にチャットでの指示や手直しの総文字数が記事本体を上回る結果となった。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://zenn.dev/appleworld/articles/65aed6c725af71" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://zenn.dev/appleworld/articles/65aed6c725af71" data-share-title="AIに書かせた、が全然AIが書いてない件">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-28366bb1" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Snowflake Dashboards 2.0が最高な理由と、これからBIに求められること</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">Snowflake Dashboards 2.0の特徴とBIの今後</p><ul class="article-summary-lines"><li>Snowflakeに新しく導入されたDashboards 2.0の機能と利点を解説している。</li><li>宣言的定義やAI活用、Snowflakeの権限管理を活かした運用について説明する。</li><li>定型レポートの可視化とAIによる対話を通じて、BIツールの役割変化を考察する。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://zenn.dev/dataheroes/articles/snowflake-dashboards-2-and-future-of-bi" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://zenn.dev/dataheroes/articles/snowflake-dashboards-2-and-future-of-bi" data-share-title="Snowflake Dashboards 2.0が最高な理由と、これからBIに求められること">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-c48abbcc">
+            <h2 class="media-heading">Qiita</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-18be0d3c" data-tags="クラウド,データベース,キャリア・組織,OS・システム" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">集中力散漫＆過集中持ちエンジニアがAWS DEAを突破した「過集中スイッチ」の入れ方</h3>
+                    <span class="article-time">3日前</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span><span class="tag-chip">データベース</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">ADHD傾向を持つエンジニアのAWS DEA合格勉強法</p><ul class="article-summary-lines"><li>注意力散漫や脳フリーズといった特性に合わせた独自の学習法を紹介している。</li><li>未知の単語の排除や問題演習の先行により過集中を引き出す4ステップを解説。</li><li>AIを活用した弱点分析や自己理解を通じてAWS DEAに合格した体験談。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://qiita.com/kohYoung_I/items/cce40cb5b9cdfc1f8787?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://qiita.com/kohYoung_I/items/cce40cb5b9cdfc1f8787?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" data-share-title="集中力散漫＆過集中持ちエンジニアがAWS DEAを突破した「過集中スイッチ」の入れ方">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-63f65f54" data-tags="AI・機械学習" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">AI「テスト通りました」← これ､本当？ Stryker でテストの穴を塞いだ話</h3>
+                    <span class="article-time">3日前</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">ミューテーションテストツールStrykerを活用したテスト品質の向上</p><ul class="article-summary-lines"><li>AIが生成したテストの品質を検証するため、ミューテーションテストツールStrykerを導入した事例。</li><li>マルチテナントSaaSの Prisma クライアントに対し、実DBテストと Stryker を組み合わせて検証を実施。</li><li>テストの網羅性確認だけでなく、不要なコードの発見やAIコーディング開発の信頼性担保に有効であることを示した。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://qiita.com/Dingu-suke/items/b5318ef2040a9f59224a?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://qiita.com/Dingu-suke/items/b5318ef2040a9f59224a?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" data-share-title="AI「テスト通りました」← これ､本当？ Stryker でテストの穴を塞いだ話">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-c2be3cea" data-tags="Web開発" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">WEBで画像を破くツールを作った</h3>
+                    <span class="article-time">3日前</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">Web開発</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">Web上で画像をなぞって紙のように破るツールの実装解説</p><ul class="article-summary-lines"><li>Svelteを用いた画像を手描き線に沿って破くWebアプリの仕組みを紹介している。</li><li>複雑な多角形演算を避け、制約とCanvasのclip処理でピースの形状を効率的に表現している。</li><li>線の調整やギザギザの生成、サンプル点による領域判定や描画のキャッシュ手法を解説している。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://qiita.com/ishi720/items/6d13fdce2a31fe630840?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://qiita.com/ishi720/items/6d13fdce2a31fe630840?utm_campaign=popular_items&amp;utm_medium=feed&amp;utm_source=popular_items" data-share-title="WEBで画像を破くツールを作った">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-702f7c88">
+            <h2 class="media-heading">はてなブックマーク - IT（人気）</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-ddc2518e" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">最近、大学生と話して大変だなと思ったのが、AIに月に２万円くらい（Maxプラン相当）は課金していないと、周りに差がつけられる/おいていかれる+生活費も上がっている、のでさらに関係ないものも含めてバイトを増やさなければならないという事情。 圧倒的な格差の拡大が見えないところにある。→「これ、どこまで本当だろうか 情報系など一部の学部に限った話？ それとも水産学や経営学、日本文学、体育学など全般？」</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">大学生間におけるAIツールへの高額課金を巡る経済格差</p><ul class="article-summary-lines"><li>AIへの月額課金が学習や研究の成果に影響し、学生間で新たな格差が生じているとの指摘が話題に。</li><li>高額プランの費用負担やアルバイト増加の負担増を懸念する声がある一方、無料や低価格プランで十分との意見も。</li><li>学部や環境によるAI利用の温度差や、無課金者への捉え方などネット上で多様な議論が交わされている。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://posfie.com/@kalofollow/p/kDMLpbM" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://posfie.com/@kalofollow/p/kDMLpbM" data-share-title="最近、大学生と話して大変だなと思ったのが、AIに月に２万円くらい（Maxプラン相当）は課金していないと、周りに差がつけられる/おいていかれる+生活費も上がっている、のでさらに関係ないものも含めてバイトを増やさなければならないという事情。 圧倒的な格差の拡大が見えないところにある。→「これ、どこまで本当だろうか 情報系など一部の学部に限った話？ それとも水産学や経営学、日本文学、体育学など全般？」">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-40bc2439" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">靖国神社に不正アクセス 約1万4500件の個人情報漏えい、パスワードが特定されるおそれも</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">靖国神社通販サイトの不正アクセスによる個人情報漏えい</p><ul class="article-summary-lines"><li>靖国神社の通販サイトが不正アクセスを受け、約1万4500件の個人情報が漏えいした。</li><li>氏名やメールアドレス、ハッシュ化されたパスワードなどが含まれており、特定される恐れがある。</li><li>クレジットカード情報などの漏えいは確認されておらず、サイトは現在公開を停止している。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.itmedia.co.jp/news/article/2611/11/2000003119/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.itmedia.co.jp/news/article/2611/11/2000003119/" data-share-title="靖国神社に不正アクセス 約1万4500件の個人情報漏えい、パスワードが特定されるおそれも">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-0f67d58d" data-tags="AI・機械学習,ツール紹介" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">【速報】政府、AI開発事業者に罰則検討</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">ツール紹介</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">政府によるAI開発事業者への罰則検討について</p><ul class="article-summary-lines"><li>政府が、高性能な人工知能（AI）の引き起こすリスクに対応するため、AIサービス開発事業者への罰則を新設する方向で検討に入ったことが報じられた。</li><li>詳細な内容として、AIの安全性を確保するための規制や罰則の適用について議論が進められている。</li><li>記事の後半は広告情報が含まれており、AI開発規制に関する具体的な本文の記述は限られている。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.47news.jp/15215659.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.47news.jp/15215659.html" data-share-title="【速報】政府、AI開発事業者に罰則検討">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-5be408ff">
+            <h2 class="media-heading">はてなブックマーク - IT（新着）</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-846e859a" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">アマゾンが予想外の打診、公取委が頼ったドイツ 攻防2年の舞台裏：朝日新聞</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">公取委によるアマゾンジャパンへの独禁法調査の経緯</p><ul class="article-summary-lines"><li>公取委は最安値条件の強要容疑でアマゾンジャパンを調査し、改善計画を認めて終了した。</li><li>カートボックスの優先表示条件をめぐり、出品者の価格決定を制限していた疑いがあった。</li><li>当局は影響の広範囲な調査においてドイツの事例なども参考にしつつ対応を進めた。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.asahi.com/articles/ASVCC0SKNVCCUTIL024M.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.asahi.com/articles/ASVCC0SKNVCCUTIL024M.html" data-share-title="アマゾンが予想外の打診、公取委が頼ったドイツ 攻防2年の舞台裏：朝日新聞">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-7aa7c008" data-tags="OS・システム" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">「警察庁推奨アプリ」ダウンロードページの偽サイトに注意！ SMSでダウンロード求める トビラシステムズが注意喚起</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">OS・システム</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">警察庁推奨アプリを装う偽サイトとSMSに関する注意喚起</p><ul class="article-summary-lines"><li>警察庁推奨アプリのダウンロードページを装う偽サイトの存在が確認された。</li><li>SMSで届くURLから偽サイトに誘導され、権限を許可するとスマホ乗っ取りの恐れがある。</li><li>警察がSMS等でアプリのインストールを求めることはなく、公式からの確認を呼びかけている。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://internet.watch.impress.co.jp/docs/news/2155633.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://internet.watch.impress.co.jp/docs/news/2155633.html" data-share-title="「警察庁推奨アプリ」ダウンロードページの偽サイトに注意！ SMSでダウンロード求める トビラシステムズが注意喚起">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-a45d46c5" data-tags="プログラミング,OS・システム" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">メモリ8GBでも快適？ Windows 11最新アプデと「AIカスタム」した日本語入力環境で、旧型PCを蘇らせる</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">プログラミング</span><span class="tag-chip">OS・システム</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">メモリ8GBの旧型PCにおけるWindows11とAI活用術</p><ul class="article-summary-lines"><li>Windows 11の最新アップデートにより、メモリ8GBの旧型PCでも動作が快適化された。</li><li>日本語IME「Meltype」のライブ変換機能をAI（Codex）で非力なマシン向けに最適化した。</li><li>AIによるコード修正や最適化を活用することで、低スペックなローカル環境でも実用的な動作が可能になった。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.itmedia.co.jp/news/article/2611/11/2000003112/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.itmedia.co.jp/news/article/2611/11/2000003112/" data-share-title="メモリ8GBでも快適？ Windows 11最新アプデと「AIカスタム」した日本語入力環境で、旧型PCを蘇らせる">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-807ef3e7">
+            <h2 class="media-heading">DevelopersIO</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-8f95c7ca" data-tags="AI・機械学習,テクノロジートレンド" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Muse Secure VMに自作サーバーを置いて、M5Stack StopWatchから接続できるか試した</h3>
+                    <span class="article-time">5:29</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">テクノロジートレンド</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">Muse Secure VMと自作サーバー連携の検証</p><ul class="article-summary-lines"><li>Muse Secure VM上に自作の中継サーバーを配置し、M5Stackからの接続を検証した。</li><li>VM内でのAPI実行は成功したものの、StopWatchからの未許可ルートは403エラーとなった。</li><li>常駐化の制約や転送経路の設定が不可であり、VM内でのサーバー運用には課題が残る結果となった。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://dev.classmethod.jp/articles/shuntaka-muse-vm-api-openai-realtime-bridge/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://dev.classmethod.jp/articles/shuntaka-muse-vm-api-openai-realtime-bridge/" data-share-title="Muse Secure VMに自作サーバーを置いて、M5Stack StopWatchから接続できるか試した">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-b90cb7c6" data-tags="クラウド,DevOps,ネットワーク" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">[アップデート] Amazon EKS Auto ModeでKubernetes Gateway APIが使えるようになりました</h3>
+                    <span class="article-time">2:59</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span><span class="tag-chip">DevOps</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">Amazon EKS Auto ModeでのKubernetes Gateway API対応</p><ul class="article-summary-lines"><li>Amazon EKS Auto ModeがKubernetes Gateway APIに対応した。</li><li>クラスター設定を有効にするだけでAWSがマネージドでCRDなどを管理する。</li><li>ロードバランサーの自動作成や重み付け・ヘッダーベースのルーティングが可能。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://dev.classmethod.jp/articles/eks-auto-mode-kubernetes-gateway-api/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://dev.classmethod.jp/articles/eks-auto-mode-kubernetes-gateway-api/" data-share-title="[アップデート] Amazon EKS Auto ModeでKubernetes Gateway APIが使えるようになりました">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-646d0071" data-tags="クラウド,ネットワーク" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">EC2 の Nitro Sandboxes を Firecracker で試してみた</h3>
+                    <span class="article-time">1:52</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span><span class="tag-chip">ネットワーク</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">EC2におけるNitro SandboxesとFirecrackerの検証</p><ul class="article-summary-lines"><li>EC2の親インスタンス上でFirecrackerを使いNitro Sandboxesを検証した。</li><li>ゲストイメージの作成やTAP、ネットワーク設定の手順を紹介している。</li><li>コンフィデンシャルとダイレクトモードでゲストメモリの隔離性を確認した。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://dev.classmethod.jp/articles/nitro-sandboxes-ec2-firecracker/" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://dev.classmethod.jp/articles/nitro-sandboxes-ec2-firecracker/" data-share-title="EC2 の Nitro Sandboxes を Firecracker で試してみた">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-71452a2d">
+            <h2 class="media-heading">gihyo.jp</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-22a7322c" data-tags="AI・機械学習,テクノロジートレンド" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">OpenAI、事業者がChatGPTに商品情報などを提供できる「Businesses in ChatGPT」をベータ公開 ——米国の対象事業者には、質問に答えるBusiness Agentも提供</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span><span class="tag-chip">テクノロジートレンド</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">OpenAIによる「Businesses in ChatGPT」のベータ公開</p><ul class="article-summary-lines"><li>OpenAIは、事業者がChatGPTに商品情報などを提供できる機能をベータ公開した。</li><li>米国の対象事業者には、利用者の質問に答える専用のBusiness Agentも提供される。</li><li>事業者は管理画面でリンクのクリック数や言及数などの集計データを確認できる。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://gihyo.jp/article/2026/11/openai-businesses-in-chatgpt?utm_source=feed" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://gihyo.jp/article/2026/11/openai-businesses-in-chatgpt?utm_source=feed" data-share-title="OpenAI、事業者がChatGPTに商品情報などを提供できる「Businesses in ChatGPT」をベータ公開 ——米国の対象事業者には、質問に答えるBusiness Agentも提供">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-1dc15d5b" data-tags="AI・機械学習" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Anthropic、Claude Sheets・Whiteboardsをベータ提供、Claude Dataは一般提供へ ——インタラクティブコネクターも更新、対応アプリをチャットの横や全画面で操作可能に</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">AI・機械学習</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">AnthropicがClaudeの新機能や外部アプリ連携を発表</p><ul class="article-summary-lines"><li>Anthropicは共同編集用の表計算「Claude Sheets」とホワイトボード機能のベータ版を提供開始した。</li><li>データ分析機能のClaude Dashboardsを「Claude Data」に改称し、一般提供へ移行した。</li><li>外部アプリの編集画面をClaude内に表示し、会話しながら作業できる機能を順次提供する。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://gihyo.jp/article/2026/11/claude-whiteboards-and-sheets-and-data-and-interactive-connectors?utm_source=feed" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://gihyo.jp/article/2026/11/claude-whiteboards-and-sheets-and-data-and-interactive-connectors?utm_source=feed" data-share-title="Anthropic、Claude Sheets・Whiteboardsをベータ提供、Claude Dataは一般提供へ ——インタラクティブコネクターも更新、対応アプリをチャットの横や全画面で操作可能に">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-5ac7c1c0" data-tags="その他" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">Microsoft、.NET 11を正式リリース ——C# 15にunion型を導入、CLIの起動負荷を削減</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">その他</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">「.NET 11」の正式リリースと新機能について</p><ul class="article-summary-lines"><li>MicrosoftがC# 15のunion型導入や起動負荷を削減した「.NET 11」を正式リリースした。</li><li>SDKではCLIのNative AOT化やMSBuild serverの既定有効化などでビルド性能を向上させた。</li><li>ASP.NET Coreのunion型対応や.NET MAUIのCoreCLR統一なども行われている。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://gihyo.jp/article/2026/11/dotnet-11?utm_source=feed" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://gihyo.jp/article/2026/11/dotnet-11?utm_source=feed" data-share-title="Microsoft、.NET 11を正式リリース ——C# 15にunion型を導入、CLIの起動負荷を削減">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-46cf5c29">
+            <h2 class="media-heading">Publickey</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-7aa3769a" data-tags="Web開発" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">テストフレームワーク「Playwright」がBunを正式サポート。テストランナーの実行を可能に</h3>
+                    <span class="article-time">0:07</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">Web開発</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">テストフレームワークPlaywrightのBun正式サポート</p><ul class="article-summary-lines"><li>Playwrightはv1.65.0においてBunでのテストランナー実行を正式にサポートした。</li><li>Bun自身がTypeScriptファイルをトランスパイルするためBabelやキャッシュが不要になる。</li><li>今後はNode.jsだけでなくBun環境でも安心してPlaywrightを利用可能になる。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.publickey1.jp/blog/26/playwrightbun.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.publickey1.jp/blog/26/playwrightbun.html" data-share-title="テストフレームワーク「Playwright」がBunを正式サポート。テストランナーの実行を可能に">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-76ff37b8" data-tags="クラウド,ハードウェア・IoT,OS・システム" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">AWS、AIエージェント向けに強力な隔離環境とネイティブなEC2性能を備えた軽量VM「AWS Nitro Sandboxes」提供開始</h3>
+                    <span class="article-time">0:04</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">クラウド</span><span class="tag-chip">ハードウェア・IoT</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">軽量VM「AWS Nitro Sandboxes」の提供開始について</p><ul class="article-summary-lines"><li>AWSはAIエージェント向けの高セキュリティな軽量VM「AWS Nitro Sandboxes」の提供を開始した。</li><li>Nitro Systemのハードウェアベースの強力な隔離機能を活かしつつ、EC2と同等の実行速度を実現している。</li><li>Amazon ECSやAmazon EKSのPodとしても利用可能で、安全なコード実行環境を構築できる。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.publickey1.jp/blog/26/awsaiec2vmaws_nitro_sandboxes.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.publickey1.jp/blog/26/awsaiec2vmaws_nitro_sandboxes.html" data-share-title="AWS、AIエージェント向けに強力な隔離環境とネイティブなEC2性能を備えた軽量VM「AWS Nitro Sandboxes」提供開始">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-a74eda9c" data-tags="セキュリティ,ネットワーク,キャリア・組織" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">ITエンジニアが選ぶ「ITエンジニア本大賞2027」投票スタート</h3>
+                    <span class="article-time">0:01</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">セキュリティ</span><span class="tag-chip">ネットワーク</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="AIによる自動要約">AI要約</span><p class="article-summary-topic">「ITエンジニア本大賞2027」の投票開始について</p><ul class="article-summary-lines"><li>翔泳社が主催する「ITエンジニア本大賞2027」の一般投票が開始された。</li><li>対象書籍は直近1年間に発行された技術書やビジネス書などで、投票期間は2026年12月6日まで。</li><li>投票ページでは70冊以上のノミネート書籍が紹介されており、ISBNコードでの投票も可能。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://www.publickey1.jp/blog/26/itit2027.html" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://www.publickey1.jp/blog/26/itit2027.html" data-share-title="ITエンジニアが選ぶ「ITエンジニア本大賞2027」投票スタート">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        <section class="media-section" id="media-e3454818">
+            <h2 class="media-heading">CodeZine</h2>
+            <div class="media-rows">
+            <article class="article-row" id="row-b2bb2f8a" data-tags="キャリア・組織" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">サポーターズCoLab、UPSIDERやスマートバンクらのプロダクトエンジニアが登壇する共有会を開催</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">キャリア・組織</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="本文未取得のため簡易要約">AI要約</span><p class="article-summary-topic">UPSIDERやスマートバンクら登壇のエンジニア共有会</p><ul class="article-summary-lines"><li>サポーターズCoLab主催のプロダクトエンジニア向け共有会とみられる。</li><li>UPSIDERやスマートバンクなどの企業が登壇するも模様。</li><li>詳細な技術内容や発表テーマはメタデータからは不明である。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://codezine.jp/article/detail/30337" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://codezine.jp/article/detail/30337" data-share-title="サポーターズCoLab、UPSIDERやスマートバンクらのプロダクトエンジニアが登壇する共有会を開催">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-c410da2a" data-tags="セキュリティ" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">攻撃側のAI活用に対抗、スパイスファクトリーがAIを用いたペネトレーションテストを提供開始</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">セキュリティ</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="本文未取得のため簡易要約">AI要約</span><p class="article-summary-topic">AIを活用したペネトレーションテストサービスの提供開始</p><ul class="article-summary-lines"><li>スパイスファクトリーがAIを用いたペネトレーションテストの提供を開始したとみられる。</li><li>攻撃側のAI活用に対抗することを目的としている模様である。</li><li>詳細なサービス内容や技術的特徴については記事の確認が必要となる。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://codezine.jp/article/detail/30336" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://codezine.jp/article/detail/30336" data-share-title="攻撃側のAI活用に対抗、スパイスファクトリーがAIを用いたペネトレーションテストを提供開始">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="article-row" id="row-2d5fe818" data-tags="ツール紹介" role="button" tabindex="0" aria-expanded="false">
+                <div class="article-row-head">
+                    <h3 class="article-title">プレイド、購買以外の行動データも評価する「ロイヤルティプログラム構築サービス」を提供開始</h3>
+                    <span class="article-time">昨日</span>
+                </div>
+                <div class="article-tags"><span class="tag-chip">ツール紹介</span></div>
+                <div class="article-detail">
+                    <div class="article-detail-inner">
+                        <div class="article-summary article-summary-ai"><span class="ai-summary-label" title="本文未取得のため簡易要約">AI要約</span><p class="article-summary-topic">プレイドによる新規ロイヤルティプログラム構築サービス</p><ul class="article-summary-lines"><li>プレイドが購買以外の行動データも評価するサービスの提供を開始したと見られる。</li><li>顧客のロイヤルティ向上を目的としたプログラム構築に関する内容と推測される。</li></ul></div>
+                        <div class="article-actions">
+                            <a class="btn btn-primary" href="https://codezine.jp/article/detail/30335" target="_blank" rel="noopener">記事を読む ↗</a>
+                            <button type="button" class="btn btn-ghost js-share" data-share-url="https://codezine.jp/article/detail/30335" data-share-title="プレイド、購買以外の行動データも評価する「ロイヤルティプログラム構築サービス」を提供開始">共有</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            </div>
+        </section>
+        </section>
+
+        <section class="tab-panel" id="panel-events" role="tabpanel" data-panel="events" hidden>
+            <p class="panel-note">connpass・TECH PLAY の直近イベント。日付順にまとめて、開催が近いものから表示します。</p>
+            <div class="event-group">
+                <h2 class="event-day">11/16 (月)</h2>
+                <a class="event-row" href="https://modn-tech.connpass.com/event/412883/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time">19:00</span>
+                    <span class="event-body">
+                        <span class="event-title">【オンライン開催】AI×セキュリティの最前線！Codex Securityについて学ぼう</span>
+                        <span class="event-meta">connpass ・ オンライン</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">11/20 (金)</h2>
+                <a class="event-row" href="https://techplay.jp/event/1002800" target="_blank" rel="noopener">
+                    <span class="event-time">13:00</span>
+                    <span class="event-body">
+                        <span class="event-title">中小・中堅製造業のための「小さく始めるDX」実践セミナー</span>
+                        <span class="event-meta">TECH PLAY ・ オンライン</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">11/21 (土)</h2>
+                <a class="event-row" href="https://debianjp.connpass.com/event/408497/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time">14:00</span>
+                    <span class="event-body">
+                        <span class="event-title">オンライン開催：東京エリア・関西合同Debian勉強会（2026/11/21(土))</span>
+                        <span class="event-meta">connpass ・ オンライン</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">11/22 (日)</h2>
+                <a class="event-row" href="https://ai-developer-monetization-lab.connpass.com/event/412873/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time">10:00</span>
+                    <span class="event-body">
+                        <span class="event-title">自作ハーネス もくもく会</span>
+                        <span class="event-meta">connpass ・ 東京都中野区</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">11/23 (月)</h2>
+                <a class="event-row" href="https://enjoy-dev-ai.connpass.com/event/412800/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time">21:00</span>
+                    <span class="event-body">
+                        <span class="event-title">海外から日本のAI、どう見えてる！？</span>
+                        <span class="event-meta">connpass ・ オンライン（YouTube Live）</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">11/24 (火)</h2>
+                <a class="event-row" href="https://techplay.jp/event/1002769" target="_blank" rel="noopener">
+                    <span class="event-time">15:00</span>
+                    <span class="event-body">
+                        <span class="event-title">リーガルテックVDRで何ができる？ 機密情報の安全な共有・管理を学ぶ製品説明会</span>
+                        <span class="event-meta">TECH PLAY ・ オンライン</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">11/25 (水)</h2>
+                <a class="event-row" href="https://techplay.jp/event/1002796" target="_blank" rel="noopener">
+                    <span class="event-time">13:00</span>
+                    <span class="event-body">
+                        <span class="event-title">知っておきたい2026年からの「社会保険適用拡大」の基本と企業が押さえるべき各種支援制度</span>
+                        <span class="event-meta">TECH PLAY ・ オンライン</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/1002756" target="_blank" rel="noopener">
+                    <span class="event-time">14:00</span>
+                    <span class="event-body">
+                        <span class="event-title">AI最適化を活用したMeta広告改善のポイント</span>
+                        <span class="event-meta">TECH PLAY ・ オンライン</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://ai-internals-study.connpass.com/event/412884/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time">20:00</span>
+                    <span class="event-body">
+                        <span class="event-title">GPT-2 推論エンジン入門 (4)</span>
+                        <span class="event-meta">connpass ・ Discord</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">11/26 (木)</h2>
+                <a class="event-row" href="https://techplay.jp/event/1002798" target="_blank" rel="noopener">
+                    <span class="event-time">11:00</span>
+                    <span class="event-body">
+                        <span class="event-title">補助金を活用してシステム開発のコストを抑える｜制度の選び方と採択率を上げる申請術【株式会社GeNEE×株式会社Essencimo】</span>
+                        <span class="event-meta">TECH PLAY ・ オンライン</span>
+                    </span>
+                </a>
+                <a class="event-row" href="https://techplay.jp/event/1002770" target="_blank" rel="noopener">
+                    <span class="event-time">12:00</span>
+                    <span class="event-body">
+                        <span class="event-title">ARで生まれる、新しい観光体験のつくり方 ― 先行事例に学ぶ、地域経済への波及</span>
+                        <span class="event-meta">TECH PLAY ・ オンライン</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">11/27 (金)</h2>
+                <a class="event-row" href="https://techplay.jp/event/1002761" target="_blank" rel="noopener">
+                    <span class="event-time">18:30</span>
+                    <span class="event-body">
+                        <span class="event-title">シニアプログラミングもくもく会オンライン2026年11月版</span>
+                        <span class="event-meta">TECH PLAY ・ オンライン</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">12/1 (火)</h2>
+                <a class="event-row" href="https://techplay.jp/event/1002755" target="_blank" rel="noopener">
+                    <span class="event-time">16:00</span>
+                    <span class="event-body">
+                        <span class="event-title">描いて終わる戦略から、動き続ける戦略へ ―“世の中の声”で実現性を高める、 AI時代のブランド・SNS戦略</span>
+                        <span class="event-meta">TECH PLAY ・ オンライン</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">12/3 (木)</h2>
+                <a class="event-row" href="https://techplay.jp/event/1002807" target="_blank" rel="noopener">
+                    <span class="event-time">17:00</span>
+                    <span class="event-body">
+                        <span class="event-title">SCS評価制度 はじめての準備セミナー｜取引先から「セキュリティの★はいくつですか？」と聞かれる時代へ</span>
+                        <span class="event-meta">TECH PLAY ・ オンライン</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">12/8 (火)</h2>
+                <a class="event-row" href="https://fitco.connpass.com/event/411797/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time">19:00</span>
+                    <span class="event-body">
+                        <span class="event-title">Fukuoka Research Base</span>
+                        <span class="event-meta">connpass ・ (場所未定)</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">12/9 (水)</h2>
+                <a class="event-row" href="https://shibuyagile.connpass.com/event/409758/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time">19:00</span>
+                    <span class="event-body">
+                        <span class="event-title">【虎ノ門開催】渋谷アジャイル@スタートアップ#29</span>
+                        <span class="event-meta">connpass ・ 東京都港区</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">12/13 (日)</h2>
+                <a class="event-row" href="https://fristi.connpass.com/event/412880/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time">13:00</span>
+                    <span class="event-body">
+                        <span class="event-title">満足度95%! Claude Code勉強会 @STATION Ai 名古屋</span>
+                        <span class="event-meta">connpass ・ 愛知県名古屋市</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">12/18 (金)</h2>
+                <a class="event-row" href="https://techplay.jp/event/1002763" target="_blank" rel="noopener">
+                    <span class="event-time">14:00</span>
+                    <span class="event-body">
+                        <span class="event-title">そのセキュリティ対策、いざという時に機能しますか？ 〜最近の事例とミニ演習で考える、事業と信頼を守る自衛策〜</span>
+                        <span class="event-meta">TECH PLAY ・ オープンイノベーションフィールド多摩 八…</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">12/19 (土)</h2>
+                <a class="event-row" href="https://gdgchugoku.connpass.com/event/412887/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time">9:00</span>
+                    <span class="event-body">
+                        <span class="event-title">第31回勉強会＠岡山</span>
+                        <span class="event-meta">connpass ・ 岡山県岡山市</span>
+                    </span>
+                </a>
+            </div>
+            <div class="event-group">
+                <h2 class="event-day">1/22 (金)</h2>
+                <a class="event-row" href="https://hibis.connpass.com/event/397823/?utm_campaign=recent_events&amp;utm_source=feed&amp;utm_medium=atom" target="_blank" rel="noopener">
+                    <span class="event-time">17:30</span>
+                    <span class="event-body">
+                        <span class="event-title">生成AI -LT 広島 vol.4</span>
+                        <span class="event-meta">connpass ・ 広島県広島市</span>
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <section class="tab-panel" id="panel-books" role="tabpanel" data-panel="books" hidden>
+            <p class="panel-note">O'Reilly Japan の近刊。</p>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401833/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">Transformer実践ガイド</span>
+                <span class="book-meta">10/19 発売</span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401864/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">AIプロジェクトの管理</span>
+                <span class="book-meta">10/21 発売</span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401888/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">AI時代のWebパフォーマンス・エンジニアリング</span>
+                <span class="book-meta">11/26 発売</span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401871/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">DevOpsとソフトウェアデリバリの基礎</span>
+                <span class="book-meta">11/28 発売</span>
+            </a>
+            <a class="book-row" href="http://www.oreilly.co.jp/books/9784814401949/?utm_source=feed&amp;utm_mediun=referral&amp;utm_content=new_book" target="_blank" rel="noopener">
+                <span class="book-title">C4モデル</span>
+                <span class="book-meta">12/2 発売</span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="app-footer" id="footer-mount"></footer>
+
+</div>
+    <div class="filter-sheet" id="filter-sheet" hidden></div>
+
+    <script src="../../../assets/js/app.js"></script>
+</body>
+</html>
