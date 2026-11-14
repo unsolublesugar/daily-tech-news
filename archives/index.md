@@ -6,6 +6,7 @@ Web版はこちら： https://unsolublesugar.github.io/daily-tech-news/archives/
 
 ## 2026年11月
 
+- [11/15](2026/11/2026-11-15.md) | [Web版](2026/11/2026-11-15.html) — Cognitoの自己サインアップが有効だと、誰でもAWSの一時認証情報を取得できる：AI攻撃ツールARTEXの事例と確認したい設定3点 | DevelopersIO
 - [11/14](2026/11/2026-11-14.md) | [Web版](2026/11/2026-11-14.html) — aws-emulatorにTerraformでリソースを作成できるか試してみる | フューチャー技術ブログ
 - [11/13](2026/11/2026-11-13.md) | [Web版](2026/11/2026-11-13.html) — GitHub Actions を狙った広域サプライチェーン攻撃（11/10~11/12）に関する注意喚起 | GMO Flatt Security Blog
 - [11/12](2026/11/2026-11-12.md) | [Web版](2026/11/2026-11-12.html) — ローカルLLMはゲーム開発に使えるか、スクウェア・エニックスがNemotronで検証
